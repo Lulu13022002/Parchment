@@ -23,7 +23,7 @@ CLASS net/minecraft/commands/CommandSourceStack
 		ARG 11 consumer
 		ARG 12 anchor
 		ARG 13 signingContext
-		ARG 14 chatMessageContainer
+		ARG 14 chatMessageChainer
 		ARG 15 returnValueConsumer
 	METHOD broadcastToAdmins (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 message

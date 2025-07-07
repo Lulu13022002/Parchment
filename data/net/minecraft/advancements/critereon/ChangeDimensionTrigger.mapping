@@ -21,4 +21,4 @@ CLASS net/minecraft/advancements/critereon/ChangeDimensionTrigger
 			ARG 1 fromLevel
 			ARG 2 toLevel
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

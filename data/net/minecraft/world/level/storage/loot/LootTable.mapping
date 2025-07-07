@@ -43,7 +43,7 @@ CLASS net/minecraft/world/level/storage/loot/LootTable
 		ARG 1 params
 		ARG 2 output
 	METHOD lambda$createStackSplitter$0 (Lnet/minecraft/server/level/ServerLevel;Ljava/util/function/Consumer;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 2 itemStack
+		ARG 2 stack
 	METHOD shuffleAndSplitItems (Lit/unimi/dsi/fastutil/objects/ObjectArrayList;ILnet/minecraft/util/RandomSource;)V
 		COMMENT Shuffles items by changing their order and splitting stacks
 		ARG 1 stacks
@@ -54,7 +54,7 @@ CLASS net/minecraft/world/level/storage/loot/LootTable
 		ARG 1 validator
 	CLASS Builder
 		METHOD setParamSet (Lnet/minecraft/world/level/storage/loot/parameters/LootContextParamSet;)Lnet/minecraft/world/level/storage/loot/LootTable$Builder;
-			ARG 1 parameterSet
+			ARG 1 paramSet
 		METHOD setRandomSequence (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/level/storage/loot/LootTable$Builder;
 			ARG 1 randomSequence
 		METHOD withPool (Lnet/minecraft/world/level/storage/loot/LootPool$Builder;)Lnet/minecraft/world/level/storage/loot/LootTable$Builder;

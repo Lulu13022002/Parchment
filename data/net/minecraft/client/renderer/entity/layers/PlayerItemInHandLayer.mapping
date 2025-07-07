@@ -4,5 +4,5 @@ CLASS net/minecraft/client/renderer/entity/layers/PlayerItemInHandLayer
 		ARG 2 stack
 		ARG 3 arm
 		ARG 4 poseStack
-		ARG 5 buffer
-		ARG 6 combinedLight
+		ARG 5 bufferSource
+		ARG 6 packedLight

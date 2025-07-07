@@ -28,7 +28,7 @@ CLASS net/minecraft/Util
 		ARG 0 type
 		ARG 1 choiceName
 	METHOD doPause (Ljava/lang/String;)V
-		ARG 0 msg
+		ARG 0 message
 	METHOD executeInSequence ([Ljava/util/function/BooleanSupplier;)Z
 		ARG 0 suppliers
 	METHOD fallibleSequence (Ljava/util/List;Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;
@@ -81,10 +81,10 @@ CLASS net/minecraft/Util
 	METHOD lastOf (Ljava/util/List;)Ljava/lang/Object;
 		ARG 0 list
 	METHOD logAndPauseIfInIde (Ljava/lang/String;)V
-		ARG 0 error
+		ARG 0 message
 	METHOD logAndPauseIfInIde (Ljava/lang/String;Ljava/lang/Throwable;)V
-		ARG 0 msg
-		ARG 1 err
+		ARG 0 message
+		ARG 1 error
 	METHOD make (Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/Object;
 		ARG 0 object
 		ARG 1 consumer

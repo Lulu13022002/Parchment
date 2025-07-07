@@ -15,4 +15,4 @@ CLASS net/minecraft/advancements/critereon/ChanneledLightningTrigger
 		METHOD matches (Ljava/util/Collection;)Z
 			ARG 1 victims
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

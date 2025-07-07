@@ -2,7 +2,7 @@ CLASS net/minecraft/client/gui/screens/worldselection/SelectWorldScreen
 	METHOD <init> (Lnet/minecraft/client/gui/screens/Screen;)V
 		ARG 1 lastScreen
 	METHOD charTyped (CI)Z
-		ARG 1 codePoint
+		ARG 1 character
 		ARG 2 modifiers
 	METHOD keyPressed (III)Z
 		ARG 1 keyCode

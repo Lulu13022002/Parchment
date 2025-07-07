@@ -23,4 +23,4 @@ CLASS net/minecraft/advancements/critereon/BredAnimalsTrigger
 			ARG 2 partnerContext
 			ARG 3 childContext
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

@@ -22,4 +22,4 @@ CLASS net/minecraft/advancements/critereon/ItemDurabilityTrigger
 			ARG 1 item
 			ARG 2 durability
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

@@ -1,6 +1,6 @@
 CLASS net/minecraft/client/resources/DownloadedPackSource
 	METHOD <init> (Ljava/io/File;)V
-		ARG 1 severPackDir
+		ARG 1 serverPackDir
 	METHOD checkHash (Ljava/lang/String;Ljava/io/File;)Z
 		ARG 1 hash
 		ARG 2 file

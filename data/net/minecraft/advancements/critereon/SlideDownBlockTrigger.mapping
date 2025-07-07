@@ -16,6 +16,6 @@ CLASS net/minecraft/advancements/critereon/SlideDownBlockTrigger
 		METHOD matches (Lnet/minecraft/world/level/block/state/BlockState;)Z
 			ARG 1 state
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context
 		METHOD slidesDownBlock (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/advancements/critereon/SlideDownBlockTrigger$TriggerInstance;
 			ARG 0 block

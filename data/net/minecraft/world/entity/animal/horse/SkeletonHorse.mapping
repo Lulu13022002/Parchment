@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/animal/horse/SkeletonHorse
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
 		ARG 1 damageSource
 	METHOD getPassengersRidingOffset ()D
@@ -12,6 +12,6 @@ CLASS net/minecraft/world/entity/animal/horse/SkeletonHorse
 		ARG 1 volume
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setTrap (Z)V
 		ARG 1 isTrap

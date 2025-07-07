@@ -18,7 +18,7 @@ CLASS net/minecraft/client/gui/layouts/LinearLayout
 		METHOD getPrimaryLength (Lnet/minecraft/client/gui/layouts/LayoutElement;)I
 			ARG 1 element
 		METHOD getPrimaryLength (Lnet/minecraft/client/gui/layouts/LinearLayout$ChildContainer;)I
-			ARG 1 cotainer
+			ARG 1 container
 		METHOD getPrimaryPosition (Lnet/minecraft/client/gui/layouts/LayoutElement;)I
 			ARG 1 element
 		METHOD getSecondaryLength (Lnet/minecraft/client/gui/layouts/LayoutElement;)I

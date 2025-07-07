@@ -11,6 +11,6 @@ CLASS net/minecraft/advancements/critereon/TameAnimalTrigger
 		METHOD matches (Lnet/minecraft/world/level/storage/loot/LootContext;)Z
 			ARG 1 lootContext
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context
 		METHOD tamedAnimal (Lnet/minecraft/advancements/critereon/EntityPredicate;)Lnet/minecraft/advancements/critereon/TameAnimalTrigger$TriggerInstance;
 			ARG 0 entityPredicate

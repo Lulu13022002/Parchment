@@ -20,5 +20,4 @@ CLASS net/minecraft/world/inventory/ResultContainer
 	METHOD setRecipeUsed (Lnet/minecraft/world/item/crafting/Recipe;)V
 		ARG 1 recipe
 	METHOD stillValid (Lnet/minecraft/world/entity/player/Player;)Z
-		COMMENT Don't rename this method to canInteractWith due to conflicts with Container
 		ARG 1 player

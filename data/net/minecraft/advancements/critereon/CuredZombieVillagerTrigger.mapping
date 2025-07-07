@@ -14,4 +14,4 @@ CLASS net/minecraft/advancements/critereon/CuredZombieVillagerTrigger
 			ARG 1 zombie
 			ARG 2 villager
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

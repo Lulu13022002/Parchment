@@ -13,11 +13,11 @@ CLASS net/minecraft/network/Connection
 	METHOD <init> (Lnet/minecraft/network/protocol/PacketFlow;)V
 		ARG 1 receiving
 	METHOD channelActive (Lio/netty/channel/ChannelHandlerContext;)V
-		ARG 1 context
+		ARG 1 ctx
 	METHOD channelInactive (Lio/netty/channel/ChannelHandlerContext;)V
-		ARG 1 context
+		ARG 1 ctx
 	METHOD channelRead0 (Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/protocol/Packet;)V
-		ARG 1 context
+		ARG 1 ctx
 		ARG 2 packet
 	METHOD configureSerialization (Lio/netty/channel/ChannelPipeline;Lnet/minecraft/network/protocol/PacketFlow;)V
 		ARG 0 pipeline
@@ -43,14 +43,14 @@ CLASS net/minecraft/network/Connection
 		COMMENT {@code ClientboundDisconnectPacket}.
 		COMMENT
 		COMMENT Closing the channel this way does not send any disconnection packets, it simply terminates the underlying netty channel.
-		ARG 1 message
+		ARG 1 reason
 	METHOD doSendPacket (Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;Lnet/minecraft/network/ConnectionProtocol;Lnet/minecraft/network/ConnectionProtocol;)V
 		ARG 1 packet
 		ARG 2 sendListener
 		ARG 3 newProtocol
 		ARG 4 currentProtocol
 	METHOD exceptionCaught (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V
-		ARG 1 context
+		ARG 1 ctx
 		ARG 2 exception
 	METHOD flushQueue ()V
 		COMMENT Will iterate through the outboundPacketQueue and dispatch all Packets
@@ -58,7 +58,7 @@ CLASS net/minecraft/network/Connection
 		ARG 0 packet
 		ARG 1 listener
 	METHOD getDisconnectedReason ()Lnet/minecraft/network/chat/Component;
-		COMMENT If this channel is closed, returns the exit message, null otherwise.
+		COMMENT If this channel is closed, returns the exit message, {@code null} otherwise.
 	METHOD getPacketListener ()Lnet/minecraft/network/PacketListener;
 		COMMENT Gets the current handler for processing packets
 	METHOD getReceiving ()Lnet/minecraft/network/protocol/PacketFlow;
@@ -76,7 +76,7 @@ CLASS net/minecraft/network/Connection
 	METHOD isConnecting ()Z
 		COMMENT Returns {@code true} while this connection is still connecting, i.e. {@link #channelActive} has not fired yet.
 	METHOD isMemoryConnection ()Z
-		COMMENT True if this {@code Connection} uses a memory connection (single player game). False may imply both an active TCP connection or simply no active connection at all
+		COMMENT {@code true} if this {@code Connection} uses a memory connection (single player game). {@code false} may imply both an active TCP connection or simply no active connection at all
 	METHOD send (Lnet/minecraft/network/protocol/Packet;)V
 		ARG 1 packet
 	METHOD send (Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketSendListener;)V
@@ -102,7 +102,7 @@ CLASS net/minecraft/network/Connection
 		COMMENT Sets the new connection state and registers which packets this channel may send and receive
 		ARG 1 newState
 	METHOD setReadOnly ()V
-		COMMENT Switches the channel to manual reading modus
+		COMMENT Switches the channel to manual reading mode
 	METHOD setupCompression (IZ)V
 		COMMENT Enables or disables compression for this connection. If {@code threshold} is >= 0 then a {@link CompressionDecoder} and {@link CompressionEncoder}
 		COMMENT are installed in the pipeline or updated if they already exist. If {@code threshold} is < 0 then any such codec are removed.

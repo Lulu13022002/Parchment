@@ -24,10 +24,10 @@ CLASS net/minecraft/client/Screenshot
 		ARG 1 buffer
 		ARG 2 messageConsumer
 	METHOD grab (Ljava/io/File;Ljava/lang/String;Lcom/mojang/blaze3d/pipeline/RenderTarget;Ljava/util/function/Consumer;)V
-		COMMENT Saves a screenshot in the game directory with the given file name (or null to generate a time-stamped name).
+		COMMENT Saves a screenshot in the game directory with the given file name (or {@code null} to generate a time-stamped name).
 		ARG 0 gameDirectory
 		ARG 1 screenshotName
 		ARG 2 buffer
 		ARG 3 messageConsumer
 	METHOD takeScreenshot (Lcom/mojang/blaze3d/pipeline/RenderTarget;)Lcom/mojang/blaze3d/platform/NativeImage;
-		ARG 0 framebuffer
+		ARG 0 frameBuffer

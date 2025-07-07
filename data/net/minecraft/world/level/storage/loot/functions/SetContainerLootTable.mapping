@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/SetContainerLootTable
 	COMMENT LootItemFunction that sets the LootTable and optionally the loot table seed on the stack's {@code BlockEntityTag}. The effect of this is that containers such as chests will receive the given LootTable when placed.
 	METHOD <init> ([Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;Lnet/minecraft/resources/ResourceLocation;JLnet/minecraft/world/level/block/entity/BlockEntityType;)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 name
 		ARG 3 seed
 		ARG 5 type
@@ -21,11 +21,11 @@ CLASS net/minecraft/world/level/storage/loot/functions/SetContainerLootTable
 		ARG 2 seed
 	CLASS Serializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)Lnet/minecraft/world/level/storage/loot/functions/SetContainerLootTable;
-			ARG 1 object
-			ARG 2 deserializationContext
+			ARG 1 json
+			ARG 2 context
 			ARG 3 conditions
 		METHOD serialize (Lcom/google/gson/JsonObject;Lnet/minecraft/world/level/storage/loot/functions/SetContainerLootTable;Lcom/google/gson/JsonSerializationContext;)V
 			COMMENT Serialize the {@link SetContainerLootTable} by putting its data into the JsonObject.
 			ARG 1 json
 			ARG 2 setContainerLootTable
-			ARG 3 serializationContext
+			ARG 3 context

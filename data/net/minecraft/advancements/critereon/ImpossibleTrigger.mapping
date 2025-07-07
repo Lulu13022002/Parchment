@@ -3,8 +3,8 @@ CLASS net/minecraft/advancements/critereon/ImpossibleTrigger
 		ARG 1 playerAdvancements
 		ARG 2 listener
 	METHOD createInstance (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/critereon/ImpossibleTrigger$TriggerInstance;
-		ARG 1 object
-		ARG 2 conditions
+		ARG 1 json
+		ARG 2 context
 	METHOD removePlayerListener (Lnet/minecraft/server/PlayerAdvancements;Lnet/minecraft/advancements/CriterionTrigger$Listener;)V
 		ARG 1 playerAdvancements
 		ARG 2 listener
@@ -12,4 +12,4 @@ CLASS net/minecraft/advancements/critereon/ImpossibleTrigger
 		ARG 1 playerAdvancements
 	CLASS TriggerInstance
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

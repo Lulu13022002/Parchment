@@ -23,4 +23,4 @@ CLASS net/minecraft/advancements/critereon/BeeNestDestroyedTrigger
 			ARG 2 stack
 			ARG 3 numBees
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

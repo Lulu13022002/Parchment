@@ -32,4 +32,4 @@ CLASS net/minecraft/advancements/critereon/InventoryChangeTrigger
 			ARG 4 empty
 			ARG 5 occupied
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

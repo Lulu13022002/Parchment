@@ -4,7 +4,7 @@ CLASS net/minecraft/world/item/ItemCooldowns
 		ARG 2 ticks
 	METHOD getCooldownPercent (Lnet/minecraft/world/item/Item;F)F
 		ARG 1 item
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD isOnCooldown (Lnet/minecraft/world/item/Item;)Z
 		ARG 1 item
 	METHOD onCooldownEnded (Lnet/minecraft/world/item/Item;)V

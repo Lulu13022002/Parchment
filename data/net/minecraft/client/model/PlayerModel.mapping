@@ -11,12 +11,12 @@ CLASS net/minecraft/client/model/PlayerModel
 		ARG 0 part
 	METHOD renderCloak (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;II)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 consumer
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 	METHOD renderEars (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;II)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 consumer
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 	METHOD setAllVisible (Z)V
@@ -27,8 +27,8 @@ CLASS net/minecraft/client/model/PlayerModel
 		ARG 2 limbSwing
 		ARG 3 limbSwingAmount
 		ARG 4 ageInTicks
-		ARG 5 netHeadYaw
-		ARG 6 headPitch
+		ARG 5 deltaYHeadRot
+		ARG 6 xRot
 	METHOD translateToHand (Lnet/minecraft/world/entity/HumanoidArm;Lcom/mojang/blaze3d/vertex/PoseStack;)V
-		ARG 1 side
+		ARG 1 arm
 		ARG 2 poseStack

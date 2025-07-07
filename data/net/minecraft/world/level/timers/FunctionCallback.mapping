@@ -2,7 +2,7 @@ CLASS net/minecraft/world/level/timers/FunctionCallback
 	METHOD <init> (Lnet/minecraft/resources/ResourceLocation;)V
 		ARG 1 functionId
 	METHOD handle (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/world/level/timers/TimerQueue;J)V
-		ARG 1 obj
+		ARG 1 server
 		ARG 2 manager
 		ARG 3 gameTime
 	METHOD lambda$handle$0 (Lnet/minecraft/server/ServerFunctionManager;Lnet/minecraft/commands/CommandFunction;)V

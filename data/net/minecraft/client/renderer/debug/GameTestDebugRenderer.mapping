@@ -9,7 +9,7 @@ CLASS net/minecraft/client/renderer/debug/GameTestDebugRenderer
 		ARG 2 marker
 	METHOD renderMarker (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/core/BlockPos;Lnet/minecraft/client/renderer/debug/GameTestDebugRenderer$Marker;)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 pos
 		ARG 4 marker
 	CLASS Marker

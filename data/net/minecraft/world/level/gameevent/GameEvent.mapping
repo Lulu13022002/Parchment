@@ -47,7 +47,7 @@ CLASS net/minecraft/world/level/gameevent/GameEvent
 	FIELD SHEAR Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT This event is broadcast when a shear is used. This includes disarming tripwires, harvesting honeycombs, carving pumpkins, etc.
 	FIELD SPLASH Lnet/minecraft/world/level/gameevent/GameEvent;
-		COMMENT This event is broadcast wen an entity splashes in the water. This includes boats paddling or hitting bubble columns.
+		COMMENT This event is broadcast when an entity splashes in the water. This includes boats paddling or hitting bubble columns.
 	FIELD STEP Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT This event is broadcast when an entity moves on the ground. This includes entities such as minecarts.
 	FIELD SWIM Lnet/minecraft/world/level/gameevent/GameEvent;
@@ -68,13 +68,13 @@ CLASS net/minecraft/world/level/gameevent/GameEvent
 		ARG 1 eventTag
 	METHOD register (Ljava/lang/String;)Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT Creates a new game event with the default notification radius and then registers it with the game registry.
-		COMMENT @see net.minecraft.core.Registry#GAME_EVENT
+		COMMENT @see net.minecraft.core.registries.BuiltInRegistries#GAME_EVENT
 		COMMENT @return The newly registered game event.
 		ARG 0 name
 			COMMENT The name of the event. This will be used to generate the namespaced identifier for the event.
 	METHOD register (Ljava/lang/String;I)Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT Creates a new game event and then registers it with the game registry.
-		COMMENT @see net.minecraft.core.Registry#GAME_EVENT
+		COMMENT @see net.minecraft.core.registries.BuiltInRegistries#GAME_EVENT
 		COMMENT @return The newly registered game event.
 		ARG 0 name
 			COMMENT The name of the event. This will be used to generate the namespaced identifier for the event.

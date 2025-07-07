@@ -33,7 +33,7 @@ CLASS net/minecraft/world/entity/Display
 		ARG 2 partialTick
 	CLASS ItemDisplay
 		METHOD setItemStack (Lnet/minecraft/world/item/ItemStack;)V
-			ARG 1 itemStack
+			ARG 1 stack
 		METHOD setItemTransform (Lnet/minecraft/world/item/ItemDisplayContext;)V
 			ARG 1 itemTransform
 	CLASS TextDisplay
@@ -45,9 +45,9 @@ CLASS net/minecraft/world/entity/Display
 		METHOD getAlign (B)Lnet/minecraft/world/entity/Display$TextDisplay$Align;
 			ARG 0 flags
 		METHOD loadFlag (BLnet/minecraft/nbt/CompoundTag;Ljava/lang/String;B)B
-			ARG 0 currentValue
+			ARG 0 flags
 			ARG 1 tag
-			ARG 2 flag
+			ARG 2 key
 			ARG 3 mask
 		METHOD setBackgroundColor (I)V
 			ARG 1 backgroundColor
@@ -60,9 +60,9 @@ CLASS net/minecraft/world/entity/Display
 		METHOD setTextOpacity (B)V
 			ARG 1 textOpacity
 		METHOD storeFlag (BLnet/minecraft/nbt/CompoundTag;Ljava/lang/String;B)V
-			ARG 0 currentValue
+			ARG 0 flags
 			ARG 1 tag
-			ARG 2 flag
+			ARG 2 key
 			ARG 3 mask
 		CLASS Align
 			METHOD <init> (Ljava/lang/String;ILjava/lang/String;)V
@@ -73,7 +73,7 @@ CLASS net/minecraft/world/entity/Display
 				ARG 2 maxWidth
 	CLASS BlockDisplay
 		METHOD setBlockState (Lnet/minecraft/world/level/block/state/BlockState;)V
-			ARG 1 blockState
+			ARG 1 state
 	CLASS IntInterpolator
 		METHOD constant (I)Lnet/minecraft/world/entity/Display$IntInterpolator;
 			ARG 0 value

@@ -36,8 +36,8 @@ CLASS com/mojang/blaze3d/vertex/VertexConsumer
 		ARG 3 red
 		ARG 4 green
 		ARG 5 blue
-		ARG 6 combinedLight
-		ARG 7 combinedOverlay
+		ARG 6 packedLight
+		ARG 7 packedOverlay
 	METHOD putBulkData (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/model/BakedQuad;[FFFF[IIZ)V
 		ARG 1 poseEntry
 		ARG 2 quad
@@ -45,8 +45,8 @@ CLASS com/mojang/blaze3d/vertex/VertexConsumer
 		ARG 4 red
 		ARG 5 green
 		ARG 6 blue
-		ARG 7 combinedLights
-		ARG 8 combinedOverlay
+		ARG 7 lightmap
+		ARG 8 packedOverlay
 		ARG 9 mulColor
 	METHOD uv (FF)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 		ARG 1 u

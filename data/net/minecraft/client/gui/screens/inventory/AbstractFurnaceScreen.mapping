@@ -6,13 +6,13 @@ CLASS net/minecraft/client/gui/screens/inventory/AbstractFurnaceScreen
 		ARG 4 title
 		ARG 5 texture
 	METHOD charTyped (CI)Z
-		ARG 1 codePoint
+		ARG 1 character
 		ARG 2 modifiers
 	METHOD hasClickedOutside (DDIII)Z
 		ARG 1 mouseX
 		ARG 3 mouseY
-		ARG 5 guiLeft
-		ARG 6 guiTop
+		ARG 5 leftPos
+		ARG 6 topPos
 		ARG 7 mouseButton
 	METHOD keyPressed (III)Z
 		ARG 1 keyCode
@@ -27,6 +27,6 @@ CLASS net/minecraft/client/gui/screens/inventory/AbstractFurnaceScreen
 	METHOD slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ClickType;)V
 		COMMENT Called when the mouse is clicked over a slot or outside the gui.
 		ARG 1 slot
-		ARG 2 slotId
+		ARG 2 slotIndex
 		ARG 3 mouseButton
 		ARG 4 type

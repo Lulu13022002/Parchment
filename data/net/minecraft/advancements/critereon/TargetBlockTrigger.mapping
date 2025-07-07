@@ -16,7 +16,7 @@ CLASS net/minecraft/advancements/critereon/TargetBlockTrigger
 			ARG 2 vector
 			ARG 3 signalStrength
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context
 		METHOD targetHit (Lnet/minecraft/advancements/critereon/MinMaxBounds$Ints;Lnet/minecraft/advancements/critereon/ContextAwarePredicate;)Lnet/minecraft/advancements/critereon/TargetBlockTrigger$TriggerInstance;
 			ARG 0 signalStrength
 			ARG 1 projectile

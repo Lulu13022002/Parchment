@@ -3,7 +3,7 @@ CLASS net/minecraft/client/player/AbstractClientPlayer
 		ARG 1 clientLevel
 		ARG 2 gameProfile
 	METHOD getDeltaMovementLerped (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 patialTick
+		ARG 1 partialTick
 	METHOD getElytraTextureLocation ()Lnet/minecraft/resources/ResourceLocation;
 		COMMENT Gets the special Elytra texture for the player.
 	METHOD getSkinLocation (Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;

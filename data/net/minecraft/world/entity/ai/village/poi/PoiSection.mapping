@@ -7,7 +7,7 @@ CLASS net/minecraft/world/entity/ai/village/poi/PoiSection
 		ARG 3 records
 	METHOD add (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Holder;)V
 		ARG 1 pos
-		ARG 2 type
+		ARG 2 poiType
 	METHOD add (Lnet/minecraft/world/entity/ai/village/poi/PoiRecord;)Z
 		ARG 1 record
 	METHOD codec (Ljava/lang/Runnable;)Lcom/mojang/serialization/Codec;
