@@ -57,7 +57,7 @@ CLASS net/minecraft/client/renderer/blockentity/BeaconRenderer
 		ARG 0 poseStack
 		ARG 1 nodeCollector
 		ARG 2 location
-		ARG 3 partialTick
+		ARG 3 textureScale
 		ARG 4 animationTime
 		ARG 5 yOffset
 		ARG 6 height

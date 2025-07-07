@@ -171,7 +171,7 @@ CLASS net/minecraft/util/Util
 	METHOD localizedDateFormatter (Ljava/time/format/FormatStyle;)Ljava/time/format/DateTimeFormatter;
 		ARG 0 style
 	METHOD logAndPauseIfInIde (Ljava/lang/String;)V
-		ARG 0 error
+		ARG 0 message
 	METHOD logAndPauseIfInIde (Ljava/lang/String;Ljava/lang/Throwable;)V
 		ARG 0 message
 		ARG 1 error

@@ -63,7 +63,7 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			ARG 4 name
 			ARG 5 isRecessive
 		METHOD byId (I)Lnet/minecraft/world/entity/animal/Panda$Gene;
-			ARG 0 index
+			ARG 0 id
 		METHOD byId (I)Lnet/minecraft/world/entity/animal/panda/Panda$Gene;
 			ARG 0 id
 		METHOD getRandom (Lnet/minecraft/util/RandomSource;)Lnet/minecraft/world/entity/animal/Panda$Gene;
@@ -90,7 +90,7 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 	CLASS PandaAvoidGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;Ljava/lang/Class;FDD)V
 			ARG 1 panda
-			ARG 2 entityClassToAvoid
+			ARG 2 avoidClass
 			ARG 3 maxDist
 			ARG 4 walkSpeedModifier
 			ARG 6 sprintSpeedModifier
@@ -114,7 +114,7 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 	CLASS PandaHurtByTargetGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;[Ljava/lang/Class;)V
 			ARG 1 panda
-			ARG 2 entityClassToIgnoreDamage
+			ARG 2 toIgnoreDamage
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;[Ljava/lang/Class;)V
 			ARG 1 panda
 			ARG 2 toIgnoreDamage
@@ -122,14 +122,14 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			ARG 1 mob
 			ARG 2 target
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress {@code Goal} should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 	CLASS PandaLieOnBackGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;)V
 			ARG 1 panda
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
 			ARG 1 panda
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -146,7 +146,7 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			ARG 2 lookAtType
 			ARG 3 lookDistance
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD lambda$canUse$0 (Lnet/minecraft/world/entity/LivingEntity;)Z
@@ -168,21 +168,21 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			ARG 1 panda
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 	CLASS PandaRollGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;)V
 			ARG 1 panda
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
 			ARG 1 panda
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
 			COMMENT Execute a one shot task or start executing a continuous task
 	CLASS PandaSitGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -197,7 +197,7 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
 			ARG 1 panda
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V

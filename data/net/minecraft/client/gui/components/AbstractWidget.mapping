@@ -22,8 +22,8 @@ CLASS net/minecraft/client/gui/components/AbstractWidget
 		ARG 2 isDoubleClick
 	METHOD onDrag (Lnet/minecraft/client/input/MouseButtonEvent;DD)V
 		ARG 1 event
-		ARG 2 mouseX
-		ARG 4 mouseY
+		ARG 2 dragX
+		ARG 4 dragY
 	METHOD onRelease (Lnet/minecraft/client/input/MouseButtonEvent;)V
 		ARG 1 event
 	METHOD playButtonClickSound (Lnet/minecraft/client/sounds/SoundManager;)V

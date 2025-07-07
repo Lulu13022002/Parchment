@@ -12,7 +12,7 @@ CLASS net/minecraft/server/commands/GameRuleCommand
 		ARG 0 dispatcher
 		ARG 1 commandBuildContext
 	METHOD setRule (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/world/level/GameRules$Key;)I
-		ARG 0 source
+		ARG 0 context
 		ARG 1 gameRule
 	METHOD setRule (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/world/level/gamerules/GameRule;)I
 		ARG 0 context

@@ -5,7 +5,7 @@ CLASS net/minecraft/world/RandomSequences
 		ARG 3 includeSequenceId
 		ARG 4 sequences
 	METHOD <init> (J)V
-		ARG 1 seed
+		ARG 1 worldSeed
 	METHOD <init> (JIZZLjava/util/Map;)V
 		ARG 1 worldSeed
 		ARG 3 salt

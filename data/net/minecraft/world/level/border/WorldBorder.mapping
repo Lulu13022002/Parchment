@@ -6,7 +6,7 @@ CLASS net/minecraft/world/level/border/WorldBorder
 	METHOD applyInitialSettings (J)V
 		ARG 1 lerpBegin
 	METHOD applySettings (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 serializer
+		ARG 1 settings
 	METHOD clampToBounds (DDD)Lnet/minecraft/core/BlockPos;
 		ARG 1 x
 		ARG 3 y
@@ -80,7 +80,7 @@ CLASS net/minecraft/world/level/border/WorldBorder
 	METHOD setSize (D)V
 		ARG 1 size
 	METHOD setWarningBlocks (I)V
-		ARG 1 warningDistance
+		ARG 1 warningBlocks
 	METHOD setWarningTime (I)V
 		ARG 1 warningTime
 	CLASS BorderExtent

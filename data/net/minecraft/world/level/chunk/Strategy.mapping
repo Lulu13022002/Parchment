@@ -7,7 +7,7 @@ CLASS net/minecraft/world/level/chunk/Strategy
 	METHOD createForBlockStates (Lnet/minecraft/core/IdMap;)Lnet/minecraft/world/level/chunk/Strategy;
 		ARG 0 idMap
 	METHOD getConfigurationForBitCount (I)Lnet/minecraft/world/level/chunk/Configuration;
-		ARG 1 bitCount
+		ARG 1 bits
 	METHOD getConfigurationForPaletteSize (I)Lnet/minecraft/world/level/chunk/Configuration;
 		ARG 1 paletteSize
 	METHOD getIndex (III)I

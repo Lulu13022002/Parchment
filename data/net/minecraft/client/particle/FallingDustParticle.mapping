@@ -12,4 +12,4 @@ CLASS net/minecraft/client/particle/FallingDustParticle
 		ARG 1 scaleFactor
 	CLASS Provider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
-			ARG 1 sprites
+			ARG 1 sprite

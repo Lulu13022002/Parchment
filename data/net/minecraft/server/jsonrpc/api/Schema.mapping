@@ -1,8 +1,8 @@
 CLASS net/minecraft/server/jsonrpc/api/Schema
 	METHOD arrayOf (Lnet/minecraft/server/jsonrpc/api/Schema;)Lnet/minecraft/server/jsonrpc/api/Schema;
-		ARG 0 schema
+		ARG 0 items
 	METHOD arrayOf (Lnet/minecraft/server/jsonrpc/api/Schema;Lcom/mojang/serialization/Codec;)Lnet/minecraft/server/jsonrpc/api/Schema;
-		ARG 0 schema
+		ARG 0 items
 		ARG 1 codec
 	METHOD lambda$static$0 (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 1 instance

@@ -5,7 +5,7 @@ CLASS net/minecraft/world/level/storage/loot/functions/FilteredFunction
 		ARG 3 onPass
 		ARG 4 onFail
 	METHOD <init> (Ljava/util/List;Lnet/minecraft/advancements/critereon/ItemPredicate;Lnet/minecraft/world/level/storage/loot/functions/LootItemFunction;)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 filter
 		ARG 3 modifier
 	METHOD <init> (Ljava/util/List;Lnet/minecraft/advancements/criterion/ItemPredicate;Ljava/util/Optional;Ljava/util/Optional;)V
