@@ -10,7 +10,7 @@ CLASS net/minecraft/network/protocol/game/ClientboundCommandsPacket
 	METHOD getRoot (Lnet/minecraft/commands/CommandBuildContext;)Lcom/mojang/brigadier/tree/RootCommandNode;
 		ARG 1 context
 	METHOD handle (Lnet/minecraft/network/protocol/game/ClientGamePacketListener;)V
-		COMMENT Passes this Packet on to the NetHandler for processing.
+		COMMENT Passes this Packet on to the packet listener for processing.
 		ARG 1 handler
 	METHOD read (Lnet/minecraft/network/FriendlyByteBuf;B)Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;
 		ARG 0 buffer

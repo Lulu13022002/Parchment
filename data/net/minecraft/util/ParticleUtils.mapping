@@ -3,4 +3,4 @@ CLASS net/minecraft/util/ParticleUtils
 		ARG 0 axis
 		ARG 1 level
 		ARG 2 pos
-		ARG 5 particle
+		ARG 5 options

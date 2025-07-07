@@ -34,7 +34,7 @@ CLASS net/minecraft/world/entity/ai/attributes/AttributeMap
 		ARG 1 attribute
 		ARG 2 modifiers
 	METHOD load (Lnet/minecraft/nbt/ListTag;)V
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD onAttributeModified (Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;)V
 		ARG 1 instance
 	METHOD removeAttributeModifiers (Lcom/google/common/collect/Multimap;)V

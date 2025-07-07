@@ -17,7 +17,7 @@ CLASS net/minecraft/world/level/gameevent/PositionSourceType
 			COMMENT The byte buffer to read from.
 	METHOD register (Ljava/lang/String;Lnet/minecraft/world/level/gameevent/PositionSourceType;)Lnet/minecraft/world/level/gameevent/PositionSourceType;
 		COMMENT Registers a new PositionSource type with the game registry.
-		COMMENT @see net.minecraft.core.Registry#POSITION_SOURCE_TYPE
+		COMMENT @see net.minecraft.core.registries.BuiltInRegistries#POSITION_SOURCE_TYPE
 		COMMENT @return The newly registered source type.
 		ARG 0 id
 			COMMENT The Id to register the type to.

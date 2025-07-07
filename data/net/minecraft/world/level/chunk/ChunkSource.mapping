@@ -8,7 +8,7 @@ CLASS net/minecraft/world/level/chunk/ChunkSource
 		ARG 2 chunkZ
 		ARG 3 requiredStatus
 		ARG 4 load
-			COMMENT If this should force a chunk load. When {@code false}, this will return null if the chunk is not loaded.
+			COMMENT If this should force a chunk load. When {@code false}, this will return {@code null} if the chunk is not loaded.
 	METHOD getChunk (IIZ)Lnet/minecraft/world/level/chunk/LevelChunk;
 		ARG 1 chunkX
 		ARG 2 chunkZ
@@ -24,7 +24,7 @@ CLASS net/minecraft/world/level/chunk/ChunkSource
 		ARG 1 hostile
 		ARG 2 peaceful
 	METHOD tick (Ljava/util/function/BooleanSupplier;Z)V
-		ARG 1 hasTimeLeft
+		ARG 1 haveTime
 		ARG 2 tickChunks
 	METHOD updateChunkForced (Lnet/minecraft/world/level/ChunkPos;Z)V
 		ARG 1 pos

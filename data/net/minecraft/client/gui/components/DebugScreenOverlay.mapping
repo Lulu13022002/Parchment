@@ -11,7 +11,7 @@ CLASS net/minecraft/client/gui/components/DebugScreenOverlay
 		ARG 1 poseStack
 		ARG 2 frameTimer
 		ARG 5 drawForFps
-			COMMENT If set to true, will draw debugChart for FPS. If set to false, will draw for TPS.
+			COMMENT If set to {@code true}, will draw debugChart for FPS. If set to {@code false}, will draw for TPS.
 	METHOD drawGameInformation (Lcom/mojang/blaze3d/vertex/PoseStack;)V
 		ARG 1 poseStack
 	METHOD drawSystemInformation (Lcom/mojang/blaze3d/vertex/PoseStack;)V

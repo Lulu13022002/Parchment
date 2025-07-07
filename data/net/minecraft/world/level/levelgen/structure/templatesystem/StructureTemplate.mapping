@@ -76,13 +76,13 @@ CLASS net/minecraft/world/level/levelgen/structure/templatesystem/StructureTempl
 	METHOD newIntegerList ([I)Lnet/minecraft/nbt/ListTag;
 		ARG 1 values
 	METHOD placeEntities (Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Mirror;Lnet/minecraft/world/level/block/Rotation;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Z)V
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 3 mirror
 		ARG 4 rotation
 		ARG 6 boundingBox
 		ARG 7 withEntities
 	METHOD placeInWorld (Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings;Lnet/minecraft/util/RandomSource;I)Z
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 pos
 		ARG 4 settings
 		ARG 5 random

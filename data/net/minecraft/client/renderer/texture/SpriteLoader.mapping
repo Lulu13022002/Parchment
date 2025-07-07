@@ -9,7 +9,7 @@ CLASS net/minecraft/client/renderer/texture/SpriteLoader
 	METHOD lambda$loadAndStitch$7 (ILjava/util/concurrent/Executor;Ljava/util/List;)Lnet/minecraft/client/renderer/texture/SpriteLoader$Preparations;
 		ARG 3 contents
 	METHOD loadAndStitch (Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/resources/ResourceLocation;ILjava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;
-		ARG 1 resouceManager
+		ARG 1 resourceManager
 		ARG 2 location
 		ARG 3 mipLevel
 		ARG 4 executor

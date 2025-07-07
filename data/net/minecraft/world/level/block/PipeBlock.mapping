@@ -15,5 +15,5 @@ CLASS net/minecraft/world/level/block/PipeBlock
 		ARG 1 apothem
 	METHOD propagatesSkylightDown (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 state
-		ARG 2 reader
+		ARG 2 level
 		ARG 3 pos

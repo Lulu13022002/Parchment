@@ -17,7 +17,7 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 	METHOD getServerName ()Ljava/lang/String;
 		COMMENT Returns the server message of the day
 	METHOD getServerPort ()I
-		COMMENT Never used, but "getServerPort" is already taken.
+		COMMENT Returns the server's port.
 	METHOD getSpawnProtectionRadius ()I
 		COMMENT Return the spawn protection area's size.
 	METHOD handleConsoleInput (Ljava/lang/String;Lnet/minecraft/commands/CommandSourceStack;)V
@@ -30,7 +30,7 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 	METHOD isEpollEnabled ()Z
 		COMMENT Get if native transport should be used. Native transport means linux server performance improvements and optimized packet sending/receiving on linux
 	METHOD isHardcore ()Z
-		COMMENT Defaults to false.
+		COMMENT Defaults to {@code false}.
 	METHOD isPublished ()Z
 		COMMENT Returns {@code true} if this integrated server is open to LAN
 	METHOD isSingleplayerOwner (Lcom/mojang/authlib/GameProfile;)Z
@@ -42,11 +42,11 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 	METHOD onServerExit ()V
 		COMMENT Directly calls System.exit(0), instantly killing the program.
 	METHOD runCommand (Ljava/lang/String;)Ljava/lang/String;
-		COMMENT Handle a command received by an RCon instance
+		COMMENT Handle a command received by a RconClient instance
 		ARG 1 command
 	METHOD setPlayerIdleTimeout (I)V
 		ARG 1 idleTimeout
 	METHOD stopServer ()V
 		COMMENT Saves all necessary data as preparation for stopping the server.
 	METHOD tickChildren (Ljava/util/function/BooleanSupplier;)V
-		ARG 1 hasTimeLeft
+		ARG 1 haveTime

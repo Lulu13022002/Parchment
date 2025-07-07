@@ -39,7 +39,7 @@ CLASS net/minecraft/world/level/chunk/ChunkStatus
 		ARG 4 loadingChunk
 	METHOD lambda$static$10 (Lnet/minecraft/world/level/chunk/ChunkStatus;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ChunkGenerator;Ljava/util/List;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		ARG 0 status
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 chunkGenerator
 		ARG 3 cache
 		ARG 4 loadingChunk
@@ -51,13 +51,13 @@ CLASS net/minecraft/world/level/chunk/ChunkStatus
 		ARG 4 loadingChunk
 	METHOD lambda$static$16 (Lnet/minecraft/world/level/chunk/ChunkStatus;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ChunkGenerator;Ljava/util/List;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		ARG 0 status
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 generator
 		ARG 3 cache
 		ARG 4 loadingChunk
 	METHOD lambda$static$4 (Lnet/minecraft/world/level/chunk/ChunkStatus;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ChunkGenerator;Ljava/util/List;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		ARG 0 status
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 chunkGenerator
 		ARG 3 cache
 		ARG 4 loadingChunk
@@ -67,7 +67,7 @@ CLASS net/minecraft/world/level/chunk/ChunkStatus
 		ARG 1 proto
 	METHOD lambda$static$9 (Lnet/minecraft/world/level/chunk/ChunkStatus;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ChunkGenerator;Ljava/util/List;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		ARG 0 status
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 chunkGenerator
 		ARG 3 cache
 		ARG 4 loadingChunk

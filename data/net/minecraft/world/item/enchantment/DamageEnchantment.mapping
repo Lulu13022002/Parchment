@@ -8,14 +8,14 @@ CLASS net/minecraft/world/item/enchantment/DamageEnchantment
 		ARG 1 stack
 	METHOD checkCompatibility (Lnet/minecraft/world/item/enchantment/Enchantment;)Z
 		COMMENT Determines if the enchantment passed can be applied together with this enchantment.
-		ARG 1 ench
+		ARG 1 enchantment
 	METHOD doPostAttack (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/Entity;I)V
 		COMMENT Called whenever a mob is damaged with an item that has this enchantment on it.
 		ARG 1 user
 		ARG 2 target
 		ARG 3 level
 	METHOD getDamageBonus (ILnet/minecraft/world/entity/MobType;)F
-		COMMENT Calculates the additional damage that will be dealt by an item with this enchantment. This alternative to calcModifierDamage is sensitive to the targets EnumCreatureAttribute.
+		COMMENT Calculates the amount of additional damage to deal when attacking with an item with the enchantment.
 		ARG 1 level
 		ARG 2 creatureType
 	METHOD getMaxCost (I)I

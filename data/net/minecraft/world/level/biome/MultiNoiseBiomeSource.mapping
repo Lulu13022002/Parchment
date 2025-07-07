@@ -11,7 +11,7 @@ CLASS net/minecraft/world/level/biome/MultiNoiseBiomeSource
 	METHOD lambda$static$1 (Lnet/minecraft/world/level/biome/MultiNoiseBiomeSource;)Lnet/minecraft/world/level/biome/Climate$ParameterList;
 		ARG 0 multiSource
 	METHOD lambda$static$2 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 0 directInstance
+		ARG 0 instance
 	METHOD lambda$static$3 (Lcom/mojang/datafixers/util/Either;)Lnet/minecraft/world/level/biome/MultiNoiseBiomeSource;
 		ARG 0 either
 	METHOD lambda$static$5 (Lnet/minecraft/world/level/biome/MultiNoiseBiomeSource;)Lcom/mojang/datafixers/util/Either;
@@ -31,4 +31,4 @@ CLASS net/minecraft/world/level/biome/MultiNoiseBiomeSource
 		METHOD lambda$static$2 (Lnet/minecraft/world/level/biome/MultiNoiseBiomeSource$Preset;)Lcom/mojang/serialization/DataResult;
 			ARG 0 data
 		METHOD lambda$static$3 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance

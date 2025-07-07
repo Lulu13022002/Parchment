@@ -17,7 +17,7 @@ CLASS net/minecraft/core/RegistrySetBuilder
 		METHOD addOwner (Lnet/minecraft/core/HolderOwner;)V
 			ARG 1 owner
 		METHOD fillMissingHolders (Lnet/minecraft/core/HolderLookup$Provider;)V
-			ARG 1 originial
+			ARG 1 original
 	CLASS CompositeOwner
 		METHOD add (Lnet/minecraft/core/HolderOwner;)V
 			ARG 1 owner
