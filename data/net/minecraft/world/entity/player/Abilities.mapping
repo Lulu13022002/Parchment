@@ -1,8 +1,8 @@
 CLASS net/minecraft/world/entity/player/Abilities
 	METHOD addSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD loadSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setFlyingSpeed (F)V
 		ARG 1 flyingSpeed
 	METHOD setWalkingSpeed (F)V

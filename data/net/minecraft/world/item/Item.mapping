@@ -16,13 +16,13 @@ CLASS net/minecraft/world/item/Item
 		ARG 3 pos
 		ARG 4 player
 	METHOD finishUsingItem (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;
-		COMMENT Called when the player finishes using this Item (E.g. finishes eating.). Not called when the player stops using the Item before the action is complete.
+		COMMENT Called when the player finishes using this Item (e.g. finishes eating). Not called when the player stops using the Item before the action is complete.
 		ARG 1 stack
 		ARG 2 level
 		ARG 3 livingEntity
 	METHOD getAttackDamageBonus (Lnet/minecraft/world/entity/Entity;FLnet/minecraft/world/damagesource/DamageSource;)F
 		ARG 1 target
-		ARG 2 damage
+		ARG 2 damageAmount
 		ARG 3 damageSource
 	METHOD getBarColor (Lnet/minecraft/world/item/ItemStack;)I
 		ARG 1 stack
@@ -55,7 +55,7 @@ CLASS net/minecraft/world/item/Item
 		ARG 1 stack
 		ARG 2 entity
 	METHOD hasCraftingRemainingItem ()Z
-		COMMENT True if this Item has a container item (a.k.a. crafting result)
+		COMMENT {@code true} if this Item has a container item (a.k.a. crafting result)
 	METHOD hurtEnemy (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z
 		COMMENT Current implementations of this method in child classes do not use the entry argument beside ev. They just raise the damage on the stack.
 		ARG 1 stack
@@ -72,7 +72,7 @@ CLASS net/minecraft/world/item/Item
 		ARG 1 stack
 		ARG 2 level
 		ARG 3 entity
-		ARG 4 slotId
+		ARG 4 slotIndex
 		ARG 5 isSelected
 	METHOD isBarVisible (Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 1 stack
@@ -82,19 +82,19 @@ CLASS net/minecraft/world/item/Item
 		ARG 1 stack
 		ARG 2 state
 	METHOD isEnchantable (Lnet/minecraft/world/item/ItemStack;)Z
-		COMMENT Checks isDamagable and if it cannot be stacked
+		COMMENT Checks canBeDepleted and if it cannot be stacked
 		ARG 1 stack
 	METHOD isFoil (Lnet/minecraft/world/item/ItemStack;)Z
-		COMMENT Returns {@code true} if this item has an enchantment glint. By default, this returns {@code stack.isEnchanted()}, but other items can override it (for instance, written books always return true).
+		COMMENT Returns {@code true} if this item has an enchantment glint. By default, this returns {@code stack.isEnchanted()}, but other items can override it (for instance, written books always return {@code true}).
 		COMMENT
-		COMMENT Note that if you override this method, you generally want to also call the super version (on {@link Item}) to get the glint for enchanted items. Of course, that is unnecessary if the overwritten version always returns true.
+		COMMENT Note that if you override this method, you generally want to also call the super version (on {@link Item}) to get the glint for enchanted items. Of course, that is unnecessary if the overwritten version always returns {@code true}.
 		ARG 1 stack
 	METHOD isValidRepairItem (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z
 		COMMENT Return whether this item is repairable in an anvil.
 		ARG 1 stack
 		ARG 2 repairCandidate
 	METHOD mineBlock (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/LivingEntity;)Z
-		COMMENT Called when a {@link net.minecraft.world.level.block.Block} is destroyed using this Item. Return {@code true} to trigger the "Use Item" statistic.
+		COMMENT Called when a {@link net.minecraft.world.level.block.Block} is destroyed using this Item. Return {@code true} to trigger the "Used Item" statistic.
 		ARG 1 stack
 		ARG 2 level
 		ARG 3 state

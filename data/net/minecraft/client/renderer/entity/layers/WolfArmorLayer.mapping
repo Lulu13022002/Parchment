@@ -4,12 +4,12 @@ CLASS net/minecraft/client/renderer/entity/layers/WolfArmorLayer
 		ARG 2 models
 	METHOD maybeRenderColoredLayer (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/AnimalArmorItem;)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 armorStack
 		ARG 5 armorItem
 	METHOD maybeRenderCracks (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/ItemStack;)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 armorStack

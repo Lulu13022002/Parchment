@@ -11,7 +11,7 @@ CLASS net/minecraft/world/entity/EquipmentSlot
 		ARG 5 filterFlag
 		ARG 6 name
 	METHOD byName (Ljava/lang/String;)Lnet/minecraft/world/entity/EquipmentSlot;
-		ARG 0 targetName
+		ARG 0 name
 	METHOD getFilterFlag ()I
 		COMMENT Gets the actual slot index.
 	METHOD getIndex (I)I

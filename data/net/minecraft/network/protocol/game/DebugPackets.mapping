@@ -33,7 +33,7 @@ CLASS net/minecraft/network/protocol/game/DebugPackets
 	METHOD sendHiveInfo (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity;)V
 		ARG 0 level
 		ARG 1 pos
-		ARG 2 blockState
+		ARG 2 state
 		ARG 3 hiveBlockEntity
 	METHOD sendNeighborsUpdatePacket (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
 		ARG 0 level

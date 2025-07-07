@@ -4,8 +4,8 @@ CLASS net/minecraft/client/renderer/entity/SquidRenderer
 		ARG 2 model
 	METHOD getBob (Lnet/minecraft/world/entity/animal/Squid;F)F
 		COMMENT Defines what float the third param in setRotationAngles of ModelBase is
-		ARG 1 livingBase
-		ARG 2 partialTicks
+		ARG 1 livingEntity
+		ARG 2 partialTick
 	METHOD getTextureLocation (Lnet/minecraft/world/entity/animal/Squid;)Lnet/minecraft/resources/ResourceLocation;
 		COMMENT Returns the location of an entity's texture.
 		ARG 1 entity

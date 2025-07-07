@@ -4,9 +4,9 @@ CLASS net/minecraft/world/entity/ai/navigation/GroundPathNavigation
 	METHOD createPath (Lnet/minecraft/core/BlockPos;I)Lnet/minecraft/world/level/pathfinder/Path;
 		COMMENT Returns path to given BlockPos
 		ARG 1 pos
-		ARG 2 accuracy
+		ARG 2 reachRange
 	METHOD createPath (Lnet/minecraft/world/entity/Entity;I)Lnet/minecraft/world/level/pathfinder/Path;
-		COMMENT Returns a path to the given entity or null
+		COMMENT Returns a path to the given entity or {@code null}
 		ARG 1 entity
 	METHOD getSurfaceY ()I
 		COMMENT Gets the safe pathing Y position for the entity depending on if it can path swim or not

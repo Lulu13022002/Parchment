@@ -5,9 +5,9 @@ CLASS net/minecraft/client/renderer/entity/EnderDragonRenderer
 	METHOD render (Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 entity
 		ARG 2 entityYaw
-		ARG 3 partialTicks
+		ARG 3 partialTick
 		ARG 4 poseStack
-		ARG 5 buffer
+		ARG 5 bufferSource
 		ARG 6 packedLight
 	METHOD renderCrystalBeams (FFFFILcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 0 x
@@ -21,7 +21,7 @@ CLASS net/minecraft/client/renderer/entity/EnderDragonRenderer
 	METHOD renderRays (Lcom/mojang/blaze3d/vertex/PoseStack;FLcom/mojang/blaze3d/vertex/VertexConsumer;)V
 		ARG 0 poseStack
 		ARG 1 dragonDeathCompletion
-		ARG 2 buffer
+		ARG 2 consumer
 	CLASS DragonModel
 		METHOD <init> (Lnet/minecraft/client/model/geom/ModelPart;)V
 			ARG 1 root
@@ -32,7 +32,7 @@ CLASS net/minecraft/client/renderer/entity/EnderDragonRenderer
 			ARG 4 partialTick
 		METHOD renderSide (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFLnet/minecraft/client/model/geom/ModelPart;Lnet/minecraft/client/model/geom/ModelPart;Lnet/minecraft/client/model/geom/ModelPart;Lnet/minecraft/client/model/geom/ModelPart;Lnet/minecraft/client/model/geom/ModelPart;Lnet/minecraft/client/model/geom/ModelPart;Lnet/minecraft/client/model/geom/ModelPart;I)V
 			ARG 1 poseStack
-			ARG 2 buffer
+			ARG 2 consumer
 			ARG 3 packedLight
 			ARG 4 packedOverlay
 			ARG 5 rotation
@@ -50,5 +50,5 @@ CLASS net/minecraft/client/renderer/entity/EnderDragonRenderer
 			ARG 2 limbSwing
 			ARG 3 limbSwingAmount
 			ARG 4 ageInTicks
-			ARG 5 netHeadYaw
-			ARG 6 headPitch
+			ARG 5 deltaYHeadRot
+			ARG 6 xRot

@@ -9,7 +9,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 1 pos
 		ARG 2 side
 	METHOD createParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
@@ -18,10 +18,10 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 12 zSpeed
 	METHOD createTrackingEmitter (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/particles/ParticleOptions;)V
 		ARG 1 entity
-		ARG 2 particleData
+		ARG 2 options
 	METHOD createTrackingEmitter (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/particles/ParticleOptions;I)V
 		ARG 1 entity
-		ARG 2 data
+		ARG 2 options
 		ARG 3 lifetime
 	METHOD destroy (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
@@ -36,7 +36,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 11 maxY
 		ARG 13 maxZ
 	METHOD lambda$register$2 (Lnet/minecraft/client/particle/ParticleProvider$Sprite;Lnet/minecraft/client/particle/SpriteSet;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 2 particleType
+		ARG 2 options
 		ARG 3 level
 		ARG 4 xo
 		ARG 6 yo
@@ -63,7 +63,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 	METHOD lambda$reload$7 (Ljava/util/concurrent/Executor;Ljava/util/Map;)Ljava/util/concurrent/CompletionStage;
 		ARG 2 resources
 	METHOD lambda$reload$8 (Lnet/minecraft/client/renderer/texture/SpriteLoader$Preparations;Ljava/util/Set;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;Lnet/minecraft/client/particle/ParticleEngine$1ParticleDefinition;)V
-		ARG 4 altas
+		ARG 4 atlas
 	METHOD lambda$reload$9 (Lnet/minecraft/util/profiling/ProfilerFiller;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/CompletableFuture;Ljava/lang/Void;)V
 		ARG 1 profiler
 	METHOD lambda$tick$10 (Lnet/minecraft/client/particle/ParticleRenderType;Ljava/util/Queue;)V
@@ -77,7 +77,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 1 registryName
 		ARG 2 resource
 	METHOD makeParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z

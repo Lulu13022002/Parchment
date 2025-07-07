@@ -104,20 +104,20 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 		ARG 0 family
 		ARG 1 variant
 	METHOD getBlastingRecipeName (Lnet/minecraft/world/level/ItemLike;)Ljava/lang/String;
-		ARG 0 itemLike
+		ARG 0 item
 	METHOD getConversionRecipeName (Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/level/ItemLike;)Ljava/lang/String;
 		ARG 0 result
 		ARG 1 ingredient
 	METHOD getHasName (Lnet/minecraft/world/level/ItemLike;)Ljava/lang/String;
-		ARG 0 itemLike
+		ARG 0 item
 	METHOD getItemName (Lnet/minecraft/world/level/ItemLike;)Ljava/lang/String;
-		ARG 0 itemLike
+		ARG 0 item
 	METHOD getName ()Ljava/lang/String;
 		COMMENT Gets a name for this provider, to use in logging.
 	METHOD getSimpleRecipeName (Lnet/minecraft/world/level/ItemLike;)Ljava/lang/String;
-		ARG 0 itemLike
+		ARG 0 item
 	METHOD getSmeltingRecipeName (Lnet/minecraft/world/level/ItemLike;)Ljava/lang/String;
-		ARG 0 itemLike
+		ARG 0 item
 	METHOD grate (Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
 		ARG 0 recipeOutput
 		ARG 1 grateBlock
@@ -132,7 +132,7 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 	METHOD has (Lnet/minecraft/tags/TagKey;)Lnet/minecraft/advancements/Criterion;
 		ARG 0 tag
 	METHOD has (Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/advancements/Criterion;
-		ARG 0 itemLike
+		ARG 0 item
 	METHOD insideOf (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/advancements/Criterion;
 		ARG 0 block
 	METHOD inventoryTrigger ([Lnet/minecraft/advancements/critereon/ItemPredicate$Builder;)Lnet/minecraft/advancements/Criterion;

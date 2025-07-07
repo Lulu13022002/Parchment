@@ -7,7 +7,7 @@ CLASS net/minecraft/client/sounds/MusicManager
 	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
 		ARG 1 minecraft
 	METHOD isPlayingMusic (Lnet/minecraft/sounds/Music;)Z
-		COMMENT {@return {@code true} if the {@linkplain Music} selector is currently playing, {@code false} otherwise}
+		COMMENT @return {@code true} if the {@linkplain Music} selector is currently playing, {@code false} otherwise
 		ARG 1 selector
 			COMMENT the {@linkplain Music} selector to check for
 	METHOD startPlaying (Lnet/minecraft/sounds/Music;)V

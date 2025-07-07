@@ -6,6 +6,6 @@ CLASS net/minecraft/client/renderer/debug/StructureRenderer
 		ARG 2 pieces
 		ARG 3 dimension
 	METHOD lambda$addBoundingBox$0 (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Map;
-		ARG 0 dimension
+		ARG 0 key
 	METHOD lambda$addBoundingBox$1 (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Map;
-		ARG 0 dimension
+		ARG 0 key

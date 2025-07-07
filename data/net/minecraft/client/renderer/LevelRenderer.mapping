@@ -35,7 +35,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 11 alpha
 	METHOD addFrustumQuad (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lorg/joml/Matrix4f;IIIIIII)V
 		ARG 1 consumer
-		ARG 2 matrix
+		ARG 2 pose
 		ARG 3 index1
 		ARG 4 index2
 		ARG 5 index3
@@ -45,7 +45,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 9 blue
 	METHOD addFrustumVertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lorg/joml/Matrix4f;I)V
 		ARG 1 consumer
-		ARG 2 matrix
+		ARG 2 pose
 		ARG 3 vertexIndex
 	METHOD addParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V
 		ARG 1 options
@@ -57,7 +57,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 12 zSpeed
 	METHOD addParticle (Lnet/minecraft/core/particles/ParticleOptions;ZDDDDDD)V
 		ARG 1 options
-		ARG 2 force
+		ARG 2 overrideLimiter
 			COMMENT if {@code true}, the particle will be created regardless of its distance from the camera and the {@linkplain #calculateParticleLevel(boolean) calculated particle level}
 		ARG 3 x
 		ARG 5 y
@@ -67,10 +67,10 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 13 zSpeed
 	METHOD addParticle (Lnet/minecraft/core/particles/ParticleOptions;ZZDDDDDD)V
 		ARG 1 options
-		ARG 2 force
+		ARG 2 overrideLimiter
 			COMMENT if {@code true}, the particle will be created regardless of its distance from the camera and the {@linkplain #calculateParticleLevel(boolean) calculated particle level}
 		ARG 3 decreased
-			COMMENT if {@code true}, and the {@linkplain net.minecraft.client.Options#particles particles option} is set to minimal, attempts to spawn the particle at a decreased level
+			COMMENT if {@code true}, and the Options#particles is set to minimal, attempts to spawn the particle at a decreased level
 		ARG 4 x
 		ARG 6 y
 		ARG 8 z
@@ -79,7 +79,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 14 zSpeed
 	METHOD addParticleInternal (Lnet/minecraft/core/particles/ParticleOptions;ZDDDDDD)Lnet/minecraft/client/particle/Particle;
 		ARG 1 options
-		ARG 2 force
+		ARG 2 overrideLimiter
 			COMMENT if {@code true}, the particle will be created regardless of its distance from the camera and the {@linkplain #calculateParticleLevel(boolean) calculated particle level}
 		ARG 3 x
 		ARG 5 y
@@ -89,10 +89,10 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 13 zSpeed
 	METHOD addParticleInternal (Lnet/minecraft/core/particles/ParticleOptions;ZZDDDDDD)Lnet/minecraft/client/particle/Particle;
 		ARG 1 options
-		ARG 2 force
+		ARG 2 overrideLimiter
 			COMMENT if {@code true}, the particle will be created regardless of its distance from the camera and the {@linkplain #calculateParticleLevel(boolean) calculated particle level}
 		ARG 3 decreased
-			COMMENT if {@code true}, and the {@linkplain net.minecraft.client.Options#particles particles option} is set to minimal, attempts to spawn the particle at a decreased level
+			COMMENT if {@code true}, and the Options#particles is set to minimal, attempts to spawn the particle at a decreased level
 		ARG 4 x
 		ARG 6 y
 		ARG 8 z
@@ -130,7 +130,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 3 camX
 		ARG 5 camY
 		ARG 7 camZ
-		ARG 9 capturedFrustrum
+		ARG 9 capturedFrustum
 	METHOD checkPoseStack (Lcom/mojang/blaze3d/vertex/PoseStack;)V
 		COMMENT Asserts that the specified {@code poseStack} is {@linkplain com.mojang.blaze3d.vertex.PoseStack#clear() clear}.
 		COMMENT @throws java.lang.IllegalStateException if the specified {@code poseStack} is not clear
@@ -210,7 +210,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 9 camZ
 	METHOD renderDebug (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/Camera;)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 camera
 	METHOD renderEndSky (Lcom/mojang/blaze3d/vertex/PoseStack;)V
 		ARG 1 poseStack
@@ -224,7 +224,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 10 bufferSource
 	METHOD renderFace (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/core/Direction;FFFFFFFFFF)V
 		ARG 0 poseStack
-		ARG 1 buffer
+		ARG 1 consumer
 		ARG 2 face
 		ARG 3 x1
 		ARG 4 y1
@@ -284,7 +284,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 20 blue2
 	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/phys/AABB;FFFF)V
 		ARG 0 poseStack
-		ARG 1 buffer
+		ARG 1 consumer
 		ARG 2 box
 		ARG 3 red
 		ARG 4 green
@@ -307,7 +307,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
-		ARG 8 frustrumMatrix
+		ARG 8 frustumMatrix
 		ARG 9 projectionMatrix
 	METHOD renderShape (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/phys/shapes/VoxelShape;DDDFFFF)V
 		ARG 0 poseStack

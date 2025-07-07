@@ -69,7 +69,7 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 		ARG 2 entity
 	METHOD getHighestLevel (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/component/DataComponentType;)Lcom/mojang/datafixers/util/Pair;
 		ARG 0 stack
-		ARG 1 componentType
+		ARG 1 component
 	METHOD getItemEnchantmentLevel (Lnet/minecraft/core/Holder;Lnet/minecraft/world/item/ItemStack;)I
 		ARG 0 enchantment
 		ARG 1 stack
@@ -78,7 +78,7 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 		ARG 1 firedFromWeapon
 		ARG 2 pickupItemStack
 	METHOD getRandomItemWith (Lnet/minecraft/core/component/DataComponentType;Lnet/minecraft/world/entity/LivingEntity;Ljava/util/function/Predicate;)Ljava/util/Optional;
-		ARG 0 componentType
+		ARG 0 component
 		ARG 1 entity
 		ARG 2 filter
 	METHOD getTridentReturnToOwnerAcceleration (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/Entity;)I
@@ -90,7 +90,7 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 		ARG 1 entity
 	METHOD has (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/component/DataComponentType;)Z
 		ARG 0 stack
-		ARG 1 componentType
+		ARG 1 component
 	METHOD hasAnyEnchantments (Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 0 stack
 	METHOD hasTag (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/tags/TagKey;)Z
@@ -122,11 +122,11 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 	METHOD modifyDurabilityToRepairFromXp (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;I)I
 		ARG 0 level
 		ARG 1 stack
-		ARG 2 duabilityToRepairFromXp
+		ARG 2 durabilityToRepairFromXp
 	METHOD modifyFallBasedDamage (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;F)F
 		ARG 0 level
 		ARG 1 tool
-		ARG 2 enity
+		ARG 2 entity
 		ARG 3 damageSource
 		ARG 4 fallBasedDamage
 	METHOD modifyKnockback (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;F)F
@@ -151,7 +151,7 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 		ARG 3 onBreak
 	METHOD pickHighestLevel (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/component/DataComponentType;)Ljava/util/Optional;
 		ARG 0 stack
-		ARG 1 componentType
+		ARG 1 component
 	METHOD processAmmoUse (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;I)I
 		ARG 0 level
 		ARG 1 weapon

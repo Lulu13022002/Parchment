@@ -6,10 +6,10 @@ CLASS net/minecraft/client/renderer/GameRenderer
 		ARG 4 renderBuffers
 	METHOD bobHurt (Lcom/mojang/blaze3d/vertex/PoseStack;F)V
 		ARG 1 poseStack
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD bobView (Lcom/mojang/blaze3d/vertex/PoseStack;F)V
 		ARG 1 poseStack
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD checkEntityPostEffect (Lnet/minecraft/world/entity/Entity;)V
 		COMMENT What shader to use when spectating this entity
 		ARG 1 entity
@@ -20,10 +20,10 @@ CLASS net/minecraft/client/renderer/GameRenderer
 		ARG 1 pos
 		ARG 2 blockInteractionRange
 	METHOD getDarkenWorldAmount (F)F
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getFov (Lnet/minecraft/client/Camera;FZ)D
-		ARG 1 activeRenderInfo
-		ARG 2 partialTicks
+		ARG 1 camera
+		ARG 2 partialTick
 		ARG 3 useFOVSetting
 	METHOD getNightVisionScale (Lnet/minecraft/world/entity/LivingEntity;F)F
 		ARG 0 livingEntity
@@ -148,7 +148,7 @@ CLASS net/minecraft/client/renderer/GameRenderer
 		ARG 1 resourceLocation
 	METHOD pick (F)V
 		COMMENT Gets the block or object that is being moused over.
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD pick (Lnet/minecraft/world/entity/Entity;DDF)Lnet/minecraft/world/phys/HitResult;
 		ARG 1 entity
 		ARG 2 blockInteractionRange

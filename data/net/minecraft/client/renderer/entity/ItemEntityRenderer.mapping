@@ -9,14 +9,14 @@ CLASS net/minecraft/client/renderer/entity/ItemEntityRenderer
 	METHOD render (Lnet/minecraft/world/entity/item/ItemEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 entity
 		ARG 2 entityYaw
-		ARG 3 partialTicks
+		ARG 3 partialTick
 		ARG 4 poseStack
-		ARG 5 buffer
+		ARG 5 bufferSource
 		ARG 6 packedLight
 	METHOD renderMultipleFromCount (Lnet/minecraft/client/renderer/entity/ItemRenderer;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/client/resources/model/BakedModel;ZLnet/minecraft/util/RandomSource;)V
 		ARG 0 itemRenderer
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 item
 		ARG 5 model
@@ -25,7 +25,7 @@ CLASS net/minecraft/client/renderer/entity/ItemEntityRenderer
 	METHOD renderMultipleFromCount (Lnet/minecraft/client/renderer/entity/ItemRenderer;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/level/Level;)V
 		ARG 0 itemRenderer
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 item
 		ARG 5 random

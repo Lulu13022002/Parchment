@@ -1,13 +1,13 @@
 CLASS net/minecraft/world/entity/TamableAnimal
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD canAttack (Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 1 target
 	METHOD canTeleportTo (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
+		ARG 1 damageSource
 	METHOD isAlliedTo (Lnet/minecraft/world/entity/Entity;)Z
 		COMMENT Returns whether this Entity is on the same team as the given Entity.
 		ARG 1 entity
@@ -19,7 +19,7 @@ CLASS net/minecraft/world/entity/TamableAnimal
 		ARG 3 z
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setInSittingPose (Z)V
 		ARG 1 sitting
 	METHOD setOrderedToSit (Z)V

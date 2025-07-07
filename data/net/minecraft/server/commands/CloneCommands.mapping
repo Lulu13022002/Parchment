@@ -66,7 +66,7 @@ CLASS net/minecraft/server/commands/CloneCommands
 		ARG 4 context
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/commands/CommandBuildContext;)V
 		ARG 0 dispatcher
-		ARG 1 context
+		ARG 1 buildContext
 	METHOD wrapWithCloneMode (Lnet/minecraft/server/commands/CloneCommands$CommandFunction;Lnet/minecraft/server/commands/CloneCommands$CommandFunction;Lnet/minecraft/server/commands/CloneCommands$CommandFunction;Lnet/minecraft/server/commands/CloneCommands$CommandFunction;Lcom/mojang/brigadier/builder/ArgumentBuilder;)Lcom/mojang/brigadier/builder/ArgumentBuilder;
 		ARG 0 beginGetter
 		ARG 1 endGetter

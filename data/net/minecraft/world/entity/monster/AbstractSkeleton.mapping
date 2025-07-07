@@ -12,7 +12,7 @@ CLASS net/minecraft/world/entity/monster/AbstractSkeleton
 		ARG 2 block
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD reassessWeaponGoal ()V
 		COMMENT Sets this entity's combat AI.
 	METHOD rideTick ()V

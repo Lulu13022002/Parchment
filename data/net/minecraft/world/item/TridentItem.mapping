@@ -20,10 +20,10 @@ CLASS net/minecraft/world/item/TridentItem
 		COMMENT Called when the player stops using an Item (stops holding the right mouse button).
 		ARG 1 stack
 		ARG 2 level
-		ARG 3 entityLiving
+		ARG 3 livingEntity
 		ARG 4 timeLeft
 	METHOD use (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;
-		COMMENT Called to trigger the item's "innate" right click behavior. To handle when this item is used on a Block, see {@link #onItemUse}.
+		COMMENT Called to trigger the item's "innate" right click behavior. To handle when this item is used on a Block, see {@link #useOn}.
 		ARG 1 level
 		ARG 2 player
 		ARG 3 hand

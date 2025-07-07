@@ -28,7 +28,7 @@ CLASS net/minecraft/client/renderer/PostChain
 	METHOD parseUniformNode (Lcom/google/gson/JsonElement;)V
 		ARG 1 json
 	METHOD process (F)V
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD resize (II)V
 		ARG 1 width
 		ARG 2 height

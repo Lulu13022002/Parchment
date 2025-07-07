@@ -7,5 +7,5 @@ CLASS net/minecraft/client/model/MinecartModel
 		ARG 2 limbSwing
 		ARG 3 limbSwingAmount
 		ARG 4 ageInTicks
-		ARG 5 netHeadYaw
-		ARG 6 headPitch
+		ARG 5 deltaYHeadRot
+		ARG 6 xRot

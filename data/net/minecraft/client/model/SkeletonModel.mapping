@@ -12,8 +12,8 @@ CLASS net/minecraft/client/model/SkeletonModel
 		ARG 2 limbSwing
 		ARG 3 limbSwingAmount
 		ARG 4 ageInTicks
-		ARG 5 netHeadYaw
-		ARG 6 headPitch
+		ARG 5 deltaYHeadRot
+		ARG 6 xRot
 	METHOD translateToHand (Lnet/minecraft/world/entity/HumanoidArm;Lcom/mojang/blaze3d/vertex/PoseStack;)V
-		ARG 1 side
+		ARG 1 arm
 		ARG 2 poseStack

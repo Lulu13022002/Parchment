@@ -2,7 +2,7 @@ CLASS net/minecraft/world/entity/monster/Guardian
 	METHOD aiStep ()V
 		COMMENT Called frequently, so the entity can update its state every tick as required. For example, zombies and skeletons use this to react to sunlight and start to burn.
 	METHOD checkGuardianSpawnRules (Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)Z
-		ARG 0 guardian
+		ARG 0 entityType
 		ARG 1 level
 		ARG 2 spawnType
 		ARG 3 pos
@@ -18,7 +18,7 @@ CLASS net/minecraft/world/entity/monster/Guardian
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
 		ARG 1 damageSource
 	METHOD getMaxHeadXRot ()I
-		COMMENT The speed it takes to move the entity's rotationPitch through the faceEntity method. This is only currently use in wolves.
+		COMMENT The speed it takes to move the entity's head rotation through the setLookAt method.
 	METHOD getSpikesAnimation (F)F
 		ARG 1 partialTick
 	METHOD getTailAnimation (F)F
@@ -28,7 +28,7 @@ CLASS net/minecraft/world/entity/monster/Guardian
 		ARG 2 level
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD onSyncedDataUpdated (Lnet/minecraft/network/syncher/EntityDataAccessor;)V
 		ARG 1 key
@@ -42,7 +42,7 @@ CLASS net/minecraft/world/entity/monster/Guardian
 		METHOD <init> (Lnet/minecraft/world/entity/monster/Guardian;)V
 			ARG 1 guardian
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V

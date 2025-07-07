@@ -10,9 +10,9 @@ CLASS net/minecraft/client/resources/model/BlockStateModelLoader
 		ARG 1 propertyName
 	METHOD loadBlockStateDefinitions (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/level/block/state/StateDefinition;)V
 		ARG 1 blockStateId
-		ARG 2 stateDefenition
+		ARG 2 stateDefinition
 	METHOD predicate (Lnet/minecraft/world/level/block/state/StateDefinition;Ljava/lang/String;)Ljava/util/function/Predicate;
-		ARG 0 stateDefentition
+		ARG 0 stateDefinition
 		ARG 1 properties
 	METHOD registerModelGroup (Ljava/lang/Iterable;)V
 		ARG 1 models

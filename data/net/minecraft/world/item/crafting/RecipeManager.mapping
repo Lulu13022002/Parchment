@@ -41,7 +41,7 @@ CLASS net/minecraft/world/item/crafting/RecipeManager
 	METHOD getRemainingItemsFor (Lnet/minecraft/world/item/crafting/RecipeType;Lnet/minecraft/world/item/crafting/RecipeInput;Lnet/minecraft/world/level/Level;)Lnet/minecraft/core/NonNullList;
 		ARG 1 recipeType
 		ARG 2 input
-		ARG 3 lvel
+		ARG 3 level
 	METHOD replaceRecipes (Ljava/lang/Iterable;)V
 		ARG 1 recipes
 	CLASS CachedCheck

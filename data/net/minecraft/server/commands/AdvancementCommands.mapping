@@ -24,7 +24,7 @@ CLASS net/minecraft/server/commands/AdvancementCommands
 	METHOD lambda$register$17 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
 	METHOD lambda$register$3 (Lnet/minecraft/commands/CommandSourceStack;)Z
-		ARG 0 stack
+		ARG 0 source
 	METHOD lambda$register$4 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
 	METHOD lambda$register$6 (Lcom/mojang/brigadier/context/CommandContext;)I
