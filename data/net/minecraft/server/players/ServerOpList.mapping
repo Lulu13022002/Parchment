@@ -4,5 +4,5 @@ CLASS net/minecraft/server/players/ServerOpList
 	METHOD createEntry (Lcom/google/gson/JsonObject;)Lnet/minecraft/server/players/StoredUserEntry;
 		ARG 1 entryData
 	METHOD getKeyForUser (Lcom/mojang/authlib/GameProfile;)Ljava/lang/String;
-		COMMENT Gets the key value for the given object
-		ARG 1 obj
+		COMMENT Gets the key value for the given profile
+		ARG 1 profile

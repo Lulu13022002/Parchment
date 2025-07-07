@@ -1,22 +1,21 @@
 CLASS net/minecraft/world/entity/raid/Raider
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD applyRaidBuffs (IZ)V
 		ARG 1 wave
-		ARG 2 unusedFalse
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
+		ARG 1 damageSource
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD pickUpItem (Lnet/minecraft/world/entity/item/ItemEntity;)V
 		COMMENT Tests if this entity should pick up a weapon or an armor piece. Entity drops current weapon or armor if the new one is better.
 		ARG 1 itemEntity
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD removeWhenFarAway (D)Z
 		ARG 1 distanceToClosestPlayer
 	METHOD setCanJoinRaid (Z)V
@@ -65,7 +64,7 @@ CLASS net/minecraft/world/entity/raid/Raider
 			ARG 2 speedModifier
 			ARG 4 distanceToPoi
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD hasNotVisited (Lnet/minecraft/core/BlockPos;)Z

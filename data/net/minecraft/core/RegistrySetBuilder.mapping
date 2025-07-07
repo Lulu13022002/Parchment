@@ -39,7 +39,7 @@ CLASS net/minecraft/core/RegistrySetBuilder
 		ARG 2 owner
 		ARG 3 elements
 	METHOD wrapContextLookup (Lnet/minecraft/core/HolderLookup$RegistryLookup;)Lnet/minecraft/core/HolderGetter;
-		ARG 0 owner
+		ARG 0 lookup
 	CLASS BuildState
 		METHOD create (Lnet/minecraft/core/RegistryAccess;Ljava/util/stream/Stream;)Lnet/minecraft/core/RegistrySetBuilder$BuildState;
 			ARG 0 registryAccess

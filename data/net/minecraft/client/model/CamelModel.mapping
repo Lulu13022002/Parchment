@@ -3,8 +3,8 @@ CLASS net/minecraft/client/model/CamelModel
 		ARG 1 root
 	METHOD applyHeadRotation (Lnet/minecraft/world/entity/animal/camel/Camel;FFF)V
 		ARG 1 entity
-		ARG 2 netHeadYaw
-		ARG 3 headPitch
+		ARG 2 deltaYHeadRot
+		ARG 3 xRot
 		ARG 4 ageInTicks
 	METHOD toggleInvisibleParts (Lnet/minecraft/world/entity/animal/camel/Camel;)V
 		ARG 1 entity

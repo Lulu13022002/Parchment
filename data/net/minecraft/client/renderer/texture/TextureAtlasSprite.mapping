@@ -2,12 +2,12 @@ CLASS net/minecraft/client/renderer/texture/TextureAtlasSprite
 	METHOD <init> (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/renderer/texture/SpriteContents;IIII)V
 		ARG 1 atlasLocation
 		ARG 2 contents
-		ARG 3 originX
-		ARG 4 originY
+		ARG 3 atlasWidth
+		ARG 4 atlasHeight
 		ARG 5 x
 		ARG 6 y
 	METHOD getU (F)F
-		ARG 1 u
+		ARG 1 offset
 	METHOD getU0 ()F
 		COMMENT @return the minimum U coordinate to use when rendering this sprite
 	METHOD getU1 ()F
@@ -15,7 +15,7 @@ CLASS net/minecraft/client/renderer/texture/TextureAtlasSprite
 	METHOD getUOffset (F)F
 		ARG 1 offset
 	METHOD getV (F)F
-		ARG 1 v
+		ARG 1 offset
 	METHOD getV0 ()F
 		COMMENT @return the minimum V coordinate to use when rendering this sprite
 	METHOD getV1 ()F

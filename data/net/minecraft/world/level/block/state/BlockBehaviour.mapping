@@ -2,7 +2,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 	FIELD friction F
 		COMMENT Determines how much velocity is maintained while moving on top of this block
 	FIELD isRandomlyTicking Z
-		COMMENT Whether this blocks receives random ticks
+		COMMENT Whether this block receives random ticks
 	METHOD <init> (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V
 		ARG 1 properties
 	METHOD attack (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)V
@@ -27,8 +27,6 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 4 entity
 	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
 		COMMENT Returns the analog signal this block emits. This is the signal a comparator can read from it.
-		COMMENT
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getAnalogOutputSignal} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
@@ -43,7 +41,6 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 4 context
 	METHOD getDestroyProgress (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)F
 		COMMENT Get the hardness of this Block relative to the ability of the given player
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getDestroyProgress} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 player
 		ARG 3 level
@@ -54,8 +51,6 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		COMMENT <p>
 		COMMENT NOTE: directions in redstone signal related methods are backwards, so this method
 		COMMENT checks for the signal emitted in the <i>opposite</i> direction of the one given.
-		COMMENT
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getDirectSignal} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
@@ -82,8 +77,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 2 level
 		ARG 3 pos
 	METHOD getRenderShape (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/RenderShape;
-		COMMENT The type of render function called. MODEL for mixed tesr and static model, MODELBLOCK_ANIMATED for TESR-only, LIQUID for vanilla liquids, INVISIBLE to skip all rendering
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getRenderShape} whenever possible. Implementing/overriding is fine.
+		COMMENT The type of render function called. MODEL for mixed tesr and static model, ENTITYBLOCK_ANIMATED for TESR-only, LIQUID for vanilla liquids, INVISIBLE to skip all rendering
 		ARG 1 state
 	METHOD getSeed (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)J
 		COMMENT Return a random long to be passed to {@link net.minecraft.client.resources.model.BakedModel#getQuads}, used for random model rotations
@@ -104,8 +98,6 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		COMMENT <p>
 		COMMENT NOTE: directions in redstone signal related methods are backwards, so this method
 		COMMENT checks for the signal emitted in the <i>opposite</i> direction of the one given.
-		COMMENT
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getSignal} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
@@ -118,7 +110,6 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 3 pos
 		ARG 4 context
 	METHOD hasAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;)Z
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#hasAnalogOutputSignal} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD isCollisionShapeFullBlock (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 state
@@ -135,12 +126,9 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 1 state
 	METHOD isSignalSource (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		COMMENT Returns whether this block is capable of emitting redstone signals.
-		COMMENT
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#isSignalSource} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD mirror (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Mirror;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#mirror} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 mirror
 	METHOD neighborChanged (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V
@@ -185,7 +173,6 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 4 random
 	METHOD rotate (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Rotation;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#rotate} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 rotation
 	METHOD simpleCodec (Ljava/util/function/Function;)Lcom/mojang/serialization/MapCodec;
@@ -207,8 +194,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 3 pos
 		ARG 4 random
 	METHOD triggerEvent (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;II)Z
-		COMMENT Called on server when {@link net.minecraft.world.level.Level#blockEvent} is called. If server returns true, then also called on the client. On the Server, this may perform additional changes to the world, like pistons replacing the block with an extended base. On the client, the update may involve replacing block entities or effects such as sounds or particles
-		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#triggerEvent} whenever possible. Implementing/overriding is fine.
+		COMMENT Called on server when {@link net.minecraft.world.level.Level#blockEvent} is called. If server returns {@code true}, then also called on the client. On the Server, this may perform additional changes to the world, like pistons replacing the block with an extended base. On the client, the update may involve replacing block entities or effects such as sounds or particles
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
@@ -216,12 +202,12 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 5 param
 	METHOD updateIndirectNeighbourShapes (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
 		COMMENT Updates the shapes of indirect neighbors of this block. This method is analogous to
-		COMMENT {@link net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase#updateNeighbourShapes}
+		COMMENT {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#updateNeighbourShapes}
 		COMMENT but where that method affects the 6 direct neighbors of this block, this method affects
 		COMMENT the indirect neighbors, if any.
 		COMMENT
 		COMMENT <p>
-		COMMENT Currently the only implementation of this method is {@link net.minecraft.world.level.block.RedStoneWireBlock#updateIndirectNeighbourShapes}
+		COMMENT Currently the only implementation of this method is RedStoneWireBlock#updateIndirectNeighbourShapes
 		COMMENT where it is used to validate diagonal connections of redstone wire blocks.
 		ARG 1 state
 		ARG 2 level
@@ -255,7 +241,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 4 player
 		ARG 5 hitResult
 	CLASS Properties
-		FIELD drops Lnet/minecraft/resources/ResourceLocation;
+		FIELD drops Lnet/minecraft/resources/ResourceKey;
 			COMMENT Sets loot table information
 		FIELD isViewBlocking Lnet/minecraft/world/level/block/state/BlockBehaviour$StatePredicate;
 			COMMENT If it blocks vision on the client side.
@@ -347,7 +333,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 			ARG 2 pos
 			ARG 3 entity
 		METHOD entityCanStandOnFace (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Direction;)Z
-			COMMENT @return true if the collision box of this state covers the entire upper face of the blockspace
+			COMMENT @return {@code true} if the collision box of this state covers the entire upper face of the blockspace
 			ARG 1 level
 			ARG 2 pos
 			ARG 3 entity
@@ -432,7 +418,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 			ARG 2 pos
 			ARG 3 block
 			ARG 4 fromPos
-			ARG 5 isMoving
+			ARG 5 movedByPiston
 		METHOD hasPostProcess (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 			ARG 1 level
 			ARG 2 pos

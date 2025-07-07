@@ -4,21 +4,19 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 	COMMENT It extends the {@code TabOrderedElement} interface, providing tab order functionality for GUI components.
 	METHOD charTyped (CI)Z
 		COMMENT Called when a character is typed within the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the event is consumed, {@code false} otherwise.
-		ARG 1 codePoint
-			COMMENT the code point of the typed character.
+		ARG 1 character
+			COMMENT the typed character.
 		ARG 2 modifiers
 			COMMENT the keyboard modifiers.
 	METHOD getCurrentFocusPath ()Lnet/minecraft/client/gui/ComponentPath;
-		COMMENT {@return the current focus path as a ComponentPath, or {@code null} if there is no current focus path.}
+		COMMENT @return the current focus path as a ComponentPath, or {@code null} if there is no current focus path.
 	METHOD getRectangle ()Lnet/minecraft/client/gui/navigation/ScreenRectangle;
-		COMMENT {@return the {@link ScreenRectangle} occupied by the GUI element}
+		COMMENT @return the {@link ScreenRectangle} occupied by the GUI element
 	METHOD isFocused ()Z
-		COMMENT {@return {@code true} if the GUI element is focused, {@code false} otherwise}
+		COMMENT @return {@code true} if the GUI element is focused, {@code false} otherwise
 	METHOD isMouseOver (DD)Z
 		COMMENT Checks if the given mouse coordinates are over the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the mouse is over the GUI element, {@code false} otherwise.
 		ARG 1 mouseX
 			COMMENT the X coordinate of the mouse.
@@ -26,7 +24,6 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 			COMMENT the Y coordinate of the mouse.
 	METHOD keyPressed (III)Z
 		COMMENT Called when a keyboard key is pressed within the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the event is consumed, {@code false} otherwise.
 		ARG 1 keyCode
 			COMMENT the key code of the pressed key.
@@ -36,7 +33,6 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 			COMMENT the keyboard modifiers.
 	METHOD keyReleased (III)Z
 		COMMENT Called when a keyboard key is released within the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the event is consumed, {@code false} otherwise.
 		ARG 1 keyCode
 			COMMENT the key code of the released key.
@@ -46,7 +42,6 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 			COMMENT the keyboard modifiers.
 	METHOD mouseClicked (DDI)Z
 		COMMENT Called when a mouse button is clicked within the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the event is consumed, {@code false} otherwise.
 		ARG 1 mouseX
 			COMMENT the X coordinate of the mouse.
@@ -56,7 +51,6 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 			COMMENT the button that was clicked.
 	METHOD mouseDragged (DDIDD)Z
 		COMMENT Called when the mouse is dragged within the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the event is consumed, {@code false} otherwise.
 		ARG 1 mouseX
 			COMMENT the X coordinate of the mouse.
@@ -76,7 +70,6 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 			COMMENT the Y coordinate of the mouse.
 	METHOD mouseReleased (DDI)Z
 		COMMENT Called when a mouse button is released within the GUI element.
-		COMMENT <p>
 		COMMENT @return {@code true} if the event is consumed, {@code false} otherwise.
 		ARG 1 mouseX
 			COMMENT the X coordinate of the mouse.
@@ -91,7 +84,6 @@ CLASS net/minecraft/client/gui/components/events/GuiEventListener
 		ARG 7 scrollY
 	METHOD nextFocusPath (Lnet/minecraft/client/gui/navigation/FocusNavigationEvent;)Lnet/minecraft/client/gui/ComponentPath;
 		COMMENT Retrieves the next focus path based on the given focus navigation event.
-		COMMENT <p>
 		COMMENT @return the next focus path as a ComponentPath, or {@code null} if there is no next focus path.
 		ARG 1 event
 			COMMENT the focus navigation event.

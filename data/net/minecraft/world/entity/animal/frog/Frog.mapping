@@ -2,7 +2,7 @@ CLASS net/minecraft/world/entity/animal/frog/Frog
 	METHOD canEat (Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 0 entity
 	METHOD checkFrogSpawnRules (Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)Z
-		ARG 0 animal
+		ARG 0 entityType
 		ARG 1 level
 		ARG 2 spawnType
 		ARG 3 pos

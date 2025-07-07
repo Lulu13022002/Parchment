@@ -6,7 +6,7 @@ CLASS net/minecraft/world/phys/Vec3
 	METHOD <init> (Lorg/joml/Vector3f;)V
 		ARG 1 vector
 	METHOD add (DDD)Lnet/minecraft/world/phys/Vec3;
-		COMMENT Adds the specified x,y,z vector components to this vector and returns the resulting vector. Does not change this vector.
+		COMMENT Adds the specified x, y, z vector components to this vector and returns the resulting vector. Does not change this vector.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
@@ -18,7 +18,7 @@ CLASS net/minecraft/world/phys/Vec3
 		COMMENT Copies the coordinates of an int vector and centers them horizontally (x and z)
 		ARG 0 toCopy
 	METHOD atCenterOf (Lnet/minecraft/core/Vec3i;)Lnet/minecraft/world/phys/Vec3;
-		COMMENT Copies the coordinates of an Int vector and centers them.
+		COMMENT Copies the coordinates of an int vector and centers them.
 		ARG 0 toCopy
 	METHOD atLowerCornerOf (Lnet/minecraft/core/Vec3i;)Lnet/minecraft/world/phys/Vec3;
 		COMMENT Copies the coordinates of an int vector exactly.
@@ -45,7 +45,7 @@ CLASS net/minecraft/world/phys/Vec3
 		ARG 1 yaw
 	METHOD directionFromRotation (Lnet/minecraft/world/phys/Vec2;)Lnet/minecraft/world/phys/Vec3;
 		COMMENT Returns a {@link net.minecraft.world.phys.Vec3} from the given pitch and yaw degrees as {@link net.minecraft.world.phys.Vec2}.
-		ARG 0 vec
+		ARG 0 rot
 	METHOD distanceTo (Lnet/minecraft/world/phys/Vec3;)D
 		COMMENT Euclidean distance between this and the specified vector, returned as double.
 		ARG 1 vec

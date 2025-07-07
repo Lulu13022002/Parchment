@@ -3,11 +3,11 @@ CLASS net/minecraft/gametest/framework/StructureUtils
 		ARG 0 structureBlockPos
 		ARG 1 offset
 		ARG 2 rotation
-		ARG 3 serverLevel
+		ARG 3 level
 	METHOD clearBlock (ILnet/minecraft/core/BlockPos;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 0 structureBlockY
 		ARG 1 pos
-		ARG 2 serverLevel
+		ARG 2 level
 	METHOD clearSpaceForStructure (Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 0 boundingBox
 		ARG 1 level
@@ -16,7 +16,7 @@ CLASS net/minecraft/gametest/framework/StructureUtils
 		ARG 1 pos
 		ARG 2 size
 		ARG 3 rotation
-		ARG 4 serverLevel
+		ARG 4 level
 	METHOD createStructureBlock (Lnet/minecraft/gametest/framework/GameTestInfo;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Rotation;Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/level/block/entity/StructureBlockEntity;
 		ARG 0 gameTestInfo
 		ARG 1 pos
@@ -25,7 +25,7 @@ CLASS net/minecraft/gametest/framework/StructureUtils
 	METHOD doesStructureContain (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/server/level/ServerLevel;)Z
 		ARG 0 structureBlockPos
 		ARG 1 posToTest
-		ARG 2 serverLevel
+		ARG 2 level
 	METHOD encaseStructure (Lnet/minecraft/world/phys/AABB;Lnet/minecraft/server/level/ServerLevel;Z)V
 		ARG 0 bounds
 		ARG 1 level
@@ -37,7 +37,7 @@ CLASS net/minecraft/gametest/framework/StructureUtils
 	METHOD findStructureBlockContainingPos (Lnet/minecraft/core/BlockPos;ILnet/minecraft/server/level/ServerLevel;)Ljava/util/Optional;
 		ARG 0 pos
 		ARG 1 radius
-		ARG 2 serverLevel
+		ARG 2 level
 	METHOD findStructureBlocks (Lnet/minecraft/core/BlockPos;ILnet/minecraft/server/level/ServerLevel;)Ljava/util/stream/Stream;
 		ARG 0 pos
 		ARG 1 radius

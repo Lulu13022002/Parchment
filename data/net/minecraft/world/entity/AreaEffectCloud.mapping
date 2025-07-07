@@ -5,7 +5,7 @@ CLASS net/minecraft/world/entity/AreaEffectCloud
 		ARG 4 y
 		ARG 6 z
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addEffect (Lnet/minecraft/world/effect/MobEffectInstance;)V
 		ARG 1 effectInstance
 	METHOD getDimensions (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;
@@ -18,7 +18,7 @@ CLASS net/minecraft/world/entity/AreaEffectCloud
 		ARG 1 key
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setDuration (I)V
 		ARG 1 duration
 	METHOD setDurationOnUse (I)V
@@ -26,7 +26,7 @@ CLASS net/minecraft/world/entity/AreaEffectCloud
 	METHOD setOwner (Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 owner
 	METHOD setParticle (Lnet/minecraft/core/particles/ParticleOptions;)V
-		ARG 1 particleOption
+		ARG 1 options
 	METHOD setPotionContents (Lnet/minecraft/world/item/alchemy/PotionContents;)V
 		ARG 1 potionContents
 	METHOD setRadius (F)V

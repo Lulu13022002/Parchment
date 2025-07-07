@@ -1,6 +1,6 @@
 CLASS net/minecraft/server/players/PlayerList
 	FIELD playersByUUID Ljava/util/Map;
-		COMMENT A map containing the key-value pairs for UUIDs and their EntityPlayerMP objects.
+		COMMENT A map containing the key-value pairs for UUIDs and their ServerPlayer objects.
 	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/core/LayeredRegistryAccess;Lnet/minecraft/world/level/storage/PlayerDataStorage;I)V
 		ARG 1 server
 		ARG 2 registries
@@ -37,10 +37,10 @@ CLASS net/minecraft/server/players/PlayerList
 	METHOD broadcastSystemMessage (Lnet/minecraft/network/chat/Component;Ljava/util/function/Function;Z)V
 		ARG 1 serverMessage
 		ARG 2 playerMessageFactory
-		ARG 3 bypassHiddenChat
+		ARG 3 overlay
 	METHOD broadcastSystemMessage (Lnet/minecraft/network/chat/Component;Z)V
 		ARG 1 message
-		ARG 2 bypassHiddenChat
+		ARG 2 overlay
 	METHOD broadcastSystemToAllExceptTeam (Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/network/chat/Component;)V
 		ARG 1 player
 		ARG 2 message
@@ -101,12 +101,12 @@ CLASS net/minecraft/server/players/PlayerList
 		ARG 1 player
 		ARG 2 keepEverything
 	METHOD save (Lnet/minecraft/server/level/ServerPlayer;)V
-		COMMENT Also stores the NBTTags if this is an IntegratedPlayerList.
+		COMMENT Also stores the tags if this is an IntegratedPlayerList.
 		ARG 1 player
 	METHOD saveAll ()V
 		COMMENT Saves all of the players' current states.
 	METHOD sendAllPlayerInfo (Lnet/minecraft/server/level/ServerPlayer;)V
-		COMMENT Sends the players inventory to himself.
+		COMMENT Sends the player's inventory to himself.
 		ARG 1 player
 	METHOD sendLevelInfo (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/server/level/ServerLevel;)V
 		COMMENT Updates the time and weather for the given player to those of the given world

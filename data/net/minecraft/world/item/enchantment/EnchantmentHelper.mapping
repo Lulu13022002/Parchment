@@ -38,7 +38,7 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 	METHOD getDamageProtection (Ljava/lang/Iterable;Lnet/minecraft/world/damagesource/DamageSource;)I
 		COMMENT Returns the modifier of protection enchantments on armors equipped on player.
 		ARG 0 stacks
-		ARG 1 source
+		ARG 1 damageSource
 	METHOD getDepthStrider (Lnet/minecraft/world/entity/LivingEntity;)I
 		ARG 0 entity
 	METHOD getEnchantmentCost (Lnet/minecraft/util/RandomSource;IILnet/minecraft/world/item/ItemStack;)I

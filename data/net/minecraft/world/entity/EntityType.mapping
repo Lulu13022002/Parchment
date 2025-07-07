@@ -22,11 +22,11 @@ CLASS net/minecraft/world/entity/EntityType
 		ARG 1 stack
 	METHOD appendDefaultStackConfig (Ljava/util/function/Consumer;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)Ljava/util/function/Consumer;
 		ARG 0 consumer
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 stack
 		ARG 3 player
 	METHOD by (Lnet/minecraft/nbt/CompoundTag;)Ljava/util/Optional;
-		ARG 0 compound
+		ARG 0 tag
 	METHOD byString (Ljava/lang/String;)Ljava/util/Optional;
 		COMMENT Tries to get the entity type associated by the key.
 		ARG 0 key
@@ -43,7 +43,7 @@ CLASS net/minecraft/world/entity/EntityType
 	METHOD create (Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
 		ARG 1 level
 	METHOD createDefaultStackConfig (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)Ljava/util/function/Consumer;
-		ARG 0 serverLevel
+		ARG 0 level
 		ARG 1 stack
 		ARG 2 player
 	METHOD getKey (Lnet/minecraft/world/entity/EntityType;)Lnet/minecraft/resources/ResourceLocation;
@@ -72,11 +72,11 @@ CLASS net/minecraft/world/entity/EntityType
 		ARG 0 tags
 		ARG 1 level
 	METHOD loadEntityRecursive (Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/Level;Ljava/util/function/Function;)Lnet/minecraft/world/entity/Entity;
-		ARG 0 compound
+		ARG 0 tag
 		ARG 1 level
 		ARG 2 entityFunction
 	METHOD loadStaticEntity (Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/Level;)Ljava/util/Optional;
-		ARG 0 compound
+		ARG 0 tag
 		ARG 1 level
 	METHOD register (Ljava/lang/String;Lnet/minecraft/world/entity/EntityType$Builder;)Lnet/minecraft/world/entity/EntityType;
 		ARG 0 key
@@ -93,7 +93,7 @@ CLASS net/minecraft/world/entity/EntityType
 		ARG 2 pos
 		ARG 3 spawnType
 	METHOD spawn (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/MobSpawnType;ZZ)Lnet/minecraft/world/entity/Entity;
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 stack
 		ARG 3 player
 		ARG 4 pos

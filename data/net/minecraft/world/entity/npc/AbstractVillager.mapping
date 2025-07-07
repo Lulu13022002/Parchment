@@ -1,22 +1,22 @@
 CLASS net/minecraft/world/entity/npc/AbstractVillager
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addOffersFromItemListings (Lnet/minecraft/world/item/trading/MerchantOffers;[Lnet/minecraft/world/entity/npc/VillagerTrades$ItemListing;I)V
-		COMMENT Adds limited numbers of trades to the given {@link net.minecraft.world.item.trading.MerchantOffers}.
+		COMMENT Adds a limited number of trades to the given {@link net.minecraft.world.item.trading.MerchantOffers}.
 		ARG 1 givenMerchantOffers
 		ARG 2 newTrades
 		ARG 3 maxNumbers
 	METHOD addParticlesAroundSelf (Lnet/minecraft/core/particles/ParticleOptions;)V
-		ARG 1 particleOption
+		ARG 1 options
 	METHOD canBeLeashed (Lnet/minecraft/world/entity/player/Player;)Z
 		ARG 1 player
 	METHOD changeDimension (Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/entity/Entity;
 		ARG 1 server
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
+		ARG 1 damageSource
 	METHOD getRopeHoldPosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getTradeUpdatedSound (Z)Lnet/minecraft/sounds/SoundEvent;
 		ARG 1 isYesSound
 	METHOD notifyTrade (Lnet/minecraft/world/item/trading/MerchantOffer;)V
@@ -30,7 +30,7 @@ CLASS net/minecraft/world/entity/npc/AbstractVillager
 		ARG 1 xp
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD rewardTradeXp (Lnet/minecraft/world/item/trading/MerchantOffer;)V
 		ARG 1 offer
 	METHOD setTradingPlayer (Lnet/minecraft/world/entity/player/Player;)V

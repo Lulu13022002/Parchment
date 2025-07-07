@@ -5,7 +5,7 @@ CLASS net/minecraft/gametest/framework/GameTestBatchFactory
 	METHOD toGameTestBatch (Ljava/util/List;Ljava/lang/String;J)Lnet/minecraft/gametest/framework/GameTestBatch;
 		ARG 0 tests
 		ARG 1 functionName
-		ARG 2 time
+		ARG 2 index
 	METHOD toGameTestInfo (Lnet/minecraft/gametest/framework/TestFunction;ILnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/gametest/framework/GameTestInfo;
 		ARG 0 testFunction
 		ARG 1 rotationSteps

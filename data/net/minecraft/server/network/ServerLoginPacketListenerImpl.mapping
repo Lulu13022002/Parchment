@@ -16,7 +16,7 @@ CLASS net/minecraft/server/network/ServerLoginPacketListenerImpl
 	METHOD isPlayerAlreadyInWorld (Lcom/mojang/authlib/GameProfile;)Z
 		ARG 1 profile
 	METHOD onDisconnect (Lnet/minecraft/network/chat/Component;)V
-		COMMENT Invoked when disconnecting, the parameter is a ChatComponent describing the reason for termination
+		COMMENT Invoked when disconnecting, the parameter is a Component describing the reason for termination
 		ARG 1 reason
 	METHOD startClientVerification (Lcom/mojang/authlib/GameProfile;)V
 		ARG 1 authenticatedProfile

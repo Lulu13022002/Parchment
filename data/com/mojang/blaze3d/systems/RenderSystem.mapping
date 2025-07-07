@@ -35,16 +35,16 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 	METHOD blendEquation (I)V
 		ARG 0 mode
 	METHOD blendFunc (II)V
-		ARG 0 sourceFactor
-		ARG 1 destFactor
+		ARG 0 srcFactor
+		ARG 1 dstFactor
 	METHOD blendFunc (Lcom/mojang/blaze3d/platform/GlStateManager$SourceFactor;Lcom/mojang/blaze3d/platform/GlStateManager$DestFactor;)V
 		ARG 0 sourceFactor
 		ARG 1 destFactor
 	METHOD blendFuncSeparate (IIII)V
-		ARG 0 sourceFactor
-		ARG 1 destFactor
-		ARG 2 sourceFactorAlpha
-		ARG 3 destFactorAlpha
+		ARG 0 srcFactor
+		ARG 1 dstFactor
+		ARG 2 srcFactorAlpha
+		ARG 3 dstFactorAlpha
 	METHOD blendFuncSeparate (Lcom/mojang/blaze3d/platform/GlStateManager$SourceFactor;Lcom/mojang/blaze3d/platform/GlStateManager$DestFactor;Lcom/mojang/blaze3d/platform/GlStateManager$SourceFactor;Lcom/mojang/blaze3d/platform/GlStateManager$DestFactor;)V
 		ARG 0 sourceFactor
 		ARG 1 destFactor
@@ -52,7 +52,7 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 		ARG 3 destFactorAlpha
 	METHOD clear (IZ)V
 		ARG 0 mask
-		ARG 1 checkError
+		ARG 1 clearError
 	METHOD clearColor (FFFF)V
 		ARG 0 red
 		ARG 1 green
@@ -83,7 +83,7 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 		ARG 2 width
 		ARG 3 height
 	METHOD flipFrame (J)V
-		ARG 0 windowId
+		ARG 0 window
 	METHOD getSequentialBuffer (Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;)Lcom/mojang/blaze3d/systems/RenderSystem$AutoStorageIndexBuffer;
 		ARG 0 formatMode
 	METHOD getShaderTexture (I)I
@@ -216,7 +216,7 @@ CLASS com/mojang/blaze3d/systems/RenderSystem
 		ARG 0 shaderFogStart
 	METHOD setShaderGameTime (JF)V
 		ARG 0 tickTime
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD setShaderGlintAlpha (D)V
 		ARG 0 shaderGlintAlpha
 	METHOD setShaderGlintAlpha (F)V

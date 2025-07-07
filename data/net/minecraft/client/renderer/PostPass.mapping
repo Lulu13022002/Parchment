@@ -11,6 +11,6 @@ CLASS net/minecraft/client/renderer/PostPass
 		ARG 3 width
 		ARG 4 height
 	METHOD process (F)V
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD setOrthoMatrix (Lorg/joml/Matrix4f;)V
 		ARG 1 shaderOrthoMatrix

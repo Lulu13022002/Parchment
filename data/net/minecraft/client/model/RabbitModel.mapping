@@ -22,7 +22,7 @@ CLASS net/minecraft/client/model/RabbitModel
 		ARG 4 partialTick
 	METHOD renderToBuffer (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 consumer
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 		ARG 5 red
@@ -35,5 +35,5 @@ CLASS net/minecraft/client/model/RabbitModel
 		ARG 2 limbSwing
 		ARG 3 limbSwingAmount
 		ARG 4 ageInTicks
-		ARG 5 netHeadYaw
-		ARG 6 headPitch
+		ARG 5 deltaYHeadRot
+		ARG 6 xRot

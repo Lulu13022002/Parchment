@@ -59,7 +59,7 @@ CLASS net/minecraft/world/effect/MobEffectInstance
 		ARG 0 instance
 	METHOD load (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/effect/MobEffectInstance;
 		COMMENT Read a custom potion effect from a potion item's NBT data.
-		ARG 0 nbt
+		ARG 0 tag
 	METHOD mapDuration (Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)I
 		ARG 1 mapper
 	METHOD onEffectAdded (Lnet/minecraft/world/entity/LivingEntity;)V
@@ -69,7 +69,7 @@ CLASS net/minecraft/world/effect/MobEffectInstance
 	METHOD onMobHurt (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/damagesource/DamageSource;F)V
 		ARG 1 livingEntity
 		ARG 2 damageSource
-		ARG 3 amount
+		ARG 3 damageAmount
 	METHOD onMobRemoved (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/Entity$RemovalReason;)V
 		ARG 1 livingEntity
 		ARG 2 reason

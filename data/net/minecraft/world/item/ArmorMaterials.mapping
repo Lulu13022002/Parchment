@@ -32,5 +32,5 @@ CLASS net/minecraft/world/item/ArmorMaterials
 		ARG 3 equipSound
 		ARG 4 toughness
 		ARG 5 knockbackResistance
-		ARG 6 repairIngridient
+		ARG 6 repairIngredient
 		ARG 7 layers
