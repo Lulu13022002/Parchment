@@ -22,8 +22,6 @@ CLASS net/minecraft/client/multiplayer/chat/report/ChatReportBuilder
 		ARG 0 component
 	METHOD isReported (I)Z
 		ARG 1 id
-	METHOD lambda$buildEvidence$1 (Lnet/minecraft/client/multiplayer/chat/ChatLog;Lit/unimi/dsi/fastutil/ints/Int2ObjectSortedMap;I)V
-		ARG 1 chatLog
 	METHOD setComments (Ljava/lang/String;)V
 		ARG 1 comments
 	METHOD setReason (Lnet/minecraft/client/multiplayer/chat/report/ReportReason;)V

@@ -4,7 +4,7 @@ CLASS net/minecraft/client/resources/TextureAtlasHolder
 		ARG 2 textureAtlasLocation
 		ARG 3 prefix
 	METHOD apply (Lnet/minecraft/client/renderer/texture/TextureAtlas$Preparations;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V
-		ARG 1 object
+		ARG 1 preparations
 		ARG 2 resourceManager
 		ARG 3 profiler
 	METHOD getSprite (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;

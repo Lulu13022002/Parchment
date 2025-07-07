@@ -8,8 +8,8 @@ CLASS net/minecraft/client/renderer/FogRenderer
 		ARG 4 y
 		ARG 5 z
 	METHOD setupColor (Lnet/minecraft/client/Camera;FLnet/minecraft/client/multiplayer/ClientLevel;IF)V
-		ARG 0 activeRenderInfo
-		ARG 1 partialTicks
+		ARG 0 camera
+		ARG 1 partialTick
 		ARG 2 level
 		ARG 3 renderDistanceChunks
 		ARG 4 bossColorModifier

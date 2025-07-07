@@ -2,7 +2,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 	FIELD friction F
 		COMMENT Determines how much velocity is maintained while moving on top of this block
 	FIELD isRandomlyTicking Z
-		COMMENT Whether this blocks receives random ticks
+		COMMENT Whether this block receives random ticks
 	METHOD <init> (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)V
 		ARG 1 properties
 	METHOD attack (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)V
@@ -32,7 +32,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 3 pos
 	METHOD getBlockSupportShape (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/shapes/VoxelShape;
 		ARG 1 state
-		ARG 2 reader
+		ARG 2 level
 		ARG 3 pos
 	METHOD getCollisionShape (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;
 		ARG 1 state
@@ -77,7 +77,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getPistonPushReaction} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD getRenderShape (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/RenderShape;
-		COMMENT The type of render function called. MODEL for mixed tesr and static model, MODELBLOCK_ANIMATED for TESR-only, LIQUID for vanilla liquids, INVISIBLE to skip all rendering
+		COMMENT The type of render function called. MODEL for mixed tesr and static model, ENTITYBLOCK_ANIMATED for TESR-only, LIQUID for vanilla liquids, INVISIBLE to skip all rendering
 		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getRenderShape} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD getSeed (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)J
@@ -131,13 +131,13 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 3 pos
 		ARG 4 block
 		ARG 5 fromPos
-		ARG 6 isMoving
+		ARG 6 movedByPiston
 	METHOD onPlace (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 oldState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD onProjectileHit (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/BlockHitResult;Lnet/minecraft/world/entity/projectile/Projectile;)V
 		ARG 1 level
 		ARG 2 state
@@ -148,7 +148,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 newState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD randomTick (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V
 		COMMENT Performs a random tick on a block.
 		ARG 1 state
@@ -177,7 +177,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 3 pos
 		ARG 4 random
 	METHOD triggerEvent (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;II)Z
-		COMMENT Called on server when {@link net.minecraft.world.level.Level#blockEvent} is called. If server returns true, then also called on the client. On the Server, this may perform additional changes to the world, like pistons replacing the block with an extended base. On the client, the update may involve replacing block entities or effects such as sounds or particles
+		COMMENT Called on server when {@link net.minecraft.world.level.Level#blockEvent} is called. If server returns {@code true}, then also called on the client. On the Server, this may perform additional changes to the world, like pistons replacing the block with an extended base. On the client, the update may involve replacing block entities or effects such as sounds or particles
 		COMMENT @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#triggerEvent} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 level
@@ -330,7 +330,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 			ARG 2 pos
 			ARG 3 entity
 		METHOD entityCanStandOnFace (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Direction;)Z
-			COMMENT @return true if the collision box of this state covers the entire upper face of the blockspace
+			COMMENT @return {@code true} if the collision box of this state covers the entire upper face of the blockspace
 			ARG 1 level
 			ARG 2 pos
 			ARG 3 entity
@@ -464,12 +464,12 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 			ARG 2 pos
 			ARG 3 block
 			ARG 4 fromPos
-			ARG 5 isMoving
+			ARG 5 movedByPiston
 		METHOD onPlace (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V
 			ARG 1 level
 			ARG 2 pos
 			ARG 3 oldState
-			ARG 4 isMoving
+			ARG 4 movedByPiston
 		METHOD onProjectileHit (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/BlockHitResult;Lnet/minecraft/world/entity/projectile/Projectile;)V
 			ARG 1 level
 			ARG 2 state
@@ -479,7 +479,7 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 			ARG 1 level
 			ARG 2 pos
 			ARG 3 newState
-			ARG 4 isMoving
+			ARG 4 movedByPiston
 		METHOD propagatesSkylightDown (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 			ARG 1 level
 			ARG 2 pos

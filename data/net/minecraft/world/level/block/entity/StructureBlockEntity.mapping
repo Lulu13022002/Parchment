@@ -32,11 +32,11 @@ CLASS net/minecraft/world/level/block/entity/StructureBlockEntity
 	METHOD saveStructure ()Z
 		COMMENT Saves the template, writing it to disk.
 		COMMENT
-		COMMENT @return true if the template was successfully saved.
+		COMMENT @return {@code true} if the template was successfully saved.
 	METHOD saveStructure (Z)Z
 		COMMENT Saves the template, either updating the local version or writing it to disk.
 		COMMENT
-		COMMENT @return true if the template was successfully saved.
+		COMMENT @return {@code true} if the template was successfully saved.
 		ARG 1 writeToDisk
 	METHOD setIgnoreEntities (Z)V
 		ARG 1 ignoreEntities

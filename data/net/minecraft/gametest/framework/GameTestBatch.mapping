@@ -5,6 +5,6 @@ CLASS net/minecraft/gametest/framework/GameTestBatch
 		ARG 3 beforeBatchFunction
 		ARG 4 afterBatchFunction
 	METHOD runAfterBatchFunction (Lnet/minecraft/server/level/ServerLevel;)V
-		ARG 1 serverLevel
+		ARG 1 level
 	METHOD runBeforeBatchFunction (Lnet/minecraft/server/level/ServerLevel;)V
-		ARG 1 serverLevel
+		ARG 1 level

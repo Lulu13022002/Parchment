@@ -5,7 +5,7 @@ CLASS com/mojang/realmsclient/gui/screens/RealmsBrokenWorldScreen
 		ARG 3 serverId
 		ARG 5 isMinigame
 	METHOD downloadWorld (I)V
-		ARG 1 slotIndex
+		ARG 1 slotId
 	METHOD drawSlotFrame (Lcom/mojang/blaze3d/vertex/PoseStack;IIIIZLjava/lang/String;IJLjava/lang/String;Z)V
 		ARG 1 poseStack
 		ARG 2 x
@@ -14,7 +14,7 @@ CLASS com/mojang/realmsclient/gui/screens/RealmsBrokenWorldScreen
 		ARG 5 mouseY
 		ARG 6 isActiveNonMinigame
 		ARG 7 text
-		ARG 8 slotIndex
+		ARG 8 slotId
 		ARG 9 slotName
 		ARG 11 templateId
 		ARG 12 hasTemplateImage

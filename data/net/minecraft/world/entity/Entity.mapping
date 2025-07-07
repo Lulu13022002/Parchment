@@ -14,7 +14,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 7 yRot
 		ARG 8 xRot
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addPassenger (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 passenger
 	METHOD addTag (Ljava/lang/String;)Z
@@ -27,7 +27,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD awardKillScore (Lnet/minecraft/world/entity/Entity;ILnet/minecraft/world/damagesource/DamageSource;)V
 		ARG 1 killed
 		ARG 2 scoreValue
-		ARG 3 source
+		ARG 3 damageSource
 	METHOD baseTick ()V
 		COMMENT Gets called every tick from main Entity class
 	METHOD broadcastToPlayer (Lnet/minecraft/server/level/ServerPlayer;)Z
@@ -42,7 +42,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD canAddPassenger (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 passenger
 	METHOD canChangeDimensions ()Z
-		COMMENT Returns false if this Entity can't move between dimensions. True if it can.
+		COMMENT Returns {@code false} if this Entity can't move between dimensions. {@code true} if it can.
 	METHOD canCollideWith (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity
 	METHOD canEnterPose (Lnet/minecraft/world/entity/Pose;)Z
@@ -52,7 +52,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD causeFallDamage (FFLnet/minecraft/world/damagesource/DamageSource;)Z
 		ARG 1 fallDistance
 		ARG 2 multiplier
-		ARG 3 source
+		ARG 3 damageSource
 	METHOD changeDimension (Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/entity/Entity;
 		ARG 1 destination
 	METHOD checkDespawn ()V
@@ -72,7 +72,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 2 horizontalDistance
 		ARG 4 verticalDistance
 	METHOD collide (Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;
-		COMMENT Given a motion vector, return an updated vector that takes into account restrictions such as collisions (from all directions) and step-up from stepHeight
+		COMMENT Given a motion vector, return an updated vector that takes into account restrictions such as collisions (from all directions) and step-up from maxUpStep
 		ARG 1 vec
 	METHOD collideBoundingBox (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/level/Level;Ljava/util/List;)Lnet/minecraft/world/phys/Vec3;
 		ARG 0 entity
@@ -105,16 +105,16 @@ CLASS net/minecraft/world/entity/Entity
 		COMMENT Returns the squared distance to the entity.
 		ARG 1 entity
 	METHOD distanceToSqr (Lnet/minecraft/world/phys/Vec3;)D
-		ARG 1 vec
+		ARG 1 pos
 	METHOD doEnchantDamageEffects (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 attacker
 		ARG 2 target
 	METHOD doWaterSplashEffect ()V
-		COMMENT Plays the {@link #getSplashSound() splash sound}, and the {@link ParticleType#WATER_BUBBLE} and {@link ParticleType#WATER_SPLASH} particles.
+		COMMENT Plays the splash sound, and the {@link ParticleTypes#BUBBLE}/{@link ParticleTypes#SPLASH} particles.
 	METHOD ejectPassengers ()V
 		COMMENT Dismounts all entities riding this entity from this entity.
 	METHOD equals (Ljava/lang/Object;)Z
-		ARG 1 object
+		ARG 1 other
 	METHOD fillCrashReportCategory (Lnet/minecraft/CrashReportCategory;)V
 		ARG 1 category
 	METHOD findDimensionEntryPoint (Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/level/portal/PortalInfo;
@@ -129,11 +129,11 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 explosion
 		ARG 2 level
 		ARG 3 pos
-		ARG 4 blockState
+		ARG 4 state
 		ARG 5 fluidState
 		ARG 6 explosionPower
 	METHOD getBoundingBoxForCulling ()Lnet/minecraft/world/phys/AABB;
-		COMMENT Gets the bounding box of this Entity, adjusted to take auxiliary entities into account (e.g. the tile contained by a minecart, such as a command block).
+		COMMENT Gets the bounding box of this Entity, adjusted to take auxiliary entities into account (e.g. the block contained by a minecart, such as a command block).
 	METHOD getBoundingBoxForPose (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/phys/AABB;
 		ARG 1 pose
 	METHOD getCollisionHorizontalEscapeVector (DDF)Lnet/minecraft/world/phys/Vec3;
@@ -166,7 +166,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 pose
 		ARG 2 dimensions
 	METHOD getEyePosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getFluidHeight (Lnet/minecraft/tags/TagKey;)D
 		ARG 1 fluidTag
 	METHOD getHandHoldingItemAngle (Lnet/minecraft/world/item/Item;)Lnet/minecraft/world/phys/Vec3;
@@ -176,7 +176,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 motionScaler
 		ARG 2 facing
 	METHOD getLightProbePosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getLookAngle ()Lnet/minecraft/world/phys/Vec3;
 		COMMENT Returns a (normalized) vector of where this entity is looking.
 	METHOD getMaxFallDistance ()I
@@ -192,7 +192,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD getPortalWaitTime ()I
 		COMMENT Return the amount of time this entity should stay in a portal before being transported.
 	METHOD getPosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getRandomX (D)D
 		ARG 1 scale
 	METHOD getRandomZ (D)D
@@ -201,7 +201,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 axis
 		ARG 2 portal
 	METHOD getRopeHoldPosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getRotationVector ()Lnet/minecraft/world/phys/Vec2;
 		COMMENT Returns the Entity's pitch and yaw as a {@link net.minecraft.world.phys.Vec2}.
 	METHOD getScoreboardName ()Ljava/lang/String;
@@ -214,15 +214,15 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD getSlot (I)Lnet/minecraft/world/entity/SlotAccess;
 		ARG 1 slot
 	METHOD getUpVector (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getVehicle ()Lnet/minecraft/world/entity/Entity;
 		COMMENT Get entity this is riding
 	METHOD getViewVector (F)Lnet/minecraft/world/phys/Vec3;
 		COMMENT Gets the interpolated look vector.
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getViewXRot (F)F
 		COMMENT Returns the current X rotation of the entity.
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getViewYRot (F)F
 		COMMENT Returns the current Y rotation of the entity.
 		ARG 1 partialTick
@@ -236,7 +236,7 @@ CLASS net/minecraft/world/entity/Entity
 		COMMENT Handles an entity event received from a {@link net.minecraft.network.protocol.game.ClientboundEntityEventPacket}.
 		ARG 1 id
 	METHOD handleInsidePortal (Lnet/minecraft/core/BlockPos;)V
-		COMMENT Marks the entity as being inside a portal, activating teleportation logic in onEntityUpdate() in the following tick(s).
+		COMMENT Marks the entity as being inside a portal, activating teleportation logic in handleNetherPortal() in the following tick(s).
 		ARG 1 pos
 	METHOD hasIndirectPassenger (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity
@@ -248,7 +248,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 level
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD interact (Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;
 		ARG 1 player
@@ -262,7 +262,7 @@ CLASS net/minecraft/world/entity/Entity
 		COMMENT Returns {@code true} if Entity argument is equal to this Entity
 		ARG 1 entity
 	METHOD isAlive ()Z
-		COMMENT Returns {@code true} if the entity has not been {@link #removed}.
+		COMMENT Returns {@code true} if the entity has not been {@link #isRemoved}.
 	METHOD isAlliedTo (Lnet/minecraft/world/entity/Entity;)Z
 		COMMENT Returns whether this Entity is on the same team as the given Entity.
 		ARG 1 entity
@@ -291,17 +291,17 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD isInWall ()Z
 		COMMENT Checks if this entity is inside an opaque block.
 	METHOD isInWater ()Z
-		COMMENT Checks if this entity is inside water (if inWater field is true as a result of handleWaterMovement() returning true)
+		COMMENT Checks if this entity is inside water (if wasTouchingWater field is {@code true} as a result of updateInWaterStateAndDoWaterCurrentPushing())
 	METHOD isInWaterOrRain ()Z
 		COMMENT Checks if this entity is either in water or on an open air block in rain (used in wolves).
 	METHOD isInvisibleTo (Lnet/minecraft/world/entity/player/Player;)Z
-		COMMENT Only used by renderer in EntityLivingBase subclasses.
+		COMMENT Only used by renderer in LivingEntity subclasses.
 		COMMENT Determines if an entity is visible or not to a specific player, if the entity is normally invisible.
-		COMMENT For EntityLivingBase subclasses, returning false when invisible will render the entity semi-transparent.
+		COMMENT For LivingEntity subclasses, returning {@code false} when invisible will render the entity semi-transparent.
 		ARG 1 player
 	METHOD isInvulnerableTo (Lnet/minecraft/world/damagesource/DamageSource;)Z
 		COMMENT Returns whether this Entity is invulnerable to the given DamageSource.
-		ARG 1 source
+		ARG 1 damageSource
 	METHOD isOnFire ()Z
 		COMMENT Returns {@code true} if the entity is on fire. Used by render to add the fire effect on rendering.
 	METHOD isPassengerOfSameVehicle (Lnet/minecraft/world/entity/Entity;)Z
@@ -311,7 +311,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD isPushable ()Z
 		COMMENT Returns {@code true} if this entity should push and be pushed by other entities when colliding.
 	METHOD isSilent ()Z
-		COMMENT @return True if this entity will not play sounds
+		COMMENT @return {@code true} if this entity will not play sounds
 	METHOD isSpectator ()Z
 		COMMENT Returns {@code true} if the player is in spectator mode.
 	METHOD isSprinting ()Z
@@ -336,8 +336,6 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 0 loadedState
 	METHOD lambda$refreshDimensions$13 (Lnet/minecraft/world/entity/EntityDimensions;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 2 freePos
-	METHOD lambda$removePassenger$4 (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)Z
-		ARG 1 passenger
 	METHOD lambda$startRiding$2 (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 0 passenger
 	METHOD lambda$startRiding$3 (Lnet/minecraft/world/entity/Entity;)V
@@ -347,8 +345,8 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD lavaHurt ()V
 		COMMENT Called whenever the entity is walking inside of lava.
 	METHOD lerpHeadTo (FI)V
-		ARG 1 yaw
-		ARG 2 pitch
+		ARG 1 yRot
+		ARG 2 steps
 	METHOD lerpMotion (DDD)V
 		COMMENT Updates the entity motion clientside, called by packets from the server
 		ARG 1 x
@@ -361,13 +359,13 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 5 z
 		ARG 7 yRot
 		ARG 8 xRot
-		ARG 9 lerpSteps
+		ARG 9 steps
 		ARG 10 teleport
 	METHOD limitPistonMovement (Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;
 		ARG 1 pos
 	METHOD load (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT Reads the entity from NBT (calls an abstract helper method to read specialized data)
-		ARG 1 compound
+		ARG 1 tag
 	METHOD lookAt (Lnet/minecraft/commands/arguments/EntityAnchorArgument$Anchor;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 anchor
 		ARG 2 target
@@ -380,14 +378,14 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 level
 		ARG 2 pos
 	METHOD maybeBackOffFromEdge (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/entity/MoverType;)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 vec
-		ARG 2 mover
+		ARG 1 movement
+		ARG 2 type
 	METHOD mirror (Lnet/minecraft/world/level/block/Mirror;)F
 		COMMENT Transforms the entity's current yaw with the given Mirror and returns it. This does not have a side-effect.
 		ARG 1 transformMirror
 	METHOD move (Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 type
-		ARG 2 pos
+		ARG 2 movement
 	METHOD moveRelative (FLnet/minecraft/world/phys/Vec3;)V
 		ARG 1 amount
 		ARG 2 relative
@@ -396,7 +394,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 3 y
 		ARG 5 z
 	METHOD moveTo (DDDFF)V
-		COMMENT Sets the location and rotation of the entity in the world.
+		COMMENT Sets the position and rotation of the entity in the world.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
@@ -407,7 +405,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 2 yRot
 		ARG 3 xRot
 	METHOD moveTo (Lnet/minecraft/world/phys/Vec3;)V
-		ARG 1 vec
+		ARG 1 pos
 	METHOD moveTowardsClosestSpace (DDD)V
 		ARG 1 x
 		ARG 3 y
@@ -416,7 +414,7 @@ CLASS net/minecraft/world/entity/Entity
 		COMMENT creates a NBT list from the array of doubles passed to this function
 		ARG 1 numbers
 	METHOD newFloatList ([F)Lnet/minecraft/nbt/ListTag;
-		COMMENT Returns a new NBTTagList filled with the specified floats
+		COMMENT Returns a new ListTag filled with the specified floats
 		ARG 1 numbers
 	METHOD onAboveBubbleCol (Z)V
 		ARG 1 downwards
@@ -430,12 +428,16 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD onSyncedDataUpdated (Lnet/minecraft/network/syncher/EntityDataAccessor;)V
 		ARG 1 key
 	METHOD onlyOpCanSetNbt ()Z
-		COMMENT Checks if players can use this entity to access operator (permission level 2) commands either directly or indirectly, such as give or setblock. A similar method exists for entities at {@link net.minecraft.world.entity.Entity#onlyOpCanSetNbt()}.<p>For example, {@link net.minecraft.world.entity.vehicle.MinecartCommandBlock#onlyOpCanSetNbt() command block minecarts} and {@link net.minecraft.world.entity.vehicle.MinecartSpawner#onlyOpCanSetNbt() mob spawner minecarts} (spawning command block minecarts or drops) are considered accessible.</p>@return true if this entity offers ways for unauthorized players to use restricted commands
+		COMMENT Checks if players can use this entity to access operator (permission level 2) commands either directly or indirectly, such as give or setblock.
+		COMMENT A similar method exists for block entities at {@link net.minecraft.world.level.block.entity.BlockEntity#onlyOpCanSetNbt()}.
+		COMMENT <p>
+		COMMENT For example, {@link net.minecraft.world.entity.vehicle.MinecartCommandBlock#onlyOpCanSetNbt() command block minecarts} and {@link net.minecraft.world.entity.vehicle.MinecartSpawner#onlyOpCanSetNbt() mob spawner minecarts} (spawning command block minecarts or drops) are considered accessible.
+		COMMENT @return {@code true} if this entity offers ways for unauthorized players to use restricted commands
 	METHOD outOfWorld ()V
 		COMMENT Sets the dead flag. Used when you fall off the bottom of the world.
 	METHOD pick (DFZ)Lnet/minecraft/world/phys/HitResult;
 		ARG 1 hitDistance
-		ARG 3 partialTicks
+		ARG 3 partialTick
 		ARG 4 hitFluids
 	METHOD playAmethystStepSound (Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 state
@@ -461,7 +463,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD processPortalCooldown ()V
 		COMMENT Decrements the counter for the remaining time until the entity may use a portal again.
 	METHOD push (DDD)V
-		COMMENT Adds to the current velocity of the entity, and sets {@link #isAirBorne} to true.
+		COMMENT Adds to the current velocity of the entity, and sets {@link #hasImpulse} to {@code true}.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
@@ -470,7 +472,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 entity
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD reapplyPosition ()V
 		COMMENT Recomputes this entity's bounding box so that it is positioned at this entity's X/Y/Z.
 	METHOD recreateFromPacket (Lnet/minecraft/network/protocol/game/ClientboundAddEntityPacket;)V
@@ -493,28 +495,27 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 transformRotation
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Z
 		COMMENT Writes this entity to NBT, unless it has been removed or it is a passenger. Also writes this entity's passengers, and the entity type ID (so the produced NBT is sufficient to recreate the entity).
-		COMMENT To always write the entity, use {@link #writeWithoutTypeId}.
+		COMMENT To always write the entity, use {@link #saveWithoutId}.
 		COMMENT
-		COMMENT @return True if the entity was written (and the passed compound should be saved)" false if the entity was not written.
-		ARG 1 compound
+		COMMENT @return {@code true} if the entity was written (and the passed compound should be saved)" {@code false} if the entity was not written.
+		ARG 1 tag
 	METHOD saveAsPassenger (Lnet/minecraft/nbt/CompoundTag;)Z
 		COMMENT Writes this entity to NBT, unless it has been removed. Also writes this entity's passengers, and the entity type ID (so the produced NBT is sufficient to recreate the entity).
+		COMMENT Generally, {@link #save} or {@link #saveWithoutId} should be used instead of this method.
 		COMMENT
-		COMMENT Generally, {@link #writeUnlessPassenger} or {@link #writeWithoutTypeId} should be used instead of this method.
-		COMMENT
-		COMMENT @return True if the entity was written (and the passed compound should be saved)" false if the entity was not written.
-		ARG 1 compound
+		COMMENT @return {@code true} if the entity was written (and the passed compound should be saved), {@code false} if the entity was not written.
+		ARG 1 tag
 	METHOD saveWithoutId (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Writes this entity, including passengers, to NBT, regardless as to whether it is removed or a passenger. Does <b>not</b> include the entity's type ID, so the NBT is insufficient to recreate the entity using {@link AnvilChunkLoader#readWorldEntity}. Use {@link #writeUnlessPassenger} for that purpose.
-		ARG 1 compound
+		COMMENT Writes this entity, including passengers, to NBT, regardless as to whether it is removed or a passenger. Does <b>not</b> include the entity's type ID, so the NBT is insufficient to recreate the entity using {@link EntityType#create(CompoundTag, Level)}. Use {@link #save} for that purpose.
+		ARG 1 tag
 	METHOD setAirSupply (I)V
-		ARG 1 air
+		ARG 1 airSupply
 	METHOD setBoundingBox (Lnet/minecraft/world/phys/AABB;)V
 		ARG 1 bb
 	METHOD setCustomName (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 name
 	METHOD setCustomNameVisible (Z)V
-		ARG 1 alwaysRenderNameTag
+		ARG 1 visible
 	METHOD setDeltaMovement (DDD)V
 		ARG 1 x
 		ARG 3 y
@@ -529,7 +530,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 invisible
 	METHOD setInvulnerable (Z)V
 		COMMENT Sets whether this Entity is invulnerable.
-		ARG 1 isInvulnerable
+		ARG 1 invulnerable
 	METHOD setIsInPowderSnow (Z)V
 		ARG 1 isInPowderSnow
 	METHOD setItemSlot (Lnet/minecraft/world/entity/EquipmentSlot;Lnet/minecraft/world/item/ItemStack;)V
@@ -540,14 +541,14 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD setOnGround (Z)V
 		ARG 1 onGround
 	METHOD setPos (DDD)V
-		COMMENT Sets the x,y,z of the entity from the given parameters. Also seems to set up a bounding box.
+		COMMENT Sets the x, y, z of the entity from the given parameters. Also seems to set up a bounding box.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
 	METHOD setPos (Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 pos
 	METHOD setPosRaw (DDD)V
-		COMMENT Directly updates the {@link #posX}, {@link posY}, and {@link posZ} fields, without performing any collision checks, updating the bounding box position, or sending any packets. In general, this is not what you want and {@link #setPosition} is better, as that handles the bounding box.
+		COMMENT Directly updates the {@link #position}, {@link #blockPosition} and {@link #chunkPosition} fields, without performing any collision checks, updating the bounding box position, or sending any packets. In general, this is not what you want and {@link #setPos} is better, as that handles the bounding box.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
@@ -563,7 +564,7 @@ CLASS net/minecraft/world/entity/Entity
 		COMMENT Sets entity to burn for x amount of seconds, cannot lower amount of existing fire.
 		ARG 1 seconds
 	METHOD setSharedFlag (IZ)V
-		COMMENT Enable or disable an entity flag, see {@link #getEntityFlag} to read the known flags.
+		COMMENT Enable or disable an entity flag, see {@link #getSharedFlag} to read the known flags.
 		ARG 1 flag
 		ARG 2 set
 	METHOD setSharedFlagOnFire (Z)V
@@ -571,7 +572,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD setShiftKeyDown (Z)V
 		ARG 1 keyDown
 	METHOD setSilent (Z)V
-		COMMENT When set to true the entity will not play sounds.
+		COMMENT When set to {@code true} the entity will not play sounds.
 		ARG 1 isSilent
 	METHOD setSprinting (Z)V
 		COMMENT Set sprinting switch for Entity.
@@ -581,7 +582,7 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD setTicksFrozen (I)V
 		ARG 1 ticksFrozen
 	METHOD setUUID (Ljava/util/UUID;)V
-		ARG 1 uniqueId
+		ARG 1 uuid
 	METHOD setViewScale (D)V
 		ARG 0 renderDistWeight
 	METHOD setXRot (F)V
@@ -598,7 +599,7 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 1 explosion
 		ARG 2 level
 		ARG 3 pos
-		ARG 4 blockState
+		ARG 4 state
 		ARG 5 explosionPower
 	METHOD shouldRender (DDD)Z
 		ARG 1 x
@@ -608,7 +609,7 @@ CLASS net/minecraft/world/entity/Entity
 		COMMENT Checks if the entity is in range to render.
 		ARG 1 distance
 	METHOD skipAttackInteraction (Lnet/minecraft/world/entity/Entity;)Z
-		COMMENT Called when a player attacks an entity. If this returns true the attack will not happen.
+		COMMENT Called when a player attacks an entity. If this returns {@code true} the attack will not happen.
 		ARG 1 entity
 	METHOD spawnAtLocation (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/item/ItemEntity;
 		ARG 1 stack
@@ -628,18 +629,18 @@ CLASS net/minecraft/world/entity/Entity
 		ARG 2 force
 	METHOD startSeenByPlayer (Lnet/minecraft/server/level/ServerPlayer;)V
 		COMMENT Add the given player to the list of players tracking this entity. For instance, a player may track a boss in order to view its associated boss bar.
-		ARG 1 serverPlayer
+		ARG 1 player
 	METHOD stopRiding ()V
 		COMMENT Dismounts this entity from the entity it is riding.
 	METHOD stopSeenByPlayer (Lnet/minecraft/server/level/ServerPlayer;)V
-		COMMENT Removes the given player from the list of players tracking this entity. See {@link Entity#addTrackingPlayer} for more information on tracking.
-		ARG 1 serverPlayer
+		COMMENT Removes the given player from the list of players tracking this entity. See {@link #startSeenByPlayer} for more information on tracking.
+		ARG 1 player
 	METHOD syncPacketPositionCodec (DDD)V
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
 	METHOD teleportTo (DDD)V
-		COMMENT Sets the position of the entity and updates the 'last' variables
+		COMMENT Sets the position of the entity and updates the 'old' variables
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z

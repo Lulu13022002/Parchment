@@ -2,28 +2,28 @@ CLASS net/minecraft/advancements/critereon/EntityHurtPlayerTrigger
 	METHOD createInstance (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/EntityPredicate$Composite;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/critereon/EntityHurtPlayerTrigger$TriggerInstance;
 		ARG 1 json
 		ARG 2 entityPredicate
-		ARG 3 conditionsParser
+		ARG 3 context
 	METHOD lambda$trigger$0 (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/damagesource/DamageSource;FFZLnet/minecraft/advancements/critereon/EntityHurtPlayerTrigger$TriggerInstance;)Z
 		ARG 5 instance
 	METHOD trigger (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/damagesource/DamageSource;FFZ)V
 		ARG 1 player
-		ARG 2 source
+		ARG 2 damageSource
 		ARG 3 dealtDamage
 		ARG 4 takenDamage
 		ARG 5 blocked
 	CLASS TriggerInstance
 		METHOD <init> (Lnet/minecraft/advancements/critereon/EntityPredicate$Composite;Lnet/minecraft/advancements/critereon/DamagePredicate;)V
 			ARG 1 player
-			ARG 2 damage
+			ARG 2 damageAmount
 		METHOD entityHurtPlayer (Lnet/minecraft/advancements/critereon/DamagePredicate$Builder;)Lnet/minecraft/advancements/critereon/EntityHurtPlayerTrigger$TriggerInstance;
 			ARG 0 damageConditionBuilder
 		METHOD entityHurtPlayer (Lnet/minecraft/advancements/critereon/DamagePredicate;)Lnet/minecraft/advancements/critereon/EntityHurtPlayerTrigger$TriggerInstance;
-			ARG 0 damage
+			ARG 0 damageAmount
 		METHOD matches (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/damagesource/DamageSource;FFZ)Z
 			ARG 1 player
-			ARG 2 source
+			ARG 2 damageSource
 			ARG 3 dealtDamage
 			ARG 4 takenDamage
 			ARG 5 blocked
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

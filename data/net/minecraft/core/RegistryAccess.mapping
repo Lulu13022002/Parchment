@@ -51,7 +51,7 @@ CLASS net/minecraft/core/RegistryAccess
 			ARG 2 codec
 				COMMENT The codec used to serialize this registry's elements internally.
 			ARG 3 networkCodec
-				COMMENT The codec used to serialize this registry's elements when sending them to the client. This being null implies that the contents of this registry are not synchronized to client.
+				COMMENT The codec used to serialize this registry's elements when sending them to the client. This being {@code null} implies that the contents of this registry are not synchronized to client.
 		METHOD codec ()Lcom/mojang/serialization/Codec;
 			COMMENT @return The codec used to serialize this registry's elements internally.
 		METHOD key ()Lnet/minecraft/resources/ResourceKey;

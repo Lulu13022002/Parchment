@@ -2,7 +2,7 @@ CLASS net/minecraft/client/gui/screens/LanguageSelectScreen
 	FIELD languageManager Lnet/minecraft/client/resources/language/LanguageManager;
 		COMMENT Reference to the LanguageManager object.
 	FIELD packSelectionList Lnet/minecraft/client/gui/screens/LanguageSelectScreen$LanguageSelectionList;
-		COMMENT The List GuiSlot object reference.
+		COMMENT The List GuiEventListener object reference.
 	METHOD <init> (Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/Options;Lnet/minecraft/client/resources/language/LanguageManager;)V
 		ARG 1 lastScreen
 		ARG 2 options

@@ -5,4 +5,4 @@ CLASS net/minecraft/server/network/LegacyQueryHandler
 		ARG 1 string
 	METHOD sendFlushAndClose (Lio/netty/channel/ChannelHandlerContext;Lio/netty/buffer/ByteBuf;)V
 		ARG 1 ctx
-		ARG 2 data
+		ARG 2 buffer

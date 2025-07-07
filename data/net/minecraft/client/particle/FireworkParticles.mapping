@@ -69,9 +69,9 @@ CLASS net/minecraft/client/particle/FireworkParticles
 			ARG 14 engine
 			ARG 15 sprites
 		METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
-			ARG 1 buffer
-			ARG 2 renderInfo
-			ARG 3 partialTicks
+			ARG 1 consumer
+			ARG 2 camera
+			ARG 3 partialTick
 		METHOD setFlicker (Z)V
 			ARG 1 twinkle
 		METHOD setTrail (Z)V
@@ -92,6 +92,6 @@ CLASS net/minecraft/client/particle/FireworkParticles
 		METHOD getQuadSize (F)F
 			ARG 1 scaleFactor
 		METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
-			ARG 1 buffer
-			ARG 2 renderInfo
-			ARG 3 partialTicks
+			ARG 1 consumer
+			ARG 2 camera
+			ARG 3 partialTick

@@ -2,7 +2,7 @@ CLASS net/minecraft/client/Minecraft
 	FIELD blockRenderer Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;
 		COMMENT The BlockRenderDispatcher instance that will be used based off gamesettings
 	FIELD connectedToRealms Z
-		COMMENT True if the player is connected to a realms server
+		COMMENT {@code true} if the player is connected to a realms server
 	FIELD frameTimer Lnet/minecraft/util/FrameTimer;
 		COMMENT The FrameTimer's instance
 	FIELD lastNanoTime J
@@ -17,7 +17,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 0 resourcePackSupplier
 	METHOD addCustomNbtData (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/entity/BlockEntity;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 stack
-		ARG 2 te
+		ARG 2 blockEntity
 	METHOD clearLevel (Lnet/minecraft/client/gui/screens/Screen;)V
 		ARG 1 screen
 	METHOD clearResourcePacksOnError (Ljava/lang/Throwable;Lnet/minecraft/network/chat/Component;)V
@@ -28,7 +28,6 @@ CLASS net/minecraft/client/Minecraft
 	METHOD continueAttack (Z)V
 		ARG 1 leftClick
 	METHOD crash (Lnet/minecraft/CrashReport;)V
-		COMMENT Wrapper around displayCrashReportInternal
 		ARG 0 report
 	METHOD createClientPackAdapter (Ljava/lang/String;Lnet/minecraft/network/chat/Component;ZLjava/util/function/Supplier;Lnet/minecraft/server/packs/metadata/pack/PackMetadataSection;Lnet/minecraft/server/packs/repository/Pack$Position;Lnet/minecraft/server/packs/repository/PackSource;)Lnet/minecraft/server/packs/repository/Pack;
 		ARG 0 id
@@ -39,7 +38,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 5 defaultPosition
 		ARG 6 packSource
 	METHOD createSearchTrees ()V
-		COMMENT Fills {@link #searchTreeManager} with the current item and recipe registry contents.
+		COMMENT Fills {@link #searchRegistry} with the current item and recipe registry contents.
 	METHOD debugFpsMeterKeyPress (I)V
 		COMMENT Update debugProfilerName in response to number keys in debug screen
 		ARG 1 keyCount
@@ -75,13 +74,13 @@ CLASS net/minecraft/client/Minecraft
 	METHOD getInstance ()Lnet/minecraft/client/Minecraft;
 		COMMENT Return the singleton Minecraft instance for the game
 	METHOD getLaunchedVersion ()Ljava/lang/String;
-		COMMENT Gets the version that Minecraft was launched under (the name of a version JSON). Specified via the <code>--version</code> flag.
+		COMMENT Gets the version that Minecraft was launched under (the name of a version JSON). Specified via the {@code --version} flag.
 	METHOD getLevelSource ()Lnet/minecraft/world/level/storage/LevelStorageSource;
 		COMMENT Returns the save loader that is currently being used
 	METHOD getMobEffectTextures ()Lnet/minecraft/client/resources/MobEffectTextureManager;
 		COMMENT Gets the sprite uploader used for potions.
 	METHOD getMusicManager ()Lnet/minecraft/client/sounds/MusicManager;
-		COMMENT Return the musicTicker's instance
+		COMMENT Return the musicManager's instance
 	METHOD getPaintingTextures ()Lnet/minecraft/client/resources/PaintingTextureManager;
 		COMMENT Gets the sprite uploader used for paintings.
 	METHOD getProfileProperties ()Lcom/mojang/authlib/properties/PropertyMap;
@@ -93,7 +92,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD getTextureAtlas (Lnet/minecraft/resources/ResourceLocation;)Ljava/util/function/Function;
 		ARG 1 location
 	METHOD getVersionType ()Ljava/lang/String;
-		COMMENT Gets the type of version that Minecraft was launched under (as specified in the version JSON). Specified via the <code>--versionType</code> flag.
+		COMMENT Gets the type of version that Minecraft was launched under (as specified in the version JSON). Specified via the {@code --versionType} flag.
 	METHOD grabHugeScreenshot (Ljava/io/File;IIII)Lnet/minecraft/network/chat/Component;
 		ARG 1 gameDirectory
 		ARG 3 rowHeight
@@ -117,7 +116,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD openChatScreen (Ljava/lang/String;)V
 		ARG 1 defaultText
 	METHOD pauseGame (Z)V
-		COMMENT Displays the ingame menu
+		COMMENT Displays the in-game menu
 		ARG 1 pauseOnly
 	METHOD pickBlock ()V
 		COMMENT Called when user clicked he's mouse middle button (pick block)
@@ -159,7 +158,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD startUseItem ()V
 		COMMENT Called when user clicked he's mouse right button (place)
 	METHOD stop ()V
-		COMMENT Called when the window is closing. Sets 'running' to false which allows the game loop to exit cleanly.
+		COMMENT Called when the window is closing. Sets 'running' to {@code false} which allows the game loop to exit cleanly.
 	METHOD tick ()V
 		COMMENT Runs the current tick.
 	METHOD updateLevelInEngines (Lnet/minecraft/client/multiplayer/ClientLevel;)V

@@ -18,4 +18,4 @@ CLASS net/minecraft/world/level/block/SaplingBlock
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state
-		ARG 4 isClient
+		ARG 4 isClientSide

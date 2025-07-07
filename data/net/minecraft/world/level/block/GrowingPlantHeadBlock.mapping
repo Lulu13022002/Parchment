@@ -26,7 +26,7 @@ CLASS net/minecraft/world/level/block/GrowingPlantHeadBlock
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state
-		ARG 4 isClient
+		ARG 4 isClientSide
 	METHOD updateBodyAfterConvertedFromHead (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/state/BlockState;
 		ARG 1 head
 		ARG 2 body

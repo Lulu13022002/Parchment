@@ -27,5 +27,5 @@ CLASS net/minecraft/world/entity/ai/attributes/Attribute
 	METHOD setSyncable (Z)Lnet/minecraft/world/entity/ai/attributes/Attribute;
 		COMMENT Sets whether the attribute value should be synced to the client.
 		COMMENT @return The same attribute instance being modified.
-		ARG 1 watch
+		ARG 1 syncable
 			COMMENT Whether the attribute value should be kept in sync.

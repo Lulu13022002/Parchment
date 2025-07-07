@@ -6,7 +6,7 @@ CLASS net/minecraft/world/level/lighting/LayerLightSectionStorage
 	FIELD toRemove Lit/unimi/dsi/fastutil/longs/LongSet;
 		COMMENT Set of section positions that can be removed, because their light won't affect any blocks.
 	METHOD <init> (Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/world/level/chunk/LightChunkGetter;Lnet/minecraft/world/level/lighting/DataLayerStorageMap;)V
-		ARG 1 layer
+		ARG 1 lightLayer
 		ARG 2 chunkSource
 		ARG 3 updatingSectionData
 	METHOD checkEdgesForSection (Lnet/minecraft/world/level/lighting/LayerLightEngine;J)V
@@ -33,9 +33,9 @@ CLASS net/minecraft/world/level/lighting/LayerLightSectionStorage
 	METHOD getLevelFromSource (J)I
 		ARG 1 pos
 	METHOD getLightValue (J)I
-		ARG 1 levelPos
+		ARG 1 pos
 	METHOD getStoredLevel (J)I
-		ARG 1 levelPos
+		ARG 1 pos
 	METHOD lambda$clearQueuedSectionBlocks$0 (JJ)Z
 		ARG 2 pos
 	METHOD markNewInconsistencies (Lnet/minecraft/world/level/lighting/LayerLightEngine;ZZ)V
@@ -57,7 +57,7 @@ CLASS net/minecraft/world/level/lighting/LayerLightSectionStorage
 		ARG 1 sectionPos
 		ARG 3 level
 	METHOD setStoredLevel (JI)V
-		ARG 1 levelPos
+		ARG 1 pos
 		ARG 3 lightLevel
 	METHOD storingLightForSection (J)Z
 		ARG 1 sectionPos

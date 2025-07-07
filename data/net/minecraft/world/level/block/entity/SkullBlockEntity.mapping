@@ -8,7 +8,7 @@ CLASS net/minecraft/world/level/block/entity/SkullBlockEntity
 		ARG 2 state
 		ARG 3 blockEntity
 	METHOD getMouthAnimation (F)F
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD lambda$updateGameprofile$2 (Ljava/util/function/Consumer;Lcom/mojang/authlib/GameProfile;)V
 		ARG 1 optionalProfile
 	METHOD lambda$updateGameprofile$6 (Ljava/util/function/Consumer;Lcom/mojang/authlib/GameProfile;Ljava/util/Optional;)V

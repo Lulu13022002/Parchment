@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/ApplyBonusCount
 	COMMENT LootItemFunction that modifies the stack's count based on an enchantment level on the {@linkplain LootContextParams#TOOL tool} using various formulas.
 	METHOD <init> ([Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;Lnet/minecraft/world/item/enchantment/Enchantment;Lnet/minecraft/world/level/storage/loot/functions/ApplyBonusCount$Formula;)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 enchantment
 		ARG 3 formula
 	METHOD addBonusBinomialDistributionCount (Lnet/minecraft/world/item/enchantment/Enchantment;FI)Lnet/minecraft/world/level/storage/loot/functions/LootItemConditionalFunction$Builder;
@@ -23,16 +23,16 @@ CLASS net/minecraft/world/level/storage/loot/functions/ApplyBonusCount
 			ARG 3 enchantmentLevel
 		METHOD serializeParams (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonSerializationContext;)V
 			ARG 1 json
-			ARG 2 serializationContext
+			ARG 2 context
 	CLASS OreDrops
 		COMMENT Applies a bonus count with a special formula used for fortune ore drops.
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/world/level/storage/loot/functions/ApplyBonusCount$Formula;
 			ARG 0 json
-			ARG 1 deserializationContext
+			ARG 1 context
 	CLASS Serializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)Lnet/minecraft/world/level/storage/loot/functions/ApplyBonusCount;
-			ARG 1 object
-			ARG 2 deserializationContext
+			ARG 1 json
+			ARG 2 context
 			ARG 3 conditions
 	CLASS UniformBonusCount
 		COMMENT Adds a bonus count based on the enchantment level scaled by a constant multiplier.
@@ -40,11 +40,11 @@ CLASS net/minecraft/world/level/storage/loot/functions/ApplyBonusCount
 			ARG 1 bonusMultiplier
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/world/level/storage/loot/functions/ApplyBonusCount$Formula;
 			ARG 0 json
-			ARG 1 deserializationContext
+			ARG 1 context
 	CLASS FormulaDeserializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/world/level/storage/loot/functions/ApplyBonusCount$Formula;
 			ARG 1 json
-			ARG 2 deserializationContext
+			ARG 2 context
 	CLASS BinomialWithBonusCount
 		COMMENT Applies a bonus based on a binomial distribution with {@code n = enchantmentLevel + extraRounds} and {@code p = probability}.
 		METHOD <init> (IF)V
@@ -52,4 +52,4 @@ CLASS net/minecraft/world/level/storage/loot/functions/ApplyBonusCount
 			ARG 2 probability
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/world/level/storage/loot/functions/ApplyBonusCount$Formula;
 			ARG 0 json
-			ARG 1 deserializationContext
+			ARG 1 context

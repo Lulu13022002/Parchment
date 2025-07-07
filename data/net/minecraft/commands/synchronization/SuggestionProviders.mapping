@@ -1,6 +1,6 @@
 CLASS net/minecraft/commands/synchronization/SuggestionProviders
 	METHOD getName (Lcom/mojang/brigadier/suggestion/SuggestionProvider;)Lnet/minecraft/resources/ResourceLocation;
-		COMMENT Gets the ID for the given provider. If the provider is not a wrapped one created via {@link #register}, then it returns {@link #ASK_SERVER_ID} instead, as there is no known ID but ASK_SERVER always works.
+		COMMENT Gets the ID for the given provider. If the provider is not a wrapped one created via {@link #register}, then it returns {@link #DEFAULT_NAME} instead, as there is no known ID but ASK_SERVER always works.
 		ARG 0 provider
 	METHOD getProvider (Lnet/minecraft/resources/ResourceLocation;)Lcom/mojang/brigadier/suggestion/SuggestionProvider;
 		ARG 0 name

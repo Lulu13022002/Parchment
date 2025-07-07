@@ -16,4 +16,4 @@ CLASS net/minecraft/world/level/lighting/BlockLightEngine
 		ARG 3 excludedSourcePos
 		ARG 5 level
 	METHOD getLightEmission (J)I
-		ARG 1 levelPos
+		ARG 1 pos

@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/entries/DynamicLoot
 	COMMENT A loot pool entry container that will generate the dynamic drops with a given name.
 	COMMENT
-	COMMENT @see LootContext.DynamicDrops
+	COMMENT @see LootContext.DynamicDrop
 	METHOD <init> (Lnet/minecraft/resources/ResourceLocation;II[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;[Lnet/minecraft/world/level/storage/loot/functions/LootItemFunction;)V
 		ARG 1 dynamicDropsName
 		ARG 2 weight
@@ -12,13 +12,13 @@ CLASS net/minecraft/world/level/storage/loot/entries/DynamicLoot
 		ARG 0 dynamicDropsName
 	CLASS Serializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;II[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;[Lnet/minecraft/world/level/storage/loot/functions/LootItemFunction;)Lnet/minecraft/world/level/storage/loot/entries/DynamicLoot;
-			ARG 1 object
+			ARG 1 json
 			ARG 2 context
 			ARG 3 weight
 			ARG 4 quality
 			ARG 5 conditions
 			ARG 6 functions
 		METHOD serializeCustom (Lcom/google/gson/JsonObject;Lnet/minecraft/world/level/storage/loot/entries/DynamicLoot;Lcom/google/gson/JsonSerializationContext;)V
-			ARG 1 object
-			ARG 2 context
-			ARG 3 conditions
+			ARG 1 json
+			ARG 2 value
+			ARG 3 context
