@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/ai/goal/FollowOwnerGoal
 	METHOD canContinueToUse ()Z
-		COMMENT Returns whether an in-progress EntityAIBase should continue executing
+		COMMENT Returns whether an in-progress Goal should continue executing
 	METHOD canTeleportTo (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
 	METHOD canUse ()Z

@@ -3,4 +3,4 @@ CLASS net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer
 		ARG 1 stack
 		ARG 2 transformType
 		ARG 3 poseStack
-		ARG 4 multiBuffer
+		ARG 4 bufferSource

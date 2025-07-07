@@ -14,11 +14,10 @@ CLASS net/minecraft/commands/arguments/item/ItemParser
 		ARG 0 builder
 		ARG 1 tags
 	METHOD suggestItemIdOrTag (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Lnet/minecraft/tags/TagCollection;)Ljava/util/concurrent/CompletableFuture;
-		COMMENT Builds a list of suggestions based on item tags (if the parser is set to allows tags) and item registry names.
+		COMMENT Builds a list of suggestions based on item tags (if the parser is set to allows tags) and item keys.
 		ARG 1 builder
 		ARG 2 tags
 	METHOD suggestOpenNbt (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Lnet/minecraft/tags/TagCollection;)Ljava/util/concurrent/CompletableFuture;
-		COMMENT Builds a list of suggestions based on item registry names.
 		ARG 1 builder
 		ARG 2 tags
 	METHOD suggestTag (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;Lnet/minecraft/tags/TagCollection;)Ljava/util/concurrent/CompletableFuture;

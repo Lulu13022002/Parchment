@@ -22,7 +22,7 @@ CLASS net/minecraft/nbt/CompoundTag
 	METHOD getAllKeys ()Ljava/util/Set;
 		COMMENT Gets a set with the names of the keys in the tag compound.
 	METHOD getBoolean (Ljava/lang/String;)Z
-		COMMENT Retrieves a boolean value using the specified key, or false if no such key was stored. This uses the getByte method.
+		COMMENT Retrieves a boolean value using the specified key, or {@code false} if no such key was stored. This uses the getByte method.
 		ARG 1 key
 	METHOD getByte (Ljava/lang/String;)B
 		COMMENT Retrieves a byte value using the specified key, or 0 if no such key was stored.
@@ -31,7 +31,7 @@ CLASS net/minecraft/nbt/CompoundTag
 		COMMENT Retrieves a byte array using the specified key, or a zero-length array if no such key was stored.
 		ARG 1 key
 	METHOD getCompound (Ljava/lang/String;)Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Retrieves a NBTTagCompound subtag matching the specified key, or a new empty NBTTagCompound if no such key was stored.
+		COMMENT Retrieves a CompoundTag subtag matching the specified key, or a new empty CompoundTag if no such key was stored.
 		ARG 1 key
 	METHOD getDouble (Ljava/lang/String;)D
 		COMMENT Retrieves a double value using the specified key, or 0 if no such key was stored.
@@ -48,7 +48,7 @@ CLASS net/minecraft/nbt/CompoundTag
 		COMMENT Retrieves an int array using the specified key, or a zero-length array if no such key was stored.
 		ARG 1 key
 	METHOD getList (Ljava/lang/String;I)Lnet/minecraft/nbt/ListTag;
-		COMMENT Gets the NBTTagList object with the given name.
+		COMMENT Gets the ListTag object with the given name.
 		ARG 1 key
 		ARG 2 tagType
 	METHOD getLong (Ljava/lang/String;)J
@@ -72,7 +72,7 @@ CLASS net/minecraft/nbt/CompoundTag
 	METHOD lambda$static$0 (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/DataResult;
 		ARG 0 dynamic
 	METHOD lambda$static$1 (Lnet/minecraft/nbt/CompoundTag;)Lcom/mojang/serialization/Dynamic;
-		ARG 0 compoundTag
+		ARG 0 tag
 	METHOD merge (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
 		COMMENT Copies all the tags of {@code other} into this tag, then returns itself.
 		COMMENT @see #copy()
@@ -81,52 +81,55 @@ CLASS net/minecraft/nbt/CompoundTag
 		ARG 1 key
 		ARG 2 value
 	METHOD putBoolean (Ljava/lang/String;Z)V
-		COMMENT Stores the given boolean value as a NBTTagByte, storing 1 for true and 0 for false, using the given string key.
+		COMMENT Stores the given boolean value as a ByteTag, storing 1 for {@code true} and 0 for {@code false}, using the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putByte (Ljava/lang/String;B)V
-		COMMENT Stores a new NBTTagByte with the given byte value into the map with the given string key.
+		COMMENT Stores a new ByteTag with the given byte value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putByteArray (Ljava/lang/String;[B)V
-		COMMENT Stores a new NBTTagByteArray with the given array as data into the map with the given string key.
+		COMMENT Stores a new ByteArrayTag with the given array as data into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putDouble (Ljava/lang/String;D)V
-		COMMENT Stores a new NBTTagDouble with the given double value into the map with the given string key.
+		COMMENT Stores a new DoubleTag with the given double value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putFloat (Ljava/lang/String;F)V
-		COMMENT Stores a new NBTTagFloat with the given float value into the map with the given string key.
+		COMMENT Stores a new FloatTag with the given float value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putInt (Ljava/lang/String;I)V
-		COMMENT Stores a new NBTTagInt with the given integer value into the map with the given string key.
+		COMMENT Stores a new IntTag with the given integer value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putIntArray (Ljava/lang/String;Ljava/util/List;)V
+		COMMENT Stores a new IntArrayTag with the given list as data into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putIntArray (Ljava/lang/String;[I)V
-		COMMENT Stores a new NBTTagIntArray with the given array as data into the map with the given string key.
+		COMMENT Stores a new IntArrayTag with the given array as data into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putLong (Ljava/lang/String;J)V
-		COMMENT Stores a new NBTTagLong with the given long value into the map with the given string key.
+		COMMENT Stores a new LongTag with the given long value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putLongArray (Ljava/lang/String;Ljava/util/List;)V
+		COMMENT Stores a new LongArrayTag with the given list as data into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putLongArray (Ljava/lang/String;[J)V
+		COMMENT Stores a new LongArrayTag with the given array as data into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putShort (Ljava/lang/String;S)V
-		COMMENT Stores a new NBTTagShort with the given short value into the map with the given string key.
+		COMMENT Stores a new ShortTag with the given short value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putString (Ljava/lang/String;Ljava/lang/String;)V
-		COMMENT Stores a new NBTTagString with the given string value into the map with the given string key.
+		COMMENT Stores a new StringTag with the given string value into the map with the given string key.
 		ARG 1 key
 		ARG 2 value
 	METHOD putUUID (Ljava/lang/String;Ljava/util/UUID;)V

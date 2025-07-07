@@ -9,9 +9,9 @@ CLASS net/minecraft/world/entity/ai/navigation/WaterBoundPathNavigation
 	METHOD canUpdatePath ()Z
 		COMMENT If on ground or swimming and can swim
 	METHOD doStuckDetection (Lnet/minecraft/world/phys/Vec3;)V
-		COMMENT Checks if entity haven't been moved when last checked and if so, clears current {@link net.minecraft.pathfinding.PathEntity}
-		ARG 1 positionVec3
+		COMMENT Checks if entity haven't been moved when last checked and if so, clears current {@link net.minecraft.pathfinding.Path}
+		ARG 1 pos
 	METHOD isStableDestination (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
 	METHOD setCanFloat (Z)V
-		ARG 1 canSwim
+		ARG 1 canFloat

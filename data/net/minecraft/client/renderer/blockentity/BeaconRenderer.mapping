@@ -1,8 +1,8 @@
 CLASS net/minecraft/client/renderer/blockentity/BeaconRenderer
 	METHOD addVertex (Lcom/mojang/math/Matrix4f;Lcom/mojang/math/Matrix3f;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFIFFFF)V
-		ARG 0 matrixPos
-		ARG 1 matrixNormal
-		ARG 2 buffer
+		ARG 0 pose
+		ARG 1 normal
+		ARG 2 consumer
 		ARG 3 red
 		ARG 4 green
 		ARG 5 blue
@@ -14,24 +14,24 @@ CLASS net/minecraft/client/renderer/blockentity/BeaconRenderer
 		ARG 11 texV
 	METHOD render (Lnet/minecraft/world/level/block/entity/BeaconBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V
 		ARG 1 blockEntity
-		ARG 2 partialTicks
-		ARG 3 matrixStack
-		ARG 4 buffer
-		ARG 5 combinedLight
-		ARG 6 combinedOverlay
+		ARG 2 partialTick
+		ARG 3 poseStack
+		ARG 4 bufferSource
+		ARG 5 packedLight
+		ARG 6 packedOverlay
 	METHOD renderBeaconBeam (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;FJII[F)V
-		ARG 0 matrixStack
-		ARG 1 buffer
-		ARG 2 partialTicks
+		ARG 0 poseStack
+		ARG 1 bufferSource
+		ARG 2 partialTick
 		ARG 3 totalLevelTime
 		ARG 5 yOffset
 		ARG 6 height
 		ARG 7 colors
 	METHOD renderBeaconBeam (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/resources/ResourceLocation;FFJII[FFF)V
-		ARG 0 matrixStack
-		ARG 1 buffer
+		ARG 0 poseStack
+		ARG 1 bufferSource
 		ARG 2 textureLocation
-		ARG 3 partialTicks
+		ARG 3 partialTick
 		ARG 4 textureScale
 		ARG 5 totalLevelTime
 		ARG 7 yOffset
@@ -40,8 +40,8 @@ CLASS net/minecraft/client/renderer/blockentity/BeaconRenderer
 		ARG 10 beamRadius
 		ARG 11 glowRadius
 	METHOD renderPart (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFIIFFFFFFFFFFFF)V
-		ARG 0 matrixStack
-		ARG 1 buffer
+		ARG 0 poseStack
+		ARG 1 consumer
 		ARG 2 red
 		ARG 3 green
 		ARG 4 blue
@@ -53,9 +53,9 @@ CLASS net/minecraft/client/renderer/blockentity/BeaconRenderer
 		ARG 18 v1
 		ARG 19 v2
 	METHOD renderQuad (Lcom/mojang/math/Matrix4f;Lcom/mojang/math/Matrix3f;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFIIFFFFFFFF)V
-		ARG 0 matrixPos
-		ARG 1 matrixNormal
-		ARG 2 buffer
+		ARG 0 pose
+		ARG 1 normal
+		ARG 2 consumer
 		ARG 3 red
 		ARG 4 green
 		ARG 5 blue
@@ -71,4 +71,4 @@ CLASS net/minecraft/client/renderer/blockentity/BeaconRenderer
 		ARG 15 v1
 		ARG 16 v2
 	METHOD shouldRenderOffScreen (Lnet/minecraft/world/level/block/entity/BeaconBlockEntity;)Z
-		ARG 1 te
+		ARG 1 blockEntity

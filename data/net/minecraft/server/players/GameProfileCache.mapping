@@ -7,7 +7,7 @@ CLASS net/minecraft/server/players/GameProfileCache
 		COMMENT Add an entry to this cache
 		ARG 1 gameProfile
 	METHOD get (Ljava/lang/String;)Lcom/mojang/authlib/GameProfile;
-		COMMENT Get a player's GameProfile given their username. Mojang's server's will be contacted if the entry is not cached locally.
+		COMMENT Get a player's GameProfile given their username. Mojang's servers will be contacted if the entry is not cached locally.
 		ARG 1 username
 	METHOD get (Ljava/util/UUID;)Lcom/mojang/authlib/GameProfile;
 		COMMENT Get a player's {@link GameProfile} given their UUID

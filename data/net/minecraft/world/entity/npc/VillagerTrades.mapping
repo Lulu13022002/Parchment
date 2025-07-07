@@ -15,7 +15,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 4 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS ItemsForEmeralds
 		METHOD <init> (Lnet/minecraft/world/item/Item;III)V
 			ARG 1 item
@@ -49,7 +49,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 5 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS DyedArmorForEmeralds
 		METHOD <init> (Lnet/minecraft/world/item/Item;I)V
 			ARG 1 item
@@ -61,7 +61,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 4 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 		METHOD getRandomDye (Ljava/util/Random;)Lnet/minecraft/world/item/DyeItem;
 			ARG 0 random
 	CLASS EnchantBookForEmeralds
@@ -69,7 +69,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 1 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS TreasureMapForEmeralds
 		METHOD <init> (ILnet/minecraft/world/level/levelgen/feature/StructureFeature;Lnet/minecraft/world/level/saveddata/maps/MapDecoration$Type;II)V
 			ARG 1 emeraldCost
@@ -79,7 +79,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 5 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS ItemsAndEmeraldsToItems
 		METHOD <init> (Lnet/minecraft/world/level/ItemLike;IILnet/minecraft/world/item/Item;III)V
 			ARG 1 fromItem
@@ -98,7 +98,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 6 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS EnchantedItemForEmeralds
 		METHOD <init> (Lnet/minecraft/world/item/Item;III)V
 			ARG 1 item
@@ -113,7 +113,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 5 priceMultiplier
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS SuspisciousStewForEmerald
 		METHOD <init> (Lnet/minecraft/world/effect/MobEffect;II)V
 			ARG 1 effect
@@ -121,7 +121,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 3 xp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 	CLASS EmeraldsForVillagerTypeItem
 		METHOD <init> (IIILjava/util/Map;)V
 			ARG 1 cost
@@ -130,7 +130,7 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 4 trades
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 		METHOD lambda$new$0 (Ljava/util/Map;Lnet/minecraft/world/entity/npc/VillagerType;)Z
 			ARG 1 type
 		METHOD lambda$new$1 (Lnet/minecraft/world/entity/npc/VillagerType;)V
@@ -148,6 +148,6 @@ CLASS net/minecraft/world/entity/npc/VillagerTrades
 			ARG 7 villagerXp
 		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Ljava/util/Random;)Lnet/minecraft/world/item/trading/MerchantOffer;
 			ARG 1 trader
-			ARG 2 rand
+			ARG 2 random
 		METHOD lambda$getOffer$0 (Lnet/minecraft/world/item/alchemy/Potion;)Z
 			ARG 0 potion

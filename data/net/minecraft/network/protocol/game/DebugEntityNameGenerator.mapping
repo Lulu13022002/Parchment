@@ -4,5 +4,5 @@ CLASS net/minecraft/network/protocol/game/DebugEntityNameGenerator
 	METHOD getRandom (Ljava/util/UUID;)Ljava/util/Random;
 		ARG 0 uuid
 	METHOD getRandomString (Ljava/util/Random;[Ljava/lang/String;)Ljava/lang/String;
-		ARG 0 rand
+		ARG 0 random
 		ARG 1 strings

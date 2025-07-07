@@ -7,7 +7,7 @@ CLASS net/minecraft/network/protocol/game/ClientboundCommandsPacket
 	METHOD enumerateNodes (Lcom/mojang/brigadier/tree/RootCommandNode;)Lit/unimi/dsi/fastutil/objects/Object2IntMap;
 		ARG 0 rootNode
 	METHOD handle (Lnet/minecraft/network/protocol/game/ClientGamePacketListener;)V
-		COMMENT Passes this Packet on to the NetHandler for processing.
+		COMMENT Passes this Packet on to the packet listener for processing.
 		ARG 1 handler
 	METHOD readNode (Lnet/minecraft/network/FriendlyByteBuf;)Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$Entry;
 		ARG 0 buffer

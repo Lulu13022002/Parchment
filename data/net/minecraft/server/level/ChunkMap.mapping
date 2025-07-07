@@ -1,14 +1,14 @@
 CLASS net/minecraft/server/level/ChunkMap
 	FIELD entitiesInLevel Lit/unimi/dsi/fastutil/longs/LongSet;
-		COMMENT Chunk positions in this set have fully loaded and their TE's and entities are accessible from the world
+		COMMENT Chunk positions in this set have fully loaded and their block entities and entities are accessible from the world
 	FIELD modified Z
-		COMMENT True if changes have been made to {@link #loadedChunks} and thus a new copy of the collection has to be made into {@link #immutableLoadedChunks}.
+		COMMENT {@code true} if changes have been made to {@link #updatingChunkMap} and thus a new copy of the collection has to be made into {@link #visibleChunkMap}.
 	FIELD toDrop Lit/unimi/dsi/fastutil/longs/LongSet;
 		COMMENT Chunks that have been requested to be unloaded, but haven't been unloaded yet.
 	FIELD updatingChunkMap Lit/unimi/dsi/fastutil/longs/Long2ObjectLinkedOpenHashMap;
 		COMMENT Chunks in memory. This should only ever be manipulated by the main thread.
 	FIELD visibleChunkMap Lit/unimi/dsi/fastutil/longs/Long2ObjectLinkedOpenHashMap;
-		COMMENT Same as {@link #loadedChunks}, but immutable for access from other threads. <em>This should never be mutated.</em>
+		COMMENT Same as {@link #updatingChunkMap}, but immutable for access from other threads. <em>This should never be mutated.</em>
 	METHOD addEntity (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	METHOD broadcast (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/network/protocol/Packet;)V
@@ -40,7 +40,7 @@ CLASS net/minecraft/server/level/ChunkMap
 		ARG 2 packetCache
 		ARG 3 chunk
 	METHOD processUnloads (Ljava/util/function/BooleanSupplier;)V
-		ARG 1 hasMoreTime
+		ARG 1 haveTime
 	METHOD readChunk (Lnet/minecraft/world/level/ChunkPos;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 1 pos
 	METHOD removeEntity (Lnet/minecraft/world/entity/Entity;)V
@@ -62,13 +62,13 @@ CLASS net/minecraft/server/level/ChunkMap
 	METHOD skipPlayer (Lnet/minecraft/server/level/ServerPlayer;)Z
 		ARG 1 player
 	METHOD tick (Ljava/util/function/BooleanSupplier;)V
-		ARG 1 hasMoreTime
+		ARG 1 haveTime
 	METHOD updateChunkScheduling (JILnet/minecraft/server/level/ChunkHolder;I)Lnet/minecraft/server/level/ChunkHolder;
-		COMMENT Sets level and loads/unloads chunk. Used by {@link net.minecraft.world.server.ChunkManager.ProxyTicketManager} to set chunk level.
+		COMMENT Sets level and loads/unloads chunk. Used by {@link DistanceManager} to set chunk level.
 		ARG 1 chunkPos
 		ARG 3 newLevel
 		ARG 4 holder
-			COMMENT The {@link net.minecraft.world.server.ChunkHolder} of the chunk if it is loaded, and null otherwise.
+			COMMENT The {@link ChunkHolder} of the chunk if it is loaded, and {@code null} otherwise.
 		ARG 5 oldLevel
 	METHOD updateChunkTracking (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/level/ChunkPos;[Lnet/minecraft/network/protocol/Packet;ZZ)V
 		COMMENT Sends the chunk to the client, or tells it to unload it.

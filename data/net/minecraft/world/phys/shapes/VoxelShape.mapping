@@ -28,7 +28,7 @@ CLASS net/minecraft/world/phys/shapes/VoxelShape
 	METHOD getCoords (Lnet/minecraft/core/Direction$Axis;)Lit/unimi/dsi/fastutil/doubles/DoubleList;
 		ARG 1 axis
 	METHOD getFaceShape (Lnet/minecraft/core/Direction;)Lnet/minecraft/world/phys/shapes/VoxelShape;
-		COMMENT Projects" this shape onto the given side. For each box in the shape, if it does not touch the given side, it is eliminated. Otherwise, the box is extended in the given axis to cover the entire range [0, 1].
+		COMMENT Projects this shape onto the given side. For each box in the shape, if it does not touch the given side, it is eliminated. Otherwise, the box is extended in the given axis to cover the entire range [0, 1].
 		ARG 1 side
 	METHOD lambda$forAllBoxes$2 (Lnet/minecraft/world/phys/shapes/Shapes$DoubleLineConsumer;Lit/unimi/dsi/fastutil/doubles/DoubleList;Lit/unimi/dsi/fastutil/doubles/DoubleList;Lit/unimi/dsi/fastutil/doubles/DoubleList;IIIIII)V
 		ARG 4 x1

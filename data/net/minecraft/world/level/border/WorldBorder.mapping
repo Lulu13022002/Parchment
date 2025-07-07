@@ -2,7 +2,7 @@ CLASS net/minecraft/world/level/border/WorldBorder
 	METHOD addListener (Lnet/minecraft/world/level/border/BorderChangeListener;)V
 		ARG 1 listener
 	METHOD applySettings (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 serializer
+		ARG 1 settings
 	METHOD getDistanceToBorder (DD)D
 		ARG 1 x
 		ARG 3 z
@@ -24,13 +24,13 @@ CLASS net/minecraft/world/level/border/WorldBorder
 		ARG 1 x
 		ARG 3 z
 	METHOD setDamagePerBlock (D)V
-		ARG 1 newAmount
+		ARG 1 damagePerBlock
 	METHOD setDamageSafeZone (D)V
-		ARG 1 bufferSize
+		ARG 1 damageSafeZone
 	METHOD setSize (D)V
 		ARG 1 newSize
 	METHOD setWarningBlocks (I)V
-		ARG 1 warningDistance
+		ARG 1 warningBlocks
 	METHOD setWarningTime (I)V
 		ARG 1 warningTime
 	CLASS Settings
@@ -50,7 +50,7 @@ CLASS net/minecraft/world/level/border/WorldBorder
 			ARG 0 dynamic
 			ARG 1 defaultValue
 		METHOD write (Lnet/minecraft/nbt/CompoundTag;)V
-			ARG 1 nbt
+			ARG 1 tag
 	CLASS MovingBorderExtent
 		METHOD <init> (Lnet/minecraft/world/level/border/WorldBorder;DDJ)V
 			ARG 2 from

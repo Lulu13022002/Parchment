@@ -8,6 +8,6 @@ CLASS net/minecraft/world/level/storage/loot/functions/LootingEnchantFunction
 			ARG 1 limit
 	CLASS Serializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)Lnet/minecraft/world/level/storage/loot/functions/LootingEnchantFunction;
-			ARG 1 object
-			ARG 2 deserializationContext
+			ARG 1 json
+			ARG 2 context
 			ARG 3 conditions

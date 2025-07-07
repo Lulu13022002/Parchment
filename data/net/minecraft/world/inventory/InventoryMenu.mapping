@@ -4,15 +4,15 @@ CLASS net/minecraft/world/inventory/InventoryMenu
 		ARG 2 active
 		ARG 3 owner
 	METHOD canTakeItemForPickAll (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/inventory/Slot;)Z
-		COMMENT Called to determine if the current slot is valid for the stack merging (double-click) code. The stack passed in is null for the initial slot that was double-clicked.
+		COMMENT Called to determine if the current slot is valid for the stack merging (double-click) code. The stack passed in is {@code null} for the initial slot that was double-clicked.
 		ARG 1 stack
 		ARG 2 slot
 	METHOD fillCraftSlotsStackedContents (Lnet/minecraft/world/entity/player/StackedContents;)V
 		ARG 1 itemHelper
 	METHOD quickMoveStack (Lnet/minecraft/world/entity/player/Player;I)Lnet/minecraft/world/item/ItemStack;
-		COMMENT Handle when the stack in slot {@code index} is shift-clicked. Normally this moves the stack between the player inventory and the other inventory(s).
+		COMMENT Handle when the stack in {@code slotIndex} is shift-clicked. Normally this moves the stack between the player inventory and the other inventory(s).
 		ARG 1 player
-		ARG 2 index
+		ARG 2 slotIndex
 	METHOD recipeMatches (Lnet/minecraft/world/item/crafting/Recipe;)Z
 		ARG 1 recipe
 	METHOD removed (Lnet/minecraft/world/entity/player/Player;)V
@@ -26,7 +26,7 @@ CLASS net/minecraft/world/inventory/InventoryMenu
 		ARG 1 player
 	CLASS 1
 		METHOD getMaxStackSize ()I
-			COMMENT Returns the maximum stack size for a given slot (usually the same as getInventoryStackLimit(), but 1 in the case of armor slots)
+			COMMENT Returns the maximum stack size for a given slot (usually the same as Container#getMaxStackSize, but 1 in the case of armor slots)
 		METHOD mayPickup (Lnet/minecraft/world/entity/player/Player;)Z
 			COMMENT Return whether this slot's stack can be taken from this slot.
 			ARG 1 player

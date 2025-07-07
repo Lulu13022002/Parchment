@@ -1,6 +1,6 @@
 CLASS net/minecraft/client/gui/screens/ChatScreen
 	FIELD historyPos I
-		COMMENT keeps position of which chat message you will select when you press up, (does not increase for duplicated messages sent immediately after each other)
+		COMMENT keeps position of which message you will select when you press up, (does not increase for duplicated messages sent immediately after each other)
 	FIELD initial Ljava/lang/String;
 		COMMENT is the text that appears when you press the chat key and the input box appears pre-filled
 	FIELD input Lnet/minecraft/client/gui/components/EditBox;
@@ -24,10 +24,10 @@ CLASS net/minecraft/client/gui/screens/ChatScreen
 		COMMENT input is relative and is applied directly to the sentHistoryCursor so -1 is the previous message, 1 is the next message from the current cursor position
 		ARG 1 msgPos
 	METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;IIF)V
-		ARG 1 matrixStack
+		ARG 1 poseStack
 		ARG 2 mouseX
 		ARG 3 mouseY
-		ARG 4 partialTicks
+		ARG 4 partialTick
 	METHOD resize (Lnet/minecraft/client/Minecraft;II)V
 		ARG 1 minecraft
 		ARG 2 width

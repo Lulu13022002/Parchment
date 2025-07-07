@@ -1,12 +1,12 @@
 CLASS net/minecraft/advancements/critereon/EntityFlagsPredicate
 	METHOD addOptionalBoolean (Lcom/google/gson/JsonObject;Ljava/lang/String;Ljava/lang/Boolean;)V
-		ARG 1 jsonObject
+		ARG 1 json
 		ARG 2 name
 		ARG 3 bool
 	METHOD fromJson (Lcom/google/gson/JsonElement;)Lnet/minecraft/advancements/critereon/EntityFlagsPredicate;
 		ARG 0 element
 	METHOD getOptionalBoolean (Lcom/google/gson/JsonObject;Ljava/lang/String;)Ljava/lang/Boolean;
-		ARG 0 jsonObject
+		ARG 0 json
 		ARG 1 name
 	METHOD matches (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity

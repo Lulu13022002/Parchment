@@ -3,7 +3,7 @@ CLASS net/minecraft/world/item/enchantment/TridentImpalerEnchantment
 		ARG 1 rarity
 		ARG 2 applicableSlots
 	METHOD getDamageBonus (ILnet/minecraft/world/entity/MobType;)F
-		COMMENT Calculates the additional damage that will be dealt by an item with this enchantment. This alternative to calcModifierDamage is sensitive to the targets EnumCreatureAttribute.
+		COMMENT Calculates the amount of additional damage to deal when attacking with an item with the enchantment.
 		ARG 1 level
 		ARG 2 creatureType
 	METHOD getMaxCost (I)I

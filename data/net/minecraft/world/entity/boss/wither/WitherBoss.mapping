@@ -1,12 +1,12 @@
 CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addEffect (Lnet/minecraft/world/effect/MobEffectInstance;)Z
 		ARG 1 effectInstance
 	METHOD canBeAffected (Lnet/minecraft/world/effect/MobEffectInstance;)Z
-		ARG 1 potioneffect
+		ARG 1 effectInstance
 	METHOD canChangeDimensions ()Z
-		COMMENT Returns false if this Entity can't move between dimensions. True if it can.
+		COMMENT Returns {@code false} if this Entity can't move between dimensions. {@code true} if it can.
 	METHOD canDestroy (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 0 state
 	METHOD canRide (Lnet/minecraft/world/entity/Entity;)Z
@@ -14,7 +14,7 @@ CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 	METHOD checkDespawn ()V
 		COMMENT Makes the entity despawn if requirements are reached
 	METHOD dropCustomDeathLoot (Lnet/minecraft/world/damagesource/DamageSource;IZ)V
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 looting
 		ARG 3 recentlyHit
 	METHOD getAlternativeTarget (I)I
@@ -35,7 +35,7 @@ CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 		ARG 1 damageSource
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD lambda$static$0 (Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 0 entity
@@ -45,7 +45,7 @@ CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 		ARG 1 state
 		ARG 2 motionMultiplier
 	METHOD performRangedAttack (IDDDZ)V
-		COMMENT Launches a Wither skull toward (par2, par4, par6)
+		COMMENT Launches a Wither skull toward XYZ
 		ARG 1 head
 		ARG 2 x
 		ARG 4 y
@@ -60,7 +60,7 @@ CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 		ARG 2 distanceFactor
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD rotlerp (FFF)F
 		ARG 1 angle
 	METHOD setAlternativeTarget (II)V

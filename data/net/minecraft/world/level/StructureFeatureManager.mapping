@@ -6,13 +6,13 @@ CLASS net/minecraft/world/level/StructureFeatureManager
 		ARG 1 sectionPos
 		ARG 2 structure
 		ARG 3 chunkValue
-		ARG 5 reader
+		ARG 5 access
 	METHOD forWorldGenRegion (Lnet/minecraft/server/level/WorldGenRegion;)Lnet/minecraft/world/level/StructureFeatureManager;
 		ARG 1 region
 	METHOD getStartForFeature (Lnet/minecraft/core/SectionPos;Lnet/minecraft/world/level/levelgen/feature/StructureFeature;Lnet/minecraft/world/level/chunk/FeatureAccess;)Lnet/minecraft/world/level/levelgen/structure/StructureStart;
 		ARG 1 sectionPos
 		ARG 2 structure
-		ARG 3 reader
+		ARG 3 access
 	METHOD getStructureAt (Lnet/minecraft/core/BlockPos;ZLnet/minecraft/world/level/levelgen/feature/StructureFeature;)Lnet/minecraft/world/level/levelgen/structure/StructureStart;
 		ARG 1 pos
 		ARG 3 structure
@@ -20,7 +20,7 @@ CLASS net/minecraft/world/level/StructureFeatureManager
 		ARG 1 sectionPos
 		ARG 2 structure
 		ARG 3 start
-		ARG 4 reader
+		ARG 4 access
 	METHOD startsForFeature (Lnet/minecraft/core/SectionPos;Lnet/minecraft/world/level/levelgen/feature/StructureFeature;)Ljava/util/stream/Stream;
 		ARG 1 pos
 		ARG 2 structure

@@ -5,7 +5,7 @@ CLASS net/minecraft/resources/ResourceLocation
 	METHOD isAllowedInResourceLocation (C)Z
 		ARG 0 charValue
 	METHOD isValidNamespace (Ljava/lang/String;)Z
-		COMMENT Returns true if given namespace only consists of allowed characters.
+		COMMENT Returns {@code true} if given namespace only consists of allowed characters.
 		ARG 0 namespace
 	METHOD isValidPath (Ljava/lang/String;)Z
 		COMMENT Checks if the path contains invalid characters.

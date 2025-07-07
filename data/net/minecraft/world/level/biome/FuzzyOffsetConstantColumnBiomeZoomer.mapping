@@ -4,4 +4,4 @@ CLASS net/minecraft/world/level/biome/FuzzyOffsetConstantColumnBiomeZoomer
 		ARG 3 x
 		ARG 4 y
 		ARG 5 z
-		ARG 6 biomeReader
+		ARG 6 biomeSource

@@ -7,11 +7,11 @@ CLASS net/minecraft/world/level/chunk/LinearPalette
 	METHOD idFor (Ljava/lang/Object;)I
 		ARG 1 state
 	METHOD read (Lnet/minecraft/nbt/ListTag;)V
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD read (Lnet/minecraft/network/FriendlyByteBuf;)V
-		ARG 1 buf
+		ARG 1 buffer
 	METHOD valueFor (I)Ljava/lang/Object;
 		COMMENT Gets the block state by the palette id.
 		ARG 1 indexKey
 	METHOD write (Lnet/minecraft/network/FriendlyByteBuf;)V
-		ARG 1 buf
+		ARG 1 buffer

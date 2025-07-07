@@ -7,7 +7,7 @@ CLASS net/minecraft/world/level/block/AnvilBlock
 		ARG 1 fallingEntity
 	METHOD getDustColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)I
 		ARG 1 state
-		ARG 2 reader
+		ARG 2 level
 		ARG 3 pos
 	METHOD getMenuProvider (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/MenuProvider;
 		ARG 1 state
@@ -27,9 +27,9 @@ CLASS net/minecraft/world/level/block/AnvilBlock
 		ARG 4 type
 	METHOD rotate (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Rotation;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#rotate} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
-		ARG 2 rot
+		ARG 2 rotation
 	METHOD use (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;
 		ARG 1 state
 		ARG 2 level

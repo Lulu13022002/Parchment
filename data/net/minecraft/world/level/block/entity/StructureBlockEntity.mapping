@@ -4,9 +4,9 @@ CLASS net/minecraft/world/level/block/entity/StructureBlockEntity
 	METHOD createdBy (Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 author
 	METHOD getUpdatePacket ()Lnet/minecraft/network/protocol/game/ClientboundBlockEntityDataPacket;
-		COMMENT Retrieves packet to send to the client whenever this Tile Entity is resynced via World.notifyBlockUpdate. For modded TE's, this packet comes back to you clientside in {@link #onDataPacket}
+		COMMENT Retrieves packet to send to the client whenever this block entity is resynced via World.notifyBlockUpdate. For modded block entities, this packet comes back to you clientside in {@link #onDataPacket}
 	METHOD getUpdateTag ()Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Get an NBT compound to sync to the client with SPacketChunkData, used for initial loading of the chunk or when many blocks change at once. This compound comes back to you clientside in {@link handleUpdateTag}
+		COMMENT Get a tag to sync to the client with ClientboundLevelChunkPacket, used for initial loading of the chunk or when many blocks change at once. This tag comes back to you clientside in {@link net.minecraft.network.protocol.game.ClientGamePacketListener#handleBlockEntityData}
 	METHOD loadStructure (Lnet/minecraft/server/level/ServerLevel;)Z
 		ARG 1 level
 	METHOD loadStructure (Lnet/minecraft/server/level/ServerLevel;Z)Z
@@ -14,15 +14,15 @@ CLASS net/minecraft/world/level/block/entity/StructureBlockEntity
 	METHOD loadStructure (Lnet/minecraft/server/level/ServerLevel;ZLnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;)Z
 		ARG 1 level
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD saveStructure ()Z
 		COMMENT Saves the template, writing it to disk.
 		COMMENT
-		COMMENT @return true if the template was successfully saved.
+		COMMENT @return {@code true} if the template was successfully saved.
 	METHOD saveStructure (Z)Z
 		COMMENT Saves the template, either updating the local version or writing it to disk.
 		COMMENT
-		COMMENT @return true if the template was successfully saved.
+		COMMENT @return {@code true} if the template was successfully saved.
 		ARG 1 writeToDisk
 	METHOD setIgnoreEntities (Z)V
 		ARG 1 ignoreEntities

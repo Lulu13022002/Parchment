@@ -17,7 +17,7 @@ CLASS net/minecraft/network/chat/HoverEvent
 			ARG 1 component
 		METHOD getByName (Ljava/lang/String;)Lnet/minecraft/network/chat/HoverEvent$Action;
 			COMMENT Gets a value by its canonical name.
-			ARG 0 canonicalName
+			ARG 0 name
 		METHOD getName ()Ljava/lang/String;
 			COMMENT Gets the canonical name for this action (e.g., "show_achievement")
 		METHOD isAllowedFromServer ()Z

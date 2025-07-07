@@ -1,6 +1,6 @@
 CLASS net/minecraft/client/renderer/ItemBlockRenderTypes
 	METHOD getChunkRenderType (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/client/renderer/RenderType;
-		ARG 0 blockState
+		ARG 0 state
 	METHOD getRenderLayer (Lnet/minecraft/world/level/material/FluidState;)Lnet/minecraft/client/renderer/RenderType;
 		ARG 0 fluidState
 	METHOD lambda$static$0 (Ljava/util/HashMap;)V

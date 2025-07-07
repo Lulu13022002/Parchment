@@ -1,14 +1,14 @@
 CLASS net/minecraft/world/entity/PathfinderMob
 	METHOD checkSpawnRules (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/entity/MobSpawnType;)Z
 		ARG 1 level
-		ARG 2 spawnReason
+		ARG 2 spawnType
 	METHOD getWalkTargetValue (Lnet/minecraft/core/BlockPos;)F
 		ARG 1 pos
 	METHOD getWalkTargetValue (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/LevelReader;)F
 		ARG 1 pos
 		ARG 2 level
 	METHOD isPathFinding ()Z
-		COMMENT if the entity got a PathEntity it returns true, else false
+		COMMENT if the entity got a Path it returns {@code true}, else {@code false}
 	METHOD onLeashDistance (F)V
 		ARG 1 distance
 	METHOD tickLeash ()V

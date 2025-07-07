@@ -70,7 +70,7 @@ CLASS net/minecraft/world/level/levelgen/feature/IcebergFeature
 		ARG 3 height
 			COMMENT The maximum height of the iceberg.
 		ARG 4 maxRadius
-			COMMENT The maximum radius radius of the iceberg, at the horizontal.
+			COMMENT The maximum radius of the iceberg, at the horizontal.
 	METHOD removeFloatingSnowLayer (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)V
 		ARG 1 level
 		ARG 2 pos
@@ -90,7 +90,7 @@ CLASS net/minecraft/world/level/levelgen/feature/IcebergFeature
 		ARG 4 radius
 		ARG 5 random
 	METHOD signedDistanceEllipse (IILnet/minecraft/core/BlockPos;IID)D
-		COMMENT Given an ellipse defined by the equation {@code (x/a)^2 + (y/b)^2 = 1}, where {@code a} and {@code b} are the semi-major and semi-minor axies respectively, this computes the distance between an arbitrary point and the ellipse.
+		COMMENT Given an ellipse defined by the equation {@code (x/a)^2 + (y/b)^2 = 1}, where {@code a} and {@code b} are the semi-major and semi-minor axes respectively, this computes the distance between an arbitrary point and the ellipse.
 		COMMENT The point (x, y) is within the ellipse if the return value is < 0, outside the ellipse if the return value is > 0 and exactly on the edge of the ellipse if the return value is 0.
 		ARG 1 x
 			COMMENT The x position of the point to measure the distance to.
@@ -99,7 +99,7 @@ CLASS net/minecraft/world/level/levelgen/feature/IcebergFeature
 		ARG 3 center
 			COMMENT The center point of the ellipse.
 		ARG 4 majorRadius
-			COMMENT The semi-major axis (@code a}) of the ellipse.
+			COMMENT The semi-major axis ({@code a}) of the ellipse.
 		ARG 5 minorRadius
 			COMMENT The semi-minor axis ({@code b}) of the ellipse
 		ARG 6 angle

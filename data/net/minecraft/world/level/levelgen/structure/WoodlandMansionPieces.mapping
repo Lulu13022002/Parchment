@@ -116,4 +116,4 @@ CLASS net/minecraft/world/level/levelgen/structure/WoodlandMansionPieces
 			ARG 2 pos
 			ARG 3 level
 			ARG 4 random
-			ARG 5 sbb
+			ARG 5 structurebb

@@ -1,12 +1,12 @@
 CLASS net/minecraft/world/entity/AgableMob
 	METHOD ageUp (I)V
-		ARG 1 growthSeconds
+		ARG 1 amount
 	METHOD ageUp (IZ)V
-		ARG 1 growthSeconds
-		ARG 2 forceAging
+		ARG 1 amount
+		ARG 2 forced
 	METHOD getBreedOffspring (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/AgableMob;)Lnet/minecraft/world/entity/AgableMob;
-		ARG 1 serverLevel
-		ARG 2 mate
+		ARG 1 level
+		ARG 2 partner
 	METHOD setAge (I)V
 		ARG 1 age
 	CLASS AgableMobGroupData

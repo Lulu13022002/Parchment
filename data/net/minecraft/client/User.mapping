@@ -8,4 +8,4 @@ CLASS net/minecraft/client/User
 		METHOD <init> (Ljava/lang/String;ILjava/lang/String;)V
 			ARG 3 name
 		METHOD byName (Ljava/lang/String;)Lnet/minecraft/client/User$Type;
-			ARG 0 typeName
+			ARG 0 name

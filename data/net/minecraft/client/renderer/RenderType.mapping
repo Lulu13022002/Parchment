@@ -57,7 +57,7 @@ CLASS net/minecraft/client/renderer/RenderType
 	CLASS CompositeState
 		CLASS CompositeStateBuilder
 			METHOD createCompositeState (Lnet/minecraft/client/renderer/RenderType$OutlineProperty;)Lnet/minecraft/client/renderer/RenderType$CompositeState;
-				ARG 1 outlineState
+				ARG 1 outlineProperty
 			METHOD createCompositeState (Z)Lnet/minecraft/client/renderer/RenderType$CompositeState;
 				ARG 1 outline
 			METHOD setCullState (Lnet/minecraft/client/renderer/RenderStateShard$CullStateShard;)Lnet/minecraft/client/renderer/RenderType$CompositeState$CompositeStateBuilder;

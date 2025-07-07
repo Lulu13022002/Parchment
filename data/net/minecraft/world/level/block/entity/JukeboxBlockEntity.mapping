@@ -1,5 +1,5 @@
 CLASS net/minecraft/world/level/block/entity/JukeboxBlockEntity
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setRecord (Lnet/minecraft/world/item/ItemStack;)V
 		ARG 1 record

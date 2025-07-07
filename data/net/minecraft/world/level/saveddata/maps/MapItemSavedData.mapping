@@ -13,7 +13,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 2 decorationName
 		ARG 3 type
 	METHOD checkBanners (Lnet/minecraft/world/level/BlockGetter;II)V
-		ARG 1 reader
+		ARG 1 level
 		ARG 2 x
 		ARG 3 z
 	METHOD getHoldingPlayer (Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData$HoldingPlayer;
@@ -22,7 +22,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 1 pos
 		ARG 2 entityId
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD tickCarriedBy (Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)V
 		COMMENT Adds the player passed to the list of visible players and checks to see which players are visible
 		ARG 1 player

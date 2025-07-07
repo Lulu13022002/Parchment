@@ -85,7 +85,7 @@ CLASS net/minecraft/world/level/levelgen/structure/StrongholdPieces
 			ARG 6 y
 			ARG 7 z
 		METHOD isOkBox (Lnet/minecraft/world/level/levelgen/structure/BoundingBox;)Z
-			COMMENT returns false if the Structure Bounding Box goes below 10
+			COMMENT returns {@code false} if the Structure Bounding Box goes below 10
 			ARG 0 box
 		METHOD randomSmallDoor (Ljava/util/Random;)Lnet/minecraft/world/level/levelgen/structure/StrongholdPieces$StrongholdPiece$SmallDoorType;
 			ARG 1 random

@@ -4,13 +4,13 @@ CLASS net/minecraft/nbt/ListTag
 		ARG 2 type
 	METHOD addTag (ILnet/minecraft/nbt/Tag;)Z
 		ARG 1 index
-		ARG 2 nbt
+		ARG 2 tag
 	METHOD copy ()Lnet/minecraft/nbt/ListTag;
 		COMMENT Creates a clone of the tag.
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 1 other
 	METHOD getCompound (I)Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Retrieves the NBTTagCompound at the specified index in the list
+		COMMENT Retrieves the CompoundTag at the specified index in the list
 		ARG 1 index
 	METHOD getDouble (I)D
 		ARG 1 index
@@ -31,7 +31,7 @@ CLASS net/minecraft/nbt/ListTag
 		ARG 1 index
 	METHOD setTag (ILnet/minecraft/nbt/Tag;)Z
 		ARG 1 index
-		ARG 2 nbt
+		ARG 2 tag
 	METHOD updateType (Lnet/minecraft/nbt/Tag;)Z
 		ARG 1 tag
 	METHOD write (Ljava/io/DataOutput;)V

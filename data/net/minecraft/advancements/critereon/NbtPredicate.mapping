@@ -4,7 +4,7 @@ CLASS net/minecraft/advancements/critereon/NbtPredicate
 	METHOD getEntityTagToCompare (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 0 entity
 	METHOD matches (Lnet/minecraft/nbt/Tag;)Z
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD matches (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity
 	METHOD matches (Lnet/minecraft/world/item/ItemStack;)Z

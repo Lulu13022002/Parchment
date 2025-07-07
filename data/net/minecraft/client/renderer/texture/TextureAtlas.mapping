@@ -30,9 +30,9 @@ CLASS net/minecraft/client/renderer/texture/TextureAtlas
 		ARG 3 profiler
 		ARG 4 maxMipmapLevel
 	METHOD reload (Lnet/minecraft/client/renderer/texture/TextureAtlas$Preparations;)V
-		ARG 1 sheetData
+		ARG 1 preparations
 	METHOD updateFilter (Lnet/minecraft/client/renderer/texture/TextureAtlas$Preparations;)V
-		ARG 1 sheetData
+		ARG 1 preparations
 	CLASS Preparations
 		METHOD <init> (Ljava/util/Set;IIILjava/util/List;)V
 			ARG 1 sprites

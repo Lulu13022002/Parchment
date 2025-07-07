@@ -9,9 +9,9 @@ CLASS net/minecraft/world/scores/criteria/ObjectiveCriteria
 		ARG 0 name
 	METHOD getStat (Lnet/minecraft/stats/StatType;Lnet/minecraft/resources/ResourceLocation;)Ljava/util/Optional;
 		ARG 0 statType
-		ARG 1 resourceLocation
+		ARG 1 key
 	CLASS RenderType
 		METHOD <init> (Ljava/lang/String;ILjava/lang/String;)V
 			ARG 3 id
 		METHOD byId (Ljava/lang/String;)Lnet/minecraft/world/scores/criteria/ObjectiveCriteria$RenderType;
-			ARG 0 renderType
+			ARG 0 id

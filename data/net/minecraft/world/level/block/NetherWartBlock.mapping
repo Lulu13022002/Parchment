@@ -11,7 +11,7 @@ CLASS net/minecraft/world/level/block/NetherWartBlock
 		ARG 3 pos
 		ARG 4 context
 	METHOD isRandomlyTicking (Lnet/minecraft/world/level/block/state/BlockState;)Z
-		COMMENT Returns whether or not this block is of a type that needs random ticking. Called for ref-counting purposes by ExtendedBlockStorage in order to broadly cull a chunk from the random chunk update list for efficiency's sake.
+		COMMENT Returns whether this block is of a type that needs random ticking. Called for ref-counting purposes by LevelChunkSection in order to broadly cull a chunk from the random chunk update list for efficiency's sake.
 		ARG 1 state
 	METHOD mayPlaceOn (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 state

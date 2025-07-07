@@ -1,6 +1,6 @@
 CLASS net/minecraft/network/chat/NbtComponent
 	METHOD getData (Lnet/minecraft/commands/CommandSourceStack;)Ljava/util/stream/Stream;
-		ARG 1 commandSourceStack
+		ARG 1 source
 	CLASS BlockNbtComponent
 		METHOD compilePos (Ljava/lang/String;)Lnet/minecraft/commands/arguments/coordinates/Coordinates;
 			ARG 1 posPattern

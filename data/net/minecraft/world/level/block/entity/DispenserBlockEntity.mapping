@@ -9,6 +9,6 @@ CLASS net/minecraft/world/level/block/entity/DispenserBlockEntity
 	METHOD getContainerSize ()I
 		COMMENT Returns the number of slots in the inventory.
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setItems (Lnet/minecraft/core/NonNullList;)V
 		ARG 1 items

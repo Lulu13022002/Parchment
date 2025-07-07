@@ -7,7 +7,7 @@ CLASS net/minecraft/server/PlayerAdvancements
 	METHOD ensureVisibility (Lnet/minecraft/advancements/Advancement;)V
 		ARG 1 advancement
 	METHOD flushDirty (Lnet/minecraft/server/level/ServerPlayer;)V
-		ARG 1 serverPlayer
+		ARG 1 player
 	METHOD getOrStartProgress (Lnet/minecraft/advancements/Advancement;)Lnet/minecraft/advancements/AdvancementProgress;
 		ARG 1 advancement
 	METHOD hasCompletedChildrenOrSelf (Lnet/minecraft/advancements/Advancement;)Z

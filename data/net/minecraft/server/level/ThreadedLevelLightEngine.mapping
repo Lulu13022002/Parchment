@@ -1,6 +1,6 @@
 CLASS net/minecraft/server/level/ThreadedLevelLightEngine
 	METHOD queueSectionData (Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/core/SectionPos;Lnet/minecraft/world/level/chunk/DataLayer;Z)V
-		ARG 1 type
+		ARG 1 lightLayer
 		ARG 2 pos
 		ARG 3 array
 	METHOD retainData (Lnet/minecraft/world/level/ChunkPos;Z)V

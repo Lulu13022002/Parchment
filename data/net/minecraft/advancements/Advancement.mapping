@@ -16,9 +16,9 @@ CLASS net/minecraft/advancements/Advancement
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 1 other
 	METHOD getChatComponent ()Lnet/minecraft/network/chat/Component;
-		COMMENT Returns the {@code ITextComponent} that is shown in the chat message sent after this {@code Advancement} is completed.
+		COMMENT Returns the {@code Component} that is shown in the message sent after this {@code Advancement} is completed.
 		COMMENT
-		COMMENT @return the {@code ITextComponent} that is shown in the chat message sent after this {@code Advancement} is completed. If this {@code Advancement} is {@linkplain #getDisplay() invisible}, then it consists simply of {@link #getId()}. Otherwise, it is the {@linkplain DisplayInfo#getTitle() title} inside square brackets, colored by the {@linkplain net.minecraft.advancements.FrameType#getFormat frame type}, and hovering over it shows the {@linkplain DisplayInfo#getDescription() description}.
+		COMMENT @return the {@code Component} that is shown in the message sent after this {@code Advancement} is completed. If this {@code Advancement} is {@linkplain #getDisplay() invisible}, then it consists simply of {@link #getId()}. Otherwise, it is the {@linkplain DisplayInfo#getTitle() title} inside square brackets, colored by the {@linkplain net.minecraft.advancements.FrameType#getChatColor() frame type}, and hovering over it shows the {@linkplain DisplayInfo#getDescription() description}.
 	METHOD getChildren ()Ljava/lang/Iterable;
 		COMMENT Get the children of this {@code Advancement}.
 		COMMENT
@@ -43,7 +43,7 @@ CLASS net/minecraft/advancements/Advancement
 		COMMENT @return {@code this.getRequirements().length}
 		COMMENT @see #getRequirements()
 	METHOD getParent ()Lnet/minecraft/advancements/Advancement;
-		COMMENT Get the {@code Advancement} that is this {@code Advancement}'s parent. This determines the tree structure that appears in the {@linkplain GuiScreenAdvancements GUI}.
+		COMMENT Get the {@code Advancement} that is this {@code Advancement}'s parent. This determines the tree structure that appears in the {@linkplain net.minecraft.client.gui.screens.advancements.AdvancementsScreen GUI}.
 		COMMENT
 		COMMENT @return the parent {@code Advancement} of this {@code Advancement}, or {@code null} to signify that this {@code Advancement} is a root with no parent.
 	METHOD lambda$new$0 (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Style;)Lnet/minecraft/network/chat/Style;
@@ -66,7 +66,7 @@ CLASS net/minecraft/advancements/Advancement
 		METHOD build (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/advancements/Advancement;
 			ARG 1 id
 		METHOD canBuild (Ljava/util/function/Function;)Z
-			COMMENT Tries to resolve the parent of this advancement, if possible. Returns true on success.
+			COMMENT Tries to resolve the parent of this advancement, if possible. Returns {@code true} on success.
 			ARG 1 lookup
 		METHOD display (Lnet/minecraft/advancements/DisplayInfo;)Lnet/minecraft/advancements/Advancement$Builder;
 			ARG 1 display
@@ -90,9 +90,9 @@ CLASS net/minecraft/advancements/Advancement
 			ARG 8 hidden
 		METHOD fromJson (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/Advancement$Builder;
 			ARG 0 json
-			ARG 1 conditionParser
+			ARG 1 context
 		METHOD fromNetwork (Lnet/minecraft/network/FriendlyByteBuf;)Lnet/minecraft/advancements/Advancement$Builder;
-			ARG 0 buf
+			ARG 0 buffer
 		METHOD parent (Lnet/minecraft/advancements/Advancement;)Lnet/minecraft/advancements/Advancement$Builder;
 			ARG 1 parent
 		METHOD parent (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/advancements/Advancement$Builder;
@@ -107,4 +107,4 @@ CLASS net/minecraft/advancements/Advancement
 			ARG 1 consumer
 			ARG 2 id
 		METHOD serializeToNetwork (Lnet/minecraft/network/FriendlyByteBuf;)V
-			ARG 1 buf
+			ARG 1 buffer

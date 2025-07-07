@@ -26,11 +26,11 @@ CLASS net/minecraft/world/item/MapItem
 		ARG 2 level
 		ARG 3 player
 	METHOD inventoryTick (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;IZ)V
-		COMMENT Called each tick as long the item is on a player inventory. Uses by maps to check if is on a player hand and update it's contents.
+		COMMENT Called each tick as long the item is on a player inventory. Uses by maps to check if is on a player hand and update its contents.
 		ARG 1 stack
 		ARG 2 level
 		ARG 3 entity
-		ARG 4 itemSlot
+		ARG 4 slotIndex
 		ARG 5 isSelected
 	METHOD isLand ([Lnet/minecraft/world/level/biome/Biome;III)Z
 		ARG 0 biomes
@@ -48,7 +48,7 @@ CLASS net/minecraft/world/item/MapItem
 		ARG 2 level
 		ARG 3 player
 	METHOD renderBiomePreviewMap (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 0 serverLevel
+		ARG 0 level
 		ARG 1 stack
 	METHOD scaleMap (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;I)V
 		ARG 0 stack
@@ -59,5 +59,5 @@ CLASS net/minecraft/world/item/MapItem
 		ARG 2 viewer
 		ARG 3 data
 	METHOD useOn (Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;
-		COMMENT Called when this item is used when targetting a Block
+		COMMENT Called when this item is used when targeting a Block
 		ARG 1 context

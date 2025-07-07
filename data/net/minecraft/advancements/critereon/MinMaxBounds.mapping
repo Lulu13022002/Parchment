@@ -3,7 +3,7 @@ CLASS net/minecraft/advancements/critereon/MinMaxBounds
 		ARG 0 element
 		ARG 1 defaultValue
 		ARG 2 biFunction
-		ARG 3 boundedFactory
+		ARG 3 boundsFactory
 	METHOD fromReader (Lcom/mojang/brigadier/StringReader;Lnet/minecraft/advancements/critereon/MinMaxBounds$BoundsFromReaderFactory;Ljava/util/function/Function;Ljava/util/function/Supplier;Ljava/util/function/Function;)Lnet/minecraft/advancements/critereon/MinMaxBounds;
 		ARG 0 reader
 		ARG 1 minMaxReader

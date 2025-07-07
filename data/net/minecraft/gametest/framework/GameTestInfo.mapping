@@ -2,7 +2,7 @@ CLASS net/minecraft/gametest/framework/GameTestInfo
 	METHOD <init> (Lnet/minecraft/gametest/framework/TestFunction;Lnet/minecraft/world/level/block/Rotation;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 function
 		ARG 2 rotation
-		ARG 3 serverLevel
+		ARG 3 level
 	METHOD addListener (Lnet/minecraft/gametest/framework/GameTestListener;)V
 		ARG 1 listener
 	METHOD fail (Ljava/lang/Throwable;)V

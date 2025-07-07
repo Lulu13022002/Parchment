@@ -17,7 +17,7 @@ CLASS net/minecraft/world/level/chunk/ChunkGenerator
 		ARG 5 carving
 	METHOD buildSurfaceAndBedrock (Lnet/minecraft/server/level/WorldGenRegion;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		COMMENT Generate the SURFACE part of a chunk
-		ARG 1 level
+		ARG 1 region
 		ARG 2 chunk
 	METHOD createBiomes (Lnet/minecraft/core/Registry;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		ARG 1 biomes
@@ -36,7 +36,7 @@ CLASS net/minecraft/world/level/chunk/ChunkGenerator
 		ARG 1 level
 		ARG 2 structure
 		ARG 3 pos
-		ARG 4 searchRadius
+		ARG 4 radius
 		ARG 5 skipKnownStructures
 	METHOD hasStronghold (Lnet/minecraft/world/level/ChunkPos;)Z
 		ARG 1 pos

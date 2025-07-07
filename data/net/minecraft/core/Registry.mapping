@@ -5,13 +5,13 @@ CLASS net/minecraft/core/Registry
 	METHOD checkRegistry (Lnet/minecraft/core/WritableRegistry;)V
 		ARG 0 metaRegistry
 	METHOD containsKey (Lnet/minecraft/resources/ResourceLocation;)Z
-		ARG 1 name
+		ARG 1 key
 	METHOD createRegistryKey (Ljava/lang/String;)Lnet/minecraft/resources/ResourceKey;
 		ARG 0 registryName
 	METHOD get (Lnet/minecraft/resources/ResourceKey;)Ljava/lang/Object;
 		ARG 1 key
 	METHOD get (Lnet/minecraft/resources/ResourceLocation;)Ljava/lang/Object;
-		ARG 1 name
+		ARG 1 key
 	METHOD getId (Ljava/lang/Object;)I
 		COMMENT Gets the integer ID we use to identify the given object.
 		ARG 1 value
@@ -21,7 +21,7 @@ CLASS net/minecraft/core/Registry
 	METHOD getOptional (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;
 		ARG 1 registryKey
 	METHOD getOptional (Lnet/minecraft/resources/ResourceLocation;)Ljava/util/Optional;
-		ARG 1 name
+		ARG 1 key
 	METHOD getOrThrow (Lnet/minecraft/resources/ResourceKey;)Ljava/lang/Object;
 		ARG 1 key
 	METHOD getResourceKey (Ljava/lang/Object;)Ljava/util/Optional;
@@ -42,7 +42,7 @@ CLASS net/minecraft/core/Registry
 		ARG 2 value
 	METHOD register (Lnet/minecraft/core/Registry;Lnet/minecraft/resources/ResourceLocation;Ljava/lang/Object;)Ljava/lang/Object;
 		ARG 0 registry
-		ARG 1 name
+		ARG 1 key
 		ARG 2 value
 	METHOD registerDefaulted (Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;Lcom/mojang/serialization/Lifecycle;Ljava/util/function/Supplier;)Lnet/minecraft/core/DefaultedRegistry;
 		ARG 0 registryKey

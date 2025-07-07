@@ -2,9 +2,9 @@ CLASS net/minecraft/advancements/critereon/PlacedBlockTrigger
 	METHOD createInstance (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/EntityPredicate$Composite;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/critereon/PlacedBlockTrigger$TriggerInstance;
 		ARG 1 json
 		ARG 2 entityPredicate
-		ARG 3 conditionsParser
+		ARG 3 context
 	METHOD deserializeBlock (Lcom/google/gson/JsonObject;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 object
+		ARG 0 json
 	METHOD trigger (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
 		ARG 1 player
 		ARG 2 pos
@@ -18,4 +18,4 @@ CLASS net/minecraft/advancements/critereon/PlacedBlockTrigger
 		METHOD placedBlock (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/advancements/critereon/PlacedBlockTrigger$TriggerInstance;
 			ARG 0 block
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

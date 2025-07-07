@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/monster/EnderMan
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD dropCustomDeathLoot (Lnet/minecraft/world/damagesource/DamageSource;IZ)V
 		ARG 1 source
 		ARG 2 looting
@@ -12,7 +12,7 @@ CLASS net/minecraft/world/entity/monster/EnderMan
 		ARG 2 size
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD isLookingAtMe (Lnet/minecraft/world/entity/player/Player;)Z
 		COMMENT Checks to see if this enderman should be attacking this player
@@ -23,7 +23,7 @@ CLASS net/minecraft/world/entity/monster/EnderMan
 		ARG 1 key
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setCarriedBlock (Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 state
 	METHOD setPersistentAngerTarget (Ljava/util/UUID;)V
@@ -32,7 +32,7 @@ CLASS net/minecraft/world/entity/monster/EnderMan
 		ARG 1 time
 	METHOD setTarget (Lnet/minecraft/world/entity/LivingEntity;)V
 		COMMENT Sets the active target the Task system uses for tracking
-		ARG 1 livingEntity
+		ARG 1 target
 	METHOD teleport ()Z
 		COMMENT Teleport the enderman to a random nearby position
 	METHOD teleport (DDD)Z
@@ -71,7 +71,7 @@ CLASS net/minecraft/world/entity/monster/EnderMan
 			ARG 1 enderman
 			ARG 2 selectionPredicate
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD lambda$new$0 (Lnet/minecraft/world/entity/monster/EnderMan;Lnet/minecraft/world/entity/LivingEntity;)Z

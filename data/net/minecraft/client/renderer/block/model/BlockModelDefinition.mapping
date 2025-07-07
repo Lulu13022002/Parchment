@@ -7,8 +7,8 @@ CLASS net/minecraft/client/renderer/block/model/BlockModelDefinition
 			ARG 1 stateContainer
 	CLASS Deserializer
 		METHOD getMultiPart (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Lnet/minecraft/client/renderer/block/model/multipart/MultiPart;
-			ARG 1 deserializationContext
-			ARG 2 object
+			ARG 1 context
+			ARG 2 json
 		METHOD getVariants (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/Map;
-			ARG 1 deserializationContext
-			ARG 2 object
+			ARG 1 context
+			ARG 2 json

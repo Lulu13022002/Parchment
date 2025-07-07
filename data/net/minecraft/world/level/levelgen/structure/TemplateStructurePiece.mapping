@@ -4,7 +4,7 @@ CLASS net/minecraft/world/level/levelgen/structure/TemplateStructurePiece
 		ARG 2 pos
 		ARG 3 level
 		ARG 4 random
-		ARG 5 sbb
+		ARG 5 structurebb
 	METHOD move (III)V
 		ARG 1 x
 		ARG 2 y

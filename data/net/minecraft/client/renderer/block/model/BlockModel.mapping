@@ -43,17 +43,17 @@ CLASS net/minecraft/client/renderer/block/model/BlockModel
 			ARG 0 name
 	CLASS Deserializer
 		METHOD getAmbientOcclusion (Lcom/google/gson/JsonObject;)Z
-			ARG 1 object
+			ARG 1 json
 		METHOD getElements (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/List;
-			ARG 1 deserializationContext
-			ARG 2 object
+			ARG 1 context
+			ARG 2 json
 		METHOD getOverrides (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/List;
-			ARG 1 deserializationContext
-			ARG 2 object
+			ARG 1 context
+			ARG 2 json
 		METHOD getParentName (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-			ARG 1 object
+			ARG 1 json
 		METHOD getTextureMap (Lcom/google/gson/JsonObject;)Ljava/util/Map;
-			ARG 1 object
+			ARG 1 json
 		METHOD parseTextureLocationOrReference (Lnet/minecraft/resources/ResourceLocation;Ljava/lang/String;)Lcom/mojang/datafixers/util/Either;
 			ARG 0 location
 			ARG 1 name

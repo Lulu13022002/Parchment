@@ -2,11 +2,11 @@ CLASS net/minecraft/world/entity/ai/goal/target/TargetGoal
 	FIELD mob Lnet/minecraft/world/entity/Mob;
 		COMMENT The entity that this goal belongs to
 	METHOD canAttack (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z
-		COMMENT checks if is is a suitable target
+		COMMENT checks if this is a suitable target
 		ARG 1 potentialTarget
 		ARG 2 targetPredicate
 	METHOD canContinueToUse ()Z
-		COMMENT Returns whether an in-progress EntityAIBase should continue executing
+		COMMENT Returns whether an in-progress Goal should continue executing
 	METHOD canReach (Lnet/minecraft/world/entity/LivingEntity;)Z
 		COMMENT Checks to see if this entity can find a short path to the given target.
 		ARG 1 target

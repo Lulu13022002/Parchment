@@ -1,11 +1,11 @@
 CLASS net/minecraft/world/level/levelgen/structure/StructureFeatureIndexSavedData
 	METHOD addIndex (J)V
-		ARG 1 chunkPos
+		ARG 1 index
 	METHOD hasStartIndex (J)Z
-		ARG 1 chunkPos
+		ARG 1 index
 	METHOD hasUnhandledIndex (J)Z
-		ARG 1 chunkPos
+		ARG 1 index
 	METHOD removeIndex (J)V
-		ARG 1 chunkPos
+		ARG 1 index
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag

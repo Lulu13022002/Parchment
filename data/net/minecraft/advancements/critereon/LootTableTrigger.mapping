@@ -2,7 +2,7 @@ CLASS net/minecraft/advancements/critereon/LootTableTrigger
 	METHOD createInstance (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/EntityPredicate$Composite;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/critereon/LootTableTrigger$TriggerInstance;
 		ARG 1 json
 		ARG 2 entityPredicate
-		ARG 3 conditionsParser
+		ARG 3 context
 	METHOD trigger (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/resources/ResourceLocation;)V
 		ARG 1 player
 		ARG 2 generatedLoot
@@ -12,4 +12,4 @@ CLASS net/minecraft/advancements/critereon/LootTableTrigger
 		METHOD matches (Lnet/minecraft/resources/ResourceLocation;)Z
 			ARG 1 generatedLoot
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

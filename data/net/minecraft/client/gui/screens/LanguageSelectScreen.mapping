@@ -2,19 +2,19 @@ CLASS net/minecraft/client/gui/screens/LanguageSelectScreen
 	FIELD languageManager Lnet/minecraft/client/resources/language/LanguageManager;
 		COMMENT Reference to the LanguageManager object.
 	FIELD packSelectionList Lnet/minecraft/client/gui/screens/LanguageSelectScreen$LanguageSelectionList;
-		COMMENT The List GuiSlot object reference.
+		COMMENT The List GuiEventListener object reference.
 	METHOD <init> (Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/Options;Lnet/minecraft/client/resources/language/LanguageManager;)V
 		ARG 1 screen
 		ARG 2 options
 		ARG 3 languageManager
 	METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;IIF)V
-		ARG 1 matrixStack
+		ARG 1 poseStack
 		ARG 2 mouseX
 		ARG 3 mouseY
-		ARG 4 partialTicks
+		ARG 4 partialTick
 	CLASS LanguageSelectionList
 		METHOD renderBackground (Lcom/mojang/blaze3d/vertex/PoseStack;)V
-			ARG 1 matrixStack
+			ARG 1 poseStack
 		CLASS Entry
 			METHOD <init> (Lnet/minecraft/client/gui/screens/LanguageSelectScreen$LanguageSelectionList;Lnet/minecraft/client/resources/language/LanguageInfo;)V
 				ARG 2 language
@@ -23,7 +23,7 @@ CLASS net/minecraft/client/gui/screens/LanguageSelectScreen
 				ARG 3 mouseY
 				ARG 5 button
 			METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;IIIIIIIZF)V
-				ARG 1 matrixStack
+				ARG 1 poseStack
 				ARG 2 index
 				ARG 3 top
 				ARG 4 left
@@ -32,4 +32,4 @@ CLASS net/minecraft/client/gui/screens/LanguageSelectScreen
 				ARG 7 mouseX
 				ARG 8 mouseY
 				ARG 9 isMouseOver
-				ARG 10 partialTicks
+				ARG 10 partialTick

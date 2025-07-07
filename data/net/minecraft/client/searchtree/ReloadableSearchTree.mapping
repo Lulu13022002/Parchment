@@ -3,7 +3,7 @@ CLASS net/minecraft/client/searchtree/ReloadableSearchTree
 		ARG 1 filler
 		ARG 2 idGetter
 	METHOD index (Ljava/lang/Object;)V
-		COMMENT Directly puts the given item into {@link #byId} and {@link #byName}, applying {@link #nameFunc} and {@link idFunc}.
+		COMMENT Directly puts the given item into {@link #byId} and {@link #byName}, applying {@link #nameFunc} and {@link #idFunc}.
 		ARG 1 element
 	METHOD lambda$index$0 (Ljava/lang/Object;Ljava/lang/String;)V
 		ARG 2 filler
@@ -12,7 +12,7 @@ CLASS net/minecraft/client/searchtree/ReloadableSearchTree
 	METHOD search (Ljava/lang/String;)Ljava/util/List;
 		COMMENT Searches this search tree for the given text.
 		COMMENT <p>
-		COMMENT If the query does not contain a <code>:</code>, then only {@link #byName} is searched" if it does contain a colon, both {@link #byName} and {@link #byId} are searched and the results are merged using a {@link MergingIterator}.
+		COMMENT If the query does not contain a {@code :}, then only {@link #byName} is searched" if it does contain a colon, both {@link #byName} and {@link #byId} are searched and the results are merged using a {@link MergingIterator}.
 		COMMENT @return A list of all matching items in this search tree.
 		ARG 1 searchText
 	CLASS MergingUniqueIterator

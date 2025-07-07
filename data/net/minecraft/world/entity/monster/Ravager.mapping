@@ -1,19 +1,18 @@
 CLASS net/minecraft/world/entity/monster/Ravager
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD applyRaidBuffs (IZ)V
 		ARG 1 wave
 	METHOD blockedByShield (Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 entity
 	METHOD canBeControlledByRider ()Z
-		COMMENT returns true if all the conditions for steering the entity are met. For pigs, this is true if it is being ridden by a player and the player is holding a carrot-on-a-stick
+		COMMENT returns {@code true} if all the conditions for steering the entity are met. For pigs, this is {@code true} if it is being ridden by a player and the player is holding a carrot-on-a-stick
 	METHOD checkSpawnObstruction (Lnet/minecraft/world/level/LevelReader;)Z
 		ARG 1 level
 	METHOD createNavigation (Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/ai/navigation/PathNavigation;
-		COMMENT Returns new PathNavigateGround instance
 		ARG 1 level
 	METHOD doHurtTarget (Lnet/minecraft/world/entity/Entity;)Z
-		ARG 1 entity
+		ARG 1 target
 	METHOD getControllingPassenger ()Lnet/minecraft/world/entity/Entity;
 		COMMENT For vehicles, the first passenger is generally considered the controller and "drives" the vehicle. For example, Pigs, Horses, and Boats are generally "steered" by the controlling passenger.
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
@@ -29,17 +28,17 @@ CLASS net/minecraft/world/entity/monster/Ravager
 		ARG 2 block
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD strongKnockback (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	METHOD updateControlFlags ()V
-		COMMENT Sets MOVE, JUMP, LOOK Goal.Flags depending if entity is riding or been controlled
+		COMMENT Sets MOVE, JUMP, LOOK and TARGET Goal.Flag depending if entity is riding or been controlled
 	CLASS RavagerNodeEvaluator
 		METHOD evaluateBlockPathType (Lnet/minecraft/world/level/BlockGetter;ZZLnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/pathfinder/BlockPathTypes;)Lnet/minecraft/world/level/pathfinder/BlockPathTypes;
 			COMMENT Returns the exact path node type according to abilities and settings of the entity
 			ARG 1 level
 			ARG 2 canOpenDoors
-			ARG 3 canEnterDoors
+			ARG 3 canPassDoors
 			ARG 4 pos
 			ARG 5 nodeType
 	CLASS RavagerMeleeAttackGoal

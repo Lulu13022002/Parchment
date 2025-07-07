@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/block/RedStoneWireBlock
 	METHOD animateTick (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Ljava/util/Random;)V
-		COMMENT Called periodically clientside on blocks near the player to show effects (like furnace fire particles). Note that this method is unrelated to {@link randomTick} and {@link #needsRandomTick}, and will always be called regardless of whether the block can receive random update ticks
+		COMMENT Called periodically clientside on blocks near the player to show effects (like furnace fire particles). Note that this method is unrelated to {@link #randomTick} and {@link #isRandomlyTicking}, and will always be called regardless of whether the block can receive random update ticks
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
@@ -15,7 +15,7 @@ CLASS net/minecraft/world/level/block/RedStoneWireBlock
 		ARG 2 level
 		ARG 3 pos
 	METHOD canSurviveOn (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z
-		ARG 1 reader
+		ARG 1 level
 		ARG 2 pos
 		ARG 3 state
 	METHOD checkCornerChangeAt (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
@@ -40,9 +40,9 @@ CLASS net/minecraft/world/level/block/RedStoneWireBlock
 		ARG 2 state
 		ARG 3 pos
 	METHOD getDirectSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
-		COMMENT @deprecated call via {@link IBlockState#getStrongPower(IBlockAccess,BlockPos,EnumFacing)} whenever possible. Implementing/overriding is fine.
-		ARG 1 blockState
-		ARG 2 blockAccess
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#getDirectSignal} whenever possible. Implementing/overriding is fine.
+		ARG 1 state
+		ARG 2 level
 		ARG 3 pos
 		ARG 4 side
 	METHOD getMissingConnections (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
@@ -55,9 +55,9 @@ CLASS net/minecraft/world/level/block/RedStoneWireBlock
 		ARG 3 pos
 		ARG 4 context
 	METHOD getSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
-		COMMENT @deprecated call via {@link IBlockState#getWeakPower(IBlockAccess,BlockPos,EnumFacing)} whenever possible. Implementing/overriding is fine.
-		ARG 1 blockState
-		ARG 2 blockAccess
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#getSignal} whenever possible. Implementing/overriding is fine.
+		ARG 1 state
+		ARG 2 level
 		ARG 3 pos
 		ARG 4 side
 	METHOD getStateForPlacement (Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;
@@ -70,11 +70,11 @@ CLASS net/minecraft/world/level/block/RedStoneWireBlock
 		ARG 0 state
 	METHOD isSignalSource (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		COMMENT Can this block provide power. Only wire currently seems to have this change based on its state.
-		COMMENT @deprecated call via {@link IBlockState#canProvidePower()} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#isSignalSource} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD mirror (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Mirror;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#mirror} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 mirror
 	METHOD neighborChanged (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V
@@ -83,22 +83,22 @@ CLASS net/minecraft/world/level/block/RedStoneWireBlock
 		ARG 3 pos
 		ARG 4 block
 		ARG 5 fromPos
-		ARG 6 isMoving
+		ARG 6 movedByPiston
 	METHOD onPlace (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 oldState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD onRemove (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 newState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD rotate (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Rotation;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#rotate} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 rotation
 	METHOD shouldConnectTo (Lnet/minecraft/world/level/block/state/BlockState;)Z
@@ -107,7 +107,7 @@ CLASS net/minecraft/world/level/block/RedStoneWireBlock
 		ARG 0 state
 		ARG 1 direction
 	METHOD updateIndirectNeighbourShapes (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
-		COMMENT performs updates on diagonal neighbors of the target position and passes in the flags. The flags can be referenced from the docs for {@link IWorldWriter#setBlockState(IBlockState, BlockPos, int)}.
+		COMMENT performs updates on diagonal neighbors of the target position and passes in the flags. The flags can be referenced from {@link Level#setBlock(BlockPos, BlockState, int)}.
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos

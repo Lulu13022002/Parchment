@@ -83,7 +83,7 @@ CLASS net/minecraft/client/renderer/item/ItemProperties
 			ARG 1 frame
 		METHOD getLodestonePosition (Lnet/minecraft/world/level/Level;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/core/BlockPos;
 			ARG 1 level
-			ARG 2 nbt
+			ARG 2 tag
 		METHOD getSpawnPosition (Lnet/minecraft/client/multiplayer/ClientLevel;)Lnet/minecraft/core/BlockPos;
 			ARG 1 level
 	CLASS CompassWobble

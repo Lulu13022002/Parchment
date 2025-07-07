@@ -11,6 +11,6 @@ CLASS net/minecraft/advancements/critereon/MobEffectsPredicate
 		ARG 1 entity
 	CLASS MobEffectInstancePredicate
 		METHOD fromJson (Lcom/google/gson/JsonObject;)Lnet/minecraft/advancements/critereon/MobEffectsPredicate$MobEffectInstancePredicate;
-			ARG 0 object
+			ARG 0 json
 		METHOD matches (Lnet/minecraft/world/effect/MobEffectInstance;)Z
 			ARG 1 effect

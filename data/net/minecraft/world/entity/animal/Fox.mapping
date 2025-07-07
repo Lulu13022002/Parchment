@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/animal/Fox
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addTrustedUUID (Ljava/util/UUID;)V
 		ARG 1 uuid
 	METHOD calculateFallDamage (FF)I
@@ -11,7 +11,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 	METHOD canHoldItem (Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 1 stack
 	METHOD canTakeItem (Lnet/minecraft/world/item/ItemStack;)Z
-		ARG 1 itemstack
+		ARG 1 stack
 	METHOD dropAllDeathLoot (Lnet/minecraft/world/damagesource/DamageSource;)V
 		ARG 1 damageSource
 	METHOD dropItemStack (Lnet/minecraft/world/item/ItemStack;)V
@@ -19,13 +19,13 @@ CLASS net/minecraft/world/entity/animal/Fox
 	METHOD finalizeSpawn (Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/world/entity/SpawnGroupData;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/entity/SpawnGroupData;
 		ARG 1 level
 		ARG 2 difficulty
-		ARG 3 reason
+		ARG 3 spawnType
 		ARG 4 spawnData
-		ARG 5 dataTag
+		ARG 5 tag
 	METHOD getCrouchAmount (F)F
 		ARG 1 partialTick
 	METHOD getEatingSound (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/sounds/SoundEvent;
-		ARG 1 itemStack
+		ARG 1 stack
 	METHOD getFlag (I)Z
 		ARG 1 flagId
 	METHOD getHeadRollAngle (F)F
@@ -69,7 +69,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 		ARG 1 player
 		ARG 2 child
 	METHOD pickUpItem (Lnet/minecraft/world/entity/item/ItemEntity;)V
-		COMMENT Tests if this entity should pickup a weapon or an armor. Entity drops current weapon or armor if the new one is better.
+		COMMENT Tests if this entity should pick up a weapon or an armor. Entity drops current weapon or armor if the new one is better.
 		ARG 1 itemEntity
 	METHOD playAmbientSound ()V
 		COMMENT Plays living's sound at its position
@@ -78,7 +78,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 		ARG 1 difficulty
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setDefending (Z)V
 		ARG 1 defending
 	METHOD setFaceplanted (Z)V
@@ -100,7 +100,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 		ARG 1 sleeping
 	METHOD setTarget (Lnet/minecraft/world/entity/LivingEntity;)V
 		COMMENT Sets the active target the Task system uses for tracking
-		ARG 1 livingEntity
+		ARG 1 target
 	METHOD spitOutItem (Lnet/minecraft/world/item/ItemStack;)V
 		ARG 1 stack
 	METHOD tick ()V
@@ -115,14 +115,14 @@ CLASS net/minecraft/world/entity/animal/Fox
 		METHOD byBiome (Ljava/util/Optional;)Lnet/minecraft/world/entity/animal/Fox$Type;
 			ARG 0 biome
 		METHOD byId (I)Lnet/minecraft/world/entity/animal/Fox$Type;
-			ARG 0 index
+			ARG 0 id
 		METHOD byName (Ljava/lang/String;)Lnet/minecraft/world/entity/animal/Fox$Type;
 			ARG 0 name
 		METHOD lambda$static$1 (Lnet/minecraft/world/entity/animal/Fox$Type;)Lnet/minecraft/world/entity/animal/Fox$Type;
 			ARG 0 type
 	CLASS SleepGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -151,7 +151,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS FaceplantGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -162,7 +162,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 			COMMENT Keep ticking a continuous task that has already been started
 	CLASS FoxPounceGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -198,7 +198,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD isValidTarget (Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z
-			COMMENT Return true to set given position as destination
+			COMMENT Return {@code true} to set given position as destination
 			ARG 1 level
 			ARG 2 pos
 		METHOD start ()V
@@ -218,7 +218,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 			COMMENT Execute a one shot task or start executing a continuous task
 	CLASS PerchAndSearchGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -232,7 +232,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 			ARG 2 fox
 			ARG 3 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -243,7 +243,7 @@ CLASS net/minecraft/world/entity/animal/Fox
 			ARG 3 lookAtType
 			ARG 4 lookDistance
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS FoxSearchForItemsGoal
@@ -265,10 +265,9 @@ CLASS net/minecraft/world/entity/animal/Fox
 			COMMENT Execute a one shot task or start executing a continuous task
 	CLASS FoxStrollThroughVillageGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/Fox;II)V
-			ARG 2 unused32
 			ARG 3 interval
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V

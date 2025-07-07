@@ -2,7 +2,7 @@ CLASS net/minecraft/client/Minecraft
 	FIELD blockRenderer Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;
 		COMMENT The BlockRenderDispatcher instance that will be used based off gamesettings
 	FIELD connectedToRealms Z
-		COMMENT True if the player is connected to a realms server
+		COMMENT {@code true} if the player is connected to a realms server
 	FIELD frameTimer Lnet/minecraft/util/FrameTimer;
 		COMMENT The FrameTimer's instance
 	FIELD lastNanoTime J
@@ -17,7 +17,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 0 resourcePackSupplier
 	METHOD addCustomNbtData (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/entity/BlockEntity;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 stack
-		ARG 2 te
+		ARG 2 blockEntity
 	METHOD clearLevel (Lnet/minecraft/client/gui/screens/Screen;)V
 		ARG 1 screen
 	METHOD clearResourcePacksOnError (Ljava/lang/Throwable;Lnet/minecraft/network/chat/Component;)V
@@ -26,7 +26,6 @@ CLASS net/minecraft/client/Minecraft
 	METHOD continueAttack (Z)V
 		ARG 1 leftClick
 	METHOD crash (Lnet/minecraft/CrashReport;)V
-		COMMENT Wrapper around displayCrashReportInternal
 		ARG 0 report
 	METHOD createLevel (Ljava/lang/String;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/core/RegistryAccess$RegistryHolder;Lnet/minecraft/world/level/levelgen/WorldGenSettings;)V
 		ARG 1 levelName
@@ -34,7 +33,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 3 dynamicRegistries
 		ARG 4 dimensionGeneratorSettings
 	METHOD createSearchTrees ()V
-		COMMENT Fills {@link #searchTreeManager} with the current item and recipe registry contents.
+		COMMENT Fills {@link #searchRegistry} with the current item and recipe registry contents.
 	METHOD createSocialInteractions (Lcom/mojang/authlib/yggdrasil/YggdrasilAuthenticationService;Lnet/minecraft/client/main/GameConfig;)Lcom/mojang/authlib/minecraft/SocialInteractionsService;
 		ARG 1 authService
 		ARG 2 gameConfig
@@ -44,7 +43,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD delayCrash (Lnet/minecraft/CrashReport;)V
 		ARG 1 crash
 	METHOD destroy ()V
-		COMMENT Shuts down the minecraft applet by stopping the resource downloads, and clearing up GL stuff" called when the application (or web page) is exited.
+		COMMENT Shuts down the minecraft applet by stopping the resource downloads, and clearing up GL stuff. Called when the application (or web page) is exited.
 	METHOD displayExperimentalConfirmationDialog (Lnet/minecraft/client/Minecraft$ExperimentalDialogType;Ljava/lang/String;ZLjava/lang/Runnable;)V
 		ARG 1 selectionType
 		ARG 2 levelName
@@ -60,7 +59,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD emergencySave ()V
 		COMMENT Attempts to free as much memory as possible, including leaving the world and running the garbage collector.
 	METHOD fillReport (Lnet/minecraft/CrashReport;)Lnet/minecraft/CrashReport;
-		COMMENT adds core server Info (GL version , Texture pack, isModded, type), and the worldInfo to the crash report
+		COMMENT Adds core server Info (GL version, Texture pack, isModded, type), and the worldInfo to the crash report
 		ARG 1 theCrash
 	METHOD forceSetScreen (Lnet/minecraft/client/gui/screens/Screen;)V
 		ARG 1 screen
@@ -71,13 +70,13 @@ CLASS net/minecraft/client/Minecraft
 	METHOD getInstance ()Lnet/minecraft/client/Minecraft;
 		COMMENT Return the singleton Minecraft instance for the game
 	METHOD getLaunchedVersion ()Ljava/lang/String;
-		COMMENT Gets the version that Minecraft was launched under (the name of a version JSON). Specified via the <code>--version</code> flag.
+		COMMENT Gets the version that Minecraft was launched under (the name of a version JSON). Specified via the {@code --version} flag.
 	METHOD getLevelSource ()Lnet/minecraft/world/level/storage/LevelStorageSource;
 		COMMENT Returns the save loader that is currently being used
 	METHOD getMobEffectTextures ()Lnet/minecraft/client/resources/MobEffectTextureManager;
 		COMMENT Gets the sprite uploader used for potions.
 	METHOD getMusicManager ()Lnet/minecraft/client/sounds/MusicManager;
-		COMMENT Return the musicTicker's instance
+		COMMENT Return the musicManager's instance
 	METHOD getPaintingTextures ()Lnet/minecraft/client/resources/PaintingTextureManager;
 		COMMENT Gets the sprite uploader used for paintings.
 	METHOD getProfileProperties ()Lcom/mojang/authlib/properties/PropertyMap;
@@ -91,13 +90,13 @@ CLASS net/minecraft/client/Minecraft
 	METHOD getTextureAtlas (Lnet/minecraft/resources/ResourceLocation;)Ljava/util/function/Function;
 		ARG 1 location
 	METHOD getVersionType ()Ljava/lang/String;
-		COMMENT Gets the type of version that Minecraft was launched under (as specified in the version JSON). Specified via the <code>--versionType</code> flag.
+		COMMENT Gets the type of version that Minecraft was launched under (as specified in the version JSON). Specified via the {@code --versionType} flag.
 	METHOD hasSingleplayerServer ()Z
-		COMMENT Returns true if there is only one player playing, and the current server is the integrated one.
+		COMMENT Returns {@code true} if there is only one player playing, and the current server is the integrated one.
 	METHOD isBlocked (Ljava/util/UUID;)Z
 		ARG 1 playerUUID
 	METHOD isConnectedToRealms ()Z
-		COMMENT Return true if the player is connected to a realms server
+		COMMENT Return {@code true} if the player is connected to a realms server
 	METHOD isDemo ()Z
 		COMMENT Gets whether this is a demo or not.
 	METHOD loadDataPacks (Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;)Lnet/minecraft/world/level/DataPackConfig;
@@ -108,7 +107,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 0 levelStorage
 		ARG 1 dynamicRegistries
 		ARG 2 resourceManager
-		ARG 3 datapackCodec
+		ARG 3 dataPacks
 	METHOD makeServerStem (Lnet/minecraft/core/RegistryAccess$RegistryHolder;Ljava/util/function/Function;Lcom/mojang/datafixers/util/Function4;ZLnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;)Lnet/minecraft/client/Minecraft$ServerStem;
 		ARG 1 dynamicRegistries
 		ARG 2 levelStorageToDatapackFunction
@@ -121,14 +120,14 @@ CLASS net/minecraft/client/Minecraft
 	METHOD openChatScreen (Ljava/lang/String;)V
 		ARG 1 defaultText
 	METHOD pauseGame (Z)V
-		COMMENT Displays the ingame menu
+		COMMENT Displays the in-game menu
 		ARG 1 pauseOnly
 	METHOD pickBlock ()V
 		COMMENT Called when user clicked he's mouse middle button (pick block)
 	METHOD populateSnooper (Lnet/minecraft/world/Snooper;)V
 		ARG 1 snooper
 	METHOD renderFpsMeter (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/util/profiling/ProfileResults;)V
-		ARG 1 matrixStack
+		ARG 1 poseStack
 		ARG 2 profilerResult
 	METHOD rollbackResourcePacks (Ljava/lang/Throwable;)V
 		ARG 1 throwable
@@ -162,7 +161,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD startUseItem ()V
 		COMMENT Called when user clicked he's mouse right button (place)
 	METHOD stop ()V
-		COMMENT Called when the window is closing. Sets 'running' to false which allows the game loop to exit cleanly.
+		COMMENT Called when the window is closing. Sets 'running' to {@code false} which allows the game loop to exit cleanly.
 	METHOD tick ()V
 		COMMENT Runs the current tick.
 	METHOD updateLevelInEngines (Lnet/minecraft/client/multiplayer/ClientLevel;)V

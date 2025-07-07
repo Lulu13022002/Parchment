@@ -7,7 +7,7 @@ CLASS net/minecraft/nbt/LongArrayTag
 		ARG 1 data
 	METHOD addTag (ILnet/minecraft/nbt/Tag;)Z
 		ARG 1 index
-		ARG 2 nbt
+		ARG 2 tag
 	METHOD copy ()Lnet/minecraft/nbt/LongArrayTag;
 		COMMENT Creates a clone of the tag.
 	METHOD equals (Ljava/lang/Object;)Z
@@ -16,7 +16,7 @@ CLASS net/minecraft/nbt/LongArrayTag
 		COMMENT Gets the type byte for the tag.
 	METHOD setTag (ILnet/minecraft/nbt/Tag;)Z
 		ARG 1 index
-		ARG 2 nbt
+		ARG 2 tag
 	METHOD toArray (Ljava/util/List;)[J
 		ARG 0 dataList
 	METHOD write (Ljava/io/DataOutput;)V

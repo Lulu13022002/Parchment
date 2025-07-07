@@ -1,3 +1,5 @@
 CLASS net/minecraft/world/level/chunk/storage/SectionStorage
 	METHOD setDirty (J)V
 		ARG 1 sectionPos
+	METHOD tick (Ljava/util/function/BooleanSupplier;)V
+		ARG 1 haveTime

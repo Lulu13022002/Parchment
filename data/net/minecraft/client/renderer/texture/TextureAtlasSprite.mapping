@@ -1,20 +1,20 @@
 CLASS net/minecraft/client/renderer/texture/TextureAtlasSprite
 	METHOD <init> (Lnet/minecraft/client/renderer/texture/TextureAtlas;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite$Info;IIIIILcom/mojang/blaze3d/platform/NativeImage;)V
 		ARG 1 atlas
-		ARG 6 x
-		ARG 7 y
+		ARG 6 atlasWidth
+		ARG 7 atlasHeight
 	METHOD getHeight ()I
 		COMMENT Returns the height of the icon, in pixels.
 	METHOD getU (D)F
 		COMMENT Gets a U coordinate on the icon. 0 returns uMin and 16 returns uMax. Other arguments return in-between values.
-		ARG 1 u
+		ARG 1 offset
 	METHOD getU0 ()F
 		COMMENT Returns the minimum U coordinate to use when rendering with this icon.
 	METHOD getU1 ()F
 		COMMENT Returns the maximum U coordinate to use when rendering with this icon.
 	METHOD getV (D)F
 		COMMENT Gets a V coordinate on the icon. 0 returns vMin and 16 returns vMax. Other arguments return in-between values.
-		ARG 1 v
+		ARG 1 offset
 	METHOD getV0 ()F
 		COMMENT Returns the minimum V coordinate to use when rendering with this icon.
 	METHOD getV1 ()F
@@ -30,7 +30,7 @@ CLASS net/minecraft/client/renderer/texture/TextureAtlasSprite
 		ARG 2 yOffset
 		ARG 3 frames
 	METHOD wrap (Lcom/mojang/blaze3d/vertex/VertexConsumer;)Lcom/mojang/blaze3d/vertex/VertexConsumer;
-		ARG 1 buffer
+		ARG 1 consumer
 	CLASS Info
 		METHOD <init> (Lnet/minecraft/resources/ResourceLocation;IILnet/minecraft/client/resources/metadata/animation/AnimationMetadataSection;)V
 			ARG 1 name

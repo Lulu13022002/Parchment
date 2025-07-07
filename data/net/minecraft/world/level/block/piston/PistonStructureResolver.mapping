@@ -13,6 +13,9 @@ CLASS net/minecraft/world/level/block/piston/PistonStructureResolver
 		ARG 2 direction
 	METHOD addBranchingBlocks (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 fromPos
+	METHOD canStickToEachOther (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)Z
+		ARG 0 block1
+		ARG 1 block2
 	METHOD getToDestroy ()Ljava/util/List;
 		COMMENT @return all block positions to be destroyed by the piston
 	METHOD getToPush ()Ljava/util/List;

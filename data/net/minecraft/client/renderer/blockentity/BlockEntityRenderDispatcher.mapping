@@ -3,24 +3,24 @@ CLASS net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher
 		ARG 1 blockEntity
 	METHOD render (Lnet/minecraft/world/level/block/entity/BlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;)V
 		ARG 1 blockEntity
-		ARG 2 partialTicks
-		ARG 3 matrixStack
-		ARG 4 buffer
+		ARG 2 partialTick
+		ARG 3 poseStack
+		ARG 4 bufferSource
 	METHOD renderItem (Lnet/minecraft/world/level/block/entity/BlockEntity;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)Z
-		COMMENT Returns true if no renderer found, false if render completed
+		COMMENT Returns {@code true} if no renderer found, {@code false} if render completed
 		ARG 1 blockEntity
-		ARG 2 matrixStack
-		ARG 3 buffer
-		ARG 4 combinedLight
-		ARG 5 combinedOverlay
+		ARG 2 poseStack
+		ARG 3 bufferSource
+		ARG 4 packedLight
+		ARG 5 packedOverlay
 	METHOD setLevel (Lnet/minecraft/world/level/Level;)V
 		ARG 1 level
 	METHOD setupAndRender (Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderer;Lnet/minecraft/world/level/block/entity/BlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;)V
 		ARG 0 renderer
 		ARG 1 blockEntity
-		ARG 2 partialTicks
-		ARG 3 matrixStack
-		ARG 4 buffer
+		ARG 2 partialTick
+		ARG 3 poseStack
+		ARG 4 bufferSource
 	METHOD tryRender (Lnet/minecraft/world/level/block/entity/BlockEntity;Ljava/lang/Runnable;)V
 		ARG 0 blockEntity
 		ARG 1 runnable

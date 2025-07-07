@@ -1,9 +1,9 @@
 CLASS net/minecraft/world/level/block/entity/ConduitBlockEntity
 	METHOD getUpdatePacket ()Lnet/minecraft/network/protocol/game/ClientboundBlockEntityDataPacket;
-		COMMENT Retrieves packet to send to the client whenever this Tile Entity is resynced via World.notifyBlockUpdate. For modded TE's, this packet comes back to you clientside in {@link #onDataPacket}
+		COMMENT Retrieves packet to send to the client whenever this block entity is resynced via World.notifyBlockUpdate. For modded block entities, this packet comes back to you clientside in {@link #onDataPacket}
 	METHOD getUpdateTag ()Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Get an NBT compound to sync to the client with SPacketChunkData, used for initial loading of the chunk or when many blocks change at once. This compound comes back to you clientside in {@link handleUpdateTag}
+		COMMENT Get a tag to sync to the client with ClientboundLevelChunkPacket, used for initial loading of the chunk or when many blocks change at once. This tag comes back to you clientside in {@link net.minecraft.network.protocol.game.ClientGamePacketListener#handleBlockEntityData}
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setHunting (Z)V
 		ARG 1 isHunting

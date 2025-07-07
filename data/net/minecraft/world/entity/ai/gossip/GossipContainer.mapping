@@ -17,13 +17,13 @@ CLASS net/minecraft/world/entity/ai/gossip/GossipContainer
 		ARG 0 value1
 		ARG 1 value2
 	METHOD selectGossipsForTransfer (Ljava/util/Random;I)Ljava/util/Collection;
-		ARG 1 rand
+		ARG 1 random
 		ARG 2 gossipAmount
 	METHOD store (Lcom/mojang/serialization/DynamicOps;)Lcom/mojang/serialization/Dynamic;
-		ARG 1 dynamic
+		ARG 1 ops
 	METHOD transferFrom (Lnet/minecraft/world/entity/ai/gossip/GossipContainer;Ljava/util/Random;I)V
 		ARG 1 gossip
-		ARG 2 rand
+		ARG 2 random
 		ARG 3 gossipAmount
 	METHOD update (Lcom/mojang/serialization/Dynamic;)V
 		ARG 1 dynamic
@@ -31,7 +31,7 @@ CLASS net/minecraft/world/entity/ai/gossip/GossipContainer
 		METHOD load (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/DataResult;
 			ARG 0 dynamic
 		METHOD store (Lcom/mojang/serialization/DynamicOps;)Lcom/mojang/serialization/Dynamic;
-			ARG 1 dynamic
+			ARG 1 ops
 	CLASS EntityGossips
 		METHOD makeSureValueIsntTooLowOrTooHigh (Lnet/minecraft/world/entity/ai/gossip/GossipType;)V
 			ARG 1 gossipType

@@ -12,7 +12,7 @@ CLASS net/minecraft/client/model/HumanoidModel
 	METHOD copyPropertiesTo (Lnet/minecraft/client/model/HumanoidModel;)V
 		ARG 1 model
 	METHOD getArm (Lnet/minecraft/world/entity/HumanoidArm;)Lnet/minecraft/client/model/geom/ModelPart;
-		ARG 1 side
+		ARG 1 arm
 	METHOD getAttackArm (Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/entity/HumanoidArm;
 		ARG 1 entity
 	METHOD prepareMobModel (Lnet/minecraft/world/entity/LivingEntity;FFF)V
@@ -34,8 +34,8 @@ CLASS net/minecraft/client/model/HumanoidModel
 		ARG 2 limbSwing
 		ARG 3 limbSwingAmount
 		ARG 4 ageInTicks
-		ARG 5 netHeadYaw
-		ARG 6 headPitch
+		ARG 5 deltaYHeadRot
+		ARG 6 xRot
 	METHOD translateToHand (Lnet/minecraft/world/entity/HumanoidArm;Lcom/mojang/blaze3d/vertex/PoseStack;)V
-		ARG 1 side
-		ARG 2 matrixStack
+		ARG 1 arm
+		ARG 2 poseStack

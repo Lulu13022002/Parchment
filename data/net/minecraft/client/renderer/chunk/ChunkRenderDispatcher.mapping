@@ -17,7 +17,7 @@ CLASS net/minecraft/client/renderer/chunk/ChunkRenderDispatcher
 		METHOD beginLayer (Lcom/mojang/blaze3d/vertex/BufferBuilder;)V
 			ARG 1 bufferBuilder
 		METHOD doesChunkExistAt (Lnet/minecraft/core/BlockPos;)Z
-			ARG 1 blockPos
+			ARG 1 pos
 		METHOD getBuffer (Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexBuffer;
 			ARG 1 renderType
 		METHOD getRelativeOrigin (Lnet/minecraft/core/Direction;)Lnet/minecraft/core/BlockPos;

@@ -38,7 +38,7 @@ CLASS net/minecraft/server/level/ServerChunkCache
 	METHOD move (Lnet/minecraft/server/level/ServerPlayer;)V
 		ARG 1 player
 	METHOD onLightUpdate (Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/core/SectionPos;)V
-		ARG 1 type
+		ARG 1 lightLayer
 		ARG 2 pos
 	METHOD removeEntity (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
@@ -54,6 +54,8 @@ CLASS net/minecraft/server/level/ServerChunkCache
 		ARG 2 peaceful
 	METHOD setViewDistance (I)V
 		ARG 1 viewDistance
+	METHOD tick (Ljava/util/function/BooleanSupplier;)V
+		ARG 1 haveTime
 	METHOD updateChunkForced (Lnet/minecraft/world/level/ChunkPos;Z)V
 		ARG 1 pos
 		ARG 2 add

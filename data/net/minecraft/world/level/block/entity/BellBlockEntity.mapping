@@ -4,6 +4,6 @@ CLASS net/minecraft/world/level/block/entity/BellBlockEntity
 	FIELD ticks I
 		COMMENT How long the bell has been ringing
 	METHOD triggerEvent (II)Z
-		COMMENT See {@link Block#eventReceived} for more information. This must return true serverside before it is called clientside.
+		COMMENT See {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#triggerEvent} for more information. This must return {@code true} serverside before it is called clientside.
 		ARG 1 id
 		ARG 2 type

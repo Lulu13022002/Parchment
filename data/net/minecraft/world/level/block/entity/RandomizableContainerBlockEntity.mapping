@@ -24,7 +24,6 @@ CLASS net/minecraft/world/level/block/entity/RandomizableContainerBlockEntity
 		ARG 2 pos
 		ARG 3 lootTable
 	METHOD stillValid (Lnet/minecraft/world/entity/player/Player;)Z
-		COMMENT Don't rename this method to canInteractWith due to conflicts with Container
 		ARG 1 player
 	METHOD tryLoadLootTable (Lnet/minecraft/nbt/CompoundTag;)Z
 		ARG 1 tag

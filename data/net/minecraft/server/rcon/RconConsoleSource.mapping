@@ -1,9 +1,9 @@
 CLASS net/minecraft/server/rcon/RconConsoleSource
 	METHOD getCommandResponse ()Ljava/lang/String;
-		COMMENT Gets the contents of the RCon log
+		COMMENT Gets the contents of the RconClient log
 	METHOD prepareForCommand ()V
-		COMMENT Clears the RCon log
+		COMMENT Clears the RconClient log
 	METHOD sendMessage (Lnet/minecraft/network/chat/Component;Ljava/util/UUID;)V
-		COMMENT Send a chat message to the CommandSender
+		COMMENT Send a message to the CommandSource
 		ARG 1 component
 		ARG 2 senderUUID

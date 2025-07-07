@@ -31,18 +31,18 @@ CLASS net/minecraft/world/level/chunk/PalettedContainer
 		ARG 1 y
 		ARG 2 z
 	METHOD read (Lnet/minecraft/nbt/ListTag;[J)V
-		ARG 1 paletteNbt
+		ARG 1 tag
 		ARG 2 data
 	METHOD read (Lnet/minecraft/network/FriendlyByteBuf;)V
-		ARG 1 buf
+		ARG 1 buffer
 	METHOD set (ILjava/lang/Object;)V
 		ARG 1 index
 		ARG 2 state
 	METHOD setBits (I)V
 		ARG 1 bits
 	METHOD write (Lnet/minecraft/nbt/CompoundTag;Ljava/lang/String;Ljava/lang/String;)V
-		ARG 1 compound
+		ARG 1 tag
 		ARG 2 paletteName
 		ARG 3 paletteDataName
 	METHOD write (Lnet/minecraft/network/FriendlyByteBuf;)V
-		ARG 1 buf
+		ARG 1 buffer

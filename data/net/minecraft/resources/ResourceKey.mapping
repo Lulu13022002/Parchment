@@ -10,5 +10,5 @@ CLASS net/minecraft/resources/ResourceKey
 	METHOD elementKey (Lnet/minecraft/resources/ResourceKey;)Ljava/util/function/Function;
 		ARG 0 parent
 	METHOD isFor (Lnet/minecraft/resources/ResourceKey;)Z
-		COMMENT Returns true if the registry represented by the parent key
+		COMMENT Returns {@code true} if the registry represented by the parent key
 		ARG 1 key

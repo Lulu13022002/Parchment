@@ -5,7 +5,7 @@ CLASS net/minecraft/client/Options
 	METHOD broadcastOptions ()V
 		COMMENT Send a client info packet with settings information to the server
 	METHOD dataFix (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD getBackgroundColor (F)I
 		ARG 1 opacity
 	METHOD getBackgroundColor (I)I
@@ -13,7 +13,7 @@ CLASS net/minecraft/client/Options
 	METHOD getBackgroundOpacity (F)F
 		ARG 1 opacity
 	METHOD getSoundSourceVolume (Lnet/minecraft/sounds/SoundSource;)F
-		ARG 1 category
+		ARG 1 source
 	METHOD load ()V
 		COMMENT Loads the options from the options file. It appears that this has replaced the previous 'loadOptions'
 	METHOD loadSelectedResourcePacks (Lnet/minecraft/server/packs/repository/PackRepository;)V
@@ -32,4 +32,4 @@ CLASS net/minecraft/client/Options
 		ARG 1 category
 		ARG 2 volume
 	METHOD useNativeTransport ()Z
-		COMMENT Return true if the client connect to a server using the native transport system
+		COMMENT Return {@code true} if the client connect to a server using the native transport system

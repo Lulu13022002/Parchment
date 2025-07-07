@@ -5,25 +5,25 @@ CLASS net/minecraft/world/level/block/JukeboxBlock
 		ARG 1 level
 		ARG 2 pos
 	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
-		COMMENT @deprecated call via {@link IBlockState#getComparatorInputOverride(World,BlockPos)} whenever possible. Implementing/overriding is fine.
-		ARG 1 blockState
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#getAnalogOutputSignal} whenever possible. Implementing/overriding is fine.
+		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 	METHOD getRenderShape (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/RenderShape;
-		COMMENT The type of render function called. MODEL for mixed tesr and static model, MODELBLOCK_ANIMATED for TESR-only, LIQUID for vanilla liquids, INVISIBLE to skip all rendering
-		COMMENT @deprecated call via {@link IBlockState#getRenderType()} whenever possible. Implementing/overriding is fine.
+		COMMENT The type of render function called. MODEL for mixed tesr and static model, ENTITYBLOCK_ANIMATED for TESR-only, LIQUID for vanilla liquids, INVISIBLE to skip all rendering
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#getRenderShape} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD hasAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;)Z
-		COMMENT @deprecated call via {@link IBlockState#hasComparatorInputOverride()} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#hasAnalogOutputSignal} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 	METHOD onRemove (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 newState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD setPlacedBy (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V
-		COMMENT Called by ItemBlocks after a block is set in the world, to allow post-place logic
+		COMMENT Called by BlockItem after a block is set in the world, to allow post-place logic
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state

@@ -8,6 +8,6 @@ CLASS net/minecraft/world/level/block/entity/BaseContainerBlockEntity
 		ARG 1 containerId
 		ARG 2 inventory
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setCustomName (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 name

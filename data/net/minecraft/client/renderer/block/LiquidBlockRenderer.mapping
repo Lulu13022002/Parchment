@@ -1,9 +1,9 @@
 CLASS net/minecraft/client/renderer/block/LiquidBlockRenderer
 	METHOD getLightColor (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
-		ARG 1 lightReader
+		ARG 1 level
 		ARG 2 pos
 	METHOD getWaterHeight (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/material/Fluid;)F
-		ARG 1 reader
+		ARG 1 level
 		ARG 2 pos
 		ARG 3 fluid
 	METHOD isNeighborSameFluid (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/material/FluidState;)Z
@@ -12,12 +12,12 @@ CLASS net/minecraft/client/renderer/block/LiquidBlockRenderer
 		ARG 2 side
 		ARG 3 state
 	METHOD tesselate (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/level/material/FluidState;)Z
-		ARG 1 lightReader
+		ARG 1 level
 		ARG 2 pos
-		ARG 3 vertexBuilder
+		ARG 3 consumer
 		ARG 4 fluidState
 	METHOD vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDFFFFFI)V
-		ARG 1 vertexBuilder
+		ARG 1 consumer
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z

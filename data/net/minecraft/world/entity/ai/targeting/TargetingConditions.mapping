@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/ai/targeting/TargetingConditions
 	METHOD range (D)Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;
-		ARG 1 distance
+		ARG 1 range
 	METHOD selector (Ljava/util/function/Predicate;)Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;
 		ARG 1 customPredicate
 	METHOD test (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z

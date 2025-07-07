@@ -8,7 +8,7 @@ CLASS net/minecraft/world/level/block/DoublePlantBlock
 	METHOD getOffsetType ()Lnet/minecraft/world/level/block/state/BlockBehaviour$OffsetType;
 		COMMENT Get the OffsetType for this Block. Determines if the model is rendered slightly offset.
 	METHOD getSeed (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)J
-		COMMENT Return a random long to be passed to {@link IBakedModel#getQuads}, used for random model rotations
+		COMMENT Return a random long to be passed to {@link net.minecraft.client.resources.model.BakedModel#getQuads}, used for random model rotations
 		ARG 1 state
 		ARG 2 pos
 	METHOD getStateForPlacement (Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;
@@ -19,7 +19,7 @@ CLASS net/minecraft/world/level/block/DoublePlantBlock
 		ARG 2 player
 		ARG 3 pos
 		ARG 4 state
-		ARG 5 te
+		ARG 5 blockEntity
 		ARG 6 stack
 	METHOD playerWillDestroy (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;)V
 		COMMENT Called before the Block is set to air in the world. Called regardless of if the player's tool can actually collect this block
@@ -33,7 +33,7 @@ CLASS net/minecraft/world/level/block/DoublePlantBlock
 		ARG 2 state
 		ARG 3 player
 	METHOD setPlacedBy (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V
-		COMMENT Called by ItemBlocks after a block is set in the world, to allow post-place logic
+		COMMENT Called by BlockItem after a block is set in the world, to allow post-place logic
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state

@@ -2,12 +2,12 @@ CLASS net/minecraft/world/level/block/piston/MovingPistonBlock
 	METHOD createBlockStateDefinition (Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V
 		ARG 1 builder
 	METHOD destroy (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		COMMENT Called after a player destroys this Block - the posiiton pos may no longer hold the state indicated.
+		COMMENT Called after a player destroys this Block - the position pos may no longer hold the state indicated.
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state
 	METHOD getBlockEntity (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/piston/PistonMovingBlockEntity;
-		ARG 1 blockReader
+		ARG 1 level
 		ARG 2 pos
 	METHOD getCloneItemStack (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 level
@@ -33,7 +33,7 @@ CLASS net/minecraft/world/level/block/piston/MovingPistonBlock
 		ARG 4 type
 	METHOD mirror (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Mirror;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#mirror} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
 		ARG 2 mirror
 	METHOD onRemove (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V
@@ -41,12 +41,12 @@ CLASS net/minecraft/world/level/block/piston/MovingPistonBlock
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 newState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD rotate (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Rotation;)Lnet/minecraft/world/level/block/state/BlockState;
 		COMMENT Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed blockstate.
-		COMMENT @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is fine.
+		COMMENT @deprecated call via {@link BlockBehaviour.BlockStateBase#rotate} whenever possible. Implementing/overriding is fine.
 		ARG 1 state
-		ARG 2 rot
+		ARG 2 rotation
 	METHOD use (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;
 		ARG 1 state
 		ARG 2 level

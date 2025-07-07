@@ -8,10 +8,10 @@ CLASS net/minecraft/client/gui/components/ChatComponent
 	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
 		ARG 1 minecraft
 	METHOD addMessage (Lnet/minecraft/network/chat/Component;)V
-		ARG 1 chatComponent
+		ARG 1 message
 	METHOD addMessage (Lnet/minecraft/network/chat/Component;I)V
-		COMMENT prints the ChatComponent to Chat. If the ID is not 0, deletes an existing Chat Line of that ID from the GUI
-		ARG 1 chatComponent
+		COMMENT prints the Component to Chat. If the ID is not 0, deletes an existing Chat Line of that ID from the GUI
+		ARG 1 message
 		ARG 2 chatLineId
 	METHOD addMessage (Lnet/minecraft/network/chat/Component;IIZ)V
 		ARG 1 message
@@ -21,7 +21,7 @@ CLASS net/minecraft/client/gui/components/ChatComponent
 	METHOD clearMessages (Z)V
 		COMMENT Clears the chat.
 		ARG 1 clearSentMsgHistory
-			COMMENT Whether or not to clear the user's sent message history
+			COMMENT Whether to clear the user's sent message history
 	METHOD enqueueMessage (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 message
 	METHOD getRecentChat ()Ljava/util/List;
@@ -29,7 +29,7 @@ CLASS net/minecraft/client/gui/components/ChatComponent
 	METHOD getTimeFactor (I)D
 		ARG 0 counter
 	METHOD isChatFocused ()Z
-		COMMENT Returns true if the chat GUI is open
+		COMMENT Returns {@code true} if the chat GUI is open
 	METHOD removeById (I)V
 		COMMENT finds and deletes a Chat line by ID
 		ARG 1 id

@@ -2,7 +2,7 @@ CLASS net/minecraft/world/entity/ai/goal/GoalSelector
 	FIELD lockedFlags Ljava/util/Map;
 		COMMENT Goals currently using a particular flag
 	METHOD addGoal (ILnet/minecraft/world/entity/ai/goal/Goal;)V
-		COMMENT Add a now AITask. Args : priority, task
+		COMMENT Add a goal to the GoalSelector with a certain priority. Lower numbers are higher priority.
 		ARG 1 priority
 		ARG 2 task
 	METHOD disableControlFlag (Lnet/minecraft/world/entity/ai/goal/Goal$Flag;)V

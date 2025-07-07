@@ -10,10 +10,10 @@ CLASS net/minecraft/client/gui/screens/PresetFlatWorldScreen
 		ARG 3 mouseY
 		ARG 5 delta
 	METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;IIF)V
-		ARG 1 matrixStack
+		ARG 1 poseStack
 		ARG 2 mouseX
 		ARG 3 mouseY
-		ARG 4 partialTicks
+		ARG 4 partialTick
 	METHOD resize (Lnet/minecraft/client/Minecraft;II)V
 		ARG 1 minecraft
 		ARG 2 width
@@ -43,7 +43,7 @@ CLASS net/minecraft/client/gui/screens/PresetFlatWorldScreen
 				ARG 3 mouseY
 				ARG 5 button
 			METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;IIIIIIIZF)V
-				ARG 1 matrixStack
+				ARG 1 poseStack
 				ARG 2 index
 				ARG 3 top
 				ARG 4 left
@@ -52,4 +52,4 @@ CLASS net/minecraft/client/gui/screens/PresetFlatWorldScreen
 				ARG 7 mouseX
 				ARG 8 mouseY
 				ARG 9 isMouseOver
-				ARG 10 partialTicks
+				ARG 10 partialTick

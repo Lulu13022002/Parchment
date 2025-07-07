@@ -3,37 +3,37 @@ CLASS net/minecraft/client/renderer/entity/layers/RenderLayer
 		ARG 0 modelParent
 		ARG 1 model
 		ARG 2 textureLocation
-		ARG 3 matrixStack
-		ARG 4 buffer
+		ARG 3 poseStack
+		ARG 4 bufferSource
 		ARG 5 packedLight
 		ARG 6 entity
 		ARG 7 limbSwing
 		ARG 8 limbSwingAmount
 		ARG 9 ageInTicks
-		ARG 10 netHeadYaw
-		ARG 11 headPitch
-		ARG 12 partialTicks
+		ARG 10 deltaYHeadRot
+		ARG 11 xRot
+		ARG 12 partialTick
 		ARG 13 red
 		ARG 14 green
 		ARG 15 blue
 	METHOD getTextureLocation (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;
 		ARG 1 entity
 	METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/Entity;FFFFFF)V
-		ARG 1 matrixStack
-		ARG 2 buffer
+		ARG 1 poseStack
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 livingEntity
 		ARG 5 limbSwing
 		ARG 6 limbSwingAmount
-		ARG 7 partialTicks
+		ARG 7 partialTick
 		ARG 8 ageInTicks
-		ARG 9 netHeadYaw
-		ARG 10 headPitch
+		ARG 9 deltaYHeadRot
+		ARG 10 xRot
 	METHOD renderColoredCutoutModel (Lnet/minecraft/client/model/EntityModel;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFF)V
 		ARG 0 model
 		ARG 1 textureLocation
-		ARG 2 matrixStack
-		ARG 3 buffer
+		ARG 2 poseStack
+		ARG 3 bufferSource
 		ARG 4 packedLight
 		ARG 5 entity
 		ARG 6 red
