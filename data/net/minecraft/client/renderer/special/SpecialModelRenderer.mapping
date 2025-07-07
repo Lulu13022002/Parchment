@@ -4,7 +4,7 @@ CLASS net/minecraft/client/renderer/special/SpecialModelRenderer
 	METHOD getExtents (Ljava/util/Set;)V
 		ARG 1 output
 	METHOD render (Ljava/lang/Object;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IIZ)V
-		ARG 1 patterns
+		ARG 1 object
 		ARG 2 displayContext
 		ARG 3 poseStack
 		ARG 4 bufferSource

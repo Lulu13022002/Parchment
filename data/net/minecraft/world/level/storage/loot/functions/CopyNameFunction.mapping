@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/CopyNameFunction
 	COMMENT LootItemFunction that sets the stack's name by copying it from somewhere else, such as the killing player.
 	METHOD <init> (Ljava/util/List;Lnet/minecraft/world/level/storage/loot/functions/CopyNameFunction$NameSource;)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 source
 	METHOD copyName (Lnet/minecraft/world/level/storage/loot/functions/CopyNameFunction$NameSource;)Lnet/minecraft/world/level/storage/loot/functions/LootItemConditionalFunction$Builder;
 		ARG 0 source

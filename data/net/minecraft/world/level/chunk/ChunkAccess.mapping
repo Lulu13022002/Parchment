@@ -41,7 +41,7 @@ CLASS net/minecraft/world/level/chunk/ChunkAccess
 	METHOD getSection (I)Lnet/minecraft/world/level/chunk/LevelChunkSection;
 		ARG 1 index
 	METHOD getTicksForSerialization (J)Lnet/minecraft/world/level/chunk/ChunkAccess$PackedTicks;
-		ARG 1 gametime
+		ARG 1 gameTime
 	METHOD hasPrimedHeightmap (Lnet/minecraft/world/level/levelgen/Heightmap$Types;)Z
 		ARG 1 type
 	METHOD incrementInhabitedTime (J)V

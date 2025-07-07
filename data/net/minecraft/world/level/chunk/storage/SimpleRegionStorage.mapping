@@ -11,10 +11,10 @@ CLASS net/minecraft/world/level/chunk/storage/SimpleRegionStorage
 		ARG 1 flushStorage
 	METHOD upgradeChunkTag (Lcom/mojang/serialization/Dynamic;I)Lcom/mojang/serialization/Dynamic;
 		ARG 1 tag
-		ARG 2 version
+		ARG 2 fallbackVersion
 	METHOD upgradeChunkTag (Lnet/minecraft/nbt/CompoundTag;I)Lnet/minecraft/nbt/CompoundTag;
 		ARG 1 tag
-		ARG 2 version
+		ARG 2 fallbackVersion
 	METHOD write (Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 chunkPos
 		ARG 2 data

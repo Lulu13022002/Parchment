@@ -9,7 +9,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 1 pos
 		ARG 2 side
 	METHOD createParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
@@ -18,10 +18,10 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 12 zSpeed
 	METHOD createTrackingEmitter (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/particles/ParticleOptions;)V
 		ARG 1 entity
-		ARG 2 particleData
+		ARG 2 options
 	METHOD createTrackingEmitter (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/particles/ParticleOptions;I)V
 		ARG 1 entity
-		ARG 2 data
+		ARG 2 options
 		ARG 3 lifetime
 	METHOD destroy (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
@@ -32,7 +32,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 1 registryName
 		ARG 2 resource
 	METHOD makeParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
