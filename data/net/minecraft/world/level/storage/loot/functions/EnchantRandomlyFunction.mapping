@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/EnchantRandomlyFunction
 	COMMENT LootItemFunction that applies a random enchantment to the stack. If an empty list is given, chooses from all enchantments.
 	METHOD <init> (Ljava/util/List;Ljava/util/Optional;)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 enchantments
 	METHOD enchantItem (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/enchantment/Enchantment;Lnet/minecraft/util/RandomSource;)Lnet/minecraft/world/item/ItemStack;
 		ARG 0 stack

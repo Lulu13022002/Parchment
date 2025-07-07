@@ -66,7 +66,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 testEntityData
+		ARG 4 expectedData
 	METHOD assertEntityInstancePresent (Lnet/minecraft/world/entity/Entity;III)V
 		ARG 1 entity
 		ARG 2 x
@@ -200,10 +200,6 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 entityClass
 	METHOD lambda$assertBlock$9 (Ljava/util/function/Predicate;Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 1 state
-	METHOD lambda$assertBlockNotPresent$6 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)Z
-		ARG 3 block
-	METHOD lambda$assertBlockPresent$5 (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)Z
-		ARG 2 block
 	METHOD lambda$assertBlockProperty$10 (Lnet/minecraft/world/level/block/state/properties/Property;Ljava/util/function/Predicate;Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 2 state
 	METHOD lambda$assertEntityInstancePresent$12 (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)Z
@@ -333,7 +329,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 testEntityData
+		ARG 4 expectedData
 	METHOD succeedWhenEntityNotPresent (Lnet/minecraft/world/entity/EntityType;III)V
 		ARG 1 type
 		ARG 2 x

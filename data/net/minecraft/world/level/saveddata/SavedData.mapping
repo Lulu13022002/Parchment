@@ -7,7 +7,7 @@ CLASS net/minecraft/world/level/saveddata/SavedData
 			COMMENT the passed {@code java.io.File} to write the {@code SavedData} to
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
 		COMMENT Used to save the {@code SavedData} to a {@code CompoundTag}
-		ARG 1 compoundTag
+		ARG 1 tag
 			COMMENT the {@code CompoundTag} to save the {@code SavedData} to
 	METHOD setDirty ()V
 		COMMENT Marks this {@code SavedData} dirty, to be saved to disk when the level next saves.

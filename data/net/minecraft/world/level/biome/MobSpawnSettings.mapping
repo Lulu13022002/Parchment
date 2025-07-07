@@ -49,7 +49,7 @@ CLASS net/minecraft/world/level/biome/MobSpawnSettings
 		METHOD lambda$static$2 (Lnet/minecraft/world/level/biome/MobSpawnSettings$SpawnerData;)Ljava/lang/Integer;
 			ARG 0 data
 		METHOD lambda$static$3 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 		METHOD lambda$static$5 (Lnet/minecraft/world/level/biome/MobSpawnSettings$SpawnerData;)Lcom/mojang/serialization/DataResult;
 			ARG 0 spawnerData
 	CLASS MobSpawnCost
@@ -65,4 +65,4 @@ CLASS net/minecraft/world/level/biome/MobSpawnSettings
 		METHOD lambda$static$1 (Lnet/minecraft/world/level/biome/MobSpawnSettings$MobSpawnCost;)Ljava/lang/Double;
 			ARG 0 cost
 		METHOD lambda$static$2 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance

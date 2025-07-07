@@ -28,7 +28,7 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 	METHOD getDamageProtection (Ljava/lang/Iterable;Lnet/minecraft/world/damagesource/DamageSource;)I
 		COMMENT Returns the modifier of protection enchantments on armors equipped on player.
 		ARG 0 stacks
-		ARG 1 source
+		ARG 1 damageSource
 	METHOD getDepthStrider (Lnet/minecraft/world/entity/LivingEntity;)I
 		ARG 0 entity
 	METHOD getEnchantmentCost (Lnet/minecraft/util/RandomSource;IILnet/minecraft/world/item/ItemStack;)I
@@ -38,11 +38,11 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 		ARG 2 power
 		ARG 3 stack
 	METHOD getEnchantmentId (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/resources/ResourceLocation;
-		ARG 0 compoundTag
+		ARG 0 tag
 	METHOD getEnchantmentId (Lnet/minecraft/world/item/enchantment/Enchantment;)Lnet/minecraft/resources/ResourceLocation;
 		ARG 0 enchantment
 	METHOD getEnchantmentLevel (Lnet/minecraft/nbt/CompoundTag;)I
-		ARG 0 compoundTag
+		ARG 0 tag
 	METHOD getEnchantmentLevel (Lnet/minecraft/world/item/enchantment/Enchantment;Lnet/minecraft/world/entity/LivingEntity;)I
 		ARG 0 enchantment
 		ARG 1 entity
@@ -131,11 +131,11 @@ CLASS net/minecraft/world/item/enchantment/EnchantmentHelper
 	METHOD selectEnchantment (Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/item/ItemStack;IZ)Ljava/util/List;
 		COMMENT Create a list of random EnchantmentData (enchantments) that can be added together to the ItemStack, the 3rd parameter is the total enchantability level.
 		ARG 0 random
-		ARG 1 itemStack
+		ARG 1 stack
 		ARG 2 level
 		ARG 3 allowTreasure
 	METHOD setEnchantmentLevel (Lnet/minecraft/nbt/CompoundTag;I)V
-		ARG 0 compoundTag
+		ARG 0 tag
 		ARG 1 level
 	METHOD setEnchantments (Ljava/util/Map;Lnet/minecraft/world/item/ItemStack;)V
 		COMMENT Set the enchantments for the specified stack.

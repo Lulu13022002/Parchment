@@ -4,7 +4,7 @@ CLASS net/minecraft/advancements/critereon/MinMaxBounds
 		ARG 1 boundsFactory
 	METHOD fromReader (Lcom/mojang/brigadier/StringReader;Lnet/minecraft/advancements/critereon/MinMaxBounds$BoundsFromReaderFactory;Ljava/util/function/Function;Ljava/util/function/Supplier;Ljava/util/function/Function;)Lnet/minecraft/advancements/critereon/MinMaxBounds;
 		ARG 0 reader
-		ARG 1 boundedFactory
+		ARG 1 boundsFactory
 		ARG 2 valueFactory
 		ARG 3 commandExceptionSupplier
 		ARG 4 formatter

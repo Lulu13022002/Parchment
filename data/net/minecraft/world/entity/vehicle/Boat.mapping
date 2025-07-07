@@ -5,7 +5,7 @@ CLASS net/minecraft/world/entity/vehicle/Boat
 		ARG 4 y
 		ARG 6 z
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD canAddPassenger (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 passenger
 	METHOD canCollideWith (Lnet/minecraft/world/entity/Entity;)Z
@@ -24,7 +24,7 @@ CLASS net/minecraft/world/entity/vehicle/Boat
 	METHOD floatBoat ()V
 		COMMENT Update the boat's speed, based on momentum.
 	METHOD getBubbleAngle (F)F
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getDismountLocationForPassenger (Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/phys/Vec3;
 		ARG 1 livingEntity
 	METHOD getEyeHeight (Lnet/minecraft/world/entity/Pose;Lnet/minecraft/world/entity/EntityDimensions;)F
@@ -64,7 +64,7 @@ CLASS net/minecraft/world/entity/vehicle/Boat
 		ARG 1 entity
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setBubbleTime (I)V
 		ARG 1 bubbleTime
 	METHOD setInput (ZZZZ)V

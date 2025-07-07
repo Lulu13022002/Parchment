@@ -15,4 +15,4 @@ CLASS net/minecraft/gametest/framework/GameTestServer
 	METHOD lambda$static$0 (Lnet/minecraft/world/level/GameRules;)V
 		ARG 0 gameRules
 	METHOD startTests (Lnet/minecraft/server/level/ServerLevel;)V
-		ARG 1 serverLevel
+		ARG 1 level

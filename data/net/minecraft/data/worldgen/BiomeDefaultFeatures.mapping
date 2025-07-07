@@ -169,7 +169,7 @@ CLASS net/minecraft/data/worldgen/BiomeDefaultFeatures
 	METHOD monsters (Lnet/minecraft/world/level/biome/MobSpawnSettings$Builder;IIIZ)V
 		ARG 0 builder
 		ARG 1 zombieWeight
-		ARG 2 zombieVillageWeight
+		ARG 2 zombieVillagerWeight
 		ARG 3 skeletonWeight
 		ARG 4 isUnderwater
 	METHOD mooshroomSpawns (Lnet/minecraft/world/level/biome/MobSpawnSettings$Builder;)V

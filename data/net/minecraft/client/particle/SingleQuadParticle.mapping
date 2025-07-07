@@ -2,13 +2,13 @@ CLASS net/minecraft/client/particle/SingleQuadParticle
 	METHOD getQuadSize (F)F
 		ARG 1 scaleFactor
 	METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
-		ARG 1 buffer
-		ARG 2 renderInfo
-		ARG 3 partialTicks
+		ARG 1 consumer
+		ARG 2 camera
+		ARG 3 partialTick
 	METHOD scale (F)Lnet/minecraft/client/particle/Particle;
 		ARG 1 scale
 	CLASS FacingCameraMode
 		METHOD setRotation (Lorg/joml/Quaternionf;Lnet/minecraft/client/Camera;F)V
-			ARG 1 quaternion
+			ARG 1 rotation
 			ARG 2 camera
 			ARG 3 partialTick

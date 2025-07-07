@@ -6,7 +6,7 @@ CLASS net/minecraft/world/level/levelgen/NoiseGeneratorSettings
 	METHOD end (Lnet/minecraft/data/worldgen/BootstapContext;)Lnet/minecraft/world/level/levelgen/NoiseGeneratorSettings;
 		ARG 0 context
 	METHOD floatingIslands (Lnet/minecraft/data/worldgen/BootstapContext;)Lnet/minecraft/world/level/levelgen/NoiseGeneratorSettings;
-		ARG 0 contex
+		ARG 0 context
 	METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 0 instance
 	METHOD nether (Lnet/minecraft/data/worldgen/BootstapContext;)Lnet/minecraft/world/level/levelgen/NoiseGeneratorSettings;

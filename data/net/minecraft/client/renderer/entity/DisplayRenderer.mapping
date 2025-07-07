@@ -21,13 +21,13 @@ CLASS net/minecraft/client/renderer/entity/DisplayRenderer
 		ARG 2 entityYaw
 		ARG 3 partialTick
 		ARG 4 poseStack
-		ARG 5 buffer
+		ARG 5 bufferSource
 		ARG 6 packedLight
 	METHOD renderInner (Lnet/minecraft/world/entity/Display;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IF)V
 		ARG 1 textDisplay
 		ARG 2 renderState
 		ARG 3 poseStack
-		ARG 4 buffer
+		ARG 4 bufferSource
 		ARG 5 lightmapUV
 		ARG 6 partialTick
 	CLASS TextDisplayRenderer

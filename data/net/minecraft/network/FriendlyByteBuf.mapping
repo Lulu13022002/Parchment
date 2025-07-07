@@ -151,7 +151,7 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		COMMENT
 		COMMENT @see #writeBlockPos
 	METHOD readById (Ljava/util/function/IntFunction;)Ljava/lang/Object;
-		ARG 1 idLookuo
+		ARG 1 idLookup
 	METHOD readById (Lnet/minecraft/core/IdMap;)Ljava/lang/Object;
 		ARG 1 idMap
 	METHOD readById (Lnet/minecraft/core/IdMap;Lnet/minecraft/network/FriendlyByteBuf$Reader;)Lnet/minecraft/core/Holder;
@@ -265,13 +265,12 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 keyReader
 		ARG 2 valueReader
 	METHOD readNbt ()Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Reads a NBT CompoundTag from this buffer.
+		COMMENT Reads a tag from this buffer.
 		COMMENT {@code null} is a valid value and may be returned.
 		COMMENT
 		COMMENT This method will read a maximum of 0x200000 bytes.
 		COMMENT
 		COMMENT @see #writeNbt
-		COMMENT @see #readAnySizeNbt
 		COMMENT @see #readNbt(NbtAccounter)
 	METHOD readNbt (Lnet/minecraft/nbt/NbtAccounter;)Lnet/minecraft/nbt/Tag;
 		ARG 1 nbtAccounter
@@ -289,8 +288,6 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 length
 	METHOD readSectionPos ()Lnet/minecraft/core/SectionPos;
 		COMMENT Reads a SectionPos encoded as a long from the buffer.
-		COMMENT
-		COMMENT @see #writeSectionPos
 	METHOD readSlice (I)Lio/netty/buffer/ByteBuf;
 		ARG 1 length
 	METHOD readUUID ()Ljava/util/UUID;

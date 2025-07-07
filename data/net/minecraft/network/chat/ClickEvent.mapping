@@ -7,7 +7,7 @@ CLASS net/minecraft/network/chat/ClickEvent
 	METHOD getAction ()Lnet/minecraft/network/chat/ClickEvent$Action;
 		COMMENT Gets the action to perform when this event is raised.
 	METHOD getValue ()Ljava/lang/String;
-		COMMENT Gets the value to perform the action on when this event is raised.  For example, if the action is "open URL", this would be the URL to open.
+		COMMENT Gets the value to perform the action on when this event is raised. For example, if the action is "open URL", this would be the URL to open.
 	CLASS Action
 		FIELD name Ljava/lang/String;
 			COMMENT The canonical name used to refer to this action.

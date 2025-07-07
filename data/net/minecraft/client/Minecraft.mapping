@@ -7,7 +7,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 1 gameConfig
 	METHOD addCustomNbtData (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/entity/BlockEntity;)V
 		ARG 1 stack
-		ARG 2 be
+		ARG 2 blockEntity
 	METHOD addInitialScreens (Ljava/util/List;)V
 		ARG 1 output
 	METHOD addResourcePackLoadFailToast (Lnet/minecraft/network/chat/Component;)V
@@ -35,7 +35,7 @@ CLASS net/minecraft/client/Minecraft
 		ARG 1 gameDirectory
 		ARG 2 crashReport
 	METHOD createSearchTrees ()V
-		COMMENT Fills {@link #searchTreeManager} with the current item and recipe registry contents.
+		COMMENT Fills {@link #searchRegistry} with the current item and recipe registry contents.
 	METHOD createUserApiService (Lcom/mojang/authlib/yggdrasil/YggdrasilAuthenticationService;Lnet/minecraft/client/main/GameConfig;)Lcom/mojang/authlib/minecraft/UserApiService;
 		ARG 1 authenticationService
 		ARG 2 gameConfig
@@ -88,13 +88,13 @@ CLASS net/minecraft/client/Minecraft
 	METHOD getInstance ()Lnet/minecraft/client/Minecraft;
 		COMMENT Return the singleton Minecraft instance for the game
 	METHOD getLaunchedVersion ()Ljava/lang/String;
-		COMMENT Gets the version that Minecraft was launched under (the name of a version JSON). Specified via the <code>--version</code> flag.
+		COMMENT Gets the version that Minecraft was launched under (the name of a version JSON). Specified via the {@code --version} flag.
 	METHOD getLevelSource ()Lnet/minecraft/world/level/storage/LevelStorageSource;
 		COMMENT Returns the save loader that is currently being used
 	METHOD getMobEffectTextures ()Lnet/minecraft/client/resources/MobEffectTextureManager;
 		COMMENT Gets the sprite uploader used for potions.
 	METHOD getMusicManager ()Lnet/minecraft/client/sounds/MusicManager;
-		COMMENT Return the musicTicker's instance
+		COMMENT Return the musicManager's instance
 	METHOD getPaintingTextures ()Lnet/minecraft/client/resources/PaintingTextureManager;
 		COMMENT Gets the sprite uploader used for paintings.
 	METHOD getSearchTree (Lnet/minecraft/client/searchtree/SearchRegistry$Key;)Lnet/minecraft/client/searchtree/SearchTree;
@@ -106,7 +106,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD getTickTargetMillis (F)F
 		ARG 1 defaultValue
 	METHOD getVersionType ()Ljava/lang/String;
-		COMMENT Gets the type of version that Minecraft was launched under (as specified in the version JSON). Specified via the <code>--versionType</code> flag.
+		COMMENT Gets the type of version that Minecraft was launched under (as specified in the version JSON). Specified via the {@code --versionType} flag.
 	METHOD grabHugeScreenshot (Ljava/io/File;IIII)Lnet/minecraft/network/chat/Component;
 		ARG 1 gameDirectory
 		ARG 2 columnWidth
@@ -135,7 +135,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD openChatScreen (Ljava/lang/String;)V
 		ARG 1 defaultText
 	METHOD pauseGame (Z)V
-		COMMENT Displays the ingame menu
+		COMMENT Displays the in-game menu
 		ARG 1 pauseOnly
 	METHOD pickBlock ()V
 		COMMENT Called when user clicked he's mouse middle button (pick block)
@@ -177,7 +177,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD startUseItem ()V
 		COMMENT Called when user clicked he's mouse right button (place)
 	METHOD stop ()V
-		COMMENT Called when the window is closing. Sets 'running' to false which allows the game loop to exit cleanly.
+		COMMENT Called when the window is closing. Sets 'running' to {@code false} which allows the game loop to exit cleanly.
 	METHOD tick ()V
 		COMMENT Runs the current tick.
 	METHOD updateLevelInEngines (Lnet/minecraft/client/multiplayer/ClientLevel;)V

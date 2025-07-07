@@ -18,5 +18,5 @@ CLASS net/minecraft/world/entity/projectile/ThrownPotion
 		ARG 1 stack
 		ARG 2 potion
 	METHOD onHit (Lnet/minecraft/world/phys/HitResult;)V
-		COMMENT Called when this EntityFireball hits a block or entity.
+		COMMENT Called when this projectile hits a block or entity.
 		ARG 1 result

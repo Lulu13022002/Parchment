@@ -2,7 +2,7 @@ CLASS net/minecraft/world/item/crafting/ShapedRecipePattern
 	METHOD firstNonSpace (Ljava/lang/String;)I
 		ARG 0 row
 	METHOD fromNetwork (Lnet/minecraft/network/FriendlyByteBuf;)Lnet/minecraft/world/item/crafting/ShapedRecipePattern;
-		ARG 0 nuffer
+		ARG 0 buffer
 	METHOD lastNonSpace (Ljava/lang/String;)I
 		ARG 0 row
 	METHOD matches (Lnet/minecraft/world/inventory/CraftingContainer;)Z

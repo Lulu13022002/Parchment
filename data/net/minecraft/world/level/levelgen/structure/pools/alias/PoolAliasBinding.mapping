@@ -7,7 +7,7 @@ CLASS net/minecraft/world/level/levelgen/structure/pools/alias/PoolAliasBinding
 		ARG 1 target
 	METHOD forEachResolved (Lnet/minecraft/util/RandomSource;Ljava/util/function/BiConsumer;)V
 		ARG 1 random
-		ARG 2 stucturePoolKey
+		ARG 2 structurePoolKey
 	METHOD random (Ljava/lang/String;Lnet/minecraft/util/random/SimpleWeightedRandomList;)Lnet/minecraft/world/level/levelgen/structure/pools/alias/Random;
 		ARG 0 alias
 		ARG 1 targets
