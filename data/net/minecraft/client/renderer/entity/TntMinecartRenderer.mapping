@@ -3,6 +3,6 @@ CLASS net/minecraft/client/renderer/entity/TntMinecartRenderer
 		ARG 0 blockRenderDispatcher
 		ARG 1 state
 		ARG 2 poseStack
-		ARG 3 buffer
+		ARG 3 bufferSource
 		ARG 4 packedLight
 		ARG 5 whiteOverlay

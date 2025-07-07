@@ -8,4 +8,4 @@ CLASS net/minecraft/client/particle/VibrationSignalParticle
 		ARG 9 lifetime
 	CLASS Provider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
-			ARG 1 sprites
+			ARG 1 sprite

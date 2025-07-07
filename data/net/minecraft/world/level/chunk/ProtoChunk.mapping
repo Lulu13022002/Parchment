@@ -10,7 +10,7 @@ CLASS net/minecraft/world/level/chunk/ProtoChunk
 		ARG 2 upgradeData
 		ARG 3 sections
 		ARG 4 blockTicks
-		ARG 5 liquidTicks
+		ARG 5 fluidTicks
 		ARG 6 levelHeightAccessor
 		ARG 7 biomeRegistry
 		ARG 8 blendingData

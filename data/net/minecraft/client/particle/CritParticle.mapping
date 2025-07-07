@@ -3,7 +3,7 @@ CLASS net/minecraft/client/particle/CritParticle
 		ARG 1 scaleFactor
 	CLASS Provider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
-			ARG 1 sprites
+			ARG 1 sprite
 		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
@@ -15,7 +15,7 @@ CLASS net/minecraft/client/particle/CritParticle
 			ARG 13 zSpeed
 	CLASS MagicProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
-			ARG 1 sprites
+			ARG 1 sprite
 		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
@@ -27,7 +27,7 @@ CLASS net/minecraft/client/particle/CritParticle
 			ARG 13 zSpeed
 	CLASS DamageIndicatorProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
-			ARG 1 sprites
+			ARG 1 sprite
 		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
