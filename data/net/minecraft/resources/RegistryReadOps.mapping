@@ -34,7 +34,7 @@ CLASS net/minecraft/resources/RegistryReadOps
 		COMMENT If inline definitions are allowed, the element may be encoded as raw data, which will be read using the {@code elementCodec} and returned without mutating the internal {@code registryAccess}.
 		COMMENT In all other cases, this will read the registry element's id as a {@link net.minecraft.resources.ResourceLocation}. A supplier to the registry element will be returned, which accesses the underlying registry, or an error, if the registry element was unable to be decoded here or in previous calls.
 		ARG 1 input
-			COMMENT The input encoded registry element, either a id or an inline definition.
+			COMMENT The input encoded registry element, either an id or an inline definition.
 		ARG 2 registryKey
 			COMMENT The registry the element might belong to.
 		ARG 3 elementCodec

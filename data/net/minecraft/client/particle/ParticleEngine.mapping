@@ -9,7 +9,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 1 pos
 		ARG 2 side
 	METHOD createParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
@@ -18,10 +18,10 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 12 zSpeed
 	METHOD createTrackingEmitter (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/particles/ParticleOptions;)V
 		ARG 1 entity
-		ARG 2 particleData
+		ARG 2 options
 	METHOD createTrackingEmitter (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/particles/ParticleOptions;I)V
 		ARG 1 entity
-		ARG 2 data
+		ARG 2 options
 		ARG 3 lifetime
 	METHOD destroy (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
@@ -49,13 +49,13 @@ CLASS net/minecraft/client/particle/ParticleEngine
 	METHOD lambda$tick$8 (Lnet/minecraft/client/particle/ParticleRenderType;)Ljava/util/Queue;
 		ARG 0 renderType
 	METHOD lambda$tickParticleList$9 (Lnet/minecraft/core/particles/ParticleGroup;)V
-		ARG 1 grouo
+		ARG 1 group
 	METHOD loadParticleDescription (Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/resources/ResourceLocation;Ljava/util/Map;)V
 		ARG 1 manager
 		ARG 2 registryName
 		ARG 3 textures
 	METHOD makeParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)Lnet/minecraft/client/particle/Particle;
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
@@ -76,11 +76,11 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 5 backgroundExecutor
 		ARG 6 gameExecutor
 	METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;Lnet/minecraft/client/renderer/LightTexture;Lnet/minecraft/client/Camera;F)V
-		ARG 1 matrixStack
-		ARG 2 buffer
+		ARG 1 poseStack
+		ARG 2 bufferSource
 		ARG 3 lightTexture
-		ARG 4 activeRenderInfo
-		ARG 5 partialTicks
+		ARG 4 camera
+		ARG 5 partialTick
 	METHOD setLevel (Lnet/minecraft/client/multiplayer/ClientLevel;)V
 		ARG 1 level
 	METHOD tickParticle (Lnet/minecraft/client/particle/Particle;)V
@@ -95,7 +95,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 			ARG 1 particleAge
 			ARG 2 particleMaxAge
 		METHOD get (Ljava/util/Random;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;
-			ARG 1 rand
+			ARG 1 random
 		METHOD rebind (Ljava/util/List;)V
 			ARG 1 sprites
 	CLASS SpriteParticleRegistration

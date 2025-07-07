@@ -1,14 +1,14 @@
 CLASS net/minecraft/world/level/block/entity/ShulkerBoxBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD <init> (Lnet/minecraft/world/item/DyeColor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 color
-		ARG 2 worldPosition
+		ARG 2 pos
 		ARG 3 blockState
 	METHOD canPlaceItemThroughFace (ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/Direction;)Z
 		ARG 1 index
-		ARG 2 itemStack
+		ARG 2 stack
 		ARG 3 direction
 	METHOD canTakeItemThroughFace (ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/Direction;)Z
 		ARG 1 index
@@ -24,7 +24,7 @@ CLASS net/minecraft/world/level/block/entity/ShulkerBoxBlockEntity
 	METHOD getBoundingBox (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/phys/AABB;
 		ARG 1 state
 	METHOD getProgress (F)F
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getSlotsForFace (Lnet/minecraft/core/Direction;)[I
 		ARG 1 side
 	METHOD loadFromTag (Lnet/minecraft/nbt/CompoundTag;)V
@@ -34,7 +34,7 @@ CLASS net/minecraft/world/level/block/entity/ShulkerBoxBlockEntity
 		ARG 2 pos
 		ARG 3 state
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD saveToTag (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 1 tag
 	METHOD setItems (Lnet/minecraft/core/NonNullList;)V

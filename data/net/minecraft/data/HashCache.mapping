@@ -3,9 +3,9 @@ CLASS net/minecraft/data/HashCache
 		ARG 1 path
 		ARG 2 cacheFileName
 	METHOD getHash (Ljava/nio/file/Path;)Ljava/lang/String;
-		COMMENT Gets the previous hash of a file, so that it doesn't need to be written to disk. Only meaningful before {@link recordHash} has been called.
+		COMMENT Gets the previous hash of a file, so that it doesn't need to be written to disk. Only meaningful before {@link #putNew} has been called.
 		COMMENT
-		COMMENT @return The hash that was recorded when {@link recordHash} was called on the previous run, or <code>null</code> if the file does not exist, or an empty string if the file exists but was not recorded. Note that the hash is <em>not</em> based on the current bytes on disk.
+		COMMENT @return The hash that was recorded when {@link HashCache#HashCache(Path, String)} was called on the previous run, or {@code null} if the file does not exist, or an empty string if the file exists but was not recorded. Note that the hash is <em>not</em> based on the current bytes on disk.
 		ARG 1 filePath
 	METHOD had (Ljava/nio/file/Path;)Z
 		ARG 1 filePath

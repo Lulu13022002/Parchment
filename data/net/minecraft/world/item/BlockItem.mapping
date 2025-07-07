@@ -12,7 +12,7 @@ CLASS net/minecraft/world/item/BlockItem
 		ARG 1 context
 		ARG 2 state
 	METHOD fillItemCategory (Lnet/minecraft/world/item/CreativeModeTab;Lnet/minecraft/core/NonNullList;)V
-		COMMENT returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+		COMMENT Adds some {@code ItemStacks} to the given list for display in the creative tab.
 		ARG 1 group
 		ARG 2 items
 	METHOD getDescriptionId ()Ljava/lang/String;
@@ -54,5 +54,5 @@ CLASS net/minecraft/world/item/BlockItem
 		ARG 1 property
 		ARG 2 valueIdentifier
 	METHOD useOn (Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;
-		COMMENT Called when this item is used when targetting a Block
+		COMMENT Called when this item is used when targeting a Block
 		ARG 1 context

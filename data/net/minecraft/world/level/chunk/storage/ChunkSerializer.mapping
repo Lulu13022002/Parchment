@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/chunk/storage/ChunkSerializer
 	METHOD getChunkTypeFromTag (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/chunk/ChunkStatus$ChunkType;
-		ARG 0 chunkNBT
+		ARG 0 tag
 	METHOD packOffsets ([Lit/unimi/dsi/fastutil/shorts/ShortList;)Lnet/minecraft/nbt/ListTag;
 		ARG 0 list
 	METHOD packStructureData (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/ChunkPos;Ljava/util/Map;Ljava/util/Map;)Lnet/minecraft/nbt/CompoundTag;
@@ -17,7 +17,7 @@ CLASS net/minecraft/world/level/chunk/storage/ChunkSerializer
 		ARG 1 templateManager
 		ARG 2 poiManager
 		ARG 3 pos
-		ARG 4 compound
+		ARG 4 tag
 	METHOD unpackStructureReferences (Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/nbt/CompoundTag;)Ljava/util/Map;
 		ARG 0 pos
 		ARG 1 tag

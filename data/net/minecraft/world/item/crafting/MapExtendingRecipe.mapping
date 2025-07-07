@@ -5,7 +5,7 @@ CLASS net/minecraft/world/item/crafting/MapExtendingRecipe
 		COMMENT Returns an Item that is the result of this recipe
 		ARG 1 inv
 	METHOD isSpecial ()Z
-		COMMENT If true, this recipe does not appear in the recipe book and does not respect recipe unlocking (and the doLimitedCrafting gamerule)
+		COMMENT If {@code true}, this recipe does not appear in the recipe book and does not respect recipe unlocking (and the doLimitedCrafting gamerule)
 	METHOD matches (Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/level/Level;)Z
 		COMMENT Used to check if a recipe matches current crafting inventory
 		ARG 1 inv

@@ -11,8 +11,8 @@ CLASS net/minecraft/server/dedicated/Settings
 	METHOD getStringRaw (Ljava/lang/String;)Ljava/lang/String;
 		ARG 1 key
 	METHOD loadFromFile (Ljava/nio/file/Path;)Ljava/util/Properties;
-		ARG 0 path
+		ARG 0 filePath
 	METHOD store (Ljava/nio/file/Path;)V
-		ARG 1 path
+		ARG 1 filePath
 	METHOD wrapNumberDeserializer (Ljava/util/function/Function;)Ljava/util/function/Function;
 		ARG 0 parseFunc

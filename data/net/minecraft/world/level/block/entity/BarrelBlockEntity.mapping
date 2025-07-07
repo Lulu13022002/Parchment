@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/block/entity/BarrelBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD createMenu (ILnet/minecraft/world/entity/player/Inventory;)Lnet/minecraft/world/inventory/AbstractContainerMenu;
 		ARG 1 id
@@ -9,7 +9,7 @@ CLASS net/minecraft/world/level/block/entity/BarrelBlockEntity
 		ARG 1 state
 		ARG 2 sound
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setItems (Lnet/minecraft/core/NonNullList;)V
 		ARG 1 items
 	METHOD startOpen (Lnet/minecraft/world/entity/player/Player;)V

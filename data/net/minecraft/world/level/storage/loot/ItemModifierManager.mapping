@@ -6,7 +6,7 @@ CLASS net/minecraft/world/level/storage/loot/ItemModifierManager
 		ARG 1 predicateManager
 		ARG 2 lootTables
 	METHOD get (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/level/storage/loot/functions/LootItemFunction;
-		COMMENT Get the LootItemFunction with the given ID. Returns null if no such function exists.
+		COMMENT Get the LootItemFunction with the given ID. Returns {@code null} if no such function exists.
 		ARG 1 functionId
 	METHOD get (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/level/storage/loot/functions/LootItemFunction;)Lnet/minecraft/world/level/storage/loot/functions/LootItemFunction;
 		COMMENT Get the LootItemFunction with the given ID. Returns {@code defaultFunction} if no such function exists.

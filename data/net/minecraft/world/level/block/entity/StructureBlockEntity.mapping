@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/block/entity/StructureBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD createRandom (J)Ljava/util/Random;
 		ARG 0 seed
@@ -15,15 +15,15 @@ CLASS net/minecraft/world/level/block/entity/StructureBlockEntity
 	METHOD loadStructure (Lnet/minecraft/server/level/ServerLevel;ZLnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;)Z
 		ARG 1 level
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD saveStructure ()Z
 		COMMENT Saves the template, writing it to disk.
 		COMMENT
-		COMMENT @return true if the template was successfully saved.
+		COMMENT @return {@code true} if the template was successfully saved.
 	METHOD saveStructure (Z)Z
 		COMMENT Saves the template, either updating the local version or writing it to disk.
 		COMMENT
-		COMMENT @return true if the template was successfully saved.
+		COMMENT @return {@code true} if the template was successfully saved.
 		ARG 1 writeToDisk
 	METHOD setIgnoreEntities (Z)V
 		ARG 1 ignoreEntities

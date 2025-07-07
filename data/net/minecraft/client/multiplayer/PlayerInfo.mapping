@@ -1,14 +1,14 @@
 CLASS net/minecraft/client/multiplayer/PlayerInfo
 	FIELD profile Lcom/mojang/authlib/GameProfile;
-		COMMENT The GameProfile for the player represented by this NetworkPlayerInfo instance
+		COMMENT The GameProfile for the player represented by this PlayerInfo instance
 	FIELD tabListDisplayName Lnet/minecraft/network/chat/Component;
-		COMMENT When this is non-null, it is displayed instead of the player's real name
+		COMMENT When this is non-{@code null}, it is displayed instead of the player's real name
 	METHOD <init> (Lnet/minecraft/network/protocol/game/ClientboundPlayerInfoPacket$PlayerUpdate;)V
 		ARG 1 playerUpdatePacket
 	METHOD getElytraLocation ()Lnet/minecraft/resources/ResourceLocation;
 		COMMENT Gets the special Elytra texture for the player.
 	METHOD getProfile ()Lcom/mojang/authlib/GameProfile;
-		COMMENT Returns the GameProfile for the player represented by this NetworkPlayerInfo instance
+		COMMENT Returns the GameProfile for the player represented by this PlayerInfo instance
 	METHOD setDisplayHealth (I)V
 		ARG 1 displayHealth
 	METHOD setGameMode (Lnet/minecraft/world/level/GameType;)V

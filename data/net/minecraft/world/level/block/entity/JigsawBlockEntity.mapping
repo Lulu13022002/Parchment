@@ -1,11 +1,11 @@
 CLASS net/minecraft/world/level/block/entity/JigsawBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD generate (Lnet/minecraft/server/level/ServerLevel;IZ)V
 		ARG 1 level
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setFinalState (Ljava/lang/String;)V
 		ARG 1 finalState
 	METHOD setJoint (Lnet/minecraft/world/level/block/entity/JigsawBlockEntity$JointType;)V

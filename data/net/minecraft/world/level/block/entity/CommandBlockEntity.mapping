@@ -1,9 +1,9 @@
 CLASS net/minecraft/world/level/block/entity/CommandBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setAutomatic (Z)V
 		ARG 1 auto
 	METHOD setPowered (Z)V
@@ -12,5 +12,4 @@ CLASS net/minecraft/world/level/block/entity/CommandBlockEntity
 		ARG 1 sendToClient
 	CLASS 1
 		METHOD setCommand (Ljava/lang/String;)V
-			COMMENT Sets the command.
 			ARG 1 command

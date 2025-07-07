@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/chunk/LevelChunk
 	FIELD blockEntities Ljava/util/Map;
-		COMMENT A Map of ChunkPositions to TileEntities in this chunk
+		COMMENT A Map of chunk pos to block entities in this chunk
 	FIELD inhabitedTime J
 		COMMENT the cumulative number of ticks players have been in this chunk
 	METHOD <init> (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ProtoChunk;Ljava/util/function/Consumer;)V

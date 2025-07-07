@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity
 	METHOD <init> (Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/item/crafting/RecipeType;)V
 		ARG 1 type
-		ARG 2 worldPosition
+		ARG 2 pos
 		ARG 3 blockState
 		ARG 4 recipeType
 	METHOD add (Ljava/util/Map;Lnet/minecraft/tags/Tag;I)V
@@ -25,7 +25,7 @@ CLASS net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity
 		ARG 2 stack
 	METHOD canPlaceItemThroughFace (ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/Direction;)Z
 		ARG 1 index
-		ARG 2 itemStack
+		ARG 2 stack
 		ARG 3 direction
 	METHOD canTakeItemThroughFace (ILnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/Direction;)Z
 		ARG 1 index
@@ -57,7 +57,7 @@ CLASS net/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity
 	METHOD removeItemNoUpdate (I)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 index
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD serverTick (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity;)V
 		ARG 0 level
 		ARG 1 pos

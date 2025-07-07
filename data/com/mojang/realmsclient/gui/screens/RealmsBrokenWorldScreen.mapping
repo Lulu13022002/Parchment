@@ -5,9 +5,9 @@ CLASS com/mojang/realmsclient/gui/screens/RealmsBrokenWorldScreen
 		ARG 3 serverId
 		ARG 5 isMinigame
 	METHOD downloadWorld (I)V
-		ARG 1 slotIndex
+		ARG 1 slotId
 	METHOD drawSlotFrame (Lcom/mojang/blaze3d/vertex/PoseStack;IIIIZLjava/lang/String;IJLjava/lang/String;Z)V
 		ARG 1 poseStack
-		ARG 8 slotIndex
+		ARG 8 slotId
 	METHOD fetchServerData (J)V
 		ARG 1 serverId

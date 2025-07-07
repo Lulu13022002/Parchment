@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/block/entity/EnchantmentTableBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD bookAnimationTick (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/EnchantmentTableBlockEntity;)V
 		ARG 0 level
@@ -8,6 +8,6 @@ CLASS net/minecraft/world/level/block/entity/EnchantmentTableBlockEntity
 		ARG 2 state
 		ARG 3 blockEntity
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setCustomName (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 name

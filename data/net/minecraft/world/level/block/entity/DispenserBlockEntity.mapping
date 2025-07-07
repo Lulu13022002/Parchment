@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/block/entity/DispenserBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD addItem (Lnet/minecraft/world/item/ItemStack;)I
 		COMMENT Add the given ItemStack to this dispenser.
@@ -10,6 +10,6 @@ CLASS net/minecraft/world/level/block/entity/DispenserBlockEntity
 		ARG 1 id
 		ARG 2 player
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setItems (Lnet/minecraft/core/NonNullList;)V
 		ARG 1 items

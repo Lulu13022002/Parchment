@@ -20,13 +20,13 @@ CLASS net/minecraft/server/level/ServerLevel
 	METHOD blockEvent (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;II)V
 		ARG 1 pos
 		ARG 2 block
-		ARG 3 eventID
+		ARG 3 eventId
 		ARG 4 eventParam
 	METHOD blockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 pos
 		ARG 2 block
 	METHOD broadcastEntityEvent (Lnet/minecraft/world/entity/Entity;B)V
-		COMMENT sends a Packet 38 (Entity Status) to all tracked players of that entity
+		COMMENT sends a {@link net.minecraft.network.protocol.game.ClientboundEntityEventPacket} to all tracked players of that entity
 		ARG 1 entity
 		ARG 2 state
 	METHOD clearBlockEvents (Lnet/minecraft/world/level/levelgen/structure/BoundingBox;)V
@@ -41,15 +41,15 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 0 writer
 		ARG 1 entities
 	METHOD explode (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;Lnet/minecraft/world/level/ExplosionDamageCalculator;DDDFZLnet/minecraft/world/level/Explosion$BlockInteraction;)Lnet/minecraft/world/level/Explosion;
-		ARG 1 exploder
+		ARG 1 source
 		ARG 2 damageSource
-		ARG 3 context
+		ARG 3 damageCalculator
 		ARG 4 x
 		ARG 6 y
 		ARG 8 z
-		ARG 10 size
-		ARG 11 causesFire
-		ARG 12 mode
+		ARG 10 radius
+		ARG 11 fire
+		ARG 12 blockInteraction
 	METHOD findNearestBiome (Lnet/minecraft/world/level/biome/Biome;Lnet/minecraft/core/BlockPos;II)Lnet/minecraft/core/BlockPos;
 		ARG 1 biome
 		ARG 2 pos
@@ -59,13 +59,13 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 structure
 		ARG 2 pos
 		ARG 3 radius
-		ARG 4 skipExistingChunks
+		ARG 4 skipKnownStructures
 	METHOD getAllEntities ()Ljava/lang/Iterable;
 		COMMENT Gets an unmodifiable iterator of all loaded entities in the world.
 	METHOD getChunkSource ()Lnet/minecraft/server/level/ServerChunkCache;
 		COMMENT Gets the world's chunk provider
 	METHOD getEntity (I)Lnet/minecraft/world/entity/Entity;
-		COMMENT Returns the Entity with the given ID, or null if it doesn't exist in this World.
+		COMMENT Returns the Entity with the given ID, or {@code null} if it doesn't exist in this Level.
 		ARG 1 id
 	METHOD getEntity (Ljava/util/UUID;)Lnet/minecraft/world/entity/Entity;
 		ARG 1 uniqueId
@@ -100,13 +100,13 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 3 pos
 		ARG 4 data
 	METHOD makeObsidianPlatform (Lnet/minecraft/server/level/ServerLevel;)V
-		ARG 0 serverLevel
+		ARG 0 level
 	METHOD mayInteract (Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 player
 		ARG 2 pos
 	METHOD onBlockStateChange (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
-		ARG 2 blockState
+		ARG 2 oldState
 		ARG 3 newState
 	METHOD onReputationEvent (Lnet/minecraft/world/entity/ai/village/ReputationEventType;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/ReputationEventHandler;)V
 		ARG 1 type
@@ -118,18 +118,18 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 4 y
 		ARG 6 z
 		ARG 8 sound
-		ARG 9 category
+		ARG 9 source
 		ARG 10 volume
 		ARG 11 pitch
 	METHOD playSound (Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
 		ARG 1 player
 		ARG 2 entity
 		ARG 3 event
-		ARG 4 category
+		ARG 4 source
 		ARG 5 volume
 		ARG 6 pitch
 	METHOD resetEmptyTime ()V
-		COMMENT Resets the updateEntityTick field to 0
+		COMMENT Resets the emptyTime field to 0
 	METHOD save (Lnet/minecraft/util/ProgressListener;ZZ)V
 		ARG 1 progress
 		ARG 2 flush
@@ -141,39 +141,39 @@ CLASS net/minecraft/server/level/ServerLevel
 	METHOD sectionsToVillage (Lnet/minecraft/core/SectionPos;)I
 		ARG 1 pos
 	METHOD sendBlockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
-		COMMENT Flags are as in setBlockState
+		COMMENT Flags are as in setBlock
 		ARG 1 pos
 		ARG 2 oldState
 		ARG 3 newState
 		ARG 4 flags
 	METHOD sendParticles (Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
-		ARG 1 type
-		ARG 2 posX
-		ARG 4 posY
-		ARG 6 posZ
-		ARG 8 particleCount
-		ARG 9 xOffset
-		ARG 11 yOffset
-		ARG 13 zOffset
+		ARG 1 options
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 count
+		ARG 9 xDist
+		ARG 11 yDist
+		ARG 13 zDist
 		ARG 15 speed
 	METHOD sendParticles (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/particles/ParticleOptions;ZDDDIDDDD)Z
 		ARG 1 player
-		ARG 2 type
-		ARG 3 longDistance
-		ARG 4 posX
-		ARG 6 posY
-		ARG 8 posZ
-		ARG 10 particleCount
-		ARG 11 xOffset
-		ARG 13 yOffset
-		ARG 15 zOffset
+		ARG 2 options
+		ARG 3 overrideLimiter
+		ARG 4 x
+		ARG 6 y
+		ARG 8 z
+		ARG 10 count
+		ARG 11 xDist
+		ARG 13 yDist
+		ARG 15 zDist
 		ARG 17 speed
 	METHOD sendParticles (Lnet/minecraft/server/level/ServerPlayer;ZDDDLnet/minecraft/network/protocol/Packet;)Z
 		ARG 1 player
-		ARG 2 longDistance
-		ARG 3 posX
-		ARG 5 posY
-		ARG 7 posZ
+		ARG 2 overrideLimiter
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
 		ARG 9 packet
 	METHOD setChunkForced (IIZ)Z
 		ARG 1 chunkX
@@ -193,7 +193,7 @@ CLASS net/minecraft/server/level/ServerLevel
 		COMMENT Clears the current rain and thunder weather states.
 	METHOD tick (Ljava/util/function/BooleanSupplier;)V
 		COMMENT Runs a single tick for the world
-		ARG 1 hasTimeLeft
+		ARG 1 haveTime
 	METHOD tickBlock (Lnet/minecraft/world/level/TickNextTickData;)V
 		ARG 1 blockTickEntry
 	METHOD tickChunk (Lnet/minecraft/world/level/chunk/LevelChunk;I)V
@@ -210,9 +210,9 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 ridingEntity
 		ARG 2 passengerEntity
 	METHOD tryAddFreshEntityWithPassengers (Lnet/minecraft/world/entity/Entity;)Z
-		COMMENT Attempts to summon an entity and it's passangers. They will only be summoned if all entities are unique and not already in queue to be summoned.
+		COMMENT Attempts to summon an entity and its passengers. They will only be summoned if all entities are unique and not already in queue to be summoned.
 		ARG 1 entity
 	METHOD unload (Lnet/minecraft/world/level/chunk/LevelChunk;)V
 		ARG 1 chunk
 	METHOD updateSleepingPlayerList ()V
-		COMMENT Updates the flag that indicates whether or not all players in the world are sleeping.
+		COMMENT Updates the flag that indicates whether all players in the world are sleeping.

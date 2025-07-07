@@ -10,5 +10,5 @@ CLASS net/minecraft/client/model/AxolotlModel
 		ARG 2 rotationVector
 	METHOD setupInitialAnimationValues (Lnet/minecraft/world/entity/animal/axolotl/Axolotl;FF)V
 		ARG 1 axolotl
-		ARG 2 netHeadYaw
-		ARG 3 headPitch
+		ARG 2 deltaYHeadRot
+		ARG 3 xRot

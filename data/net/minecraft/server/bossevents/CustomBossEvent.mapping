@@ -5,7 +5,7 @@ CLASS net/minecraft/server/bossevents/CustomBossEvent
 		COMMENT Makes the boss visible to the given player.
 		ARG 1 player
 	METHOD load (Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/server/bossevents/CustomBossEvent;
-		ARG 0 nbt
+		ARG 0 tag
 		ARG 1 id
 	METHOD onPlayerConnect (Lnet/minecraft/server/level/ServerPlayer;)V
 		ARG 1 player
@@ -17,6 +17,6 @@ CLASS net/minecraft/server/bossevents/CustomBossEvent
 	METHOD setMax (I)V
 		ARG 1 max
 	METHOD setPlayers (Ljava/util/Collection;)Z
-		ARG 1 serverPlayerList
+		ARG 1 players
 	METHOD setValue (I)V
 		ARG 1 value

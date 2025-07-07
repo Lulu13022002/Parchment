@@ -24,4 +24,4 @@ CLASS net/minecraft/gametest/framework/GameTestServer
 	METHOD lambda$tickServer$2 (Lnet/minecraft/gametest/framework/GameTestInfo;)V
 		ARG 0 testInfo
 	METHOD startTests (Lnet/minecraft/server/level/ServerLevel;)V
-		ARG 1 serverLevel
+		ARG 1 level

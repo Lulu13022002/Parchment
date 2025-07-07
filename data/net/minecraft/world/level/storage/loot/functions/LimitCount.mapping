@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/LimitCount
 	COMMENT A LootItemFunction that limits the stack's count to fall within a given {@link IntRange}.
 	METHOD <init> ([Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;Lnet/minecraft/world/level/storage/loot/IntRange;)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 countLimit
 	METHOD limitCount (Lnet/minecraft/world/level/storage/loot/IntRange;)Lnet/minecraft/world/level/storage/loot/functions/LootItemConditionalFunction$Builder;
 		ARG 0 countLimit
@@ -10,6 +10,6 @@ CLASS net/minecraft/world/level/storage/loot/functions/LimitCount
 		ARG 2 context
 	CLASS Serializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)Lnet/minecraft/world/level/storage/loot/functions/LimitCount;
-			ARG 1 object
-			ARG 2 deserializationContext
+			ARG 1 json
+			ARG 2 context
 			ARG 3 conditions

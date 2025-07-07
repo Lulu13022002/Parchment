@@ -4,4 +4,4 @@ CLASS net/minecraft/client/particle/StationaryItemParticle
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
-		ARG 8 itemLike
+		ARG 8 item

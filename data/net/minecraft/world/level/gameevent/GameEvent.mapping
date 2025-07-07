@@ -5,7 +5,7 @@ CLASS net/minecraft/world/level/gameevent/GameEvent
 	FIELD BLOCK_CHANGE Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT This event is broadcast when a block is changed. For example when a flower is removed from a flower pot.
 	FIELD BLOCK_CLOSE Lnet/minecraft/world/level/gameevent/GameEvent;
-		COMMENT This event is broadcast when a block such as a door, drap door, or gate is closed.
+		COMMENT This event is broadcast when a block such as a door, trap door, or gate is closed.
 	FIELD BLOCK_DESTROY Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT This event is broadcast when a block is destroyed or picked up by an enderman.
 	FIELD BLOCK_DETACH Lnet/minecraft/world/level/gameevent/GameEvent;
@@ -83,7 +83,7 @@ CLASS net/minecraft/world/level/gameevent/GameEvent
 	FIELD SHULKER_OPEN Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT This event is broadcast when a shulker opens its shell.
 	FIELD SPLASH Lnet/minecraft/world/level/gameevent/GameEvent;
-		COMMENT This event is broadcast wen an entity splashes in the water. This includes boats paddling or hitting bubble columns.
+		COMMENT This event is broadcast when an entity splashes in the water. This includes boats paddling or hitting bubble columns.
 	FIELD STEP Lnet/minecraft/world/level/gameevent/GameEvent;
 		COMMENT This event is broadcast when an entity moves on the ground. This includes entities such as minecarts.
 	FIELD SWIM Lnet/minecraft/world/level/gameevent/GameEvent;

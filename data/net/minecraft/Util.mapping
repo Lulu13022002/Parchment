@@ -44,10 +44,10 @@ CLASS net/minecraft/Util
 		ARG 1 random
 	METHOD getRandom ([ILjava/util/Random;)I
 		ARG 0 selections
-		ARG 1 rand
+		ARG 1 random
 	METHOD getRandom ([Ljava/lang/Object;Ljava/util/Random;)Ljava/lang/Object;
 		ARG 0 selections
-		ARG 1 rand
+		ARG 1 random
 	METHOD ifElse (Ljava/util/Optional;Ljava/util/function/Consumer;Ljava/lang/Runnable;)Ljava/util/Optional;
 		ARG 0 opt
 		ARG 1 consumer

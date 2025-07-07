@@ -4,10 +4,10 @@ CLASS net/minecraft/world/level/block/entity/BannerBlockEntity
 	FIELD patterns Ljava/util/List;
 		COMMENT A list of all patterns stored on this banner.
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/item/DyeColor;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 		ARG 3 baseColor
 	METHOD createPatterns (Lnet/minecraft/world/item/DyeColor;Lnet/minecraft/nbt/ListTag;)Ljava/util/List;
@@ -27,6 +27,6 @@ CLASS net/minecraft/world/level/block/entity/BannerBlockEntity
 		COMMENT Removes all banner data from the given ItemStack.
 		ARG 0 stack
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setCustomName (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 name

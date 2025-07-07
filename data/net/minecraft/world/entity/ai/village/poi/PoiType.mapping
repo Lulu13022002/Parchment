@@ -15,4 +15,4 @@ CLASS net/minecraft/world/entity/ai/village/poi/PoiType
 		ARG 3 predicate
 		ARG 4 validRange
 	METHOD registerBlockStates (Lnet/minecraft/world/entity/ai/village/poi/PoiType;)Lnet/minecraft/world/entity/ai/village/poi/PoiType;
-		ARG 0 poit
+		ARG 0 poiType

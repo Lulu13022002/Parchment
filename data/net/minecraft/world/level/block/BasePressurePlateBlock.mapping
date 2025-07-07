@@ -15,8 +15,8 @@ CLASS net/minecraft/world/level/block/BasePressurePlateBlock
 		ARG 3 pos
 		ARG 4 entity
 	METHOD getDirectSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
-		ARG 1 blockState
-		ARG 2 blockAccess
+		ARG 1 state
+		ARG 2 level
 		ARG 3 pos
 		ARG 4 side
 	METHOD getPistonPushReaction (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/material/PushReaction;
@@ -27,8 +27,8 @@ CLASS net/minecraft/world/level/block/BasePressurePlateBlock
 		ARG 3 pos
 		ARG 4 context
 	METHOD getSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
-		ARG 1 blockState
-		ARG 2 blockAccess
+		ARG 1 state
+		ARG 2 level
 		ARG 3 pos
 		ARG 4 side
 	METHOD getSignalForState (Lnet/minecraft/world/level/block/state/BlockState;)I
@@ -43,7 +43,7 @@ CLASS net/minecraft/world/level/block/BasePressurePlateBlock
 		ARG 2 level
 		ARG 3 pos
 		ARG 4 newState
-		ARG 5 isMoving
+		ARG 5 movedByPiston
 	METHOD playOffSound (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)V
 		ARG 1 level
 		ARG 2 pos
@@ -57,7 +57,7 @@ CLASS net/minecraft/world/level/block/BasePressurePlateBlock
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
-		ARG 4 rand
+		ARG 4 random
 	METHOD updateNeighbours (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
 		COMMENT Notify block and block below of changes
 		ARG 1 level

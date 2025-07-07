@@ -18,13 +18,13 @@ CLASS net/minecraft/world/phys/shapes/Shapes
 	METHOD collide (Lnet/minecraft/core/Direction$Axis;Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/level/LevelReader;DLnet/minecraft/world/phys/shapes/CollisionContext;Ljava/util/stream/Stream;)D
 		ARG 0 movementAxis
 		ARG 1 collisionBox
-		ARG 2 levelReader
+		ARG 2 level
 		ARG 3 desiredOffset
 		ARG 5 selectionContext
 		ARG 6 possibleHits
 	METHOD collide (Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/level/LevelReader;DLnet/minecraft/world/phys/shapes/CollisionContext;Lnet/minecraft/core/AxisCycle;Ljava/util/stream/Stream;)D
 		ARG 0 collisionBox
-		ARG 1 levelReader
+		ARG 1 level
 		ARG 2 desiredOffset
 		ARG 4 selectionContext
 		ARG 5 rotationAxis

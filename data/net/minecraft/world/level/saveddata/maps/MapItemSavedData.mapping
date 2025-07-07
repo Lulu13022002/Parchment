@@ -23,7 +23,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 2 decorationName
 		ARG 3 type
 	METHOD checkBanners (Lnet/minecraft/world/level/BlockGetter;II)V
-		ARG 1 reader
+		ARG 1 level
 		ARG 2 x
 		ARG 3 z
 	METHOD createForClient (BZLnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData;
@@ -52,7 +52,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 1 pos
 		ARG 2 entityId
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD scaled (I)Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData;
 		ARG 1 scalar
 	METHOD setColor (IIB)V
@@ -67,7 +67,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 1 player
 		ARG 2 mapStack
 	METHOD toggleBanner (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)Z
-		ARG 1 accessor
+		ARG 1 level
 		ARG 2 pos
 	METHOD updateColor (IIB)Z
 		ARG 1 x

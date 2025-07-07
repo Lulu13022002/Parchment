@@ -29,7 +29,7 @@ CLASS net/minecraft/world/level/levelgen/carver/WorldCarver
 			COMMENT The chunk position this carver is being called from
 		ARG 8 carvingMask
 	METHOD carveBlock (Lnet/minecraft/world/level/levelgen/carver/CarvingContext;Lnet/minecraft/world/level/levelgen/carver/CarverConfiguration;Lnet/minecraft/world/level/chunk/ChunkAccess;Ljava/util/function/Function;Ljava/util/BitSet;Ljava/util/Random;Lnet/minecraft/core/BlockPos$MutableBlockPos;Lnet/minecraft/core/BlockPos$MutableBlockPos;Lnet/minecraft/world/level/levelgen/Aquifer;Lorg/apache/commons/lang3/mutable/MutableBoolean;)Z
-		COMMENT Carves a single block, replacing it with the appropiate state if possible, and handles replacing exposed dirt with grass.
+		COMMENT Carves a single block, replacing it with the appropriate state if possible, and handles replacing exposed dirt with grass.
 		ARG 1 context
 		ARG 2 config
 		ARG 3 chunk
@@ -42,9 +42,9 @@ CLASS net/minecraft/world/level/levelgen/carver/WorldCarver
 			COMMENT An additional mutable block position object to be used and modified by the method
 		ARG 9 aquifer
 		ARG 10 reachedSurface
-			COMMENT Set to true if the block carved was the surface, which is checked as being either grass or mycelium
+			COMMENT Set to {@code true} if the block carved was the surface, which is checked as being either grass or mycelium
 	METHOD carveEllipsoid (Lnet/minecraft/world/level/levelgen/carver/CarvingContext;Lnet/minecraft/world/level/levelgen/carver/CarverConfiguration;Lnet/minecraft/world/level/chunk/ChunkAccess;Ljava/util/function/Function;JLnet/minecraft/world/level/levelgen/Aquifer;DDDDDLjava/util/BitSet;Lnet/minecraft/world/level/levelgen/carver/WorldCarver$CarveSkipChecker;)Z
-		COMMENT Carves blocks in an ellipsoid (more accurately a spheroid), defined by a center (x, y, z) position, with a horizontal and vertical radius (the semi-axies)
+		COMMENT Carves blocks in an ellipsoid (more accurately a spheroid), defined by a center (x, y, z) position, with a horizontal and vertical radius (the semi-axes)
 		ARG 1 context
 		ARG 2 config
 		ARG 3 chunk

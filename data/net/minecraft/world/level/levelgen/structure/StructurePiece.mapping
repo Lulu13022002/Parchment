@@ -85,7 +85,7 @@ CLASS net/minecraft/world/level/levelgen/structure/StructurePiece
 		ARG 8 maxZ
 		ARG 9 alwaysReplace
 		ARG 10 random
-		ARG 11 blockselector
+		ARG 11 blockSelector
 	METHOD generateBox (Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;Z)V
 		ARG 1 level
 		ARG 2 boundingBox
@@ -102,7 +102,7 @@ CLASS net/minecraft/world/level/levelgen/structure/StructurePiece
 		ARG 6 selector
 	METHOD generateMaybeBox (Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Ljava/util/Random;FIIIIIILnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;ZZ)V
 		ARG 1 level
-		ARG 2 sbb
+		ARG 2 structurebb
 		ARG 3 random
 		ARG 4 chance
 		ARG 5 x1
@@ -180,11 +180,11 @@ CLASS net/minecraft/world/level/levelgen/structure/StructurePiece
 		ARG 3 z
 	METHOD placeBlock (Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/block/state/BlockState;IIILnet/minecraft/world/level/levelgen/structure/BoundingBox;)V
 		ARG 1 level
-		ARG 2 blockstate
+		ARG 2 state
 		ARG 3 x
 		ARG 4 y
 		ARG 5 z
-		ARG 6 boundingbox
+		ARG 6 boundingBox
 	METHOD postProcess (Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/world/level/StructureFeatureManager;Lnet/minecraft/world/level/chunk/ChunkGenerator;Ljava/util/Random;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 level
 		ARG 2 structureManager

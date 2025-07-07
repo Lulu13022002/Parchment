@@ -1,15 +1,15 @@
 CLASS net/minecraft/core/SectionPos
 	METHOD blockToSection (J)J
-		ARG 0 levelPos
+		ARG 0 pos
 	METHOD blockToSectionCoord (I)I
 		ARG 0 blockCoord
 	METHOD cube (Lnet/minecraft/core/SectionPos;I)Ljava/util/stream/Stream;
 		ARG 0 center
 		ARG 1 radius
 	METHOD of (III)Lnet/minecraft/core/SectionPos;
-		ARG 0 chunkX
-		ARG 1 chunkY
-		ARG 2 chunkZ
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
 	METHOD of (Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/SectionPos;
 		ARG 0 pos
 	METHOD of (Lnet/minecraft/world/level/ChunkPos;I)Lnet/minecraft/core/SectionPos;

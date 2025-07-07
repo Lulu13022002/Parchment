@@ -4,7 +4,7 @@ CLASS net/minecraft/client/gui/Gui
 	FIELD lastHealthTime J
 		COMMENT The last recorded system time
 	FIELD spectatorGui Lnet/minecraft/client/gui/components/spectator/SpectatorGui;
-		COMMENT The spectator GUI for this in-game GUI instance
+		COMMENT The spectator GUI for this GUI instance
 	FIELD subtitle Lnet/minecraft/network/chat/Component;
 		COMMENT The current sub-title displayed
 	FIELD titleFadeInTime I
@@ -14,7 +14,7 @@ CLASS net/minecraft/client/gui/Gui
 	FIELD title Lnet/minecraft/network/chat/Component;
 		COMMENT The current title displayed
 	FIELD titleStayTime I
-		COMMENT The time that the title is display
+		COMMENT The time that the title is displayed
 	FIELD titleTime I
 		COMMENT A timer for the current title and subtitle displayed
 	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
@@ -31,7 +31,7 @@ CLASS net/minecraft/client/gui/Gui
 	METHOD getBossOverlay ()Lnet/minecraft/client/gui/components/BossHealthOverlay;
 		COMMENT Accessor for the GuiBossOverlay
 	METHOD getChat ()Lnet/minecraft/client/gui/components/ChatComponent;
-		COMMENT returns a pointer to the persistant Chat GUI, containing all previous chat messages and such
+		COMMENT returns a pointer to the persistent Chat GUI, containing all previous messages and such
 	METHOD getVehicleMaxHearts (Lnet/minecraft/world/entity/LivingEntity;)I
 		ARG 1 mountEntity
 	METHOD getVisibleVehicleHeartRows (I)I
@@ -55,7 +55,7 @@ CLASS net/minecraft/client/gui/Gui
 		ARG 1 poseStack
 	METHOD renderExperienceBar (Lcom/mojang/blaze3d/vertex/PoseStack;I)V
 		ARG 1 poseStack
-		ARG 2 xPos
+		ARG 2 x
 	METHOD renderHeart (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/gui/Gui$HeartType;IIIZZ)V
 		ARG 1 poseStack
 		ARG 2 heartType
@@ -93,7 +93,7 @@ CLASS net/minecraft/client/gui/Gui
 	METHOD renderVignette (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	METHOD resetTitleTimes ()V
-		COMMENT Set the differents times for the titles to their default values
+		COMMENT Set the different times for the titles to their default values
 	METHOD setOverlayMessage (Lnet/minecraft/network/chat/Component;Z)V
 		ARG 1 component
 		ARG 2 animateColor
@@ -106,7 +106,7 @@ CLASS net/minecraft/client/gui/Gui
 	METHOD setTitle (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 title
 	METHOD tick ()V
-		COMMENT The update tick for the ingame UI
+		COMMENT The update tick for the in-game UI
 	METHOD updateVignetteBrightness (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	CLASS HeartType

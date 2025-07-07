@@ -2,11 +2,11 @@ CLASS net/minecraft/commands/CommandSource
 	FIELD NULL Lnet/minecraft/commands/CommandSource;
 		COMMENT A {@code CommandSource} that ignores all messages.
 	METHOD sendMessage (Lnet/minecraft/network/chat/Component;Ljava/util/UUID;)V
-		COMMENT Send a chat message to the CommandSender
+		COMMENT Send a message to the CommandSource
 		ARG 1 component
 		ARG 2 senderUUID
 	CLASS 1
 		METHOD sendMessage (Lnet/minecraft/network/chat/Component;Ljava/util/UUID;)V
-			COMMENT Send a chat message to the CommandSender
+			COMMENT Send a message to the CommandSource
 			ARG 1 component
 			ARG 2 senderUUID

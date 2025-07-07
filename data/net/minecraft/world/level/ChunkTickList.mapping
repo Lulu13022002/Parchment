@@ -21,7 +21,7 @@ CLASS net/minecraft/world/level/ChunkTickList
 	METHOD willTickThisTick (Lnet/minecraft/core/BlockPos;Ljava/lang/Object;)Z
 		COMMENT Checks if this position/item is scheduled to be updated this tick
 		ARG 1 pos
-		ARG 2 obj
+		ARG 2 item
 	CLASS ScheduledTick
 		METHOD <init> (Ljava/lang/Object;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/level/TickPriority;)V
 			ARG 1 type

@@ -1,12 +1,12 @@
 CLASS net/minecraft/world/level/block/entity/BlockEntity
 	METHOD <init> (Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 type
-		ARG 2 worldPosition
+		ARG 2 pos
 		ARG 3 blockState
 	METHOD clearRemoved ()V
 		COMMENT Marks this {@code BlockEntity} as valid again (no longer removed from the level).
 	METHOD fillCrashReportCategory (Lnet/minecraft/CrashReportCategory;)V
-		ARG 1 reportCategory
+		ARG 1 category
 	METHOD hasLevel ()Z
 		COMMENT @return whether this BlockEntity's level has been set
 	METHOD lambda$loadStatic$0 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Ljava/lang/String;Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/world/level/block/entity/BlockEntity;

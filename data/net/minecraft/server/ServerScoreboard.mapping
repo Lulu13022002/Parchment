@@ -17,15 +17,15 @@ CLASS net/minecraft/server/ServerScoreboard
 	METHOD onScoreChanged (Lnet/minecraft/world/scores/Score;)V
 		ARG 1 score
 	METHOD onTeamAdded (Lnet/minecraft/world/scores/PlayerTeam;)V
-		ARG 1 playerTeam
+		ARG 1 team
 	METHOD onTeamChanged (Lnet/minecraft/world/scores/PlayerTeam;)V
-		ARG 1 playerTeam
+		ARG 1 team
 	METHOD onTeamRemoved (Lnet/minecraft/world/scores/PlayerTeam;)V
-		ARG 1 playerTeam
+		ARG 1 team
 	METHOD removePlayerFromTeam (Ljava/lang/String;Lnet/minecraft/world/scores/PlayerTeam;)V
-		COMMENT Removes the given username from the given ScorePlayerTeam. If the player is not on the team then an IllegalStateException is thrown.
-		ARG 1 username
-		ARG 2 playerTeam
+		COMMENT Removes the given player from the given PlayerTeam. If the player is not on the team then an IllegalStateException is thrown.
+		ARG 1 playerName
+		ARG 2 team
 	METHOD setDisplayObjective (ILnet/minecraft/world/scores/Objective;)V
 		COMMENT 0 is tab menu, 1 is sidebar, 2 is below name
 		ARG 1 objectiveSlot

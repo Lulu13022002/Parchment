@@ -7,8 +7,8 @@ CLASS net/minecraft/server/commands/TeleportCommand
 		ARG 5 y
 		ARG 7 z
 		ARG 9 relativeList
-		ARG 10 yaw
-		ARG 11 pitch
+		ARG 10 yRot
+		ARG 11 xRot
 		ARG 12 facing
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;)V
 		ARG 0 dispatcher

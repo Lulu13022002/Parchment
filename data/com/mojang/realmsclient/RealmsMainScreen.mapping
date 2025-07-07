@@ -25,10 +25,3 @@ CLASS com/mojang/realmsclient/RealmsMainScreen
 		ARG 1 realmsServer
 	METHOD updateButtonStates (Lcom/mojang/realmsclient/dto/RealmsServer;)V
 		ARG 1 realmsServer
-	CLASS NewsButton
-	CLASS TrialEntry
-	CLASS CloseButton
-	CLASS ServerEntry
-	CLASS ShowPopupButton
-	CLASS RealmSelectionList
-	CLASS PendingInvitesButton

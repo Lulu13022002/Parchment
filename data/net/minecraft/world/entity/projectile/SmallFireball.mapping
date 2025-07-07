@@ -1,12 +1,26 @@
 CLASS net/minecraft/world/entity/projectile/SmallFireball
+	METHOD <init> (Lnet/minecraft/world/level/Level;DDDDDD)V
+		ARG 1 level
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 offsetX
+		ARG 10 offsetY
+		ARG 12 offsetZ
+	METHOD <init> (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;DDD)V
+		ARG 1 level
+		ARG 2 shooter
+		ARG 3 offsetX
+		ARG 5 offsetY
+		ARG 7 offsetZ
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD isPickable ()Z
-		COMMENT Returns true if other Entities should be prevented from moving through this Entity.
+		COMMENT Returns {@code true} if other Entities should be prevented from moving through this Entity.
 	METHOD onHit (Lnet/minecraft/world/phys/HitResult;)V
-		COMMENT Called when this EntityFireball hits a block or entity.
+		COMMENT Called when this projectile hits a block or entity.
 		ARG 1 result
 	METHOD onHitEntity (Lnet/minecraft/world/phys/EntityHitResult;)V
 		COMMENT Called when the arrow hits an entity

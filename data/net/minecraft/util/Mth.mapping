@@ -1,6 +1,6 @@
 CLASS net/minecraft/util/Mth
 	FIELD MULTIPLY_DE_BRUIJN_BIT_POSITION [I
-		COMMENT Though it looks like an array, this is really more like a mapping. Key (index of this array) is the upper 5 bits of the result of multiplying a 32-bit unsigned integer by the B(2, 5) De Bruijn sequence 0x077CB531. Value (value stored in the array) is the unique index (from the right) of the leftmo
+		COMMENT Though it looks like an array, this is really more like a mapping. Key (index of this array) is the upper 5 bits of the result of multiplying a 32-bit unsigned integer by the B(2, 5) De Bruijn sequence 0x077CB531. Value (value stored in the array) is the unique index (from the right) of the leftmost
 	METHOD abs (F)F
 		ARG 0 value
 	METHOD abs (I)I
@@ -95,7 +95,7 @@ CLASS net/minecraft/util/Mth
 	METHOD createInsecureUUID ()Ljava/util/UUID;
 		COMMENT Generates a random UUID using the shared random
 	METHOD createInsecureUUID (Ljava/util/Random;)Ljava/util/UUID;
-		ARG 0 rand
+		ARG 0 random
 	METHOD equal (DD)Z
 		ARG 0 x
 		ARG 2 y
@@ -103,7 +103,7 @@ CLASS net/minecraft/util/Mth
 		ARG 0 x
 		ARG 1 y
 	METHOD fastFloor (D)I
-		COMMENT returns par0 cast as an int, and no greater than Integer.MAX_VALUE-1024
+		COMMENT returns {@code value} cast as an int, and no greater than Integer.MAX_VALUE-1024
 		ARG 0 value
 	METHOD fastInvCubeRoot (F)F
 		ARG 0 number
@@ -150,11 +150,11 @@ CLASS net/minecraft/util/Mth
 		ARG 1 saturation
 		ARG 2 value
 	METHOD intFloorDiv (II)I
-		COMMENT Buckets an integer with specifed bucket sizes.
+		COMMENT Buckets an integer with specified bucket sizes.
 		ARG 0 x
 		ARG 1 y
 	METHOD isPowerOfTwo (I)Z
-		COMMENT Is the given value a power of two?  (1, 2, 4, 8, 16, ...)
+		COMMENT Is the given value a power of two? (1, 2, 4, 8, 16, ...)
 		ARG 0 value
 	METHOD lerp (DDD)D
 		COMMENT Method for linear interpolation of doubles
@@ -176,7 +176,7 @@ CLASS net/minecraft/util/Mth
 		COMMENT Long version of floor()
 		ARG 0 value
 	METHOD log2 (I)I
-		COMMENT Efficiently calculates the floor of the base-2 log of an integer value.  This is effectively the index of the highest bit that is set.  For example, if the number in binary is 0...100101, this will return 5.
+		COMMENT Efficiently calculates the floor of the base-2 log of an integer value. This is effectively the index of the highest bit that is set. For example, if the number in binary is 0...100101, this will return 5.
 		ARG 0 value
 	METHOD nextDouble (Ljava/util/Random;DD)D
 		ARG 0 random
@@ -218,5 +218,5 @@ CLASS net/minecraft/util/Mth
 		COMMENT the angle is reduced to an angle between -180 and +180 by mod, and a 360 check
 		ARG 0 value
 	METHOD wrapDegrees (I)I
-		COMMENT Adjust the angle so that his value is in range [-180180[
+		COMMENT Adjust the angle so that his value is in range [-180;180)
 		ARG 0 angle

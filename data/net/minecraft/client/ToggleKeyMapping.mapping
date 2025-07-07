@@ -4,4 +4,4 @@ CLASS net/minecraft/client/ToggleKeyMapping
 		ARG 3 category
 		ARG 4 needsToggle
 	METHOD setDown (Z)V
-		ARG 1 value
+		ARG 1 isDown

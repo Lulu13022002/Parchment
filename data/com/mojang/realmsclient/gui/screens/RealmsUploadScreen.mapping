@@ -16,7 +16,7 @@ CLASS com/mojang/realmsclient/gui/screens/RealmsUploadScreen
 		ARG 1 poseStack
 	METHOD drawUploadSpeed0 (Lcom/mojang/blaze3d/vertex/PoseStack;J)V
 		ARG 1 poseStack
-		ARG 2 bytesPersSecond
+		ARG 2 bytesPerSecond
 	METHOD setErrorMessage ([Lnet/minecraft/network/chat/Component;)V
 		ARG 1 errorMessage
 	METHOD tarGzipArchive (Ljava/io/File;)Ljava/io/File;

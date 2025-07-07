@@ -2,7 +2,7 @@ CLASS net/minecraft/advancements/critereon/BeeNestDestroyedTrigger
 	METHOD createInstance (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/EntityPredicate$Composite;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/critereon/BeeNestDestroyedTrigger$TriggerInstance;
 		ARG 1 json
 		ARG 2 entityPredicate
-		ARG 3 conditionsParser
+		ARG 3 context
 	METHOD deserializeBlock (Lcom/google/gson/JsonObject;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 json
 	METHOD lambda$trigger$1 (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/item/ItemStack;ILnet/minecraft/advancements/critereon/BeeNestDestroyedTrigger$TriggerInstance;)Z
@@ -27,4 +27,4 @@ CLASS net/minecraft/advancements/critereon/BeeNestDestroyedTrigger
 			ARG 2 stack
 			ARG 3 numBees
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context

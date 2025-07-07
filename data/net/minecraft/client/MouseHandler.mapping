@@ -2,20 +2,20 @@ CLASS net/minecraft/client/MouseHandler
 	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
 		ARG 1 minecraft
 	METHOD grabMouse ()V
-		COMMENT Will set the focus to ingame if the Minecraft window is the active with focus. Also clears any GUI screen currently displayed
+		COMMENT Will set the focus to in-game if the Minecraft window is the active with focus. Also clears any GUI screen currently displayed
 	METHOD isMouseGrabbed ()Z
-		COMMENT Returns true if the mouse is grabbed.
+		COMMENT Returns {@code true} if the mouse is grabbed.
 	METHOD lambda$setup$3 (JDD)V
-		ARG 1 windowPointer
-		ARG 3 xpos
-		ARG 5 ypos
+		ARG 1 windowPointer1
+		ARG 3 xPos
+		ARG 5 yPos
 	METHOD lambda$setup$5 (JIII)V
-		ARG 1 windowPointer
+		ARG 1 windowPointer1
 		ARG 3 button
 		ARG 4 action
 		ARG 5 modifiers
 	METHOD lambda$setup$7 (JDD)V
-		ARG 1 windowPointer
+		ARG 1 windowPointer1
 		ARG 3 xOffset
 		ARG 5 yOffset
 	METHOD onDrop (JLjava/util/List;)V
@@ -28,8 +28,8 @@ CLASS net/minecraft/client/MouseHandler
 		COMMENT
 		COMMENT @see GLFWCursorPosCallbackI
 		ARG 1 windowPointer
-		ARG 3 xpos
-		ARG 5 ypos
+		ARG 3 xPos
+		ARG 5 yPos
 	METHOD onPress (JIII)V
 		COMMENT Will be called when a mouse button is pressed or released.
 		COMMENT
@@ -46,6 +46,6 @@ CLASS net/minecraft/client/MouseHandler
 		ARG 3 xOffset
 		ARG 5 yOffset
 	METHOD releaseMouse ()V
-		COMMENT Resets the player keystate, disables the ingame focus, and ungrabs the mouse cursor.
+		COMMENT Resets the player key state, disables the in-game focus, and ungrabs the mouse cursor.
 	METHOD setup (J)V
 		ARG 1 windowPointer

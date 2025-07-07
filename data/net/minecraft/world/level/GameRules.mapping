@@ -96,7 +96,7 @@ CLASS net/minecraft/world/level/GameRules
 		METHOD deserialize (Ljava/lang/String;)V
 			ARG 1 value
 		METHOD safeParse (Ljava/lang/String;)I
-			ARG 0 strValue
+			ARG 0 value
 		METHOD set (ILnet/minecraft/server/MinecraftServer;)V
 			ARG 1 value
 			ARG 2 server

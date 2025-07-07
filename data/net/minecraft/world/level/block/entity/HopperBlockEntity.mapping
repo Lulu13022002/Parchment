@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/level/block/entity/HopperBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 worldPosition
+		ARG 1 pos
 		ARG 2 blockState
 	METHOD addItem (Lnet/minecraft/world/Container;Lnet/minecraft/world/Container;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/Direction;)Lnet/minecraft/world/item/ItemStack;
 		COMMENT Attempts to place the passed stack in the container, using as many slots as required.
@@ -37,7 +37,7 @@ CLASS net/minecraft/world/level/block/entity/HopperBlockEntity
 		ARG 3 entity
 		ARG 4 blockEntity
 	METHOD getContainerAt (Lnet/minecraft/world/level/Level;DDD)Lnet/minecraft/world/Container;
-		COMMENT @return the container for the given position or null if none was found
+		COMMENT @return the container for the given position or {@code null} if none was found
 		ARG 0 level
 		ARG 1 x
 		ARG 3 y
@@ -47,7 +47,7 @@ CLASS net/minecraft/world/level/block/entity/HopperBlockEntity
 		ARG 0 container
 		ARG 1 direction
 	METHOD isFullContainer (Lnet/minecraft/world/Container;Lnet/minecraft/core/Direction;)Z
-		COMMENT @return false if the container has any room to place items in
+		COMMENT @return {@code false} if the container has any room to place items in
 		ARG 0 container
 		ARG 1 direction
 	METHOD lambda$isEmptyContainer$2 (Lnet/minecraft/world/Container;I)Z
@@ -61,7 +61,7 @@ CLASS net/minecraft/world/level/block/entity/HopperBlockEntity
 		ARG 1 index
 		ARG 2 count
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setCooldown (I)V
 		ARG 1 cooldownTime
 	METHOD setItem (ILnet/minecraft/world/item/ItemStack;)V
@@ -82,7 +82,7 @@ CLASS net/minecraft/world/level/block/entity/HopperBlockEntity
 		ARG 3 blockEntity
 	METHOD tryTakeInItemFromSlot (Lnet/minecraft/world/level/block/entity/Hopper;Lnet/minecraft/world/Container;ILnet/minecraft/core/Direction;)Z
 		COMMENT Pulls from the specified slot in the container and places in any available slot in the hopper.
-		COMMENT @return true if the entire stack was moved
+		COMMENT @return {@code true} if the entire stack was moved
 		ARG 0 hopper
 		ARG 1 container
 		ARG 2 slot

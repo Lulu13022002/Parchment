@@ -1,7 +1,7 @@
 CLASS net/minecraft/network/ConnectionProtocol
 	COMMENT Describes the set of packets a connection understands at a given point.
 	COMMENT A connection always starts out in state {@link #HANDSHAKING}. In this state the client sends its desired protocol using
-	COMMENT {@link ClientIntentionPacket}. The server then either accepts the connection and switches to the desired protocol or it disconnects the client (for example in case of an outdated client).
+	COMMENT {@link net.minecraft.network.protocol.handshake.ClientIntentionPacket}. The server then either accepts the connection and switches to the desired protocol or it disconnects the client (for example in case of an outdated client).
 	COMMENT
 	COMMENT Each protocol has a {@link PacketListener} implementation tied to it for server and client respectively.
 	COMMENT
@@ -19,18 +19,18 @@ CLASS net/minecraft/network/ConnectionProtocol
 		ARG 4 protocolBuilder
 	METHOD createPacket (Lnet/minecraft/network/protocol/PacketFlow;ILnet/minecraft/network/FriendlyByteBuf;)Lnet/minecraft/network/protocol/Packet;
 		COMMENT Create a packet for this protocol using the given direction, packetId and data.
-		COMMENT Returns null if the packetId is not valid for this protocol/direction.
+		COMMENT Returns {@code null} if the packetId is not valid for this protocol/direction.
 		ARG 1 direction
 		ARG 2 packetId
 		ARG 3 buffer
 	METHOD getById (I)Lnet/minecraft/network/ConnectionProtocol;
-		COMMENT Get the Protocol for the given ID, or null if the ID is invalid.
-		ARG 0 stateId
+		COMMENT Get the Protocol for the given ID, or {@code null} if the ID is invalid.
+		ARG 0 id
 	METHOD getId ()I
 		COMMENT The ID for this protocol.
 	METHOD getPacketId (Lnet/minecraft/network/protocol/PacketFlow;Lnet/minecraft/network/protocol/Packet;)Ljava/lang/Integer;
 		COMMENT Get the ID for the given packet being sent in the given direction through this protocol.
-		COMMENT Returns null if the packet is not valid for this protocol/direction.
+		COMMENT Returns {@code null} if the packet is not valid for this protocol/direction.
 		ARG 1 direction
 		ARG 2 packet
 	METHOD getProtocolForPacket (Lnet/minecraft/network/protocol/Packet;)Lnet/minecraft/network/ConnectionProtocol;

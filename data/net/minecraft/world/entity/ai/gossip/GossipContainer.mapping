@@ -23,7 +23,7 @@ CLASS net/minecraft/world/entity/ai/gossip/GossipContainer
 	METHOD lambda$store$6 (Lcom/mojang/serialization/DynamicOps;Lnet/minecraft/world/entity/ai/gossip/GossipContainer$GossipEntry;)Lcom/mojang/serialization/Dynamic;
 		ARG 1 gossip
 	METHOD lambda$transferFrom$3 (Lnet/minecraft/world/entity/ai/gossip/GossipContainer$GossipEntry;)V
-		ARG 1 gossip
+		ARG 1 newGossip
 	METHOD lambda$unpack$1 (Ljava/util/Map$Entry;)Ljava/util/stream/Stream;
 		ARG 0 gossip
 	METHOD lambda$update$7 (Lcom/mojang/serialization/DataResult;)Ljava/util/stream/Stream;
@@ -48,13 +48,13 @@ CLASS net/minecraft/world/entity/ai/gossip/GossipContainer
 	METHOD remove (Lnet/minecraft/world/entity/ai/gossip/GossipType;)V
 		ARG 1 gossipType
 	METHOD selectGossipsForTransfer (Ljava/util/Random;I)Ljava/util/Collection;
-		ARG 1 rand
+		ARG 1 random
 		ARG 2 gossipAmount
 	METHOD store (Lcom/mojang/serialization/DynamicOps;)Lcom/mojang/serialization/Dynamic;
-		ARG 1 dynamic
+		ARG 1 ops
 	METHOD transferFrom (Lnet/minecraft/world/entity/ai/gossip/GossipContainer;Ljava/util/Random;I)V
 		ARG 1 gossip
-		ARG 2 rand
+		ARG 2 random
 		ARG 3 gossipAmount
 	METHOD update (Lcom/mojang/serialization/Dynamic;)V
 		ARG 1 dynamic
@@ -66,7 +66,7 @@ CLASS net/minecraft/world/entity/ai/gossip/GossipContainer
 		METHOD load (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/DataResult;
 			ARG 0 dynamic
 		METHOD store (Lcom/mojang/serialization/DynamicOps;)Lcom/mojang/serialization/Dynamic;
-			ARG 1 dynamic
+			ARG 1 ops
 	CLASS EntityGossips
 		METHOD lambda$unpack$2 (Ljava/util/UUID;Lit/unimi/dsi/fastutil/objects/Object2IntMap$Entry;)Lnet/minecraft/world/entity/ai/gossip/GossipContainer$GossipEntry;
 			ARG 1 gossip

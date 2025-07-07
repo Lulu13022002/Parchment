@@ -31,13 +31,13 @@ CLASS net/minecraft/client/sounds/SoundManager
 		ARG 1 sound
 	METHOD stop (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/sounds/SoundSource;)V
 		ARG 1 id
-		ARG 2 category
+		ARG 2 source
 	METHOD tick (Z)V
 		ARG 1 isGamePaused
 	METHOD updateSource (Lnet/minecraft/client/Camera;)V
-		ARG 1 activeRenderInfo
+		ARG 1 camera
 	METHOD updateSourceVolume (Lnet/minecraft/sounds/SoundSource;F)V
-		ARG 1 category
+		ARG 1 source
 		ARG 2 volume
 	METHOD validateSoundResource (Lnet/minecraft/client/resources/sounds/Sound;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/server/packs/resources/ResourceManager;)Z
 		ARG 0 sound

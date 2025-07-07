@@ -16,13 +16,13 @@ CLASS net/minecraft/network/protocol/game/ServerboundInteractPacket
 		ARG 0 entity
 		ARG 1 usingSecondaryAction
 		ARG 2 hand
-		ARG 3 ineractionLocation
+		ARG 3 interactionLocation
 	METHOD dispatch (Lnet/minecraft/network/protocol/game/ServerboundInteractPacket$Handler;)V
 		ARG 1 handler
 	METHOD getTarget (Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/entity/Entity;
 		ARG 1 level
 	METHOD handle (Lnet/minecraft/network/protocol/game/ServerGamePacketListener;)V
-		COMMENT Passes this Packet on to the NetHandler for processing.
+		COMMENT Passes this Packet on to the packet listener for processing.
 		ARG 1 handler
 	METHOD write (Lnet/minecraft/network/FriendlyByteBuf;)V
 		COMMENT Writes the raw packet data to the data stream.

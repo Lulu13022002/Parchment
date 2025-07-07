@@ -1,6 +1,9 @@
 CLASS net/minecraft/world/effect/MobEffect
 	FIELD attributeModifiers Ljava/util/Map;
 		COMMENT Contains a Map of the AttributeModifiers registered by potions
+	METHOD <init> (Lnet/minecraft/world/effect/MobEffectCategory;I)V
+		ARG 1 category
+		ARG 2 color
 	METHOD addAttributeModifier (Lnet/minecraft/world/entity/ai/attributes/Attribute;Ljava/lang/String;DLnet/minecraft/world/entity/ai/attributes/AttributeModifier$Operation;)Lnet/minecraft/world/effect/MobEffect;
 		COMMENT Adds an attribute modifier to this effect. This method can be called for more than one attribute. The attributes are applied to an entity when the potion effect is active and removed when it stops.
 		ARG 1 attribute
@@ -22,7 +25,7 @@ CLASS net/minecraft/world/effect/MobEffect
 		ARG 5 health
 	METHOD byId (I)Lnet/minecraft/world/effect/MobEffect;
 		COMMENT Gets a Potion from the potion registry using a numeric Id.
-		ARG 0 potionID
+		ARG 0 id
 	METHOD getAttributeModifierValue (ILnet/minecraft/world/entity/ai/attributes/AttributeModifier;)D
 		ARG 1 amplifier
 		ARG 2 modifier
@@ -40,7 +43,7 @@ CLASS net/minecraft/world/effect/MobEffect
 		ARG 1 duration
 		ARG 2 amplifier
 	METHOD isInstantenous ()Z
-		COMMENT Returns true if the potion has an instant effect instead of a continuous one (eg Harming)
+		COMMENT Returns {@code true} if the potion has an instant effect instead of a continuous one (e.g. Harming)
 	METHOD removeAttributeModifiers (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/attributes/AttributeMap;I)V
 		ARG 1 livingEntity
 		ARG 2 attributeMap

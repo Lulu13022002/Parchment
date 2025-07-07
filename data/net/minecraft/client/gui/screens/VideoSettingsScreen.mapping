@@ -5,9 +5,9 @@ CLASS net/minecraft/client/gui/screens/VideoSettingsScreen
 	METHOD lambda$init$0 (Lnet/minecraft/client/gui/components/Button;)V
 		ARG 1 button
 	METHOD lambda$mouseClicked$1 (Lnet/minecraft/client/gui/components/Button;)V
-		ARG 1 button
+		ARG 1 btn
 	METHOD lambda$mouseClicked$2 (Lnet/minecraft/client/gui/components/Button;)V
-		ARG 1 button
+		ARG 1 btn
 	METHOD mouseClicked (DDI)Z
 		ARG 1 mouseX
 		ARG 3 mouseY

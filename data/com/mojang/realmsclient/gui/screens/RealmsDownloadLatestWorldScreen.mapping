@@ -10,6 +10,6 @@ CLASS com/mojang/realmsclient/gui/screens/RealmsDownloadLatestWorldScreen
 		ARG 1 poseStack
 	METHOD drawDownloadSpeed0 (Lcom/mojang/blaze3d/vertex/PoseStack;J)V
 		ARG 1 poseStack
-		ARG 2 bytesPersSecond
+		ARG 2 bytesPerSecond
 	METHOD drawProgressBar (Lcom/mojang/blaze3d/vertex/PoseStack;)V
 		ARG 1 poseStack

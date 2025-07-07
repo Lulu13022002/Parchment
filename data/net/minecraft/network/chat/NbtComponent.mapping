@@ -9,7 +9,7 @@ CLASS net/minecraft/network/chat/NbtComponent
 		ARG 2 interpreting
 		ARG 3 separator
 	METHOD getData (Lnet/minecraft/commands/CommandSourceStack;)Ljava/util/stream/Stream;
-		ARG 1 commandSourceStack
+		ARG 1 source
 	CLASS BlockNbtComponent
 		METHOD <init> (Ljava/lang/String;Lnet/minecraft/commands/arguments/NbtPathArgument$NbtPath;ZLjava/lang/String;Lnet/minecraft/commands/arguments/coordinates/Coordinates;Ljava/util/Optional;)V
 			ARG 1 nbtPathPattern

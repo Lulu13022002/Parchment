@@ -8,7 +8,7 @@ CLASS net/minecraft/world/level/block/NetherrackBlock
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state
-		ARG 4 isClient
+		ARG 4 isClientSide
 	METHOD performBonemeal (Lnet/minecraft/server/level/ServerLevel;Ljava/util/Random;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 level
 		ARG 2 random
