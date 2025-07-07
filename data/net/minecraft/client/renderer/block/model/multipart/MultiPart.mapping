@@ -9,5 +9,5 @@ CLASS net/minecraft/client/renderer/block/model/multipart/MultiPart
 			ARG 1 stateDefinition
 	CLASS Deserializer
 		METHOD getSelectors (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonArray;)Ljava/util/List;
-			ARG 1 jsonContext
+			ARG 1 context
 			ARG 2 elements

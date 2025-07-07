@@ -2,7 +2,7 @@ CLASS net/minecraft/client/renderer/blockentity/BedRenderer
 	METHOD <init> (Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;)V
 		ARG 1 context
 	METHOD lambda$render$0 (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)Z
-		ARG 0 levelAccessor
+		ARG 0 level
 		ARG 1 pos
 	METHOD renderPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/model/Model;Lnet/minecraft/core/Direction;Lnet/minecraft/client/resources/model/Material;IIZ)V
 		ARG 1 poseStack

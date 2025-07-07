@@ -8,7 +8,7 @@ CLASS net/minecraft/world/ticks/LevelChunkTicks
 	METHOD removeIf (Ljava/util/function/Predicate;)V
 		ARG 1 predicate
 	METHOD save (JLjava/util/function/Function;)Lnet/minecraft/nbt/ListTag;
-		ARG 1 gametime
+		ARG 1 gameTime
 		ARG 3 idGetter
 	METHOD scheduleUnchecked (Lnet/minecraft/world/ticks/ScheduledTick;)V
 		ARG 1 tick

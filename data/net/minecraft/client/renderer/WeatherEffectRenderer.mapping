@@ -14,7 +14,7 @@ CLASS net/minecraft/client/renderer/WeatherEffectRenderer
 		ARG 4 bottomY
 		ARG 5 topY
 		ARG 6 z
-		ARG 7 lightCoords
+		ARG 7 packedLight
 		ARG 8 partialTick
 	METHOD createSnowColumnInstance (Lnet/minecraft/util/RandomSource;IIIIIIF)Lnet/minecraft/client/renderer/WeatherEffectRenderer$ColumnInstance;
 		ARG 1 random
@@ -23,7 +23,7 @@ CLASS net/minecraft/client/renderer/WeatherEffectRenderer
 		ARG 4 bottomY
 		ARG 5 topY
 		ARG 6 z
-		ARG 7 lightCoords
+		ARG 7 packedLight
 		ARG 8 partialTick
 	METHOD getPrecipitationAt (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;
 		ARG 1 level
@@ -34,7 +34,7 @@ CLASS net/minecraft/client/renderer/WeatherEffectRenderer
 		ARG 3 radius
 		ARG 4 rainLevel
 		ARG 5 rainColumnInstances
-		ARG 6 snowCoiumnInstances
+		ARG 6 snowColumnInstances
 	METHOD render (Lnet/minecraft/world/level/Level;Lnet/minecraft/client/renderer/LightTexture;IFLnet/minecraft/world/phys/Vec3;)V
 		ARG 1 level
 		ARG 2 lightTexture

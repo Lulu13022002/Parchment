@@ -5,4 +5,4 @@ CLASS net/minecraft/world/item/BannerItem
 		ARG 3 properties
 	METHOD appendHoverTextFromBannerBlockEntityTag (Lnet/minecraft/world/item/ItemStack;Ljava/util/List;)V
 		ARG 0 stack
-		ARG 1 tooltipComponents
+		ARG 1 tooltip

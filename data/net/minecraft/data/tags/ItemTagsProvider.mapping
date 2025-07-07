@@ -1,5 +1,5 @@
 CLASS net/minecraft/data/tags/ItemTagsProvider
-	FIELD blockTags Ljava/util/function/Function;
+	FIELD blockTags Ljava/util/concurrent/CompletableFuture;
 		COMMENT A function that resolves block tag builders.
 	METHOD <init> (Lnet/minecraft/data/PackOutput;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/CompletableFuture;)V
 		ARG 1 output

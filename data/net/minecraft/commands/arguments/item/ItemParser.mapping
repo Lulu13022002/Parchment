@@ -28,7 +28,7 @@ CLASS net/minecraft/commands/arguments/item/ItemParser
 			ARG 2 reader
 			ARG 3 visitor
 		METHOD readComponent (Lnet/minecraft/core/component/DataComponentType;)V
-			ARG 1 componentType
+			ARG 1 component
 		METHOD readComponentType (Lcom/mojang/brigadier/StringReader;)Lnet/minecraft/core/component/DataComponentType;
 			ARG 0 reader
 		METHOD suggestAssignment (Lcom/mojang/brigadier/suggestion/SuggestionsBuilder;)Ljava/util/concurrent/CompletableFuture;
@@ -48,12 +48,12 @@ CLASS net/minecraft/commands/arguments/item/ItemParser
 			ARG 1 builder
 	CLASS Visitor
 		METHOD visitComponent (Lnet/minecraft/core/component/DataComponentType;Ljava/lang/Object;)V
-			ARG 1 componentType
+			ARG 1 component
 			ARG 2 value
 		METHOD visitItem (Lnet/minecraft/core/Holder;)V
 			ARG 1 item
 		METHOD visitRemovedComponent (Lnet/minecraft/core/component/DataComponentType;)V
-			ARG 1 componentType
+			ARG 1 component
 		METHOD visitSuggestions (Ljava/util/function/Function;)V
 			ARG 1 suggestions
 	CLASS SuggestionsVisitor

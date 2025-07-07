@@ -6,9 +6,9 @@ CLASS net/minecraft/client/Options
 		COMMENT Send a client info packet with settings information to the server
 	METHOD createSoundSliderOptionInstance (Ljava/lang/String;Lnet/minecraft/sounds/SoundSource;)Lnet/minecraft/client/OptionInstance;
 		ARG 1 text
-		ARG 2 soundSource
+		ARG 2 source
 	METHOD dataFix (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD genericValueLabel (Lnet/minecraft/network/chat/Component;I)Lnet/minecraft/network/chat/Component;
 		ARG 0 text
 		ARG 1 value
@@ -25,9 +25,9 @@ CLASS net/minecraft/client/Options
 	METHOD getBackgroundOpacity (F)F
 		ARG 1 opacity
 	METHOD getSoundSourceOptionInstance (Lnet/minecraft/sounds/SoundSource;)Lnet/minecraft/client/OptionInstance;
-		ARG 1 soundSource
+		ARG 1 source
 	METHOD getSoundSourceVolume (Lnet/minecraft/sounds/SoundSource;)F
-		ARG 1 category
+		ARG 1 source
 	METHOD isFalse (Ljava/lang/String;)Z
 		ARG 0 value
 	METHOD isModelPartEnabled (Lnet/minecraft/world/entity/player/PlayerModelPart;)Z

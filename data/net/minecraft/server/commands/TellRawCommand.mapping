@@ -5,4 +5,4 @@ CLASS net/minecraft/server/commands/TellRawCommand
 		ARG 0 context
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/commands/CommandBuildContext;)V
 		ARG 0 dispatcher
-		ARG 1 context
+		ARG 1 buildContext

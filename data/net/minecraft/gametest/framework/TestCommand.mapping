@@ -116,7 +116,7 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 0 source
 		ARG 1 message
 	METHOD say (Lnet/minecraft/server/level/ServerLevel;Ljava/lang/String;Lnet/minecraft/ChatFormatting;)V
-		ARG 0 serverLevel
+		ARG 0 level
 		ARG 1 message
 		ARG 2 formatting
 	METHOD showPos (Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I

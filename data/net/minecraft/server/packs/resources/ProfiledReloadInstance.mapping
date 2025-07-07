@@ -6,7 +6,7 @@ CLASS net/minecraft/server/packs/resources/ProfiledReloadInstance
 		ARG 4 gameExecutor
 		ARG 5 alsoWaitedFor
 	METHOD finish (Ljava/util/List;)Ljava/util/List;
-		ARG 1 datapoints
+		ARG 1 states
 	METHOD lambda$new$1 (Ljava/util/concurrent/Executor;Lnet/minecraft/server/packs/resources/PreparableReloadListener$PreparationBarrier;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/server/packs/resources/PreparableReloadListener;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 barrier
 		ARG 2 manager

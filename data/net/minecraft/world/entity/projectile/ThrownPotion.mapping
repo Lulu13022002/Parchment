@@ -22,5 +22,5 @@ CLASS net/minecraft/world/entity/projectile/ThrownPotion
 	METHOD makeAreaOfEffectCloud (Lnet/minecraft/world/item/alchemy/PotionContents;)V
 		ARG 1 potionContents
 	METHOD onHit (Lnet/minecraft/world/phys/HitResult;)V
-		COMMENT Called when this EntityFireball hits a block or entity.
+		COMMENT Called when this projectile hits a block or entity.
 		ARG 1 result

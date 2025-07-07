@@ -5,7 +5,7 @@ CLASS net/minecraft/client/renderer/blockentity/VaultRenderer
 		ARG 0 partialTick
 		ARG 1 level
 		ARG 2 poseStack
-		ARG 3 buffer
+		ARG 3 bufferSource
 		ARG 4 packedLight
 		ARG 5 item
 		ARG 6 itemRenderer

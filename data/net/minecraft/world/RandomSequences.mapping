@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/RandomSequences
 	METHOD <init> (J)V
-		ARG 1 seed
+		ARG 1 worldSeed
 	METHOD createSequence (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/RandomSequence;
 		ARG 1 location
 	METHOD createSequence (Lnet/minecraft/resources/ResourceLocation;IZZ)Lnet/minecraft/world/RandomSequence;

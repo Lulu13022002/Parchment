@@ -9,7 +9,7 @@ CLASS net/minecraft/world/entity/decoration/ItemFrame
 		ARG 2 pos
 		ARG 3 facingDirection
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD canHurtWhenFixed (Lnet/minecraft/world/damagesource/DamageSource;)Z
 		ARG 0 damageSource
 	METHOD dropItem (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/Entity;Z)V
@@ -25,19 +25,19 @@ CLASS net/minecraft/world/entity/decoration/ItemFrame
 		ARG 2 hand
 	METHOD move (Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 type
-		ARG 2 pos
+		ARG 2 movement
 	METHOD onItemChanged (Lnet/minecraft/world/item/ItemStack;)V
 		ARG 1 item
 	METHOD onSyncedDataUpdated (Lnet/minecraft/network/syncher/EntityDataAccessor;)V
 		ARG 1 key
 	METHOD push (DDD)V
-		COMMENT Adds to the current velocity of the entity, and sets {@link #isAirBorne} to true.
+		COMMENT Adds to the current velocity of the entity, and sets {@link #hasImpulse} to {@code true}.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD removeFramedMap (Lnet/minecraft/world/item/ItemStack;)V
 		COMMENT Removes the dot representing this frame's position from the map when the item frame is broken.
 		ARG 1 stack

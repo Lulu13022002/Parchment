@@ -37,7 +37,7 @@ CLASS net/minecraft/server/level/ServerLevel
 	METHOD blockEvent (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;II)V
 		ARG 1 pos
 		ARG 2 block
-		ARG 3 eventID
+		ARG 3 eventId
 		ARG 4 eventParam
 	METHOD blockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 pos
@@ -73,7 +73,7 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 structureTag
 		ARG 2 pos
 		ARG 3 radius
-		ARG 4 skipExistingChunks
+		ARG 4 skipKnownStructures
 	METHOD getAllEntities ()Ljava/lang/Iterable;
 		COMMENT Gets an unmodifiable iterator of all loaded entities in the world.
 	METHOD getChunkSource ()Lnet/minecraft/server/level/ServerChunkCache;
@@ -93,7 +93,7 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 3 output
 		ARG 4 maxResults
 	METHOD getEntity (I)Lnet/minecraft/world/entity/Entity;
-		COMMENT Returns the Entity with the given ID, or null if it doesn't exist in this World.
+		COMMENT Returns the Entity with the given ID, or {@code null} if it doesn't exist in this Level.
 		ARG 1 id
 	METHOD getEntity (Ljava/util/UUID;)Lnet/minecraft/world/entity/Entity;
 		ARG 1 uniqueId
@@ -135,11 +135,7 @@ CLASS net/minecraft/server/level/ServerLevel
 	METHOD isVillage (Lnet/minecraft/core/SectionPos;)Z
 		ARG 1 pos
 	METHOD lambda$findLightningRod$4 (Lnet/minecraft/core/Holder;)Z
-		ARG 0 pointOfInterestType
-	METHOD lambda$findLightningRod$5 (Lnet/minecraft/core/BlockPos;)Z
-		ARG 1 blockPos
-	METHOD lambda$findLightningRod$6 (Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/BlockPos;
-		ARG 0 blockPos
+		ARG 0 poiType
 	METHOD lambda$findLightningTargetAround$7 (Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 1 entity
 	METHOD lambda$getEntities$10 (Ljava/util/function/Predicate;Ljava/util/List;ILnet/minecraft/world/entity/Entity;)Lnet/minecraft/util/AbortableIterationConsumer$Continuation;
@@ -158,7 +154,7 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 2 pos
 	METHOD onBlockStateChange (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
-		ARG 2 blockState
+		ARG 2 oldState
 		ARG 3 newState
 	METHOD onReputationEvent (Lnet/minecraft/world/entity/ai/village/ReputationEventType;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/ReputationEventHandler;)V
 		ARG 1 type
@@ -170,7 +166,7 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 player
 		ARG 2 reason
 	METHOD resetEmptyTime ()V
-		COMMENT Resets the updateEntityTick field to 0
+		COMMENT Resets the emptyTime field to 0
 	METHOD save (Lnet/minecraft/util/ProgressListener;ZZ)V
 		ARG 1 progress
 		ARG 2 flush
@@ -182,39 +178,39 @@ CLASS net/minecraft/server/level/ServerLevel
 	METHOD sectionsToVillage (Lnet/minecraft/core/SectionPos;)I
 		ARG 1 pos
 	METHOD sendBlockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
-		COMMENT Flags are as in setBlockState
+		COMMENT Flags are as in setBlock
 		ARG 1 pos
 		ARG 2 oldState
 		ARG 3 newState
 		ARG 4 flags
 	METHOD sendParticles (Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
-		ARG 1 type
-		ARG 2 posX
-		ARG 4 posY
-		ARG 6 posZ
-		ARG 8 particleCount
-		ARG 9 xOffset
-		ARG 11 yOffset
-		ARG 13 zOffset
+		ARG 1 options
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 count
+		ARG 9 xDist
+		ARG 11 yDist
+		ARG 13 zDist
 		ARG 15 speed
 	METHOD sendParticles (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/particles/ParticleOptions;ZDDDIDDDD)Z
 		ARG 1 player
-		ARG 2 type
-		ARG 3 longDistance
-		ARG 4 posX
-		ARG 6 posY
-		ARG 8 posZ
-		ARG 10 particleCount
-		ARG 11 xOffset
-		ARG 13 yOffset
-		ARG 15 zOffset
+		ARG 2 options
+		ARG 3 overrideLimiter
+		ARG 4 x
+		ARG 6 y
+		ARG 8 z
+		ARG 10 count
+		ARG 11 xDist
+		ARG 13 yDist
+		ARG 15 zDist
 		ARG 17 speed
 	METHOD sendParticles (Lnet/minecraft/server/level/ServerPlayer;ZDDDLnet/minecraft/network/protocol/Packet;)Z
 		ARG 1 player
-		ARG 2 longDistance
-		ARG 3 posX
-		ARG 5 posY
-		ARG 7 posZ
+		ARG 2 overrideLimiter
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
 		ARG 9 packet
 	METHOD setChunkForced (IIZ)Z
 		ARG 1 chunkX
@@ -236,7 +232,7 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 chunk
 	METHOD tick (Ljava/util/function/BooleanSupplier;)V
 		COMMENT Runs a single tick for the world
-		ARG 1 hasTimeLeft
+		ARG 1 haveTime
 	METHOD tickBlock (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 pos
 		ARG 2 block
@@ -255,9 +251,9 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 ridingEntity
 		ARG 2 passengerEntity
 	METHOD tickPrecipitation (Lnet/minecraft/core/BlockPos;)V
-		ARG 1 blockPos
+		ARG 1 pos
 	METHOD tryAddFreshEntityWithPassengers (Lnet/minecraft/world/entity/Entity;)Z
-		COMMENT Attempts to summon an entity and it's passangers. They will only be summoned if all entities are unique and not already in queue to be summoned.
+		COMMENT Attempts to summon an entity and its passengers. They will only be summoned if all entities are unique and not already in queue to be summoned.
 		ARG 1 entity
 	METHOD unload (Lnet/minecraft/world/level/chunk/LevelChunk;)V
 		ARG 1 chunk

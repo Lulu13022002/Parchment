@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/monster/Phantom
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD canAttack (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z
 		ARG 1 level
 		ARG 2 entity
@@ -15,7 +15,7 @@ CLASS net/minecraft/world/entity/monster/Phantom
 		ARG 1 key
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setPhantomSize (I)V
 		ARG 1 phantomSize
 	METHOD shouldRenderAtSqrDistance (D)Z
@@ -33,7 +33,7 @@ CLASS net/minecraft/world/entity/monster/Phantom
 			ARG 2 mob
 	CLASS PhantomSweepAttackGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -58,7 +58,7 @@ CLASS net/minecraft/world/entity/monster/Phantom
 			COMMENT Update the Head and Body rendering angles
 	CLASS PhantomAttackPlayerTargetGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS PhantomCircleAroundAnchorGoal

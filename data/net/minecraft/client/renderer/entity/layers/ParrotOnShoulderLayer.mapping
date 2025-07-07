@@ -4,7 +4,7 @@ CLASS net/minecraft/client/renderer/entity/layers/ParrotOnShoulderLayer
 		ARG 2 modelSet
 	METHOD renderOnShoulder (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/client/renderer/entity/state/PlayerRenderState;Lnet/minecraft/world/entity/animal/Parrot$Variant;FFZ)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 renderState
 		ARG 5 variant

@@ -6,7 +6,7 @@ CLASS net/minecraft/world/item/component/CustomData
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 1 other
 	METHOD itemMatcher (Lnet/minecraft/core/component/DataComponentType;Lnet/minecraft/nbt/CompoundTag;)Ljava/util/function/Predicate;
-		ARG 0 componentType
+		ARG 0 component
 		ARG 1 tag
 	METHOD loadInto (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
@@ -23,7 +23,7 @@ CLASS net/minecraft/world/item/component/CustomData
 	METHOD read (Lcom/mojang/serialization/MapDecoder;)Lcom/mojang/serialization/DataResult;
 		ARG 1 decoder
 	METHOD set (Lnet/minecraft/core/component/DataComponentType;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 0 componentType
+		ARG 0 component
 		ARG 1 stack
 		ARG 2 tag
 	METHOD update (Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/MapEncoder;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;
@@ -33,6 +33,6 @@ CLASS net/minecraft/world/item/component/CustomData
 	METHOD update (Ljava/util/function/Consumer;)Lnet/minecraft/world/item/component/CustomData;
 		ARG 1 updater
 	METHOD update (Lnet/minecraft/core/component/DataComponentType;Lnet/minecraft/world/item/ItemStack;Ljava/util/function/Consumer;)V
-		ARG 0 componentType
+		ARG 0 component
 		ARG 1 stack
 		ARG 2 updater

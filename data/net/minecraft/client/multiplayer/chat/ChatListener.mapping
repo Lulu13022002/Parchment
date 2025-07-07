@@ -22,7 +22,7 @@ CLASS net/minecraft/client/multiplayer/chat/ChatListener
 		ARG 3 boundChatType
 	METHOD handleSystemMessage (Lnet/minecraft/network/chat/Component;Z)V
 		ARG 1 message
-		ARG 2 isOverlay
+		ARG 2 overlay
 	METHOD isSenderLocalPlayer (Ljava/util/UUID;)Z
 		ARG 1 sender
 	METHOD lambda$removeFromDelayedMessageQueue$0 (Lnet/minecraft/network/chat/MessageSignature;Lnet/minecraft/client/multiplayer/chat/ChatListener$Message;)Z
