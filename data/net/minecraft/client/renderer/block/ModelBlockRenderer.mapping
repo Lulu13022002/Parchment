@@ -95,7 +95,7 @@ CLASS net/minecraft/client/renderer/block/ModelBlockRenderer
 		ARG 5 poseStack
 		ARG 6 consumer
 		ARG 7 checkSides
-			COMMENT if {@code true}, only renders each side if {@link net.minecraft.world.level.block.Block#shouldRenderFace(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.BlockGetter, net.minecraft.core.BlockPos, net.minecraft.core.Direction, net.minecraft.core.BlockPos)} returns {@code true}
+			COMMENT if {@code true}, only renders each side if {@link net.minecraft.world.level.block.Block#shouldRenderFace} returns {@code true}
 		ARG 8 random
 		ARG 9 seed
 		ARG 11 packedOverlay
@@ -108,7 +108,7 @@ CLASS net/minecraft/client/renderer/block/ModelBlockRenderer
 		ARG 5 poseStack
 		ARG 6 consumer
 		ARG 7 checkSides
-			COMMENT if {@code true}, only renders each side if {@link net.minecraft.world.level.block.Block#shouldRenderFace(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.BlockGetter, net.minecraft.core.BlockPos, net.minecraft.core.Direction, net.minecraft.core.BlockPos)} returns {@code true}
+			COMMENT if {@code true}, only renders each side if {@link net.minecraft.world.level.block.Block#shouldRenderFace} returns {@code true}
 		ARG 8 random
 		ARG 9 seed
 		ARG 11 packedOverlay

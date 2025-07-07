@@ -49,5 +49,5 @@ CLASS net/minecraft/client/gui/screens/inventory/StructureBlockEditScreen
 		ARG 1 structureMode
 	CLASS 1
 		METHOD charTyped (CI)Z
-			ARG 1 codePoint
+			ARG 1 character
 			ARG 2 modifiers

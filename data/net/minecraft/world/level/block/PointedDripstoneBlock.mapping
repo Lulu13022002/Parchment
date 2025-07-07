@@ -122,8 +122,6 @@ CLASS net/minecraft/world/level/block/PointedDripstoneBlock
 		ARG 2 predState
 	METHOD lambda$findTip$4 (ZLnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 1 predState
-	METHOD lambda$getFluidAboveStalactite$10 (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/material/Fluid;
-		ARG 1 pos
 	METHOD lambda$spawnDripParticle$2 (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/material/Fluid;)V
 		ARG 3 fluid
 	METHOD maybeFillCauldron (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;F)V

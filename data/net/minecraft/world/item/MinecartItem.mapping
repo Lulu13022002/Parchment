@@ -3,7 +3,7 @@ CLASS net/minecraft/world/item/MinecartItem
 		ARG 1 type
 		ARG 2 properties
 	METHOD useOn (Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;
-		COMMENT Called when this item is used when targetting a Block
+		COMMENT Called when this item is used when targeting a Block
 		ARG 1 context
 	CLASS 1
 		METHOD execute (Lnet/minecraft/core/BlockSource;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;

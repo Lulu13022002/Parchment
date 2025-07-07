@@ -26,7 +26,5 @@ CLASS net/minecraft/world/entity/ai/behavior/ShufflingList
 				ARG 1 entry
 				ARG 2 ops
 				ARG 3 data
-			METHOD lambda$decode$0 (Lcom/mojang/serialization/Dynamic;Ljava/lang/Object;)Lnet/minecraft/world/entity/ai/behavior/ShufflingList$WeightedEntry;
-				ARG 1 data
 			METHOD lambda$decode$1 (Lcom/mojang/serialization/DynamicOps;Lnet/minecraft/world/entity/ai/behavior/ShufflingList$WeightedEntry;)Lcom/mojang/datafixers/util/Pair;
 				ARG 1 entry

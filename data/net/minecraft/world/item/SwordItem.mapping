@@ -13,7 +13,7 @@ CLASS net/minecraft/world/item/SwordItem
 		ARG 4 player
 	METHOD getDefaultAttributeModifiers (Lnet/minecraft/world/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap;
 		COMMENT Gets a map of item attribute modifiers, used by ItemSword to increase hit damage.
-		ARG 1 equipmentSlot
+		ARG 1 slot
 	METHOD getDestroySpeed (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;)F
 		ARG 1 stack
 		ARG 2 state
@@ -30,9 +30,9 @@ CLASS net/minecraft/world/item/SwordItem
 	METHOD lambda$mineBlock$1 (Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 0 contextEntity
 	METHOD mineBlock (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/LivingEntity;)Z
-		COMMENT Called when a Block is destroyed using this Item. Return true to trigger the "Use Item" statistic.
+		COMMENT Called when a Block is destroyed using this Item. Return {@code true} to trigger the "Used Item" statistic.
 		ARG 1 stack
 		ARG 2 level
 		ARG 3 state
 		ARG 4 pos
-		ARG 5 entityLiving
+		ARG 5 livingEntity

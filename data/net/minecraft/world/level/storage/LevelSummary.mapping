@@ -7,7 +7,7 @@ CLASS net/minecraft/world/level/storage/LevelSummary
 		ARG 5 locked
 		ARG 6 icon
 	METHOD getGameMode ()Lnet/minecraft/world/level/GameType;
-		COMMENT Gets the EnumGameType.
+		COMMENT Gets the GameType.
 	METHOD getLevelId ()Ljava/lang/String;
 		COMMENT return the file name
 	METHOD getLevelName ()Ljava/lang/String;

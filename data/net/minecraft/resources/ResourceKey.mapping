@@ -22,7 +22,7 @@ CLASS net/minecraft/resources/ResourceKey
 		ARG 0 registryName
 		ARG 1 location
 	METHOD createRegistryKey (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceKey;
-		COMMENT @return the created registry key. The registry name is set to {@code minecraft:root} and the location the specified {@code registryName}.
+		COMMENT @return the created registry key. The registry name is set to {@code minecraft:root} with the specified {@code location}.
 		ARG 0 location
 	METHOD elementKey (Lnet/minecraft/resources/ResourceKey;)Ljava/util/function/Function;
 		COMMENT @return a function that maps a {@link net.minecraft.resources.ResourceLocation} to an equivalent child {@code ResourceKey} of the specified {@code registryKey}.

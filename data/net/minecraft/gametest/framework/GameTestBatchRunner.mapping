@@ -3,7 +3,7 @@ CLASS net/minecraft/gametest/framework/GameTestBatchRunner
 		ARG 1 testBatches
 		ARG 2 pos
 		ARG 3 rotation
-		ARG 4 serverLevel
+		ARG 4 level
 		ARG 5 testTicker
 		ARG 6 testsPerRow
 	METHOD createStructuresForBatch (Ljava/util/Collection;)Ljava/util/Map;

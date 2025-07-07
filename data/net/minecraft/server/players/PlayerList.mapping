@@ -1,15 +1,14 @@
 CLASS net/minecraft/server/players/PlayerList
 	FIELD playersByUUID Ljava/util/Map;
-		COMMENT A map containing the key-value pairs for UUIDs and their EntityPlayerMP objects.
+		COMMENT A map containing the key-value pairs for UUIDs and their ServerPlayer objects.
 	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/core/RegistryAccess$Frozen;Lnet/minecraft/world/level/storage/PlayerDataStorage;I)V
 		ARG 1 server
-		ARG 2 frozen
+		ARG 2 registryHolder
 		ARG 3 playerIo
 		ARG 4 maxPlayers
 	METHOD addWorldborderListener (Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 level
 	METHOD broadcast (Lnet/minecraft/world/entity/player/Player;DDDDLnet/minecraft/resources/ResourceKey;Lnet/minecraft/network/protocol/Packet;)V
-		COMMENT params: srcPlayer,x,y,z,r,dimension. The packet is not sent to the srcPlayer, but all other players within the search radius
 		ARG 1 except
 		ARG 2 x
 		ARG 4 y
@@ -47,7 +46,7 @@ CLASS net/minecraft/server/players/PlayerList
 	METHOD getMaxPlayers ()I
 		COMMENT Returns the maximum number of players allowed on the server.
 	METHOD getPlayer (Ljava/util/UUID;)Lnet/minecraft/server/level/ServerPlayer;
-		COMMENT Get's the EntityPlayerMP object representing the player with the UUID.
+		COMMENT Gets the ServerPlayer object representing the player with the UUID.
 		ARG 1 playerUUID
 	METHOD getPlayerAdvancements (Lnet/minecraft/server/level/ServerPlayer;)Lnet/minecraft/server/PlayerAdvancements;
 		ARG 1 player
@@ -89,12 +88,12 @@ CLASS net/minecraft/server/players/PlayerList
 		ARG 1 player
 		ARG 2 keepEverything
 	METHOD save (Lnet/minecraft/server/level/ServerPlayer;)V
-		COMMENT also stores the NBTTags if this is an intergratedPlayerList
+		COMMENT also stores the tags if this is an IntegratedPlayerList
 		ARG 1 player
 	METHOD saveAll ()V
 		COMMENT Saves all of the players' current states.
 	METHOD sendAllPlayerInfo (Lnet/minecraft/server/level/ServerPlayer;)V
-		COMMENT sends the players inventory to himself
+		COMMENT sends the player's inventory to himself
 		ARG 1 player
 	METHOD sendLevelInfo (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/server/level/ServerLevel;)V
 		COMMENT Updates the time and weather for the given player to those of the given world
@@ -114,8 +113,6 @@ CLASS net/minecraft/server/players/PlayerList
 		ARG 1 whitelistEnabled
 	METHOD setViewDistance (I)V
 		ARG 1 viewDistance
-	METHOD tick ()V
-		COMMENT self explanitory
 	METHOD updateEntireScoreboard (Lnet/minecraft/server/ServerScoreboard;Lnet/minecraft/server/level/ServerPlayer;)V
 		ARG 1 scoreboard
 		ARG 2 player

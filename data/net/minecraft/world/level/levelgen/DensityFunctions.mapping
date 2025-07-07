@@ -25,7 +25,7 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 	METHOD interpolated (Lnet/minecraft/world/level/levelgen/DensityFunction;)Lnet/minecraft/world/level/levelgen/DensityFunction;
 		ARG 0 wrapped
 	METHOD lambda$doubleFunctionArgumentCodec$2 (Ljava/util/function/Function;Ljava/util/function/Function;Ljava/util/function/BiFunction;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 3 codec
+		ARG 3 instance
 	METHOD lambda$static$0 (Lcom/mojang/datafixers/util/Either;)Lnet/minecraft/world/level/levelgen/DensityFunction;
 		ARG 0 function
 	METHOD lambda$static$1 (Lnet/minecraft/world/level/levelgen/DensityFunction;)Lcom/mojang/datafixers/util/Either;
@@ -119,14 +119,14 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 		ARG 4 toValue
 	CLASS Clamp
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 params
+			ARG 0 instance
 	CLASS Noise
 		METHOD createUnseeded (Lnet/minecraft/core/Holder;DD)Lnet/minecraft/world/level/levelgen/DensityFunctions$Noise;
 			ARG 0 noiseData
 			ARG 1 xzScale
 			ARG 3 yScale
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 	CLASS Shift
 		METHOD lambda$static$0 (Lnet/minecraft/core/Holder;)Lnet/minecraft/world/level/levelgen/DensityFunctions$Shift;
 			ARG 0 params
@@ -161,7 +161,7 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 		METHOD lambda$mapAll$1 (Lnet/minecraft/world/level/levelgen/DensityFunction$Visitor;Lnet/minecraft/util/ToFloatFunction;)Lnet/minecraft/util/ToFloatFunction;
 			ARG 1 shaper
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 	CLASS ShiftNoise
 		METHOD compute (DDD)D
 			ARG 1 x
@@ -171,7 +171,7 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 			ARG 1 offsetNoise
 	CLASS RangeChoice
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 	CLASS ShiftedNoise
 		METHOD createUnseeded (Lnet/minecraft/world/level/levelgen/DensityFunction;Lnet/minecraft/world/level/levelgen/DensityFunction;Lnet/minecraft/world/level/levelgen/DensityFunction;DDLnet/minecraft/core/Holder;)Lnet/minecraft/world/level/levelgen/DensityFunctions$ShiftedNoise;
 			ARG 0 shiftX
@@ -181,20 +181,20 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 			ARG 5 yScale
 			ARG 7 noiseData
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 	CLASS PureTransformer
 		METHOD transform (D)D
 			ARG 1 value
 	CLASS YClampedGradient
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 	CLASS WeirdScaledSampler
 		METHOD createUnseeded (Lnet/minecraft/world/level/levelgen/DensityFunction;Lnet/minecraft/core/Holder;Lnet/minecraft/world/level/levelgen/DensityFunctions$WeirdScaledSampler$RarityValueMapper;)Lnet/minecraft/world/level/levelgen/DensityFunctions$WeirdScaledSampler;
 			ARG 0 input
 			ARG 1 noiseData
 			ARG 2 rarityValueMapper
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codc
+			ARG 0 instance
 		CLASS RarityValueMapper
 			METHOD <init> (Ljava/lang/String;ILjava/lang/String;Lit/unimi/dsi/fastutil/doubles/Double2DoubleFunction;D)V
 				ARG 3 name
@@ -211,7 +211,7 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 			ARG 4 minValue
 			ARG 6 maxValue
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 		CLASS Spline
 			METHOD apply (Lnet/minecraft/world/level/biome/TerrainShaper;Lnet/minecraft/world/level/biome/TerrainShaper$Point;)F
 				ARG 1 shaper

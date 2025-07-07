@@ -31,7 +31,7 @@ CLASS net/minecraft/world/level/biome/TerrainShaper
 	METHOD lambda$static$0 (Lnet/minecraft/world/level/biome/TerrainShaper;)Lnet/minecraft/util/CubicSpline;
 		ARG 0 shaper
 	METHOD lambda$static$1 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 0 codec
+		ARG 0 instance
 	METHOD lambda$static$2 (Ljava/lang/Float;)F
 		ARG 0 value
 	METHOD makePoint (FFF)Lnet/minecraft/world/level/biome/TerrainShaper$Point;

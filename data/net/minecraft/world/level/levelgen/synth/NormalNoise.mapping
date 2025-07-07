@@ -4,14 +4,14 @@ CLASS net/minecraft/world/level/levelgen/synth/NormalNoise
 	METHOD <init> (Lnet/minecraft/world/level/levelgen/RandomSource;Lnet/minecraft/world/level/levelgen/synth/NormalNoise$NoiseParameters;Z)V
 		ARG 1 randomSource
 		ARG 2 parameters
-		ARG 3 useLegacyNetherBiome
+		ARG 3 useNewFactory
 	METHOD create (Lnet/minecraft/world/level/levelgen/RandomSource;I[D)Lnet/minecraft/world/level/levelgen/synth/NormalNoise;
 		ARG 0 randomSource
 		ARG 1 octaves
 		ARG 2 amplitudes
 	METHOD create (Lnet/minecraft/world/level/levelgen/RandomSource;Lnet/minecraft/world/level/levelgen/synth/NormalNoise$NoiseParameters;)Lnet/minecraft/world/level/levelgen/synth/NormalNoise;
 		ARG 0 randomSource
-		ARG 1 prameters
+		ARG 1 parameters
 	METHOD createLegacyNetherBiome (Lnet/minecraft/world/level/levelgen/RandomSource;Lnet/minecraft/world/level/levelgen/synth/NormalNoise$NoiseParameters;)Lnet/minecraft/world/level/levelgen/synth/NormalNoise;
 		ARG 0 randomSource
 		ARG 1 parameters

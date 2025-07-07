@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/item/EnchantedBookItem
 	METHOD addEnchantment (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/enchantment/EnchantmentInstance;)V
-		COMMENT Adds an stored enchantment to an enchanted book ItemStack
+		COMMENT Adds a stored enchantment to an enchanted book ItemStack
 		ARG 0 stack
 		ARG 1 instance
 	METHOD appendHoverText (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V
@@ -13,16 +13,16 @@ CLASS net/minecraft/world/item/EnchantedBookItem
 		COMMENT Returns the ItemStack of an enchanted version of this item.
 		ARG 0 instance
 	METHOD fillItemCategory (Lnet/minecraft/world/item/CreativeModeTab;Lnet/minecraft/core/NonNullList;)V
-		COMMENT returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+		COMMENT Adds some {@code ItemStacks} to the given list for display in the creative tab.
 		ARG 1 group
 		ARG 2 items
 	METHOD getEnchantments (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/nbt/ListTag;
 		ARG 0 enchantedBookStack
 	METHOD isEnchantable (Lnet/minecraft/world/item/ItemStack;)Z
-		COMMENT Checks isDamagable and if it cannot be stacked
+		COMMENT Checks canBeDepleted and if it cannot be stacked
 		ARG 1 stack
 	METHOD isFoil (Lnet/minecraft/world/item/ItemStack;)Z
-		COMMENT Returns true if this item has an enchantment glint. By default, this returns <code>stack.isItemEnchanted()</code>, but other items can override it (for instance, written books always return true).
+		COMMENT Returns {@code true} if this item has an enchantment glint. By default, this returns {@code stack.isEnchanted()}, but other items can override it (for instance, written books always return {@code true}).
 		COMMENT
-		COMMENT Note that if you override this method, you generally want to also call the super version (on {@link Item}) to get the glint for enchanted items. Of course, that is unnecessary if the overwritten version always returns true.
+		COMMENT Note that if you override this method, you generally want to also call the super version (on {@link Item}) to get the glint for enchanted items. Of course, that is unnecessary if the overwritten version always returns {@code true}.
 		ARG 1 stack

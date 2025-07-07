@@ -35,9 +35,9 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 		ARG 3 worldGenSettingsLifecycle
 	METHOD createTag (Lnet/minecraft/core/RegistryAccess;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 1 registries
-		ARG 2 hostPlayerNBT
+		ARG 2 singlePlayerTag
 	METHOD getAllowCommands ()Z
-		COMMENT Returns true if commands are allowed on this World.
+		COMMENT Returns {@code true} if commands are allowed on this Level.
 	METHOD getDayTime ()J
 		COMMENT Get current world time
 	METHOD getGameRules ()Lnet/minecraft/world/level/GameRules;
@@ -57,18 +57,18 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 	METHOD getZSpawn ()I
 		COMMENT Returns the z spawn position
 	METHOD isHardcore ()Z
-		COMMENT Returns true if hardcore mode is enabled, otherwise false
+		COMMENT Returns {@code true} if hardcore mode is enabled, {@code false} otherwise
 	METHOD isInitialized ()Z
-		COMMENT Returns true if the World is initialized.
+		COMMENT Returns {@code true} if the world is initialized.
 	METHOD isRaining ()Z
-		COMMENT Returns true if it is raining, false otherwise.
+		COMMENT Returns {@code true} if it is raining, {@code false} otherwise.
 	METHOD isThundering ()Z
-		COMMENT Returns true if it is thundering, false otherwise.
+		COMMENT Returns {@code true} if it is thundering, {@code false} otherwise.
 	METHOD parse (Lcom/mojang/serialization/Dynamic;Lcom/mojang/datafixers/DataFixer;ILnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/world/level/storage/LevelVersion;Lnet/minecraft/world/level/levelgen/WorldGenSettings;Lcom/mojang/serialization/Lifecycle;)Lnet/minecraft/world/level/storage/PrimaryLevelData;
 		ARG 0 dynamic
 		ARG 1 dataFixer
 		ARG 2 version
-		ARG 3 playerNBT
+		ARG 3 singlePlayerTag
 		ARG 4 levelSettings
 		ARG 5 versionData
 		ARG 6 generatorSettings
@@ -76,7 +76,7 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 	METHOD setClearWeatherTime (I)V
 		ARG 1 time
 	METHOD setCustomBossEvents (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD setDataPackConfig (Lnet/minecraft/world/level/DataPackConfig;)V
 		ARG 1 codec
 	METHOD setDayTime (J)V
@@ -87,13 +87,13 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 	METHOD setDifficultyLocked (Z)V
 		ARG 1 locked
 	METHOD setEndDragonFightData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD setGameTime (J)V
 		ARG 1 time
 	METHOD setGameType (Lnet/minecraft/world/level/GameType;)V
 		ARG 1 type
 	METHOD setInitialized (Z)V
-		COMMENT Sets the initialization status of the World.
+		COMMENT Sets the initialization status of the world.
 		ARG 1 initialized
 	METHOD setModdedInfo (Ljava/lang/String;Z)V
 		ARG 1 name
@@ -111,8 +111,8 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 		ARG 1 angle
 	METHOD setTagData (Lnet/minecraft/core/RegistryAccess;Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/CompoundTag;)V
 		ARG 1 registry
-		ARG 2 nbt
-		ARG 3 playerNBT
+		ARG 2 tag
+		ARG 3 singlePlayerTag
 	METHOD setThunderTime (I)V
 		COMMENT Defines the number of ticks until next thunderbolt.
 		ARG 1 time
@@ -126,7 +126,7 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 	METHOD setWanderingTraderSpawnDelay (I)V
 		ARG 1 delay
 	METHOD setWorldBorder (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 serializer
+		ARG 1 worldBorder
 	METHOD setXSpawn (I)V
 		COMMENT Set the x spawn position to the passed in value
 		ARG 1 x

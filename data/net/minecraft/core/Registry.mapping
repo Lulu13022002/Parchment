@@ -9,7 +9,7 @@ CLASS net/minecraft/core/Registry
 	METHOD containsKey (Lnet/minecraft/resources/ResourceKey;)Z
 		ARG 1 key
 	METHOD containsKey (Lnet/minecraft/resources/ResourceLocation;)Z
-		ARG 1 name
+		ARG 1 key
 	METHOD createIntrusiveHolder (Ljava/lang/Object;)Lnet/minecraft/core/Holder$Reference;
 		ARG 1 value
 	METHOD createRegistryKey (Ljava/lang/String;)Lnet/minecraft/resources/ResourceKey;
@@ -17,7 +17,7 @@ CLASS net/minecraft/core/Registry
 	METHOD get (Lnet/minecraft/resources/ResourceKey;)Ljava/lang/Object;
 		ARG 1 key
 	METHOD get (Lnet/minecraft/resources/ResourceLocation;)Ljava/lang/Object;
-		ARG 1 name
+		ARG 1 key
 	METHOD getHolder (I)Ljava/util/Optional;
 		ARG 1 id
 	METHOD getHolder (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;
@@ -30,7 +30,7 @@ CLASS net/minecraft/core/Registry
 	METHOD getOptional (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;
 		ARG 1 registryKey
 	METHOD getOptional (Lnet/minecraft/resources/ResourceLocation;)Ljava/util/Optional;
-		ARG 1 name
+		ARG 1 key
 	METHOD getOrCreateHolder (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/core/Holder;
 		ARG 1 key
 	METHOD getOrCreateTag (Lnet/minecraft/tags/TagKey;)Lnet/minecraft/core/HolderSet$Named;
@@ -48,7 +48,7 @@ CLASS net/minecraft/core/Registry
 	METHOD internalRegister (Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/core/WritableRegistry;Lnet/minecraft/core/Registry$RegistryBootstrap;Lcom/mojang/serialization/Lifecycle;)Lnet/minecraft/core/WritableRegistry;
 		ARG 0 registryKey
 		ARG 1 registry
-		ARG 2 loadaer
+		ARG 2 loader
 		ARG 3 lifecycle
 	METHOD isKnownTagName (Lnet/minecraft/tags/TagKey;)Z
 		ARG 1 key
@@ -71,17 +71,17 @@ CLASS net/minecraft/core/Registry
 		ARG 2 value
 	METHOD register (Lnet/minecraft/core/Registry;Lnet/minecraft/resources/ResourceLocation;Ljava/lang/Object;)Ljava/lang/Object;
 		ARG 0 registry
-		ARG 1 name
+		ARG 1 key
 		ARG 2 value
 	METHOD registerDefaulted (Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;Lcom/mojang/serialization/Lifecycle;Ljava/util/function/Function;Lnet/minecraft/core/Registry$RegistryBootstrap;)Lnet/minecraft/core/DefaultedRegistry;
-		ARG 0 key
-		ARG 1 defaultName
+		ARG 0 registryKey
+		ARG 1 defaultValueName
 		ARG 2 elementsLifecycle
 		ARG 3 customHolderProvider
 	METHOD registerDefaulted (Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;Lcom/mojang/serialization/Lifecycle;Lnet/minecraft/core/Registry$RegistryBootstrap;)Lnet/minecraft/core/DefaultedRegistry;
 		ARG 0 registryKey
 		ARG 1 defaultValueName
-		ARG 2 lifecycle
+		ARG 2 elementsLifecycle
 		ARG 3 loader
 	METHOD registerDefaulted (Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/core/Registry$RegistryBootstrap;)Lnet/minecraft/core/DefaultedRegistry;
 		ARG 0 registryKey
@@ -97,7 +97,7 @@ CLASS net/minecraft/core/Registry
 		ARG 2 name
 		ARG 3 value
 	METHOD registerSimple (Lnet/minecraft/resources/ResourceKey;Lcom/mojang/serialization/Lifecycle;Ljava/util/function/Function;Lnet/minecraft/core/Registry$RegistryBootstrap;)Lnet/minecraft/core/Registry;
-		ARG 0 key
+		ARG 0 registryKey
 		ARG 1 lifecycle
 		ARG 2 customHolderProvider
 	METHOD registerSimple (Lnet/minecraft/resources/ResourceKey;Lcom/mojang/serialization/Lifecycle;Lnet/minecraft/core/Registry$RegistryBootstrap;)Lnet/minecraft/core/Registry;

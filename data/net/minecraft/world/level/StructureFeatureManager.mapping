@@ -9,7 +9,7 @@ CLASS net/minecraft/world/level/StructureFeatureManager
 		ARG 1 sectionPos
 		ARG 2 structure
 		ARG 3 chunkValue
-		ARG 5 reader
+		ARG 5 access
 	METHOD checkStructurePresence (Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/levelgen/feature/ConfiguredStructureFeature;Z)Lnet/minecraft/world/level/levelgen/structure/StructureCheckResult;
 		ARG 1 pos
 		ARG 2 configuredFeature
@@ -25,7 +25,7 @@ CLASS net/minecraft/world/level/StructureFeatureManager
 	METHOD getStartForFeature (Lnet/minecraft/core/SectionPos;Lnet/minecraft/world/level/levelgen/feature/ConfiguredStructureFeature;Lnet/minecraft/world/level/chunk/FeatureAccess;)Lnet/minecraft/world/level/levelgen/structure/StructureStart;
 		ARG 1 sectionPos
 		ARG 2 structure
-		ARG 3 reader
+		ARG 3 access
 	METHOD getStructureAt (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/feature/ConfiguredStructureFeature;)Lnet/minecraft/world/level/levelgen/structure/StructureStart;
 		ARG 1 pos
 		ARG 2 structure
@@ -41,7 +41,7 @@ CLASS net/minecraft/world/level/StructureFeatureManager
 		ARG 1 sectionPos
 		ARG 2 structure
 		ARG 3 start
-		ARG 4 reader
+		ARG 4 access
 	METHOD startsForFeature (Lnet/minecraft/core/SectionPos;Ljava/util/function/Predicate;)Ljava/util/List;
 		ARG 1 sectionPos
 		ARG 2 structurePredicate

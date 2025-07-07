@@ -48,7 +48,7 @@ CLASS net/minecraft/world/level/chunk/ChunkAccess
 		ARG 1 startY
 		ARG 2 endY
 	METHOD lambda$addReferenceForFeature$1 (Lnet/minecraft/world/level/levelgen/feature/ConfiguredStructureFeature;)Lit/unimi/dsi/fastutil/longs/LongSet;
-		ARG 0 refences
+		ARG 0 references
 	METHOD lambda$getOrCreateHeightmapUnprimed$0 (Lnet/minecraft/world/level/levelgen/Heightmap$Types;)Lnet/minecraft/world/level/levelgen/Heightmap;
 		ARG 1 absentType
 	METHOD markPosForPostprocessing (Lnet/minecraft/core/BlockPos;)V
@@ -70,7 +70,7 @@ CLASS net/minecraft/world/level/chunk/ChunkAccess
 	METHOD setBlockState (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)Lnet/minecraft/world/level/block/state/BlockState;
 		ARG 1 pos
 		ARG 2 state
-		ARG 3 isMoving
+		ARG 3 movedByPiston
 	METHOD setHeightmap (Lnet/minecraft/world/level/levelgen/Heightmap$Types;[J)V
 		ARG 1 type
 		ARG 2 data

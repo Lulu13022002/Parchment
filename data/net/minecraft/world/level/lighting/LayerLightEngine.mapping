@@ -1,10 +1,10 @@
 CLASS net/minecraft/world/level/lighting/LayerLightEngine
 	METHOD <init> (Lnet/minecraft/world/level/chunk/LightChunkGetter;Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/world/level/lighting/LayerLightSectionStorage;)V
 		ARG 1 chunkSource
-		ARG 2 layer
+		ARG 2 lightLayer
 		ARG 3 storage
 	METHOD checkNode (J)V
-		ARG 1 levelPos
+		ARG 1 pos
 	METHOD computeLevelFromNeighbor (JJI)I
 		COMMENT Returns level propagated from start position with specified level to the neighboring end position.
 		ARG 1 startPos
@@ -24,7 +24,7 @@ CLASS net/minecraft/world/level/lighting/LayerLightEngine
 		ARG 1 sectionPos
 	METHOD getLevel (Lnet/minecraft/world/level/chunk/DataLayer;J)I
 		ARG 1 array
-		ARG 2 levelPos
+		ARG 2 pos
 	METHOD getLightBlockInto (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;I)I
 		ARG 0 level
 		ARG 1 state
@@ -34,10 +34,10 @@ CLASS net/minecraft/world/level/lighting/LayerLightEngine
 		ARG 5 dir
 		ARG 6 defaultValue
 	METHOD getLightValue (Lnet/minecraft/core/BlockPos;)I
-		ARG 1 levelPos
+		ARG 1 pos
 	METHOD getShape (Lnet/minecraft/world/level/block/state/BlockState;JLnet/minecraft/core/Direction;)Lnet/minecraft/world/phys/shapes/VoxelShape;
-		ARG 1 blockState
-		ARG 2 levelPos
+		ARG 1 state
+		ARG 2 pos
 		ARG 4 direction
 	METHOD getStateAndOpacity (JLorg/apache/commons/lang3/mutable/MutableInt;)Lnet/minecraft/world/level/block/state/BlockState;
 		ARG 1 pos

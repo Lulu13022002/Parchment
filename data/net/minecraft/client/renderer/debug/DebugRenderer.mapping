@@ -63,7 +63,7 @@ CLASS net/minecraft/client/renderer/debug/DebugRenderer
 		ARG 8 scale
 		ARG 9 center
 		ARG 10 xOffset
-		ARG 11 transparent
+		ARG 11 seeThrough
 	METHOD renderFloatingText (Ljava/lang/String;IIII)V
 		ARG 0 text
 		ARG 1 x

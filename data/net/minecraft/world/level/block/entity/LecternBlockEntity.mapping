@@ -3,7 +3,7 @@ CLASS net/minecraft/world/level/block/entity/LecternBlockEntity
 		ARG 1 pos
 		ARG 2 blockState
 	METHOD createCommandSourceStack (Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/commands/CommandSourceStack;
-		COMMENT Creates a CommandSourceStack for resolving the contents of a book. If the player is null, a CommandSourceStack with the generic name {@code "Lectern"} is used.
+		COMMENT Creates a CommandSourceStack for resolving the contents of a book. If the player is {@code null}, a CommandSourceStack with the generic name {@code "Lectern"} is used.
 		ARG 1 player
 	METHOD hasBook ()Z
 		COMMENT @return whether the ItemStack in this lectern is a book or written book

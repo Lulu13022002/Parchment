@@ -21,7 +21,7 @@ CLASS net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator
 	METHOD doCreateBiomes (Lnet/minecraft/world/level/levelgen/blending/Blender;Lnet/minecraft/world/level/StructureFeatureManager;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
 		ARG 1 blender
 		ARG 2 manager
-		ARG 3 access
+		ARG 3 chunk
 	METHOD doFill (Lnet/minecraft/world/level/levelgen/blending/Blender;Lnet/minecraft/world/level/StructureFeatureManager;Lnet/minecraft/world/level/chunk/ChunkAccess;II)Lnet/minecraft/world/level/chunk/ChunkAccess;
 		ARG 1 blender
 		ARG 2 structureFeatherManager
@@ -52,14 +52,14 @@ CLASS net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator
 	METHOD lambda$static$3 (Lnet/minecraft/world/level/levelgen/NoiseBasedChunkGenerator;)Lnet/minecraft/core/Holder;
 		ARG 0 generator
 	METHOD lambda$static$4 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 0 codec
+		ARG 0 instance
 	METHOD stable (JLnet/minecraft/resources/ResourceKey;)Z
 		ARG 1 seed
 		ARG 3 settingsKey
 	METHOD topMaterial (Lnet/minecraft/world/level/levelgen/carver/CarvingContext;Ljava/util/function/Function;Lnet/minecraft/world/level/chunk/ChunkAccess;Lnet/minecraft/world/level/levelgen/NoiseChunk;Lnet/minecraft/core/BlockPos;Z)Ljava/util/Optional;
 		ARG 1 context
 		ARG 2 biomeMapper
-		ARG 3 access
-		ARG 4 chunk
+		ARG 3 chunk
+		ARG 4 noiseChunk
 		ARG 5 pos
 		ARG 6 hasFluid

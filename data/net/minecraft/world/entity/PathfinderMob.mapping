@@ -8,7 +8,7 @@ CLASS net/minecraft/world/entity/PathfinderMob
 		ARG 1 pos
 		ARG 2 level
 	METHOD isPathFinding ()Z
-		COMMENT if the entity got a PathEntity it returns true, else false
+		COMMENT if the entity got a Path it returns {@code true}, else {@code false}
 	METHOD onLeashDistance (F)V
 		ARG 1 distance
 	METHOD tickLeash ()V

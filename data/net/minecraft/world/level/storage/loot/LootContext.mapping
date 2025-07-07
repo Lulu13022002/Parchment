@@ -13,7 +13,7 @@ CLASS net/minecraft/world/level/storage/loot/LootContext
 		COMMENT Add the dynamic drops for the given dynamic drops name to the given consumer.
 		COMMENT If no dynamic drops provider for the given name has been registered to this LootContext, nothing is generated.
 		COMMENT
-		COMMENT @see DynamicDrops
+		COMMENT @see LootContext.DynamicDrop
 		ARG 1 name
 		ARG 2 consumer
 	METHOD addVisitedCondition (Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)Z
@@ -25,7 +25,7 @@ CLASS net/minecraft/world/level/storage/loot/LootContext
 	METHOD getLootTable (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/level/storage/loot/LootTable;
 		ARG 1 tableId
 	METHOD getLuck ()F
-		COMMENT The luck value for this loot context. This is usually just the player's {@linkplain Attributes#LUCK luck value}, however it may be modified depending on the context of the looting.
+		COMMENT The luck value for this loot context. This is usually just the player's {@linkplain net.minecraft.world.entity.ai.attributes.Attributes#LUCK luck value}, however it may be modified depending on the context of the looting.
 		COMMENT When fishing for example it is increased based on the Luck of the Sea enchantment.
 	METHOD getParam (Lnet/minecraft/world/level/storage/loot/parameters/LootContextParam;)Ljava/lang/Object;
 		COMMENT Get the value of the given parameter.
@@ -33,7 +33,7 @@ CLASS net/minecraft/world/level/storage/loot/LootContext
 		COMMENT @throws NoSuchElementException if the parameter is not present in this context
 		ARG 1 param
 	METHOD getParamOrNull (Lnet/minecraft/world/level/storage/loot/parameters/LootContextParam;)Ljava/lang/Object;
-		COMMENT Get the value of the given parameter if it is present in this context, null otherwise.
+		COMMENT Get the value of the given parameter if it is present in this context, {@code null} otherwise.
 		ARG 1 parameter
 	METHOD hasParam (Lnet/minecraft/world/level/storage/loot/parameters/LootContextParam;)Z
 		COMMENT Check whether the given parameter is present in this context.
@@ -54,7 +54,7 @@ CLASS net/minecraft/world/level/storage/loot/LootContext
 		METHOD withDynamicDrop (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/level/storage/loot/LootContext$DynamicDrop;)Lnet/minecraft/world/level/storage/loot/LootContext$Builder;
 			COMMENT Registers a DynamicDrop to the LootContext.
 			COMMENT
-			COMMENT @see LootContext.DynamicDrop
+			COMMENT @see DynamicDrop
 			ARG 1 dynamicDropId
 			ARG 2 dynamicDrop
 		METHOD withLuck (F)Lnet/minecraft/world/level/storage/loot/LootContext$Builder;
@@ -77,7 +77,7 @@ CLASS net/minecraft/world/level/storage/loot/LootContext
 		COMMENT An example of this are shulker boxes, which provide their contents as a dynamic drop source.
 		COMMENT Dynamic drops are registered with a name using {@link LootContext.Builder#withDynamicDrop}.
 		COMMENT
-		COMMENT These dynamic drops can then be referenced from a loot table using {@link DynamicLoot}.
+		COMMENT These dynamic drops can then be referenced from a loot table using {@link DynamicDrop}.
 		METHOD add (Lnet/minecraft/world/level/storage/loot/LootContext;Ljava/util/function/Consumer;)V
 			ARG 1 lootContext
 			ARG 2 stackConsumer

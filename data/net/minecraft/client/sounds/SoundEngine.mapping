@@ -2,19 +2,19 @@ CLASS net/minecraft/client/sounds/SoundEngine
 	FIELD MARKER Lorg/slf4j/Marker;
 		COMMENT The marker used for logging
 	FIELD loaded Z
-		COMMENT Set to true when the SoundManager has been initialised.
+		COMMENT Set to {@code true} when the SoundManager has been initialised.
 	FIELD options Lnet/minecraft/client/Options;
-		COMMENT Reference to the GameSettings object.
+		COMMENT Reference to the Options object.
 	FIELD queuedSounds Ljava/util/Map;
-		COMMENT Contains sounds to play in n ticks. Type: HashMap<ISound, Integer>
+		COMMENT Contains sounds to play in n ticks.
 	FIELD soundDeleteTime Ljava/util/Map;
-		COMMENT The future time in which to stop this sound. Type: HashMap<String, Integer>
+		COMMENT The future time in which to stop this sound.
 	FIELD soundManager Lnet/minecraft/client/sounds/SoundManager;
 		COMMENT A reference to the sound handler.
 	FIELD tickCount I
 		COMMENT A counter for how long the sound manager has been running
 	FIELD tickingSounds Ljava/util/List;
-		COMMENT A subset of playingSounds, this contains only ITickableSounds
+		COMMENT A subset of {@link #queuedSounds}, this contains only {@link TickableSoundInstance}
 	METHOD <init> (Lnet/minecraft/client/sounds/SoundManager;Lnet/minecraft/client/Options;Lnet/minecraft/server/packs/resources/ResourceManager;)V
 		ARG 1 soundManager
 		ARG 2 options
@@ -28,14 +28,14 @@ CLASS net/minecraft/client/sounds/SoundEngine
 	METHOD destroy ()V
 		COMMENT Cleans up the Sound System
 	METHOD getVolume (Lnet/minecraft/sounds/SoundSource;)F
-		ARG 1 category
+		ARG 1 source
 	METHOD isActive (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z
 		ARG 1 sound
 	METHOD lambda$updateCategoryVolume$1 (Lnet/minecraft/client/resources/sounds/SoundInstance;Lnet/minecraft/client/sounds/ChannelAccess$ChannelHandle;)V
 		ARG 1 instance
 		ARG 2 source
 	METHOD loadLibrary ()V
-		COMMENT Tries to add the paulscode library and the relevant codecs. If it fails, the master volume  will be set to zero.
+		COMMENT Tries to add the paulscode library and the relevant codecs. If it fails, the master volume will be set to zero.
 	METHOD pause ()V
 		COMMENT Pauses all currently playing sounds
 	METHOD play (Lnet/minecraft/client/resources/sounds/SoundInstance;)V
@@ -53,7 +53,7 @@ CLASS net/minecraft/client/sounds/SoundEngine
 	METHOD requiresManualLooping (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z
 		ARG 0 sound
 	METHOD resume ()V
-		COMMENT Resumes playing all currently playing sounds (after pauseAllSounds)
+		COMMENT Resumes playing all currently playing sounds (after pause)
 	METHOD shouldLoopAutomatically (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z
 		ARG 0 sound
 	METHOD shouldLoopManually (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z
@@ -62,7 +62,7 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		ARG 1 sound
 	METHOD stop (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/sounds/SoundSource;)V
 		ARG 1 soundName
-		ARG 2 category
+		ARG 2 source
 	METHOD stopAll ()V
 		COMMENT Stops all currently playing sounds
 	METHOD tick (Z)V
@@ -71,4 +71,4 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		ARG 1 category
 		ARG 2 volume
 	METHOD updateSource (Lnet/minecraft/client/Camera;)V
-		ARG 1 renderInfo
+		ARG 1 camera

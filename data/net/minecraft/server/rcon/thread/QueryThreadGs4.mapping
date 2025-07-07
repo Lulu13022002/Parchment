@@ -13,7 +13,7 @@ CLASS net/minecraft/server/rcon/thread/QueryThreadGs4
 	METHOD initSocket ()Z
 		COMMENT Initializes the query system by binding it to a port
 	METHOD processPacket (Ljava/net/DatagramPacket;)Z
-		COMMENT Parses an incoming DatagramPacket, returning true if the packet was valid
+		COMMENT Parses an incoming DatagramPacket, returning {@code true} if the packet was valid
 		ARG 1 requestPacket
 	METHOD pruneChallenges ()V
 		COMMENT Removes all clients whose auth is no longer valid
@@ -28,13 +28,13 @@ CLASS net/minecraft/server/rcon/thread/QueryThreadGs4
 		ARG 1 data
 		ARG 2 requestPacket
 	METHOD validChallenge (Ljava/net/DatagramPacket;)Ljava/lang/Boolean;
-		COMMENT Returns true if the client has a valid auth, otherwise false
+		COMMENT Returns {@code true} if the client has a valid auth, otherwise {@code false}
 		ARG 1 requestPacket
 	CLASS RequestChallenge
 		METHOD <init> (Ljava/net/DatagramPacket;)V
 			ARG 1 datagramPacket
 		METHOD before (J)Ljava/lang/Boolean;
-			COMMENT Returns true if the auth's creation timestamp is less than the given time, otherwise false
+			COMMENT Returns {@code true} if the auth's creation timestamp is less than the given time, otherwise {@code false}
 			ARG 1 currentTime
 		METHOD getChallenge ()I
 			COMMENT Returns the random challenge number assigned to this auth

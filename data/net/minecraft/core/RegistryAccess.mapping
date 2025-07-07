@@ -33,7 +33,7 @@ CLASS net/minecraft/core/RegistryAccess
 		ARG 3 networkCodec
 	METHOD registry (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;
 		COMMENT Get the registry owned by this registry access by the given key. If it doesn't exist, the default registry of registries is queried instead, which contains static registries such as blocks.
-		COMMENT The returned registry can not gaurentee that it is writable here, so the return type is widened to {@code Registry<E>} instead.
+		COMMENT The returned registry can not guarantee that it is writable here, so the return type is widened to {@code Registry<E>} instead.
 		ARG 1 registryKey
 	METHOD registryOrThrow (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/core/Registry;
 		COMMENT A variant of {@link #registry(ResourceKey)} that throws if the registry does not exist.
@@ -51,7 +51,7 @@ CLASS net/minecraft/core/RegistryAccess
 			ARG 2 codec
 				COMMENT The codec used to serialize this registry's elements internally.
 			ARG 3 networkCodec
-				COMMENT The codec used to serialize this registry's elements when sending them to the client. This being null implies that the contents of this registry are not synchronized to client.
+				COMMENT The codec used to serialize this registry's elements when sending them to the client. This being {@code null} implies that the contents of this registry are not synchronized to client.
 		METHOD codec ()Lcom/mojang/serialization/Codec;
 			COMMENT @return The codec used to serialize this registry's elements internally.
 		METHOD key ()Lnet/minecraft/resources/ResourceKey;

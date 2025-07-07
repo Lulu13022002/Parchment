@@ -6,14 +6,14 @@ CLASS net/minecraft/world/level/block/BeehiveBlock
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
-		ARG 4 rand
+		ARG 4 random
 	METHOD createBlockStateDefinition (Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V
 		ARG 1 builder
 	METHOD dropHoneycomb (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
 		ARG 0 level
 		ARG 1 pos
 	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
-		ARG 1 blockState
+		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 	METHOD getDrops (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/storage/loot/LootContext$Builder;)Ljava/util/List;
@@ -35,7 +35,7 @@ CLASS net/minecraft/world/level/block/BeehiveBlock
 		ARG 2 player
 		ARG 3 pos
 		ARG 4 state
-		ARG 5 te
+		ARG 5 blockEntity
 		ARG 6 stack
 	METHOD playerWillDestroy (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;)V
 		COMMENT Called before the Block is set to air in the world. Called regardless of if the player's tool can actually collect this block

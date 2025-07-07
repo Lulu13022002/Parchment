@@ -10,7 +10,7 @@ CLASS net/minecraft/world/level/levelgen/SurfaceSystem
 	METHOD generateBands (Lnet/minecraft/world/level/levelgen/RandomSource;)[Lnet/minecraft/world/level/block/state/BlockState;
 		ARG 0 random
 	METHOD getOrCreateNoise (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/level/levelgen/synth/NormalNoise;
-		ARG 1 paramaters
+		ARG 1 parameters
 	METHOD getOrCreateRandomFactory (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/level/levelgen/PositionalRandomFactory;
 		ARG 1 location
 	METHOD isStone (Lnet/minecraft/world/level/block/state/BlockState;)Z

@@ -3,15 +3,15 @@ CLASS net/minecraft/world/entity/monster/Witch
 		ARG 1 wave
 	METHOD getDamageAfterMagicAbsorb (Lnet/minecraft/world/damagesource/DamageSource;F)F
 		COMMENT Reduces damage, depending on potions
-		ARG 1 source
-		ARG 2 damage
+		ARG 1 damageSource
+		ARG 2 damageAmount
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
 		ARG 1 damageSource
 	METHOD getStandingEyeHeight (Lnet/minecraft/world/entity/Pose;Lnet/minecraft/world/entity/EntityDimensions;)F
 		ARG 1 pose
 		ARG 2 size
 	METHOD handleEntityEvent (B)V
-		COMMENT Handler for {@link World#setEntityState}
+		COMMENT Handles an entity event fired from {@link net.minecraft.world.level.Level#broadcastEntityEvent}
 		ARG 1 id
 	METHOD lambda$registerGoals$0 (Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 1 entity

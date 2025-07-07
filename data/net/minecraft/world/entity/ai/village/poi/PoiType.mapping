@@ -17,13 +17,13 @@ CLASS net/minecraft/world/entity/ai/village/poi/PoiType
 	METHOD is (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 1 state
 	METHOD lambda$new$6 (Lnet/minecraft/world/entity/ai/village/poi/PoiType;)Z
-		ARG 1 type
+		ARG 1 poiType
 	METHOD lambda$registerBlockStates$7 (Lnet/minecraft/world/entity/ai/village/poi/PoiType;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 state
 	METHOD lambda$static$1 (Lnet/minecraft/world/entity/ai/village/poi/PoiType;)Z
-		ARG 0 job
+		ARG 0 poiType
 	METHOD lambda$static$2 (Lnet/minecraft/world/entity/ai/village/poi/PoiType;)Z
-		ARG 0 job
+		ARG 0 poiType
 	METHOD register (Ljava/lang/String;Ljava/util/Set;II)Lnet/minecraft/world/entity/ai/village/poi/PoiType;
 		ARG 0 key
 		ARG 1 blockStates

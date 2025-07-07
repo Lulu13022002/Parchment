@@ -6,7 +6,7 @@ CLASS net/minecraft/client/gui/font/providers/BitmapProvider
 		ARG 1 character
 	CLASS Glyph
 		METHOD <init> (FLcom/mojang/blaze3d/platform/NativeImage;IIIIII)V
-			ARG 1 sacle
+			ARG 1 scale
 			ARG 2 image
 			ARG 3 offsetX
 			ARG 4 offsetY
@@ -29,7 +29,7 @@ CLASS net/minecraft/client/gui/font/providers/BitmapProvider
 			ARG 0 json
 		METHOD getActualGlyphWidth (Lcom/mojang/blaze3d/platform/NativeImage;IIII)I
 			ARG 1 nativeImage
-			ARG 2 charWidth
-			ARG 3 charHeightInsp
+			ARG 2 width
+			ARG 3 height
 			ARG 4 column
 			ARG 5 row

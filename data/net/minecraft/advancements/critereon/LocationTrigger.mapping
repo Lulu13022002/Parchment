@@ -4,7 +4,7 @@ CLASS net/minecraft/advancements/critereon/LocationTrigger
 	METHOD createInstance (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/EntityPredicate$Composite;Lnet/minecraft/advancements/critereon/DeserializationContext;)Lnet/minecraft/advancements/critereon/LocationTrigger$TriggerInstance;
 		ARG 1 json
 		ARG 2 entityPredicate
-		ARG 3 conditionsParser
+		ARG 3 context
 	METHOD lambda$trigger$0 (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/advancements/critereon/LocationTrigger$TriggerInstance;)Z
 		ARG 1 instance
 	METHOD trigger (Lnet/minecraft/server/level/ServerPlayer;)V
@@ -24,7 +24,7 @@ CLASS net/minecraft/advancements/critereon/LocationTrigger
 			ARG 4 y
 			ARG 6 z
 		METHOD serializeToJson (Lnet/minecraft/advancements/critereon/SerializationContext;)Lcom/google/gson/JsonObject;
-			ARG 1 conditions
+			ARG 1 context
 		METHOD walkOnBlockWithEquipment (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/Item;)Lnet/minecraft/advancements/critereon/LocationTrigger$TriggerInstance;
 			ARG 0 block
 			ARG 1 item

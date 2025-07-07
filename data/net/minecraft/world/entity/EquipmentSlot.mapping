@@ -5,7 +5,7 @@ CLASS net/minecraft/world/entity/EquipmentSlot
 		ARG 5 filterFlag
 		ARG 6 name
 	METHOD byName (Ljava/lang/String;)Lnet/minecraft/world/entity/EquipmentSlot;
-		ARG 0 targetName
+		ARG 0 name
 	METHOD byTypeAndIndex (Lnet/minecraft/world/entity/EquipmentSlot$Type;I)Lnet/minecraft/world/entity/EquipmentSlot;
 		COMMENT Returns the slot type based on the slot group and the index inside of that group.
 		ARG 0 slotType

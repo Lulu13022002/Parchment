@@ -29,7 +29,7 @@ CLASS net/minecraft/world/level/chunk/storage/RegionFile
 		COMMENT Creates a new {@link java.io.InputStream} for a chunk stored in a separate file.
 		ARG 1 chunkPos
 	METHOD getExternalChunkPath (Lnet/minecraft/world/level/ChunkPos;)Ljava/nio/file/Path;
-		COMMENT Gets the path to store a chunk that can not be stored within the region file because its larger than 1 MiB.
+		COMMENT Gets the path to store a chunk that can not be stored within the region file because it's larger than 1 MiB.
 		ARG 1 chunkPos
 	METHOD getExternalChunkVersion (B)B
 		ARG 0 versionByte

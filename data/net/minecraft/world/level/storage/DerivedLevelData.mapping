@@ -3,7 +3,7 @@ CLASS net/minecraft/world/level/storage/DerivedLevelData
 		ARG 1 worldData
 		ARG 2 wrapped
 	METHOD getAllowCommands ()Z
-		COMMENT Returns true if commands are allowed on this World.
+		COMMENT Returns {@code true} if commands are allowed on this Level.
 	METHOD getDayTime ()J
 		COMMENT Get current world time
 	METHOD getGameRules ()Lnet/minecraft/world/level/GameRules;
@@ -23,13 +23,13 @@ CLASS net/minecraft/world/level/storage/DerivedLevelData
 	METHOD getZSpawn ()I
 		COMMENT Returns the z spawn position
 	METHOD isHardcore ()Z
-		COMMENT Returns true if hardcore mode is enabled, otherwise false
+		COMMENT Returns {@code true} if hardcore mode is enabled, {@code false} otherwise.
 	METHOD isInitialized ()Z
-		COMMENT Returns true if the World is initialized.
+		COMMENT Returns {@code true} if the world is initialized.
 	METHOD isRaining ()Z
-		COMMENT Returns true if it is raining, false otherwise.
+		COMMENT Returns {@code true} if it is raining, {@code false} otherwise.
 	METHOD isThundering ()Z
-		COMMENT Returns true if it is thundering, false otherwise.
+		COMMENT Returns {@code true} if it is thundering, {@code false} otherwise.
 	METHOD setClearWeatherTime (I)V
 		ARG 1 time
 	METHOD setDayTime (J)V
@@ -40,7 +40,7 @@ CLASS net/minecraft/world/level/storage/DerivedLevelData
 	METHOD setGameType (Lnet/minecraft/world/level/GameType;)V
 		ARG 1 type
 	METHOD setInitialized (Z)V
-		COMMENT Sets the initialization status of the World.
+		COMMENT Sets the initialization status of the world.
 		ARG 1 initialized
 	METHOD setRainTime (I)V
 		COMMENT Sets the number of ticks until rain.
@@ -66,7 +66,7 @@ CLASS net/minecraft/world/level/storage/DerivedLevelData
 	METHOD setWanderingTraderSpawnDelay (I)V
 		ARG 1 delay
 	METHOD setWorldBorder (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 serializer
+		ARG 1 worldBorder
 	METHOD setXSpawn (I)V
 		COMMENT Set the x spawn position to the passed in value
 		ARG 1 x

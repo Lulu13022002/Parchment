@@ -6,7 +6,7 @@ CLASS net/minecraft/world/item/TippedArrowItem
 		ARG 3 tooltip
 		ARG 4 flag
 	METHOD fillItemCategory (Lnet/minecraft/world/item/CreativeModeTab;Lnet/minecraft/core/NonNullList;)V
-		COMMENT returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+		COMMENT Adds some {@code ItemStacks} to the given list for display in the creative tab.
 		ARG 1 group
 		ARG 2 items
 	METHOD getDescriptionId (Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;

@@ -2,7 +2,7 @@ CLASS net/minecraft/network/chat/Component
 	METHOD copy ()Lnet/minecraft/network/chat/MutableComponent;
 		COMMENT Creates a copy of this component and also copies the style and siblings. Note that the siblings are copied shallowly, meaning the siblings themselves are not copied.
 	METHOD getContents ()Ljava/lang/String;
-		COMMENT Gets the raw content of this component if possible. For special components (like {@link TranslatableComponent} this usually returns the empty string.
+		COMMENT Gets the raw content of this component if possible. For special components (like {@link TranslatableComponent}) this usually returns the empty string.
 	METHOD getSiblings ()Ljava/util/List;
 		COMMENT Gets the sibling components of this one.
 	METHOD getString (I)Ljava/lang/String;
@@ -43,8 +43,8 @@ CLASS net/minecraft/network/chat/Component
 			ARG 0 reader
 		METHOD parseSeparator (Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/Optional;
 			ARG 1 type
-			ARG 2 jsonContext
-			ARG 3 jsonObject
+			ARG 2 context
+			ARG 3 json
 		METHOD serialize (Lnet/minecraft/network/chat/Component;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
 			ARG 1 src
 			ARG 2 typeOfSrc
@@ -55,8 +55,8 @@ CLASS net/minecraft/network/chat/Component
 			ARG 3 separator
 		METHOD serializeStyle (Lnet/minecraft/network/chat/Style;Lcom/google/gson/JsonObject;Lcom/google/gson/JsonSerializationContext;)V
 			ARG 1 style
-			ARG 2 object
-			ARG 3 ctx
+			ARG 2 json
+			ARG 3 context
 		METHOD toJson (Lnet/minecraft/network/chat/Component;)Ljava/lang/String;
 			COMMENT Serializes a component into JSON.
 			ARG 0 component

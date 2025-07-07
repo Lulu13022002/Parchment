@@ -25,7 +25,7 @@ CLASS net/minecraft/world/entity/ai/behavior/AcquirePoi
 	METHOD lambda$start$3 (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/PathfinderMob;Ljava/lang/Byte;)V
 		ARG 2 event
 	METHOD lambda$start$4 (Lnet/minecraft/world/entity/ai/village/poi/PoiManager;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/ai/village/poi/PoiType;)V
-		ARG 5 type
+		ARG 5 poiType
 	METHOD lambda$start$5 (Lnet/minecraft/world/entity/PathfinderMob;JJ)Lnet/minecraft/world/entity/ai/behavior/AcquirePoi$JitteredLinearRetry;
 		ARG 3 key
 	METHOD start (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/PathfinderMob;J)V

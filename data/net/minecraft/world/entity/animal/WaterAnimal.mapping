@@ -10,7 +10,7 @@ CLASS net/minecraft/world/entity/animal/WaterAnimal
 		ARG 1 level
 		ARG 2 spawnType
 		ARG 3 pos
-		ARG 4 rand
+		ARG 4 random
 	METHOD getAmbientSoundInterval ()I
 		COMMENT Get number of ticks, at least during which the living entity will be silent.
 	METHOD getExperienceReward (Lnet/minecraft/world/entity/player/Player;)I

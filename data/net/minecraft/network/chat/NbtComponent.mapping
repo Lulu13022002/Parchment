@@ -11,7 +11,7 @@ CLASS net/minecraft/network/chat/NbtComponent
 	METHOD compileNbtPath (Ljava/lang/String;)Lnet/minecraft/commands/arguments/NbtPathArgument$NbtPath;
 		ARG 0 nbtPath
 	METHOD getData (Lnet/minecraft/commands/CommandSourceStack;)Ljava/util/stream/Stream;
-		ARG 1 commandSourceStack
+		ARG 1 source
 	CLASS BlockNbtComponent
 		METHOD <init> (Ljava/lang/String;Lnet/minecraft/commands/arguments/NbtPathArgument$NbtPath;ZLjava/lang/String;Lnet/minecraft/commands/arguments/coordinates/Coordinates;Ljava/util/Optional;)V
 			ARG 1 nbtPathPattern

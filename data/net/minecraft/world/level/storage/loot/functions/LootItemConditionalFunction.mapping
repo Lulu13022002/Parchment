@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/LootItemConditionalFunction
 	COMMENT A LootItemFunction that only modifies the stacks if a list of {@linkplain LootItemCondition predicates} passes.
 	METHOD <init> ([Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)V
-		ARG 1 conditions
+		ARG 1 predicates
 	METHOD apply (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/storage/loot/LootContext;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 stack
 		ARG 2 context
@@ -16,8 +16,8 @@ CLASS net/minecraft/world/level/storage/loot/functions/LootItemConditionalFuncti
 			ARG 1 conditionBuilder
 	CLASS Serializer
 		METHOD deserialize (Lcom/google/gson/JsonObject;Lcom/google/gson/JsonDeserializationContext;[Lnet/minecraft/world/level/storage/loot/predicates/LootItemCondition;)Lnet/minecraft/world/level/storage/loot/functions/LootItemConditionalFunction;
-			ARG 1 object
-			ARG 2 deserializationContext
+			ARG 1 json
+			ARG 2 context
 			ARG 3 conditions
 	CLASS DummyBuilder
 		METHOD <init> (Ljava/util/function/Function;)V

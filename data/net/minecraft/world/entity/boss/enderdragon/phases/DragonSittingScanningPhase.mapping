@@ -3,6 +3,6 @@ CLASS net/minecraft/world/entity/boss/enderdragon/phases/DragonSittingScanningPh
 		COMMENT Called when this phase is set to active
 	METHOD doServerTick ()V
 		COMMENT Gives the phase a chance to update its status.
-		COMMENT Called by dragon's onLivingUpdate. Only used when !worldObj.isRemote.
+		COMMENT Called by dragon's aiStep. Only used when !level.isClientSide.
 	METHOD lambda$new$0 (Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 1 entity

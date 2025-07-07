@@ -9,7 +9,7 @@ CLASS net/minecraft/world/level/block/entity/BlockEntity
 	METHOD clearRemoved ()V
 		COMMENT Marks this {@code BlockEntity} as valid again (no longer removed from the level).
 	METHOD fillCrashReportCategory (Lnet/minecraft/CrashReportCategory;)V
-		ARG 1 reportCategory
+		ARG 1 category
 	METHOD getPosFromTag (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/core/BlockPos;
 		ARG 0 tag
 	METHOD hasLevel ()Z

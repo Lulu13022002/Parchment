@@ -3,13 +3,13 @@ CLASS net/minecraft/util/ParticleUtils
 		ARG 0 level
 		ARG 1 pos
 		ARG 2 face
-		ARG 3 particle
+		ARG 3 options
 	METHOD spawnParticlesAlongAxis (Lnet/minecraft/core/Direction$Axis;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;DLnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/util/valueproviders/UniformInt;)V
 		ARG 0 axis
 		ARG 1 level
 		ARG 2 pos
-		ARG 5 particle
+		ARG 5 options
 	METHOD spawnParticlesOnBlockFaces (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/util/valueproviders/UniformInt;)V
 		ARG 0 level
 		ARG 1 pos
-		ARG 2 particle
+		ARG 2 options

@@ -14,7 +14,7 @@ CLASS net/minecraft/world/level/levelgen/feature/StructureFeature
 		ARG 5 seed
 		ARG 7 chunkPos
 		ARG 8 config
-		ARG 9 heightAccessor
+		ARG 9 level
 		ARG 10 validBiome
 	METHOD configured (Lnet/minecraft/world/level/levelgen/feature/configurations/FeatureConfiguration;Lnet/minecraft/tags/TagKey;)Lnet/minecraft/world/level/levelgen/feature/ConfiguredStructureFeature;
 		ARG 1 config

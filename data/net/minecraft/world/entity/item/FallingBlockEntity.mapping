@@ -6,7 +6,7 @@ CLASS net/minecraft/world/entity/item/FallingBlockEntity
 		ARG 6 z
 		ARG 8 state
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD callOnBrokenAfterFall (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;)V
 		ARG 1 block
 		ARG 2 pos
@@ -19,16 +19,20 @@ CLASS net/minecraft/world/entity/item/FallingBlockEntity
 	METHOD fillCrashReportCategory (Lnet/minecraft/CrashReportCategory;)V
 		ARG 1 category
 	METHOD isAttackable ()Z
-		COMMENT Returns true if it's possible to attack this entity with an item.
+		COMMENT Returns {@code true} if it's possible to attack this entity with an item.
 	METHOD isPickable ()Z
-		COMMENT Returns true if other Entities should be prevented from moving through this Entity.
+		COMMENT Returns {@code true} if other Entities should be prevented from moving through this Entity.
 	METHOD lambda$causeFallDamage$0 (Lnet/minecraft/world/damagesource/DamageSource;FLnet/minecraft/world/entity/Entity;)V
 		ARG 2 entity
 	METHOD onlyOpCanSetNbt ()Z
-		COMMENT Checks if players can use this entity to access operator (permission level 2) commands either directly or indirectly, such as give or setblock. A similar method exists for entities at {@link net.minecraft.tileentity.TileEntity#onlyOpsCanSetNbt()}.<p>For example, {@link net.minecraft.entity.item.EntityMinecartCommandBlock#ignoreItemEntityData() command block minecarts} and {@link net.minecraft.entity.item.EntityMinecartMobSpawner#ignoreItemEntityData() mob spawner minecarts} (spawning command block minecarts or drops) are considered accessible.</p>@return true if this entity offers ways for unauthorized players to use restricted commands
+		COMMENT Checks if players can use this entity to access operator (permission level 2) commands either directly or indirectly, such as give or setblock.
+		COMMENT A similar method exists for entities at {@link net.minecraft.world.entity.Entity#onlyOpCanSetNbt()}.
+		COMMENT <p>
+		COMMENT For example, {@link net.minecraft.world.entity.vehicle.MinecartCommandBlock#onlyOpCanSetNbt() command block minecarts} and {@link net.minecraft.world.entity.vehicle.MinecartSpawner#onlyOpCanSetNbt() mob spawner minecarts} (spawning command block minecarts or drops) are considered accessible.
+		COMMENT @return {@code true} if this entity offers ways for unauthorized players to use restricted commands
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setHurtsEntities (FI)V
 		ARG 1 fallDamagePerDistance
 		ARG 2 fallDamageMax

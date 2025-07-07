@@ -17,7 +17,7 @@ CLASS net/minecraft/world/entity/item/ItemEntity
 		ARG 11 deltaY
 		ARG 13 deltaZ
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD areMergable (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 0 destinationStack
 		ARG 1 originStack
@@ -26,13 +26,13 @@ CLASS net/minecraft/world/entity/item/ItemEntity
 	METHOD getItem ()Lnet/minecraft/world/item/ItemStack;
 		COMMENT Gets the item that this entity represents.
 	METHOD getSpin (F)F
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD isAttackable ()Z
-		COMMENT Returns true if it's possible to attack this entity with an item.
+		COMMENT Returns {@code true} if it's possible to attack this entity with an item.
 	METHOD lambda$mergeWithNeighbours$0 (Lnet/minecraft/world/entity/item/ItemEntity;)Z
 		ARG 1 neighbour
 	METHOD merge (Lnet/minecraft/world/entity/item/ItemEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/item/ItemEntity;Lnet/minecraft/world/item/ItemStack;)V
@@ -57,7 +57,7 @@ CLASS net/minecraft/world/entity/item/ItemEntity
 		ARG 1 entity
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setItem (Lnet/minecraft/world/item/ItemStack;)V
 		COMMENT Sets the item that this entity represents.
 		ARG 1 stack

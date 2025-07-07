@@ -52,7 +52,7 @@ CLASS net/minecraft/nbt/CompoundTag
 	METHOD lambda$static$0 (Lcom/mojang/serialization/Dynamic;)Lcom/mojang/serialization/DataResult;
 		ARG 0 dynamic
 	METHOD lambda$static$1 (Lnet/minecraft/nbt/CompoundTag;)Lcom/mojang/serialization/Dynamic;
-		ARG 0 compoundTag
+		ARG 0 tag
 	METHOD merge (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
 		COMMENT Copies all the tags of {@code other} into this tag, then returns itself.
 		COMMENT @see #copy()

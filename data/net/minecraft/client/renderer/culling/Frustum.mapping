@@ -1,12 +1,12 @@
 CLASS net/minecraft/client/renderer/culling/Frustum
 	METHOD <init> (Lcom/mojang/math/Matrix4f;Lcom/mojang/math/Matrix4f;)V
 		ARG 1 projection
-		ARG 2 frustrum
+		ARG 2 frustum
 	METHOD <init> (Lnet/minecraft/client/renderer/culling/Frustum;)V
 		ARG 1 other
 	METHOD calculateFrustum (Lcom/mojang/math/Matrix4f;Lcom/mojang/math/Matrix4f;)V
-		ARG 1 projection
-		ARG 2 frustrumMatrix
+		ARG 1 frustumMatrix
+		ARG 2 projectionMatrix
 	METHOD cubeInFrustum (DDDDDD)Z
 		ARG 1 minX
 		ARG 3 minY
@@ -22,7 +22,7 @@ CLASS net/minecraft/client/renderer/culling/Frustum
 		ARG 5 maxY
 		ARG 6 maxZ
 	METHOD getPlane (Lcom/mojang/math/Matrix4f;IIII)V
-		ARG 1 frustrumMatrix
+		ARG 1 projectionMatrix
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z

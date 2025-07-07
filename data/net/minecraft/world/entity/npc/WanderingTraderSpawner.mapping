@@ -11,12 +11,12 @@ CLASS net/minecraft/world/entity/npc/WanderingTraderSpawner
 	METHOD lambda$spawn$0 (Lnet/minecraft/core/BlockPos;)Z
 		ARG 0 pos
 	METHOD spawn (Lnet/minecraft/server/level/ServerLevel;)Z
-		ARG 1 serverLevel
+		ARG 1 level
 	METHOD tick (Lnet/minecraft/server/level/ServerLevel;ZZ)I
 		ARG 1 level
 		ARG 2 spawnHostiles
 		ARG 3 spawnPassives
 	METHOD tryToSpawnLlamaFor (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/WanderingTrader;I)V
-		ARG 1 serverLevel
+		ARG 1 level
 		ARG 2 trader
 		ARG 3 maxDistance

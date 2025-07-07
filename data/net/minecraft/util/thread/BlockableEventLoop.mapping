@@ -10,7 +10,7 @@ CLASS net/minecraft/util/thread/BlockableEventLoop
 	METHOD executeIfPossible (Ljava/lang/Runnable;)V
 		ARG 1 task
 	METHOD managedBlock (Ljava/util/function/BooleanSupplier;)V
-		COMMENT Drive the executor until the given BooleanSupplier returns true
+		COMMENT Drive the executor until the given BooleanSupplier returns {@code true}
 		ARG 1 isDone
 	METHOD shouldRun (Ljava/lang/Runnable;)Z
 		ARG 1 runnable

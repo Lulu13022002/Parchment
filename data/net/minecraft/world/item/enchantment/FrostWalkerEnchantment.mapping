@@ -3,8 +3,8 @@ CLASS net/minecraft/world/item/enchantment/FrostWalkerEnchantment
 		ARG 1 rarity
 		ARG 2 applicableSlots
 	METHOD checkCompatibility (Lnet/minecraft/world/item/enchantment/Enchantment;)Z
-		COMMENT Determines if the enchantment passed can be applyied together with this enchantment.
-		ARG 1 ench
+		COMMENT Determines if the enchantment passed can be applied together with this enchantment.
+		ARG 1 enchantment
 	METHOD getMaxCost (I)I
 		ARG 1 enchantmentLevel
 	METHOD getMaxLevel ()I
@@ -16,4 +16,4 @@ CLASS net/minecraft/world/item/enchantment/FrostWalkerEnchantment
 		ARG 0 living
 		ARG 1 level
 		ARG 2 pos
-		ARG 3 levelConflicting
+		ARG 3 enchantmentLevel

@@ -3,9 +3,9 @@ CLASS net/minecraft/world/level/block/BubbleColumnBlock
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
-		ARG 4 rand
+		ARG 4 random
 	METHOD canExistIn (Lnet/minecraft/world/level/block/state/BlockState;)Z
-		ARG 0 blockState
+		ARG 0 state
 	METHOD canSurvive (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 state
 		ARG 2 level
@@ -18,7 +18,7 @@ CLASS net/minecraft/world/level/block/BubbleColumnBlock
 		ARG 3 pos
 		ARG 4 entity
 	METHOD getColumnState (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/state/BlockState;
-		ARG 0 blockState
+		ARG 0 state
 	METHOD getFluidState (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/material/FluidState;
 		ARG 1 state
 	METHOD getRenderShape (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/RenderShape;
@@ -32,7 +32,7 @@ CLASS net/minecraft/world/level/block/BubbleColumnBlock
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
-		ARG 4 rand
+		ARG 4 random
 	METHOD updateColumn (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 0 level
 		ARG 1 pos

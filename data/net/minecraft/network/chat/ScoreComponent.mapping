@@ -8,13 +8,13 @@ CLASS net/minecraft/network/chat/ScoreComponent
 		ARG 2 selector
 		ARG 3 objective
 	METHOD findTargetName (Lnet/minecraft/commands/CommandSourceStack;)Ljava/lang/String;
-		ARG 1 commandSourceStack
+		ARG 1 source
 	METHOD getName ()Ljava/lang/String;
 		COMMENT Gets the name of the entity who owns this score.
 	METHOD getObjective ()Ljava/lang/String;
 		COMMENT Gets the name of the objective for this score.
 	METHOD getScore (Ljava/lang/String;Lnet/minecraft/commands/CommandSourceStack;)Ljava/lang/String;
-		ARG 1 username
-		ARG 2 commandSourceStack
+		ARG 1 playerName
+		ARG 2 source
 	METHOD parseSelector (Ljava/lang/String;)Lnet/minecraft/commands/arguments/selector/EntitySelector;
 		ARG 0 entitySelector

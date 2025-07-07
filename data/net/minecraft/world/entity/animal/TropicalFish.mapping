@@ -1,6 +1,6 @@
 CLASS net/minecraft/world/entity/animal/TropicalFish
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD calculateVariant (Lnet/minecraft/world/entity/animal/TropicalFish$Pattern;Lnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/item/DyeColor;)I
 		ARG 0 pattern
 		ARG 1 baseColor
@@ -14,9 +14,9 @@ CLASS net/minecraft/world/entity/animal/TropicalFish
 	METHOD finalizeSpawn (Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/world/entity/SpawnGroupData;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/entity/SpawnGroupData;
 		ARG 1 level
 		ARG 2 difficulty
-		ARG 3 reason
+		ARG 3 spawnType
 		ARG 4 spawnData
-		ARG 5 dataTag
+		ARG 5 tag
 	METHOD getBaseColor (I)Lnet/minecraft/world/item/DyeColor;
 		ARG 0 variantId
 	METHOD getBaseColorIdx (I)I
@@ -39,7 +39,7 @@ CLASS net/minecraft/world/entity/animal/TropicalFish
 		ARG 1 size
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setVariant (I)V
 		ARG 1 variantId
 	CLASS Pattern
