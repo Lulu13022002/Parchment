@@ -69,4 +69,4 @@ CLASS net/minecraft/world/level/block/ChestBlock
 		ARG 2 rotation
 	CLASS 3
 		METHOD lambda$acceptDouble$0 (Lnet/minecraft/world/level/block/entity/ChestBlockEntity;Lnet/minecraft/world/level/block/entity/ChestBlockEntity;F)F
-			ARG 2 partialTicks
+			ARG 2 partialTick

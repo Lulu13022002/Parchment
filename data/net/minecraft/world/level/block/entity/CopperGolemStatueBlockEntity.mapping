@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/block/entity/CopperGolemStatueBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
-		ARG 2 state
+		ARG 2 blockState
 	METHOD createStatue (Lnet/minecraft/world/entity/animal/coppergolem/CopperGolem;)V
 		ARG 1 golem
 	METHOD getItem (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/CopperGolemStatueBlock$Pose;)Lnet/minecraft/world/item/ItemStack;

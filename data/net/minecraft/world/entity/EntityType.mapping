@@ -14,7 +14,7 @@ CLASS net/minecraft/world/entity/EntityType
 		ARG 12 descriptionId
 		ARG 13 lootTable
 		ARG 14 requiredFeatures
-		ARG 15 allowdInPeaceful
+		ARG 15 allowedInPeaceful
 	METHOD appendComponentsConfig (Ljava/util/function/Consumer;Lnet/minecraft/world/item/ItemStack;)Ljava/util/function/Consumer;
 		ARG 0 consumer
 		ARG 1 stack

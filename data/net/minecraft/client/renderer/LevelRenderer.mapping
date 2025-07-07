@@ -26,7 +26,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 5 renderBlockOutline
 		ARG 6 renderState
 		ARG 7 deltaTracker
-		ARG 8 profier
+		ARG 8 profiler
 	METHOD addParticlesPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lcom/mojang/blaze3d/buffers/GpuBufferSlice;)V
 		ARG 1 frameGraphBuilder
 		ARG 2 shaderFog
@@ -51,8 +51,8 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 4 newState
 		ARG 5 flags
 	METHOD checkPoseStack (Lcom/mojang/blaze3d/vertex/PoseStack;)V
-		COMMENT Asserts that the specified {@code poseStack} is {@linkplain com.mojang.blaze3d.vertex.PoseStack#clear() clear}.
-		COMMENT @throws java.lang.IllegalStateException if the specified {@code poseStack} is not clear
+		COMMENT Asserts that the specified {@code poseStack} is {@linkplain com.mojang.blaze3d.vertex.PoseStack#isEmpty() empty}.
+		COMMENT @throws java.lang.IllegalStateException if the specified {@code poseStack} is not empty
 		ARG 1 poseStack
 	METHOD compileSections (Lnet/minecraft/client/Camera;)V
 		ARG 1 camera

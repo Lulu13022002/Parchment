@@ -3,9 +3,9 @@ CLASS net/minecraft/server/packs/resources/PreparableReloadListener
 		ARG 1 sharedState
 	METHOD reload (Lnet/minecraft/server/packs/resources/PreparableReloadListener$SharedState;Ljava/util/concurrent/Executor;Lnet/minecraft/server/packs/resources/PreparableReloadListener$PreparationBarrier;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 sharedState
-		ARG 2 exectutor
+		ARG 2 executor
 		ARG 3 barrier
-		ARG 4 applyExectutor
+		ARG 4 applyExecutor
 	CLASS SharedState
 		METHOD <init> (Lnet/minecraft/server/packs/resources/ResourceManager;)V
 			ARG 1 manager

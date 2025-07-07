@@ -16,7 +16,7 @@ CLASS net/minecraft/client/renderer/state/QuadParticleRenderState
 		ARG 14 color
 		ARG 15 packedLight
 	METHOD renderRotatedQuad (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFFFFFFFFII)V
-		ARG 1 conumer
+		ARG 1 consumer
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z

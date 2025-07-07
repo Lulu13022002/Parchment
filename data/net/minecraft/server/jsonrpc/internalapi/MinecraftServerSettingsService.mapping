@@ -18,7 +18,7 @@ CLASS net/minecraft/server/jsonrpc/internalapi/MinecraftServerSettingsService
 		ARG 1 entityBroadcastRangePercentage
 		ARG 2 clientInfo
 	METHOD setForceGameMode (ZLnet/minecraft/server/jsonrpc/methods/ClientInfo;)Z
-		ARG 1 forceGamemode
+		ARG 1 forceGameMode
 		ARG 2 clientInfo
 	METHOD setGameMode (Lnet/minecraft/world/level/GameType;Lnet/minecraft/server/jsonrpc/methods/ClientInfo;)Lnet/minecraft/world/level/GameType;
 		ARG 1 gameMode

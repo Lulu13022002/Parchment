@@ -27,7 +27,7 @@ CLASS net/minecraft/client/model/HumanoidModel
 		ARG 0 cubeDeformation
 		ARG 1 yOffset
 	METHOD getArm (Lnet/minecraft/world/entity/HumanoidArm;)Lnet/minecraft/client/model/geom/ModelPart;
-		ARG 1 side
+		ARG 1 arm
 	METHOD poseBlockingArm (Lnet/minecraft/client/model/geom/ModelPart;Z)V
 		ARG 1 arm
 		ARG 2 isRightArm

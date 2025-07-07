@@ -4,7 +4,7 @@ CLASS net/minecraft/server/notifications/NotificationService
 	METHOD ipUnbanned (Ljava/lang/String;)V
 		ARG 1 ip
 	METHOD onGameRuleChanged (Ljava/lang/String;Lnet/minecraft/world/level/GameRules$Value;)V
-		ARG 1 gamerule
+		ARG 1 gameRule
 		ARG 2 value
 	METHOD playerAddedToAllowlist (Lnet/minecraft/server/players/NameAndId;)V
 		ARG 1 player
