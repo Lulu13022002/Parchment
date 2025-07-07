@@ -31,7 +31,7 @@ CLASS net/minecraft/client/resources/model/ModelBakery
 		ARG 0 key
 	METHOD lambda$loadModel$22 (Ljava/util/Map;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/datafixers/util/Pair;Ljava/util/Map;Lnet/minecraft/client/resources/model/ModelResourceLocation;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 5 modelPath
-		ARG 6 blockState
+		ARG 6 state
 	METHOD lambda$loadModel$23 (Lnet/minecraft/client/resources/model/ModelBakery$ModelGroupKey;Ljava/util/Set;)V
 		ARG 1 key
 		ARG 2 set
@@ -68,17 +68,17 @@ CLASS net/minecraft/client/resources/model/ModelBakery
 			ARG 1 models
 			ARG 2 coloringValues
 		METHOD create (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/client/renderer/block/model/multipart/MultiPart;Ljava/util/Collection;)Lnet/minecraft/client/resources/model/ModelBakery$ModelGroupKey;
-			ARG 0 blockState
+			ARG 0 state
 			ARG 1 multipart
 			ARG 2 properties
 		METHOD create (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/client/resources/model/UnbakedModel;Ljava/util/Collection;)Lnet/minecraft/client/resources/model/ModelBakery$ModelGroupKey;
-			ARG 0 blockState
+			ARG 0 state
 			ARG 1 model
 			ARG 2 properties
 		METHOD equals (Ljava/lang/Object;)Z
 			ARG 1 other
 		METHOD getColoringValues (Lnet/minecraft/world/level/block/state/BlockState;Ljava/util/Collection;)Ljava/util/List;
-			ARG 0 blockState
+			ARG 0 state
 			ARG 1 properties
 	CLASS ModelBakerImpl
 		METHOD <init> (Lnet/minecraft/client/resources/model/ModelBakery;Ljava/util/function/BiFunction;Lnet/minecraft/resources/ResourceLocation;)V

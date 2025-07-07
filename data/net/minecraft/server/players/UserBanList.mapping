@@ -3,6 +3,6 @@ CLASS net/minecraft/server/players/UserBanList
 		ARG 1 entryData
 	METHOD getKeyForUser (Lcom/mojang/authlib/GameProfile;)Ljava/lang/String;
 		COMMENT Gets the key value for the given object
-		ARG 1 obj
+		ARG 1 profile
 	METHOD isBanned (Lcom/mojang/authlib/GameProfile;)Z
 		ARG 1 profile

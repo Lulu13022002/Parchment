@@ -1,10 +1,10 @@
 CLASS net/minecraft/world/entity/animal/Turtle
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD canBeLeashed (Lnet/minecraft/world/entity/player/Player;)Z
 		ARG 1 player
 	METHOD checkTurtleSpawnRules (Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)Z
-		ARG 0 turtle
+		ARG 0 entityType
 		ARG 1 level
 		ARG 2 spawnType
 		ARG 3 pos
@@ -14,9 +14,9 @@ CLASS net/minecraft/world/entity/animal/Turtle
 	METHOD finalizeSpawn (Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/world/entity/SpawnGroupData;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/entity/SpawnGroupData;
 		ARG 1 level
 		ARG 2 difficulty
-		ARG 3 reason
+		ARG 3 spawnType
 		ARG 4 spawnData
-		ARG 5 dataTag
+		ARG 5 tag
 	METHOD getAmbientSoundInterval ()I
 		COMMENT Get number of ticks, at least during which the living entity will be silent.
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
@@ -34,7 +34,7 @@ CLASS net/minecraft/world/entity/animal/Turtle
 		ARG 1 volume
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setGoingHome (Z)V
 		ARG 1 isGoingHome
 	METHOD setHasEgg (Z)V
@@ -71,7 +71,7 @@ CLASS net/minecraft/world/entity/animal/Turtle
 			ARG 1 turtle
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -85,7 +85,7 @@ CLASS net/minecraft/world/entity/animal/Turtle
 			ARG 1 turtle
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD isValidTarget (Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z
@@ -99,7 +99,7 @@ CLASS net/minecraft/world/entity/animal/Turtle
 			ARG 1 turtle
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -116,7 +116,7 @@ CLASS net/minecraft/world/entity/animal/Turtle
 			ARG 1 turtle
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD isValidTarget (Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z

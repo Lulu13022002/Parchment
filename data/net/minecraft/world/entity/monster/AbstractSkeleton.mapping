@@ -2,9 +2,9 @@ CLASS net/minecraft/world/entity/monster/AbstractSkeleton
 	METHOD finalizeSpawn (Lnet/minecraft/world/level/ServerLevelAccessor;Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/world/entity/MobSpawnType;Lnet/minecraft/world/entity/SpawnGroupData;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/entity/SpawnGroupData;
 		ARG 1 level
 		ARG 2 difficulty
-		ARG 3 reason
+		ARG 3 spawnType
 		ARG 4 spawnData
-		ARG 5 dataTag
+		ARG 5 tag
 	METHOD getArrow (Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/projectile/AbstractArrow;
 		COMMENT Fires an arrow
 		ARG 1 arrowStack
@@ -21,7 +21,7 @@ CLASS net/minecraft/world/entity/monster/AbstractSkeleton
 		ARG 2 block
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD reassessWeaponGoal ()V
 		COMMENT Sets this entity's combat AI.
 	METHOD rideTick ()V

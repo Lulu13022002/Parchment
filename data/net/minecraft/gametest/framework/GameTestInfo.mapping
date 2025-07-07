@@ -2,7 +2,7 @@ CLASS net/minecraft/gametest/framework/GameTestInfo
 	METHOD <init> (Lnet/minecraft/gametest/framework/TestFunction;Lnet/minecraft/world/level/block/Rotation;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 function
 		ARG 2 rotation
-		ARG 3 serverLevel
+		ARG 3 level
 	METHOD addListener (Lnet/minecraft/gametest/framework/GameTestListener;)V
 		ARG 1 listener
 	METHOD fail (Ljava/lang/Throwable;)V
@@ -20,7 +20,7 @@ CLASS net/minecraft/gametest/framework/GameTestInfo
 	METHOD lambda$tickInternal$4 (Lnet/minecraft/gametest/framework/GameTestSequence;)V
 		ARG 1 sequence
 	METHOD prepareTestStructure (Lnet/minecraft/core/BlockPos;)V
-		ARG 1 blockPos
+		ARG 1 pos
 	METHOD setRerunUntilFailed (Z)V
 		ARG 1 rerunUntilFailed
 	METHOD setRunAtTickTime (JLjava/lang/Runnable;)V

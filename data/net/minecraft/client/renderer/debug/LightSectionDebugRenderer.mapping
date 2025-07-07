@@ -31,7 +31,7 @@ CLASS net/minecraft/client/renderer/debug/LightSectionDebugRenderer
 		ARG 0 poseStack
 		ARG 1 shape
 		ARG 2 pos
-		ARG 3 buffer
+		ARG 3 bufferSource
 		ARG 4 camX
 		ARG 6 camY
 		ARG 8 camZ

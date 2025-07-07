@@ -1,9 +1,9 @@
 CLASS net/minecraft/client/searchtree/PlainTextSearchTree
 	METHOD create (Ljava/util/List;Ljava/util/function/Function;)Lnet/minecraft/client/searchtree/PlainTextSearchTree;
-		ARG 0 contents
+		ARG 0 elements
 		ARG 1 idGetter
 	METHOD lambda$create$1 (Lnet/minecraft/client/searchtree/SuffixArray;Ljava/lang/Object;Ljava/lang/String;)V
-		ARG 2 contents
+		ARG 2 elementId
 	METHOD lambda$empty$0 (Ljava/lang/String;)Ljava/util/List;
 		ARG 0 query
 	METHOD search (Ljava/lang/String;)Ljava/util/List;

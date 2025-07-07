@@ -8,8 +8,8 @@ CLASS net/minecraft/client/renderer/texture/SpriteLoader
 		ARG 0 atlas
 	METHOD getStitchedSprites (Lnet/minecraft/client/renderer/texture/Stitcher;II)Ljava/util/Map;
 		ARG 1 stitcher
-		ARG 2 x
-		ARG 3 y
+		ARG 2 atlasWidth
+		ARG 3 atlasHeight
 	METHOD lambda$getStitchedSprites$9 (Ljava/util/Map;IILnet/minecraft/client/renderer/texture/SpriteContents;II)V
 		ARG 4 contents
 		ARG 5 x
@@ -27,7 +27,7 @@ CLASS net/minecraft/client/renderer/texture/SpriteLoader
 	METHOD lambda$stitch$1 (ILnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V
 		ARG 1 sprite
 	METHOD loadAndStitch (Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/resources/ResourceLocation;ILjava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;
-		ARG 1 resouceManager
+		ARG 1 resourceManager
 		ARG 2 location
 		ARG 3 mipLevel
 		ARG 4 executor

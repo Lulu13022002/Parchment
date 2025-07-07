@@ -21,7 +21,7 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 0 source
 		ARG 1 structurePath
 	METHOD lambda$runAllNearbyTests$28 (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/gametest/framework/MultipleTestTracker;ZLnet/minecraft/core/BlockPos;)V
-		ARG 3 blockPos
+		ARG 3 pos
 	METHOD lambda$runTests$29 (Lnet/minecraft/gametest/framework/GameTestInfo;)V
 		ARG 0 gameTestInfo
 	METHOD lambda$say$31 (Lnet/minecraft/server/level/ServerPlayer;)Z
@@ -63,7 +63,7 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 3 rerunUntilFailed
 	METHOD runTestPreparation (Lnet/minecraft/gametest/framework/TestFunction;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 0 function
-		ARG 1 serverLevel
+		ARG 1 level
 	METHOD runTests (Lnet/minecraft/commands/CommandSourceStack;Ljava/util/Collection;II)V
 		ARG 0 source
 		ARG 1 tests
@@ -76,7 +76,7 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 0 source
 		ARG 1 message
 	METHOD say (Lnet/minecraft/server/level/ServerLevel;Ljava/lang/String;Lnet/minecraft/ChatFormatting;)V
-		ARG 0 serverLevel
+		ARG 0 level
 		ARG 1 message
 		ARG 2 formatting
 	METHOD showPos (Lnet/minecraft/commands/CommandSourceStack;Ljava/lang/String;)I
@@ -90,5 +90,5 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 1 gameTestInfo
 	CLASS TestSummaryDisplayer
 		METHOD <init> (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/gametest/framework/MultipleTestTracker;)V
-			ARG 1 serverLevel
+			ARG 1 level
 			ARG 2 tracker

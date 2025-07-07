@@ -22,18 +22,18 @@ CLASS net/minecraft/client/model/AxolotlModel
 		ARG 2 rotation
 	METHOD setupGroundCrawlingAnimation (FF)V
 		ARG 1 ageInTicks
-		ARG 2 netHeadYaw
+		ARG 2 deltaYHeadRot
 	METHOD setupInitialAnimationValues (Lnet/minecraft/world/entity/animal/axolotl/Axolotl;FF)V
 		ARG 1 axolotl
-		ARG 2 netHeadYaw
-		ARG 3 headPitch
+		ARG 2 deltaYHeadRot
+		ARG 3 xRot
 	METHOD setupLayStillOnGroundAnimation (FF)V
 		ARG 1 ageInTicks
-		ARG 2 netHeadYaw
+		ARG 2 deltaYHeadRot
 	METHOD setupPlayDeadAnimation (F)V
-		ARG 1 netHeadYaw
+		ARG 1 deltaYHeadRot
 	METHOD setupSwimmingAnimation (FF)V
 		ARG 1 ageInTicks
-		ARG 2 headPitch
+		ARG 2 xRot
 	METHOD setupWaterHoveringAnimation (F)V
 		ARG 1 ageInTicks

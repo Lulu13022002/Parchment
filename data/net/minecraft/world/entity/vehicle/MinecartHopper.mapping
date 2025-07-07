@@ -11,7 +11,7 @@ CLASS net/minecraft/world/entity/vehicle/MinecartHopper
 		ARG 3 z
 		ARG 4 receivingPower
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD createMenu (ILnet/minecraft/world/entity/player/Inventory;)Lnet/minecraft/world/inventory/AbstractContainerMenu;
 		ARG 1 id
 		ARG 2 playerInventory
@@ -27,7 +27,7 @@ CLASS net/minecraft/world/entity/vehicle/MinecartHopper
 		COMMENT Get whether this hopper minecart is being blocked by an activator rail.
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setEnabled (Z)V
 		COMMENT Set whether this hopper minecart is being blocked by an activator rail.
 		ARG 1 enabled

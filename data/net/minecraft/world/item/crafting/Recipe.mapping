@@ -13,7 +13,7 @@ CLASS net/minecraft/world/item/crafting/Recipe
 	METHOD getResultItem (Lnet/minecraft/core/RegistryAccess;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 registryAccess
 	METHOD isSpecial ()Z
-		COMMENT If true, this recipe does not appear in the recipe book and does not respect recipe unlocking (and the doLimitedCrafting gamerule)
+		COMMENT If {@code true}, this recipe does not appear in the recipe book and does not respect recipe unlocking (and the doLimitedCrafting gamerule)
 	METHOD lambda$isIncomplete$0 (Lnet/minecraft/world/item/crafting/Ingredient;)Z
 		ARG 0 ingredient
 	METHOD matches (Lnet/minecraft/world/Container;Lnet/minecraft/world/level/Level;)Z

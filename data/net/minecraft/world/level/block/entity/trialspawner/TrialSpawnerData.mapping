@@ -44,5 +44,5 @@ CLASS net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerData
 	METHOD tryDetectPlayers (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/trialspawner/PlayerDetector;I)V
 		ARG 1 level
 		ARG 2 pos
-		ARG 3 platerDetector
+		ARG 3 playerDetector
 		ARG 4 players

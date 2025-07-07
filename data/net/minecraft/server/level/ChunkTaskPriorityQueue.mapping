@@ -9,9 +9,9 @@ CLASS net/minecraft/server/level/ChunkTaskPriorityQueue
 	METHOD lambda$release$3 (Ljava/util/Optional;)Z
 		ARG 0 queues
 	METHOD lambda$resortChunkTasks$1 (J)Ljava/util/List;
-		ARG 0 chunkPos
+		ARG 0 key
 	METHOD lambda$submit$2 (J)Ljava/util/List;
-		ARG 0 chunkPos
+		ARG 0 key
 	METHOD release (JZ)V
 		ARG 1 chunkPos
 		ARG 3 fullClear

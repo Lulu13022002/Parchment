@@ -18,4 +18,4 @@ CLASS com/mojang/realmsclient/gui/RealmsWorldSlotButton
 	CLASS State
 		METHOD <init> (Lcom/mojang/realmsclient/dto/RealmsServer;I)V
 			ARG 1 server
-			ARG 2 slot
+			ARG 2 slotIndex

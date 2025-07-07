@@ -65,18 +65,18 @@ CLASS net/minecraft/server/network/TextFilterClient
 			ARG 0 threshold
 		METHOD lambda$ignoreOverThreshold$2 (ILjava/lang/String;I)Z
 			ARG 1 text
-			ARG 2 threshold
+			ARG 2 removedCharCount
 		METHOD lambda$static$0 (Ljava/lang/String;I)Z
 			ARG 0 text
-			ARG 1 threshold
+			ARG 1 removedCharCount
 		METHOD lambda$static$1 (Ljava/lang/String;I)Z
 			ARG 0 text
-			ARG 1 threshold
+			ARG 1 removedCharCount
 		METHOD select (I)Lnet/minecraft/server/network/TextFilterClient$IgnoreStrategy;
-			ARG 0 threshold
+			ARG 0 hashesToDrop
 		METHOD shouldIgnore (Ljava/lang/String;I)Z
 			ARG 1 text
-			ARG 2 threshold
+			ARG 2 removedCharCount
 	CLASS MessageEncoder
 		METHOD encode (Lcom/mojang/authlib/GameProfile;Ljava/lang/String;)Lcom/google/gson/JsonObject;
 			ARG 1 profile

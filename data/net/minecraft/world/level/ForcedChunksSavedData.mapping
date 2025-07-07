@@ -4,4 +4,4 @@ CLASS net/minecraft/world/level/ForcedChunksSavedData
 	METHOD load (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/level/ForcedChunksSavedData;
 		ARG 0 tag
 	METHOD save (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
-		ARG 1 compound
+		ARG 1 tag

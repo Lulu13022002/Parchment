@@ -11,9 +11,6 @@ CLASS net/minecraft/advancements/AdvancementProgress
 		ARG 1 criterionName
 	METHOD isCriterionDone (Ljava/lang/String;)Z
 		ARG 1 criterionName
-	METHOD lambda$serializeToNetwork$10 (Lnet/minecraft/network/FriendlyByteBuf;Lnet/minecraft/advancements/CriterionProgress;)V
-		ARG 0 buffer
-		ARG 1 criterionProgress
 	METHOD lambda$static$0 (Ljava/time/Instant;)Ljava/time/temporal/TemporalAccessor;
 		ARG 0 instant
 	METHOD lambda$static$1 (Ljava/util/Map$Entry;)Lnet/minecraft/advancements/CriterionProgress;

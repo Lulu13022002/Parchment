@@ -4,7 +4,7 @@ CLASS net/minecraft/server/Main
 		ARG 1 dataFixer
 		ARG 2 eraseCache
 		ARG 3 upgradeWorld
-		ARG 4 dimesions
+		ARG 4 dimensions
 	METHOD loadOrCreateConfig (Lnet/minecraft/server/dedicated/DedicatedServerProperties;Lcom/mojang/serialization/Dynamic;ZLnet/minecraft/server/packs/repository/PackRepository;)Lnet/minecraft/server/WorldLoader$InitConfig;
 		ARG 0 dedicatedServerProperties
 		ARG 1 dynamic

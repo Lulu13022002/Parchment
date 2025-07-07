@@ -9,7 +9,7 @@ CLASS net/minecraft/client/gui/GuiGraphics
 	METHOD applyScissor (Lnet/minecraft/client/gui/navigation/ScreenRectangle;)V
 		COMMENT Applies scissoring based on the provided screen rectangle.
 		ARG 1 rectangle
-			COMMENT the screen rectangle to apply scissoring with. Can be null to disable scissoring.
+			COMMENT the screen rectangle to apply scissoring with. Can be {@code null} to disable scissoring.
 	METHOD blit (IIIIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V
 		COMMENT Blits a portion of the specified texture atlas sprite onto the screen at the given coordinates.
 		ARG 1 x
@@ -173,8 +173,8 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 1 sprite
 		ARG 2 textureWidth
 		ARG 3 textureHeight
-		ARG 4 uPosition
-		ARG 5 vPosition
+		ARG 4 u
+		ARG 5 v
 		ARG 6 x
 		ARG 7 y
 		ARG 8 blitOffset
@@ -197,8 +197,8 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 1 sprite
 		ARG 2 textureWidth
 		ARG 3 textureHeight
-		ARG 4 uPosition
-		ARG 5 vPosition
+		ARG 4 u
+		ARG 5 v
 		ARG 6 x
 		ARG 7 y
 		ARG 8 uWidth
@@ -207,8 +207,8 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 1 sprite
 		ARG 2 textureWidth
 		ARG 3 textureHeight
-		ARG 4 uPosition
-		ARG 5 vPosition
+		ARG 4 u
+		ARG 5 v
 		ARG 6 x
 		ARG 7 y
 		ARG 8 blitOffset
@@ -221,14 +221,14 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 4 blitOffset
 		ARG 5 width
 		ARG 6 height
-		ARG 7 uPosition
-		ARG 8 vPosition
+		ARG 7 u
+		ARG 8 v
 		ARG 9 spriteWidth
 		ARG 10 spriteHeight
 		ARG 11 nineSliceWidth
 		ARG 12 nineSliceHeight
 	METHOD bufferSource ()Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;
-		COMMENT {@return returns the buffer source for rendering.}
+		COMMENT {@return the buffer source for rendering}
 	METHOD disableScissor ()V
 		COMMENT Disables scissoring.
 	METHOD drawCenteredString (Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V
@@ -273,7 +273,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the runnable to execute.
 	METHOD drawString (Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)I
 		COMMENT Draws a string at the specified coordinates using the given font, text, and color. Returns the width of the drawn string.
-		COMMENT <p>
 		COMMENT @return the width of the drawn string.
 		ARG 1 font
 			COMMENT the font to use for rendering.
@@ -287,7 +286,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the color of the string.
 	METHOD drawString (Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I
 		COMMENT Draws a string at the specified coordinates using the given font, text, color, and drop shadow. Returns the width of the drawn string.
-		COMMENT <p>
 		COMMENT @return the width of the drawn string.
 		ARG 1 font
 			COMMENT the font to use for rendering.
@@ -303,7 +301,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT whether to apply a drop shadow to the string.
 	METHOD drawString (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;III)I
 		COMMENT Draws a component's visual order text at the specified coordinates using the given font, text component, and color.
-		COMMENT <p>
 		COMMENT @return the width of the drawn string.
 		ARG 1 font
 			COMMENT the font to use for rendering.
@@ -317,7 +314,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the color of the string.
 	METHOD drawString (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I
 		COMMENT Draws a component's visual order text at the specified coordinates using the given font, text component, color, and drop shadow.
-		COMMENT <p>
 		COMMENT @return the width of the drawn string.
 		ARG 1 font
 			COMMENT the font to use for rendering.
@@ -333,7 +329,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT whether to apply a drop shadow to the string.
 	METHOD drawString (Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;III)I
 		COMMENT Draws a formatted character sequence at the specified coordinates using the given font, text, and color. Returns the width of the drawn string.
-		COMMENT <p>
 		COMMENT @return the width of the drawn string.
 		ARG 1 font
 			COMMENT the font to use for rendering.
@@ -347,8 +342,7 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the color of the string
 	METHOD drawString (Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;IIIZ)I
 		COMMENT Draws a formatted character sequence at the specified coordinates using the given font, text, color, and drop shadow. Returns the width of the drawn string.
-		COMMENT <p>
-		COMMENT @return returns the width of the drawn string.
+		COMMENT @return the width of the drawn string.
 		ARG 1 font
 			COMMENT the font to use for rendering.
 		ARG 2 text
@@ -518,9 +512,9 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		COMMENT Flushes the render state if it is not managed.
 		COMMENT @deprecated This method is deprecated.
 	METHOD guiHeight ()I
-		COMMENT {@return returns the height of the GUI screen in pixels}
+		COMMENT {@return the height of the GUI screen in pixels}
 	METHOD guiWidth ()I
-		COMMENT {@return returns the width of the GUI screen in pixels}
+		COMMENT {@return the width of the GUI screen in pixels}
 	METHOD hLine (IIII)V
 		COMMENT Draws a horizontal line from minX to maxX at the specified y-coordinate with the given color.
 		ARG 1 minX
@@ -598,13 +592,13 @@ CLASS net/minecraft/client/gui/GuiGraphics
 	METHOD lambda$renderTooltip$4 (Ljava/util/List;Lnet/minecraft/world/inventory/tooltip/TooltipComponent;)V
 		ARG 1 component
 	METHOD pose ()Lcom/mojang/blaze3d/vertex/PoseStack;
-		COMMENT {@return returns the PoseStack used for transformations and rendering.}
+		COMMENT {@return the PoseStack used for transformations and rendering}
 	METHOD renderComponentHoverEffect (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Style;II)V
 		COMMENT Renders a hover effect for a text component at the specified mouse coordinates.
 		ARG 1 font
 			COMMENT the font used for rendering text.
 		ARG 2 style
-			COMMENT the style of the text component. Can be null.
+			COMMENT the style of the text component. Can be {@code null}.
 		ARG 3 mouseX
 			COMMENT the x-coordinate of the mouse position.
 		ARG 4 mouseY
@@ -647,9 +641,9 @@ CLASS net/minecraft/client/gui/GuiGraphics
 	METHOD renderItem (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;III)V
 		COMMENT Renders an item stack for a living entity in a specific level at the specified coordinates with a random seed.
 		ARG 1 entity
-			COMMENT the living entity. Can be null.
+			COMMENT the living entity. Can be {@code null}.
 		ARG 2 level
-			COMMENT the level in which the rendering occurs. Can be null.
+			COMMENT the level in which the rendering occurs. Can be {@code null}.
 		ARG 3 stack
 			COMMENT the item stack to render.
 		ARG 4 x
@@ -661,9 +655,9 @@ CLASS net/minecraft/client/gui/GuiGraphics
 	METHOD renderItem (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;IIII)V
 		COMMENT Renders an item stack for a living entity in a specific level at the specified coordinates with a random seed and a custom GUI offset.
 		ARG 1 entity
-			COMMENT the living entity. Can be null.
+			COMMENT the living entity. Can be {@code null}.
 		ARG 2 level
-			COMMENT the level in which the rendering occurs. Can be null.
+			COMMENT the level in which the rendering occurs. Can be {@code null}.
 		ARG 3 stack
 			COMMENT the item stack to render.
 		ARG 4 x
@@ -725,7 +719,7 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 4 y
 			COMMENT the y-coordinate of the rendering position.
 		ARG 5 text
-			COMMENT the custom text to display. Can be null.
+			COMMENT the custom text to display. Can be {@code null}.
 	METHOD renderOutline (IIIII)V
 		COMMENT Renders an outline rectangle on the screen with the specified color.
 		ARG 1 x
@@ -840,12 +834,10 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		COMMENT A utility class for managing a stack of screen rectangles for scissoring.
 		METHOD pop ()Lnet/minecraft/client/gui/navigation/ScreenRectangle;
 			COMMENT Pops the top screen rectangle from the scissor stack.
-			COMMENT <p>
-			COMMENT @return The new top screen rectangle after the pop operation, or null if the stack is empty.
+			COMMENT @return The new top screen rectangle after the pop operation, or {@code null} if the stack is empty.
 			COMMENT @throws IllegalStateException if the stack is empty.
 		METHOD push (Lnet/minecraft/client/gui/navigation/ScreenRectangle;)Lnet/minecraft/client/gui/navigation/ScreenRectangle;
 			COMMENT Pushes a screen rectangle onto the scissor stack.
-			COMMENT <p>
 			COMMENT @return The resulting intersection of the pushed rectangle with the previous top rectangle on the stack, or the pushed rectangle if the stack is empty.
 			ARG 1 scissor
 				COMMENT the screen rectangle to push.

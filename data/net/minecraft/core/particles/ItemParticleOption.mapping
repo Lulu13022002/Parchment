@@ -5,6 +5,6 @@ CLASS net/minecraft/core/particles/ItemParticleOption
 	METHOD codec (Lnet/minecraft/core/particles/ParticleType;)Lcom/mojang/serialization/Codec;
 		ARG 0 type
 	METHOD lambda$codec$0 (Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/core/particles/ItemParticleOption;
-		ARG 1 itemStack
+		ARG 1 stack
 	METHOD writeToNetwork (Lnet/minecraft/network/FriendlyByteBuf;)V
 		ARG 1 buffer
