@@ -9,8 +9,6 @@ CLASS com/mojang/realmsclient/client/RealmsClient
 		ARG 1 worldId
 	METHOD close (J)Ljava/lang/Boolean;
 		ARG 1 worldId
-	METHOD create (Lnet/minecraft/client/Minecraft;)Lcom/mojang/realmsclient/client/RealmsClient;
-		ARG 0 minecraft
 	METHOD createSnapshotRealm (Ljava/lang/Long;)Lcom/mojang/realmsclient/dto/RealmsServer;
 		ARG 1 parentId
 	METHOD deleteRealm (J)V
@@ -60,12 +58,6 @@ CLASS com/mojang/realmsclient/client/RealmsClient
 		ARG 3 slotId
 	METHOD requestUploadInfo (J)Lcom/mojang/realmsclient/dto/UploadInfo;
 		ARG 1 worldId
-	METHOD requestUploadInfo (JLjava/lang/String;)Lcom/mojang/realmsclient/dto/UploadInfo;
-		ARG 1 worldId
-		ARG 3 token
-	METHOD resetWorldWithSeed (JLcom/mojang/realmsclient/util/WorldGenerationInfo;)Ljava/lang/Boolean;
-		ARG 1 worldId
-		ARG 3 generationInfo
 	METHOD resetWorldWithTemplate (JLjava/lang/String;)Ljava/lang/Boolean;
 		ARG 1 worldId
 		ARG 3 worldTemplateId
@@ -104,9 +96,6 @@ CLASS com/mojang/realmsclient/client/RealmsClient
 	METHOD uuidListToJsonArray (Ljava/util/List;)Lcom/google/gson/JsonArray;
 		ARG 0 uuidList
 	CLASS Environment
-		METHOD <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-			ARG 3 baseUrl
-			ARG 4 protocol
 		METHOD <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 			ARG 3 baseUrl
 			ARG 4 alternativeUrl

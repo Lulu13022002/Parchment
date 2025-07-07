@@ -22,10 +22,6 @@ CLASS net/minecraft/client/gui/screens/debug/GameModeSwitcherScreen
 			ARG 1 icon
 			ARG 2 x
 			ARG 3 y
-		METHOD <init> (Lnet/minecraft/client/gui/screens/debug/GameModeSwitcherScreen;Lnet/minecraft/client/gui/screens/debug/GameModeSwitcherScreen$GameModeIcon;II)V
-			ARG 2 icon
-			ARG 3 x
-			ARG 4 y
 		METHOD drawSelection (Lnet/minecraft/client/gui/GuiGraphics;)V
 			ARG 1 guiGraphics
 		METHOD drawSlot (Lnet/minecraft/client/gui/GuiGraphics;)V

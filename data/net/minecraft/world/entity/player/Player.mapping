@@ -6,16 +6,12 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 2 pos
 		ARG 3 yRot
 		ARG 4 gameProfile
-	METHOD actuallyHurt (Lnet/minecraft/world/damagesource/DamageSource;F)V
-		COMMENT Deals damage to the entity. This will take the armor of the entity into consideration before damaging the health bar.
-		ARG 1 damageSrc
-		ARG 2 damageAmount
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addItem (Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 1 stack
 	METHOD attack (Lnet/minecraft/world/entity/Entity;)V
-		COMMENT Attacks for the player the targeted entity with the currently equipped item.  The equipped item has hitEntity called on it. Args: targetEntity
+		COMMENT Attacks for the player the targeted entity with the currently equipped item. The equipped item has hurtEnemy called on it.
 		ARG 1 target
 	METHOD awardRecipes (Ljava/util/Collection;)I
 		ARG 1 recipes
@@ -37,15 +33,9 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 gameMode
-	METHOD blockUsingShield (Lnet/minecraft/world/entity/LivingEntity;)V
-		ARG 1 entity
 	METHOD canEat (Z)Z
 		ARG 1 canAlwaysEat
 	METHOD canFallAtLeast (DDD)Z
-		ARG 1 x
-		ARG 3 z
-		ARG 5 distance
-	METHOD canFallAtLeast (DDF)Z
 		ARG 1 x
 		ARG 3 z
 		ARG 5 distance
@@ -62,37 +52,28 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 2 distance
 	METHOD canPlayerFitWithinBlocksAndEntitiesWhen (Lnet/minecraft/world/entity/Pose;)Z
 		ARG 1 pose
-	METHOD canTakeItem (Lnet/minecraft/world/item/ItemStack;)Z
-		ARG 1 itemstack
 	METHOD causeFoodExhaustion (F)V
 		COMMENT Increases exhaustion level by the supplied amount.
 		ARG 1 exhaustion
 	METHOD closeContainer ()V
-		COMMENT Sets the current crafting inventory back to the 2x2 square.
+		COMMENT Closes the container the player currently has open.
 	METHOD crit (Lnet/minecraft/world/entity/Entity;)V
 		COMMENT Called when the entity is dealt a critical hit.
-		ARG 1 entityHit
+		ARG 1 target
 	METHOD decorateDisplayNameComponent (Lnet/minecraft/network/chat/MutableComponent;)Lnet/minecraft/network/chat/MutableComponent;
 		ARG 1 displayName
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
-	METHOD disableShield (Lnet/minecraft/world/item/ItemStack;)V
-		ARG 1 stack
+		ARG 1 damageSource
 	METHOD displayClientMessage (Lnet/minecraft/network/chat/Component;Z)V
-		ARG 1 chatComponent
-		ARG 2 actionBar
+		ARG 1 message
+		ARG 2 overlay
 	METHOD doWaterSplashEffect ()V
-		COMMENT Plays the {@link #getSplashSound() splash sound}, and the {@link ParticleType#WATER_BUBBLE} and {@link ParticleType#WATER_SPLASH} particles.
+		COMMENT Plays the splash sound, and the {@link ParticleTypes#BUBBLE}/{@link ParticleTypes#SPLASH} particles.
 	METHOD drop (Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/entity/item/ItemEntity;
 		COMMENT Drops an item into the world.
-		ARG 1 itemStack
+		ARG 1 stack
 		ARG 2 includeThrowerName
-	METHOD drop (Lnet/minecraft/world/item/ItemStack;ZZ)Lnet/minecraft/world/entity/item/ItemEntity;
-		COMMENT Creates and drops the provided item. Depending on the dropAround, it will drop the item around the player, instead of dropping the item from where the player is pointing at. Likewise, if includeThrowerName is true, the dropped item entity will have the thrower set as the player.
-		ARG 1 droppedItem
-		ARG 2 dropAround
-		ARG 3 includeThrowerName
 	METHOD freeAt (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
 	METHOD getAbsorptionAmount ()F
@@ -109,23 +90,21 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 2 damage
 		ARG 3 damageSource
 	METHOD getEnderChestInventory ()Lnet/minecraft/world/inventory/PlayerEnderChestContainer;
-		COMMENT Returns the InventoryEnderChest of this player.
+		COMMENT Returns the PlayerEnderChestContainer of this player.
 	METHOD getFoodData ()Lnet/minecraft/world/food/FoodData;
-		COMMENT Returns the player's FoodStats object.
+		COMMENT Returns the player's FoodData object.
 	METHOD getGameProfile ()Lcom/mojang/authlib/GameProfile;
 		COMMENT Returns the GameProfile for this player
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
 		ARG 1 damageSource
-	METHOD getItemBySlot (Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;
-		ARG 1 slot1
 	METHOD getProjectile (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 shootable
 	METHOD getRopeHoldPosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getScoreboardName ()Ljava/lang/String;
 		COMMENT Returns a String to use as this entity's name in the scoreboard/entity selector systems
 	METHOD getSpeed ()F
-		COMMENT Gets the movespeed used for the new AI system.
+		COMMENT Gets the movement speed used for the new AI system.
 	METHOD getXpNeededForNextLevel ()I
 		COMMENT This method returns the cap amount of experience that the experience bar can hold. With each level, the experience cap on the player's experience bar is raised by 10.
 	METHOD giveExperienceLevels (I)V
@@ -139,15 +118,9 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 1 state
 	METHOD hasPermissions (I)Z
 		ARG 1 permissionLevel
-	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
-		COMMENT Called when the entity is attacked.
-		ARG 1 source
-		ARG 2 amount
 	METHOD hurtArmor (Lnet/minecraft/world/damagesource/DamageSource;F)V
 		ARG 1 damageSource
-		ARG 2 damage
-	METHOD hurtCurrentlyUsedShield (F)V
-		ARG 1 damage
+		ARG 2 damageAmount
 	METHOD increaseScore (I)V
 		COMMENT Add to player's score
 		ARG 1 score
@@ -164,9 +137,6 @@ CLASS net/minecraft/world/entity/player/Player
 		COMMENT Checks if the player's health is not full and not zero.
 	METHOD isImmobile ()Z
 		COMMENT Dead and sleeping entities cannot move
-	METHOD isInvulnerableTo (Lnet/minecraft/world/damagesource/DamageSource;)Z
-		COMMENT Returns whether this Entity is invulnerable to the given DamageSource.
-		ARG 1 source
 	METHOD isLocalPlayer ()Z
 		COMMENT Returns whether this is a {@link net.minecraft.client.player.LocalPlayer}.
 	METHOD isModelPartShown (Lnet/minecraft/world/entity/player/PlayerModelPart;)Z
@@ -177,40 +147,25 @@ CLASS net/minecraft/world/entity/player/Player
 		COMMENT Returns whether the player is asleep and the screen has fully faded.
 	METHOD isSpectator ()Z
 		COMMENT Returns {@code true} if the player is in spectator mode.
-	METHOD jumpFromGround ()V
-		COMMENT Causes this entity to do an upwards motion (jumping).
-	METHOD lambda$addAdditionalSaveData$3 (Lnet/minecraft/core/GlobalPos;)Ljava/util/Optional;
-		ARG 0 pos
-	METHOD lambda$decorateDisplayNameComponent$6 (Ljava/lang/String;Lnet/minecraft/network/chat/Style;)Lnet/minecraft/network/chat/Style;
-		ARG 2 style
-	METHOD lambda$playShoulderEntityAmbientSound$0 (Lnet/minecraft/world/entity/EntityType;)Z
-		ARG 0 entityType
-	METHOD lambda$playShoulderEntityAmbientSound$1 (Lnet/minecraft/world/entity/EntityType;)V
-		ARG 1 entityType
-	METHOD lambda$readAdditionalSaveData$2 (Lnet/minecraft/world/phys/Vec3;)V
-		ARG 1 currentImpulseImpactPos
-	METHOD lambda$respawnEntityOnShoulder$5 (Lnet/minecraft/world/entity/Entity;)V
-		ARG 1 entity
 	METHOD magicCrit (Lnet/minecraft/world/entity/Entity;)V
-		ARG 1 entityHit
+		ARG 1 target
 	METHOD makeStuckInBlock (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 state
 		ARG 2 motionMultiplier
 	METHOD mayUseItemAt (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;Lnet/minecraft/world/item/ItemStack;)Z
 		COMMENT Returns whether this player can modify the block at a certain location with the given stack.
 		COMMENT <p>
-		COMMENT The position being queried is {@code pos.offset(facing.getOpposite())}.
+		COMMENT The position being queried is {@code pos.relative(facing.getOpposite())}.
 		COMMENT
 		COMMENT @return Whether this player may modify the queried location in the current world
-		COMMENT @see ItemStack#canPlaceOn(Block)
-		COMMENT @see ItemStack#canEditBlocks()
-		COMMENT @see PlayerCapabilities#allowEdit
+		COMMENT @see ItemStack#canPlaceOnBlockInAdventureMode(BlockInWorld)
+		COMMENT @see Abilities#mayBuild
 		ARG 1 pos
 		ARG 2 facing
 		ARG 3 stack
 	METHOD maybeBackOffFromEdge (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/entity/MoverType;)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 vec
-		ARG 2 mover
+		ARG 1 movement
+		ARG 2 type
 	METHOD onEnchantmentPerformed (Lnet/minecraft/world/item/ItemStack;I)V
 		ARG 1 enchantedItem
 		ARG 2 levelCost
@@ -245,20 +200,20 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 3 volume
 		ARG 4 pitch
 	METHOD playShoulderEntityAmbientSound (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD playSound (Lnet/minecraft/sounds/SoundEvent;FF)V
 		ARG 1 sound
 		ARG 2 volume
 		ARG 3 pitch
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD resetRecipes (Ljava/util/Collection;)I
 		ARG 1 recipes
 	METHOD resetStat (Lnet/minecraft/stats/Stat;)V
 		ARG 1 stat
 	METHOD respawnEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD rideTick ()V
 		COMMENT Handles updating while riding another entity
 	METHOD sendMerchantOffers (ILnet/minecraft/world/item/trading/MerchantOffers;IIZZ)V
@@ -271,16 +226,13 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD setClientLoaded (Z)V
 		ARG 1 clientLoaded
 	METHOD setEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)Z
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD setIgnoreFallDamageFromCurrentImpulse (Z)V
 		ARG 1 ignoreFallDamageFromCurrentImpulse
-	METHOD setItemSlot (Lnet/minecraft/world/entity/EquipmentSlot;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 1 slot
-		ARG 2 stack
 	METHOD setLastDeathLocation (Ljava/util/Optional;)V
 		ARG 1 lastDeathLocation
 	METHOD setMainArm (Lnet/minecraft/world/entity/HumanoidArm;)V
-		ARG 1 hand
+		ARG 1 arm
 	METHOD setReducedDebugInfo (Z)V
 		ARG 1 reducedDebugInfo
 	METHOD setRemainingFireTicks (I)V
@@ -289,13 +241,13 @@ CLASS net/minecraft/world/entity/player/Player
 		COMMENT Set player's score
 		ARG 1 score
 	METHOD setShoulderEntityLeft (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD setShoulderEntityRight (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD startAutoSpinAttack (IFLnet/minecraft/world/item/ItemStack;)V
 		ARG 1 ticks
-		ARG 2 damage
-		ARG 3 itemStack
+		ARG 2 damageAmount
+		ARG 3 stack
 	METHOD startSleepInBed (Lnet/minecraft/core/BlockPos;)Lcom/mojang/datafixers/util/Either;
 		ARG 1 bedPos
 	METHOD stopSleepInBed (ZZ)V

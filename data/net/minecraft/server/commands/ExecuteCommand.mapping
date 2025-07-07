@@ -36,7 +36,7 @@ CLASS net/minecraft/server/commands/ExecuteCommand
 		ARG 0 context
 		ARG 1 bounds
 	METHOD checkScore (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/server/commands/ExecuteCommand$IntBiPredicate;)Z
-		ARG 0 source
+		ARG 0 context
 		ARG 1 predicate
 	METHOD checkUnlessRegions (Lcom/mojang/brigadier/context/CommandContext;Z)I
 		ARG 0 context
@@ -209,16 +209,6 @@ CLASS net/minecraft/server/commands/ExecuteCommand
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/commands/CommandBuildContext;)V
 		ARG 0 dispatcher
 		ARG 1 buildContext
-	METHOD scheduleFunctionConditionsAndTest (Lnet/minecraft/commands/ExecutionCommandSource;Ljava/util/List;Ljava/util/function/Function;Ljava/util/function/IntPredicate;Lcom/mojang/brigadier/context/ContextChain;Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/commands/execution/ExecutionControl;Lnet/minecraft/server/commands/ExecuteCommand$CommandGetter;Lnet/minecraft/commands/execution/ChainModifiers;)V
-		ARG 0 originalSource
-		ARG 1 sources
-		ARG 2 sourceModifier
-		ARG 3 successCheck
-		ARG 4 contextChain
-		ARG 5 arguments
-		ARG 6 executionControl
-		ARG 7 functions
-		ARG 8 chainModifiers
 	METHOD scheduleFunctionConditionsAndTest (Lnet/minecraft/commands/ExecutionCommandSource;Ljava/util/List;Ljava/util/function/Function;Ljava/util/function/IntPredicate;Lcom/mojang/brigadier/context/ContextChain;Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/commands/execution/ExecutionControl;Lnet/minecraft/server/commands/InCommandFunction;Lnet/minecraft/commands/execution/ChainModifiers;)V
 		ARG 0 originalSource
 		ARG 1 sources
@@ -252,9 +242,6 @@ CLASS net/minecraft/server/commands/ExecuteCommand
 		ARG 0 parent
 		ARG 1 literal
 		ARG 2 storingResult
-	CLASS CommandGetter
-		METHOD get (Lcom/mojang/brigadier/context/CommandContext;)Ljava/lang/Object;
-			ARG 1 context
 	CLASS IntBiPredicate
 		METHOD test (II)Z
 			ARG 1 value1

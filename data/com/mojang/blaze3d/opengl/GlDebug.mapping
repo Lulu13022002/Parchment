@@ -1,10 +1,7 @@
 CLASS com/mojang/blaze3d/opengl/GlDebug
-	METHOD enableDebugCallback (IZ)Lcom/mojang/blaze3d/opengl/GlDebug;
+	METHOD enableDebugCallback (IZLjava/util/Set;)Lcom/mojang/blaze3d/opengl/GlDebug;
 		ARG 0 verbosity
 		ARG 1 synchronous
-	METHOD enableDebugCallback (IZLjava/util/Set;)Lcom/mojang/blaze3d/opengl/GlDebug;
-		ARG 0 vebosity
-		ARG 1 sychronous
 		ARG 2 enabledExtensions
 	METHOD printDebugLog (IIIIIJJ)V
 		ARG 1 source
@@ -17,7 +14,7 @@ CLASS com/mojang/blaze3d/opengl/GlDebug
 	METHOD printUnknownToken (I)Ljava/lang/String;
 		ARG 0 token
 	METHOD severityToString (I)Ljava/lang/String;
-		ARG 0 type
+		ARG 0 severity
 	METHOD sourceToString (I)Ljava/lang/String;
 		ARG 0 source
 	METHOD typeToString (I)Ljava/lang/String;

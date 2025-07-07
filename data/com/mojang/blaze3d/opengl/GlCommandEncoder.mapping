@@ -14,9 +14,6 @@ CLASS com/mojang/blaze3d/opengl/GlCommandEncoder
 		ARG 2 firstIndex
 		ARG 3 indexCount
 		ARG 4 indexType
-	METHOD executeDrawMultiple (Lcom/mojang/blaze3d/opengl/GlRenderPass;Ljava/util/Collection;)V
-		ARG 1 renderPass
-		ARG 2 draws
 	METHOD executeDrawMultiple (Lcom/mojang/blaze3d/opengl/GlRenderPass;Ljava/util/Collection;Lcom/mojang/blaze3d/buffers/GpuBuffer;Lcom/mojang/blaze3d/vertex/VertexFormat$IndexType;)V
 		ARG 1 renderPass
 		ARG 2 draws

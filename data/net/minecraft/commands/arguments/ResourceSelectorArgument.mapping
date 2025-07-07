@@ -9,7 +9,7 @@ CLASS net/minecraft/commands/arguments/ResourceSelectorArgument
 		ARG 1 argument
 		ARG 2 registryKey
 	METHOD isAllowedPatternCharacter (C)Z
-		ARG 0 c
+		ARG 0 character
 	METHOD lambda$parse$1 (Ljava/lang/String;Lnet/minecraft/core/Holder$Reference;)Z
 		ARG 1 reference
 	METHOD lambda$parse$2 (Ljava/lang/String;Lnet/minecraft/core/Holder$Reference;)Z
@@ -20,10 +20,10 @@ CLASS net/minecraft/commands/arguments/ResourceSelectorArgument
 	METHOD matches (Ljava/lang/String;Lnet/minecraft/resources/ResourceLocation;)Z
 		ARG 0 string
 		ARG 1 location
-	METHOD parse (Lcom/mojang/brigadier/StringReader;)Ljava/lang/Object;
+	METHOD parse (Lcom/mojang/brigadier/StringReader;)Ljava/util/Collection;
 		ARG 1 reader
 	METHOD parse (Lcom/mojang/brigadier/StringReader;Lnet/minecraft/core/HolderLookup;)Ljava/util/Collection;
-		ARG 0 parse
+		ARG 0 reader
 		ARG 1 lookup
 	METHOD readPattern (Lcom/mojang/brigadier/StringReader;)Ljava/lang/String;
 		ARG 0 reader

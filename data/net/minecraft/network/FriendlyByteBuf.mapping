@@ -166,7 +166,7 @@ CLASS net/minecraft/network/FriendlyByteBuf
 	METHOD readBlockPos (Lio/netty/buffer/ByteBuf;)Lnet/minecraft/core/BlockPos;
 		ARG 0 buffer
 	METHOD readById (Ljava/util/function/IntFunction;)Ljava/lang/Object;
-		ARG 1 idLookuo
+		ARG 1 idLookup
 	METHOD readByteArray (I)[B
 		ARG 1 maxLength
 	METHOD readByteArray (Lio/netty/buffer/ByteBuf;)[B
@@ -247,15 +247,6 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		COMMENT Reads a length-prefixed array of longs from the buffer.
 	METHOD readLongArray (Lio/netty/buffer/ByteBuf;)[J
 		ARG 0 buffer
-	METHOD readLongArray ([J)[J
-		COMMENT Reads a length-prefixed array of longs from the buffer.
-		COMMENT Will try to use the given long[] if possible. Note that if an array with the correct size is given, maxLength is ignored.
-		ARG 1 array
-	METHOD readLongArray ([JI)[J
-		COMMENT Reads a length-prefixed array of longs with a maximum length from the buffer.
-		COMMENT Will try to use the given long[] if possible. Note that if an array with the correct size is given, maxLength is ignored.
-		ARG 1 array
-		ARG 2 maxLength
 	METHOD readMap (Ljava/util/function/IntFunction;Lnet/minecraft/network/codec/StreamDecoder;Lnet/minecraft/network/codec/StreamDecoder;)Ljava/util/Map;
 		ARG 1 mapFactory
 		ARG 2 keyReader
@@ -264,13 +255,12 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 keyReader
 		ARG 2 valueReader
 	METHOD readNbt ()Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Reads a NBT CompoundTag from this buffer.
+		COMMENT Reads a tag from this buffer.
 		COMMENT {@code null} is a valid value and may be returned.
 		COMMENT
 		COMMENT This method will read a maximum of 0x200000 bytes.
 		COMMENT
 		COMMENT @see #writeNbt
-		COMMENT @see #readAnySizeNbt
 		COMMENT @see #readNbt(NbtAccounter)
 	METHOD readNbt (Lio/netty/buffer/ByteBuf;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 0 buffer
@@ -298,8 +288,6 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 length
 	METHOD readSectionPos ()Lnet/minecraft/core/SectionPos;
 		COMMENT Reads a SectionPos encoded as a long from the buffer.
-		COMMENT
-		COMMENT @see #writeSectionPos
 	METHOD readSlice (I)Lio/netty/buffer/ByteBuf;
 		ARG 1 length
 	METHOD readUUID ()Ljava/util/UUID;
@@ -597,7 +585,7 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 value
 	METHOD writeNbt (Lio/netty/buffer/ByteBuf;Lnet/minecraft/nbt/Tag;)V
 		ARG 0 buffer
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD writeNbt (Lnet/minecraft/nbt/Tag;)Lnet/minecraft/network/FriendlyByteBuf;
 		ARG 1 tag
 	METHOD writeNullable (Lio/netty/buffer/ByteBuf;Ljava/lang/Object;Lnet/minecraft/network/codec/StreamEncoder;)V

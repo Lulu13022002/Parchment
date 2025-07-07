@@ -2,7 +2,7 @@ CLASS net/minecraft/world/level/block/SculkSpreader
 	METHOD <init> (ZLnet/minecraft/tags/TagKey;IIII)V
 		ARG 1 isWorldGeneration
 		ARG 2 replaceableBlocks
-		ARG 3 growthSpawnCoat
+		ARG 3 growthSpawnCost
 		ARG 4 noGrowthRadius
 		ARG 5 chargeDecayRate
 		ARG 6 additionalDecayRate
@@ -10,11 +10,6 @@ CLASS net/minecraft/world/level/block/SculkSpreader
 		ARG 1 cursor
 	METHOD addCursors (Lnet/minecraft/core/BlockPos;I)V
 		ARG 1 pos
-		ARG 2 charge
-	METHOD lambda$save$0 (Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V
-		ARG 1 cursorsTag
-	METHOD lambda$updateCursors$2 (Lnet/minecraft/world/level/block/SculkSpreader$ChargeCursor;Lnet/minecraft/core/BlockPos;Ljava/lang/Integer;)Ljava/lang/Integer;
-		ARG 1 cursorPos
 		ARG 2 charge
 	METHOD load (Lnet/minecraft/nbt/CompoundTag;)V
 		ARG 1 tag

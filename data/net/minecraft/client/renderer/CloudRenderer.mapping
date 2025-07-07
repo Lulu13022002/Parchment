@@ -21,13 +21,6 @@ CLASS net/minecraft/client/renderer/CloudRenderer
 		ARG 4 cloudStatus
 		ARG 5 relativeCameraPos
 		ARG 6 pipeline
-	METHOD buildMesh (Lcom/mojang/blaze3d/vertex/Tesselator;IILnet/minecraft/client/CloudStatus;Lnet/minecraft/client/renderer/CloudRenderer$RelativeCameraPos;Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/MeshData;
-		ARG 1 tesselator
-		ARG 2 cellX
-		ARG 3 cellZ
-		ARG 4 cloudStatus
-		ARG 5 relativeCameraPos
-		ARG 6 renderType
 	METHOD buildMesh (Lnet/minecraft/client/renderer/CloudRenderer$RelativeCameraPos;Lcom/mojang/blaze3d/vertex/BufferBuilder;IIIIIIZ)V
 		ARG 1 relativeCameraPos
 		ARG 2 bufferBuilder
@@ -43,18 +36,6 @@ CLASS net/minecraft/client/renderer/CloudRenderer
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
-	METHOD drawWithRenderType (Lnet/minecraft/client/renderer/RenderType;FFF)V
-		ARG 1 renderType
-		ARG 2 x
-		ARG 3 y
-		ARG 4 z
-	METHOD drawWithRenderType (Lnet/minecraft/client/renderer/RenderType;Lorg/joml/Matrix4f;Lorg/joml/Matrix4f;FFF)V
-		ARG 1 renderType
-		ARG 2 frustumMatrix
-		ARG 3 projectionMatrix
-		ARG 4 x
-		ARG 5 y
-		ARG 6 z
 	METHOD getColor (J)I
 		ARG 0 cellData
 	METHOD isCellEmpty (I)Z
@@ -79,11 +60,3 @@ CLASS net/minecraft/client/renderer/CloudRenderer
 		ARG 3 height
 		ARG 4 cameraPosition
 		ARG 5 ticks
-	METHOD render (ILnet/minecraft/client/CloudStatus;FLorg/joml/Matrix4f;Lorg/joml/Matrix4f;Lnet/minecraft/world/phys/Vec3;F)V
-		ARG 1 height
-		ARG 2 cloudStatus
-		ARG 3 color
-		ARG 4 frustumMatrix
-		ARG 5 projectionMatrix
-		ARG 6 cameraPosiiton
-		ARG 7 ticks

@@ -32,7 +32,7 @@ CLASS net/minecraft/world/entity/projectile/FireworkRocketEntity
 		ARG 2 stack
 		ARG 3 shooter
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD dealExplosionDamage (Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 level
 	METHOD explode (Lnet/minecraft/server/level/ServerLevel;)V
@@ -46,7 +46,7 @@ CLASS net/minecraft/world/entity/projectile/FireworkRocketEntity
 		ARG 1 result
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD shouldRender (DDD)Z
 		ARG 1 x
 		ARG 3 y

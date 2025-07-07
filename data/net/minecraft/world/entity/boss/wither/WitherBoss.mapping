@@ -1,8 +1,8 @@
 CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD canBeAffected (Lnet/minecraft/world/effect/MobEffectInstance;)Z
-		ARG 1 potioneffect
+		ARG 1 effectInstance
 	METHOD canDestroy (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 0 state
 	METHOD canRide (Lnet/minecraft/world/entity/Entity;)Z
@@ -27,7 +27,7 @@ CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 		ARG 1 state
 		ARG 2 motionMultiplier
 	METHOD performRangedAttack (IDDDZ)V
-		COMMENT Launches a Wither skull toward (par2, par4, par6)
+		COMMENT Launches a Wither skull toward XYZ
 		ARG 1 head
 		ARG 2 x
 		ARG 4 y
@@ -42,7 +42,7 @@ CLASS net/minecraft/world/entity/boss/wither/WitherBoss
 		ARG 2 distanceFactor
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD rotlerp (FFF)F
 		ARG 1 angle
 		ARG 2 targetAngle

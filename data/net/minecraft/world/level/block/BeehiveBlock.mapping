@@ -8,11 +8,9 @@ CLASS net/minecraft/world/level/block/BeehiveBlock
 		ARG 0 level
 		ARG 1 pos
 	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
-		ARG 1 blockState
+		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
-	METHOD getRenderShape (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/RenderShape;
-		ARG 1 state
 	METHOD getStateForPlacement (Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;
 		ARG 1 context
 	METHOD hasAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;)Z
@@ -25,7 +23,7 @@ CLASS net/minecraft/world/level/block/BeehiveBlock
 		ARG 2 player
 		ARG 3 pos
 		ARG 4 state
-		ARG 5 te
+		ARG 5 blockEntity
 		ARG 6 stack
 	METHOD releaseBeesAndResetHoneyLevel (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus;)V
 		ARG 1 level

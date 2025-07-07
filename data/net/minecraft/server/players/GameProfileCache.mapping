@@ -39,18 +39,12 @@ CLASS net/minecraft/server/players/GameProfileCache
 	METHOD save ()V
 		COMMENT Save the cached profiles to disk
 	METHOD setExecutor (Ljava/util/concurrent/Executor;)V
-		ARG 1 exectutor
+		ARG 1 executor
 	METHOD setUsesAuthentication (Z)V
 		ARG 0 onlineMode
 	METHOD writeGameProfile (Lnet/minecraft/server/players/GameProfileCache$GameProfileInfo;Ljava/text/DateFormat;)Lcom/google/gson/JsonElement;
 		ARG 0 profileInfo
 		ARG 1 dateFormat
-	CLASS 1
-		METHOD onProfileLookupFailed (Ljava/lang/String;Ljava/lang/Exception;)V
-			ARG 1 profileName
-			ARG 2 exception
-		METHOD onProfileLookupSucceeded (Lcom/mojang/authlib/GameProfile;)V
-			ARG 1 profile
 	CLASS GameProfileInfo
 		FIELD expirationDate Ljava/util/Date;
 			COMMENT The date that this entry will expire

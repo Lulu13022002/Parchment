@@ -22,7 +22,6 @@ CLASS net/minecraft/world/level/BaseCommandBlock
 		ARG 1 tag
 		ARG 2 levelRegistry
 	METHOD setCommand (Ljava/lang/String;)V
-		COMMENT Sets the command.
 		ARG 1 command
 	METHOD setCustomName (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 customName
