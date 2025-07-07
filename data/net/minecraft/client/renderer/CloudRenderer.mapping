@@ -21,7 +21,7 @@ CLASS net/minecraft/client/renderer/CloudRenderer
 		ARG 2 cellX
 		ARG 3 cellZ
 		ARG 4 face
-		ARG 5 offset
+		ARG 5 flags
 	METHOD getSizeForCloudDistance (I)I
 		ARG 0 cloudDistance
 	METHOD isCellEmpty (I)Z

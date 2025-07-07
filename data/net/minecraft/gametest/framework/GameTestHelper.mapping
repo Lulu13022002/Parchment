@@ -78,7 +78,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 testEntityData
+		ARG 4 expectedData
 	METHOD assertEntityData (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/EntityType;Ljava/util/function/Predicate;)V
 		ARG 1 pos
 		ARG 2 type
@@ -293,8 +293,6 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 entity
 	METHOD lambda$assertEntityTouching$19 (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity
-	METHOD lambda$assertSameBlockStates$23 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/core/BlockPos;)V
-		ARG 3 blockPos
 	METHOD lambda$findClosestEntity$2 (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)I
 		ARG 1 first
 		ARG 2 second
@@ -431,7 +429,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 testEntityData
+		ARG 4 expectedData
 	METHOD succeedWhenEntityNotPresent (Lnet/minecraft/world/entity/EntityType;III)V
 		ARG 1 type
 		ARG 2 x

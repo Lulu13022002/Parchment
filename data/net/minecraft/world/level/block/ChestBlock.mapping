@@ -13,7 +13,7 @@ CLASS net/minecraft/world/level/block/ChestBlock
 	METHOD createBlockStateDefinition (Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V
 		ARG 1 builder
 	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
-		ARG 1 blockState
+		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
 	METHOD getBlockType (Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/level/block/DoubleBlockCombiner$BlockType;
@@ -61,4 +61,4 @@ CLASS net/minecraft/world/level/block/ChestBlock
 		ARG 2 rotation
 	CLASS 3
 		METHOD lambda$acceptDouble$0 (Lnet/minecraft/world/level/block/entity/ChestBlockEntity;Lnet/minecraft/world/level/block/entity/ChestBlockEntity;F)F
-			ARG 2 partialTicks
+			ARG 2 partialTick

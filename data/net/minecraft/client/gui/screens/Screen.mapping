@@ -80,7 +80,7 @@ CLASS net/minecraft/client/gui/screens/Screen
 	METHOD renderBlurredBackground (Lnet/minecraft/client/gui/GuiGraphics;)V
 		ARG 1 guiGraphics
 	METHOD renderMenuBackground (Lnet/minecraft/client/gui/GuiGraphics;)V
-		ARG 1 partialTick
+		ARG 1 guiGraphics
 	METHOD renderMenuBackground (Lnet/minecraft/client/gui/GuiGraphics;IIII)V
 		ARG 1 guiGraphics
 		ARG 2 x

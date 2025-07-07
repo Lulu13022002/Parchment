@@ -43,7 +43,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 1 level
 		ARG 2 yRot
 	METHOD checkBanners (Lnet/minecraft/world/level/BlockGetter;II)V
-		ARG 1 reader
+		ARG 1 level
 		ARG 2 x
 		ARG 3 z
 	METHOD clampMapCoordinate (F)B
@@ -103,7 +103,7 @@ CLASS net/minecraft/world/level/saveddata/maps/MapItemSavedData
 		ARG 1 player
 		ARG 2 mapStack
 	METHOD toggleBanner (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)Z
-		ARG 1 accessor
+		ARG 1 level
 		ARG 2 pos
 	METHOD type (Lnet/minecraft/world/level/saveddata/maps/MapId;)Lnet/minecraft/world/level/saveddata/SavedDataType;
 		ARG 0 mapId

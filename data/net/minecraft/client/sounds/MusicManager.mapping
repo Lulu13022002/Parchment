@@ -9,7 +9,7 @@ CLASS net/minecraft/client/sounds/MusicManager
 	METHOD fadePlaying (F)Z
 		ARG 1 volume
 	METHOD isPlayingMusic (Lnet/minecraft/sounds/Music;)Z
-		COMMENT {@return {@code true} if the {@linkplain Music} selector is currently playing, {@code false} otherwise}
+		COMMENT @return {@code true} if the {@linkplain Music} selector is currently playing, {@code false} otherwise
 		ARG 1 selector
 			COMMENT the {@linkplain Music} selector to check for
 	METHOD setMinutesBetweenSongs (Lnet/minecraft/client/sounds/MusicManager$MusicFrequency;)V
