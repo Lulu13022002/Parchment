@@ -1,6 +1,4 @@
 CLASS net/minecraft/world/entity/ai/goal/target/DefendVillageTargetGoal
-	METHOD <init> (Lnet/minecraft/world/entity/animal/IronGolem;)V
-		ARG 1 golem
 	METHOD <init> (Lnet/minecraft/world/entity/animal/golem/IronGolem;)V
 		ARG 1 golem
 	METHOD canUse ()Z

@@ -1,6 +1,4 @@
 CLASS net/minecraft/world/entity/ai/goal/LandOnOwnersShoulderGoal
-	METHOD <init> (Lnet/minecraft/world/entity/animal/ShoulderRidingEntity;)V
-		ARG 1 entity
 	METHOD <init> (Lnet/minecraft/world/entity/animal/parrot/ShoulderRidingEntity;)V
 		ARG 1 entity
 	METHOD canUse ()Z

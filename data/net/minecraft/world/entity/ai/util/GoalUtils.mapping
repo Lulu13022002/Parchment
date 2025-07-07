@@ -15,7 +15,7 @@ CLASS net/minecraft/world/entity/ai/util/GoalUtils
 		ARG 1 mob
 	METHOD isRestricted (ZLnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/core/BlockPos;)Z
 		COMMENT @return if a mob is restricted. The first parameter short circuits the operation.
-		ARG 0 shortCircuit
+		ARG 0 isRestricted
 		ARG 1 mob
 		ARG 2 pos
 	METHOD isRestricted (ZLnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/phys/Vec3;)Z
@@ -31,9 +31,5 @@ CLASS net/minecraft/world/entity/ai/util/GoalUtils
 		ARG 0 mob
 		ARG 1 pos
 	METHOD mobRestricted (Lnet/minecraft/world/entity/PathfinderMob;D)Z
-		ARG 0 mob
-		ARG 1 radius
-	METHOD mobRestricted (Lnet/minecraft/world/entity/PathfinderMob;I)Z
-		COMMENT @return if a mob is stuck, within a certain radius beyond it's restriction radius
 		ARG 0 mob
 		ARG 1 radius

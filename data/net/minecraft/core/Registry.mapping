@@ -13,7 +13,7 @@ CLASS net/minecraft/core/Registry
 		COMMENT @return the name used to identify the given object within this registry or {@code null} if the object is not within this registry
 		ARG 1 value
 	METHOD getOptional (Lnet/minecraft/resources/Identifier;)Ljava/util/Optional;
-		ARG 1 name
+		ARG 1 key
 	METHOD getOptional (Lnet/minecraft/resources/ResourceKey;)Ljava/util/Optional;
 		ARG 1 registryKey
 	METHOD getRandom (Lnet/minecraft/util/RandomSource;)Ljava/util/Optional;
@@ -48,7 +48,7 @@ CLASS net/minecraft/core/Registry
 		ARG 2 value
 	METHOD registerForHolder (Lnet/minecraft/core/Registry;Lnet/minecraft/resources/Identifier;Ljava/lang/Object;)Lnet/minecraft/core/Holder$Reference;
 		ARG 0 registry
-		ARG 1 name
+		ARG 1 key
 		ARG 2 value
 	METHOD registerForHolder (Lnet/minecraft/core/Registry;Lnet/minecraft/resources/ResourceKey;Ljava/lang/Object;)Lnet/minecraft/core/Holder$Reference;
 		ARG 0 registry

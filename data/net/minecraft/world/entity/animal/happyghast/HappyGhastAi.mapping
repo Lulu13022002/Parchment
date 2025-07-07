@@ -7,7 +7,5 @@ CLASS net/minecraft/world/entity/animal/happyghast/HappyGhastAi
 		ARG 0 brain
 	METHOD makeBrain (Lnet/minecraft/world/entity/ai/Brain;)Lnet/minecraft/world/entity/ai/Brain;
 		ARG 0 brain
-	METHOD updateActivity (Lnet/minecraft/world/entity/animal/HappyGhast;)V
-		ARG 0 happyGhast
 	METHOD updateActivity (Lnet/minecraft/world/entity/animal/happyghast/HappyGhast;)V
 		ARG 0 happyGhast

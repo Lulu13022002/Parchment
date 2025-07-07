@@ -92,8 +92,6 @@ CLASS net/minecraft/world/entity/ai/Brain
 		ARG 3 timeToLive
 	METHOD setSchedule (Lnet/minecraft/world/attribute/EnvironmentAttribute;)V
 		ARG 1 schedule
-	METHOD setSchedule (Lnet/minecraft/world/entity/schedule/Schedule;)V
-		ARG 1 newSchedule
 	METHOD startEachNonRunningBehavior (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 level
 		ARG 2 entity
@@ -109,9 +107,6 @@ CLASS net/minecraft/world/entity/ai/Brain
 	METHOD tickSensors (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 level
 		ARG 2 brainHolder
-	METHOD updateActivityFromSchedule (JJ)V
-		ARG 1 dayTime
-		ARG 3 gameTime
 	METHOD updateActivityFromSchedule (Lnet/minecraft/world/attribute/EnvironmentAttributeSystem;JLnet/minecraft/world/phys/Vec3;)V
 		ARG 1 attributes
 		ARG 2 time

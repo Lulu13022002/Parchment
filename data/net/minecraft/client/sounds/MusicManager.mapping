@@ -12,13 +12,11 @@ CLASS net/minecraft/client/sounds/MusicManager
 	METHOD fadePlaying (F)Z
 		ARG 1 volume
 	METHOD isPlayingMusic (Lnet/minecraft/sounds/Music;)Z
-		COMMENT {@return {@code true} if the {@linkplain Music} selector is currently playing, {@code false} otherwise}
+		COMMENT @return {@code true} if the {@linkplain Music} selector is currently playing, {@code false} otherwise
 		ARG 1 selector
 			COMMENT the {@linkplain Music} selector to check for
 	METHOD setMinutesBetweenSongs (Lnet/minecraft/client/sounds/MusicManager$MusicFrequency;)V
 		ARG 1 musicFrequency
-	METHOD startPlaying (Lnet/minecraft/client/sounds/MusicInfo;)V
-		ARG 1 music
 	METHOD startPlaying (Lnet/minecraft/sounds/Music;)V
 		ARG 1 music
 	METHOD stopPlaying ()V
@@ -30,8 +28,6 @@ CLASS net/minecraft/client/sounds/MusicManager
 	METHOD tick ()V
 		COMMENT Called every tick to manage the playing of music.
 	CLASS MusicFrequency
-		METHOD <init> (Ljava/lang/String;II)V
-			ARG 3 maxFrequency
 		METHOD <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V
 			ARG 3 name
 			ARG 4 captionKey

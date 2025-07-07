@@ -3,8 +3,6 @@ CLASS net/minecraft/world/entity/animal/golem/CopperGolem
 		ARG 1 level
 	METHOD setOpenedChestPos (Lnet/minecraft/core/BlockPos;)V
 		ARG 1 openedChestPos
-	METHOD setState (Lnet/minecraft/world/entity/animal/coppergolem/CopperGolemState;)V
-		ARG 1 state
 	METHOD setState (Lnet/minecraft/world/entity/animal/golem/CopperGolemState;)V
 		ARG 1 state
 	METHOD setWeatherState (Lnet/minecraft/world/level/block/WeatheringCopper$WeatherState;)V

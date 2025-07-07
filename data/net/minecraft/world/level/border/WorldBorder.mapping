@@ -5,8 +5,6 @@ CLASS net/minecraft/world/level/border/WorldBorder
 		ARG 1 listener
 	METHOD applyInitialSettings (J)V
 		ARG 1 lerpBegin
-	METHOD applySettings (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 serializer
 	METHOD clampToBounds (DDD)Lnet/minecraft/core/BlockPos;
 		ARG 1 x
 		ARG 3 y
@@ -57,10 +55,6 @@ CLASS net/minecraft/world/level/border/WorldBorder
 		ARG 1 box
 	METHOD isWithinBounds (Lnet/minecraft/world/phys/Vec3;)Z
 		ARG 1 pos
-	METHOD lerpSizeBetween (DDJ)V
-		ARG 1 oldSize
-		ARG 3 newSize
-		ARG 5 time
 	METHOD lerpSizeBetween (DDJJ)V
 		ARG 1 from
 		ARG 3 to
@@ -80,7 +74,7 @@ CLASS net/minecraft/world/level/border/WorldBorder
 	METHOD setSize (D)V
 		ARG 1 size
 	METHOD setWarningBlocks (I)V
-		ARG 1 warningDistance
+		ARG 1 warningBlocks
 	METHOD setWarningTime (I)V
 		ARG 1 warningTime
 	CLASS Settings
@@ -108,10 +102,6 @@ CLASS net/minecraft/world/level/border/WorldBorder
 		METHOD getMinZ (F)D
 			ARG 1 partialTick
 	CLASS MovingBorderExtent
-		METHOD <init> (Lnet/minecraft/world/level/border/WorldBorder;DDJ)V
-			ARG 2 from
-			ARG 4 to
-			ARG 6 lerpDuration
 		METHOD <init> (Lnet/minecraft/world/level/border/WorldBorder;DDJJ)V
 			ARG 2 from
 			ARG 4 to

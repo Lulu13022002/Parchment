@@ -1,16 +1,9 @@
 CLASS net/minecraft/client/gui/GuiGraphics
-	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/render/state/GuiRenderState;)V
-		ARG 1 minecraft
-		ARG 2 guiRenderState
 	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/render/state/GuiRenderState;II)V
 		ARG 1 minecraft
 		ARG 2 guiRenderState
 		ARG 3 mouseX
 		ARG 4 mouseY
-	METHOD <init> (Lnet/minecraft/client/Minecraft;Lorg/joml/Matrix3x2fStack;Lnet/minecraft/client/gui/render/state/GuiRenderState;)V
-		ARG 1 minecraft
-		ARG 2 pose
-		ARG 3 guiRenderState
 	METHOD <init> (Lnet/minecraft/client/Minecraft;Lorg/joml/Matrix3x2fStack;Lnet/minecraft/client/gui/render/state/GuiRenderState;II)V
 		ARG 1 minecraft
 		ARG 2 pose
@@ -107,8 +100,8 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 1 pipeline
 		ARG 2 sprite
 		ARG 3 x
-		ARG 4 width
-		ARG 5 y
+		ARG 4 y
+		ARG 5 width
 		ARG 6 height
 	METHOD blitSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;IIIII)V
 		ARG 1 pipeline
@@ -300,7 +293,7 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 4 y
 		ARG 5 lineWidth
 		ARG 6 color
-		ARG 7 dropShadow
+		ARG 7 drawShadow
 	METHOD enableScissor (IIII)V
 		COMMENT Enables scissoring with the specified screen coordinates.
 		ARG 1 minX
@@ -356,9 +349,9 @@ CLASS net/minecraft/client/gui/GuiGraphics
 	METHOD getSpriteScaling (Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;)Lnet/minecraft/client/resources/metadata/gui/GuiSpriteScaling;
 		ARG 0 sprite
 	METHOD guiHeight ()I
-		COMMENT {@return returns the height of the GUI screen in pixels}
+		COMMENT {@return the height of the GUI screen in pixels}
 	METHOD guiWidth ()I
-		COMMENT {@return returns the width of the GUI screen in pixels}
+		COMMENT {@return the width of the GUI screen in pixels}
 	METHOD hLine (IIII)V
 		COMMENT Draws a horizontal line from minX to maxX at the specified y-coordinate with the given color.
 		ARG 1 minX
@@ -386,7 +379,7 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 1 font
 			COMMENT the font used for rendering text.
 		ARG 2 style
-			COMMENT the style of the text component. Can be null.
+			COMMENT the style of the text component. Can be {@code null}.
 		ARG 3 mouseX
 			COMMENT the x-coordinate of the mouse position.
 		ARG 4 mouseY
@@ -419,9 +412,9 @@ CLASS net/minecraft/client/gui/GuiGraphics
 	METHOD renderItem (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;III)V
 		COMMENT Renders an item stack for a living entity in a specific level at the specified coordinates with a random seed.
 		ARG 1 entity
-			COMMENT the living entity. Can be null.
+			COMMENT the living entity. Can be {@code null}.
 		ARG 2 level
-			COMMENT the level in which the rendering occurs. Can be null.
+			COMMENT the level in which the rendering occurs. Can be {@code null}.
 		ARG 3 stack
 			COMMENT the item stack to render.
 		ARG 4 x
@@ -483,7 +476,7 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 4 y
 			COMMENT the y-coordinate of the rendering position.
 		ARG 5 text
-			COMMENT the custom text to display. Can be null.
+			COMMENT the custom text to display. Can be {@code null}.
 	METHOD renderOutline (IIIII)V
 		ARG 1 x
 		ARG 2 y
@@ -573,14 +566,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 5 positioner
 		ARG 6 background
 		ARG 7 focused
-	METHOD submitBannerPatternRenderState (Lnet/minecraft/client/model/BannerFlagModel;Lnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;IIII)V
-		ARG 1 flag
-		ARG 2 baseColor
-		ARG 3 resultBannerPatterns
-		ARG 4 x0
-		ARG 5 y0
-		ARG 6 x1
-		ARG 7 y1
 	METHOD submitBannerPatternRenderState (Lnet/minecraft/client/model/object/banner/BannerFlagModel;Lnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;IIII)V
 		ARG 1 flag
 		ARG 2 baseColor
@@ -589,18 +574,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 5 y0
 		ARG 6 x1
 		ARG 7 y1
-	METHOD submitBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lcom/mojang/blaze3d/textures/GpuTextureView;IIIIFFFFI)V
-		ARG 1 pipeline
-		ARG 2 atlasTexture
-		ARG 3 x0
-		ARG 4 y0
-		ARG 5 x1
-		ARG 6 y1
-		ARG 7 u0
-		ARG 8 u1
-		ARG 9 v0
-		ARG 10 v1
-		ARG 11 color
 	METHOD submitBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lcom/mojang/blaze3d/textures/GpuTextureView;Lcom/mojang/blaze3d/textures/GpuSampler;IIIIFFFFI)V
 		ARG 1 pipeline
 		ARG 2 atlasTexture
@@ -614,16 +587,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 10 v0
 		ARG 11 v1
 		ARG 12 color
-	METHOD submitBookModelRenderState (Lnet/minecraft/client/model/BookModel;Lnet/minecraft/resources/Identifier;FFFIIII)V
-		ARG 1 bookModel
-		ARG 2 texture
-		ARG 3 scale
-		ARG 4 open
-		ARG 5 flip
-		ARG 6 x0
-		ARG 7 y0
-		ARG 8 x1
-		ARG 9 y1
 	METHOD submitBookModelRenderState (Lnet/minecraft/client/model/object/book/BookModel;Lnet/minecraft/resources/Identifier;FFFIIII)V
 		ARG 1 bookModel
 		ARG 2 texture
@@ -655,12 +618,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 9 y1
 	METHOD submitMapRenderState (Lnet/minecraft/client/renderer/state/MapRenderState;)V
 		ARG 1 renderState
-	METHOD submitOutline (IIIII)V
-		ARG 1 x
-		ARG 2 y
-		ARG 3 width
-		ARG 4 height
-		ARG 5 color
 	METHOD submitProfilerChartRenderState (Ljava/util/List;IIII)V
 		ARG 1 chartData
 		ARG 2 x0
@@ -675,17 +632,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 5 y0
 		ARG 6 x1
 		ARG 7 y1
-	METHOD submitSkinRenderState (Lnet/minecraft/client/model/PlayerModel;Lnet/minecraft/resources/Identifier;FFFFIIII)V
-		ARG 1 playerModel
-		ARG 2 texture
-		ARG 3 scale
-		ARG 4 rotationX
-		ARG 5 rotationY
-		ARG 6 pivotY
-		ARG 7 x0
-		ARG 8 y0
-		ARG 9 x1
-		ARG 10 y1
 	METHOD submitSkinRenderState (Lnet/minecraft/client/model/player/PlayerModel;Lnet/minecraft/resources/Identifier;FFFFIIII)V
 		ARG 1 playerModel
 		ARG 2 texture
@@ -697,20 +643,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 8 x1
 		ARG 9 y1
 		ARG 10 scale
-	METHOD submitTiledBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lcom/mojang/blaze3d/textures/GpuTextureView;IIIIIIFFFFI)V
-		ARG 1 pipeline
-		ARG 2 atlasTexture
-		ARG 3 tileWidth
-		ARG 4 tileHeight
-		ARG 5 x0
-		ARG 6 x1
-		ARG 7 y0
-		ARG 8 y1
-		ARG 9 u0
-		ARG 10 u1
-		ARG 11 v0
-		ARG 12 v1
-		ARG 13 color
 	METHOD submitTiledBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lcom/mojang/blaze3d/textures/GpuTextureView;Lcom/mojang/blaze3d/textures/GpuSampler;IIIIIIFFFFI)V
 		ARG 1 pipeline
 		ARG 2 atlasTexture
@@ -726,11 +658,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 12 v0
 		ARG 13 v1
 		ARG 14 color
-	METHOD textHighlight (IIII)V
-		ARG 1 minX
-		ARG 2 minY
-		ARG 3 maxX
-		ARG 4 maxY
 	METHOD textHighlight (IIIIZ)V
 		ARG 1 minX
 		ARG 2 minY
@@ -755,9 +682,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the y-coordinate of the end point.
 		ARG 4 color
 			COMMENT the color of the line.
-	CLASS OutlineBox
-		METHOD render (Lnet/minecraft/client/gui/GuiGraphics;)V
-			ARG 1 guiGraphics
 	CLASS ScissorStack
 		COMMENT A utility class for managing a stack of screen rectangles for scissoring.
 		METHOD containsPoint (II)Z
@@ -765,12 +689,10 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			ARG 2 y
 		METHOD pop ()Lnet/minecraft/client/gui/navigation/ScreenRectangle;
 			COMMENT Pops the top screen rectangle from the scissor stack.
-			COMMENT <p>
-			COMMENT @return The new top screen rectangle after the pop operation, or null if the stack is empty.
+			COMMENT @return The new top screen rectangle after the pop operation, or {@code null} if the stack is empty.
 			COMMENT @throws IllegalStateException if the stack is empty.
 		METHOD push (Lnet/minecraft/client/gui/navigation/ScreenRectangle;)Lnet/minecraft/client/gui/navigation/ScreenRectangle;
 			COMMENT Pushes a screen rectangle onto the scissor stack.
-			COMMENT <p>
 			COMMENT @return The resulting intersection of the pushed rectangle with the previous top rectangle on the stack, or the pushed rectangle if the stack is empty.
 			ARG 1 scissor
 				COMMENT the screen rectangle to push.
@@ -785,5 +707,5 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			ARG 2 defaultParameters
 			ARG 3 hoveredTextEffects
 			ARG 4 additionalConsumer
-		METHOD accept (Ljava/lang/Object;)V
+		METHOD accept (Lnet/minecraft/network/chat/Style;)V
 			ARG 1 style

@@ -63,10 +63,6 @@ CLASS net/minecraft/util/ARGB
 		ARG 0 color
 	METHOD greyscale (I)I
 		ARG 0 color
-	METHOD lerp (FII)I
-		ARG 0 delta
-		ARG 1 color1
-		ARG 2 color2
 	METHOD linearChannelMean (IIII)I
 		ARG 0 color1
 		ARG 1 color2

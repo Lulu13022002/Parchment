@@ -31,11 +31,6 @@ CLASS net/minecraft/client/gui/screens/advancements/AdvancementTab
 		ARG 4 mouseX
 		ARG 5 mouseY
 		ARG 6 selected
-	METHOD drawTab (Lnet/minecraft/client/gui/GuiGraphics;IIZ)V
-		ARG 1 guiGraphics
-		ARG 2 offsetX
-		ARG 3 offsetY
-		ARG 4 isSelected
 	METHOD drawTooltips (Lnet/minecraft/client/gui/GuiGraphics;IIII)V
 		ARG 1 guiGraphics
 		ARG 2 mouseX

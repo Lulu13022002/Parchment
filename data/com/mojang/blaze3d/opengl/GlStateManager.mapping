@@ -71,10 +71,6 @@ CLASS com/mojang/blaze3d/opengl/GlStateManager
 		ARG 0 target
 		ARG 1 data
 		ARG 2 usage
-	METHOD _glBufferSubData (IILjava/nio/ByteBuffer;)V
-		ARG 0 target
-		ARG 1 offset
-		ARG 2 data
 	METHOD _glBufferSubData (IJLjava/nio/ByteBuffer;)V
 		ARG 0 target
 		ARG 1 offset
@@ -101,11 +97,6 @@ CLASS com/mojang/blaze3d/opengl/GlStateManager
 	METHOD _glGetUniformLocation (ILjava/lang/CharSequence;)I
 		ARG 0 program
 		ARG 1 name
-	METHOD _glMapBufferRange (IIII)Ljava/nio/ByteBuffer;
-		ARG 0 target
-		ARG 1 offset
-		ARG 2 length
-		ARG 3 access
 	METHOD _glMapBufferRange (IJJI)Ljava/nio/ByteBuffer;
 		ARG 0 target
 		ARG 1 offset

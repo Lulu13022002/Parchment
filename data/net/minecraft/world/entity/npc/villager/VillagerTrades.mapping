@@ -1,6 +1,4 @@
 CLASS net/minecraft/world/entity/npc/villager/VillagerTrades
-	METHOD commonBooks (I)Lnet/minecraft/world/entity/npc/VillagerTrades$ItemListing;
-		ARG 0 villagerXp
 	METHOD commonBooks (I)Lnet/minecraft/world/entity/npc/villager/VillagerTrades$ItemListing;
 		ARG 0 xp
 	METHOD lambda$static$0 (Ljava/util/HashMap;)V
@@ -16,9 +14,6 @@ CLASS net/minecraft/world/entity/npc/villager/VillagerTrades
 			ARG 1 level
 			ARG 2 entity
 			ARG 3 random
-		METHOD getOffer (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/util/RandomSource;)Lnet/minecraft/world/item/trading/MerchantOffer;
-			ARG 1 trader
-			ARG 2 random
 	CLASS EmeraldForItems
 		METHOD <init> (Lnet/minecraft/world/item/trading/ItemCost;III)V
 			ARG 1 itemStack
@@ -90,14 +85,9 @@ CLASS net/minecraft/world/entity/npc/villager/VillagerTrades
 			ARG 3 numberOfItems
 			ARG 4 maxUses
 			ARG 5 villagerXp
-		METHOD lambda$getOffer$0 (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/util/RandomSource;Lnet/minecraft/resources/ResourceKey;)V
-			ARG 4 key
 	CLASS TypeSpecificTrade
 		METHOD <init> (Ljava/util/Map;)V
 			ARG 1 trades
-		METHOD oneTradeInBiomes (Lnet/minecraft/world/entity/npc/VillagerTrades$ItemListing;[Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/entity/npc/VillagerTrades$TypeSpecificTrade;
-			ARG 0 listing
-			ARG 1 villagerTypes
 		METHOD oneTradeInBiomes (Lnet/minecraft/world/entity/npc/villager/VillagerTrades$ItemListing;[Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/entity/npc/villager/VillagerTrades$TypeSpecificTrade;
 			ARG 0 trade
 			ARG 1 types
@@ -166,8 +156,6 @@ CLASS net/minecraft/world/entity/npc/villager/VillagerTrades
 			ARG 7 villagerXp
 			ARG 8 priceMultiplier
 			ARG 9 enchantmentProvider
-		METHOD lambda$getOffer$0 (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/util/RandomSource;Lnet/minecraft/resources/ResourceKey;)V
-			ARG 4 key
 	CLASS EnchantedItemForEmeralds
 		METHOD <init> (Lnet/minecraft/world/item/Item;III)V
 			ARG 1 item
@@ -210,5 +198,3 @@ CLASS net/minecraft/world/entity/npc/villager/VillagerTrades
 			ARG 5 emeraldCost
 			ARG 6 maxUses
 			ARG 7 villagerXp
-		METHOD lambda$getOffer$0 (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder$Reference;)Z
-			ARG 1 potion

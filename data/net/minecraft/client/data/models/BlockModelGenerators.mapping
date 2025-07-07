@@ -5,7 +5,7 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 3 modelOutput
 	METHOD addBookSlotModel (Lnet/minecraft/client/data/models/blockstates/MultiPartGenerator;Lnet/minecraft/client/renderer/block/model/multipart/Condition;Lnet/minecraft/client/renderer/block/model/VariantMutator;Lnet/minecraft/world/level/block/state/properties/BooleanProperty;Lnet/minecraft/client/data/models/model/ModelTemplate;Z)V
 		ARG 1 generator
-		ARG 2 conditon
+		ARG 2 condition
 		ARG 3 rotation
 		ARG 4 hasBookProperty
 		ARG 5 template

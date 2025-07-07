@@ -15,10 +15,6 @@ CLASS net/minecraft/world/entity/npc/wanderingtrader/WanderingTrader
 	METHOD setWanderTarget (Lnet/minecraft/core/BlockPos;)V
 		ARG 1 wanderTarget
 	CLASS WanderToPositionGoal
-		METHOD <init> (Lnet/minecraft/world/entity/npc/WanderingTrader;Lnet/minecraft/world/entity/npc/WanderingTrader;DD)V
-			ARG 2 trader
-			ARG 3 stopDistance
-			ARG 5 speedModifier
 		METHOD <init> (Lnet/minecraft/world/entity/npc/wanderingtrader/WanderingTrader;Lnet/minecraft/world/entity/npc/wanderingtrader/WanderingTrader;DD)V
 			ARG 2 trader
 			ARG 3 stopDistance

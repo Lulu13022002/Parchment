@@ -9,8 +9,6 @@ CLASS net/minecraft/client/renderer/PlayerSkinRenderCache
 		ARG 1 profile
 	METHOD lookup (Lnet/minecraft/world/item/component/ResolvableProfile;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 profile
-	METHOD playerSkinRenderType (Lnet/minecraft/world/entity/player/PlayerSkin;)Lnet/minecraft/client/renderer/RenderType;
-		ARG 0 skin
 	METHOD playerSkinRenderType (Lnet/minecraft/world/entity/player/PlayerSkin;)Lnet/minecraft/client/renderer/rendertype/RenderType;
 		ARG 0 skin
 	CLASS 2

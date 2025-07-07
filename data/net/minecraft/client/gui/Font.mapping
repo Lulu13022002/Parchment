@@ -14,7 +14,7 @@ CLASS net/minecraft/client/gui/Font
 		ARG 7 bufferSource
 		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
 		ARG 1 text
 		ARG 2 x
@@ -25,7 +25,7 @@ CLASS net/minecraft/client/gui/Font
 		ARG 7 bufferSource
 		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
 		ARG 1 text
 		ARG 2 x
@@ -36,7 +36,7 @@ CLASS net/minecraft/client/gui/Font
 		ARG 7 bufferSource
 		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch8xOutline (Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 text
 		ARG 2 x
@@ -45,7 +45,7 @@ CLASS net/minecraft/client/gui/Font
 		ARG 5 backgroundColor
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 packedLightCoords
+		ARG 8 packedLight
 	METHOD getGlyph (ILnet/minecraft/network/chat/Style;)Lnet/minecraft/client/gui/font/glyphs/BakedGlyph;
 		ARG 1 character
 		ARG 2 style
@@ -70,13 +70,6 @@ CLASS net/minecraft/client/gui/Font
 		ARG 4 color
 		ARG 5 drawShadow
 		ARG 6 backgroundColor
-	METHOD prepareText (Lnet/minecraft/util/FormattedCharSequence;FFIZI)Lnet/minecraft/client/gui/Font$PreparedText;
-		ARG 1 text
-		ARG 2 x
-		ARG 3 y
-		ARG 4 color
-		ARG 5 dropShadow
-		ARG 6 backgroundColor
 	METHOD prepareText (Lnet/minecraft/util/FormattedCharSequence;FFIZZI)Lnet/minecraft/client/gui/Font$PreparedText;
 		ARG 1 text
 		ARG 2 x
@@ -95,16 +88,12 @@ CLASS net/minecraft/client/gui/Font
 		ARG 1 text
 		ARG 2 maxWidth
 	METHOD width (Ljava/lang/String;)I
-		COMMENT Returns the width of this string. Equivalent of FontMetrics.stringWidth(String s).
+		COMMENT Returns the width of this string. Equivalent of FontMetrics.stringWidth(text).
 		ARG 1 text
 	METHOD width (Lnet/minecraft/network/chat/FormattedText;)I
 		ARG 1 text
 	METHOD width (Lnet/minecraft/util/FormattedCharSequence;)I
 		ARG 1 text
-	METHOD wordWrapHeight (Ljava/lang/String;I)I
-		COMMENT Returns the height (in pixels) of the given string if it is wordwrapped to the given max width.
-		ARG 1 text
-		ARG 2 maxWidth
 	METHOD wordWrapHeight (Lnet/minecraft/network/chat/FormattedText;I)I
 		ARG 1 text
 		ARG 2 maxWidth
@@ -118,12 +107,10 @@ CLASS net/minecraft/client/gui/Font
 			ARG 1 emptyArea
 		METHOD acceptGlyph (Lnet/minecraft/client/gui/font/TextRenderable$Styled;)V
 			ARG 1 glyph
-		METHOD acceptGlyph (Lnet/minecraft/client/gui/font/TextRenderable;)V
-			ARG 1 glyph
 		METHOD forMultiBufferSource (Lnet/minecraft/client/renderer/MultiBufferSource;Lorg/joml/Matrix4f;Lnet/minecraft/client/gui/Font$DisplayMode;I)Lnet/minecraft/client/gui/Font$GlyphVisitor;
 			ARG 0 bufferSource
 			ARG 1 pose
-			ARG 2 displayMode
+			ARG 2 mode
 			ARG 3 packedLight
 		CLASS 1
 			METHOD render (Lnet/minecraft/client/gui/font/TextRenderable;)V
@@ -132,12 +119,6 @@ CLASS net/minecraft/client/gui/Font
 		METHOD visit (Lnet/minecraft/client/gui/Font$GlyphVisitor;)V
 			ARG 1 visitor
 	CLASS PreparedTextBuilder
-		METHOD <init> (Lnet/minecraft/client/gui/Font;FFIIZ)V
-			ARG 2 x
-			ARG 3 y
-			ARG 4 color
-			ARG 5 backgroundColor
-			ARG 6 dropShadow
 		METHOD <init> (Lnet/minecraft/client/gui/Font;FFIIZZ)V
 			ARG 2 x
 			ARG 3 y
@@ -145,11 +126,6 @@ CLASS net/minecraft/client/gui/Font
 			ARG 5 backgroundColor
 			ARG 6 drawShadow
 			ARG 7 includeEmpty
-		METHOD <init> (Lnet/minecraft/client/gui/Font;FFIZ)V
-			ARG 2 x
-			ARG 3 y
-			ARG 4 color
-			ARG 5 dropShadow
 		METHOD <init> (Lnet/minecraft/client/gui/Font;FFIZZ)V
 			ARG 2 x
 			ARG 3 y
@@ -166,8 +142,6 @@ CLASS net/minecraft/client/gui/Font
 			ARG 1 emptyArea
 		METHOD addGlyph (Lnet/minecraft/client/gui/font/TextRenderable$Styled;)V
 			ARG 1 glyph
-		METHOD addGlyph (Lnet/minecraft/client/gui/font/TextRenderable;)V
-			ARG 1 glyph
 		METHOD getShadowColor (Lnet/minecraft/network/chat/Style;I)I
 			ARG 1 style
 			ARG 2 textColor
@@ -176,7 +150,7 @@ CLASS net/minecraft/client/gui/Font
 		METHOD markBackground (FFF)V
 			ARG 1 x
 			ARG 2 y
-			ARG 3 advance
+			ARG 3 width
 		METHOD markSize (FFFF)V
 			ARG 1 left
 			ARG 2 top

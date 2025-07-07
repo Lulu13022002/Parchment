@@ -18,14 +18,12 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 	METHOD getServerName ()Ljava/lang/String;
 		COMMENT Returns the server message of the day
 	METHOD getServerPort ()I
-		COMMENT Never used, but "getServerPort" is already taken.
+		COMMENT Returns the server's port.
 	METHOD handleConsoleInput (Ljava/lang/String;Lnet/minecraft/commands/CommandSourceStack;)V
 		ARG 1 msg
 		ARG 2 source
 	METHOD initServer ()Z
 		COMMENT Initialises the server and starts it.
-	METHOD isEpollEnabled ()Z
-		COMMENT Get if native transport should be used. Native transport means linux server performance improvements and optimized packet sending/receiving on linux
 	METHOD isPublished ()Z
 		COMMENT Returns {@code true} if this integrated server is open to LAN
 	METHOD isUnderSpawnProtection (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Z
@@ -37,7 +35,7 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 	METHOD parseBugReportLink (Lnet/minecraft/server/dedicated/DedicatedServerProperties;)Ljava/util/Optional;
 		ARG 0 properties
 	METHOD runCommand (Ljava/lang/String;)Ljava/lang/String;
-		COMMENT Handle a command received by an RCon instance
+		COMMENT Handle a command received by a RconClient instance
 		ARG 1 command
 	METHOD setAcceptsTransfers (Z)V
 		ARG 1 acceptsTransfers
@@ -55,8 +53,6 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 		ARG 1 hidesOnlinePlayers
 	METHOD setMaxPlayers (I)V
 		ARG 1 maxPlayers
-	METHOD setOperatorUserPermissionLevel (I)V
-		ARG 1 operatorUserPermissionLevel
 	METHOD setOperatorUserPermissions (Lnet/minecraft/server/permissions/LevelBasedPermissionSet;)V
 		ARG 1 permissions
 	METHOD setPauseWhenEmptySeconds (I)V

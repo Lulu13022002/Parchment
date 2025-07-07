@@ -1,12 +1,4 @@
 CLASS net/minecraft/util/BlockUtil
-	METHOD getLargestRectangleAround (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction$Axis;ILnet/minecraft/core/Direction$Axis;ILjava/util/function/Predicate;)Lnet/minecraft/BlockUtil$FoundRectangle;
-		COMMENT Finds the rectangle with the largest area containing centerPos within the blocks specified by the predicate
-		ARG 0 centerPos
-		ARG 1 axis1
-		ARG 2 max1
-		ARG 3 axis2
-		ARG 4 max2
-		ARG 5 posPredicate
 	METHOD getLargestRectangleAround (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction$Axis;ILnet/minecraft/core/Direction$Axis;ILjava/util/function/Predicate;)Lnet/minecraft/util/BlockUtil$FoundRectangle;
 		COMMENT Finds the rectangle with the largest area containing centerPos within the blocks specified by the predicate
 		ARG 0 centerPos
@@ -16,7 +8,7 @@ CLASS net/minecraft/util/BlockUtil
 		ARG 4 pos2
 		ARG 5 posPredicate
 	METHOD getLimit (Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos$MutableBlockPos;Lnet/minecraft/core/Direction;I)I
-		COMMENT Finds the distance we can travel in the given direction while the predicate returns true
+		COMMENT Finds the distance we can travel in the given direction while the predicate returns {@code true}
 		ARG 0 posPredicate
 		ARG 1 centerPos
 		ARG 2 direction
@@ -25,7 +17,7 @@ CLASS net/minecraft/util/BlockUtil
 		COMMENT Finds the largest rectangle within the array of heights
 		ARG 0 heights
 	METHOD getTopConnectedBlock (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/Block;)Ljava/util/Optional;
-		ARG 0 getter
+		ARG 0 level
 		ARG 1 pos
 		ARG 2 baseBlock
 		ARG 3 direction

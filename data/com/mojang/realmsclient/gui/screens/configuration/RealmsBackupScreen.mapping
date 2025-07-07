@@ -19,8 +19,6 @@ CLASS com/mojang/realmsclient/gui/screens/configuration/RealmsBackupScreen
 			ARG 2 backup
 		METHOD addToChangeList (Ljava/lang/String;)V
 			ARG 1 key
-		METHOD getMediumDatePresentation (Ljava/util/Date;)Ljava/lang/String;
-			ARG 1 date
 		METHOD lambda$new$0 (Lnet/minecraft/client/gui/components/Button;)V
 			ARG 1 button
 		METHOD lambda$new$1 (Lnet/minecraft/client/gui/components/Button;)V

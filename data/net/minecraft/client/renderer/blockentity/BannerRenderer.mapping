@@ -6,24 +6,8 @@ CLASS net/minecraft/client/renderer/blockentity/BannerRenderer
 		ARG 1 context
 	METHOD <init> (Lnet/minecraft/client/renderer/special/SpecialModelRenderer$BakingContext;)V
 		ARG 1 context
-	METHOD getExtents (Ljava/util/Set;)V
-		ARG 1 output
 	METHOD getExtents (Ljava/util/function/Consumer;)V
 		ARG 1 output
-	METHOD submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/BannerModel;Lnet/minecraft/client/model/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
-		ARG 0 materials
-		ARG 1 poseStack
-		ARG 2 nodeCollector
-		ARG 3 packedLight
-		ARG 4 packedOverlay
-		ARG 5 rotation
-		ARG 6 model
-		ARG 7 flag
-		ARG 8 sway
-		ARG 9 baseColor
-		ARG 10 patterns
-		ARG 11 crumblingOverlay
-		ARG 12 outlineColor
 	METHOD submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/object/banner/BannerModel;Lnet/minecraft/client/model/object/banner/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 		ARG 0 materials
 		ARG 1 poseStack
@@ -59,9 +43,10 @@ CLASS net/minecraft/client/renderer/blockentity/BannerRenderer
 		ARG 6 renderState
 		ARG 7 material
 		ARG 8 banner
+			COMMENT if {@code true}, uses banner material; otherwise if {@code false} uses shield material
 		ARG 9 baseColor
 		ARG 10 patterns
-		ARG 11 withGlint
+		ARG 11 hasFoil
 		ARG 12 crumblingOverlay
 		ARG 13 outlineColor
 	METHOD submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;I)V

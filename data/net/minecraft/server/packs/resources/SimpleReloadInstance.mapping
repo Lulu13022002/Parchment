@@ -41,5 +41,5 @@ CLASS net/minecraft/server/packs/resources/SimpleReloadInstance
 			ARG 1 sharedState
 			ARG 2 barrier
 			ARG 3 listener
-			ARG 4 executor
-			ARG 5 applyExecutor
+			ARG 4 backgroundExecutor
+			ARG 5 gameExecutor

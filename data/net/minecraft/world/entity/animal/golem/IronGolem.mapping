@@ -8,7 +8,7 @@ CLASS net/minecraft/world/entity/animal/golem/IronGolem
 		ARG 1 air
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
+		ARG 1 damageSource
 	METHOD doPush (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
@@ -21,9 +21,5 @@ CLASS net/minecraft/world/entity/animal/golem/IronGolem
 	METHOD playStepSound (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
 		ARG 2 block
-	METHOD setPersistentAngerTarget (Ljava/util/UUID;)V
-		ARG 1 target
 	METHOD setPlayerCreated (Z)V
 		ARG 1 playerCreated
-	METHOD setRemainingPersistentAngerTime (I)V
-		ARG 1 time

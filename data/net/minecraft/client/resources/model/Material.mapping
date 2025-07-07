@@ -11,10 +11,8 @@ CLASS net/minecraft/client/resources/model/Material
 		ARG 2 bufferSource
 		ARG 3 renderTypeGetter
 		ARG 4 isItem
-		ARG 5 glint
+		ARG 5 hasFoil
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 1 other
-	METHOD renderType (Ljava/util/function/Function;)Lnet/minecraft/client/renderer/RenderType;
-		ARG 1 renderTypeGetter
 	METHOD renderType (Ljava/util/function/Function;)Lnet/minecraft/client/renderer/rendertype/RenderType;
 		ARG 1 renderTypeGetter

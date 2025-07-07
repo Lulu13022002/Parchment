@@ -7,5 +7,3 @@ CLASS com/mojang/blaze3d/platform/Lighting
 		ARG 3 light1
 	METHOD updateLevel (Lnet/minecraft/world/level/dimension/DimensionType$CardinalLightType;)V
 		ARG 1 type
-	METHOD updateLevel (Z)V
-		ARG 1 nether

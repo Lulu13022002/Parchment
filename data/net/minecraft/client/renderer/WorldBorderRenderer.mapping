@@ -5,11 +5,6 @@ CLASS net/minecraft/client/renderer/WorldBorderRenderer
 		ARG 3 cameraPosition
 		ARG 4 renderDistance
 		ARG 6 reusedState
-	METHOD extract (Lnet/minecraft/world/level/border/WorldBorder;Lnet/minecraft/world/phys/Vec3;DLnet/minecraft/client/renderer/state/WorldBorderRenderState;)V
-		ARG 1 worldBorder
-		ARG 2 cameraPosition
-		ARG 3 renderDistance
-		ARG 5 renderState
 	METHOD rebuildWorldBorderBuffer (Lnet/minecraft/client/renderer/state/WorldBorderRenderState;DDDFFF)V
 		ARG 1 renderState
 		ARG 2 renderDistance
@@ -20,7 +15,7 @@ CLASS net/minecraft/client/renderer/WorldBorderRenderer
 		ARG 10 vTop
 	METHOD render (Lnet/minecraft/client/renderer/state/WorldBorderRenderState;Lnet/minecraft/world/phys/Vec3;DD)V
 		ARG 1 renderState
-		ARG 2 cameraPostion
+		ARG 2 cameraPosition
 		ARG 3 renderDistance
 		ARG 5 depthFar
 	METHOD shouldRebuildWorldBorderBuffer (Lnet/minecraft/client/renderer/state/WorldBorderRenderState;)Z

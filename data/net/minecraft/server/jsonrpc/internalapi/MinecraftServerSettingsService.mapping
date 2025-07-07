@@ -18,7 +18,7 @@ CLASS net/minecraft/server/jsonrpc/internalapi/MinecraftServerSettingsService
 		ARG 1 entityBroadcastRangePercentage
 		ARG 2 clientInfo
 	METHOD setForceGameMode (ZLnet/minecraft/server/jsonrpc/methods/ClientInfo;)Z
-		ARG 1 forceGamemode
+		ARG 1 forceGameMode
 		ARG 2 clientInfo
 	METHOD setGameMode (Lnet/minecraft/world/level/GameType;Lnet/minecraft/server/jsonrpc/methods/ClientInfo;)Lnet/minecraft/world/level/GameType;
 		ARG 1 gameMode
@@ -31,9 +31,6 @@ CLASS net/minecraft/server/jsonrpc/internalapi/MinecraftServerSettingsService
 		ARG 2 clientInfo
 	METHOD setMotd (Ljava/lang/String;Lnet/minecraft/server/jsonrpc/methods/ClientInfo;)Ljava/lang/String;
 		ARG 1 motd
-		ARG 2 clientInfo
-	METHOD setOperatorUserPermissionLevel (ILnet/minecraft/server/jsonrpc/methods/ClientInfo;)I
-		ARG 1 operatorUserPermissionLevel
 		ARG 2 clientInfo
 	METHOD setOperatorUserPermissions (Lnet/minecraft/server/permissions/LevelBasedPermissionSet;Lnet/minecraft/server/jsonrpc/methods/ClientInfo;)Lnet/minecraft/server/permissions/LevelBasedPermissionSet;
 		ARG 1 permissions

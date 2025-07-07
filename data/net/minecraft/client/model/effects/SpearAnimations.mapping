@@ -10,15 +10,10 @@ CLASS net/minecraft/client/model/effects/SpearAnimations
 		ARG 2 useTime
 		ARG 3 arm
 		ARG 4 item
-	METHOD firstPersonUse (Lcom/mojang/blaze3d/vertex/PoseStack;FLnet/minecraft/world/entity/HumanoidArm;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 0 poseStack
-		ARG 1 useTime
-		ARG 2 arm
-		ARG 3 item
 	METHOD hitFeedbackAmount (F)F
 		ARG 0 ticksSinceEnemyHit
 	METHOD progress (FFF)F
-		ARG 0 porgress
+		ARG 0 progress
 		ARG 1 min
 		ARG 2 max
 	METHOD thirdPersonAttackHand (Lnet/minecraft/client/model/HumanoidModel;Lnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V
@@ -33,11 +28,6 @@ CLASS net/minecraft/client/model/effects/SpearAnimations
 		ARG 2 isLeftArm
 		ARG 3 stack
 		ARG 4 renderState
-	METHOD thirdPersonUseItem (Lcom/mojang/blaze3d/vertex/PoseStack;FLnet/minecraft/world/entity/HumanoidArm;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 0 poseStack
-		ARG 1 useTime
-		ARG 2 arm
-		ARG 3 item
 	METHOD thirdPersonUseItem (Lnet/minecraft/client/renderer/entity/state/ArmedEntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;FLnet/minecraft/world/entity/HumanoidArm;Lnet/minecraft/world/item/ItemStack;)V
 		ARG 0 renderState
 		ARG 1 poseStack

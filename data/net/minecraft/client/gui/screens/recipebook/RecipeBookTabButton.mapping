@@ -4,8 +4,6 @@ CLASS net/minecraft/client/gui/screens/recipebook/RecipeBookTabButton
 		ARG 2 y
 		ARG 3 tabInfo
 		ARG 4 onPress
-	METHOD <init> (Lnet/minecraft/client/gui/screens/recipebook/RecipeBookComponent$TabInfo;)V
-		ARG 1 tabInfo
 	METHOD renderIcon (Lnet/minecraft/client/gui/GuiGraphics;)V
 		ARG 1 guiGraphics
 	METHOD startAnimation (Lnet/minecraft/client/ClientRecipeBook;Z)V

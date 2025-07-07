@@ -27,7 +27,7 @@ CLASS net/minecraft/client/resources/sounds/SimpleSoundInstance
 		ARG 3 volume
 		ARG 4 pitch
 		ARG 5 random
-		ARG 6 entity
+		ARG 6 pos
 	METHOD <init> (Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFLnet/minecraft/util/RandomSource;ZILnet/minecraft/client/resources/sounds/SoundInstance$Attenuation;DDD)V
 		ARG 1 soundEvent
 		ARG 2 source
@@ -57,9 +57,6 @@ CLASS net/minecraft/client/resources/sounds/SimpleSoundInstance
 		ARG 2 pitch
 	METHOD forMusic (Lnet/minecraft/sounds/SoundEvent;)Lnet/minecraft/client/resources/sounds/SimpleSoundInstance;
 		ARG 0 sound
-	METHOD forMusic (Lnet/minecraft/sounds/SoundEvent;F)Lnet/minecraft/client/resources/sounds/SimpleSoundInstance;
-		ARG 0 sound
-		ARG 1 volume
 	METHOD forUI (Lnet/minecraft/core/Holder;F)Lnet/minecraft/client/resources/sounds/SimpleSoundInstance;
 		ARG 0 soundHolder
 		ARG 1 pitch

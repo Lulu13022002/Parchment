@@ -19,9 +19,3 @@ CLASS com/mojang/blaze3d/vertex/VertexMultiConsumer
 			ARG 3 consumer
 		METHOD lambda$setColor$1 (IIIILcom/mojang/blaze3d/vertex/VertexConsumer;)V
 			ARG 4 consumer
-		METHOD lambda$setUv$2 (FFLcom/mojang/blaze3d/vertex/VertexConsumer;)V
-			ARG 2 consumer
-		METHOD lambda$setUv1$3 (IILcom/mojang/blaze3d/vertex/VertexConsumer;)V
-			ARG 2 consumer
-		METHOD lambda$setUv2$4 (IILcom/mojang/blaze3d/vertex/VertexConsumer;)V
-			ARG 2 consumer

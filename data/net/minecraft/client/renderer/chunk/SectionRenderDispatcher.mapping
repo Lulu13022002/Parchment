@@ -31,9 +31,6 @@ CLASS net/minecraft/client/renderer/chunk/SectionRenderDispatcher
 			ARG 1 direction
 		METHOD getVisibility (J)F
 			ARG 1 time
-		METHOD getVisibility (JJ)F
-			ARG 1 currentTime
-			ARG 3 fadeInTime
 		METHOD rebuildSectionAsync (Lnet/minecraft/client/renderer/chunk/RenderRegionCache;)V
 			ARG 1 regionCache
 		METHOD resortTransparency (Lnet/minecraft/client/renderer/chunk/SectionRenderDispatcher;)V

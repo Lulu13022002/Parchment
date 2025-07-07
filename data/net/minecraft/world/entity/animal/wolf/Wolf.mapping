@@ -35,5 +35,3 @@ CLASS net/minecraft/world/entity/animal/wolf/Wolf
 			ARG 7 sprintSpeedModifier
 		METHOD avoidLlama (Lnet/minecraft/world/entity/animal/equine/Llama;)Z
 			ARG 1 llama
-		METHOD avoidLlama (Lnet/minecraft/world/entity/animal/horse/Llama;)Z
-			ARG 1 llama

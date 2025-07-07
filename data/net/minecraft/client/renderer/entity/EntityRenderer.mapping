@@ -6,28 +6,16 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderer
 	METHOD createRenderState (Lnet/minecraft/world/entity/Entity;F)Lnet/minecraft/client/renderer/entity/state/EntityRenderState;
 		ARG 1 entity
 		ARG 2 partialTick
-	METHOD extractAdditionalHitboxes (Lnet/minecraft/world/entity/Entity;Lcom/google/common/collect/ImmutableList$Builder;F)V
-		ARG 1 entity
-		ARG 2 hitboxes
-		ARG 3 partialTick
-	METHOD extractHitboxes (Lnet/minecraft/world/entity/Entity;FZ)Lnet/minecraft/client/renderer/entity/state/HitboxesRenderState;
-		ARG 1 entity
-		ARG 2 partialTick
-		ARG 3 green
-	METHOD extractHitboxes (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/state/EntityRenderState;F)V
-		ARG 1 entity
-		ARG 2 reusedState
-		ARG 3 partialTick
 	METHOD extractRenderState (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/state/EntityRenderState;F)V
 		ARG 1 entity
 		ARG 2 reusedState
 		ARG 3 partialTick
 	METHOD extractShadow (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lnet/minecraft/client/Minecraft;Lnet/minecraft/world/level/Level;)V
-		ARG 1 renderState
+		ARG 1 reusedState
 		ARG 2 minecraft
 		ARG 3 level
 	METHOD extractShadowPiece (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lnet/minecraft/world/level/Level;FLnet/minecraft/core/BlockPos$MutableBlockPos;Lnet/minecraft/world/level/chunk/ChunkAccess;)V
-		ARG 1 renderState
+		ARG 1 reusedState
 		ARG 2 level
 		ARG 3 shadowStrength
 		ARG 4 pos
@@ -39,14 +27,14 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderer
 		ARG 1 entity
 		ARG 2 pos
 	METHOD getBoundingBoxForCulling (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/phys/AABB;
-		ARG 1 minecraft
+		ARG 1 entity
 	METHOD getFont ()Lnet/minecraft/client/gui/Font;
 		COMMENT Returns the font renderer from the set render manager
 	METHOD getNameTag (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/network/chat/Component;
 		ARG 1 entity
 	METHOD getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
 		ARG 1 entity
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD getRenderOffset (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;)Lnet/minecraft/world/phys/Vec3;
 		ARG 1 renderState
 	METHOD getServerSideEntity (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/entity/Entity;
@@ -60,7 +48,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderer
 		ARG 2 pos
 	METHOD shouldRender (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/culling/Frustum;DDD)Z
 		ARG 1 livingEntity
-		ARG 2 camera
+		ARG 2 frustum
 		ARG 3 camX
 		ARG 5 camY
 		ARG 7 camZ

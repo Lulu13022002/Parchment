@@ -78,11 +78,6 @@ CLASS net/minecraft/world/phys/shapes/Shapes
 	METHOD lcm (II)J
 		ARG 0 aa
 		ARG 1 bb
-	METHOD makeAxis (Lit/unimi/dsi/fastutil/doubles/DoubleList;ZDD)Lit/unimi/dsi/fastutil/doubles/DoubleList;
-		ARG 0 inputList
-		ARG 1 reverseOrder
-		ARG 2 referenceValue
-		ARG 4 targetValue
 	METHOD mergedFaceOccludes (Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/core/Direction;)Z
 		ARG 0 shape
 		ARG 1 adjacentShape
@@ -95,10 +90,10 @@ CLASS net/minecraft/world/phys/shapes/Shapes
 		ARG 1 others
 	METHOD rotate (Lnet/minecraft/world/phys/shapes/VoxelShape;Lcom/mojang/math/OctahedralGroup;)Lnet/minecraft/world/phys/shapes/VoxelShape;
 		ARG 0 shape
-		ARG 1 octohedralGroup
+		ARG 1 octahedralGroup
 	METHOD rotate (Lnet/minecraft/world/phys/shapes/VoxelShape;Lcom/mojang/math/OctahedralGroup;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/shapes/VoxelShape;
 		ARG 0 shape
-		ARG 1 octohedralGroup
+		ARG 1 octahedralGroup
 		ARG 2 pos
 	METHOD rotateAll (Lnet/minecraft/world/phys/shapes/VoxelShape;)Ljava/util/Map;
 		ARG 0 shape
@@ -118,7 +113,7 @@ CLASS net/minecraft/world/phys/shapes/Shapes
 		ARG 0 shape
 	METHOD rotateAttachFace (Lnet/minecraft/world/phys/shapes/VoxelShape;Lcom/mojang/math/OctahedralGroup;)Ljava/util/Map;
 		ARG 0 shape
-		ARG 1 rortation
+		ARG 1 rotation
 	METHOD rotateHorizontal (Lnet/minecraft/world/phys/shapes/VoxelShape;)Ljava/util/Map;
 		ARG 0 shape
 	METHOD rotateHorizontal (Lnet/minecraft/world/phys/shapes/VoxelShape;Lcom/mojang/math/OctahedralGroup;)Ljava/util/Map;
@@ -128,9 +123,6 @@ CLASS net/minecraft/world/phys/shapes/Shapes
 		ARG 0 shape
 		ARG 1 rotation
 		ARG 2 origin
-	METHOD rotateHorizontal (Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/world/phys/Vec3;)Ljava/util/Map;
-		ARG 0 shape
-		ARG 1 pos
 	METHOD rotateHorizontalAxis (Lnet/minecraft/world/phys/shapes/VoxelShape;)Ljava/util/Map;
 		ARG 0 shape
 	METHOD rotateHorizontalAxis (Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/world/phys/Vec3;)Ljava/util/Map;

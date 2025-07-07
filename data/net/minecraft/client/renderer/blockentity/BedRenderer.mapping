@@ -6,8 +6,6 @@ CLASS net/minecraft/client/renderer/blockentity/BedRenderer
 	METHOD <init> (Lnet/minecraft/client/resources/model/MaterialSet;Lnet/minecraft/client/model/geom/EntityModelSet;)V
 		ARG 1 materials
 		ARG 2 modelSet
-	METHOD getExtents (Ljava/util/Set;)V
-		ARG 1 output
 	METHOD getExtents (Ljava/util/function/Consumer;)V
 		ARG 1 output
 	METHOD preparePose (Lcom/mojang/blaze3d/vertex/PoseStack;ZLnet/minecraft/core/Direction;)V

@@ -11,7 +11,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 9 biomeZoomSeed
 		ARG 11 seaLevel
 	METHOD addAlwaysVisibleParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
@@ -19,8 +19,8 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 10 ySpeed
 		ARG 12 zSpeed
 	METHOD addAlwaysVisibleParticle (Lnet/minecraft/core/particles/ParticleOptions;ZDDDDDD)V
-		ARG 1 particleData
-		ARG 2 ignoreRange
+		ARG 1 options
+		ARG 2 overrideLimiter
 		ARG 3 x
 		ARG 5 y
 		ARG 7 z
@@ -37,7 +37,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 	METHOD addMapData (Ljava/util/Map;)V
 		ARG 1 map
 	METHOD addParticle (Lnet/minecraft/core/particles/ParticleOptions;DDDDDD)V
-		ARG 1 particleData
+		ARG 1 options
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
@@ -49,7 +49,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 2 posY
 		ARG 3 posZ
 	METHOD calculateBlockTint (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/ColorResolver;)I
-		ARG 1 blockPos
+		ARG 1 pos
 		ARG 2 colorResolver
 	METHOD calculateParticleLevel (Z)Lnet/minecraft/server/level/ParticleStatus;
 		ARG 1 alwaysShow
@@ -76,35 +76,20 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 4 range
 		ARG 5 random
 		ARG 6 block
-		ARG 7 blockPos
+		ARG 7 pos
 	METHOD fillReportDetails (Lnet/minecraft/CrashReport;)Lnet/minecraft/CrashReportCategory;
 		COMMENT Adds some basic stats of the world to the given crash report.
 		ARG 1 report
 	METHOD getBlockTint (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/ColorResolver;)I
-		ARG 1 blockPos
+		ARG 1 pos
 		ARG 2 colorResolver
 	METHOD getChunkSource ()Lnet/minecraft/client/multiplayer/ClientChunkCache;
 		COMMENT Gets the world's chunk provider
-	METHOD getCloudColor (F)I
-		ARG 1 partialTick
-	METHOD getCloudColor (FLnet/minecraft/client/Camera;)I
-		ARG 1 partialTick
-		ARG 2 camera
 	METHOD getEntity (I)Lnet/minecraft/world/entity/Entity;
-		COMMENT Returns the Entity with the given ID, or null if it doesn't exist in this World.
+		COMMENT Returns the Entity with the given ID, or {@code null} if it doesn't exist in this Level.
 		ARG 1 id
 	METHOD getLevelData ()Lnet/minecraft/client/multiplayer/ClientLevel$ClientLevelData;
-		COMMENT Returns the world's WorldInfo object
-	METHOD getSkyColor (Lnet/minecraft/client/Camera;F)I
-		ARG 1 camera
-		ARG 2 partialTick
-	METHOD getSkyColor (Lnet/minecraft/world/phys/Vec3;F)I
-		ARG 1 cameraPosition
-		ARG 2 partialTick
-	METHOD getSkyDarken (F)F
-		ARG 1 partialTick
-	METHOD getStarBrightness (F)F
-		ARG 1 partialTick
+		COMMENT Returns the world's LevelData object
 	METHOD globalLevelEvent (ILnet/minecraft/core/BlockPos;I)V
 		ARG 1 id
 		ARG 2 pos
@@ -116,8 +101,6 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 2 chunkZ
 	METHOD isTickingEntity (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity
-	METHOD lambda$doAnimateTick$9 (Lnet/minecraft/core/BlockPos$MutableBlockPos;Lnet/minecraft/world/level/biome/AmbientParticleSettings;)V
-		ARG 2 particle
 	METHOD lambda$new$0 (Lnet/minecraft/core/BlockPos;)I
 		ARG 1 pos
 	METHOD lambda$new$1 (Lnet/minecraft/core/BlockPos;)I
@@ -140,7 +123,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 3 y
 		ARG 5 z
 		ARG 7 sound
-		ARG 8 category
+		ARG 8 source
 		ARG 9 volume
 		ARG 10 pitch
 		ARG 11 distanceDelay
@@ -148,7 +131,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
-		ARG 7 soundEvent
+		ARG 7 sound
 		ARG 8 source
 		ARG 9 volume
 		ARG 10 pitch
@@ -160,7 +143,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 1 entityId
 		ARG 2 reason
 	METHOD sendBlockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
-		COMMENT Flags are as in setBlockState
+		COMMENT Flags are as in setBlock
 		ARG 1 pos
 		ARG 2 oldState
 		ARG 3 newState
@@ -168,7 +151,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 	METHOD sendPacketToServer (Lnet/minecraft/network/protocol/Packet;)V
 		ARG 1 packet
 	METHOD setBlocksDirty (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;)V
-		ARG 1 blockPos
+		ARG 1 pos
 		ARG 2 oldState
 		ARG 3 newState
 	METHOD setSectionDirtyWithNeighbors (III)V
@@ -200,10 +183,10 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 5 zStart
 		ARG 7 zEnd
 		ARG 9 y
-		ARG 11 particleData
+		ARG 11 options
 	METHOD spawnParticle (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/world/phys/shapes/VoxelShape;D)V
 		ARG 1 pos
-		ARG 2 particleData
+		ARG 2 options
 		ARG 3 voxelShape
 		ARG 4 y
 	METHOD syncBlockState (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/Vec3;)V
@@ -212,7 +195,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 3 playerPos
 	METHOD tick (Ljava/util/function/BooleanSupplier;)V
 		COMMENT Runs a single tick for the world
-		ARG 1 hasTimeLeft
+		ARG 1 haveTime
 	METHOD tickNonPassenger (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	METHOD tickPassenger (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;)V
@@ -224,9 +207,9 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 3 blockCount
 		ARG 4 blockParticles
 	METHOD trySpawnDripParticles (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/particles/ParticleOptions;Z)V
-		ARG 1 blockPos
-		ARG 2 blockState
-		ARG 3 particleData
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 options
 		ARG 4 shapeDownSolid
 	METHOD unload (Lnet/minecraft/world/level/chunk/LevelChunk;)V
 		ARG 1 chunk

@@ -5,7 +5,7 @@ CLASS net/minecraft/world/entity/animal/equine/AbstractHorse
 		COMMENT The higher this value, the more likely the horse is to be tamed next time a player rides it.
 	METHOD canMate (Lnet/minecraft/world/entity/animal/Animal;)Z
 		COMMENT Returns {@code true} if the mob is currently able to mate with the specified mob.
-		ARG 1 otherAnimal
+		ARG 1 partner
 	METHOD canParent ()Z
 		COMMENT Returns {@code true} if the horse entity ready to mate. (no rider, not riding, tame, adult, not sterile...)
 	METHOD createOffspringAttribute (DDDDLnet/minecraft/util/RandomSource;)D
@@ -46,8 +46,6 @@ CLASS net/minecraft/world/entity/animal/equine/AbstractHorse
 		ARG 1 partialTick
 	METHOD getFlag (I)Z
 		ARG 1 flagId
-	METHOD getInventorySize (I)I
-		ARG 0 columns
 	METHOD getMaxSpawnClusterSize ()I
 		COMMENT Will return how many at most can spawn in a chunk at once.
 	METHOD getMouthAnim (F)F
@@ -105,16 +103,7 @@ CLASS net/minecraft/world/entity/animal/equine/AbstractHorse
 		ARG 3 attribute
 		ARG 4 min
 		ARG 6 max
-	METHOD setOffspringAttribute (Lnet/minecraft/world/entity/AgeableMob;Lnet/minecraft/world/entity/animal/horse/AbstractHorse;Lnet/minecraft/core/Holder;DD)V
-		ARG 1 parent
-		ARG 2 child
-		ARG 3 attribute
-		ARG 4 min
-		ARG 6 max
 	METHOD setOffspringAttributes (Lnet/minecraft/world/entity/AgeableMob;Lnet/minecraft/world/entity/animal/equine/AbstractHorse;)V
-		ARG 1 parent
-		ARG 2 child
-	METHOD setOffspringAttributes (Lnet/minecraft/world/entity/AgeableMob;Lnet/minecraft/world/entity/animal/horse/AbstractHorse;)V
 		ARG 1 parent
 		ARG 2 child
 	METHOD setOwner (Lnet/minecraft/world/entity/LivingEntity;)V
@@ -135,6 +124,4 @@ CLASS net/minecraft/world/entity/animal/equine/AbstractHorse
 		COMMENT Called to update the entity's position/logic.
 	CLASS MountPanicGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/AbstractHorse;D)V
-			ARG 2 speedModifier
-		METHOD <init> (Lnet/minecraft/world/entity/animal/horse/AbstractHorse;D)V
 			ARG 2 speedModifier

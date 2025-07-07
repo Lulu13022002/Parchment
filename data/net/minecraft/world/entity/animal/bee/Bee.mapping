@@ -29,8 +29,6 @@ CLASS net/minecraft/world/entity/animal/bee/Bee
 	METHOD isFood (Lnet/minecraft/world/item/ItemStack;)Z
 		COMMENT Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on the animal type)
 		ARG 1 stack
-	METHOD isNightOrRaining (Lnet/minecraft/world/level/Level;)Z
-		ARG 0 level
 	METHOD isTooFarAway (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
 	METHOD jumpInLiquid (Lnet/minecraft/tags/TagKey;)V
@@ -51,10 +49,6 @@ CLASS net/minecraft/world/entity/animal/bee/Bee
 		ARG 1 hasStung
 	METHOD setHivePos (Lnet/minecraft/core/BlockPos;)V
 		ARG 1 hivePos
-	METHOD setPersistentAngerTarget (Ljava/util/UUID;)V
-		ARG 1 target
-	METHOD setRemainingPersistentAngerTime (I)V
-		ARG 1 time
 	METHOD setRolling (Z)V
 		ARG 1 isRolling
 	METHOD setSavedFlowerPos (Lnet/minecraft/core/BlockPos;)V
@@ -68,37 +62,31 @@ CLASS net/minecraft/world/entity/animal/bee/Bee
 		ARG 6 startZ
 		ARG 8 endZ
 		ARG 10 posY
-		ARG 12 particleOption
+		ARG 12 options
 	METHOD tick ()V
 		COMMENT Called to update the entity's position/logic.
 	CLASS BaseBeeGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS BeeAttackGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Bee;Lnet/minecraft/world/entity/PathfinderMob;DZ)V
-			ARG 2 mob
-			ARG 3 speedModifier
-			ARG 5 followingTargetEvenIfNotSeen
 		METHOD <init> (Lnet/minecraft/world/entity/animal/bee/Bee;Lnet/minecraft/world/entity/PathfinderMob;DZ)V
 			ARG 2 mob
 			ARG 3 speedModifier
 			ARG 5 followTargetEvenIfNotSeen
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS BeeWanderGoal
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
 			COMMENT Execute a one shot task or start executing a continuous task
 	CLASS BeeLookControl
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Bee;Lnet/minecraft/world/entity/Mob;)V
-			ARG 2 mob
 		METHOD <init> (Lnet/minecraft/world/entity/animal/bee/Bee;Lnet/minecraft/world/entity/Mob;)V
 			ARG 2 mob
 		METHOD tick ()V
@@ -139,15 +127,13 @@ CLASS net/minecraft/world/entity/animal/bee/Bee
 		METHOD start ()V
 			COMMENT Execute a one shot task or start executing a continuous task
 	CLASS BeeHurtByOtherGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Bee;Lnet/minecraft/world/entity/animal/Bee;)V
-			ARG 2 mob
 		METHOD <init> (Lnet/minecraft/world/entity/animal/bee/Bee;Lnet/minecraft/world/entity/animal/bee/Bee;)V
 			ARG 2 bee
 		METHOD alertOther (Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/entity/LivingEntity;)V
 			ARG 1 mob
 			ARG 2 target
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 	CLASS ValidateFlowerGoal
 		METHOD isFlower (Lnet/minecraft/core/BlockPos;)Z
 			ARG 1 pos
@@ -159,11 +145,9 @@ CLASS net/minecraft/world/entity/animal/bee/Bee
 		METHOD tick ()V
 			COMMENT Keep ticking a continuous task that has already been started
 	CLASS BeeBecomeAngryTargetGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Bee;)V
-			ARG 1 mob
 		METHOD <init> (Lnet/minecraft/world/entity/animal/bee/Bee;)V
 			ARG 1 bee
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.

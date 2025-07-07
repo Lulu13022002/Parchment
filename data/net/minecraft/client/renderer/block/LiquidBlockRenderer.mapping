@@ -19,7 +19,7 @@ CLASS net/minecraft/client/renderer/block/LiquidBlockRenderer
 		ARG 1 level
 		ARG 2 fluid
 		ARG 3 pos
-		ARG 4 blockState
+		ARG 4 state
 		ARG 5 fluidState
 	METHOD getLightColor (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
 		ARG 1 level
@@ -38,22 +38,19 @@ CLASS net/minecraft/client/renderer/block/LiquidBlockRenderer
 	METHOD isNeighborSameFluid (Lnet/minecraft/world/level/material/FluidState;Lnet/minecraft/world/level/material/FluidState;)Z
 		ARG 0 firstState
 		ARG 1 secondState
-	METHOD setupSprites (Lnet/minecraft/client/renderer/block/BlockModelShaper;Lnet/minecraft/client/resources/model/MaterialSet;)V
-		ARG 1 blockModelShaper
-		ARG 2 materials
 	METHOD shouldRenderFace (Lnet/minecraft/world/level/material/FluidState;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/material/FluidState;)Z
 		ARG 0 fluidState
-		ARG 1 blockState
+		ARG 1 state
 		ARG 2 side
 		ARG 3 neighborFluid
 	METHOD tesselate (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/material/FluidState;)V
 		ARG 1 level
 		ARG 2 pos
-		ARG 3 buffer
-		ARG 4 blockState
+		ARG 3 consumer
+		ARG 4 state
 		ARG 5 fluidState
 	METHOD vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFFFFI)V
-		ARG 1 buffer
+		ARG 1 consumer
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z

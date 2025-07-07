@@ -20,32 +20,22 @@ CLASS net/minecraft/world/entity/monster/zombie/Drowned
 		ARG 2 distanceFactor
 	METHOD setSearchingForLand (Z)V
 		ARG 1 searchingForLand
-	METHOD travel (Lnet/minecraft/world/phys/Vec3;)V
-		ARG 1 travelVector
 	CLASS DrownedAttackGoal
-		METHOD <init> (Lnet/minecraft/world/entity/monster/Drowned;DZ)V
-			ARG 1 drowned
-			ARG 2 speedModifier
-			ARG 4 followingTargetEvenIfNotSeen
 		METHOD <init> (Lnet/minecraft/world/entity/monster/zombie/Drowned;DZ)V
 			ARG 1 drowned
 			ARG 2 speedModifier
 			ARG 4 followTargetEvenIfNotSeen
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS DrownedSwimUpGoal
-		METHOD <init> (Lnet/minecraft/world/entity/monster/Drowned;DI)V
-			ARG 1 drowned
-			ARG 2 speedModifier
-			ARG 4 seaLevel
 		METHOD <init> (Lnet/minecraft/world/entity/monster/zombie/Drowned;DI)V
 			ARG 1 drowned
 			ARG 2 speedModifier
 			ARG 4 seaLevel
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V
@@ -55,19 +45,14 @@ CLASS net/minecraft/world/entity/monster/zombie/Drowned
 		METHOD tick ()V
 			COMMENT Keep ticking a continuous task that has already been started
 	CLASS DrownedMoveControl
-		METHOD <init> (Lnet/minecraft/world/entity/monster/Drowned;)V
-			ARG 1 drowned
 		METHOD <init> (Lnet/minecraft/world/entity/monster/zombie/Drowned;)V
 			ARG 1 drowned
 	CLASS DrownedGoToBeachGoal
-		METHOD <init> (Lnet/minecraft/world/entity/monster/Drowned;D)V
-			ARG 1 drowned
-			ARG 2 speedModifier
 		METHOD <init> (Lnet/minecraft/world/entity/monster/zombie/Drowned;D)V
 			ARG 1 drowned
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD isValidTarget (Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z
@@ -83,7 +68,7 @@ CLASS net/minecraft/world/entity/monster/zombie/Drowned
 			ARG 1 mob
 			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress EntityAIBase should continue executing
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 		METHOD start ()V

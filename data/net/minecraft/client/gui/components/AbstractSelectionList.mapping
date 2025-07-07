@@ -4,12 +4,12 @@ CLASS net/minecraft/client/gui/components/AbstractSelectionList
 		ARG 2 width
 		ARG 3 height
 		ARG 4 y
-		ARG 5 itemHeight
+		ARG 5 defaultEntryHeight
 	METHOD addEntry (Lnet/minecraft/client/gui/components/AbstractSelectionList$Entry;)I
 		ARG 1 entry
 	METHOD addEntry (Lnet/minecraft/client/gui/components/AbstractSelectionList$Entry;I)I
 		ARG 1 entry
-		ARG 2 index
+		ARG 2 height
 	METHOD addEntryToTop (Lnet/minecraft/client/gui/components/AbstractSelectionList$Entry;)V
 		ARG 1 entry
 	METHOD addEntryToTop (Lnet/minecraft/client/gui/components/AbstractSelectionList$Entry;I)V

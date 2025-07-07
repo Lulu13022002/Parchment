@@ -4,7 +4,7 @@ CLASS net/minecraft/server/level/ServerPlayer
 	FIELD lastRecordedHealthAndAbsorption F
 		COMMENT the total health of the player, includes actual health and absorption health. Updated every tick.
 	FIELD lastSectionPos Lnet/minecraft/core/SectionPos;
-		COMMENT Player section position as last updated by TicketManager, used by ChunkManager
+		COMMENT Player section position as last updated by ChunkMap
 	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/server/level/ServerLevel;Lcom/mojang/authlib/GameProfile;Lnet/minecraft/server/level/ClientInformation;)V
 		ARG 1 server
 		ARG 2 level
@@ -13,8 +13,8 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD acceptsSystemMessages (Z)Z
 		ARG 1 overlay
 	METHOD attack (Lnet/minecraft/world/entity/Entity;)V
-		COMMENT Attacks for the player the targeted entity with the currently equipped item.  The equipped item has hitEntity called on it. Args: targetEntity
-		ARG 1 targetEntity
+		COMMENT Attacks for the player the targeted entity with the currently equipped item. The equipped item has hurtEnemy called on it.
+		ARG 1 target
 	METHOD awardStat (Lnet/minecraft/stats/Stat;I)V
 		COMMENT Adds a value to a statistic field.
 		ARG 1 stat
@@ -45,18 +45,16 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 3 dy
 		ARG 5 dz
 	METHOD closeContainer ()V
-		COMMENT Sets the current crafting inventory back to the 2x2 square.
+		COMMENT Closes the container the player currently has open.
 	METHOD completeUsingItem ()V
-		COMMENT Used for when item use count runs out, ie: eating completed
+		COMMENT Used for when item use count runs out, i.e.: eating completed
 	METHOD copyRespawnPosition (Lnet/minecraft/server/level/ServerPlayer;)V
 		ARG 1 player
 	METHOD createCommonSpawnInfo (Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/network/protocol/game/CommonPlayerSpawnInfo;
 		ARG 1 level
 	METHOD crit (Lnet/minecraft/world/entity/Entity;)V
 		COMMENT Called when the entity is dealt a critical hit.
-		ARG 1 entityHit
-	METHOD deregisterEnderPearl (Lnet/minecraft/world/entity/projectile/ThrownEnderpearl;)V
-		ARG 1 enderPearl
+		ARG 1 target
 	METHOD deregisterEnderPearl (Lnet/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl;)V
 		ARG 1 enderPearl
 	METHOD didNotMove (DDD)Z
@@ -65,18 +63,15 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 4 dz
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
+		ARG 1 damageSource
 	METHOD doCloseContainer ()V
-		COMMENT Closes the container the player currently has open.
+		COMMENT Invoked when the active container of the player is to be closed, either by a call to {@link #closeContainer()} or a packet.
 	METHOD drop (Lnet/minecraft/world/item/ItemStack;ZZ)Lnet/minecraft/world/entity/item/ItemEntity;
 		ARG 1 droppedItem
 		ARG 2 dropAround
 		ARG 3 traceItem
 	METHOD drop (Z)V
 		ARG 1 dropStack
-	METHOD drop (Z)Z
-		ARG 1 dropStack
-			COMMENT Whether to drop the entire stack of items. If {@code false}, drops a single item.
 	METHOD findRespawnAndUseSpawnBlock (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/server/level/ServerPlayer$RespawnConfig;Z)Ljava/util/Optional;
 		ARG 0 level
 		ARG 1 respawnConfig
@@ -85,9 +80,9 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 1 useCharge
 		ARG 2 postTeleportTransition
 	METHOD getIpAddress ()Ljava/lang/String;
-		COMMENT Gets the player's IP address. Used in /banip.
+		COMMENT Gets the player's IP address. Used in /ban-ip.
 	METHOD getTabListDisplayName ()Lnet/minecraft/network/chat/Component;
-		COMMENT Returns null which indicates the tab list should just display the player's name, return a different value to display the specified text instead of the player's name
+		COMMENT Returns {@code null} which indicates the tab list should just display the player's name, return a different value to display the specified text instead of the player's name
 	METHOD giveExperienceLevels (I)V
 		COMMENT Add experience levels to this player.
 		ARG 1 levels
@@ -120,25 +115,22 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 1 anchor
 		ARG 2 target
 	METHOD magicCrit (Lnet/minecraft/world/entity/Entity;)V
-		ARG 1 entityHit
+		ARG 1 target
 	METHOD nextContainerCounter ()V
 		COMMENT Gets the next window id to use.
 	METHOD onEnchantmentPerformed (Lnet/minecraft/world/item/ItemStack;I)V
 		ARG 1 enchantedItem
 		ARG 2 cost
 	METHOD onEnterCombat ()V
-		COMMENT Sends an ENTER_COMBAT packet to the client
+		COMMENT Sends a ClientboundPlayerCombatEnterPacket to the client
 	METHOD onInsideBlock (Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 state
 	METHOD onLeaveCombat ()V
-		COMMENT Sends an END_COMBAT packet to the client
+		COMMENT Sends a ClientboundPlayerCombatEndPacket to the client
 	METHOD onUpdateAbilities ()V
 		COMMENT Sends the player's abilities to the server (if there is one).
 	METHOD openCommandBlock (Lnet/minecraft/world/level/block/entity/CommandBlockEntity;)V
 		ARG 1 commandBlock
-	METHOD openHorseInventory (Lnet/minecraft/world/entity/animal/horse/AbstractHorse;Lnet/minecraft/world/Container;)V
-		ARG 1 horse
-		ARG 2 inventory
 	METHOD openItemGui (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;)V
 		ARG 1 stack
 		ARG 2 hand
@@ -152,18 +144,14 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD readPlayerMode (Lnet/minecraft/world/level/storage/ValueInput;Ljava/lang/String;)Lnet/minecraft/world/level/GameType;
 		ARG 0 input
 		ARG 1 key
-	METHOD registerAndUpdateEnderPearlTicket (Lnet/minecraft/world/entity/projectile/ThrownEnderpearl;)J
-		ARG 1 enderPearl
 	METHOD registerAndUpdateEnderPearlTicket (Lnet/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl;)J
-		ARG 1 enderPearl
-	METHOD registerEnderPearl (Lnet/minecraft/world/entity/projectile/ThrownEnderpearl;)V
 		ARG 1 enderPearl
 	METHOD registerEnderPearl (Lnet/minecraft/world/entity/projectile/throwableitemprojectile/ThrownEnderpearl;)V
 		ARG 1 enderPearl
 	METHOD requestDebugSubscriptions (Ljava/util/Set;)V
 		ARG 1 subscriptions
 	METHOD resetSentInfo ()V
-		COMMENT This function is called when a player's inventory is sent to him, {@code lastHealth} is updated on any dimension transitions, then reset.
+		COMMENT This function is called when a player's inventory is sent to him, {@code lastSentHealth} is updated on any dimension transitions, then reset.
 	METHOD resetStat (Lnet/minecraft/stats/Stat;)V
 		ARG 1 stat
 	METHOD respawnEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)V
@@ -178,7 +166,7 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD sendChatMessage (Lnet/minecraft/network/chat/OutgoingChatMessage;ZLnet/minecraft/network/chat/ChatType$Bound;)V
 		ARG 1 message
 		ARG 2 filtered
-		ARG 3 boundType
+		ARG 3 boundChatType
 	METHOD sendMerchantOffers (ILnet/minecraft/world/item/trading/MerchantOffers;IIZZ)V
 		ARG 1 containerId
 		ARG 2 offers
@@ -187,7 +175,7 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD sendServerStatus (Lnet/minecraft/network/protocol/status/ServerStatus;)V
 		ARG 1 serverStatus
 	METHOD sendSystemMessage (Lnet/minecraft/network/chat/Component;)V
-		ARG 1 mesage
+		ARG 1 message
 	METHOD sendSystemMessage (Lnet/minecraft/network/chat/Component;Z)V
 		ARG 1 message
 		ARG 2 overlay
@@ -227,7 +215,7 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD shouldFilterMessageTo (Lnet/minecraft/server/level/ServerPlayer;)Z
 		ARG 1 player
 	METHOD startSleepInBed (Lnet/minecraft/core/BlockPos;)Lcom/mojang/datafixers/util/Either;
-		ARG 1 at
+		ARG 1 bedPos
 	METHOD startSleeping (Lnet/minecraft/core/BlockPos;)V
 		ARG 1 pos
 	METHOD storeGameTypes (Lnet/minecraft/world/level/storage/ValueOutput;)V
@@ -241,14 +229,14 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 1 entity
 		ARG 2 quantity
 	METHOD teleportTo (DDD)V
-		COMMENT Sets the position of the entity and updates the 'last' variables
+		COMMENT Sets the position of the entity and updates the 'old' variables
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
 	METHOD tick ()V
 		COMMENT Called to update the entity's position/logic.
 	METHOD transferInventoryXpAndScore (Lnet/minecraft/world/entity/player/Player;)V
-		ARG 1 player
+		ARG 1 oldPlayer
 	METHOD triggerDimensionChangeTriggers (Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 level
 	METHOD updateInvisibilityStatus ()V

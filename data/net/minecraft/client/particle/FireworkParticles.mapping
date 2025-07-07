@@ -43,7 +43,7 @@ CLASS net/minecraft/client/particle/FireworkParticles
 			ARG 8 isCreeper
 	CLASS FlashProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
-			ARG 1 sprites
+			ARG 1 sprite
 	CLASS SparkParticle
 		METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/client/particle/ParticleEngine;Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 level

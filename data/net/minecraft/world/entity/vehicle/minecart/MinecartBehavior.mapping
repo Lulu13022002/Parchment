@@ -1,6 +1,4 @@
 CLASS net/minecraft/world/entity/vehicle/minecart/MinecartBehavior
-	METHOD <init> (Lnet/minecraft/world/entity/vehicle/AbstractMinecart;)V
-		ARG 1 minecart
 	METHOD <init> (Lnet/minecraft/world/entity/vehicle/minecart/AbstractMinecart;)V
 		ARG 1 minecart
 	METHOD getKnownMovement (Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;
@@ -8,7 +6,7 @@ CLASS net/minecraft/world/entity/vehicle/minecart/MinecartBehavior
 	METHOD getMaxSpeed (Lnet/minecraft/server/level/ServerLevel;)D
 		ARG 1 level
 	METHOD lerpMotion (Lnet/minecraft/world/phys/Vec3;)V
-		ARG 1 deltaMovement
+		ARG 1 motion
 	METHOD moveAlongTrack (Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 level
 	METHOD setDeltaMovement (DDD)V

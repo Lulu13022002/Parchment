@@ -78,7 +78,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 expectedValue
+		ARG 4 expectedData
 	METHOD assertEntityData (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/EntityType;Ljava/util/function/Predicate;)V
 		ARG 1 pos
 		ARG 2 type
@@ -87,7 +87,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 area
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 expectedValue
+		ARG 4 expectedData
 	METHOD assertEntityInstancePresent (Lnet/minecraft/world/entity/Entity;III)V
 		ARG 1 entity
 		ARG 2 x
@@ -122,10 +122,6 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
-	METHOD assertEntityPosition (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;Lnet/minecraft/network/chat/Component;)V
-		ARG 1 entity
-		ARG 2 boundingBox
-		ARG 3 message
 	METHOD assertEntityPresent (Lnet/minecraft/world/entity/EntityType;)V
 		ARG 1 type
 	METHOD assertEntityPresent (Lnet/minecraft/world/entity/EntityType;III)V
@@ -400,8 +396,6 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 state
 		ARG 3 facing
-	METHOD setDayTime (I)V
-		ARG 1 time
 	METHOD spawn (Lnet/minecraft/world/entity/EntityType;FFF)Lnet/minecraft/world/entity/Entity;
 		ARG 1 type
 		ARG 2 x
@@ -482,7 +476,7 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 type
 		ARG 3 entityDataGetter
-		ARG 4 testEntityData
+		ARG 4 expectedData
 	METHOD succeedWhenEntityNotPresent (Lnet/minecraft/world/entity/EntityType;III)V
 		ARG 1 type
 		ARG 2 x
