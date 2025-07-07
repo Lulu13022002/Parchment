@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/block/entity/DecoratedPotBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
-		ARG 2 state
+		ARG 2 blockState
 	METHOD lambda$new$0 (Ljava/util/ArrayList;)V
 		ARG 0 list
 	METHOD playerDestroy (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V

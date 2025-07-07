@@ -11,7 +11,7 @@ CLASS net/minecraft/client/gui/screens/inventory/tooltip/ClientBundleTooltip
 		ARG 2 y
 		ARG 3 slotWidth
 		ARG 4 slotHeight
-		ARG 5 poseSrack
+		ARG 5 poseStack
 	METHOD renderSlot (IIIZLnet/minecraft/client/gui/Font;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/entity/ItemRenderer;)V
 		ARG 1 x
 		ARG 2 y

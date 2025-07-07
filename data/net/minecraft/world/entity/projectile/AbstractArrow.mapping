@@ -10,11 +10,11 @@ CLASS net/minecraft/world/entity/projectile/AbstractArrow
 		ARG 2 shooter
 		ARG 3 level
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD doPostHurtEffects (Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 target
 	METHOD findHitEntity (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/EntityHitResult;
-		COMMENT Gets the EntityRayTraceResult representing the entity hit
+		COMMENT Gets the EntityHitResult representing the entity hit
 		ARG 1 startVec
 		ARG 2 endVec
 	METHOD getDefaultHitGroundSoundEvent ()Lnet/minecraft/sounds/SoundEvent;
@@ -27,7 +27,7 @@ CLASS net/minecraft/world/entity/projectile/AbstractArrow
 	METHOD isCritArrow ()Z
 		COMMENT Whether the arrow has a stream of critical hit particles flying behind it.
 	METHOD isNoPhysics ()Z
-		COMMENT Whether the arrow can noClip
+		COMMENT Whether the arrow can noPhysics
 	METHOD lerpMotion (DDD)V
 		COMMENT Updates the entity motion clientside, called by packets from the server
 		ARG 1 x
@@ -38,13 +38,13 @@ CLASS net/minecraft/world/entity/projectile/AbstractArrow
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z
-		ARG 7 yaw
-		ARG 8 pitch
-		ARG 9 posRotationIncrements
+		ARG 7 yRot
+		ARG 8 xRot
+		ARG 9 steps
 		ARG 10 teleport
 	METHOD move (Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 type
-		ARG 2 pos
+		ARG 2 movement
 	METHOD onHitEntity (Lnet/minecraft/world/phys/EntityHitResult;)V
 		COMMENT Called when the arrow hits an entity
 		ARG 1 result
@@ -53,7 +53,7 @@ CLASS net/minecraft/world/entity/projectile/AbstractArrow
 		ARG 1 entity
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD setBaseDamage (D)V
 		ARG 1 baseDamage
 	METHOD setCritArrow (Z)V
@@ -69,7 +69,7 @@ CLASS net/minecraft/world/entity/projectile/AbstractArrow
 		COMMENT Sets the amount of knockback the arrow applies when it hits a mob.
 		ARG 1 knockback
 	METHOD setNoPhysics (Z)V
-		COMMENT Sets if this arrow can noClip
+		COMMENT Sets if this arrow can noPhysics
 		ARG 1 noPhysics
 	METHOD setOwner (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
@@ -81,7 +81,7 @@ CLASS net/minecraft/world/entity/projectile/AbstractArrow
 	METHOD setSoundEvent (Lnet/minecraft/sounds/SoundEvent;)V
 		ARG 1 soundEvent
 	METHOD shoot (DDDFF)V
-		COMMENT Similar to setArrowHeading, it's point the throwable entity to a x, y, z direction.
+		COMMENT Similar to shootFromRotation, it points the throwable entity to an x, y, z direction.
 		ARG 1 x
 		ARG 3 y
 		ARG 5 z

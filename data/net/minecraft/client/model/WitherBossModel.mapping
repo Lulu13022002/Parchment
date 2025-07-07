@@ -14,8 +14,8 @@ CLASS net/minecraft/client/model/WitherBossModel
 		ARG 2 limbSwing
 		ARG 3 limbSwingAmount
 		ARG 4 ageInTicks
-		ARG 5 netHeadYaw
-		ARG 6 headPitch
+		ARG 5 deltaYHeadRot
+		ARG 6 xRot
 	METHOD setupHeadRotation (Lnet/minecraft/world/entity/boss/wither/WitherBoss;Lnet/minecraft/client/model/geom/ModelPart;I)V
 		ARG 0 wither
 		ARG 1 part

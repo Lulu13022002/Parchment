@@ -5,5 +5,5 @@ CLASS net/minecraft/server/commands/GameRuleCommand
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;)V
 		ARG 0 dispatcher
 	METHOD setRule (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/world/level/GameRules$Key;)I
-		ARG 0 source
+		ARG 0 context
 		ARG 1 gameRule

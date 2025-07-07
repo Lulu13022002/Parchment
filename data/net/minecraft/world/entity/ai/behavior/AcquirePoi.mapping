@@ -35,12 +35,6 @@ CLASS net/minecraft/world/entity/ai/behavior/AcquirePoi
 	METHOD lambda$create$7 (ZLorg/apache/commons/lang3/mutable/MutableLong;Lit/unimi/dsi/fastutil/longs/Long2ObjectMap;Ljava/util/function/Predicate;Ljava/util/Optional;Lnet/minecraft/world/entity/ai/behavior/declarative/MemoryAccessor;)Lnet/minecraft/world/entity/ai/behavior/declarative/Trigger;
 		ARG 5 memory
 	METHOD lambda$create$8 (Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;ZLorg/apache/commons/lang3/mutable/MutableLong;Lit/unimi/dsi/fastutil/longs/Long2ObjectMap;Ljava/util/function/Predicate;Ljava/util/Optional;Lnet/minecraft/world/entity/ai/behavior/declarative/BehaviorBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 0 acquiringMemory
-		ARG 1 onlyIfAdult
-		ARG 2 startTime
-		ARG 3 posRetries
-		ARG 4 acquirablePois
-		ARG 5 entityEventId
 		ARG 6 instance
 	METHOD lambda$create$9 (Lnet/minecraft/world/entity/ai/behavior/OneShot;Lnet/minecraft/world/entity/ai/behavior/declarative/MemoryAccessor;)Lnet/minecraft/world/entity/ai/behavior/declarative/Trigger;
 		ARG 1 memory

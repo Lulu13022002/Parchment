@@ -8,6 +8,6 @@ CLASS net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer
 		ARG 1 stack
 		ARG 2 displayContext
 		ARG 3 poseStack
-		ARG 4 buffer
+		ARG 4 bufferSource
 		ARG 5 packedLight
 		ARG 6 packedOverlay

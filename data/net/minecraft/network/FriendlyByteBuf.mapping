@@ -147,7 +147,7 @@ CLASS net/minecraft/network/FriendlyByteBuf
 	METHOD order (Ljava/nio/ByteOrder;)Lio/netty/buffer/ByteBuf;
 		ARG 1 endianness
 	METHOD readAnySizeNbt ()Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Reads a NBT CompoundTag from this buffer.
+		COMMENT Reads a CompoundTag from this buffer.
 		COMMENT {@code null} is a valid value and may be returned.
 		COMMENT
 		COMMENT This method has no size limit on the NBT data.
@@ -280,7 +280,7 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 keyReader
 		ARG 2 valueReader
 	METHOD readNbt ()Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Reads a NBT CompoundTag from this buffer.
+		COMMENT Reads a tag from this buffer.
 		COMMENT {@code null} is a valid value and may be returned.
 		COMMENT
 		COMMENT This method will read a maximum of 0x200000 bytes.
@@ -289,7 +289,7 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		COMMENT @see #readAnySizeNbt
 		COMMENT @see #readNbt(NbtAccounter)
 	METHOD readNbt (Lnet/minecraft/nbt/NbtAccounter;)Lnet/minecraft/nbt/CompoundTag;
-		COMMENT Reads a NBT CompoundTag from this buffer.
+		COMMENT Reads a tag from this buffer.
 		COMMENT {@code null} is a valid value and may be returned.
 		COMMENT
 		COMMENT This method limits the size of the data using the given {@code NbtAccounter}.
@@ -312,8 +312,6 @@ CLASS net/minecraft/network/FriendlyByteBuf
 		ARG 1 length
 	METHOD readSectionPos ()Lnet/minecraft/core/SectionPos;
 		COMMENT Reads a SectionPos encoded as a long from the buffer.
-		COMMENT
-		COMMENT @see #writeSectionPos
 	METHOD readSlice (I)Lio/netty/buffer/ByteBuf;
 		ARG 1 length
 	METHOD readUUID ()Ljava/util/UUID;
@@ -607,13 +605,13 @@ CLASS net/minecraft/network/FriendlyByteBuf
 	METHOD writeMediumLE (I)Lio/netty/buffer/ByteBuf;
 		ARG 1 value
 	METHOD writeNbt (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/network/FriendlyByteBuf;
-		COMMENT Writes the given NBT CompoundTag to this buffer.
+		COMMENT Writes the given tag to this buffer.
 		COMMENT {@code null} is a valid value and can be encoded by this method.
 		COMMENT
 		COMMENT @see #readNbt()
 		COMMENT @see #readAnySizeNbt
 		COMMENT @see #readNbt(NbtAccounter)
-		ARG 1 nbt
+		ARG 1 tag
 	METHOD writeNullable (Ljava/lang/Object;Lnet/minecraft/network/FriendlyByteBuf$Writer;)V
 		ARG 1 value
 		ARG 2 writer

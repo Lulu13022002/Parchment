@@ -5,13 +5,17 @@ CLASS net/minecraft/world/entity/vehicle/MinecartSpawner
 		ARG 4 y
 		ARG 6 z
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD createTicker (Lnet/minecraft/world/level/Level;)Ljava/lang/Runnable;
 		ARG 1 level
 	METHOD onlyOpCanSetNbt ()Z
-		COMMENT Checks if players can use this entity to access operator (permission level 2) commands either directly or indirectly, such as give or setblock. A similar method exists for entities at {@link net.minecraft.world.entity.Entity#onlyOpCanSetNbt()}.<p>For example, {@link net.minecraft.world.entity.vehicle.MinecartCommandBlock#onlyOpCanSetNbt() command block minecarts} and {@link net.minecraft.world.entity.vehicle.MinecartSpawner#onlyOpCanSetNbt() mob spawner minecarts} (spawning command block minecarts or drops) are considered accessible.</p>@return true if this entity offers ways for unauthorized players to use restricted commands
+		COMMENT Checks if players can use this entity to access operator (permission level 2) commands either directly or indirectly, such as give or setblock.
+		COMMENT A similar method exists for block entities at {@link net.minecraft.world.level.block.entity.BlockEntity#onlyOpCanSetNbt()}.
+		COMMENT <p>
+		COMMENT For example, {@link net.minecraft.world.entity.vehicle.MinecartCommandBlock#onlyOpCanSetNbt() command block minecarts} and {@link net.minecraft.world.entity.vehicle.MinecartSpawner#onlyOpCanSetNbt() mob spawner minecarts} (spawning command block minecarts or drops) are considered accessible.
+		COMMENT @return {@code true} if this entity offers ways for unauthorized players to use restricted commands
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD tick ()V
 		COMMENT Called to update the entity's position/logic.

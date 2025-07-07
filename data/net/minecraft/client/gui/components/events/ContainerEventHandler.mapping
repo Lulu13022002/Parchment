@@ -1,6 +1,6 @@
 CLASS net/minecraft/client/gui/components/events/ContainerEventHandler
 	METHOD charTyped (CI)Z
-		ARG 1 codePoint
+		ARG 1 character
 		ARG 2 modifiers
 	METHOD getChildAt (DD)Ljava/util/Optional;
 		COMMENT Returns the first event listener that intersects with the mouse coordinates.

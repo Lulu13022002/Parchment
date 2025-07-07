@@ -49,7 +49,7 @@ CLASS net/minecraft/world/item/enchantment/Enchantment
 		COMMENT Calculates the amount of additional damage protection to provide when a user is damaged.
 		ARG 1 level
 			COMMENT The level of the enchantment being used.
-		ARG 2 source
+		ARG 2 damageSource
 			COMMENT The source of the damage.
 	METHOD getDescriptionId ()Ljava/lang/String;
 		COMMENT Gets the description Id of the enchantment. This is commonly used to create localization keys.
@@ -68,7 +68,7 @@ CLASS net/minecraft/world/item/enchantment/Enchantment
 	METHOD getMinLevel ()I
 		COMMENT Gets the minimum level of the enchantment under normal circumstances such as the enchanting table. This limit is not strictly enforced and may be ignored through custom item NBT or other customizations.
 	METHOD getOrCreateDescriptionId ()Ljava/lang/String;
-		COMMENT Lazily initializes a {@code descriptionId} for an enchantment using the enchantment's registry name.
+		COMMENT Lazily initializes a {@code descriptionId} for an enchantment using the enchantment's key.
 	METHOD getRarity ()Lnet/minecraft/world/item/enchantment/Enchantment$Rarity;
 		COMMENT Gets the rarity of the enchantment. This determines how rare the enchantment will be in enchantment pools such as the enchanting table and loot tables.
 	METHOD getSlotItems (Lnet/minecraft/world/entity/LivingEntity;)Ljava/util/Map;

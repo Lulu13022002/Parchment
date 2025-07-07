@@ -53,8 +53,6 @@ CLASS com/mojang/blaze3d/platform/NativeImage
 		ARG 6 height
 		ARG 7 mirrorX
 		ARG 8 mirrorY
-	METHOD downloadDepthBuffer (F)V
-		ARG 1 unused
 	METHOD downloadTexture (IZ)V
 		ARG 1 level
 		ARG 2 opaque
@@ -143,7 +141,7 @@ CLASS com/mojang/blaze3d/platform/NativeImage
 	METHOD writeToFile (Ljava/io/File;)V
 		ARG 1 file
 	METHOD writeToFile (Ljava/nio/file/Path;)V
-		ARG 1 path
+		ARG 1 filePath
 	CLASS Format
 		METHOD <init> (Ljava/lang/String;IIIZZZZZIIIIIZ)V
 			ARG 3 components

@@ -37,7 +37,7 @@ CLASS net/minecraft/world/level/biome/Biome
 		METHOD generationSettings (Lnet/minecraft/world/level/biome/BiomeGenerationSettings;)Lnet/minecraft/world/level/biome/Biome$BiomeBuilder;
 			ARG 1 generationSettings
 		METHOD hasPrecipitation (Z)Lnet/minecraft/world/level/biome/Biome$BiomeBuilder;
-			ARG 1 hasPercipitation
+			ARG 1 hasPrecipitation
 		METHOD mobSpawnSettings (Lnet/minecraft/world/level/biome/MobSpawnSettings;)Lnet/minecraft/world/level/biome/Biome$BiomeBuilder;
 			ARG 1 mobSpawnSettings
 		METHOD specialEffects (Lnet/minecraft/world/level/biome/BiomeSpecialEffects;)Lnet/minecraft/world/level/biome/Biome$BiomeBuilder;
@@ -54,7 +54,7 @@ CLASS net/minecraft/world/level/biome/Biome
 		METHOD lambda$static$3 (Lnet/minecraft/world/level/biome/Biome$ClimateSettings;)Ljava/lang/Float;
 			ARG 0 settings
 		METHOD lambda$static$4 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 codec
+			ARG 0 instance
 	CLASS TemperatureModifier
 		METHOD <init> (Ljava/lang/String;ILjava/lang/String;)V
 			ARG 3 name

@@ -24,7 +24,7 @@ CLASS net/minecraft/client/gui/font/providers/BitmapProvider
 			ARG 0 json
 		METHOD getActualGlyphWidth (Lcom/mojang/blaze3d/platform/NativeImage;IIII)I
 			ARG 1 nativeImage
-			ARG 2 charWidth
-			ARG 3 charHeightInsp
+			ARG 2 width
+			ARG 3 height
 			ARG 4 column
 			ARG 5 row

@@ -106,7 +106,7 @@ CLASS net/minecraft/world/level/block/Block
 		ARG 0 shape
 		ARG 1 face
 	METHOD isPossibleToRespawnInThis ()Z
-		COMMENT @return true if an entity can be spawned inside this block
+		COMMENT @return {@code true} if an entity can be spawned inside this block
 	METHOD isRandomlyTicking (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		COMMENT @return whether this block needs random ticking.
 		ARG 1 state

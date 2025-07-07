@@ -8,14 +8,14 @@ CLASS net/minecraft/client/multiplayer/ServerList
 		COMMENT Gets the ServerData instance stored for the given index in the list.
 		ARG 1 index
 	METHOD load ()V
-		COMMENT Loads a list of servers from servers.dat, by running ServerData.getServerDataFromNBTCompound on each NBT compound found in the "servers" tag list.
+		COMMENT Loads a list of servers from servers.dat, by running {@link ServerData#read(CompoundTag)} on each compound tag found in the "servers" tag list.
 	METHOD remove (Lnet/minecraft/client/multiplayer/ServerData;)V
 		ARG 1 serverData
 	METHOD replace (ILnet/minecraft/client/multiplayer/ServerData;)V
 		ARG 1 index
 		ARG 2 server
 	METHOD save ()V
-		COMMENT Runs getNBTCompound on each ServerData instance, puts everything into a "servers" NBT list and writes it to servers.dat.
+		COMMENT Runs {@link ServerData#write()} on each ServerData instance, puts everything into a "servers" list tag and writes it to servers.dat.
 	METHOD saveSingleServer (Lnet/minecraft/client/multiplayer/ServerData;)V
 		ARG 0 server
 	METHOD size ()I

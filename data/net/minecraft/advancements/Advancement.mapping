@@ -14,7 +14,7 @@ CLASS net/minecraft/advancements/Advancement
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 1 other
 	METHOD getChatComponent ()Lnet/minecraft/network/chat/Component;
-		COMMENT @return The {@link net.minecraft.network.chat.Component} that is shown in the chat message sent after this advancement is completed.
+		COMMENT @return The {@link Component} that is shown in the message sent after this advancement is completed.
 	METHOD getChildren ()Ljava/lang/Iterable;
 		COMMENT @return An iterable through this advancement's children.
 	METHOD getCriteria ()Ljava/util/Map;

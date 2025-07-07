@@ -19,7 +19,7 @@ CLASS net/minecraft/resources/ResourceLocation
 	METHOD <init> ([Ljava/lang/String;)V
 		ARG 1 decomposedLocation
 	METHOD assertValidNamespace (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-		ARG 0 namespae
+		ARG 0 namespace
 		ARG 1 path
 	METHOD assertValidPath (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 		ARG 0 namespace
@@ -96,6 +96,6 @@ CLASS net/minecraft/resources/ResourceLocation
 			ARG 2 typeOfT
 			ARG 3 context
 		METHOD serialize (Lnet/minecraft/resources/ResourceLocation;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
-			ARG 1 resourceLocation
-			ARG 2 typeOfT
+			ARG 1 src
+			ARG 2 typeOfSrc
 			ARG 3 context

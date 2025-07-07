@@ -7,5 +7,5 @@ CLASS net/minecraft/world/item/context/UseOnContext
 		ARG 1 level
 		ARG 2 player
 		ARG 3 hand
-		ARG 4 itemStack
+		ARG 4 stack
 		ARG 5 hitResult

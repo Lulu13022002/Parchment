@@ -5,7 +5,7 @@ CLASS net/minecraft/client/multiplayer/ClientChunkCache
 	METHOD calculateStorageRange (I)I
 		ARG 0 viewDistance
 	METHOD drop (II)V
-		COMMENT Unload chunk from ChunkProviderClient's hashmap. Called in response to a Packet50PreChunk with its mode field set to false
+		COMMENT Unload chunk from ClientChunkCache.Storage's array. Called in response to a ClientboundForgetLevelChunkPacket
 		ARG 1 x
 		ARG 2 z
 	METHOD gatherStats ()Ljava/lang/String;
@@ -20,7 +20,7 @@ CLASS net/minecraft/client/multiplayer/ClientChunkCache
 		ARG 1 x
 		ARG 2 z
 	METHOD onLightUpdate (Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/core/SectionPos;)V
-		ARG 1 type
+		ARG 1 lightLayer
 		ARG 2 pos
 	METHOD replaceBiomes (IILnet/minecraft/network/FriendlyByteBuf;)V
 		ARG 1 x

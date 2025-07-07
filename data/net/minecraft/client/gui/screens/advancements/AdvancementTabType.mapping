@@ -15,7 +15,7 @@ CLASS net/minecraft/client/gui/screens/advancements/AdvancementTabType
 		ARG 1 poseStack
 		ARG 2 offsetX
 		ARG 3 offsetY
-		ARG 4 inex
+		ARG 4 index
 		ARG 5 itemRenderer
 		ARG 6 stack
 	METHOD getX (I)I

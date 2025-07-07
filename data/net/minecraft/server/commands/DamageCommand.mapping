@@ -3,7 +3,7 @@ CLASS net/minecraft/server/commands/DamageCommand
 		ARG 0 source
 		ARG 1 target
 		ARG 2 amount
-		ARG 3 damageType
+		ARG 3 damageSource
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/commands/CommandBuildContext;)V
 		ARG 0 dispatcher
 		ARG 1 context
