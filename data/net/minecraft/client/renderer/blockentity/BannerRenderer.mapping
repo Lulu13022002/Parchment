@@ -43,9 +43,10 @@ CLASS net/minecraft/client/renderer/blockentity/BannerRenderer
 		ARG 6 renderState
 		ARG 7 material
 		ARG 8 banner
+			COMMENT if {@code true}, uses banner material; otherwise if {@code false} uses shield material
 		ARG 9 baseColor
 		ARG 10 patterns
-		ARG 11 withGlint
+		ARG 11 hasFoil
 		ARG 12 crumblingOverlay
 		ARG 13 outlineColor
 	METHOD submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;I)V

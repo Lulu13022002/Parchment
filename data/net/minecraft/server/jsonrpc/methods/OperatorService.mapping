@@ -18,6 +18,6 @@ CLASS net/minecraft/server/jsonrpc/methods/OperatorService
 		ARG 2 clientInfo
 	CLASS OperatorDto
 		METHOD from (Lnet/minecraft/server/players/ServerOpListEntry;)Lnet/minecraft/server/jsonrpc/methods/OperatorService$OperatorDto;
-			ARG 0 emtry
+			ARG 0 entry
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 			ARG 0 instance

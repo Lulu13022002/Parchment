@@ -1,6 +1,6 @@
 CLASS net/minecraft/server/jsonrpc/api/Schema
 	METHOD arrayOf (Lnet/minecraft/server/jsonrpc/api/Schema;)Lnet/minecraft/server/jsonrpc/api/Schema;
-		ARG 0 schema
+		ARG 0 items
 	METHOD lambda$static$0 (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 1 instance
 	METHOD ofEnum (Ljava/util/List;)Lnet/minecraft/server/jsonrpc/api/Schema;

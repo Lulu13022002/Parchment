@@ -7,6 +7,6 @@ CLASS net/minecraft/client/renderer/block/model/ItemTransforms
 			ARG 2 type
 			ARG 3 context
 		METHOD getTransform (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;Lnet/minecraft/world/item/ItemDisplayContext;)Lnet/minecraft/client/renderer/block/model/ItemTransform;
-			ARG 1 deserializationContext
+			ARG 1 context
 			ARG 2 json
 			ARG 3 displayContext

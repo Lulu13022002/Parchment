@@ -24,7 +24,7 @@ CLASS net/minecraft/client/resources/model/AtlasManager
 	CLASS PendingStitchResults
 		METHOD <init> (Ljava/util/List;Ljava/util/Map;Ljava/util/concurrent/CompletableFuture;)V
 			ARG 1 pendingStitches
-			ARG 2 stitchFutureById
+			ARG 2 stitchFuturesById
 			ARG 3 allReadyToUpload
 		METHOD get (Lnet/minecraft/resources/ResourceLocation;)Ljava/util/concurrent/CompletableFuture;
 			ARG 1 id

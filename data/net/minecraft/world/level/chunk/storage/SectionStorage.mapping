@@ -28,7 +28,7 @@ CLASS net/minecraft/world/level/chunk/storage/SectionStorage
 	METHOD setDirty (J)V
 		ARG 1 sectionPos
 	METHOD tick (Ljava/util/function/BooleanSupplier;)V
-		ARG 1 aheadOfTime
+		ARG 1 haveTime
 	METHOD tryRead (Lnet/minecraft/world/level/ChunkPos;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 chunkPos
 	METHOD unpackChunk (Lnet/minecraft/world/level/ChunkPos;)V
@@ -47,4 +47,4 @@ CLASS net/minecraft/world/level/chunk/storage/SectionStorage
 			ARG 1 ops
 			ARG 2 value
 			ARG 3 simpleRegionStorage
-			ARG 4 levelHeightAccessor
+			ARG 4 level

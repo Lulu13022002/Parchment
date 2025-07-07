@@ -70,8 +70,8 @@ CLASS net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers
 	METHOD isPickingUpItems (Lnet/minecraft/world/entity/PathfinderMob;)Z
 		ARG 0 mob
 	METHOD isPositionAlreadyVisited (Ljava/util/Set;Ljava/util/Set;Lnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;Lnet/minecraft/world/level/Level;)Z
-		ARG 1 visited
-		ARG 2 unreachable
+		ARG 1 visitedPositions
+		ARG 2 unreachablePositions
 		ARG 3 target
 		ARG 4 level
 	METHOD isTargetBlocked (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;)Z
@@ -81,8 +81,8 @@ CLASS net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers
 		ARG 1 mob
 		ARG 2 level
 		ARG 3 blockEntity
-		ARG 4 visited
-		ARG 5 unreachable
+		ARG 4 visitedPositions
+		ARG 5 unreachablePositions
 		ARG 6 searchArea
 	METHOD isWantedBlock (Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 1 mob

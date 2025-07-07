@@ -1,7 +1,7 @@
 CLASS net/minecraft/util/NullOps
 	METHOD convertTo (Lcom/mojang/serialization/DynamicOps;Lnet/minecraft/util/Unit;)Ljava/lang/Object;
-		ARG 1 ops
-		ARG 2 unit
+		ARG 1 outOps
+		ARG 2 input
 	METHOD createBoolean (Z)Lnet/minecraft/util/Unit;
 		ARG 1 value
 	METHOD createByte (B)Lnet/minecraft/util/Unit;
@@ -27,7 +27,7 @@ CLASS net/minecraft/util/NullOps
 	METHOD createMap (Ljava/util/stream/Stream;)Lnet/minecraft/util/Unit;
 		ARG 1 map
 	METHOD createNumeric (Ljava/lang/Number;)Lnet/minecraft/util/Unit;
-		ARG 1 value
+		ARG 1 i
 	METHOD createShort (S)Lnet/minecraft/util/Unit;
 		ARG 1 value
 	METHOD createString (Ljava/lang/String;)Lnet/minecraft/util/Unit;
@@ -76,3 +76,10 @@ CLASS net/minecraft/util/NullOps
 	CLASS NullMapBuilder
 		METHOD <init> (Lcom/mojang/serialization/DynamicOps;)V
 			ARG 1 ops
+		METHOD append (Lnet/minecraft/util/Unit;Lnet/minecraft/util/Unit;Lnet/minecraft/util/Unit;)Lnet/minecraft/util/Unit;
+			ARG 1 key
+			ARG 2 value
+			ARG 3 builder
+		METHOD build (Lnet/minecraft/util/Unit;Lnet/minecraft/util/Unit;)Lcom/mojang/serialization/DataResult;
+			ARG 1 builder
+			ARG 2 prefix

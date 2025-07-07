@@ -4,7 +4,7 @@ CLASS net/minecraft/client/renderer/entity/player/AvatarRenderer
 		ARG 2 slim
 	METHOD extractCapeState (Lnet/minecraft/world/entity/Avatar;Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;F)V
 		ARG 1 entity
-		ARG 2 renderState
+		ARG 2 reusedState
 		ARG 3 partialTick
 	METHOD extractFlightData (Lnet/minecraft/world/entity/Avatar;Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;F)V
 		ARG 1 entity
