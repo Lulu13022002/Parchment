@@ -39,14 +39,14 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderer
 		ARG 1 entity
 		ARG 2 pos
 	METHOD getBoundingBoxForCulling (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/phys/AABB;
-		ARG 1 minecraft
+		ARG 1 entity
 	METHOD getFont ()Lnet/minecraft/client/gui/Font;
 		COMMENT Returns the font renderer from the set render manager
 	METHOD getNameTag (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/network/chat/Component;
 		ARG 1 entity
 	METHOD getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
 		ARG 1 entity
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD getRenderOffset (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;)Lnet/minecraft/world/phys/Vec3;
 		ARG 1 renderState
 	METHOD getServerSideEntity (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/entity/Entity;
@@ -65,7 +65,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderer
 		ARG 4 packedLight
 	METHOD renderLeash (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/renderer/entity/state/EntityRenderState$LeashState;)V
 		ARG 0 poseStack
-		ARG 1 buffer
+		ARG 1 bufferSource
 		ARG 2 leashState
 	METHOD renderNameTag (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lnet/minecraft/network/chat/Component;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 renderState
@@ -75,7 +75,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderer
 		ARG 5 packedLight
 	METHOD shouldRender (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/culling/Frustum;DDD)Z
 		ARG 1 livingEntity
-		ARG 2 camera
+		ARG 2 frustum
 		ARG 3 camX
 		ARG 5 camY
 		ARG 7 camZ

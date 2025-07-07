@@ -20,7 +20,6 @@ CLASS net/minecraft/world/level/BaseCommandBlock
 	METHOD save (Lnet/minecraft/world/level/storage/ValueOutput;)V
 		ARG 1 output
 	METHOD setCommand (Ljava/lang/String;)V
-		COMMENT Sets the command.
 		ARG 1 command
 	METHOD setCustomName (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 customName

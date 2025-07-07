@@ -2,24 +2,24 @@ CLASS net/minecraft/client/particle/SingleQuadParticle
 	METHOD getQuadSize (F)F
 		ARG 1 scaleFactor
 	METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
-		ARG 1 buffer
-		ARG 2 renderInfo
-		ARG 3 partialTicks
+		ARG 1 consumer
+		ARG 2 camera
+		ARG 3 partialTick
 	METHOD renderRotatedQuad (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;Lorg/joml/Quaternionf;F)V
 		ARG 1 buffer
 		ARG 2 camera
-		ARG 3 quaternion
-		ARG 4 partialTicks
+		ARG 3 rotation
+		ARG 4 partialTick
 	METHOD renderRotatedQuad (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lorg/joml/Quaternionf;FFFF)V
 		ARG 1 buffer
-		ARG 2 quaternion
+		ARG 2 rotation
 		ARG 3 x
 		ARG 4 y
 		ARG 5 z
-		ARG 6 partialTicks
+		ARG 6 partialTick
 	METHOD renderVertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lorg/joml/Quaternionf;FFFFFFFFI)V
 		ARG 1 buffer
-		ARG 2 quaternion
+		ARG 2 rotation
 		ARG 3 x
 		ARG 4 y
 		ARG 5 z
@@ -33,14 +33,14 @@ CLASS net/minecraft/client/particle/SingleQuadParticle
 		ARG 1 scale
 	CLASS FacingCameraMode
 		METHOD lambda$static$0 (Lorg/joml/Quaternionf;Lnet/minecraft/client/Camera;F)V
-			ARG 0 quaternion
+			ARG 0 rotation
 			ARG 1 camera
 			ARG 2 partialTick
 		METHOD lambda$static$1 (Lorg/joml/Quaternionf;Lnet/minecraft/client/Camera;F)V
-			ARG 0 quaternion
+			ARG 0 rotation
 			ARG 1 camera
 			ARG 2 partialTick
 		METHOD setRotation (Lorg/joml/Quaternionf;Lnet/minecraft/client/Camera;F)V
-			ARG 1 quaternion
+			ARG 1 rotation
 			ARG 2 camera
 			ARG 3 partialTick

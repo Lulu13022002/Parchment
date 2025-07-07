@@ -3,7 +3,7 @@ CLASS net/minecraft/client/gui/screens/recipebook/RecipeBookComponent
 		ARG 1 menu
 		ARG 2 tabInfos
 	METHOD charTyped (CI)Z
-		ARG 1 codePoint
+		ARG 1 character
 		ARG 2 modifiers
 	METHOD fillGhostRecipe (Lnet/minecraft/client/gui/screens/recipebook/GhostSlots;Lnet/minecraft/world/item/crafting/display/RecipeDisplay;Lnet/minecraft/util/context/ContextMap;)V
 		ARG 1 ghostSlots
@@ -14,8 +14,8 @@ CLASS net/minecraft/client/gui/screens/recipebook/RecipeBookComponent
 	METHOD hasClickedOutside (DDIIIII)Z
 		ARG 1 mouseX
 		ARG 3 mouseY
-		ARG 5 x
-		ARG 6 y
+		ARG 5 leftPos
+		ARG 6 topPos
 		ARG 7 width
 		ARG 8 height
 		ARG 9 mouseButton

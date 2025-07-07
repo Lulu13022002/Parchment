@@ -1,6 +1,6 @@
 CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 	FIELD playerRenderers Ljava/util/Map;
-		COMMENT lists the various player skin types with their associated Renderer class instances.
+		COMMENT lists the various player skin types with their associated EntityRenderer class instances.
 	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/renderer/item/ItemModelResolver;Lnet/minecraft/client/renderer/entity/ItemRenderer;Lnet/minecraft/client/renderer/MapRenderer;Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;Lnet/minecraft/client/gui/Font;Lnet/minecraft/client/Options;Ljava/util/function/Supplier;Lnet/minecraft/client/resources/model/EquipmentAssetManager;)V
 		ARG 1 minecraft
 		ARG 2 textureManager
@@ -25,8 +25,8 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 7 renderer
 		ARG 8 crashReport
 	METHOD fireVertex (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFF)V
-		ARG 0 matrixEntry
-		ARG 1 buffer
+		ARG 0 pose
+		ARG 1 consumer
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
@@ -34,7 +34,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 6 texV
 	METHOD getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
 		ARG 1 entity
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD getRenderer (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;)Lnet/minecraft/client/renderer/entity/EntityRenderer;
 		ARG 1 renderState
 	METHOD getRenderer (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/client/renderer/entity/EntityRenderer;
@@ -43,7 +43,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 1 cameraOrientation
 	METHOD prepare (Lnet/minecraft/world/level/Level;Lnet/minecraft/client/Camera;Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 level
-		ARG 2 activeRenderInfo
+		ARG 2 camera
 		ARG 3 entity
 	METHOD render (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;DDDLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 renderState
@@ -98,7 +98,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 3 renderState
 		ARG 4 quaternion
 	METHOD renderHitbox (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/renderer/entity/state/HitboxRenderState;)V
-		ARG 0 posStack
+		ARG 0 poseStack
 		ARG 1 consumer
 		ARG 2 hitbox
 	METHOD renderHitboxes (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lnet/minecraft/client/renderer/entity/state/HitboxesRenderState;Lnet/minecraft/client/renderer/MultiBufferSource;)V
@@ -119,7 +119,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 4 level
 		ARG 5 size
 	METHOD setLevel (Lnet/minecraft/world/level/Level;)V
-		COMMENT World sets this RenderManager's worldObj to the world provided
+		COMMENT Sets this EntityRenderDispatcher's level to the world provided
 		ARG 1 level
 	METHOD setRenderHitBoxes (Z)V
 		ARG 1 debugBoundingBox
