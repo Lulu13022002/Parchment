@@ -20,7 +20,7 @@ CLASS net/minecraft/server/packs/resources/SimpleReloadInstance
 		ARG 4 alsoWaitedFor
 	CLASS StateFactory
 		METHOD create (Lnet/minecraft/server/packs/resources/PreparableReloadListener$PreparationBarrier;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/server/packs/resources/PreparableReloadListener;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;
-			ARG 1 preperationBarrier
+			ARG 1 preparationBarrier
 			ARG 2 resourceManager
 			ARG 3 listener
 			ARG 4 backgroundExecutor

@@ -1,5 +1,5 @@
 CLASS net/minecraft/world/level/storage/loot/parameters/LootContextParam
-	COMMENT A parameter of a {@link LootContext}.
+	COMMENT A parameter of a {@link net.minecraft.world.level.storage.loot.LootContext}.
 	COMMENT
 	COMMENT @see LootContextParams
 	METHOD <init> (Lnet/minecraft/resources/ResourceLocation;)V

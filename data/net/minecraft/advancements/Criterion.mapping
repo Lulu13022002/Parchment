@@ -7,5 +7,5 @@ CLASS net/minecraft/advancements/Criterion
 		ARG 1 context
 	METHOD criterionFromJson (Lcom/google/gson/JsonObject;Lnet/minecraft/advancements/critereon/DeserializationContext;Lnet/minecraft/advancements/CriterionTrigger;)Lnet/minecraft/advancements/Criterion;
 		ARG 0 json
-		ARG 1 deserializationContext
+		ARG 1 context
 		ARG 2 trigger

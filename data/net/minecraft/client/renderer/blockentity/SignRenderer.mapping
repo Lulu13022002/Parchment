@@ -17,7 +17,7 @@ CLASS net/minecraft/client/renderer/blockentity/SignRenderer
 		ARG 1 woodType
 	METHOD renderSign (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/world/level/block/state/properties/WoodType;Lnet/minecraft/client/model/Model;)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 bufferSource
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 		ARG 5 woodType
@@ -32,7 +32,7 @@ CLASS net/minecraft/client/renderer/blockentity/SignRenderer
 		ARG 1 pos
 		ARG 2 text
 		ARG 3 poseStack
-		ARG 4 buffer
+		ARG 4 bufferSource
 		ARG 5 packedLight
 		ARG 6 lineHeight
 		ARG 7 maxWidth
@@ -40,7 +40,7 @@ CLASS net/minecraft/client/renderer/blockentity/SignRenderer
 	METHOD renderSignWithText (Lnet/minecraft/world/level/block/entity/SignBlockEntity;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/SignBlock;Lnet/minecraft/world/level/block/state/properties/WoodType;Lnet/minecraft/client/model/Model;)V
 		ARG 1 signEntity
 		ARG 2 poseStack
-		ARG 3 buffer
+		ARG 3 bufferSource
 		ARG 4 packedLight
 		ARG 5 packedOverlay
 		ARG 6 state

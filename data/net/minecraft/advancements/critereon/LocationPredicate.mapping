@@ -7,7 +7,7 @@ CLASS net/minecraft/advancements/critereon/LocationPredicate
 		ARG 4 y
 		ARG 6 z
 	METHOD of (Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;)Ljava/util/Optional;
-		ARG 0 postition
+		ARG 0 position
 		ARG 1 biome
 		ARG 2 structure
 		ARG 3 dimension
@@ -23,7 +23,7 @@ CLASS net/minecraft/advancements/critereon/LocationPredicate
 		METHOD inDimension (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/advancements/critereon/LocationPredicate$Builder;
 			ARG 0 dimension
 		METHOD inStructure (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/advancements/critereon/LocationPredicate$Builder;
-			ARG 0 stucture
+			ARG 0 structure
 		METHOD setBiome (Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/advancements/critereon/LocationPredicate$Builder;
 			ARG 1 biome
 		METHOD setBlock (Lnet/minecraft/advancements/critereon/BlockPredicate$Builder;)Lnet/minecraft/advancements/critereon/LocationPredicate$Builder;

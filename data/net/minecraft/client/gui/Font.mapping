@@ -13,22 +13,22 @@ CLASS net/minecraft/client/gui/Font
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch (Ljava/lang/String;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;IIZ)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 bidirectional
 	METHOD drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I
 		ARG 1 text
@@ -36,42 +36,42 @@ CLASS net/minecraft/client/gui/Font
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch8xOutline (Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
 		ARG 5 backgroundColor
-		ARG 6 matrix
+		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 packedLightCoords
+		ARG 8 packedLight
 	METHOD drawInternal (Ljava/lang/String;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;IIZ)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 bidirectional
 	METHOD drawInternal (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I
 		ARG 1 text
@@ -79,11 +79,11 @@ CLASS net/minecraft/client/gui/Font
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD getFontSet (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/gui/font/FontSet;
 		ARG 1 fontLocation
 	METHOD isBidirectional ()Z
@@ -102,8 +102,8 @@ CLASS net/minecraft/client/gui/Font
 		ARG 4 boldOffset
 		ARG 5 x
 		ARG 6 y
-		ARG 7 matrix
-		ARG 8 buffer
+		ARG 7 pose
+		ARG 8 consumer
 		ARG 9 red
 		ARG 10 green
 		ARG 11 blue
@@ -115,22 +115,22 @@ CLASS net/minecraft/client/gui/Font
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD renderText (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)F
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
 		ARG 5 dropShadow
-		ARG 6 matrix
-		ARG 7 buffer
-		ARG 8 displayMode
+		ARG 6 pose
+		ARG 7 bufferSource
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD split (Lnet/minecraft/network/chat/FormattedText;I)Ljava/util/List;
 		ARG 1 text
 		ARG 2 maxWidth
@@ -138,7 +138,7 @@ CLASS net/minecraft/client/gui/Font
 		ARG 1 text
 		ARG 2 maxWidth
 	METHOD width (Ljava/lang/String;)I
-		COMMENT Returns the width of this string. Equivalent of FontMetrics.stringWidth(String s).
+		COMMENT Returns the width of this string. Equivalent of FontMetrics.stringWidth(text).
 		ARG 1 text
 	METHOD width (Lnet/minecraft/network/chat/FormattedText;)I
 		ARG 1 text
@@ -160,7 +160,7 @@ CLASS net/minecraft/client/gui/Font
 			ARG 6 dropShadow
 			ARG 7 pose
 			ARG 8 mode
-			ARG 9 packedLightCoords
+			ARG 9 packedLight
 		METHOD addEffect (Lnet/minecraft/client/gui/font/glyphs/BakedGlyph$Effect;)V
 			ARG 1 effect
 		METHOD finish (IF)F

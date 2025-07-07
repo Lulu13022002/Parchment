@@ -8,16 +8,16 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 4 gameProfile
 	METHOD actuallyHurt (Lnet/minecraft/world/damagesource/DamageSource;F)V
 		COMMENT Deals damage to the entity. This will take the armor of the entity into consideration before damaging the health bar.
-		ARG 1 damageSrc
-		ARG 2 damageAmount
+		ARG 1 damageSource
+		ARG 2 amount
 	METHOD addAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 compound
+		ARG 1 tag
 	METHOD addItem (Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 1 stack
 	METHOD addParticlesAroundSelf (Lnet/minecraft/core/particles/ParticleOptions;)V
-		ARG 1 particleOption
+		ARG 1 options
 	METHOD attack (Lnet/minecraft/world/entity/Entity;)V
-		COMMENT Attacks for the player the targeted entity with the currently equipped item.  The equipped item has hitEntity called on it. Args: targetEntity
+		COMMENT Attacks for the player the targeted entity with the currently equipped item. The equipped item has hurtEnemy called on it.
 		ARG 1 target
 	METHOD awardRecipes (Ljava/util/Collection;)I
 		ARG 1 recipes
@@ -48,48 +48,48 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD canPlayerFitWithinBlocksAndEntitiesWhen (Lnet/minecraft/world/entity/Pose;)Z
 		ARG 1 pose
 	METHOD canTakeItem (Lnet/minecraft/world/item/ItemStack;)Z
-		ARG 1 itemstack
+		ARG 1 stack
 	METHOD causeFoodExhaustion (F)V
 		COMMENT Increases exhaustion level by the supplied amount.
 		ARG 1 exhaustion
 	METHOD checkMovementStatistics (DDD)V
-		COMMENT Adds a value to a movement statistic field - like run, walk, swim or climb.
-		ARG 1 distanceX
-		ARG 3 distanceY
-		ARG 5 distanceZ
+		COMMENT Adds a value to a movement statistic field - like run, walk, swim, climb or fly.
+		ARG 1 dx
+		ARG 3 dy
+		ARG 5 dz
 	METHOD checkRidingStatistics (DDD)V
-		COMMENT Adds a value to a mounted movement statistic field - by minecart, boat, or pig.
-		ARG 1 distanceX
-		ARG 3 distanceY
-		ARG 5 distanceZ
+		COMMENT Adds a value to a mounted movement statistic field - by minecart, boat, pig, horse or strider.
+		ARG 1 dx
+		ARG 3 dy
+		ARG 5 dz
 	METHOD closeContainer ()V
-		COMMENT Sets the current crafting inventory back to the 2x2 square.
+		COMMENT Closes the container the player currently has open.
 	METHOD crit (Lnet/minecraft/world/entity/Entity;)V
 		COMMENT Called when the entity is dealt a critical hit.
-		ARG 1 entityHit
+		ARG 1 target
 	METHOD decorateDisplayNameComponent (Lnet/minecraft/network/chat/MutableComponent;)Lnet/minecraft/network/chat/MutableComponent;
 		ARG 1 displayName
 	METHOD die (Lnet/minecraft/world/damagesource/DamageSource;)V
 		COMMENT Called when the mob's health reaches 0.
-		ARG 1 cause
+		ARG 1 damageSource
 	METHOD disableShield (Z)V
 		ARG 1 becauseOfAxe
 	METHOD displayClientMessage (Lnet/minecraft/network/chat/Component;Z)V
-		ARG 1 chatComponent
-		ARG 2 actionBar
+		ARG 1 message
+		ARG 2 overlay
 	METHOD doWaterSplashEffect ()V
-		COMMENT Plays the {@link #getSplashSound() splash sound}, and the {@link ParticleType#WATER_BUBBLE} and {@link ParticleType#WATER_SPLASH} particles.
+		COMMENT Plays the splash sound, and the {@link ParticleTypes#BUBBLE}/{@link ParticleTypes#SPLASH} particles.
 	METHOD drop (Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/entity/item/ItemEntity;
 		COMMENT Drops an item into the world.
-		ARG 1 itemStack
+		ARG 1 stack
 		ARG 2 includeThrowerName
 	METHOD drop (Lnet/minecraft/world/item/ItemStack;ZZ)Lnet/minecraft/world/entity/item/ItemEntity;
-		COMMENT Creates and drops the provided item. Depending on the dropAround, it will drop the item around the player, instead of dropping the item from where the player is pointing at. Likewise, if includeThrowerName is true, the dropped item entity will have the thrower set as the player.
+		COMMENT Creates and drops the provided item. Depending on the dropAround, it will drop the item around the player, instead of dropping the item from where the player is pointing at. Likewise, if includeThrowerName is {@code true}, the dropped item entity will have the thrower set as the player.
 		ARG 1 droppedItem
 		ARG 2 dropAround
 		ARG 3 includeThrowerName
 	METHOD findRespawnPositionAndUseSpawnBlock (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;FZZ)Ljava/util/Optional;
-		ARG 0 serverLevel
+		ARG 0 level
 		ARG 1 spawnBlockPos
 		ARG 2 playerOrientation
 		ARG 3 isRespawnForced
@@ -108,9 +108,9 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD getDimensions (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;
 		ARG 1 pose
 	METHOD getEnderChestInventory ()Lnet/minecraft/world/inventory/PlayerEnderChestContainer;
-		COMMENT Returns the InventoryEnderChest of this player.
+		COMMENT Returns the PlayerEnderChestContainer of this player.
 	METHOD getFoodData ()Lnet/minecraft/world/food/FoodData;
-		COMMENT Returns the player's FoodStats object.
+		COMMENT Returns the player's FoodData object.
 	METHOD getGameProfile ()Lcom/mojang/authlib/GameProfile;
 		COMMENT Returns the GameProfile for this player
 	METHOD getHurtSound (Lnet/minecraft/world/damagesource/DamageSource;)Lnet/minecraft/sounds/SoundEvent;
@@ -122,11 +122,11 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD getProjectile (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;
 		ARG 1 shootable
 	METHOD getRopeHoldPosition (F)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 partialTicks
+		ARG 1 partialTick
 	METHOD getScoreboardName ()Ljava/lang/String;
 		COMMENT Returns a String to use as this entity's name in the scoreboard/entity selector systems
 	METHOD getSpeed ()F
-		COMMENT Gets the movespeed used for the new AI system.
+		COMMENT Gets the movement speed used for the new AI system.
 	METHOD getStandingEyeHeight (Lnet/minecraft/world/entity/Pose;Lnet/minecraft/world/entity/EntityDimensions;)F
 		ARG 1 pose
 		ARG 2 size
@@ -141,13 +141,13 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 1 state
 	METHOD hurt (Lnet/minecraft/world/damagesource/DamageSource;F)Z
 		COMMENT Called when the entity is attacked.
-		ARG 1 source
+		ARG 1 damageSource
 		ARG 2 amount
 	METHOD hurtArmor (Lnet/minecraft/world/damagesource/DamageSource;F)V
 		ARG 1 damageSource
-		ARG 2 damage
+		ARG 2 damageAmount
 	METHOD hurtCurrentlyUsedShield (F)V
-		ARG 1 damage
+		ARG 1 damageAmount
 	METHOD increaseScore (I)V
 		COMMENT Add to player's score
 		ARG 1 score
@@ -162,7 +162,7 @@ CLASS net/minecraft/world/entity/player/Player
 		COMMENT Dead and sleeping entities cannot move
 	METHOD isInvulnerableTo (Lnet/minecraft/world/damagesource/DamageSource;)Z
 		COMMENT Returns whether this Entity is invulnerable to the given DamageSource.
-		ARG 1 source
+		ARG 1 damageSource
 	METHOD isLocalPlayer ()Z
 		COMMENT Returns whether this is a {@link net.minecraft.client.player.LocalPlayer}.
 	METHOD isModelPartShown (Lnet/minecraft/world/entity/player/PlayerModelPart;)Z
@@ -178,25 +178,24 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD lambda$playShoulderEntityAmbientSound$0 (Lnet/minecraft/world/entity/EntityType;)Z
 		ARG 0 entityType
 	METHOD magicCrit (Lnet/minecraft/world/entity/Entity;)V
-		ARG 1 entityHit
+		ARG 1 target
 	METHOD makeStuckInBlock (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 state
 		ARG 2 motionMultiplier
 	METHOD mayUseItemAt (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;Lnet/minecraft/world/item/ItemStack;)Z
 		COMMENT Returns whether this player can modify the block at a certain location with the given stack.
 		COMMENT <p>
-		COMMENT The position being queried is {@code pos.offset(facing.getOpposite())}.
+		COMMENT The position being queried is {@code pos.relative(facing.getOpposite())}.
 		COMMENT
 		COMMENT @return Whether this player may modify the queried location in the current world
-		COMMENT @see ItemStack#canPlaceOn(Block)
-		COMMENT @see ItemStack#canEditBlocks()
-		COMMENT @see PlayerCapabilities#allowEdit
+		COMMENT @see ItemStack#hasAdventureModePlaceTagForBlock(net.minecraft.tags.TagContainer, BlockInWorld)
+		COMMENT @see Abilities#mayBuild
 		ARG 1 pos
 		ARG 2 facing
 		ARG 3 stack
 	METHOD maybeBackOffFromEdge (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/entity/MoverType;)Lnet/minecraft/world/phys/Vec3;
-		ARG 1 vec
-		ARG 2 mover
+		ARG 1 movement
+		ARG 2 type
 	METHOD onEnchantmentPerformed (Lnet/minecraft/world/item/ItemStack;I)V
 		ARG 1 enchantedItem
 		ARG 2 levelCost
@@ -227,20 +226,20 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 3 volume
 		ARG 4 pitch
 	METHOD playShoulderEntityAmbientSound (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD playSound (Lnet/minecraft/sounds/SoundEvent;FF)V
 		ARG 1 sound
 		ARG 2 volume
 		ARG 3 pitch
 	METHOD readAdditionalSaveData (Lnet/minecraft/nbt/CompoundTag;)V
 		COMMENT (abstract) Protected helper method to read subclass entity data from NBT.
-		ARG 1 compound
+		ARG 1 tag
 	METHOD resetRecipes (Ljava/util/Collection;)I
 		ARG 1 recipes
 	METHOD resetStat (Lnet/minecraft/stats/Stat;)V
 		ARG 1 stat
 	METHOD respawnEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD rideTick ()V
 		COMMENT Handles updating while riding another entity
 	METHOD sendMerchantOffers (ILnet/minecraft/world/item/trading/MerchantOffers;IIZZ)V
@@ -251,14 +250,14 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 5 showProgress
 		ARG 6 canRestock
 	METHOD setEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)Z
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD setItemSlot (Lnet/minecraft/world/entity/EquipmentSlot;Lnet/minecraft/world/item/ItemStack;)V
 		ARG 1 slot
 		ARG 2 stack
 	METHOD setLastDeathLocation (Ljava/util/Optional;)V
 		ARG 1 lastDeathLocation
 	METHOD setMainArm (Lnet/minecraft/world/entity/HumanoidArm;)V
-		ARG 1 hand
+		ARG 1 arm
 	METHOD setReducedDebugInfo (Z)V
 		ARG 1 reducedDebugInfo
 	METHOD setRemainingFireTicks (I)V
@@ -267,9 +266,9 @@ CLASS net/minecraft/world/entity/player/Player
 		COMMENT Set player's score
 		ARG 1 score
 	METHOD setShoulderEntityLeft (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD setShoulderEntityRight (Lnet/minecraft/nbt/CompoundTag;)V
-		ARG 1 entityCompound
+		ARG 1 tag
 	METHOD startAutoSpinAttack (I)V
 		ARG 1 attackTicks
 	METHOD startSleepInBed (Lnet/minecraft/core/BlockPos;)Lcom/mojang/datafixers/util/Either;

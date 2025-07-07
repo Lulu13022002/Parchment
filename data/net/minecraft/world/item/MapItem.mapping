@@ -56,7 +56,7 @@ CLASS net/minecraft/world/item/MapItem
 		ARG 1 stack
 		ARG 2 level
 		ARG 3 entity
-		ARG 4 itemSlot
+		ARG 4 slotIndex
 		ARG 5 isSelected
 	METHOD isBiomeWatery ([ZII)Z
 		ARG 0 wateryMap
@@ -73,7 +73,7 @@ CLASS net/minecraft/world/item/MapItem
 		ARG 2 level
 		ARG 3 player
 	METHOD renderBiomePreviewMap (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 0 serverLevel
+		ARG 0 level
 		ARG 1 stack
 	METHOD scaleMap (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;I)V
 		ARG 0 stack

@@ -40,21 +40,21 @@ CLASS net/minecraft/nbt/NbtIo
 		ARG 0 input
 		ARG 1 accounter
 	METHOD write (Lnet/minecraft/nbt/CompoundTag;Ljava/io/DataOutput;)V
-		ARG 0 compoundTag
+		ARG 0 tag
 		ARG 1 output
 	METHOD write (Lnet/minecraft/nbt/CompoundTag;Ljava/io/File;)V
-		ARG 0 compoundTag
+		ARG 0 tag
 		ARG 1 file
 	METHOD writeAnyTag (Lnet/minecraft/nbt/Tag;Ljava/io/DataOutput;)V
 		ARG 0 tag
 		ARG 1 output
 	METHOD writeCompressed (Lnet/minecraft/nbt/CompoundTag;Ljava/io/File;)V
-		ARG 0 compoundTag
+		ARG 0 tag
 		ARG 1 file
 	METHOD writeCompressed (Lnet/minecraft/nbt/CompoundTag;Ljava/io/OutputStream;)V
 		COMMENT Writes and compresses a compound tag to a GNU zipped file.
 		COMMENT @see #writeCompressed(CompoundTag, File)
-		ARG 0 compoundTag
+		ARG 0 tag
 		ARG 1 outputStream
 	METHOD writeUnnamedTag (Lnet/minecraft/nbt/Tag;Ljava/io/DataOutput;)V
 		ARG 0 tag

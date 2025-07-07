@@ -14,7 +14,7 @@ CLASS net/minecraft/server/PlayerAdvancements
 	METHOD checkForAutomaticTriggers (Lnet/minecraft/server/ServerAdvancementManager;)V
 		ARG 1 manager
 	METHOD flushDirty (Lnet/minecraft/server/level/ServerPlayer;)V
-		ARG 1 serverPlayer
+		ARG 1 player
 	METHOD getOrStartProgress (Lnet/minecraft/advancements/AdvancementHolder;)Lnet/minecraft/advancements/AdvancementProgress;
 		ARG 1 advancement
 	METHOD load (Lnet/minecraft/server/ServerAdvancementManager;)V

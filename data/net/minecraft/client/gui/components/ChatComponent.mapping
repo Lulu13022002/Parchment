@@ -1,22 +1,22 @@
 CLASS net/minecraft/client/gui/components/ChatComponent
 	FIELD allMessages Ljava/util/List;
 		COMMENT Chat lines to be displayed in the chat box
-	FIELD recentChat Ljava/util/List;
+	FIELD recentChat Lnet/minecraft/util/ArrayListDeque;
 		COMMENT A list of messages previously sent through the chat GUI
 	FIELD trimmedMessages Ljava/util/List;
 		COMMENT List of the ChatLines currently drawn
 	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
 		ARG 1 minecraft
 	METHOD addMessage (Lnet/minecraft/network/chat/Component;)V
-		ARG 1 chatComponent
+		ARG 1 message
 	METHOD addMessage (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/MessageSignature;ILnet/minecraft/client/GuiMessageTag;Z)V
-		ARG 1 chatComponent
+		ARG 1 message
 		ARG 2 headerSignature
 		ARG 3 addedTime
 		ARG 4 tag
 		ARG 5 onlyTrim
 	METHOD addMessage (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/MessageSignature;Lnet/minecraft/client/GuiMessageTag;)V
-		ARG 1 chatComponent
+		ARG 1 message
 		ARG 2 headerSignature
 		ARG 3 tag
 	METHOD addRecentChat (Ljava/lang/String;)V
@@ -67,7 +67,7 @@ CLASS net/minecraft/client/gui/components/ChatComponent
 	METHOD isChatFocused ()Z
 		COMMENT Returns {@code true} if the chat GUI is open
 	METHOD logChatMessage (Lnet/minecraft/network/chat/Component;Lnet/minecraft/client/GuiMessageTag;)V
-		ARG 1 chatComponent
+		ARG 1 message
 		ARG 2 tag
 	METHOD render (Lnet/minecraft/client/gui/GuiGraphics;III)V
 		ARG 1 guiGraphics

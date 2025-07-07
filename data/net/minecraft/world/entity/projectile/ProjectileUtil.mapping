@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/entity/projectile/ProjectileUtil
 	METHOD getEntityHitResult (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;D)Lnet/minecraft/world/phys/EntityHitResult;
-		COMMENT Gets the EntityRayTraceResult representing the entity hit
-		ARG 0 shooter
+		COMMENT Gets the EntityHitResult representing the entity hit
+		ARG 0 source
 		ARG 1 startVec
 		ARG 2 endVec
 		ARG 3 boundingBox
@@ -10,7 +10,7 @@ CLASS net/minecraft/world/entity/projectile/ProjectileUtil
 	METHOD getEntityHitResult (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Lnet/minecraft/world/phys/EntityHitResult;
 		COMMENT Gets the EntityHitResult representing the entity hit
 		ARG 0 level
-		ARG 1 projectile
+		ARG 1 source
 		ARG 2 startVec
 		ARG 3 endVec
 		ARG 4 boundingBox
@@ -18,15 +18,15 @@ CLASS net/minecraft/world/entity/projectile/ProjectileUtil
 	METHOD getEntityHitResult (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;F)Lnet/minecraft/world/phys/EntityHitResult;
 		COMMENT Gets the EntityHitResult representing the entity hit
 		ARG 0 level
-		ARG 1 projectile
+		ARG 1 source
 		ARG 2 startVec
 		ARG 3 endVec
 		ARG 4 boundingBox
 		ARG 5 filter
-		ARG 6 inflationAmount
+		ARG 6 margin
 	METHOD getHitResult (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/entity/Entity;Ljava/util/function/Predicate;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/phys/HitResult;
 		ARG 0 startVec
-		ARG 1 projectile
+		ARG 1 source
 		ARG 2 filter
 		ARG 3 endVecOffset
 		ARG 4 level
@@ -34,7 +34,7 @@ CLASS net/minecraft/world/entity/projectile/ProjectileUtil
 		ARG 0 projectile
 		ARG 1 filter
 	METHOD getHitResultOnViewVector (Lnet/minecraft/world/entity/Entity;Ljava/util/function/Predicate;D)Lnet/minecraft/world/phys/HitResult;
-		ARG 0 projectile
+		ARG 0 source
 		ARG 1 filter
 		ARG 2 scale
 	METHOD getMobArrow (Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/projectile/AbstractArrow;
