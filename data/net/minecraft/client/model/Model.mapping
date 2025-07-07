@@ -27,12 +27,12 @@ CLASS net/minecraft/client/model/Model
 		ARG 1 part
 	METHOD renderToBuffer (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;II)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 consumer
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 	METHOD renderToBuffer (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
 		ARG 1 poseStack
-		ARG 2 buffer
+		ARG 2 consumer
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 		ARG 5 color

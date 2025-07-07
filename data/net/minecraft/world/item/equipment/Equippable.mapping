@@ -27,7 +27,5 @@ CLASS net/minecraft/world/item/equipment/Equippable
 			ARG 1 dispensable
 		METHOD setEquipSound (Lnet/minecraft/core/Holder;)Lnet/minecraft/world/item/equipment/Equippable$Builder;
 			ARG 1 equipSound
-		METHOD setModel (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/world/item/equipment/Equippable$Builder;
-			ARG 1 model
 		METHOD setSwappable (Z)Lnet/minecraft/world/item/equipment/Equippable$Builder;
 			ARG 1 swappable

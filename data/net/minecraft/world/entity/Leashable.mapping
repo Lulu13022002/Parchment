@@ -5,9 +5,6 @@ CLASS net/minecraft/world/entity/Leashable
 		ARG 0 entity
 		ARG 1 broadcastPacket
 		ARG 2 dropItem
-	METHOD dropLeash (ZZ)V
-		ARG 1 broadcastPacket
-		ARG 2 dropItem
 	METHOD elasticRangeLeashBehaviour (Lnet/minecraft/world/entity/Entity;F)V
 		ARG 1 leashHolder
 		ARG 2 distance
@@ -22,8 +19,6 @@ CLASS net/minecraft/world/entity/Leashable
 		ARG 0 entity
 		ARG 1 leashHolder
 		ARG 2 distance
-	METHOD readLeashData (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/entity/Leashable$LeashData;
-		ARG 1 tag
 	METHOD readLeashData (Lnet/minecraft/nbt/CompoundTag;)V
 		ARG 1 tag
 	METHOD readLeashDataInternal (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/world/entity/Leashable$LeashData;
@@ -50,7 +45,7 @@ CLASS net/minecraft/world/entity/Leashable
 		ARG 2 leashData
 	CLASS LeashData
 		METHOD <init> (I)V
-			ARG 1 delayedLeashInfoId
+			ARG 1 delayedLeashHolderId
 		METHOD <init> (Lcom/mojang/datafixers/util/Either;)V
 			ARG 1 delayedLeashInfo
 		METHOD <init> (Lnet/minecraft/world/entity/Entity;)V

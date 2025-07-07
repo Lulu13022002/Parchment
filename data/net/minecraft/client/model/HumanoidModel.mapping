@@ -20,10 +20,7 @@ CLASS net/minecraft/client/model/HumanoidModel
 		ARG 0 cubeDeformation
 		ARG 1 yOffset
 	METHOD getArm (Lnet/minecraft/world/entity/HumanoidArm;)Lnet/minecraft/client/model/geom/ModelPart;
-		ARG 1 side
-	METHOD getArmPose (Lnet/minecraft/client/renderer/entity/state/HumanoidRenderState;Lnet/minecraft/world/entity/HumanoidArm;)Lnet/minecraft/client/model/HumanoidModel$ArmPose;
-		ARG 1 renderState
-		ARG 2 arm
+		ARG 1 arm
 	METHOD poseBlockingArm (Lnet/minecraft/client/model/geom/ModelPart;Z)V
 		ARG 1 arm
 		ARG 2 isRightArm
@@ -41,7 +38,7 @@ CLASS net/minecraft/client/model/HumanoidModel
 		ARG 1 renderState
 		ARG 2 ageInTicks
 	METHOD translateToHand (Lnet/minecraft/world/entity/HumanoidArm;Lcom/mojang/blaze3d/vertex/PoseStack;)V
-		ARG 1 side
+		ARG 1 arm
 		ARG 2 poseStack
 	CLASS ArmPose
 		METHOD <init> (Ljava/lang/String;IZ)V

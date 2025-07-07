@@ -14,7 +14,7 @@ CLASS net/minecraft/world/entity/player/Inventory
 		ARG 1 slot
 		ARG 2 stack
 	METHOD addResource (Lnet/minecraft/world/item/ItemStack;)I
-		COMMENT This function stores as many items of an ItemStack as possible in a matching slot and returns the quantity of left over items.
+		COMMENT This function stores as many items of an ItemStack as possible in a matching slot and returns the quantity of leftover items.
 		ARG 1 stack
 	METHOD clearOrCountMatchingItems (Ljava/util/function/Predicate;ILnet/minecraft/world/Container;)I
 		ARG 1 stackPredicate
@@ -33,8 +33,6 @@ CLASS net/minecraft/world/entity/player/Inventory
 		COMMENT Drop all armor and main inventory items.
 	METHOD fillStackedContents (Lnet/minecraft/world/entity/player/StackedItemContents;)V
 		ARG 1 contents
-	METHOD findSlotMatchingCraftingIngredient (Lnet/minecraft/core/Holder;)I
-		ARG 1 ingredient
 	METHOD findSlotMatchingCraftingIngredient (Lnet/minecraft/core/Holder;Lnet/minecraft/world/item/ItemStack;)I
 		ARG 1 item
 		ARG 2 stack
@@ -90,7 +88,7 @@ CLASS net/minecraft/world/entity/player/Inventory
 		COMMENT Removes a stack from the given slot and returns it.
 		ARG 1 index
 	METHOD replaceWith (Lnet/minecraft/world/entity/player/Inventory;)V
-		COMMENT Copy the ItemStack contents from another InventoryPlayer instance
+		COMMENT Copy the ItemStack contents from another Inventory instance
 		ARG 1 playerInventory
 	METHOD save (Lnet/minecraft/nbt/ListTag;)Lnet/minecraft/nbt/ListTag;
 		COMMENT Writes the inventory out as a list of compound tags. This is where the slot indices are used (+100 for armor, +80 for crafting).
@@ -101,12 +99,9 @@ CLASS net/minecraft/world/entity/player/Inventory
 		COMMENT Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
 		ARG 1 index
 		ARG 2 stack
-	METHOD setPickedItem (Lnet/minecraft/world/item/ItemStack;)V
-		ARG 1 stack
 	METHOD setSelectedHotbarSlot (I)V
 		ARG 1 selectedHotbarSlot
 	METHOD stillValid (Lnet/minecraft/world/entity/player/Player;)Z
-		COMMENT Don't rename this method to canInteractWith due to conflicts with Container
 		ARG 1 player
 	METHOD tick ()V
 		COMMENT Ticks every item in inventory. Used for animations. Is called on client and server.

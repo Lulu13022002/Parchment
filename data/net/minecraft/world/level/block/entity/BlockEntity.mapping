@@ -18,7 +18,7 @@ CLASS net/minecraft/world/level/block/entity/BlockEntity
 	METHOD collectImplicitComponents (Lnet/minecraft/core/component/DataComponentMap$Builder;)V
 		ARG 1 components
 	METHOD fillCrashReportCategory (Lnet/minecraft/CrashReportCategory;)V
-		ARG 1 reportCategory
+		ARG 1 category
 	METHOD getPosFromTag (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/core/BlockPos;
 		ARG 0 tag
 	METHOD getUpdateTag (Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/CompoundTag;
@@ -59,9 +59,6 @@ CLASS net/minecraft/world/level/block/entity/BlockEntity
 		ARG 1 tag
 	METHOD saveMetadata (Lnet/minecraft/nbt/CompoundTag;)V
 		ARG 1 tag
-	METHOD saveToItem (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/HolderLookup$Provider;)V
-		ARG 1 stack
-		ARG 2 registries
 	METHOD saveWithFullMetadata (Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 1 registries
 	METHOD saveWithId (Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/CompoundTag;

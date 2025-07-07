@@ -1,9 +1,0 @@
-CLASS net/minecraft/client/renderer/ItemModelShaper
-	METHOD <init> (Lnet/minecraft/client/resources/model/ModelManager;)V
-		ARG 1 modelManager
-	METHOD getItemModel (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/resources/model/BakedModel;
-		ARG 1 name
-	METHOD getItemModel (Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/client/resources/model/BakedModel;
-		ARG 1 stack
-	METHOD lambda$new$0 (Lnet/minecraft/client/resources/model/ModelManager;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/resources/model/BakedModel;
-		ARG 1 location

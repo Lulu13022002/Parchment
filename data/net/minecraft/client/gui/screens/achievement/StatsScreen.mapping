@@ -1,6 +1,6 @@
 CLASS net/minecraft/client/gui/screens/achievement/StatsScreen
 	FIELD isLoading Z
-		COMMENT When true, the game will be paused when the gui is shown
+		COMMENT When {@code true}, the game will be paused when the gui is shown
 	METHOD <init> (Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/stats/StatsCounter;)V
 		ARG 1 lastScreen
 		ARG 2 stats
@@ -42,9 +42,6 @@ CLASS net/minecraft/client/gui/screens/achievement/StatsScreen
 				ARG 4 y
 				ARG 5 evenRow
 		CLASS ItemRowComparator
-			METHOD compare (Ljava/lang/Object;Ljava/lang/Object;)I
-				ARG 1 first
-				ARG 2 second
 			METHOD compare (Lnet/minecraft/client/gui/screens/achievement/StatsScreen$ItemStatisticsList$ItemRow;Lnet/minecraft/client/gui/screens/achievement/StatsScreen$ItemStatisticsList$ItemRow;)I
 				ARG 1 row1
 				ARG 2 row2

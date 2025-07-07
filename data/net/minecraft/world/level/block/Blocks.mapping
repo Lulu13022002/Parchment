@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/block/Blocks
 	METHOD always (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 		ARG 0 state
-		ARG 1 blockGetter
+		ARG 1 level
 		ARG 2 pos
 	METHOD always (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/EntityType;)Ljava/lang/Boolean;
 		ARG 0 state
@@ -102,13 +102,7 @@ CLASS net/minecraft/world/level/block/Blocks
 		ARG 0 properties
 	METHOD lambda$static$367 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
-	METHOD lambda$static$370 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
 	METHOD lambda$static$371 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$372 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$373 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
 	METHOD lambda$static$375 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
@@ -137,10 +131,6 @@ CLASS net/minecraft/world/level/block/Blocks
 	METHOD lambda$static$391 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
 	METHOD lambda$static$392 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$393 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$394 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
 	METHOD lambda$static$395 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
@@ -178,17 +168,9 @@ CLASS net/minecraft/world/level/block/Blocks
 		ARG 0 properties
 	METHOD lambda$static$422 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
-	METHOD lambda$static$423 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
 	METHOD lambda$static$424 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
 	METHOD lambda$static$428 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$429 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$430 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
-		ARG 0 properties
-	METHOD lambda$static$431 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
 	METHOD lambda$static$432 (Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;
 		ARG 0 properties
@@ -272,7 +254,7 @@ CLASS net/minecraft/world/level/block/Blocks
 		ARG 0 color
 	METHOD never (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z
 		ARG 0 state
-		ARG 1 blockGetter
+		ARG 1 level
 		ARG 2 pos
 	METHOD never (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/EntityType;)Ljava/lang/Boolean;
 		ARG 0 state

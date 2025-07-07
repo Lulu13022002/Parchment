@@ -1,8 +1,4 @@
 CLASS net/minecraft/client/data/models/BlockModelGenerators
-	METHOD <init> (Ljava/util/function/Consumer;Ljava/util/function/BiConsumer;Ljava/util/function/Consumer;)V
-		ARG 1 blockStateOutput
-		ARG 2 modelOutput
-		ARG 3 skippedAutoModelsOutput
 	METHOD <init> (Ljava/util/function/Consumer;Lnet/minecraft/client/data/models/ItemModelOutput;Ljava/util/function/BiConsumer;)V
 		ARG 1 blockStateOutput
 		ARG 2 itemModelOutput
@@ -14,30 +10,13 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 4 property
 		ARG 5 template
 		ARG 6 occupied
-	METHOD addBookSlotModel (Lnet/minecraft/data/models/blockstates/MultiPartGenerator;Lnet/minecraft/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/client/data/models/blockstates/VariantProperties$Rotation;Lnet/minecraft/world/level/block/state/properties/BooleanProperty;Lnet/minecraft/client/data/models/model/ModelTemplate;Z)V
-		ARG 1 generator
-		ARG 2 condition
-		ARG 3 rotation
-		ARG 4 hasBookProperty
-		ARG 5 template
-		ARG 6 hasBook
 	METHOD addSlotStateAndRotationVariants (Lnet/minecraft/client/data/models/blockstates/MultiPartGenerator;Lnet/minecraft/client/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/client/data/models/blockstates/VariantProperties$Rotation;)V
-		ARG 1 generator
-		ARG 2 condition
-		ARG 3 rotation
-	METHOD addSlotStateAndRotationVariants (Lnet/minecraft/data/models/blockstates/MultiPartGenerator;Lnet/minecraft/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/client/data/models/blockstates/VariantProperties$Rotation;)V
 		ARG 1 generator
 		ARG 2 condition
 		ARG 3 rotation
 	METHOD applyRotation (Lnet/minecraft/core/FrontAndTop;Lnet/minecraft/client/data/models/blockstates/Variant;)Lnet/minecraft/client/data/models/blockstates/Variant;
 		ARG 1 frontAndTop
 		ARG 2 variant
-	METHOD blockEntityModels (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockEntityModelGenerator;
-		ARG 1 entityBlockModelLocation
-		ARG 2 particleBlock
-	METHOD blockEntityModels (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockEntityModelGenerator;
-		ARG 1 entityBlockBaseModel
-		ARG 2 particleBlock
 	METHOD configureDoorHalf (Lnet/minecraft/client/data/models/blockstates/PropertyDispatch$C4;Lnet/minecraft/world/level/block/state/properties/DoubleBlockHalf;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/PropertyDispatch$C4;
 		ARG 0 properties
 		ARG 1 half
@@ -90,9 +69,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 1 block
 		ARG 2 particleBlock
 		ARG 3 color
-	METHOD createBedItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
-		ARG 1 bedBlock
-		ARG 2 woolBlock
 	METHOD createBeeNest (Lnet/minecraft/world/level/block/Block;Ljava/util/function/Function;)V
 		ARG 1 beeNestBlock
 		ARG 2 textureMappingGetter
@@ -166,31 +142,12 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 2 plantType
 		ARG 3 ageProperty
 		ARG 4 possibleValues
-	METHOD createCrossBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;)V
-		ARG 1 crossBlock
-		ARG 2 tintState
-	METHOD createCrossBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;Lnet/minecraft/client/data/models/model/TextureMapping;)V
-		ARG 1 crossBlock
-		ARG 2 tintState
-		ARG 3 textureMapping
-	METHOD createCrossBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;Lnet/minecraft/world/level/block/state/properties/Property;[I)V
-		ARG 1 crossBlock
-		ARG 2 tintState
-		ARG 3 property
-		ARG 4 propertyValues
 	METHOD createCrossBlockWithDefaultItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$PlantType;)V
 		ARG 1 block
 		ARG 2 plantType
 	METHOD createCrossBlockWithDefaultItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$PlantType;Lnet/minecraft/client/data/models/model/TextureMapping;)V
 		ARG 1 block
 		ARG 2 plantType
-		ARG 3 textureMapping
-	METHOD createCrossBlockWithDefaultItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;)V
-		ARG 1 crossBlock
-		ARG 2 tintState
-	METHOD createCrossBlockWithDefaultItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;Lnet/minecraft/client/data/models/model/TextureMapping;)V
-		ARG 1 crossBlock
-		ARG 2 tintState
 		ARG 3 textureMapping
 	METHOD createCustomFence (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/BlockStateGenerator;
 		ARG 0 customFenceBlock
@@ -220,9 +177,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD createDoublePlant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$PlantType;)V
 		ARG 1 block
 		ARG 2 plantType
-	METHOD createDoublePlant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;)V
-		ARG 1 doublePlantBlock
-		ARG 2 tintState
 	METHOD createDoublePlantWithDefaultItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$PlantType;)V
 		ARG 1 block
 		ARG 2 plantType
@@ -278,10 +232,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 1 plantBlock
 		ARG 2 tipBlock
 		ARG 3 plantType
-	METHOD createGrowingPlant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;)V
-		ARG 1 growingPlantBlock
-		ARG 2 plantBlock
-		ARG 3 tintState
 	METHOD createHangingMoss (Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 block
 	METHOD createHangingSign (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
@@ -370,10 +320,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 1 block
 		ARG 2 pottedBlock
 		ARG 3 plantType
-	METHOD createPlant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$TintState;)V
-		ARG 1 plantBlock
-		ARG 2 pottedPlantBlock
-		ARG 3 tintState
 	METHOD createPlantWithDefaultItem (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/BlockModelGenerators$PlantType;)V
 		ARG 1 block
 		ARG 2 pottedBlock
@@ -405,23 +351,14 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD createRotatedVariant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/MultiVariantGenerator;
 		ARG 0 block
 		ARG 1 model
-	METHOD createRotatedVariant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/data/models/blockstates/MultiVariantGenerator;
-		ARG 0 block
-		ARG 1 modelLocation
 	METHOD createRotatedVariant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/MultiVariantGenerator;
 		ARG 0 block
 		ARG 1 model1
 		ARG 2 model2
-	METHOD createRotatedVariant (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/data/models/blockstates/MultiVariantGenerator;
-		ARG 0 block
-		ARG 1 normalModelLocation
-		ARG 2 mirroredModelLocation
 	METHOD createRotatedVariantBlock (Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 block
 	METHOD createRotatedVariants (Lnet/minecraft/resources/ResourceLocation;)[Lnet/minecraft/client/data/models/blockstates/Variant;
 		ARG 0 modelLocation
-	METHOD createShulkerBox (Lnet/minecraft/world/level/block/Block;)V
-		ARG 1 shulkerBoxBlock
 	METHOD createShulkerBox (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/DyeColor;)V
 		ARG 1 block
 		ARG 2 color
@@ -430,16 +367,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD createSimpleBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/MultiVariantGenerator;
 		ARG 0 block
 		ARG 1 model
-	METHOD createSimpleBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/data/models/blockstates/MultiVariantGenerator;
-		ARG 0 block
-		ARG 1 modelLocation
-	METHOD createSimpleFlatItemModel (Lnet/minecraft/world/item/Item;)V
-		ARG 1 flatItem
-	METHOD createSimpleFlatItemModel (Lnet/minecraft/world/level/block/Block;)V
-		ARG 1 flatBlock
-	METHOD createSimpleFlatItemModel (Lnet/minecraft/world/level/block/Block;Ljava/lang/String;)V
-		ARG 1 flatBlock
-		ARG 2 layerZeroTextureSuffix
 	METHOD createSlab (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/BlockStateGenerator;
 		ARG 0 slabBlock
 		ARG 1 bottomHalfModelLocation
@@ -473,10 +400,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 1 topModelLocation
 		ARG 2 bottomModelLocation
 		ARG 3 openModelLocation
-	METHOD createTrivialBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/model/TextureMapping;Lnet/minecraft/client/data/models/model/ModelTemplate;)V
-		ARG 1 block
-		ARG 2 textureMapping
-		ARG 3 modelTemplate
 	METHOD createTrivialBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/model/TexturedModel$Provider;)V
 		ARG 1 block
 		ARG 2 provider
@@ -489,9 +412,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD createTurtleEggModel (Ljava/lang/Integer;Ljava/lang/Integer;)Lnet/minecraft/resources/ResourceLocation;
 		ARG 1 eggAmount
 		ARG 2 variantId
-	METHOD createTwoLayerFlatItemModel (Lnet/minecraft/world/level/block/Block;Ljava/lang/String;)V
-		ARG 1 block
-		ARG 2 secondLayerTextureSuffix
 	METHOD createWall (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/BlockStateGenerator;
 		ARG 0 wallBlock
 		ARG 1 postModelLocation
@@ -500,12 +420,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD createWeightedPressurePlate (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 pressurePlateBlock
 		ARG 2 plateMaterialBlock
-	METHOD delegateItemModel (Lnet/minecraft/world/item/Item;Lnet/minecraft/resources/ResourceLocation;)V
-		ARG 1 item
-		ARG 2 delegateModelLocation
-	METHOD delegateItemModel (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;)V
-		ARG 1 block
-		ARG 2 delegateModelLocation
 	METHOD family (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockFamilyProvider;
 		ARG 1 block
 	METHOD generateSimpleSpecialItemModel (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/renderer/special/SpecialModelRenderer$Unbaked;)V
@@ -573,15 +487,9 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 1 textureMapping
 	METHOD lambda$createMossyCarpet$59 (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/core/Direction;)V
 		ARG 2 direction
-	METHOD lambda$createMossyCarpet$59 (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/core/Direction;)V
-		ARG 2 direction
 	METHOD lambda$createMultifaceBlockStates$55 (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/world/level/block/state/properties/BooleanProperty;)V
 		ARG 2 property
-	METHOD lambda$createMultifaceBlockStates$55 (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/data/models/blockstates/Condition$TerminalCondition;Lnet/minecraft/world/level/block/state/properties/BooleanProperty;)V
-		ARG 2 onFace
 	METHOD lambda$createMultifaceBlockStates$56 (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/blockstates/Condition$TerminalCondition;)V
-		ARG 1 condition
-	METHOD lambda$createMultifaceBlockStates$56 (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/data/models/blockstates/Condition$TerminalCondition;)V
 		ARG 1 condition
 	METHOD lambda$createPitcherCrop$11 (Lnet/minecraft/world/level/block/Block;Ljava/lang/Integer;Lnet/minecraft/world/level/block/state/properties/DoubleBlockHalf;)Lnet/minecraft/client/data/models/blockstates/Variant;
 		ARG 1 age
@@ -640,8 +548,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 0 map
 	METHOD lambda$run$67 (Lnet/minecraft/data/BlockFamily;)V
 		ARG 1 blockFamily
-	METHOD lambda$run$68 (Lnet/minecraft/world/item/SpawnEggItem;)V
-		ARG 1 item
 	METHOD lambda$static$49 (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/Variant;
 		ARG 0 model
 	METHOD lambda$static$50 (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/data/models/blockstates/Variant;
@@ -676,8 +582,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD registerTwoLayerFlatItemModel (Lnet/minecraft/world/level/block/Block;Ljava/lang/String;)V
 		ARG 1 block
 		ARG 2 suffix
-	METHOD skipAutoItemBlock (Lnet/minecraft/world/level/block/Block;)V
-		ARG 1 block
 	METHOD woodProvider (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$WoodProvider;
 		ARG 1 logBlock
 	METHOD wrapModels (Ljava/util/List;Ljava/util/function/UnaryOperator;)Ljava/util/List;
@@ -690,9 +594,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 			ARG 5 isEmissive
 		METHOD createItemModel (Lnet/minecraft/client/data/models/BlockModelGenerators;Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/resources/ResourceLocation;
 			ARG 1 generator
-			ARG 2 block
-		METHOD createItemModel (Lnet/minecraft/client/data/models/BlockModelGenerators;Lnet/minecraft/world/level/block/Block;)V
-			ARG 1 blockModelGenerator
 			ARG 2 block
 		METHOD getPlantTextureMapping (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/model/TextureMapping;
 			ARG 1 block
@@ -754,17 +655,6 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 			ARG 1 trapdoorBlock
 		METHOD wall (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockFamilyProvider;
 			ARG 1 wallBlock
-	CLASS BlockEntityModelGenerator
-		METHOD <init> (Lnet/minecraft/client/data/models/BlockModelGenerators;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/level/block/Block;)V
-			ARG 2 baseModel
-			ARG 3 particleBlock
-		METHOD create ([Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockEntityModelGenerator;
-			ARG 1 blocks
-		METHOD createWithCustomBlockItemModel (Lnet/minecraft/client/data/models/model/ModelTemplate;[Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockEntityModelGenerator;
-			ARG 1 modelTemplate
-			ARG 2 blocks
-		METHOD createWithoutBlockItem ([Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockEntityModelGenerator;
-			ARG 1 blocks
 	CLASS BlockStateGeneratorSupplier
 		METHOD create (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/data/models/model/TextureMapping;Ljava/util/function/BiConsumer;)Lnet/minecraft/client/data/models/blockstates/BlockStateGenerator;
 			ARG 1 block

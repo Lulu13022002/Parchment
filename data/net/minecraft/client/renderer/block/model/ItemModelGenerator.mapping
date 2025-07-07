@@ -25,9 +25,6 @@ CLASS net/minecraft/client/renderer/block/model/ItemModelGenerator
 		ARG 1 sprite
 		ARG 2 texture
 		ARG 3 tintIndex
-	METHOD generateBlockModel (Ljava/util/function/Function;Lnet/minecraft/client/renderer/block/model/BlockModel;)Lnet/minecraft/client/renderer/block/model/BlockModel;
-		ARG 1 spriteGetter
-		ARG 2 model
 	METHOD getSpans (Lnet/minecraft/client/renderer/texture/SpriteContents;)Ljava/util/List;
 		ARG 1 sprite
 	METHOD isTransparent (Lnet/minecraft/client/renderer/texture/SpriteContents;IIIII)Z

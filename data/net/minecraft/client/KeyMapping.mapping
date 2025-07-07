@@ -10,12 +10,12 @@ CLASS net/minecraft/client/KeyMapping
 		ARG 4 category
 	METHOD click (Lcom/mojang/blaze3d/platform/InputConstants$Key;)V
 		ARG 0 key
-	METHOD compareTo (Ljava/lang/Object;)I
+	METHOD compareTo (Lnet/minecraft/client/KeyMapping;)I
 		ARG 1 other
 	METHOD consumeClick ()Z
-		COMMENT Returns {@code true} on the initial key press. For continuous querying use {@link isKeyDown()}. Should be used in key events.
+		COMMENT Returns {@code true} on the initial key press. For continuous querying use {@link #isDown()}. Should be used in key events.
 	METHOD createNameSupplier (Ljava/lang/String;)Ljava/util/function/Supplier;
-		COMMENT Returns a supplier which gets a keybind's current binding (eg, <code>key.forward</code> returns <samp>W</samp> by default), or the keybind's name if no such keybind exists (eg, <code>key.invalid</code> returns <samp>key.invalid</samp>)
+		COMMENT Returns a supplier which gets a keybind's current binding (e.g., {@code key.forward} returns <samp>W</samp> by default), or the keybind's name if no such keybind exists (e.g., {@code key.invalid} returns <samp>key.invalid</samp>)
 		ARG 0 key
 	METHOD get (Ljava/lang/String;)Lnet/minecraft/client/KeyMapping;
 		ARG 0 name
@@ -27,7 +27,7 @@ CLASS net/minecraft/client/KeyMapping
 		ARG 0 map
 	METHOD matches (II)Z
 		ARG 1 keysym
-		ARG 2 scancode
+		ARG 2 scanCode
 	METHOD matchesMouse (I)Z
 		COMMENT Returns {@code true} if the {@code KeyMapping} is set to a mouse key and the key matches.
 		ARG 1 key
@@ -40,7 +40,7 @@ CLASS net/minecraft/client/KeyMapping
 	METHOD setAll ()V
 		COMMENT Completely recalculates whether any keybinds are held, from scratch.
 	METHOD setDown (Z)V
-		ARG 1 value
+		ARG 1 isDown
 	METHOD setKey (Lcom/mojang/blaze3d/platform/InputConstants$Key;)V
 		COMMENT Binds a new KeyCode to this
 		ARG 1 key

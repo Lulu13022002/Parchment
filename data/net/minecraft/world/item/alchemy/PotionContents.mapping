@@ -17,10 +17,6 @@ CLASS net/minecraft/world/item/alchemy/PotionContents
 		ARG 1 potion
 	METHOD forEachEffect (Ljava/util/function/Consumer;)V
 		ARG 1 action
-	METHOD getColor (Ljava/lang/Iterable;)I
-		ARG 0 effects
-	METHOD getColor (Lnet/minecraft/core/Holder;)I
-		ARG 0 potion
 	METHOD getColorOptional (Ljava/lang/Iterable;)Ljava/util/OptionalInt;
 		ARG 0 effects
 	METHOD getColorOr (I)I

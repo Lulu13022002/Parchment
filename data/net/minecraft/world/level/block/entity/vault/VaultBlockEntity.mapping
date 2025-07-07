@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/block/entity/vault/VaultBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
-		ARG 2 state
+		ARG 2 blockState
 	METHOD encode (Lcom/mojang/serialization/Codec;Ljava/lang/Object;Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/Tag;
 		ARG 0 codec
 		ARG 1 value

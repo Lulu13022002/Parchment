@@ -43,8 +43,6 @@ CLASS net/minecraft/server/commands/AttributeCommand
 		ARG 0 context
 	METHOD lambda$register$13 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
-	METHOD lambda$register$14 (Lcom/mojang/brigadier/context/CommandContext;)I
-		ARG 0 context
 	METHOD lambda$register$15 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
 	METHOD lambda$register$4 (Lnet/minecraft/commands/CommandSourceStack;)Z
@@ -74,7 +72,7 @@ CLASS net/minecraft/server/commands/AttributeCommand
 		ARG 2 attributeUuid
 	METHOD register (Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/commands/CommandBuildContext;)V
 		ARG 0 dispatcher
-		ARG 1 context
+		ARG 1 buildContext
 	METHOD removeModifier (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/ResourceLocation;)I
 		ARG 0 source
 		ARG 1 entity

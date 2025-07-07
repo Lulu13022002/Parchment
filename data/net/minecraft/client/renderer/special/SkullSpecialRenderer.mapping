@@ -1,11 +1,4 @@
 CLASS net/minecraft/client/renderer/special/SkullSpecialRenderer
-	METHOD <init> (Lnet/minecraft/world/level/block/SkullBlock$Type;Lnet/minecraft/client/model/SkullModelBase;)V
-		ARG 1 skullType
-		ARG 2 model
-	METHOD <init> (Lnet/minecraft/world/level/block/SkullBlock$Type;Lnet/minecraft/client/model/SkullModelBase;Lnet/minecraft/resources/ResourceLocation;)V
-		ARG 1 skullType
-		ARG 2 model
-		ARG 3 textureOverride
 	METHOD <init> (Lnet/minecraft/world/level/block/SkullBlock$Type;Lnet/minecraft/client/model/SkullModelBase;Lnet/minecraft/resources/ResourceLocation;F)V
 		ARG 1 skullType
 		ARG 2 model

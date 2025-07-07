@@ -1,4 +1,0 @@
-CLASS net/minecraft/client/renderer/entity/layers/PandaHoldsItemLayer
-	METHOD <init> (Lnet/minecraft/client/renderer/entity/RenderLayerParent;Lnet/minecraft/client/renderer/entity/ItemRenderer;)V
-		ARG 1 renderer
-		ARG 2 itemRenderer

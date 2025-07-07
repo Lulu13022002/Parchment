@@ -62,5 +62,5 @@ CLASS net/minecraft/client/renderer/CloudRenderer
 		ARG 3 color
 		ARG 4 frustumMatrix
 		ARG 5 projectionMatrix
-		ARG 6 cameraPosiiton
+		ARG 6 cameraPosition
 		ARG 7 ticks

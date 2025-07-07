@@ -53,10 +53,6 @@ CLASS net/minecraft/world/level/block/entity/trialspawner/TrialSpawnerData
 	METHOD resetAfterBecomingOminous (Lnet/minecraft/world/level/block/entity/trialspawner/TrialSpawner;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 spawner
 		ARG 2 level
-	METHOD setEntityId (Lnet/minecraft/world/level/block/entity/trialspawner/TrialSpawner;Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/entity/EntityType;)V
-		ARG 1 spawner
-		ARG 2 random
-		ARG 3 entityType
 	METHOD transformBadOmenIntoTrialOmen (Lnet/minecraft/world/entity/player/Player;)V
 		ARG 0 player
 	METHOD tryDetectPlayers (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/trialspawner/TrialSpawner;)V

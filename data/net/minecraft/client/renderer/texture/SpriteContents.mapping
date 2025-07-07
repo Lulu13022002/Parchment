@@ -15,9 +15,6 @@ CLASS net/minecraft/client/renderer/texture/SpriteContents
 		ARG 1 frame
 		ARG 2 x
 		ARG 3 y
-	METHOD lambda$createAnimatedTexture$3 (Ljava/util/List;II)V
-		ARG 1 index
-		ARG 2 time
 	METHOD lambda$createAnimatedTexture$4 (Lit/unimi/dsi/fastutil/ints/IntSet;I)Z
 		ARG 1 index
 	METHOD upload (IIII[Lcom/mojang/blaze3d/platform/NativeImage;)V

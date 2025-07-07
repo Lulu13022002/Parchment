@@ -2,8 +2,6 @@ CLASS net/minecraft/world/level/block/entity/BeehiveBlockEntity
 	METHOD <init> (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 		ARG 1 pos
 		ARG 2 blockState
-	METHOD addOccupant (Lnet/minecraft/world/entity/Entity;)V
-		ARG 1 occupant
 	METHOD addOccupant (Lnet/minecraft/world/entity/animal/Bee;)V
 		ARG 1 bee
 	METHOD emptyAllLivingFromHive (Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BeehiveBlockEntity$BeeReleaseStatus;)V

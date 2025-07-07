@@ -71,7 +71,7 @@ CLASS net/minecraft/server/level/ServerChunkCache
 	METHOD onChunkReadyToSend (Lnet/minecraft/server/level/ChunkHolder;)V
 		ARG 1 chunkHolder
 	METHOD onLightUpdate (Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/core/SectionPos;)V
-		ARG 1 type
+		ARG 1 lightLayer
 		ARG 2 pos
 	METHOD removeEntity (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity

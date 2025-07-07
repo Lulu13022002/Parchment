@@ -6,8 +6,8 @@ CLASS com/mojang/blaze3d/platform/GlStateManager
 	METHOD _blendEquation (I)V
 		ARG 0 mode
 	METHOD _blendFunc (II)V
-		ARG 0 sourceFactor
-		ARG 1 destFactor
+		ARG 0 srcFactor
+		ARG 1 dstFactor
 	METHOD _blendFuncSeparate (IIII)V
 		ARG 0 srcFactor
 		ARG 1 dstFactor
@@ -71,7 +71,7 @@ CLASS com/mojang/blaze3d/platform/GlStateManager
 		ARG 1 buffer
 	METHOD _glBindFramebuffer (II)V
 		ARG 0 target
-		ARG 1 framebuffer
+		ARG 1 frameBuffer
 	METHOD _glBindRenderbuffer (II)V
 		ARG 0 target
 		ARG 1 renderBuffer

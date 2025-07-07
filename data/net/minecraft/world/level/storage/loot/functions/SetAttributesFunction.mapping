@@ -1,7 +1,7 @@
 CLASS net/minecraft/world/level/storage/loot/functions/SetAttributesFunction
 	COMMENT LootItemFunction that adds a list of attribute modifiers to the stacks.
 	METHOD <init> (Ljava/util/List;Ljava/util/List;Z)V
-		ARG 1 conditions
+		ARG 1 predicates
 		ARG 2 modifiers
 		ARG 3 replace
 	METHOD lambda$static$0 (Lnet/minecraft/world/level/storage/loot/functions/SetAttributesFunction;)Ljava/util/List;
@@ -26,9 +26,6 @@ CLASS net/minecraft/world/level/storage/loot/functions/SetAttributesFunction
 			ARG 1 replace
 		METHOD withModifier (Lnet/minecraft/world/level/storage/loot/functions/SetAttributesFunction$ModifierBuilder;)Lnet/minecraft/world/level/storage/loot/functions/SetAttributesFunction$Builder;
 			ARG 1 modifierBuilder
-	CLASS Modifier
-		METHOD lambda$static$2 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 instance
 	CLASS ModifierBuilder
 		METHOD <init> (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/core/Holder;Lnet/minecraft/world/entity/ai/attributes/AttributeModifier$Operation;Lnet/minecraft/world/level/storage/loot/providers/number/NumberProvider;)V
 			ARG 1 id

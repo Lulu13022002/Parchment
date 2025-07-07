@@ -27,6 +27,3 @@ CLASS net/minecraft/world/level/storage/DimensionDataStorage
 	METHOD tryWrite (Ljava/nio/file/Path;Lnet/minecraft/nbt/CompoundTag;)V
 		ARG 0 path
 		ARG 1 tag
-	METHOD tryWriteAsync (Ljava/nio/file/Path;Lnet/minecraft/nbt/CompoundTag;)Ljava/util/concurrent/CompletableFuture;
-		ARG 0 path
-		ARG 1 tag

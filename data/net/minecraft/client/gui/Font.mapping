@@ -12,46 +12,46 @@ CLASS net/minecraft/client/gui/Font
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;IIZ)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 inverseDepth
 	METHOD drawInBatch (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 	METHOD drawInBatch8xOutline (Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 text
 		ARG 2 x
@@ -60,30 +60,30 @@ CLASS net/minecraft/client/gui/Font
 		ARG 5 backgroundColor
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 packedLightCoords
+		ARG 8 packedLight
 	METHOD drawInternal (Ljava/lang/String;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;IIZ)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 inverseDepth
 	METHOD drawInternal (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;IIZ)I
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 inverseDepth
 	METHOD getFontSet (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/gui/font/FontSet;
 		ARG 1 fontLocation
@@ -108,24 +108,24 @@ CLASS net/minecraft/client/gui/Font
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 inverseDepth
 	METHOD renderText (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;IIZ)F
 		ARG 1 text
 		ARG 2 x
 		ARG 3 y
 		ARG 4 color
-		ARG 5 dropShadow
+		ARG 5 drawShadow
 		ARG 6 pose
 		ARG 7 bufferSource
-		ARG 8 displayMode
+		ARG 8 mode
 		ARG 9 backgroundColor
-		ARG 10 packedLightCoords
+		ARG 10 packedLight
 		ARG 11 inverseDepth
 	METHOD split (Lnet/minecraft/network/chat/FormattedText;I)Ljava/util/List;
 		ARG 1 text
@@ -134,7 +134,7 @@ CLASS net/minecraft/client/gui/Font
 		ARG 1 text
 		ARG 2 maxWidth
 	METHOD width (Ljava/lang/String;)I
-		COMMENT Returns the width of this string. Equivalent of FontMetrics.stringWidth(String s).
+		COMMENT Returns the width of this string. Equivalent of FontMetrics.stringWidth(text).
 		ARG 1 text
 	METHOD width (Lnet/minecraft/network/chat/FormattedText;)I
 		ARG 1 text
@@ -150,15 +150,15 @@ CLASS net/minecraft/client/gui/Font
 	CLASS StringRenderOutput
 		METHOD <init> (Lnet/minecraft/client/gui/Font;Lnet/minecraft/client/renderer/MultiBufferSource;FFIIZLorg/joml/Matrix4f;Lnet/minecraft/client/gui/Font$DisplayMode;IZ)V
 			ARG 1 font
-			ARG 2 buferSource
+			ARG 2 bufferSource
 			ARG 3 x
 			ARG 4 y
 			ARG 5 color
 			ARG 6 backgroundColor
-			ARG 7 dropShadow
+			ARG 7 drawShadow
 			ARG 8 pose
-			ARG 9 displayMode
-			ARG 10 packedLightCoords
+			ARG 9 mode
+			ARG 10 packedLight
 			ARG 11 inverseDepth
 		METHOD <init> (Lnet/minecraft/client/gui/Font;Lnet/minecraft/client/renderer/MultiBufferSource;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/gui/Font$DisplayMode;I)V
 			ARG 1 font
@@ -166,17 +166,14 @@ CLASS net/minecraft/client/gui/Font
 			ARG 3 x
 			ARG 4 y
 			ARG 5 color
-			ARG 6 dropShadow
+			ARG 6 drawShadow
 			ARG 7 pose
 			ARG 8 mode
-			ARG 9 packedLightCoords
+			ARG 9 packedLight
 		METHOD addEffect (Lnet/minecraft/client/gui/font/glyphs/BakedGlyph$Effect;)V
 			ARG 1 effect
 		METHOD finish (F)F
 			ARG 1 x
-		METHOD finish (IF)F
-			ARG 1 backgroundColor
-			ARG 2 x
 		METHOD getShadowColor (Lnet/minecraft/network/chat/Style;I)I
 			ARG 1 style
 			ARG 2 textColor

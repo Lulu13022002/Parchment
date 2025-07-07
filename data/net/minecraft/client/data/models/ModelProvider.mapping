@@ -17,14 +17,14 @@ CLASS net/minecraft/client/data/models/ModelProvider
 			ARG 1 output
 			ARG 2 pathProvider
 	CLASS SimpleModelCollector
-		METHOD accept (Ljava/lang/Object;Ljava/lang/Object;)V
+		METHOD accept (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/data/models/model/ModelInstance;)V
 			ARG 1 location
 			ARG 2 model
 		METHOD save (Lnet/minecraft/data/CachedOutput;Lnet/minecraft/data/PackOutput$PathProvider;)Ljava/util/concurrent/CompletableFuture;
 			ARG 1 output
 			ARG 2 pathProvider
 	CLASS BlockStateGeneratorCollector
-		METHOD accept (Ljava/lang/Object;)V
+		METHOD accept (Lnet/minecraft/client/data/models/blockstates/BlockStateGenerator;)V
 			ARG 1 generator
 		METHOD lambda$validate$0 (Lnet/minecraft/core/Holder$Reference;)Z
 			ARG 0 block

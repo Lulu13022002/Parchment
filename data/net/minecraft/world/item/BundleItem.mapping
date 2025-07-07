@@ -1,8 +1,4 @@
 CLASS net/minecraft/world/item/BundleItem
-	METHOD <init> (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/item/Item$Properties;)V
-		ARG 1 openFrontModel
-		ARG 2 openBackModel
-		ARG 3 properties
 	METHOD broadcastChangesOnContainerMenu (Lnet/minecraft/world/entity/player/Player;)V
 		ARG 1 player
 	METHOD dropContent (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)Z
@@ -26,8 +22,6 @@ CLASS net/minecraft/world/item/BundleItem
 		ARG 0 bundle
 	METHOD lambda$getAllBundleItemColors$0 (Lnet/minecraft/world/item/Item;)Lnet/minecraft/world/item/BundleItem;
 		ARG 0 item
-	METHOD playDropContentsSound (Lnet/minecraft/world/entity/Entity;)V
-		ARG 0 entity
 	METHOD playDropContentsSound (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;)V
 		ARG 0 level
 		ARG 1 entity

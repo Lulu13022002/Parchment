@@ -1,24 +1,6 @@
 CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 	FIELD playerRenderers Ljava/util/Map;
-		COMMENT lists the various player skin types with their associated Renderer class instances.
-	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/renderer/entity/ItemRenderer;Lnet/minecraft/client/renderer/MapRenderer;Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;Lnet/minecraft/client/gui/Font;Lnet/minecraft/client/Options;Lnet/minecraft/client/model/geom/EntityModelSet;Lnet/minecraft/client/resources/model/EquipmentModelSet;)V
-		ARG 1 minecraft
-		ARG 2 textureManager
-		ARG 3 itemRenderer
-		ARG 4 mapRenderer
-		ARG 5 blockRenderDispatcher
-		ARG 6 font
-		ARG 7 options
-		ARG 8 entityModels
-		ARG 9 equipmentModels
-	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/renderer/entity/ItemRenderer;Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;Lnet/minecraft/client/gui/Font;Lnet/minecraft/client/Options;Lnet/minecraft/client/model/geom/EntityModelSet;)V
-		ARG 1 minecraft
-		ARG 2 textureManager
-		ARG 3 itemRenderer
-		ARG 4 blockRenderDispatcher
-		ARG 5 font
-		ARG 6 options
-		ARG 7 entityModels
+		COMMENT lists the various player skin types with their associated EntityRenderer class instances.
 	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/renderer/item/ItemModelResolver;Lnet/minecraft/client/renderer/entity/ItemRenderer;Lnet/minecraft/client/renderer/MapRenderer;Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;Lnet/minecraft/client/gui/Font;Lnet/minecraft/client/Options;Ljava/util/function/Supplier;Lnet/minecraft/client/resources/model/EquipmentAssetManager;)V
 		ARG 1 minecraft
 		ARG 2 textureManager
@@ -37,8 +19,8 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 	METHOD distanceToSqr (Lnet/minecraft/world/entity/Entity;)D
 		ARG 1 entity
 	METHOD fireVertex (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFF)V
-		ARG 0 matrixEntry
-		ARG 1 buffer
+		ARG 0 pose
+		ARG 1 consumer
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
@@ -46,7 +28,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 6 texV
 	METHOD getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
 		ARG 1 entity
-		ARG 2 partialTicks
+		ARG 2 partialTick
 	METHOD getRenderer (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/client/renderer/entity/EntityRenderer;
 		ARG 1 entity
 	METHOD getServerSideEntity (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/entity/Entity;
@@ -55,7 +37,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 1 cameraOrientation
 	METHOD prepare (Lnet/minecraft/world/level/Level;Lnet/minecraft/client/Camera;Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 level
-		ARG 2 activeRenderInfo
+		ARG 2 camera
 		ARG 3 entity
 	METHOD render (Lnet/minecraft/world/entity/Entity;DDDFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
 		ARG 1 entity
@@ -78,7 +60,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 12 renderer
 	METHOD renderBlockShadow (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/level/chunk/ChunkAccess;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;DDDFF)V
 		ARG 0 pose
-		ARG 1 buffer
+		ARG 1 consumer
 		ARG 2 chunk
 		ARG 3 level
 		ARG 4 pos
@@ -94,7 +76,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 4 quaternion
 	METHOD renderHitbox (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/entity/Entity;FFFF)V
 		ARG 0 poseStack
-		ARG 1 buffer
+		ARG 1 consumer
 		ARG 2 entity
 		ARG 3 red
 		ARG 4 green
@@ -113,7 +95,7 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 		ARG 5 level
 		ARG 6 size
 	METHOD setLevel (Lnet/minecraft/world/level/Level;)V
-		COMMENT World sets this RenderManager's worldObj to the world provided
+		COMMENT Sets this EntityRenderDispatcher's level to the world provided
 		ARG 1 level
 	METHOD setRenderHitBoxes (Z)V
 		ARG 1 debugBoundingBox
