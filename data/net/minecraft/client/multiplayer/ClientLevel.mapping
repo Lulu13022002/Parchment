@@ -99,6 +99,8 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 1 pos
 	METHOD lambda$new$2 (Lnet/minecraft/core/BlockPos;)I
 		ARG 1 pos
+	METHOD lambda$new$3 (Lnet/minecraft/core/BlockPos;)I
+		ARG 1 pos
 	METHOD onChunkLoaded (Lnet/minecraft/world/level/ChunkPos;)V
 		ARG 1 chunkPos
 	METHOD onSectionBecomingNonEmpty (J)V

@@ -1,8 +1,9 @@
 CLASS net/minecraft/server/packs/AbstractPackResources
 	METHOD <init> (Lnet/minecraft/server/packs/PackLocationInfo;)V
 		ARG 1 location
-	METHOD getMetadataFromStream (Lnet/minecraft/server/packs/metadata/MetadataSectionType;Ljava/io/InputStream;)Ljava/lang/Object;
+	METHOD getMetadataFromStream (Lnet/minecraft/server/packs/metadata/MetadataSectionType;Ljava/io/InputStream;Lnet/minecraft/server/packs/PackLocationInfo;)Ljava/lang/Object;
 		ARG 0 type
 		ARG 1 stream
-	METHOD lambda$getMetadataFromStream$0 (Lnet/minecraft/server/packs/metadata/MetadataSectionType;Lcom/mojang/serialization/DataResult$Error;)V
-		ARG 1 error
+		ARG 2 location
+	METHOD lambda$getMetadataFromStream$0 (Lnet/minecraft/server/packs/PackLocationInfo;Lnet/minecraft/server/packs/metadata/MetadataSectionType;Lcom/mojang/serialization/DataResult$Error;)V
+		ARG 2 error

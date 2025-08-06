@@ -10,12 +10,28 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 4 hasBookProperty
 		ARG 5 template
 		ARG 6 hasBook
+	METHOD addShelfPart (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/data/models/model/TextureMapping;Lnet/minecraft/client/data/models/blockstates/MultiPartGenerator;Lnet/minecraft/client/data/models/model/ModelTemplate;Ljava/lang/Boolean;Lnet/minecraft/world/level/block/state/properties/SideChainPart;)V
+		ARG 1 block
+		ARG 2 mapping
+		ARG 3 generator
+		ARG 4 template
+		ARG 5 hasPoweredProperty
+		ARG 6 chainPart
 	METHOD addSlotStateAndRotationVariants (Lnet/minecraft/client/data/models/blockstates/MultiPartGenerator;Lnet/minecraft/client/renderer/block/model/multipart/Condition;Lnet/minecraft/client/renderer/block/model/VariantMutator;)V
 		ARG 1 generator
 		ARG 2 condition
 		ARG 3 rotation
+	METHOD and ([Lnet/minecraft/client/data/models/blockstates/ConditionBuilder;)Lnet/minecraft/client/renderer/block/model/multipart/Condition;
+		ARG 0 conditions
 	METHOD applyRotation (Lnet/minecraft/core/FrontAndTop;)Lnet/minecraft/client/renderer/block/model/VariantMutator;
 		ARG 0 rotation
+	METHOD condition (Lnet/minecraft/world/level/block/state/properties/BooleanProperty;Z)Lnet/minecraft/client/data/models/blockstates/ConditionBuilder;
+		ARG 0 property
+		ARG 1 value
+	METHOD condition (Lnet/minecraft/world/level/block/state/properties/EnumProperty;Ljava/lang/Enum;[Ljava/lang/Enum;)Lnet/minecraft/client/data/models/blockstates/ConditionBuilder;
+		ARG 0 property
+		ARG 1 value
+		ARG 2 otherValues
 	METHOD copyCopperBulbModel (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 bulbBlock
 		ARG 2 sourceBlock
@@ -100,6 +116,10 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 2 unlitPowered
 		ARG 3 lit
 		ARG 4 litPowered
+	METHOD createCopperGolemStatue (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/WeatheringCopper$WeatherState;)V
+		ARG 1 statueBlock
+		ARG 2 block
+		ARG 3 weatherState
 	METHOD createCoral (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 coralBlock
 		ARG 2 deadCoralBlock
@@ -248,6 +268,9 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 1 lanternBlock
 	METHOD createLeafLitter (Lnet/minecraft/world/level/block/Block;)V
 		ARG 1 block
+	METHOD createLightningRod (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
+		ARG 1 rodBlock
+		ARG 2 waxedRodBlock
 	METHOD createMirroredColumnGenerator (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/renderer/block/model/Variant;Lnet/minecraft/client/data/models/model/TextureMapping;Ljava/util/function/BiConsumer;)Lnet/minecraft/client/data/models/blockstates/BlockModelDefinitionGenerator;
 		ARG 0 block
 		ARG 1 variant
@@ -363,6 +386,8 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 7 segment3Condition
 		ARG 8 segment4Variant
 		ARG 9 segment4Condition
+	METHOD createShelf (Lnet/minecraft/world/level/block/Block;)V
+		ARG 1 block
 	METHOD createShulkerBox (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/DyeColor;)V
 		ARG 1 block
 		ARG 2 color
@@ -426,6 +451,8 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 		ARG 2 plateMaterialBlock
 	METHOD family (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/client/data/models/BlockModelGenerators$BlockFamilyProvider;
 		ARG 1 block
+	METHOD forEachHorizontalDirection (Ljava/util/function/BiConsumer;)V
+		ARG 0 action
 	METHOD generateSimpleSpecialItemModel (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/client/renderer/special/SpecialModelRenderer$Unbaked;)V
 		ARG 1 block
 		ARG 2 specialModel
@@ -458,6 +485,10 @@ CLASS net/minecraft/client/data/models/BlockModelGenerators
 	METHOD selectMultifaceProperties (Lnet/minecraft/world/level/block/state/StateHolder;Ljava/util/function/Function;)Ljava/util/Map;
 		ARG 0 state
 		ARG 1 facePropertyGetter
+	METHOD shelfCondition (Lnet/minecraft/core/Direction;Ljava/lang/Boolean;Lnet/minecraft/world/level/block/state/properties/SideChainPart;)Lnet/minecraft/client/renderer/block/model/multipart/Condition;
+		ARG 0 facing
+		ARG 1 hasPoweredProperty
+		ARG 2 chainPart
 	METHOD variant (Lnet/minecraft/client/renderer/block/model/Variant;)Lnet/minecraft/client/data/models/MultiVariant;
 		ARG 0 variant
 	METHOD variants ([Lnet/minecraft/client/renderer/block/model/Variant;)Lnet/minecraft/client/data/models/MultiVariant;

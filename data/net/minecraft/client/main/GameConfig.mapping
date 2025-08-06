@@ -6,7 +6,7 @@ CLASS net/minecraft/client/main/GameConfig
 		ARG 4 game
 		ARG 5 quickPlay
 	CLASS GameData
-		METHOD <init> (ZLjava/lang/String;Ljava/lang/String;ZZZZ)V
+		METHOD <init> (ZLjava/lang/String;Ljava/lang/String;ZZZZZ)V
 			ARG 1 demo
 			ARG 2 launchVersion
 			ARG 3 versionType
@@ -14,6 +14,7 @@ CLASS net/minecraft/client/main/GameConfig
 			ARG 5 disableChat
 			ARG 6 captureTracyImages
 			ARG 7 renderDebugLabels
+			ARG 8 offlineDeveloperMode
 	CLASS UserData
 		METHOD <init> (Lnet/minecraft/client/User;Lcom/mojang/authlib/properties/PropertyMap;Lcom/mojang/authlib/properties/PropertyMap;Ljava/net/Proxy;)V
 			ARG 1 user

@@ -1,5 +1,5 @@
 CLASS net/minecraft/client/multiplayer/ClientHandshakePacketListenerImpl
-	METHOD <init> (Lnet/minecraft/network/Connection;Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/ServerData;Lnet/minecraft/client/gui/screens/Screen;ZLjava/time/Duration;Ljava/util/function/Consumer;Lnet/minecraft/client/multiplayer/TransferState;)V
+	METHOD <init> (Lnet/minecraft/network/Connection;Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/ServerData;Lnet/minecraft/client/gui/screens/Screen;ZLjava/time/Duration;Ljava/util/function/Consumer;Lnet/minecraft/client/multiplayer/LevelLoadTracker;Lnet/minecraft/client/multiplayer/TransferState;)V
 		ARG 1 connection
 		ARG 2 minecraft
 		ARG 3 serverData
@@ -7,7 +7,8 @@ CLASS net/minecraft/client/multiplayer/ClientHandshakePacketListenerImpl
 		ARG 5 newWorld
 		ARG 6 worldLoadDuration
 		ARG 7 updateStatus
-		ARG 8 cookies
+		ARG 8 levelLoadTracker
+		ARG 9 state
 	METHOD authenticateServer (Ljava/lang/String;)Lnet/minecraft/network/chat/Component;
 		ARG 1 serverHash
 	METHOD handleCompression (Lnet/minecraft/network/protocol/login/ClientboundLoginCompressionPacket;)V

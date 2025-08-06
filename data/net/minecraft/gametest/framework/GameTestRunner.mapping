@@ -1,5 +1,5 @@
 CLASS net/minecraft/gametest/framework/GameTestRunner
-	METHOD <init> (Lnet/minecraft/gametest/framework/GameTestRunner$GameTestBatcher;Ljava/util/Collection;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/gametest/framework/GameTestTicker;Lnet/minecraft/gametest/framework/GameTestRunner$StructureSpawner;Lnet/minecraft/gametest/framework/GameTestRunner$StructureSpawner;Z)V
+	METHOD <init> (Lnet/minecraft/gametest/framework/GameTestRunner$GameTestBatcher;Ljava/util/Collection;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/gametest/framework/GameTestTicker;Lnet/minecraft/gametest/framework/GameTestRunner$StructureSpawner;Lnet/minecraft/gametest/framework/GameTestRunner$StructureSpawner;ZZ)V
 		ARG 1 testBatcher
 		ARG 2 batches
 		ARG 3 level
@@ -7,6 +7,7 @@ CLASS net/minecraft/gametest/framework/GameTestRunner
 		ARG 5 existingStructureSpawner
 		ARG 6 newStructureSpawner
 		ARG 7 haltOnError
+		ARG 8 clearBetweenBatches
 	METHOD addListener (Lnet/minecraft/gametest/framework/GameTestBatchListener;)V
 		ARG 1 listener
 	METHOD clearMarkers (Lnet/minecraft/server/level/ServerLevel;)V
@@ -19,6 +20,9 @@ CLASS net/minecraft/gametest/framework/GameTestRunner
 		ARG 1 index
 	METHOD spawn (Lnet/minecraft/gametest/framework/GameTestInfo;)Ljava/util/Optional;
 		ARG 1 test
+	CLASS 1
+		METHOD testCompleted (Lnet/minecraft/gametest/framework/GameTestInfo;)V
+			ARG 1 testInfo
 	CLASS Builder
 		METHOD <init> (Ljava/util/Collection;Lnet/minecraft/server/level/ServerLevel;)V
 			ARG 1 batches
@@ -33,8 +37,6 @@ CLASS net/minecraft/gametest/framework/GameTestRunner
 		METHOD fromInfo (Ljava/util/Collection;Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/gametest/framework/GameTestRunner$Builder;
 			ARG 0 infos
 			ARG 1 level
-		METHOD haltOnError (Z)Lnet/minecraft/gametest/framework/GameTestRunner$Builder;
-			ARG 1 haltOnError
 		METHOD newStructureSpawner (Lnet/minecraft/gametest/framework/GameTestRunner$StructureSpawner;)Lnet/minecraft/gametest/framework/GameTestRunner$Builder;
 			ARG 1 newStructureSpawner
 	CLASS GameTestBatcher

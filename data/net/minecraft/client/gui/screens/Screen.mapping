@@ -101,7 +101,7 @@ CLASS net/minecraft/client/gui/screens/Screen
 		ARG 2 partialTick
 	METHOD renderTransparentBackground (Lnet/minecraft/client/gui/GuiGraphics;)V
 		ARG 1 guiGraphics
-	METHOD renderWithTooltip (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
+	METHOD renderWithTooltipAndSubtitles (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
 		ARG 1 guiGraphics
 		ARG 2 mouseX
 		ARG 3 mouseY
@@ -117,6 +117,8 @@ CLASS net/minecraft/client/gui/screens/Screen
 		ARG 3 stopSuppression
 	METHOD setInitialFocus (Lnet/minecraft/client/gui/components/events/GuiEventListener;)V
 		ARG 1 listener
+	METHOD setNarrationSuppressTime (J)V
+		ARG 1 narrationSuppressTime
 	METHOD suppressNarration (J)V
 		ARG 1 time
 	METHOD triggerImmediateNarration (Z)V

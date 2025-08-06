@@ -31,6 +31,11 @@ CLASS net/minecraft/world/level/levelgen/NoiseChunk
 		ARG 2 chunkZ
 	METHOD lambda$new$0 (Lnet/minecraft/world/level/levelgen/DensityFunction;Lnet/minecraft/world/level/levelgen/DensityFunction$FunctionContext;)Lnet/minecraft/world/level/block/state/BlockState;
 		ARG 2 context
+	METHOD maxPreliminarySurfaceLevel (IIII)I
+		ARG 1 minX
+		ARG 2 minZ
+		ARG 3 maxX
+		ARG 4 maxZ
 	METHOD preliminarySurfaceLevel (II)I
 		ARG 1 x
 		ARG 2 z

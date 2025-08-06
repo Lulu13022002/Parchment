@@ -1,5 +1,5 @@
 CLASS net/minecraft/client/gui/render/state/pip/GuiSignRenderState
-	METHOD <init> (Lnet/minecraft/client/model/Model;Lnet/minecraft/world/level/block/state/properties/WoodType;IIIIFLnet/minecraft/client/gui/navigation/ScreenRectangle;)V
+	METHOD <init> (Lnet/minecraft/client/model/Model$Simple;Lnet/minecraft/world/level/block/state/properties/WoodType;IIIIFLnet/minecraft/client/gui/navigation/ScreenRectangle;)V
 		ARG 1 signModel
 		ARG 2 woodType
 		ARG 3 x0

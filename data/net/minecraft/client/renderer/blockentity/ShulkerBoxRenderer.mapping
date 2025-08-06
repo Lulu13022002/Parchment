@@ -1,7 +1,10 @@
 CLASS net/minecraft/client/renderer/blockentity/ShulkerBoxRenderer
-	METHOD <init> (Lnet/minecraft/client/model/geom/EntityModelSet;)V
+	METHOD <init> (Lnet/minecraft/client/model/geom/EntityModelSet;Lnet/minecraft/client/resources/model/MaterialSet;)V
 		ARG 1 modelSet
+		ARG 2 materials
 	METHOD <init> (Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;)V
+		ARG 1 context
+	METHOD <init> (Lnet/minecraft/client/renderer/special/SpecialModelRenderer$BakingContext;)V
 		ARG 1 context
 	METHOD getExtents (Lnet/minecraft/core/Direction;FLjava/util/Set;)V
 		ARG 1 direction
@@ -22,5 +25,3 @@ CLASS net/minecraft/client/renderer/blockentity/ShulkerBoxRenderer
 	CLASS ShulkerBoxModel
 		METHOD <init> (Lnet/minecraft/client/model/geom/ModelPart;)V
 			ARG 1 root
-		METHOD animate (F)V
-			ARG 1 progress

@@ -10,8 +10,6 @@ CLASS net/minecraft/client/particle/ItemPickupParticle
 		ARG 3 itemEntity
 		ARG 4 target
 		ARG 5 speed
-	METHOD getSafeCopy (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/entity/Entity;
-		ARG 1 entity
 	METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
 		ARG 1 consumer
 		ARG 2 camera

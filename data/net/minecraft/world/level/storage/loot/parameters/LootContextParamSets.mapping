@@ -32,6 +32,10 @@ CLASS net/minecraft/world/level/storage/loot/parameters/LootContextParamSets
 		ARG 0 builder
 	METHOD lambda$static$25 (Lnet/minecraft/util/context/ContextKeySet$Builder;)V
 		ARG 0 builder
+	METHOD lambda$static$26 (Lnet/minecraft/util/context/ContextKeySet$Builder;)V
+		ARG 0 builder
+	METHOD lambda$static$27 (Lnet/minecraft/util/context/ContextKeySet$Builder;)V
+		ARG 0 builder
 	METHOD lambda$static$3 (Lnet/minecraft/util/context/ContextKeySet$Builder;)V
 		ARG 0 builder
 	METHOD lambda$static$4 (Lnet/minecraft/util/context/ContextKeySet$Builder;)V

@@ -9,11 +9,7 @@ CLASS net/minecraft/world/level/block/entity/EnderChestBlockEntity
 		ARG 1 pos
 		ARG 2 state
 		ARG 3 blockEntity
-	METHOD startOpen (Lnet/minecraft/world/entity/player/Player;)V
-		ARG 1 player
 	METHOD stillValid (Lnet/minecraft/world/entity/player/Player;)Z
-		ARG 1 player
-	METHOD stopOpen (Lnet/minecraft/world/entity/player/Player;)V
 		ARG 1 player
 	METHOD triggerEvent (II)Z
 		ARG 1 id

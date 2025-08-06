@@ -31,11 +31,12 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		ARG 3 pos
 		ARG 4 entity
 		ARG 5 effectApplier
-	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
+	METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
 		COMMENT Returns the analog signal this block emits. This is the signal a comparator can read from it.
 		ARG 1 state
 		ARG 2 level
 		ARG 3 pos
+		ARG 4 direction
 	METHOD getBlockSupportShape (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/shapes/VoxelShape;
 		ARG 1 state
 		ARG 2 level
@@ -179,6 +180,8 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		COMMENT Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed blockstate.
 		ARG 1 state
 		ARG 2 rotation
+	METHOD shouldChangedStateKeepBlockEntity (Lnet/minecraft/world/level/block/state/BlockState;)Z
+		ARG 1 state
 	METHOD simpleCodec (Ljava/util/function/Function;)Lcom/mojang/serialization/MapCodec;
 		ARG 0 factory
 	METHOD skipRendering (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;)Z
@@ -381,9 +384,10 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 			ARG 2 pos
 			ARG 3 entity
 			ARG 4 effectApplier
-		METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
+		METHOD getAnalogOutputSignal (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
 			ARG 1 level
 			ARG 2 pos
+			ARG 3 direction
 		METHOD getBlockSupportShape (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/shapes/VoxelShape;
 			ARG 1 level
 			ARG 2 pos
@@ -529,6 +533,8 @@ CLASS net/minecraft/world/level/block/state/BlockBehaviour
 		METHOD rotate (Lnet/minecraft/world/level/block/Rotation;)Lnet/minecraft/world/level/block/state/BlockState;
 			COMMENT @return the blockstate with the given rotation. If inapplicable, returns itself.
 			ARG 1 rotation
+		METHOD shouldChangedStateKeepBlockEntity (Lnet/minecraft/world/level/block/state/BlockState;)Z
+			ARG 1 state
 		METHOD skipRendering (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;)Z
 			ARG 1 state
 			ARG 2 face

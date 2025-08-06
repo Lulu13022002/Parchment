@@ -86,12 +86,8 @@ CLASS net/minecraft/client/Minecraft
 		COMMENT Returns the save loader that is currently being used
 	METHOD getMusicManager ()Lnet/minecraft/client/sounds/MusicManager;
 		COMMENT Return the musicManager's instance
-	METHOD getPaintingTextures ()Lnet/minecraft/client/resources/PaintingTextureManager;
-		COMMENT Gets the sprite uploader used for paintings.
 	METHOD getSingleplayerServer ()Lnet/minecraft/client/server/IntegratedServer;
 		COMMENT Returns the currently running integrated server
-	METHOD getTextureAtlas (Lnet/minecraft/resources/ResourceLocation;)Ljava/util/function/Function;
-		ARG 1 location
 	METHOD getTickTargetMillis (F)F
 		ARG 1 defaultValue
 	METHOD getVersionType ()Ljava/lang/String;
@@ -135,9 +131,8 @@ CLASS net/minecraft/client/Minecraft
 		ARG 1 viewingEntity
 	METHOD setLastInputType (Lnet/minecraft/client/InputType;)V
 		ARG 1 lastInputType
-	METHOD setLevel (Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/client/gui/screens/ReceivingLevelScreen$Reason;)V
+	METHOD setLevel (Lnet/minecraft/client/multiplayer/ClientLevel;)V
 		ARG 1 level
-		ARG 2 reason
 	METHOD setOverlay (Lnet/minecraft/client/gui/screens/Overlay;)V
 		ARG 1 loadingGui
 	METHOD setScreen (Lnet/minecraft/client/gui/screens/Screen;)V

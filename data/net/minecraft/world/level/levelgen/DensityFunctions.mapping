@@ -20,6 +20,11 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 		ARG 2 secondary
 	METHOD endIslands (J)Lnet/minecraft/world/level/levelgen/DensityFunction;
 		ARG 0 seed
+	METHOD findTopSurface (Lnet/minecraft/world/level/levelgen/DensityFunction;Lnet/minecraft/world/level/levelgen/DensityFunction;II)Lnet/minecraft/world/level/levelgen/DensityFunction;
+		ARG 0 density
+		ARG 1 upperBound
+		ARG 2 lowerBound
+		ARG 3 cellHeight
 	METHOD flatCache (Lnet/minecraft/world/level/levelgen/DensityFunction;)Lnet/minecraft/world/level/levelgen/DensityFunction;
 		ARG 0 wrapped
 	METHOD interpolated (Lnet/minecraft/world/level/levelgen/DensityFunction;)Lnet/minecraft/world/level/levelgen/DensityFunction;
@@ -152,6 +157,9 @@ CLASS net/minecraft/world/level/levelgen/DensityFunctions
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 			ARG 0 instance
 	CLASS ShiftedNoise
+		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+			ARG 0 instance
+	CLASS FindTopSurface
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 			ARG 0 instance
 	CLASS PureTransformer

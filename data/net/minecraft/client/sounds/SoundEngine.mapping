@@ -50,9 +50,6 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		ARG 1 sound
 	METHOD destroy ()V
 		COMMENT Cleans up the Sound System
-	METHOD getVolume (Lnet/minecraft/sounds/SoundSource;)F
-		COMMENT @return the volume value pinned between 0.0f and 1.0f for a given {@linkplain SoundSource} category
-		ARG 1 source
 	METHOD isActive (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z
 		COMMENT @return {@code true} if the {@linkplain SoundInstance} is active, {@code false} otherwise
 		ARG 1 sound
@@ -147,7 +144,7 @@ CLASS net/minecraft/client/sounds/SoundEngine
 	METHOD tick (Z)V
 		COMMENT Ticks all active instances of {@code TickableSoundInstance}
 		ARG 1 isGamePaused
-	METHOD updateCategoryVolume (Lnet/minecraft/sounds/SoundSource;F)V
+	METHOD updateCategoryVolume (Lnet/minecraft/sounds/SoundSource;)V
 		COMMENT Updates the volume for a specific sound category.
 		COMMENT <p>
 		COMMENT If the sound engine has not been loaded, the method returns without performing any action.
@@ -159,6 +156,5 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		COMMENT If the calculated volume for an instance is less than or equal to 0.0, the instance is stopped.
 		COMMENT Otherwise, the volume of the instance is set to the calculated value.
 		ARG 1 category
-		ARG 2 volume
 	METHOD updateSource (Lnet/minecraft/client/Camera;)V
 		ARG 1 camera

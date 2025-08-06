@@ -1,7 +1,6 @@
 CLASS net/minecraft/client/particle/ParticleEngine
-	METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/client/renderer/texture/TextureManager;)V
+	METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;)V
 		ARG 1 level
-		ARG 2 textureManager
 	METHOD add (Lnet/minecraft/client/particle/Particle;)V
 		ARG 1 effect
 	METHOD crack (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)V

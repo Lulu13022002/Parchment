@@ -80,8 +80,6 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD findRespawnPositionAndUseSpawnBlock (ZLnet/minecraft/world/level/portal/TeleportTransition$PostTeleportTransition;)Lnet/minecraft/world/level/portal/TeleportTransition;
 		ARG 1 useCharge
 		ARG 2 postTeleportTransition
-	METHOD getCoprime (I)I
-		ARG 1 spawnArea
 	METHOD getIpAddress ()Ljava/lang/String;
 		COMMENT Gets the player's IP address. Used in /ban-ip.
 	METHOD getTabListDisplayName ()Lnet/minecraft/network/chat/Component;
@@ -99,38 +97,36 @@ CLASS net/minecraft/server/level/ServerPlayer
 		COMMENT Returns if other players can attack this player
 	METHOD isReachableBedBlock (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
-	METHOD lambda$awardRecipesByKey$18 (Lnet/minecraft/resources/ResourceKey;)Ljava/util/stream/Stream;
+	METHOD lambda$awardRecipesByKey$15 (Lnet/minecraft/resources/ResourceKey;)Ljava/util/stream/Stream;
 		ARG 1 key
-	METHOD lambda$awardStat$17 (ILnet/minecraft/world/scores/ScoreAccess;)V
+	METHOD lambda$awardStat$14 (ILnet/minecraft/world/scores/ScoreAccess;)V
 		ARG 1 score
-	METHOD lambda$die$9 (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Style;)Lnet/minecraft/network/chat/Style;
+	METHOD lambda$die$6 (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Style;)Lnet/minecraft/network/chat/Style;
 		ARG 1 style
-	METHOD lambda$drop$20 (Lnet/minecraft/world/entity/player/Inventory;I)V
+	METHOD lambda$drop$17 (Lnet/minecraft/world/entity/player/Inventory;I)V
 		ARG 2 slot
-	METHOD lambda$findRespawnAndUseSpawnBlock$13 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
+	METHOD lambda$findRespawnAndUseSpawnBlock$10 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
 		ARG 1 pos
-	METHOD lambda$findRespawnAndUseSpawnBlock$14 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
+	METHOD lambda$findRespawnAndUseSpawnBlock$11 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
 		ARG 1 pos
 	METHOD lambda$new$0 (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/resources/ResourceKey;Ljava/util/function/Consumer;)V
 		ARG 1 recipe
 		ARG 2 output
-	METHOD lambda$readAdditionalSaveData$4 (Lnet/minecraft/resources/ResourceKey;)Z
+	METHOD lambda$readAdditionalSaveData$1 (Lnet/minecraft/resources/ResourceKey;)Z
 		ARG 1 key
-	METHOD lambda$startSleepInBed$15 (Lnet/minecraft/world/entity/monster/Monster;)Z
+	METHOD lambda$startSleepInBed$12 (Lnet/minecraft/world/entity/monster/Monster;)Z
 		ARG 1 monster
-	METHOD lambda$tellNeutralMobsThatIDied$11 (Lnet/minecraft/world/entity/Mob;)Z
+	METHOD lambda$tellNeutralMobsThatIDied$8 (Lnet/minecraft/world/entity/Mob;)Z
 		ARG 0 mob
-	METHOD lambda$tellNeutralMobsThatIDied$12 (Lnet/minecraft/world/entity/Mob;)V
+	METHOD lambda$tellNeutralMobsThatIDied$9 (Lnet/minecraft/world/entity/Mob;)V
 		ARG 1 mob
-	METHOD lambda$updateScoreForCriteria$8 (ILnet/minecraft/world/scores/ScoreAccess;)V
+	METHOD lambda$updateScoreForCriteria$5 (ILnet/minecraft/world/scores/ScoreAccess;)V
 		ARG 1 score
 	METHOD loadAndSpawnEnderPearl (Lnet/minecraft/world/level/storage/ValueInput;)V
 		ARG 1 input
 	METHOD loadAndSpawnEnderPearls (Lnet/minecraft/world/level/storage/ValueInput;)V
 		ARG 1 input
 	METHOD loadAndSpawnParentVehicle (Lnet/minecraft/world/level/storage/ValueInput;)V
-		ARG 1 input
-	METHOD loadGameTypes (Lnet/minecraft/world/level/storage/ValueInput;)V
 		ARG 1 input
 	METHOD lookAt (Lnet/minecraft/commands/arguments/EntityAnchorArgument$Anchor;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/commands/arguments/EntityAnchorArgument$Anchor;)V
 		ARG 1 fromAnchor
@@ -143,9 +139,6 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 1 target
 	METHOD nextContainerCounter ()V
 		COMMENT Gets the next window id to use.
-	METHOD noCollisionNoLiquid (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/phys/AABB;)Z
-		ARG 1 level
-		ARG 2 collisionBox
 	METHOD onEnchantmentPerformed (Lnet/minecraft/world/item/ItemStack;I)V
 		ARG 1 enchantedItem
 		ARG 2 cost
@@ -276,6 +269,9 @@ CLASS net/minecraft/server/level/ServerPlayer
 			ARG 0 respawnConfig
 		METHOD isSamePosition (Lnet/minecraft/server/level/ServerPlayer$RespawnConfig;)Z
 			ARG 1 respawnConfig
+		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+			ARG 0 instance
+	CLASS SavedPosition
 		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 			ARG 0 instance
 	CLASS RespawnPosAngle

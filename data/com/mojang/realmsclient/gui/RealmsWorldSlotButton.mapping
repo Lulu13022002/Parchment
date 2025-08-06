@@ -7,10 +7,10 @@ CLASS com/mojang/realmsclient/gui/RealmsWorldSlotButton
 		ARG 5 slotIndex
 		ARG 6 serverData
 		ARG 7 onPress
-	METHOD getAction (Lcom/mojang/realmsclient/dto/RealmsServer;ZZ)Lcom/mojang/realmsclient/gui/RealmsWorldSlotButton$Action;
-		ARG 0 realmsServer
-		ARG 1 minigame
-		ARG 2 activeSlot
+	METHOD getAction (ZZZ)Lcom/mojang/realmsclient/gui/RealmsWorldSlotButton$Action;
+		ARG 0 activeSlot
+		ARG 1 empty
+		ARG 2 expired
 	METHOD setServerData (Lcom/mojang/realmsclient/dto/RealmsServer;)Lcom/mojang/realmsclient/gui/RealmsWorldSlotButton$State;
 		ARG 1 serverData
 	METHOD setTooltipAndNarration (Lcom/mojang/realmsclient/gui/RealmsWorldSlotButton$State;Ljava/lang/String;)V

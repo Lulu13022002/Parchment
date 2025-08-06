@@ -1,5 +1,5 @@
 CLASS net/minecraft/server/dedicated/DedicatedServer
-	METHOD <init> (Ljava/lang/Thread;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Lnet/minecraft/server/dedicated/DedicatedServerSettings;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/server/Services;Lnet/minecraft/server/level/progress/ChunkProgressListenerFactory;)V
+	METHOD <init> (Ljava/lang/Thread;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Lnet/minecraft/server/dedicated/DedicatedServerSettings;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/server/Services;)V
 		ARG 1 serverThread
 		ARG 2 storageSource
 		ARG 3 packRepository
@@ -7,7 +7,6 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 		ARG 5 settings
 		ARG 6 fixerUpper
 		ARG 7 services
-		ARG 8 progressListenerFactory
 	METHOD createServerLinks (Lnet/minecraft/server/dedicated/DedicatedServerSettings;)Lnet/minecraft/server/ServerLinks;
 		ARG 0 settings
 	METHOD getCompressionThreshold ()I
@@ -33,8 +32,6 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 		COMMENT Get if native transport should be used. Native transport means linux server performance improvements and optimized packet sending/receiving on linux
 	METHOD isPublished ()Z
 		COMMENT Returns {@code true} if this integrated server is open to LAN
-	METHOD isSingleplayerOwner (Lcom/mojang/authlib/GameProfile;)Z
-		ARG 1 profile
 	METHOD isUnderSpawnProtection (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Z
 		ARG 1 level
 		ARG 2 pos

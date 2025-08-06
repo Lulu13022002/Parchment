@@ -7,7 +7,7 @@ CLASS net/minecraft/server/level/ChunkMap
 		COMMENT Chunks in memory. This should only ever be manipulated by the main thread.
 	FIELD visibleChunkMap Lit/unimi/dsi/fastutil/longs/Long2ObjectLinkedOpenHashMap;
 		COMMENT Same as {@link #updatingChunkMap}, but immutable for access from other threads. <em>This should never be mutated.</em>
-	METHOD <init> (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager;Ljava/util/concurrent/Executor;Lnet/minecraft/util/thread/BlockableEventLoop;Lnet/minecraft/world/level/chunk/LightChunkGetter;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/server/level/progress/ChunkProgressListener;Lnet/minecraft/world/level/entity/ChunkStatusUpdateListener;Ljava/util/function/Supplier;Lnet/minecraft/world/level/TicketStorage;IZ)V
+	METHOD <init> (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager;Ljava/util/concurrent/Executor;Lnet/minecraft/util/thread/BlockableEventLoop;Lnet/minecraft/world/level/chunk/LightChunkGetter;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/world/level/entity/ChunkStatusUpdateListener;Ljava/util/function/Supplier;Lnet/minecraft/world/level/TicketStorage;IZ)V
 		ARG 1 level
 		ARG 2 levelStorageAccess
 		ARG 3 fixerUpper
@@ -16,14 +16,15 @@ CLASS net/minecraft/server/level/ChunkMap
 		ARG 6 mainThreadExecutor
 		ARG 7 lightChunk
 		ARG 8 generator
-		ARG 9 progressListener
-		ARG 10 chunkStatusListener
-		ARG 11 overworldDataStorage
-		ARG 12 ticketStorage
-		ARG 13 serverViewDistance
-		ARG 14 sync
+		ARG 9 chunkStatusListener
+		ARG 10 overworldDataStorage
+		ARG 11 ticketStorage
+		ARG 12 serverViewDistance
+		ARG 13 sync
 	METHOD addEntity (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
+	METHOD allChunksWithAtLeastStatus (Lnet/minecraft/world/level/chunk/status/ChunkStatus;)Ljava/util/stream/Stream;
+		ARG 1 status
 	METHOD anyPlayerCloseEnoughForSpawning (Lnet/minecraft/world/level/ChunkPos;)Z
 		ARG 1 chunkPos
 	METHOD anyPlayerCloseEnoughForSpawningInternal (Lnet/minecraft/world/level/ChunkPos;)Z
@@ -66,6 +67,8 @@ CLASS net/minecraft/server/level/ChunkMap
 		ARG 1 chunkPos
 	METHOD getChunks ()Ljava/lang/Iterable;
 		COMMENT Gets an unmodifiable iterable of all loaded chunks in the chunk manager
+	METHOD getLatestStatus (J)Lnet/minecraft/world/level/chunk/status/ChunkStatus;
+		ARG 1 chunkPos
 	METHOD getPlayerViewDistance (Lnet/minecraft/server/level/ServerPlayer;)I
 		ARG 1 player
 	METHOD getPlayersCloseForSpawning (Lnet/minecraft/world/level/ChunkPos;)Ljava/util/List;
@@ -103,15 +106,12 @@ CLASS net/minecraft/server/level/ChunkMap
 		ARG 2 chunkPos
 	METHOD lambda$getChunkRangeFuture$1 (Lnet/minecraft/server/level/ChunkResult;)Lnet/minecraft/server/level/ChunkResult;
 		ARG 0 chunkResult
-	METHOD lambda$prepareAccessibleChunk$29 (Lnet/minecraft/server/level/ChunkResult;)Lnet/minecraft/server/level/ChunkResult;
+	METHOD lambda$prepareAccessibleChunk$28 (Lnet/minecraft/server/level/ChunkResult;)Lnet/minecraft/server/level/ChunkResult;
 		ARG 0 chunkResult
 	METHOD lambda$prepareEntityTickingChunk$7 (Lnet/minecraft/server/level/ChunkResult;)Lnet/minecraft/server/level/ChunkResult;
 		ARG 0 chunkResult
 	METHOD lambda$prepareTickingChunk$26 (Lnet/minecraft/server/level/ChunkHolder;Lnet/minecraft/server/level/ChunkResult;)Lnet/minecraft/server/level/ChunkResult;
 		ARG 2 chunk
-	METHOD lambda$prepareTickingChunk$27 (Lnet/minecraft/server/level/ChunkResult;Ljava/lang/Throwable;)Ljava/lang/Object;
-		ARG 1 chunk
-		ARG 2 exception
 	METHOD lambda$save$30 (Lnet/minecraft/world/level/ChunkPos;Ljava/lang/Void;Ljava/lang/Throwable;)Ljava/lang/Object;
 		ARG 3 exception
 	METHOD lambda$saveAllChunks$10 (Lorg/apache/commons/lang3/mutable/MutableBoolean;Lnet/minecraft/world/level/chunk/ChunkAccess;)V

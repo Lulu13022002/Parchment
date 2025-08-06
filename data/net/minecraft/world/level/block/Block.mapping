@@ -69,9 +69,22 @@ CLASS net/minecraft/world/level/block/Block
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 state
+	METHOD dropFromBlockInteractLootTable (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/Entity;Ljava/util/function/BiConsumer;)Z
+		ARG 0 level
+		ARG 1 lootTable
+		ARG 2 state
+		ARG 3 blockEntity
+		ARG 4 tool
+		ARG 5 entity
+		ARG 6 dropConsumer
 	METHOD dropFromExplosion (Lnet/minecraft/world/level/Explosion;)Z
 		COMMENT @return whether this block should drop its drops when destroyed by the given explosion
 		ARG 1 explosion
+	METHOD dropFromLootTable (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/resources/ResourceKey;Ljava/util/function/Function;Ljava/util/function/BiConsumer;)Z
+		ARG 0 level
+		ARG 1 lootTable
+		ARG 2 params
+		ARG 3 dropConsumer
 	METHOD dropResources (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
 		ARG 0 state
 		ARG 1 level
@@ -132,22 +145,22 @@ CLASS net/minecraft/world/level/block/Block
 	METHOD isShapeFullBlock (Lnet/minecraft/world/phys/shapes/VoxelShape;)Z
 		COMMENT @return whether the provided {@link net.minecraft.world.phys.shapes.VoxelShape} is a full block (1x1x1)
 		ARG 0 shape
-	METHOD lambda$dropResources$2 (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 2 stack
-	METHOD lambda$dropResources$3 (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
-		ARG 2 stack
 	METHOD lambda$dropResources$4 (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
 		ARG 2 stack
-	METHOD lambda$getShapeForEachState$10 (Ljava/util/Map;Lnet/minecraft/world/level/block/state/BlockState;)Z
-		ARG 1 state
-	METHOD lambda$getShapeForEachState$11 (Ljava/util/Map;Lcom/google/common/collect/ImmutableMap;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/phys/shapes/VoxelShape;
-		ARG 2 state
-	METHOD lambda$getShapeForEachState$7 (Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/properties/Property;
+	METHOD lambda$dropResources$5 (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
+		ARG 2 stack
+	METHOD lambda$dropResources$6 (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V
+		ARG 2 stack
+	METHOD lambda$getShapeForEachState$10 (Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Object;
 		ARG 0 property
-	METHOD lambda$getShapeForEachState$8 (Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Object;
-		ARG 0 property
-	METHOD lambda$getShapeForEachState$9 (Lnet/minecraft/world/level/block/state/BlockState;Ljava/util/Map$Entry;)Z
+	METHOD lambda$getShapeForEachState$11 (Lnet/minecraft/world/level/block/state/BlockState;Ljava/util/Map$Entry;)Z
 		ARG 1 entry
+	METHOD lambda$getShapeForEachState$12 (Ljava/util/Map;Lnet/minecraft/world/level/block/state/BlockState;)Z
+		ARG 1 state
+	METHOD lambda$getShapeForEachState$13 (Ljava/util/Map;Lcom/google/common/collect/ImmutableMap;Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/world/phys/shapes/VoxelShape;
+		ARG 2 state
+	METHOD lambda$getShapeForEachState$9 (Lnet/minecraft/world/level/block/state/properties/Property;)Lnet/minecraft/world/level/block/state/properties/Property;
+		ARG 0 property
 	METHOD playerDestroy (Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/item/ItemStack;)V
 		COMMENT Called after a player has successfully harvested this block. This method will only be called if the player has used the correct tool and drops should be spawned.
 		ARG 1 level

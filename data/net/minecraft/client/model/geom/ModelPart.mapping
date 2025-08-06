@@ -10,8 +10,6 @@ CLASS net/minecraft/client/model/geom/ModelPart
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 		ARG 5 color
-	METHOD copyFrom (Lnet/minecraft/client/model/geom/ModelPart;)V
-		ARG 1 modelPart
 	METHOD getChild (Ljava/lang/String;)Lnet/minecraft/client/model/geom/ModelPart;
 		ARG 1 name
 	METHOD getExtentsForGui (Lcom/mojang/blaze3d/vertex/PoseStack;Ljava/util/Set;)V

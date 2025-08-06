@@ -234,6 +234,9 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 		ARG 1 category
 		ARG 2 result
 		ARG 3 count
+	METHOD shelf (Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/level/ItemLike;)V
+		ARG 1 shelf
+		ARG 2 material
 	METHOD signBuilder (Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/item/crafting/Ingredient;)Lnet/minecraft/data/recipes/RecipeBuilder;
 		ARG 1 sign
 		ARG 2 material

@@ -1,5 +1,5 @@
 CLASS net/minecraft/server/MinecraftServer
-	METHOD <init> (Ljava/lang/Thread;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Ljava/net/Proxy;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/server/Services;Lnet/minecraft/server/level/progress/ChunkProgressListenerFactory;)V
+	METHOD <init> (Ljava/lang/Thread;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Ljava/net/Proxy;Lcom/mojang/datafixers/DataFixer;Lnet/minecraft/server/Services;Lnet/minecraft/server/level/progress/LevelLoadListener;)V
 		ARG 1 serverThread
 		ARG 2 storageSource
 		ARG 3 packRepository
@@ -7,7 +7,7 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 5 proxy
 		ARG 6 fixerUpper
 		ARG 7 services
-		ARG 8 progressListenerFactory
+		ARG 8 levelLoadListener
 	METHOD addTickable (Ljava/lang/Runnable;)V
 		ARG 1 tickable
 	METHOD configurePackRepository (Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/world/level/WorldDataConfiguration;ZZ)Lnet/minecraft/world/level/WorldDataConfiguration;
@@ -22,10 +22,10 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 3 safeMode
 	METHOD constructOrExtractCrashReport (Ljava/lang/Throwable;)Lnet/minecraft/CrashReport;
 		ARG 0 cause
+	METHOD createChunkLoadStatusView (I)Lnet/minecraft/server/level/progress/ChunkLoadStatusView;
+		ARG 1 radius
 	METHOD createGameModeForPlayer (Lnet/minecraft/server/level/ServerPlayer;)Lnet/minecraft/server/level/ServerPlayerGameMode;
 		ARG 1 player
-	METHOD createLevels (Lnet/minecraft/server/level/progress/ChunkProgressListener;)V
-		ARG 1 listener
 	METHOD createTextFilterForPlayer (Lnet/minecraft/server/level/ServerPlayer;)Lnet/minecraft/server/network/TextFilter;
 		ARG 1 player
 	METHOD doRunTask (Lnet/minecraft/server/TickTask;)V
@@ -68,8 +68,8 @@ CLASS net/minecraft/server/MinecraftServer
 		COMMENT Returns an array of the usernames of all the connected players.
 	METHOD getPort ()I
 		COMMENT Gets port.
-	METHOD getProfilePermissions (Lcom/mojang/authlib/GameProfile;)I
-		ARG 1 profile
+	METHOD getProfilePermissions (Lnet/minecraft/server/players/NameAndId;)I
+		ARG 1 nameAndId
 	METHOD getScaledTrackingDistance (I)I
 		ARG 1 trackingDistance
 	METHOD getSelectedPacks (Lnet/minecraft/server/packs/repository/PackRepository;Z)Lnet/minecraft/world/level/DataPackConfig;
@@ -79,8 +79,6 @@ CLASS net/minecraft/server/MinecraftServer
 		COMMENT Returns the server's Minecraft version as string.
 	METHOD getSpawnProtectionRadius ()I
 		COMMENT Return the spawn protection area's size.
-	METHOD getSpawnRadius (Lnet/minecraft/server/level/ServerLevel;)I
-		ARG 1 level
 	METHOD getWorldPath (Lnet/minecraft/world/level/storage/LevelResource;)Ljava/nio/file/Path;
 		ARG 1 levelResource
 	METHOD halt (Z)V
@@ -103,21 +101,21 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 level
 	METHOD isPublished ()Z
 		COMMENT Returns {@code true} if this integrated server is open to LAN
-	METHOD isSingleplayerOwner (Lcom/mojang/authlib/GameProfile;)Z
-		ARG 1 profile
+	METHOD isSingleplayerOwner (Lnet/minecraft/server/players/NameAndId;)Z
+		ARG 1 nameAndId
 	METHOD isUnderSpawnProtection (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Z
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 player
 	METHOD kickUnlistedPlayers (Lnet/minecraft/commands/CommandSourceStack;)V
 		ARG 1 source
-	METHOD lambda$getSelectedPacks$30 (Ljava/util/Collection;Ljava/lang/String;)Z
+	METHOD lambda$getSelectedPacks$31 (Ljava/util/Collection;Ljava/lang/String;)Z
 		ARG 1 packId
-	METHOD lambda$loadStatusIcon$11 (Ljava/nio/file/Path;)Z
-		ARG 0 path
 	METHOD lambda$loadStatusIcon$12 (Ljava/nio/file/Path;)Z
 		ARG 0 path
-	METHOD lambda$loadStatusIcon$14 (Ljava/nio/file/Path;)Ljava/util/Optional;
+	METHOD lambda$loadStatusIcon$13 (Ljava/nio/file/Path;)Z
+		ARG 0 path
+	METHOD lambda$loadStatusIcon$15 (Ljava/nio/file/Path;)Ljava/util/Optional;
 		ARG 0 path
 	METHOD lambda$new$0 (Lnet/minecraft/util/profiling/ProfileResults;)V
 		ARG 1 results
@@ -130,7 +128,7 @@ CLASS net/minecraft/server/MinecraftServer
 	METHOD lambda$spin$3 (Ljava/lang/Thread;Ljava/lang/Throwable;)V
 		ARG 0 thread
 		ARG 1 exception
-	METHOD lambda$stopServer$6 (Lnet/minecraft/server/level/ServerLevel;)Z
+	METHOD lambda$stopServer$7 (Lnet/minecraft/server/level/ServerLevel;)Z
 		ARG 0 level
 	METHOD logChatMessage (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/ChatType$Bound;Ljava/lang/String;)V
 		ARG 1 content
@@ -143,9 +141,8 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 report
 	METHOD onServerExit ()V
 		COMMENT Directly calls System.exit(0), instantly killing the program.
-	METHOD prepareLevels (Lnet/minecraft/server/level/progress/ChunkProgressListener;)V
-		COMMENT Loads the spawn chunks and any forced chunks
-		ARG 1 listener
+	METHOD prepareLevels ()V
+		COMMENT Loads the forced chunks
 	METHOD publishServer (Lnet/minecraft/world/level/GameType;ZI)Z
 		ARG 1 gameMode
 		ARG 2 commands
@@ -189,11 +186,12 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 allow
 	METHOD setId (Ljava/lang/String;)V
 		ARG 1 serverId
-	METHOD setInitialSpawn (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/storage/ServerLevelData;ZZ)V
+	METHOD setInitialSpawn (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/storage/ServerLevelData;ZZLnet/minecraft/server/level/progress/LevelLoadListener;)V
 		ARG 0 level
 		ARG 1 levelData
 		ARG 2 generateBonusChest
 		ARG 3 debug
+		ARG 4 levelLoadListener
 	METHOD setLocalIp (Ljava/lang/String;)V
 		ARG 1 localIp
 	METHOD setMotd (Ljava/lang/String;)V
