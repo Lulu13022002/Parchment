@@ -1,0 +1,37 @@
+name: Sanitize source
+on: push
+permissions:
+  contents: write
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'zulu'
+          java-version: 21
+      - name: Determine blackstone status
+        run: |
+          if [ "$(./gradlew properties | awk '/^importBlackstone:/ { print $2; }')" = "true" ]; then
+            echo "BLACKSTONE_STATUS=local" >> $GITHUB_ENV
+          else
+            echo "BLACKSTONE_STATUS=remote" >> $GITHUB_ENV
+          fi
+      - name: Download blackstone metadata
+        if: "${{ env.BLACKSTONE_STATUS == 'local'}}"
+        run: ./gradlew publishBlackstonePublicationToMavenLocal --stacktrace --console=colored
+      - name: Sanitize data
+        run: ./gradlew sanitizeData --stacktrace --console=colored
+      - name: Disable blackstone import
+        if: "${{ env.BLACKSTONE_STATUS == 'local'}}"
+        run: sed -i "/importBlackstone=/ s/=.*/=false/" gradle.properties
+      - name: Commit & Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -am "sanitize"
+          git push

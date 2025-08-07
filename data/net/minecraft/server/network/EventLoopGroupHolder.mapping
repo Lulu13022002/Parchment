@@ -4,4 +4,4 @@ CLASS net/minecraft/server/network/EventLoopGroupHolder
 		ARG 2 channelCls
 		ARG 3 serverChannelCls
 	METHOD remote (Z)Lnet/minecraft/server/network/EventLoopGroupHolder;
-		ARG 0 remote
+		ARG 0 tryNativeTransport

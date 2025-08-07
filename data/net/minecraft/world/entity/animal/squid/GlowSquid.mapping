@@ -6,4 +6,4 @@ CLASS net/minecraft/world/entity/animal/squid/GlowSquid
 		ARG 3 pos
 		ARG 4 random
 	METHOD setDarkTicks (I)V
-		ARG 1 a
+		ARG 1 darkTicks

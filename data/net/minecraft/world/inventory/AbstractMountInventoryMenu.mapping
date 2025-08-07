@@ -5,6 +5,6 @@ CLASS net/minecraft/world/inventory/AbstractMountInventoryMenu
 		ARG 3 mountContainer
 		ARG 4 mount
 	METHOD getInventorySize (I)I
-		ARG 0 rows
+		ARG 0 columns
 	METHOD hasInventoryChanged (Lnet/minecraft/world/Container;)Z
 		ARG 1 inventory

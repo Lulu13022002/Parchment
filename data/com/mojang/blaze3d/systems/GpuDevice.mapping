@@ -27,7 +27,7 @@ CLASS com/mojang/blaze3d/systems/GpuDevice
 		ARG 2 addressModeV
 		ARG 3 minFilter
 		ARG 4 magFilter
-		ARG 5 maxAnistropy
+		ARG 5 maxAnisotropy
 		ARG 6 maxLod
 	METHOD createTexture (Ljava/lang/String;ILcom/mojang/blaze3d/textures/TextureFormat;IIII)Lcom/mojang/blaze3d/textures/GpuTexture;
 		ARG 1 label

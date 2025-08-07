@@ -28,7 +28,7 @@ CLASS net/minecraft/client/KeyboardHandler
 	METHOD debugFeedbackTranslated (Ljava/lang/String;)V
 		ARG 1 message
 	METHOD debugFeedbackTranslated (Ljava/lang/String;[Ljava/lang/Object;)V
-		ARG 1 traslationKey
+		ARG 1 translationKey
 		ARG 2 args
 	METHOD debugWarningComponent (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 message

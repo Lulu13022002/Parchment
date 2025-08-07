@@ -29,7 +29,7 @@ CLASS net/minecraft/client/renderer/rendertype/RenderTypes
 	METHOD entityCutout (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/rendertype/RenderType;
 		ARG 0 texture
 	METHOD entityCutoutNoCull (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/rendertype/RenderType;
-		ARG 0 texure
+		ARG 0 texture
 	METHOD entityCutoutNoCull (Lnet/minecraft/resources/Identifier;Z)Lnet/minecraft/client/renderer/rendertype/RenderType;
 		ARG 0 texture
 		ARG 1 affectsOutline

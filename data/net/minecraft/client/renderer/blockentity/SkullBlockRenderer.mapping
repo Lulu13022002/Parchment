@@ -44,11 +44,11 @@ CLASS net/minecraft/client/renderer/blockentity/SkullBlockRenderer
 		ARG 2 animationProgress
 		ARG 3 poseStack
 		ARG 4 nodeCollector
-		ARG 5 lightCoords
+		ARG 5 packedLight
 		ARG 6 model
 		ARG 7 renderType
 		ARG 8 outlineColor
-		ARG 9 breakProgress
+		ARG 9 crumblingOverlay
 	METHOD submitSkull (Lnet/minecraft/core/Direction;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/model/object/skull/SkullModelBase;Lnet/minecraft/client/renderer/rendertype/RenderType;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
 		ARG 0 direction
 		ARG 1 rotation
@@ -59,4 +59,4 @@ CLASS net/minecraft/client/renderer/blockentity/SkullBlockRenderer
 		ARG 6 model
 		ARG 7 renderType
 		ARG 8 outlineColor
-		ARG 9 breakProgress
+		ARG 9 crumblingOverlay

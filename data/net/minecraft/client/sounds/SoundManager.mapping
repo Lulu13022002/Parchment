@@ -21,7 +21,7 @@ CLASS net/minecraft/client/sounds/SoundManager
 	METHOD getAvailableSounds ()Ljava/util/Collection;
 		COMMENT {@return The collection of available sound event locations}
 	METHOD getSoundEvent (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/sounds/WeighedSoundEvents;
-		COMMENT @return The sound event associated with the specific {@linkplain ResourceLocation}, or {@code null} if not found
+		COMMENT @return The sound event associated with the specific {@linkplain Identifier}, or {@code null} if not found
 		ARG 1 location
 			COMMENT The location of the sound event
 	METHOD isActive (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z

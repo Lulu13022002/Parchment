@@ -16,7 +16,7 @@ CLASS net/minecraft/world/attribute/EnvironmentAttributeMap
 		METHOD modify (Lnet/minecraft/world/attribute/EnvironmentAttribute;Lnet/minecraft/world/attribute/modifier/AttributeModifier;Ljava/lang/Object;)Lnet/minecraft/world/attribute/EnvironmentAttributeMap$Builder;
 			ARG 1 attribute
 			ARG 2 modifier
-			ARG 3 paramater
+			ARG 3 parameter
 		METHOD putAll (Lnet/minecraft/world/attribute/EnvironmentAttributeMap;)Lnet/minecraft/world/attribute/EnvironmentAttributeMap$Builder;
 			ARG 1 map
 		METHOD set (Lnet/minecraft/world/attribute/EnvironmentAttribute;Ljava/lang/Object;)Lnet/minecraft/world/attribute/EnvironmentAttributeMap$Builder;

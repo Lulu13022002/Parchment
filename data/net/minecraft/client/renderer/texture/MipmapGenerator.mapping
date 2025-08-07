@@ -54,11 +54,11 @@ CLASS net/minecraft/client/renderer/texture/MipmapGenerator
 		ARG 0 images
 		ARG 1 mipLevel
 	METHOD generateMipLevels ([Lcom/mojang/blaze3d/platform/NativeImage;ILnet/minecraft/client/renderer/texture/MipmapStrategy;)[Lcom/mojang/blaze3d/platform/NativeImage;
-		ARG 0 mipLevels
+		ARG 0 images
 		ARG 1 mipLevel
 		ARG 2 strategy
 	METHOD generateMipLevels ([Lcom/mojang/blaze3d/platform/NativeImage;IZ)[Lcom/mojang/blaze3d/platform/NativeImage;
-		ARG 0 mipLevels
+		ARG 0 images
 		ARG 1 mipLevel
 		ARG 2 darkenedCutoutMipmap
 	METHOD getInversePow22 (F)F

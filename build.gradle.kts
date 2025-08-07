@@ -18,7 +18,10 @@ plugins {
     id("org.parchmentmc.compass")
 }
 
-//apply<org.parchmentmc.BlackstonePlugin>()
+if (providers.gradleProperty("importBlackstone").getOrElse("false").toBooleanStrict()) {
+    apply<org.parchmentmc.BlackstonePlugin>()
+    repositories.add(repositories.mavenLocal())
+}
 
 val mcVersion = providers.gradleProperty("mcVersion")
 compass {
