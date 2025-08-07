@@ -49,8 +49,8 @@ CLASS net/minecraft/client/gui/Font
 	METHOD getGlyph (ILnet/minecraft/network/chat/Style;)Lnet/minecraft/client/gui/font/glyphs/BakeableGlyph;
 		ARG 1 character
 		ARG 2 style
-	METHOD getGlyphSource (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/gui/GlyphSource;
-		ARG 1 name
+	METHOD getGlyphSource (Lnet/minecraft/network/chat/FontDescription;)Lnet/minecraft/client/gui/GlyphSource;
+		ARG 1 description
 	METHOD isBidirectional ()Z
 		COMMENT Get bidiFlag that controls if the Unicode Bidirectional Algorithm should be run before rendering any string
 	METHOD lambda$new$0 (ILnet/minecraft/network/chat/Style;)F
@@ -101,8 +101,8 @@ CLASS net/minecraft/client/gui/Font
 		ARG 1 text
 		ARG 2 maxWidth
 	CLASS Provider
-		METHOD glyphs (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/gui/GlyphSource;
-			ARG 1 name
+		METHOD glyphs (Lnet/minecraft/network/chat/FontDescription;)Lnet/minecraft/client/gui/GlyphSource;
+			ARG 1 description
 	CLASS GlyphVisitor
 		METHOD acceptEffect (Lnet/minecraft/client/gui/font/glyphs/BakedGlyph;Lnet/minecraft/client/gui/font/glyphs/BakedGlyph$Effect;)V
 			ARG 1 glyph

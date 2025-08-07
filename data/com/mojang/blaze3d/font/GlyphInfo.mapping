@@ -1,5 +1,6 @@
 CLASS com/mojang/blaze3d/font/GlyphInfo
-	METHOD bake (Lnet/minecraft/client/gui/font/GlyphStitcher;)Lnet/minecraft/client/gui/font/glyphs/BakedGlyph;
-		ARG 1 glyphStitcher
 	METHOD getAdvance (Z)F
 		ARG 1 bold
+	CLASS Stitched
+		METHOD bake (Lnet/minecraft/client/gui/font/GlyphStitcher;)Lnet/minecraft/client/gui/font/glyphs/BakedGlyph;
+			ARG 1 glyphStitcher

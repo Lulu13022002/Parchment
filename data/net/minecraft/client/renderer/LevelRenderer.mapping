@@ -140,7 +140,7 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 1 pos
 	METHOD isSectionCompiled (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
-	METHOD lambda$renderBlockEntities$7 (Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;
+	METHOD lambda$renderBlockEntities$6 (Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 		ARG 2 renderType
 	METHOD offsetFrustum (Lnet/minecraft/client/renderer/culling/Frustum;)Lnet/minecraft/client/renderer/culling/Frustum;
 		ARG 0 frustum

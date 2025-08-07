@@ -91,5 +91,3 @@ CLASS com/mojang/blaze3d/vertex/VertexConsumer
 	METHOD setUv2 (II)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 		ARG 1 u
 		ARG 2 v
-	METHOD setWhiteAlpha (I)Lcom/mojang/blaze3d/vertex/VertexConsumer;
-		ARG 1 alpha

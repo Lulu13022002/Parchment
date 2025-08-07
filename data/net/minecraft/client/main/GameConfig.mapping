@@ -16,11 +16,9 @@ CLASS net/minecraft/client/main/GameConfig
 			ARG 7 renderDebugLabels
 			ARG 8 offlineDeveloperMode
 	CLASS UserData
-		METHOD <init> (Lnet/minecraft/client/User;Lcom/mojang/authlib/properties/PropertyMap;Lcom/mojang/authlib/properties/PropertyMap;Ljava/net/Proxy;)V
+		METHOD <init> (Lnet/minecraft/client/User;Ljava/net/Proxy;)V
 			ARG 1 user
-			ARG 2 userProperties
-			ARG 3 profileProperties
-			ARG 4 proxy
+			ARG 2 proxy
 	CLASS FolderData
 		METHOD <init> (Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/lang/String;)V
 			ARG 1 gameDirectory

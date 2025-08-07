@@ -1,7 +1,7 @@
 CLASS net/minecraft/network/protocol/game/ClientboundSetEntityMotionPacket
 	METHOD <init> (ILnet/minecraft/world/phys/Vec3;)V
 		ARG 1 id
-		ARG 2 deltaMovement
+		ARG 2 movement
 	METHOD <init> (Lnet/minecraft/network/FriendlyByteBuf;)V
 		ARG 1 buffer
 	METHOD <init> (Lnet/minecraft/world/entity/Entity;)V

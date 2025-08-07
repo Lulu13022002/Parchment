@@ -8,8 +8,6 @@ CLASS net/minecraft/world/item/component/TypedEntityData
 		ARG 1 key
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 1 other
-	METHOD lambda$codec$0 (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-		ARG 1 instance
 	METHOD loadInto (Lnet/minecraft/world/entity/Entity;)V
 		ARG 1 entity
 	METHOD loadInto (Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/core/HolderLookup$Provider;)Z
@@ -22,3 +20,13 @@ CLASS net/minecraft/world/item/component/TypedEntityData
 		ARG 0 idCodec
 	METHOD stripId (Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;
 		ARG 0 tag
+	CLASS 1
+		METHOD asNbtOps (Lcom/mojang/serialization/DynamicOps;)Lcom/mojang/serialization/DynamicOps;
+			ARG 0 ops
+		METHOD decode (Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;
+			ARG 1 ops
+			ARG 2 input
+		METHOD encode (Lnet/minecraft/world/item/component/TypedEntityData;Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;
+			ARG 1 input
+			ARG 2 ops
+			ARG 3 prefix
