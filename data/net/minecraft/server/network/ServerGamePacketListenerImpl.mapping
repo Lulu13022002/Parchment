@@ -181,9 +181,10 @@ CLASS net/minecraft/server/network/ServerGamePacketListenerImpl
 	METHOD teleport (Lnet/minecraft/world/entity/PositionMoveRotation;Ljava/util/Set;)V
 		ARG 1 posMoveRotation
 		ARG 2 relatives
-	METHOD tryHandleChat (Ljava/lang/String;Ljava/lang/Runnable;)V
+	METHOD tryHandleChat (Ljava/lang/String;ZLjava/lang/Runnable;)V
 		ARG 1 message
-		ARG 2 handler
+		ARG 2 bypassHiddenChat
+		ARG 3 handler
 	METHOD tryPickItem (Lnet/minecraft/world/item/ItemStack;)V
 		ARG 1 stack
 	METHOD unpackAndApplyLastSeen (Lnet/minecraft/network/chat/LastSeenMessages$Update;)Ljava/util/Optional;

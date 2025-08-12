@@ -109,8 +109,8 @@ CLASS net/minecraft/client/Minecraft
 		ARG 1 gameLoadCookie
 	METHOD onResourceLoadFinished (Lnet/minecraft/client/Minecraft$GameLoadCookie;)V
 		ARG 1 gameLoadCookie
-	METHOD openChatScreen (Ljava/lang/String;)V
-		ARG 1 defaultText
+	METHOD openChatScreen (Lnet/minecraft/client/gui/components/ChatComponent$ChatMethod;)V
+		ARG 1 method
 	METHOD pauseGame (Z)V
 		COMMENT Displays the in-game menu
 		ARG 1 pauseOnly

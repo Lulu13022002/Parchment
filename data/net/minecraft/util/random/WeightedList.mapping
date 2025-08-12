@@ -25,6 +25,8 @@ CLASS net/minecraft/util/random/WeightedList
 		ARG 0 items
 	METHOD of ([Lnet/minecraft/util/random/Weighted;)Lnet/minecraft/util/random/WeightedList;
 		ARG 0 items
+	METHOD streamCodec (Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/network/codec/StreamCodec;
+		ARG 0 elementCodec
 	CLASS Flat
 		METHOD <init> (Ljava/util/List;I)V
 			ARG 1 entries

@@ -106,7 +106,7 @@ CLASS net/minecraft/world/level/Level
 		ARG 10 radius
 		ARG 11 fire
 		ARG 12 explosionInteraction
-	METHOD explode (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;Lnet/minecraft/world/level/ExplosionDamageCalculator;DDDFZLnet/minecraft/world/level/Level$ExplosionInteraction;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/core/Holder;)V
+	METHOD explode (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;Lnet/minecraft/world/level/ExplosionDamageCalculator;DDDFZLnet/minecraft/world/level/Level$ExplosionInteraction;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/core/particles/ParticleOptions;Lnet/minecraft/util/random/WeightedList;Lnet/minecraft/core/Holder;)V
 		ARG 1 source
 		ARG 2 damageSource
 		ARG 3 damageCalculator
@@ -118,7 +118,8 @@ CLASS net/minecraft/world/level/Level
 		ARG 12 explosionInteraction
 		ARG 13 smallExplosionParticles
 		ARG 14 largeExplosionParticles
-		ARG 15 explosionSound
+		ARG 15 blockParticles
+		ARG 16 explosionSound
 	METHOD explode (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/damagesource/DamageSource;Lnet/minecraft/world/level/ExplosionDamageCalculator;Lnet/minecraft/world/phys/Vec3;FZLnet/minecraft/world/level/Level$ExplosionInteraction;)V
 		ARG 1 source
 		ARG 2 damageSource

@@ -239,8 +239,6 @@ CLASS net/minecraft/world/entity/LivingEntity
 		ARG 2 travelVector
 	METHOD getRiddenSpeed (Lnet/minecraft/world/entity/player/Player;)F
 		ARG 1 player
-	METHOD getSlotForHand (Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/entity/EquipmentSlot;
-		ARG 0 hand
 	METHOD getSoundVolume ()F
 		COMMENT Returns the volume for the sounds this mob makes.
 	METHOD getSpeed ()F

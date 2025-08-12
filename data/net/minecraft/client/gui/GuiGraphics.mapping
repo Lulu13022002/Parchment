@@ -469,18 +469,6 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the y-coordinate of the rendering position.
 		ARG 5 text
 			COMMENT the custom text to display. Can be {@code null}.
-	METHOD renderOutline (IIIII)V
-		COMMENT Renders an outline rectangle on the screen with the specified color.
-		ARG 1 x
-			COMMENT the x-coordinate of the top-left corner of the rectangle.
-		ARG 2 y
-			COMMENT the y-coordinate of the top-left corner of the rectangle.
-		ARG 3 width
-			COMMENT the width of the blitted portion.
-		ARG 4 height
-			COMMENT the height of the rectangle.
-		ARG 5 color
-			COMMENT the color of the outline.
 	METHOD renderTooltip (Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/ResourceLocation;)V
 		ARG 1 font
 		ARG 2 components
@@ -613,6 +601,18 @@ CLASS net/minecraft/client/gui/GuiGraphics
 		ARG 9 y1
 	METHOD submitMapRenderState (Lnet/minecraft/client/renderer/state/MapRenderState;)V
 		ARG 1 renderState
+	METHOD submitOutline (IIIII)V
+		COMMENT Submits an outline rectangle to render on the screen with the specified color.
+		ARG 1 x
+			COMMENT the x-coordinate of the top-left corner of the rectangle.
+		ARG 2 y
+			COMMENT the y-coordinate of the top-left corner of the rectangle.
+		ARG 3 width
+			COMMENT the width of the blitted portion.
+		ARG 4 height
+			COMMENT the height of the rectangle.
+		ARG 5 color
+			COMMENT the color of the outline.
 	METHOD submitProfilerChartRenderState (Ljava/util/List;IIII)V
 		ARG 1 chartData
 		ARG 2 x0
@@ -653,6 +653,9 @@ CLASS net/minecraft/client/gui/GuiGraphics
 			COMMENT the y-coordinate of the end point.
 		ARG 4 color
 			COMMENT the color of the line.
+	CLASS OutlineBox
+		METHOD render (Lnet/minecraft/client/gui/GuiGraphics;)V
+			ARG 1 guiGraphics
 	CLASS ScissorStack
 		COMMENT A utility class for managing a stack of screen rectangles for scissoring.
 		METHOD containsPoint (II)Z

@@ -1,5 +1,5 @@
 CLASS net/minecraft/client/renderer/block/model/ItemTransforms
-	METHOD <init> (Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;)V
+	METHOD <init> (Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;Lnet/minecraft/client/renderer/block/model/ItemTransform;)V
 		ARG 1 thirdPersonLeftHand
 		ARG 2 thirdPersonRightHand
 		ARG 3 firstPersonLeftHand
