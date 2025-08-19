@@ -5,13 +5,13 @@ CLASS net/minecraft/client/renderer/item/ItemStackRenderState
 		ARG 1 expectedSize
 	METHOD pickParticleIcon (Lnet/minecraft/util/RandomSource;)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;
 		ARG 1 random
-	METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V
-		ARG 1 poseStack
-		ARG 2 bufferSource
-		ARG 3 packedLight
-		ARG 4 packedOverlay
 	METHOD setOversizedInGui (Z)V
 		ARG 1 oversizedInGui
+	METHOD submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;II)V
+		ARG 1 poseStack
+		ARG 2 nodeCollector
+		ARG 3 packedLight
+		ARG 4 packedOverlay
 	METHOD visitExtents (Ljava/util/function/Consumer;)V
 		ARG 1 visitor
 	CLASS LayerRenderState
@@ -19,11 +19,6 @@ CLASS net/minecraft/client/renderer/item/ItemStackRenderState
 			ARG 0 specialRenderer
 		METHOD prepareTintLayers (I)[I
 			ARG 1 count
-		METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V
-			ARG 1 poseStack
-			ARG 2 bufferSource
-			ARG 3 packedLight
-			ARG 4 packedOverlay
 		METHOD setExtents (Ljava/util/function/Supplier;)V
 			ARG 1 extents
 		METHOD setFoilType (Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
@@ -39,3 +34,8 @@ CLASS net/minecraft/client/renderer/item/ItemStackRenderState
 		METHOD setupSpecialModel (Lnet/minecraft/client/renderer/special/SpecialModelRenderer;Ljava/lang/Object;)V
 			ARG 1 renderer
 			ARG 2 argument
+		METHOD submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;II)V
+			ARG 1 poseStack
+			ARG 2 nodeCollector
+			ARG 3 packedLight
+			ARG 4 packedOverlay

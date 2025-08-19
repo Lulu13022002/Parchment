@@ -1,7 +1,7 @@
 CLASS net/minecraft/client/renderer/entity/ItemEntityRenderer
-	METHOD renderMultipleFromCount (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/client/renderer/entity/state/ItemClusterRenderState;Lnet/minecraft/util/RandomSource;)V
+	METHOD renderMultipleFromCount (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/ItemClusterRenderState;Lnet/minecraft/util/RandomSource;)V
 		ARG 0 poseStack
-		ARG 1 bufferSource
+		ARG 1 nodeCollector
 		ARG 2 packedLight
 		ARG 3 renderState
 		ARG 4 random

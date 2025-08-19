@@ -45,6 +45,8 @@ CLASS net/minecraft/client/Minecraft
 	METHOD disconnect (Lnet/minecraft/client/gui/screens/Screen;Z)V
 		ARG 1 nextScreen
 		ARG 2 keepResourcePacks
+	METHOD disconnectFromWorld (Lnet/minecraft/network/chat/Component;)V
+		ARG 1 reason
 	METHOD doWorldLoad (Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Z)V
 		ARG 1 levelStorage
 		ARG 2 packRepository
@@ -74,8 +76,6 @@ CLASS net/minecraft/client/Minecraft
 	METHOD finishProfilers (ZLnet/minecraft/util/profiling/SingleTickProfiler;)V
 		ARG 1 renderFpsPie
 		ARG 2 profiler
-	METHOD forceSetScreen (Lnet/minecraft/client/gui/screens/Screen;)V
-		ARG 1 screen
 	METHOD formatSeconds (D)Ljava/lang/String;
 		ARG 0 seconds
 	METHOD getInstance ()Lnet/minecraft/client/Minecraft;
@@ -137,6 +137,8 @@ CLASS net/minecraft/client/Minecraft
 		ARG 1 loadingGui
 	METHOD setScreen (Lnet/minecraft/client/gui/screens/Screen;)V
 		ARG 1 guiScreen
+	METHOD setScreenAndShow (Lnet/minecraft/client/gui/screens/Screen;)V
+		ARG 1 screen
 	METHOD setWindowActive (Z)V
 		ARG 1 focused
 	METHOD shouldEntityAppearGlowing (Lnet/minecraft/world/entity/Entity;)Z
@@ -159,8 +161,6 @@ CLASS net/minecraft/client/Minecraft
 		ARG 1 mipMapLevel
 	METHOD updateReportEnvironment (Lnet/minecraft/client/multiplayer/chat/report/ReportEnvironment;)V
 		ARG 1 reportEnvironment
-	METHOD updateScreenAndTick (Lnet/minecraft/client/gui/screens/Screen;)V
-		ARG 1 screen
 	METHOD useAmbientOcclusion ()Z
 		COMMENT Returns if ambient occlusion is enabled
 	METHOD wrapRunnable (Ljava/lang/Runnable;)Ljava/lang/Runnable;

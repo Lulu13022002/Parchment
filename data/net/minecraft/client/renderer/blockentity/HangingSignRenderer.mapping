@@ -9,10 +9,10 @@ CLASS net/minecraft/client/renderer/blockentity/HangingSignRenderer
 		ARG 1 attachmentType
 	METHOD lambda$new$1 (Lnet/minecraft/world/level/block/state/properties/WoodType;)Ljava/util/stream/Stream;
 		ARG 0 woodType
-	METHOD renderInHand (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/client/model/Model$Simple;Lnet/minecraft/client/resources/model/Material;)V
+	METHOD submitSpecial (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/model/Model$Simple;Lnet/minecraft/client/resources/model/Material;)V
 		ARG 0 materials
 		ARG 1 poseStack
-		ARG 2 bufferSource
+		ARG 2 nodeCollector
 		ARG 3 packedLight
 		ARG 4 packedOverlay
 		ARG 5 model

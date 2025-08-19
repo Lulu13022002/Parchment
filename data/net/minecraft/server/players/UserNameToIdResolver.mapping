@@ -7,7 +7,5 @@ CLASS net/minecraft/server/players/UserNameToIdResolver
 		ARG 1 name
 	METHOD get (Ljava/util/UUID;)Ljava/util/Optional;
 		ARG 1 uuid
-	METHOD getAsync (Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture;
-		ARG 1 name
 	METHOD resolveOfflineUsers (Z)V
 		ARG 1 resolveOfflineUsers

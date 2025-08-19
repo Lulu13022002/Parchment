@@ -1,16 +1,12 @@
 CLASS net/minecraft/client/resources/SkinManager
-	METHOD <init> (Ljava/nio/file/Path;Lcom/mojang/authlib/minecraft/MinecraftSessionService;Ljava/util/concurrent/Executor;)V
+	METHOD <init> (Ljava/nio/file/Path;Lnet/minecraft/server/Services;Ljava/util/concurrent/Executor;)V
 		ARG 1 skinDirectory
-		ARG 2 sessionService
+		ARG 2 services
 		ARG 3 executor
-	METHOD getInsecureSkin (Lcom/mojang/authlib/GameProfile;)Lnet/minecraft/client/resources/PlayerSkin;
+	METHOD createLookup (Lcom/mojang/authlib/GameProfile;Z)Ljava/util/function/Supplier;
 		ARG 1 profile
-	METHOD getInsecureSkin (Lcom/mojang/authlib/GameProfile;Lnet/minecraft/client/resources/PlayerSkin;)Lnet/minecraft/client/resources/PlayerSkin;
-		ARG 1 profile
-		ARG 2 defaultSkin
-	METHOD getOrLoad (Lcom/mojang/authlib/GameProfile;)Ljava/util/concurrent/CompletableFuture;
-		ARG 1 profile
-	METHOD lookupInsecure (Lcom/mojang/authlib/GameProfile;)Ljava/util/function/Supplier;
+		ARG 2 requireSecure
+	METHOD get (Lcom/mojang/authlib/GameProfile;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 profile
 	METHOD registerTextures (Ljava/util/UUID;Lcom/mojang/authlib/minecraft/MinecraftProfileTextures;)Ljava/util/concurrent/CompletableFuture;
 		ARG 1 uuid

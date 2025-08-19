@@ -1,12 +1,10 @@
 CLASS net/minecraft/client/renderer/blockentity/PistonHeadRenderer
 	METHOD <init> (Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;)V
 		ARG 1 context
-	METHOD renderBlock (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/level/Level;ZI)V
-		ARG 1 pos
-		ARG 2 state
-		ARG 3 poseStack
-		ARG 4 bufferSource
+	METHOD submitMovingBlock (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Holder;Lnet/minecraft/world/level/Level;)V
+		ARG 0 poseStack
+		ARG 1 nodeCollector
+		ARG 2 blockPos
+		ARG 3 blockState
+		ARG 4 biome
 		ARG 5 level
-		ARG 6 extended
-			COMMENT if {@code true}, checks all sides before rendering via {@link net.minecraft.world.level.block.Block#shouldRenderFace}
-		ARG 7 packedOverlay

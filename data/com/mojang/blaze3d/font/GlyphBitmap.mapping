@@ -1,4 +1,4 @@
-CLASS com/mojang/blaze3d/font/SheetGlyphInfo
+CLASS com/mojang/blaze3d/font/GlyphBitmap
 	METHOD upload (IILcom/mojang/blaze3d/textures/GpuTexture;)V
 		ARG 1 x
 		ARG 2 y

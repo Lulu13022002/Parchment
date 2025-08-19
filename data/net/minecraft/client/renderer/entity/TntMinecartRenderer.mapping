@@ -4,4 +4,4 @@ CLASS net/minecraft/client/renderer/entity/TntMinecartRenderer
 		ARG 1 poseStack
 		ARG 2 nodeCollector
 		ARG 3 packedLight
-		ARG 4 withOverlay
+		ARG 4 flash

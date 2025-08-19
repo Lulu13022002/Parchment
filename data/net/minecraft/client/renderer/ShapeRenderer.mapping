@@ -25,8 +25,8 @@ CLASS net/minecraft/client/renderer/ShapeRenderer
 		ARG 9 green
 		ARG 10 blue
 		ARG 11 alpha
-	METHOD renderFace (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/core/Direction;FFFFFFFFFF)V
-		ARG 0 poseStack
+	METHOD renderFace (Lorg/joml/Matrix4f;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/core/Direction;FFFFFFFFFF)V
+		ARG 0 pose
 		ARG 1 consumer
 		ARG 2 face
 		ARG 3 x1
@@ -39,8 +39,8 @@ CLASS net/minecraft/client/renderer/ShapeRenderer
 		ARG 10 green
 		ARG 11 blue
 		ARG 12 alpha
-	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDDDDFFFF)V
-		ARG 0 poseStack
+	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDDDDFFFF)V
+		ARG 0 pose
 		ARG 1 consumer
 		ARG 2 minX
 		ARG 4 minY
@@ -52,8 +52,8 @@ CLASS net/minecraft/client/renderer/ShapeRenderer
 		ARG 15 green
 		ARG 16 blue
 		ARG 17 alpha
-	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDDDDFFFFFFF)V
-		ARG 0 poseStack
+	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDDDDFFFFFFF)V
+		ARG 0 pose
 		ARG 1 consumer
 		ARG 2 minX
 		ARG 4 minY
@@ -68,8 +68,8 @@ CLASS net/minecraft/client/renderer/ShapeRenderer
 		ARG 18 red2
 		ARG 19 green2
 		ARG 20 blue2
-	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/phys/AABB;FFFF)V
-		ARG 0 poseStack
+	METHOD renderLineBox (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/phys/AABB;FFFF)V
+		ARG 0 pose
 		ARG 1 consumer
 		ARG 2 box
 		ARG 3 red

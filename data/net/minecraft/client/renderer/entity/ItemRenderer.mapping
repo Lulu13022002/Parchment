@@ -40,24 +40,15 @@ CLASS net/minecraft/client/renderer/entity/ItemRenderer
 		ARG 3 tintLayers
 		ARG 4 packedLight
 		ARG 5 packedOverlay
-	METHOD renderStatic (Lnet/minecraft/world/entity/ItemOwner;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/level/Level;III)V
+	METHOD renderUpwardsFrom (Lnet/minecraft/world/entity/ItemOwner;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/level/Level;III)V
 		ARG 1 owner
 		ARG 2 stack
 		ARG 3 displayContext
 		ARG 4 poseStack
-		ARG 5 bufferSource
+		ARG 5 nodeCollector
 		ARG 6 level
 		ARG 7 packedLight
 		ARG 8 packedOverlay
 		ARG 9 seed
-	METHOD renderStatic (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;IILcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/level/Level;I)V
-		ARG 1 stack
-		ARG 2 displayContext
-		ARG 3 packedLight
-		ARG 4 packedOverlay
-		ARG 5 poseStack
-		ARG 6 bufferSource
-		ARG 7 level
-		ARG 8 seed
 	METHOD useTransparentGlint (Lnet/minecraft/client/renderer/RenderType;)Z
 		ARG 0 renderType

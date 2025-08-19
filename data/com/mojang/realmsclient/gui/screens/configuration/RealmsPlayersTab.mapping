@@ -3,7 +3,10 @@ CLASS com/mojang/realmsclient/gui/screens/configuration/RealmsPlayersTab
 		ARG 1 configurationScreen
 		ARG 2 minecraft
 		ARG 3 serverData
-	CLASS Entry
+	CLASS HeaderEntry
+		METHOD <init> (Lcom/mojang/realmsclient/gui/screens/configuration/RealmsPlayersTab;Lnet/minecraft/client/gui/Font;)V
+			ARG 2 font
+	CLASS PlayerEntry
 		METHOD <init> (Lcom/mojang/realmsclient/gui/screens/configuration/RealmsPlayersTab;Lcom/mojang/realmsclient/dto/PlayerInfo;)V
 			ARG 2 playerInfo
 		METHOD deop (I)V
@@ -14,6 +17,8 @@ CLASS com/mojang/realmsclient/gui/screens/configuration/RealmsPlayersTab
 			ARG 2 button
 		METHOD lambda$new$4 (ILnet/minecraft/client/gui/components/Button;)V
 			ARG 2 button
+		METHOD lambda$uninvite$14 (Lcom/mojang/realmsclient/dto/PlayerInfo;IZ)V
+			ARG 3 confirmed
 		METHOD op (I)V
 			ARG 1 player
 		METHOD uninvite (I)V
@@ -24,3 +29,7 @@ CLASS com/mojang/realmsclient/gui/screens/configuration/RealmsPlayersTab
 		METHOD <init> (Lcom/mojang/realmsclient/gui/screens/configuration/RealmsPlayersTab;II)V
 			ARG 2 width
 			ARG 3 height
+		METHOD populateList (Lcom/mojang/realmsclient/dto/RealmsServer;)V
+			ARG 1 server
+		METHOD updateList (Lcom/mojang/realmsclient/dto/RealmsServer;)V
+			ARG 1 server

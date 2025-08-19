@@ -7,7 +7,7 @@ CLASS net/minecraft/world/entity/projectile/Projectile
 		ARG 2 damageSource
 	METHOD canHitEntity (Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 target
-	METHOD deflect (Lnet/minecraft/world/entity/projectile/ProjectileDeflection;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity;Z)Z
+	METHOD deflect (Lnet/minecraft/world/entity/projectile/ProjectileDeflection;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/EntityReference;Z)Z
 		ARG 1 deflection
 		ARG 2 entity
 		ARG 3 owner
@@ -33,9 +33,8 @@ CLASS net/minecraft/world/entity/projectile/Projectile
 		ARG 1 targetRotation
 	METHOD mayBreak (Lnet/minecraft/server/level/ServerLevel;)Z
 		ARG 1 level
-	METHOD onDeflection (Lnet/minecraft/world/entity/Entity;Z)V
-		ARG 1 entity
-		ARG 2 deflectedByPlayer
+	METHOD onDeflection (Z)V
+		ARG 1 deflectedByPlayer
 	METHOD onHit (Lnet/minecraft/world/phys/HitResult;)V
 		COMMENT Called when this projectile hits a block or entity.
 		ARG 1 result

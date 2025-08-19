@@ -35,6 +35,9 @@ CLASS net/minecraft/client/multiplayer/ClientPacketListener
 		ARG 1 name
 	METHOD getPlayerInfo (Ljava/util/UUID;)Lnet/minecraft/client/multiplayer/PlayerInfo;
 		ARG 1 uniqueId
+	METHOD getPlayerInfoIgnoreCase (Ljava/lang/String;)Lnet/minecraft/client/multiplayer/PlayerInfo;
+		COMMENT Gets the client's description information about another player on the server.
+		ARG 1 name
 	METHOD handleAddEntity (Lnet/minecraft/network/protocol/game/ClientboundAddEntityPacket;)V
 		COMMENT Spawns an instance of the {@link net.minecraft.world.entity.EntityType} indicated by the packet and sets its position and momentum
 		ARG 1 packet
