@@ -19,15 +19,11 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 		COMMENT Returns the server message of the day
 	METHOD getServerPort ()I
 		COMMENT Returns the server's port.
-	METHOD getSpawnProtectionRadius ()I
-		COMMENT Return the spawn protection area's size.
 	METHOD handleConsoleInput (Ljava/lang/String;Lnet/minecraft/commands/CommandSourceStack;)V
 		ARG 1 msg
 		ARG 2 source
 	METHOD initServer ()Z
 		COMMENT Initialises the server and starts it.
-	METHOD isCommandBlockEnabled ()Z
-		COMMENT Return whether command blocks are enabled.
 	METHOD isEpollEnabled ()Z
 		COMMENT Get if native transport should be used. Native transport means linux server performance improvements and optimized packet sending/receiving on linux
 	METHOD isPublished ()Z
@@ -36,8 +32,6 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 player
-	METHOD lambda$storeUsingWhiteList$4 (ZLnet/minecraft/server/dedicated/DedicatedServerProperties;)Lnet/minecraft/server/dedicated/DedicatedServerProperties;
-		ARG 2 properties
 	METHOD onServerExit ()V
 		COMMENT Directly calls System.exit(0), instantly killing the program.
 	METHOD parseBugReportLink (Lnet/minecraft/server/dedicated/DedicatedServerProperties;)Ljava/util/Optional;
@@ -45,9 +39,37 @@ CLASS net/minecraft/server/dedicated/DedicatedServer
 	METHOD runCommand (Ljava/lang/String;)Ljava/lang/String;
 		COMMENT Handle a command received by a RconClient instance
 		ARG 1 command
+	METHOD setAcceptsTransfers (Z)V
+		ARG 1 acceptsTransfers
+	METHOD setAllowFlight (Z)V
+		ARG 1 allowFlight
+	METHOD setDifficulty (Lnet/minecraft/world/Difficulty;)V
+		ARG 1 difficulty
+	METHOD setEntityBroadcastRangePercentage (I)V
+		ARG 1 entityBroadcastRangePercentage
+	METHOD setForceGameMode (Z)V
+		ARG 1 forceGameMode
+	METHOD setGameMode (Lnet/minecraft/world/level/GameType;)V
+		ARG 1 gameMode
+	METHOD setHidesOnlinePlayers (Z)V
+		ARG 1 hidesOnlinePlayers
+	METHOD setMaxPlayers (I)V
+		ARG 1 maxPlayers
+	METHOD setOperatorUserPermissionLevel (I)V
+		ARG 1 operatorUserPermissionLevel
+	METHOD setPauseWhenEmptySeconds (I)V
+		ARG 1 pauseWhenEmptySeconds
 	METHOD setPlayerIdleTimeout (I)V
 		ARG 1 idleTimeout
+	METHOD setRepliesToStatus (Z)V
+		ARG 1 repliesToStatus
+	METHOD setSimulationDistance (I)V
+		ARG 1 simulationDistance
+	METHOD setSpawnProtectionRadius (I)V
+		ARG 1 radius
+	METHOD setStatusHeartbeatInterval (I)V
+		ARG 1 heartbeatInterval
+	METHOD setViewDistance (I)V
+		ARG 1 viewDistance
 	METHOD stopServer ()V
 		COMMENT Saves all necessary data as preparation for stopping the server.
-	METHOD storeUsingWhiteList (Z)V
-		ARG 1 isStoreUsingWhiteList

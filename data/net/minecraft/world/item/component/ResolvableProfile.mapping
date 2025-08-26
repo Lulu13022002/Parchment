@@ -3,9 +3,10 @@ CLASS net/minecraft/world/item/component/ResolvableProfile
 		ARG 1 partialProfile
 	METHOD create (Lcom/mojang/datafixers/util/Either;)Lnet/minecraft/world/item/component/ResolvableProfile;
 		ARG 0 contents
-	METHOD createPartialProfile (Ljava/util/Optional;Ljava/util/Optional;)Lcom/mojang/authlib/GameProfile;
+	METHOD createPartialProfile (Ljava/util/Optional;Ljava/util/Optional;Lcom/mojang/authlib/properties/PropertyMap;)Lcom/mojang/authlib/GameProfile;
 		ARG 0 name
 		ARG 1 id
+		ARG 2 properties
 	METHOD createResolved (Lcom/mojang/authlib/GameProfile;)Lnet/minecraft/world/item/component/ResolvableProfile;
 		ARG 0 profile
 	METHOD createUnresolved (Ljava/util/UUID;)Lnet/minecraft/world/item/component/ResolvableProfile;

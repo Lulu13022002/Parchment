@@ -72,10 +72,6 @@ CLASS net/minecraft/Util
 		ARG 0 filePath
 	METHOD createFileDeletedCheck (Ljava/nio/file/Path;)Ljava/util/function/BooleanSupplier;
 		ARG 0 filePath
-	METHOD createGameProfile (Ljava/util/UUID;Ljava/lang/String;Lcom/mojang/authlib/properties/PropertyMap;)Lcom/mojang/authlib/GameProfile;
-		ARG 0 uuid
-		ARG 1 name
-		ARG 2 properties
 	METHOD createIndexIdentityLookup (Ljava/util/List;)Ljava/util/function/ToIntFunction;
 		ARG 0 list
 	METHOD createIndexLookup (Ljava/util/List;)Ljava/util/function/ToIntFunction;

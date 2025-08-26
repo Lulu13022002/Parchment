@@ -1,7 +1,8 @@
 CLASS net/minecraft/server/players/StoredUserList
-	METHOD <init> (Ljava/io/File;)V
+	METHOD <init> (Ljava/io/File;Lnet/minecraft/server/notifications/NotificationService;)V
 		ARG 1 file
-	METHOD add (Lnet/minecraft/server/players/StoredUserEntry;)V
+		ARG 2 notificationService
+	METHOD add (Lnet/minecraft/server/players/StoredUserEntry;)Z
 		COMMENT Adds an entry to the list
 		ARG 1 entry
 	METHOD contains (Ljava/lang/Object;)Z
@@ -15,9 +16,9 @@ CLASS net/minecraft/server/players/StoredUserList
 		ARG 1 user
 	METHOD lambda$save$0 (Lnet/minecraft/server/players/StoredUserEntry;)Lcom/google/gson/JsonObject;
 		ARG 0 storedEntry
-	METHOD remove (Ljava/lang/Object;)V
+	METHOD remove (Ljava/lang/Object;)Z
 		ARG 1 user
-	METHOD remove (Lnet/minecraft/server/players/StoredUserEntry;)V
+	METHOD remove (Lnet/minecraft/server/players/StoredUserEntry;)Z
 		ARG 1 entry
 	METHOD removeExpired ()V
 		COMMENT Removes expired entries from the list. See {@link StoredUserEntry#hasExpired()}

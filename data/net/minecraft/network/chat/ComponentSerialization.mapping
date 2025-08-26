@@ -1,16 +1,17 @@
 CLASS net/minecraft/network/chat/ComponentSerialization
+	METHOD bootstrap (Lnet/minecraft/util/ExtraCodecs$LateBoundIdMapper;)V
+		ARG 0 idMapper
 	METHOD createCodec (Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;
 		ARG 0 codec
 	METHOD createFromList (Ljava/util/List;)Lnet/minecraft/network/chat/MutableComponent;
 		ARG 0 components
-	METHOD createLegacyComponentMatcher ([Lnet/minecraft/util/StringRepresentable;Ljava/util/function/Function;Ljava/util/function/Function;Ljava/lang/String;)Lcom/mojang/serialization/MapCodec;
-		ARG 0 types
+	METHOD createLegacyComponentMatcher (Lnet/minecraft/util/ExtraCodecs$LateBoundIdMapper;Ljava/util/function/Function;Ljava/lang/String;)Lcom/mojang/serialization/MapCodec;
+		ARG 0 idMapper
 		ARG 1 codecGetter
-		ARG 2 typeGetter
-		ARG 3 typeFieldName
+		ARG 2 typeFieldName
 	METHOD flatRestrictedCodec (I)Lcom/mojang/serialization/Codec;
 		ARG 0 maxSize
-	METHOD lambda$createCodec$2 (Lcom/mojang/serialization/MapCodec;Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+	METHOD lambda$createCodec$1 (Lcom/mojang/serialization/MapCodec;Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 2 instance
 	CLASS 1
 		METHOD asJsonOps (Lcom/mojang/serialization/DynamicOps;)Lcom/mojang/serialization/DynamicOps;
@@ -26,7 +27,7 @@ CLASS net/minecraft/network/chat/ComponentSerialization
 			ARG 1 ops
 			ARG 2 component
 	CLASS FuzzyCodec
-		METHOD <init> (Ljava/util/List;Ljava/util/function/Function;)V
+		METHOD <init> (Ljava/util/Collection;Ljava/util/function/Function;)V
 			ARG 1 codecs
 			ARG 2 encoderGetter
 		METHOD decode (Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/MapLike;)Lcom/mojang/serialization/DataResult;

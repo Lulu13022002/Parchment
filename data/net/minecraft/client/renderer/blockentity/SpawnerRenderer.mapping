@@ -1,7 +1,7 @@
 CLASS net/minecraft/client/renderer/blockentity/SpawnerRenderer
 	METHOD <init> (Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;)V
 		ARG 1 context
-	METHOD submitEntityInSpawner (FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;DD)V
+	METHOD submitEntityInSpawner (FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;DDI)V
 		ARG 0 partialTick
 		ARG 1 poseStack
 		ARG 2 nodeCollector
@@ -9,3 +9,4 @@ CLASS net/minecraft/client/renderer/blockentity/SpawnerRenderer
 		ARG 4 entityRenderer
 		ARG 5 oSpin
 		ARG 7 spin
+		ARG 9 packedLight

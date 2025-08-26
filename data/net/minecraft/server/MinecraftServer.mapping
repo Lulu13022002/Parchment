@@ -45,6 +45,8 @@ CLASS net/minecraft/server/MinecraftServer
 	METHOD enableForcedFeaturePacks (Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/world/flag/FeatureFlagSet;)V
 		ARG 0 packRepository
 		ARG 1 enabledFeatures
+	METHOD enforceGameTypeForPlayers (Lnet/minecraft/world/level/GameType;)I
+		ARG 1 gameMode
 	METHOD fillServerSystemReport (Lnet/minecraft/SystemReport;)Lnet/minecraft/SystemReport;
 		ARG 1 report
 	METHOD fillSystemReport (Lnet/minecraft/SystemReport;)Lnet/minecraft/SystemReport;
@@ -60,8 +62,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 dimension
 	METHOD getLocalIp ()Ljava/lang/String;
 		COMMENT "getServerIp" is already taken, but both return the hostname.
-	METHOD getMaxPlayers ()I
-		COMMENT Returns the maximum number of players allowed on the server.
 	METHOD getPlayerCount ()I
 		COMMENT Returns the number of players currently on the server.
 	METHOD getPlayerNames ()[Ljava/lang/String;
@@ -77,8 +77,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 safeMode
 	METHOD getServerVersion ()Ljava/lang/String;
 		COMMENT Returns the server's Minecraft version as string.
-	METHOD getSpawnProtectionRadius ()I
-		COMMENT Return the spawn protection area's size.
 	METHOD getWorldPath (Lnet/minecraft/world/level/storage/LevelResource;)Ljava/nio/file/Path;
 		ARG 1 levelResource
 	METHOD halt (Z)V
@@ -89,6 +87,8 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 2 payload
 	METHOD initServer ()Z
 		COMMENT Initialises the server and starts it.
+	METHOD isAllowedToEnterPortal (Lnet/minecraft/world/level/Level;)Z
+		ARG 1 level
 	METHOD isCommandBlockEnabled ()Z
 		COMMENT Return whether command blocks are enabled.
 	METHOD isDemo ()Z
@@ -97,8 +97,6 @@ CLASS net/minecraft/server/MinecraftServer
 		COMMENT Get if native transport should be used. Native transport means linux server performance improvements and optimized packet sending/receiving on linux
 	METHOD isHardcore ()Z
 		COMMENT Defaults to {@code false}.
-	METHOD isLevelEnabled (Lnet/minecraft/world/level/Level;)Z
-		ARG 1 level
 	METHOD isPublished ()Z
 		COMMENT Returns {@code true} if this integrated server is open to LAN
 	METHOD isSingleplayerOwner (Lnet/minecraft/server/players/NameAndId;)Z
@@ -107,8 +105,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 level
 		ARG 2 pos
 		ARG 3 player
-	METHOD kickUnlistedPlayers (Lnet/minecraft/commands/CommandSourceStack;)V
-		ARG 1 source
 	METHOD lambda$getSelectedPacks$31 (Ljava/util/Collection;Ljava/lang/String;)Z
 		ARG 1 packId
 	METHOD lambda$loadStatusIcon$12 (Ljava/nio/file/Path;)Z
@@ -136,6 +132,9 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 3 header
 	METHOD logTickMethodTime (J)V
 		ARG 1 startTime
+	METHOD onGameRuleChanged (Ljava/lang/String;Lnet/minecraft/world/level/GameRules$Value;)V
+		ARG 1 key
+		ARG 2 value
 	METHOD onServerCrash (Lnet/minecraft/CrashReport;)V
 		COMMENT Called on exit from the main run() loop.
 		ARG 1 report
@@ -167,6 +166,8 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 3 force
 	METHOD sendDifficultyUpdate (Lnet/minecraft/server/level/ServerPlayer;)V
 		ARG 1 player
+	METHOD setAutoSave (Z)Z
+		ARG 1 autoSave
 	METHOD setDefaultGameType (Lnet/minecraft/world/level/GameType;)V
 		COMMENT Sets the game type for all worlds.
 		ARG 1 gameMode
@@ -182,8 +183,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 enforceWhitelist
 	METHOD setFatalException (Ljava/lang/RuntimeException;)V
 		ARG 0 fatalException
-	METHOD setFlightAllowed (Z)V
-		ARG 1 allow
 	METHOD setId (Ljava/lang/String;)V
 		ARG 1 serverId
 	METHOD setInitialSpawn (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/storage/ServerLevelData;ZZLnet/minecraft/server/level/progress/LevelLoadListener;)V
@@ -204,12 +203,12 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 port
 	METHOD setPreventProxyConnections (Z)V
 		ARG 1 preventProxyConnections
-	METHOD setPvpAllowed (Z)V
-		ARG 1 allowPvp
 	METHOD setSingleplayerProfile (Lcom/mojang/authlib/GameProfile;)V
 		ARG 1 singleplayerProfile
 	METHOD setUsesAuthentication (Z)V
 		ARG 1 online
+	METHOD setUsingWhitelist (Z)V
+		ARG 1 usingWhitelist
 	METHOD setupDebugLevel (Lnet/minecraft/world/level/storage/WorldData;)V
 		ARG 1 worldData
 	METHOD shouldRun (Lnet/minecraft/server/TickTask;)Z

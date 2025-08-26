@@ -16,7 +16,7 @@ CLASS net/minecraft/client/renderer/blockentity/SkullBlockRenderer
 	METHOD resolveSkullRenderType (Lnet/minecraft/world/level/block/SkullBlock$Type;Lnet/minecraft/world/level/block/entity/SkullBlockEntity;)Lnet/minecraft/client/renderer/RenderType;
 		ARG 1 type
 		ARG 2 blockEntity
-	METHOD submitSkull (Lnet/minecraft/core/Direction;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/model/SkullModelBase;Lnet/minecraft/client/renderer/RenderType;I)V
+	METHOD submitSkull (Lnet/minecraft/core/Direction;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/model/SkullModelBase;Lnet/minecraft/client/renderer/RenderType;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
 		ARG 0 direction
 		ARG 1 yRot
 		ARG 2 mouthAnimation
@@ -26,3 +26,4 @@ CLASS net/minecraft/client/renderer/blockentity/SkullBlockRenderer
 		ARG 6 model
 		ARG 7 renderType
 		ARG 8 outlineColor
+		ARG 9 crumblingOverlay
