@@ -11,7 +11,7 @@ CLASS net/minecraft/client/particle/SpellParticle
 	CLASS Provider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprite
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
+		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
 			ARG 3 x
@@ -23,8 +23,7 @@ CLASS net/minecraft/client/particle/SpellParticle
 	CLASS WitchProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprite
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
-			ARG 1 type
+		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 2 level
 			ARG 3 x
 			ARG 5 y
@@ -35,8 +34,7 @@ CLASS net/minecraft/client/particle/SpellParticle
 	CLASS InstantProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprite
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
-			ARG 1 type
+		METHOD createParticle (Lnet/minecraft/core/particles/SpellParticleOption;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 2 level
 			ARG 3 x
 			ARG 5 y

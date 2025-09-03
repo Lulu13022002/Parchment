@@ -1,5 +1,5 @@
 CLASS net/minecraft/client/particle/TrailParticle
-	METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/world/phys/Vec3;I)V
+	METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/world/phys/Vec3;ILnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V
 		ARG 1 level
 		ARG 2 x
 		ARG 4 y
@@ -9,6 +9,7 @@ CLASS net/minecraft/client/particle/TrailParticle
 		ARG 12 zSpeed
 		ARG 14 target
 		ARG 15 color
+		ARG 16 sprite
 	CLASS Provider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprite

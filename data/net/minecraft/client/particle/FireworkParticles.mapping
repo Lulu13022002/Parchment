@@ -44,8 +44,7 @@ CLASS net/minecraft/client/particle/FireworkParticles
 	CLASS FlashProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprite
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
-			ARG 1 type
+		METHOD createParticle (Lnet/minecraft/core/particles/ColorParticleOption;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 2 level
 			ARG 3 x
 			ARG 5 y
@@ -64,10 +63,6 @@ CLASS net/minecraft/client/particle/FireworkParticles
 			ARG 12 zSpeed
 			ARG 14 engine
 			ARG 15 sprites
-		METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
-			ARG 1 consumer
-			ARG 2 camera
-			ARG 3 partialTick
 		METHOD setTrail (Z)V
 			ARG 1 trail
 		METHOD setTwinkle (Z)V
@@ -75,7 +70,7 @@ CLASS net/minecraft/client/particle/FireworkParticles
 	CLASS SparkProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprites
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
+		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
 			ARG 3 x
@@ -87,7 +82,3 @@ CLASS net/minecraft/client/particle/FireworkParticles
 	CLASS OverlayParticle
 		METHOD getQuadSize (F)F
 			ARG 1 scaleFactor
-		METHOD render (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/Camera;F)V
-			ARG 1 consumer
-			ARG 2 camera
-			ARG 3 partialTick

@@ -97,30 +97,30 @@ CLASS net/minecraft/server/level/ServerPlayer
 		COMMENT Returns if other players can attack this player
 	METHOD isReachableBedBlock (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
-	METHOD lambda$awardRecipesByKey$15 (Lnet/minecraft/resources/ResourceKey;)Ljava/util/stream/Stream;
+	METHOD lambda$awardRecipesByKey$17 (Lnet/minecraft/resources/ResourceKey;)Ljava/util/stream/Stream;
 		ARG 1 key
-	METHOD lambda$awardStat$14 (ILnet/minecraft/world/scores/ScoreAccess;)V
+	METHOD lambda$awardStat$16 (ILnet/minecraft/world/scores/ScoreAccess;)V
 		ARG 1 score
-	METHOD lambda$die$6 (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Style;)Lnet/minecraft/network/chat/Style;
+	METHOD lambda$die$8 (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Style;)Lnet/minecraft/network/chat/Style;
 		ARG 1 style
-	METHOD lambda$drop$17 (Lnet/minecraft/world/entity/player/Inventory;I)V
+	METHOD lambda$drop$19 (Lnet/minecraft/world/entity/player/Inventory;I)V
 		ARG 2 slot
-	METHOD lambda$findRespawnAndUseSpawnBlock$10 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
+	METHOD lambda$findRespawnAndUseSpawnBlock$12 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
 		ARG 1 pos
-	METHOD lambda$findRespawnAndUseSpawnBlock$11 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
+	METHOD lambda$findRespawnAndUseSpawnBlock$13 (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/server/level/ServerPlayer$RespawnPosAngle;
 		ARG 1 pos
 	METHOD lambda$new$0 (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/resources/ResourceKey;Ljava/util/function/Consumer;)V
 		ARG 1 recipe
 		ARG 2 output
 	METHOD lambda$readAdditionalSaveData$1 (Lnet/minecraft/resources/ResourceKey;)Z
 		ARG 1 key
-	METHOD lambda$startSleepInBed$12 (Lnet/minecraft/world/entity/monster/Monster;)Z
+	METHOD lambda$startSleepInBed$14 (Lnet/minecraft/world/entity/monster/Monster;)Z
 		ARG 1 monster
-	METHOD lambda$tellNeutralMobsThatIDied$8 (Lnet/minecraft/world/entity/Mob;)Z
+	METHOD lambda$tellNeutralMobsThatIDied$10 (Lnet/minecraft/world/entity/Mob;)Z
 		ARG 0 mob
-	METHOD lambda$tellNeutralMobsThatIDied$9 (Lnet/minecraft/world/entity/Mob;)V
+	METHOD lambda$tellNeutralMobsThatIDied$11 (Lnet/minecraft/world/entity/Mob;)V
 		ARG 1 mob
-	METHOD lambda$updateScoreForCriteria$5 (ILnet/minecraft/world/scores/ScoreAccess;)V
+	METHOD lambda$updateScoreForCriteria$7 (ILnet/minecraft/world/scores/ScoreAccess;)V
 		ARG 1 score
 	METHOD loadAndSpawnEnderPearl (Lnet/minecraft/world/level/storage/ValueInput;)V
 		ARG 1 input
@@ -161,6 +161,8 @@ CLASS net/minecraft/server/level/ServerPlayer
 	METHOD placeEnderPearlTicket (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/ChunkPos;)J
 		ARG 0 level
 		ARG 1 pos
+	METHOD playShoulderEntityAmbientSound (Lnet/minecraft/nbt/CompoundTag;)V
+		ARG 1 tag
 	METHOD processPortalCooldown ()V
 		COMMENT Decrements the counter for the remaining time until the entity may use a portal again.
 	METHOD readPlayerMode (Lnet/minecraft/world/level/storage/ValueInput;Ljava/lang/String;)Lnet/minecraft/world/level/GameType;
@@ -174,6 +176,8 @@ CLASS net/minecraft/server/level/ServerPlayer
 		COMMENT This function is called when a player's inventory is sent to him, {@code lastSentHealth} is updated on any dimension transitions, then reset.
 	METHOD resetStat (Lnet/minecraft/stats/Stat;)V
 		ARG 1 stat
+	METHOD respawnEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)V
+		ARG 1 tag
 	METHOD restoreFrom (Lnet/minecraft/server/level/ServerPlayer;Z)V
 		ARG 1 that
 		ARG 2 keepEverything
@@ -203,6 +207,8 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 1 chatSession
 	METHOD setChunkTrackingView (Lnet/minecraft/server/level/ChunkTrackingView;)V
 		ARG 1 chunkTrackingView
+	METHOD setEntityOnShoulder (Lnet/minecraft/nbt/CompoundTag;)Z
+		ARG 1 tag
 	METHOD setExperienceLevels (I)V
 		ARG 1 level
 	METHOD setExperiencePoints (I)V
@@ -222,6 +228,10 @@ CLASS net/minecraft/server/level/ServerPlayer
 		ARG 2 displayInChat
 	METHOD setServerLevel (Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 level
+	METHOD setShoulderEntityLeft (Lnet/minecraft/nbt/CompoundTag;)V
+		ARG 1 tag
+	METHOD setShoulderEntityRight (Lnet/minecraft/nbt/CompoundTag;)V
+		ARG 1 tag
 	METHOD setSpawnExtraParticlesOnFall (Z)V
 		ARG 1 spawnExtraParticlesOnFall
 	METHOD shouldFilterMessageTo (Lnet/minecraft/server/level/ServerPlayer;)Z

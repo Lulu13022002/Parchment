@@ -249,9 +249,8 @@ CLASS net/minecraft/server/level/ServerLevel
 	METHOD tickChunk (Lnet/minecraft/world/level/chunk/LevelChunk;I)V
 		ARG 1 chunk
 		ARG 2 randomTickSpeed
-	METHOD tickCustomSpawners (ZZ)V
+	METHOD tickCustomSpawners (Z)V
 		ARG 1 spawnEnemies
-		ARG 2 spawnFriendlies
 	METHOD tickFluid (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/material/Fluid;)V
 		ARG 1 pos
 		ARG 2 fluid

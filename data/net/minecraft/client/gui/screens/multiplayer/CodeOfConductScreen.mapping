@@ -1,13 +1,15 @@
 CLASS net/minecraft/client/gui/screens/multiplayer/CodeOfConductScreen
-	METHOD <init> (Lnet/minecraft/client/multiplayer/ServerData;Ljava/lang/String;Lit/unimi/dsi/fastutil/booleans/BooleanConsumer;)V
+	METHOD <init> (Lnet/minecraft/client/multiplayer/ServerData;Lnet/minecraft/client/gui/screens/Screen;Ljava/lang/String;Lit/unimi/dsi/fastutil/booleans/BooleanConsumer;)V
 		ARG 1 serverData
-		ARG 2 codeOfConductText
-		ARG 3 resultConsumer
-	METHOD <init> (Lnet/minecraft/client/multiplayer/ServerData;Lnet/minecraft/network/chat/Component;Ljava/lang/String;Lit/unimi/dsi/fastutil/booleans/BooleanConsumer;)V
-		ARG 1 serverData
-		ARG 2 content
+		ARG 2 parent
 		ARG 3 codeOfConductText
 		ARG 4 resultConsumer
+	METHOD <init> (Lnet/minecraft/client/multiplayer/ServerData;Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/network/chat/Component;Ljava/lang/String;Lit/unimi/dsi/fastutil/booleans/BooleanConsumer;)V
+		ARG 1 serverData
+		ARG 2 parent
+		ARG 3 content
+		ARG 4 codeOfConductText
+		ARG 5 resultConsumer
 	METHOD lambda$addFooterButtons$0 (Lnet/minecraft/client/gui/components/Button;)V
 		ARG 1 button
 	METHOD lambda$addFooterButtons$1 (Lnet/minecraft/client/gui/components/Button;)V

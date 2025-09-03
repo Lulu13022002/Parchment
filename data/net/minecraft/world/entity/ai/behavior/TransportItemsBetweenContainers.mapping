@@ -47,6 +47,8 @@ CLASS net/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers
 	METHOD isAnotherMobInteractingWithTarget (Lnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;Lnet/minecraft/world/level/Level;)Z
 		ARG 1 target
 		ARG 2 level
+	METHOD isContainerLocked (Lnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;)Z
+		ARG 1 target
 	METHOD isPickingUpItems (Lnet/minecraft/world/entity/PathfinderMob;)Z
 		ARG 0 mob
 	METHOD isPositionAlreadyVisited (Ljava/util/Set;Ljava/util/Set;Lnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;Lnet/minecraft/world/level/Level;)Z

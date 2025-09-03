@@ -1,30 +1,29 @@
 CLASS com/mojang/blaze3d/platform/InputConstants
-	METHOD getKey (II)Lcom/mojang/blaze3d/platform/InputConstants$Key;
-		ARG 0 keyCode
-		ARG 1 scanCode
 	METHOD getKey (Ljava/lang/String;)Lcom/mojang/blaze3d/platform/InputConstants$Key;
 		ARG 0 name
-	METHOD grabOrReleaseMouse (JIDD)V
+	METHOD getKey (Lnet/minecraft/client/input/KeyEvent;)Lcom/mojang/blaze3d/platform/InputConstants$Key;
+		ARG 0 event
+	METHOD grabOrReleaseMouse (Lcom/mojang/blaze3d/platform/Window;IDD)V
 		ARG 0 window
-		ARG 2 cursorValue
-		ARG 3 xPos
-		ARG 5 yPos
-	METHOD isKeyDown (JI)Z
+		ARG 1 cursorValue
+		ARG 2 xPos
+		ARG 4 yPos
+	METHOD isKeyDown (Lcom/mojang/blaze3d/platform/Window;I)Z
 		ARG 0 window
-		ARG 2 key
-	METHOD setupKeyboardCallbacks (JLorg/lwjgl/glfw/GLFWKeyCallbackI;Lorg/lwjgl/glfw/GLFWCharModsCallbackI;)V
+		ARG 1 key
+	METHOD setupKeyboardCallbacks (Lcom/mojang/blaze3d/platform/Window;Lorg/lwjgl/glfw/GLFWKeyCallbackI;Lorg/lwjgl/glfw/GLFWCharModsCallbackI;)V
 		ARG 0 window
-		ARG 2 keyCallback
-		ARG 3 charModifierCallback
-	METHOD setupMouseCallbacks (JLorg/lwjgl/glfw/GLFWCursorPosCallbackI;Lorg/lwjgl/glfw/GLFWMouseButtonCallbackI;Lorg/lwjgl/glfw/GLFWScrollCallbackI;Lorg/lwjgl/glfw/GLFWDropCallbackI;)V
+		ARG 1 keyCallback
+		ARG 2 charModifierCallback
+	METHOD setupMouseCallbacks (Lcom/mojang/blaze3d/platform/Window;Lorg/lwjgl/glfw/GLFWCursorPosCallbackI;Lorg/lwjgl/glfw/GLFWMouseButtonCallbackI;Lorg/lwjgl/glfw/GLFWScrollCallbackI;Lorg/lwjgl/glfw/GLFWDropCallbackI;)V
 		ARG 0 window
-		ARG 2 cursorPositionCallback
-		ARG 3 mouseButtonCallback
-		ARG 4 scrollCallback
-		ARG 5 dragAndDropCallback
-	METHOD updateRawMouseInput (JZ)V
+		ARG 1 cursorPositionCallback
+		ARG 2 mouseButtonCallback
+		ARG 3 scrollCallback
+		ARG 4 dragAndDropCallback
+	METHOD updateRawMouseInput (Lcom/mojang/blaze3d/platform/Window;Z)V
 		ARG 0 window
-		ARG 2 enableRawMouseMotion
+		ARG 1 enableRawMouseMotion
 	CLASS Key
 		METHOD <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;I)V
 			ARG 1 name

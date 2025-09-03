@@ -106,6 +106,8 @@ CLASS net/minecraft/client/renderer/OrderedSubmitNodeCollector
 		ARG 4 seeThrough
 		ARG 5 packedLight
 		ARG 6 distanceToCameraSq
+	METHOD submitParticleGroup (Lnet/minecraft/client/renderer/SubmitNodeCollector$ParticleGroupRenderer;)V
+		ARG 1 particleGroupRenderer
 	METHOD submitShadow (Lcom/mojang/blaze3d/vertex/PoseStack;FLjava/util/List;)V
 		ARG 1 poseStack
 		ARG 2 radius

@@ -1,9 +1,9 @@
 CLASS net/minecraft/world/level/chunk/ChunkAccess
-	METHOD <init> (Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/chunk/UpgradeData;Lnet/minecraft/world/level/LevelHeightAccessor;Lnet/minecraft/core/Registry;J[Lnet/minecraft/world/level/chunk/LevelChunkSection;Lnet/minecraft/world/level/levelgen/blending/BlendingData;)V
+	METHOD <init> (Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/level/chunk/UpgradeData;Lnet/minecraft/world/level/LevelHeightAccessor;Lnet/minecraft/world/level/chunk/PalettedContainerFactory;J[Lnet/minecraft/world/level/chunk/LevelChunkSection;Lnet/minecraft/world/level/levelgen/blending/BlendingData;)V
 		ARG 1 chunkPos
 		ARG 2 upgradeData
 		ARG 3 levelHeightAccessor
-		ARG 4 biomeRegistry
+		ARG 4 containerFactory
 		ARG 5 inhabitedTime
 		ARG 7 sections
 		ARG 8 blendingData
@@ -61,8 +61,8 @@ CLASS net/minecraft/world/level/chunk/ChunkAccess
 		ARG 0 pos
 	METHOD removeBlockEntity (Lnet/minecraft/core/BlockPos;)V
 		ARG 1 pos
-	METHOD replaceMissingSections (Lnet/minecraft/core/Registry;[Lnet/minecraft/world/level/chunk/LevelChunkSection;)V
-		ARG 0 biomeRegistry
+	METHOD replaceMissingSections (Lnet/minecraft/world/level/chunk/PalettedContainerFactory;[Lnet/minecraft/world/level/chunk/LevelChunkSection;)V
+		ARG 0 containerFactory
 		ARG 1 sections
 	METHOD setAllStarts (Ljava/util/Map;)V
 		ARG 1 structureStarts

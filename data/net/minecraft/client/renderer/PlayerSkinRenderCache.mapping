@@ -7,6 +7,8 @@ CLASS net/minecraft/client/renderer/PlayerSkinRenderCache
 		ARG 1 profile
 	METHOD getOrDefault (Lnet/minecraft/world/item/component/ResolvableProfile;)Lnet/minecraft/client/renderer/PlayerSkinRenderCache$RenderInfo;
 		ARG 1 profile
+	METHOD lookup (Lnet/minecraft/world/item/component/ResolvableProfile;)Ljava/util/concurrent/CompletableFuture;
+		ARG 1 profile
 	METHOD playerSkinRenderType (Lnet/minecraft/client/resources/PlayerSkin;)Lnet/minecraft/client/renderer/RenderType;
 		ARG 0 playerSkin
 	CLASS 1

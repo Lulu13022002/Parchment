@@ -1,8 +1,4 @@
 CLASS net/minecraft/client/gui/screens/inventory/AbstractCommandBlockEditScreen
-	METHOD keyPressed (III)Z
-		ARG 1 keyCode
-		ARG 2 scanCode
-		ARG 3 modifiers
 	METHOD lambda$init$0 (Lnet/minecraft/client/gui/components/CycleButton;Ljava/lang/Boolean;)V
 		ARG 1 outputButton
 		ARG 2 trackOutput

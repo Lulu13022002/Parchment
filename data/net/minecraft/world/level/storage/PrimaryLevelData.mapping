@@ -1,5 +1,5 @@
 CLASS net/minecraft/world/level/storage/PrimaryLevelData
-	METHOD <init> (Lnet/minecraft/nbt/CompoundTag;ZLnet/minecraft/core/BlockPos;FJJIIIZIZZZLnet/minecraft/world/level/border/WorldBorder$Settings;IILjava/util/UUID;Ljava/util/Set;Ljava/util/Set;Lnet/minecraft/world/level/timers/TimerQueue;Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/dimension/end/EndDragonFight$Data;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/world/level/levelgen/WorldOptions;Lnet/minecraft/world/level/storage/PrimaryLevelData$SpecialWorldProperty;Lcom/mojang/serialization/Lifecycle;)V
+	METHOD <init> (Lnet/minecraft/nbt/CompoundTag;ZLnet/minecraft/core/BlockPos;FJJIIIZIZZZLjava/util/Optional;IILjava/util/UUID;Ljava/util/Set;Ljava/util/Set;Lnet/minecraft/world/level/timers/TimerQueue;Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/dimension/end/EndDragonFight$Data;Lnet/minecraft/world/level/LevelSettings;Lnet/minecraft/world/level/levelgen/WorldOptions;Lnet/minecraft/world/level/storage/PrimaryLevelData$SpecialWorldProperty;Lcom/mojang/serialization/Lifecycle;)V
 		ARG 1 loadedPlayerTag
 		ARG 2 wasModded
 		ARG 3 spawnPos
@@ -14,7 +14,7 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 		ARG 14 thundering
 		ARG 15 initialized
 		ARG 16 difficultyLocked
-		ARG 17 worldBorder
+		ARG 17 legacyWorldBorderSettings
 		ARG 18 wanderingTraderSpawnDelay
 		ARG 19 wanderingTraderSpawnChance
 		ARG 20 wanderingTraderId
@@ -113,7 +113,5 @@ CLASS net/minecraft/world/level/storage/PrimaryLevelData
 		ARG 1 chance
 	METHOD setWanderingTraderSpawnDelay (I)V
 		ARG 1 delay
-	METHOD setWorldBorder (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 worldBorder
 	METHOD stringCollectionToTag (Ljava/util/Set;)Lnet/minecraft/nbt/ListTag;
 		ARG 0 stringCollection

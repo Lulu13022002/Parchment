@@ -1,5 +1,5 @@
 CLASS net/minecraft/client/particle/CampfireSmokeParticle
-	METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDZ)V
+	METHOD <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDZLnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V
 		ARG 1 level
 		ARG 2 x
 		ARG 4 y
@@ -8,10 +8,11 @@ CLASS net/minecraft/client/particle/CampfireSmokeParticle
 		ARG 10 ySpeed
 		ARG 12 zSpeed
 		ARG 14 signal
+		ARG 15 sprite
 	CLASS CosyProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprites
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
+		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
 			ARG 3 x
@@ -23,7 +24,7 @@ CLASS net/minecraft/client/particle/CampfireSmokeParticle
 	CLASS SignalProvider
 		METHOD <init> (Lnet/minecraft/client/particle/SpriteSet;)V
 			ARG 1 sprites
-		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)Lnet/minecraft/client/particle/Particle;
+		METHOD createParticle (Lnet/minecraft/core/particles/SimpleParticleType;Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDDLnet/minecraft/util/RandomSource;)Lnet/minecraft/client/particle/Particle;
 			ARG 1 type
 			ARG 2 level
 			ARG 3 x

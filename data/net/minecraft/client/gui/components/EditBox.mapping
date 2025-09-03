@@ -36,19 +36,19 @@ CLASS net/minecraft/client/gui/components/EditBox
 	METHOD applyFormat (Ljava/lang/String;I)Lnet/minecraft/util/FormattedCharSequence;
 		ARG 1 text
 		ARG 2 index
-	METHOD charTyped (CI)Z
-		ARG 1 character
-		ARG 2 modifiers
 	METHOD deleteChars (I)V
 		COMMENT Deletes the given number of characters from the current cursor's position, unless there is currently a selection, in which case the selection is deleted instead.
 		ARG 1 num
 	METHOD deleteCharsToPos (I)V
 		ARG 1 num
-	METHOD deleteText (I)V
+	METHOD deleteText (IZ)V
 		ARG 1 count
+		ARG 2 hasControlDown
 	METHOD deleteWords (I)V
 		COMMENT Deletes the given number of words from the current cursor's position, unless there is currently a selection, in which case the selection is deleted instead.
 		ARG 1 num
+	METHOD findClickedPositionInText (Lnet/minecraft/client/input/MouseButtonEvent;)I
+		ARG 1 event
 	METHOD getCursorPos (I)I
 		ARG 1 delta
 	METHOD getCursorPosition ()I
@@ -75,9 +75,6 @@ CLASS net/minecraft/client/gui/components/EditBox
 		ARG 1 numWords
 		ARG 2 pos
 		ARG 3 skipConsecutiveSpaces
-	METHOD handleClick (DZ)V
-		ARG 1 mouseX
-		ARG 3 select
 	METHOD insertText (Ljava/lang/String;)V
 		COMMENT Adds the given text after the cursor, or replaces the currently selected text if there is a selection.
 		ARG 1 textToWrite
@@ -85,10 +82,6 @@ CLASS net/minecraft/client/gui/components/EditBox
 		COMMENT Gets whether the background and outline of this text box should be drawn ({@code true} if so).
 	METHOD isVisible ()Z
 		COMMENT Returns {@code true} if this textbox is visible.
-	METHOD keyPressed (III)Z
-		ARG 1 keyCode
-		ARG 2 scanCode
-		ARG 3 modifiers
 	METHOD moveCursor (IZ)V
 		ARG 1 delta
 		ARG 2 select
@@ -103,6 +96,8 @@ CLASS net/minecraft/client/gui/components/EditBox
 		ARG 1 newText
 	METHOD scrollTo (I)V
 		ARG 1 position
+	METHOD selectWord (Lnet/minecraft/client/input/MouseButtonEvent;)V
+		ARG 1 event
 	METHOD setBordered (Z)V
 		COMMENT Sets whether the background and outline of this text box should be drawn.
 		ARG 1 enableBackgroundDrawing

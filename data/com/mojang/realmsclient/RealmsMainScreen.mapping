@@ -210,14 +210,14 @@ CLASS com/mojang/realmsclient/RealmsMainScreen
 		METHOD setNotificationCount (I)V
 			ARG 1 notificationCount
 	CLASS RealmSelectionList
-		METHOD addEntriesForNotification (Lcom/mojang/realmsclient/dto/RealmsNotification$VisitUrl;Lcom/mojang/realmsclient/RealmsMainScreen;)V
+		METHOD addEntriesForNotification (Lcom/mojang/realmsclient/dto/RealmsNotification$VisitUrl;Lcom/mojang/realmsclient/RealmsMainScreen;Lcom/mojang/realmsclient/RealmsMainScreen$Entry;)V
 			ARG 1 url
 			ARG 2 mainScreen
-		METHOD refreshEntries (Lcom/mojang/realmsclient/RealmsMainScreen;Lcom/mojang/realmsclient/dto/RealmsServer;)V
+			ARG 3 entry
+		METHOD refreshEntries (Lcom/mojang/realmsclient/RealmsMainScreen;)V
 			ARG 1 screen
-			ARG 2 server
-		METHOD refreshServerEntries (Lcom/mojang/realmsclient/dto/RealmsServer;)V
-			ARG 1 server
+		METHOD refreshServerEntries (Lcom/mojang/realmsclient/RealmsMainScreen$Entry;)V
+			ARG 1 entry
 	CLASS AvailableSnapshotEntry
 		METHOD <init> (Lcom/mojang/realmsclient/RealmsMainScreen;Lcom/mojang/realmsclient/dto/RealmsServer;)V
 			ARG 2 parent
@@ -233,5 +233,5 @@ CLASS com/mojang/realmsclient/RealmsMainScreen
 			ARG 4 widget
 		METHOD refreshLayout (I)V
 			ARG 1 width
-		METHOD updateEntryWidth (I)V
-			ARG 1 entryWidth
+		METHOD textWidth (I)I
+			ARG 0 width

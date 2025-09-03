@@ -5,7 +5,7 @@ CLASS net/minecraft/client/renderer/entity/layers/StuckInBodyLayer
 		ARG 3 modelState
 		ARG 4 texture
 		ARG 5 placementStyle
-	METHOD numStuck (Lnet/minecraft/client/renderer/entity/state/PlayerRenderState;)I
+	METHOD numStuck (Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;)I
 		ARG 1 renderState
 	METHOD snapToFace (F)F
 		ARG 0 value

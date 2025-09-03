@@ -55,5 +55,3 @@ CLASS net/minecraft/world/level/storage/DerivedLevelData
 		ARG 1 chance
 	METHOD setWanderingTraderSpawnDelay (I)V
 		ARG 1 delay
-	METHOD setWorldBorder (Lnet/minecraft/world/level/border/WorldBorder$Settings;)V
-		ARG 1 worldBorder

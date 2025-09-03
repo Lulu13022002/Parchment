@@ -26,9 +26,14 @@ CLASS net/minecraft/client/renderer/entity/EntityRenderDispatcher
 	METHOD fillRendererDetails (Lnet/minecraft/client/renderer/entity/EntityRenderer;Lnet/minecraft/CrashReport;)Lnet/minecraft/CrashReportCategory;
 		ARG 1 renderer
 		ARG 2 crashReport
+	METHOD getAvatarRenderer (Ljava/util/Map;Lnet/minecraft/world/entity/Avatar;)Lnet/minecraft/client/renderer/entity/player/AvatarRenderer;
+		ARG 1 playerRenderers
+		ARG 2 avatar
 	METHOD getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
 		ARG 1 entity
 		ARG 2 partialTick
+	METHOD getPlayerRenderer (Lnet/minecraft/client/player/AbstractClientPlayer;)Lnet/minecraft/client/renderer/entity/player/AvatarRenderer;
+		ARG 1 player
 	METHOD getRenderer (Lnet/minecraft/client/renderer/entity/state/EntityRenderState;)Lnet/minecraft/client/renderer/entity/EntityRenderer;
 		ARG 1 renderState
 	METHOD getRenderer (Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/client/renderer/entity/EntityRenderer;

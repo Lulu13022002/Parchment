@@ -89,10 +89,6 @@ CLASS net/minecraft/client/model/geom/ModelPart
 			ARG 3 z
 			ARG 4 u
 			ARG 5 v
-		METHOD <init> (Lorg/joml/Vector3f;FF)V
-			ARG 1 pos
-			ARG 2 u
-			ARG 3 v
 		METHOD remap (FF)Lnet/minecraft/client/model/geom/ModelPart$Vertex;
 			ARG 1 u
 			ARG 2 v
@@ -107,6 +103,8 @@ CLASS net/minecraft/client/model/geom/ModelPart
 			ARG 7 textureHeight
 			ARG 8 mirror
 			ARG 9 direction
+		METHOD mirrorFacing (Lnet/minecraft/core/Direction;)Lnet/minecraft/core/Direction;
+			ARG 0 face
 	CLASS Visitor
 		METHOD visit (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Ljava/lang/String;ILnet/minecraft/client/model/geom/ModelPart$Cube;)V
 			ARG 1 pose

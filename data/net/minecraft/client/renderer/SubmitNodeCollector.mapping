@@ -1,6 +1,9 @@
 CLASS net/minecraft/client/renderer/SubmitNodeCollector
 	METHOD order (I)Lnet/minecraft/client/renderer/OrderedSubmitNodeCollector;
 		ARG 1 order
+	CLASS ParticleGroupRenderer
+		METHOD render (Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;)V
+			ARG 1 bufferSource
 	CLASS CustomGeometryRenderer
 		METHOD render (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V
 			ARG 1 pose
