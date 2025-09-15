@@ -22,6 +22,9 @@ CLASS net/minecraft/world/level/block/entity/TestInstanceBlockEntity
 		ARG 1 pos
 	METHOD lambda$removeBarriers$7 (Lnet/minecraft/core/BlockPos;)V
 		ARG 1 pos
+	METHOD markError (Lnet/minecraft/core/BlockPos;Lnet/minecraft/network/chat/Component;)V
+		ARG 1 pos
+		ARG 2 text
 	METHOD placeStructure (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;)V
 		ARG 1 level
 		ARG 2 structureTemplate
@@ -52,3 +55,6 @@ CLASS net/minecraft/world/level/block/entity/TestInstanceBlockEntity
 			ARG 4 index
 		METHOD byIndex (I)Lnet/minecraft/world/level/block/entity/TestInstanceBlockEntity$Status;
 			ARG 0 index
+	CLASS ErrorMarker
+		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
+			ARG 0 instance

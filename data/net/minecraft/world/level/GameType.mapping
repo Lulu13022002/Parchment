@@ -32,7 +32,3 @@ CLASS net/minecraft/world/level/GameType
 	METHOD updatePlayerAbilities (Lnet/minecraft/world/entity/player/Abilities;)V
 		COMMENT Configures the player abilities based on the game type
 		ARG 1 abilities
-	METHOD updatePlayerAbilities (Lnet/minecraft/world/entity/player/Abilities;Lnet/minecraft/util/TriState;)V
-		COMMENT Configures the player abilities based on the game type
-		ARG 1 abilities
-		ARG 2 creativeFlying

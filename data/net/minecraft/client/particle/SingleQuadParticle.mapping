@@ -44,9 +44,6 @@ CLASS net/minecraft/client/particle/SingleQuadParticle
 		ARG 1 sprite
 	METHOD setSpriteFromAge (Lnet/minecraft/client/particle/SpriteSet;)V
 		ARG 1 sprites
-	CLASS Layer
-		METHOD <init> (Ljava/lang/String;ILnet/minecraft/client/renderer/RenderType;)V
-			ARG 3 renderType
 	CLASS FacingCameraMode
 		METHOD lambda$static$0 (Lorg/joml/Quaternionf;Lnet/minecraft/client/Camera;F)V
 			ARG 0 rotation

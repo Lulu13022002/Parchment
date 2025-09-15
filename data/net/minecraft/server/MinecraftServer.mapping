@@ -224,9 +224,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 crashReport
 		ARG 2 chunkPos
 		ARG 3 regionStorageInfo
-	METHOD subscribeToDebugSample (Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/util/debugchart/RemoteDebugSampleType;)V
-		ARG 1 player
-		ARG 2 sampleType
 	METHOD synchronizeTime (Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 level
 	METHOD tickChildren (Ljava/util/function/BooleanSupplier;)V

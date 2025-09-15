@@ -5,7 +5,11 @@ CLASS net/minecraft/world/level/redstone/CollectingNeighborUpdater
 	METHOD addAndRun (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/redstone/CollectingNeighborUpdater$NeighborUpdates;)V
 		ARG 1 pos
 		ARG 2 updates
+	METHOD setDebugListener (Ljava/util/function/Consumer;)V
+		ARG 1 debugListener
 	CLASS NeighborUpdates
+		METHOD forEachUpdatedPos (Ljava/util/function/Consumer;)V
+			ARG 1 action
 		METHOD runNext (Lnet/minecraft/world/level/Level;)Z
 			ARG 1 level
 	CLASS MultiNeighborUpdate

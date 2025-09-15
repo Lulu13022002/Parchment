@@ -132,23 +132,23 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 1 pos
 	METHOD isVillage (Lnet/minecraft/core/SectionPos;)Z
 		ARG 1 pos
-	METHOD lambda$clearBlockEvents$16 (Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/BlockEventData;)Z
+	METHOD lambda$clearBlockEvents$17 (Lnet/minecraft/world/level/levelgen/structure/BoundingBox;Lnet/minecraft/world/level/BlockEventData;)Z
 		ARG 1 blockEventData
-	METHOD lambda$findLightningRod$4 (Lnet/minecraft/core/Holder;)Z
+	METHOD lambda$findLightningRod$5 (Lnet/minecraft/core/Holder;)Z
 		ARG 0 poiType
-	METHOD lambda$findLightningTargetAround$7 (Lnet/minecraft/world/entity/LivingEntity;)Z
+	METHOD lambda$findLightningTargetAround$8 (Lnet/minecraft/world/entity/LivingEntity;)Z
 		ARG 1 entity
-	METHOD lambda$getEntities$10 (Ljava/util/function/Predicate;Ljava/util/List;ILnet/minecraft/world/entity/Entity;)Lnet/minecraft/util/AbortableIterationConsumer$Continuation;
+	METHOD lambda$getEntities$11 (Ljava/util/function/Predicate;Ljava/util/List;ILnet/minecraft/world/entity/Entity;)Lnet/minecraft/util/AbortableIterationConsumer$Continuation;
 		ARG 3 entity
-	METHOD lambda$getTypeCount$18 (Lit/unimi/dsi/fastutil/objects/Object2IntMap$Entry;)Ljava/lang/String;
+	METHOD lambda$getTypeCount$19 (Lit/unimi/dsi/fastutil/objects/Object2IntMap$Entry;)Ljava/lang/String;
 		ARG 0 entry
-	METHOD lambda$getWatchdogStats$17 (Lnet/minecraft/world/entity/Entity;)Ljava/lang/String;
+	METHOD lambda$getWatchdogStats$18 (Lnet/minecraft/world/entity/Entity;)Ljava/lang/String;
 		ARG 0 entity
-	METHOD lambda$globalLevelEvent$11 (Lnet/minecraft/core/BlockPos;IILnet/minecraft/server/level/ServerPlayer;)V
+	METHOD lambda$globalLevelEvent$12 (Lnet/minecraft/core/BlockPos;IILnet/minecraft/server/level/ServerPlayer;)V
 		ARG 4 player
 	METHOD lambda$tick$2 (Lnet/minecraft/world/TickRateManager;Lnet/minecraft/util/profiling/ProfilerFiller;Lnet/minecraft/world/entity/Entity;)V
 		ARG 3 entity
-	METHOD lambda$wakeUpAllPlayers$3 (Lnet/minecraft/server/level/ServerPlayer;)V
+	METHOD lambda$wakeUpAllPlayers$4 (Lnet/minecraft/server/level/ServerPlayer;)V
 		ARG 0 player
 	METHOD onReputationEvent (Lnet/minecraft/world/entity/ai/village/ReputationEventType;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/ReputationEventHandler;)V
 		ARG 1 type

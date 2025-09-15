@@ -15,7 +15,7 @@ CLASS net/minecraft/client/renderer/QuadParticleRenderState
 		ARG 13 v1
 		ARG 14 color
 		ARG 15 packedLight
-	METHOD lambda$render$0 (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFFFFFFFFII)V
+	METHOD lambda$prepare$1 (Lcom/mojang/blaze3d/vertex/BufferBuilder;FFFFFFFFFFFFII)V
 		ARG 2 xOffset
 		ARG 3 yOffset
 		ARG 4 zOffset
@@ -30,8 +30,6 @@ CLASS net/minecraft/client/renderer/QuadParticleRenderState
 		ARG 13 v1
 		ARG 14 color
 		ARG 15 packedLight
-	METHOD render (Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;)V
-		ARG 1 bufferSource
 	METHOD renderRotatedQuad (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFFFFFFFFII)V
 		ARG 1 consumer
 		ARG 2 xOffset

@@ -75,8 +75,6 @@ CLASS net/minecraft/server/players/PlayerList
 		ARG 1 player
 	METHOD getPlayersWithAddress (Ljava/lang/String;)Ljava/util/List;
 		ARG 1 address
-	METHOD getReasonMessage (Lnet/minecraft/server/players/BanListEntry;)Lnet/minecraft/network/chat/Component;
-		ARG 1 entry
 	METHOD getSingleplayerData ()Lnet/minecraft/nbt/CompoundTag;
 		COMMENT On integrated servers, returns the host's player data to be written to level.dat.
 	METHOD getViewDistance ()I

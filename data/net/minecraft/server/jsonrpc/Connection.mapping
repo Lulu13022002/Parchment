@@ -11,23 +11,25 @@ CLASS net/minecraft/server/jsonrpc/Connection
 	METHOD channelRead0 (Lio/netty/channel/ChannelHandlerContext;Lcom/google/gson/JsonElement;)V
 		ARG 1 ctx
 		ARG 2 element
-	METHOD dispatchIncomingRequest (Ljava/lang/Integer;Ljava/lang/String;Lcom/google/gson/JsonElement;)Lcom/google/gson/JsonElement;
+	METHOD dispatchIncomingRequest (Lcom/google/gson/JsonElement;Ljava/lang/String;Lcom/google/gson/JsonElement;)Lcom/google/gson/JsonElement;
 		ARG 1 requestId
 		ARG 2 method
 		ARG 3 params
 	METHOD exceptionCaught (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Throwable;)V
 		ARG 1 ctx
 		ARG 2 exception
-	METHOD handleError (Ljava/lang/Integer;Lcom/google/gson/JsonObject;)Lcom/google/gson/JsonObject;
+	METHOD handleBatchRequest (Ljava/util/List;)Lcom/google/gson/JsonArray;
+		ARG 1 requests
+	METHOD handleError (Lcom/google/gson/JsonElement;Lcom/google/gson/JsonObject;)Lcom/google/gson/JsonObject;
 		ARG 1 requestId
 		ARG 2 error
-	METHOD handleIncomingRequest (Ljava/lang/Integer;Ljava/lang/String;Lcom/google/gson/JsonElement;)Lcom/google/gson/JsonObject;
+	METHOD handleIncomingRequest (Lcom/google/gson/JsonElement;Ljava/lang/String;Lcom/google/gson/JsonElement;)Lcom/google/gson/JsonObject;
 		ARG 1 requestId
 		ARG 2 method
 		ARG 3 params
 	METHOD handleJsonObject (Lcom/google/gson/JsonObject;)Lcom/google/gson/JsonObject;
 		ARG 1 json
-	METHOD handleRequestResponse (ILcom/google/gson/JsonElement;)V
+	METHOD handleRequestResponse (Lcom/google/gson/JsonElement;Lcom/google/gson/JsonElement;)V
 		ARG 1 requestId
 		ARG 2 result
 	METHOD sendNotification (Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod;)V
