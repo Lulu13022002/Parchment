@@ -225,9 +225,6 @@ CLASS net/minecraft/server/level/ServerLevel
 		ARG 3 add
 	METHOD setDayTime (J)V
 		ARG 1 time
-	METHOD setDefaultSpawnPos (Lnet/minecraft/core/BlockPos;F)V
-		ARG 1 pos
-		ARG 2 angle
 	METHOD setDragonFight (Lnet/minecraft/world/level/dimension/end/EndDragonFight;)V
 		ARG 1 dragonFight
 	METHOD setMapData (Lnet/minecraft/world/level/saveddata/maps/MapId;Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData;)V

@@ -811,6 +811,10 @@ CLASS net/minecraft/world/entity/Entity
 	METHOD teleportSetPosition (Lnet/minecraft/world/entity/PositionMoveRotation;Ljava/util/Set;)V
 		ARG 1 positionMovementRotation
 		ARG 2 relatives
+	METHOD teleportSetPosition (Lnet/minecraft/world/entity/PositionMoveRotation;Lnet/minecraft/world/entity/PositionMoveRotation;Ljava/util/Set;)V
+		ARG 1 currentPos
+		ARG 2 afterPos
+		ARG 3 relatives
 	METHOD teleportSpectators (Lnet/minecraft/world/level/portal/TeleportTransition;Lnet/minecraft/server/level/ServerLevel;)V
 		ARG 1 teleportTransition
 		ARG 2 oldLevel

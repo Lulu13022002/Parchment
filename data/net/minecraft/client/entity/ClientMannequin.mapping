@@ -2,11 +2,7 @@ CLASS net/minecraft/client/entity/ClientMannequin
 	METHOD <init> (Lnet/minecraft/world/level/Level;Lnet/minecraft/client/renderer/PlayerSkinRenderCache;)V
 		ARG 1 level
 		ARG 2 skinRenderCache
-	METHOD mannequinProfileToPlayerSkin (Lnet/minecraft/world/entity/decoration/MannequinProfile;)Lnet/minecraft/client/resources/PlayerSkin;
-		ARG 0 profile
-	METHOD mapTexture (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceLocation;
-		ARG 0 textureId
 	METHOD registerOverrides (Lnet/minecraft/client/renderer/PlayerSkinRenderCache;)V
 		ARG 0 skinRenderCache
-	METHOD setSkin (Lnet/minecraft/client/resources/PlayerSkin;)V
+	METHOD setSkin (Lnet/minecraft/world/entity/player/PlayerSkin;)V
 		ARG 1 skin

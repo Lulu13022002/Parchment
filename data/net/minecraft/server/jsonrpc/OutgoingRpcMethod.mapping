@@ -3,12 +3,12 @@ CLASS net/minecraft/server/jsonrpc/OutgoingRpcMethod
 		ARG 1 result
 	METHOD encodeParams (Ljava/lang/Object;)Lcom/google/gson/JsonElement;
 		ARG 1 params
-	METHOD lambda$notification$0 (Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/api/MethodInfo;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Notification;
-		ARG 1 methodInfo
-	METHOD lambda$request$1 (Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/api/MethodInfo;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$ParameterlessMethod;
-		ARG 1 methodInfo
-	METHOD lambda$request$2 (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/api/MethodInfo;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Method;
-		ARG 2 methodInfo
+	METHOD lambda$notification$0 (Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Notification;
+		ARG 1 info
+	METHOD lambda$request$1 (Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$ParameterlessMethod;
+		ARG 1 info
+	METHOD lambda$request$2 (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Method;
+		ARG 2 info
 	METHOD notification (Lcom/mojang/serialization/Codec;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$OutgoingRpcMethodBuilder;
 		ARG 0 paramsCodec
 	METHOD request (Lcom/mojang/serialization/Codec;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$OutgoingRpcMethodBuilder;
@@ -16,18 +16,20 @@ CLASS net/minecraft/server/jsonrpc/OutgoingRpcMethod
 	METHOD request (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$OutgoingRpcMethodBuilder;
 		ARG 0 paramsCodec
 		ARG 1 resultCodec
+	CLASS Factory
+		METHOD create (Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod;
+			ARG 1 info
+			ARG 2 attributes
 	CLASS OutgoingRpcMethodBuilder
-		METHOD <init> (Ljava/util/function/Function;)V
+		METHOD <init> (Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$Factory;)V
 			ARG 1 method
-		METHOD build (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod;
-			ARG 1 namespace
-			ARG 2 name
 		METHOD description (Ljava/lang/String;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$OutgoingRpcMethodBuilder;
 			ARG 1 description
 		METHOD param (Lnet/minecraft/server/jsonrpc/api/ParamInfo;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$OutgoingRpcMethodBuilder;
 			ARG 1 paramInfo
-		METHOD register (Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod;
+		METHOD register (Ljava/lang/String;)Lnet/minecraft/core/Holder$Reference;
 			ARG 1 namespace
-			ARG 2 name
+		METHOD register (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/core/Holder$Reference;
+			ARG 1 id
 		METHOD response (Lnet/minecraft/server/jsonrpc/api/ResultInfo;)Lnet/minecraft/server/jsonrpc/OutgoingRpcMethod$OutgoingRpcMethodBuilder;
 			ARG 1 resultInfo

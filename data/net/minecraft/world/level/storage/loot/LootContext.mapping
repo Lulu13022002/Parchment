@@ -51,3 +51,11 @@ CLASS net/minecraft/world/level/storage/loot/LootContext
 			ARG 4 param
 		METHOD getByName (Ljava/lang/String;)Lnet/minecraft/world/level/storage/loot/LootContext$EntityTarget;
 			ARG 0 name
+	CLASS ItemStackTarget
+		METHOD <init> (Ljava/lang/String;ILjava/lang/String;Lnet/minecraft/util/context/ContextKey;)V
+			ARG 3 name
+			ARG 4 param
+	CLASS BlockEntityTarget
+		METHOD <init> (Ljava/lang/String;ILjava/lang/String;Lnet/minecraft/util/context/ContextKey;)V
+			ARG 3 name
+			ARG 4 param

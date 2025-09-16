@@ -99,13 +99,14 @@ CLASS net/minecraft/client/renderer/OrderedSubmitNodeCollector
 	METHOD submitMovingBlock (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/block/MovingBlockRenderState;)V
 		ARG 1 poseStack
 		ARG 2 movingBlockRenderState
-	METHOD submitNameTag (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/network/chat/Component;ZID)V
+	METHOD submitNameTag (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V
 		ARG 1 poseStack
 		ARG 2 pos
 		ARG 3 text
 		ARG 4 seeThrough
 		ARG 5 packedLight
 		ARG 6 distanceToCameraSq
+		ARG 8 cameraRenderState
 	METHOD submitParticleGroup (Lnet/minecraft/client/renderer/SubmitNodeCollector$ParticleGroupRenderer;)V
 		ARG 1 particleGroupRenderer
 	METHOD submitShadow (Lcom/mojang/blaze3d/vertex/PoseStack;FLjava/util/List;)V

@@ -21,6 +21,7 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 	METHOD addAlwaysVisibleParticle (Lnet/minecraft/core/particles/ParticleOptions;ZDDDDDD)V
 		ARG 1 options
 		ARG 2 overrideLimiter
+			COMMENT if {@code true}, the particle will be created regardless of its distance from the camera and the {@linkplain #calculateParticleLevel(boolean) calculated particle level}
 		ARG 3 x
 		ARG 5 y
 		ARG 7 z
@@ -49,12 +50,26 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 	METHOD calculateBlockTint (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/ColorResolver;)I
 		ARG 1 pos
 		ARG 2 colorResolver
+	METHOD calculateParticleLevel (Z)Lnet/minecraft/server/level/ParticleStatus;
+		ARG 1 decreased
 	METHOD destroyBlockProgress (ILnet/minecraft/core/BlockPos;I)V
 		ARG 1 breakerId
 		ARG 2 pos
 		ARG 3 progress
 	METHOD disconnect (Lnet/minecraft/network/chat/Component;)V
 		ARG 1 reason
+	METHOD doAddParticle (Lnet/minecraft/core/particles/ParticleOptions;ZZDDDDDD)V
+		ARG 1 options
+		ARG 2 overrideLimiter
+			COMMENT if {@code true}, the particle will be created regardless of its distance from the camera and the {@linkplain #calculateParticleLevel(boolean) calculated particle level}
+		ARG 3 decreased
+			COMMENT if {@code true}, and the Options#particles is set to minimal, attempts to spawn the particle at a decreased level
+		ARG 4 x
+		ARG 6 y
+		ARG 8 z
+		ARG 10 xSpeed
+		ARG 12 ySpeed
+		ARG 14 zSpeed
 	METHOD doAnimateTick (IIIILnet/minecraft/util/RandomSource;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos$MutableBlockPos;)V
 		ARG 1 posX
 		ARG 2 posY
@@ -147,9 +162,6 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		ARG 1 pos
 		ARG 2 oldState
 		ARG 3 newState
-	METHOD setDefaultSpawnPos (Lnet/minecraft/core/BlockPos;F)V
-		ARG 1 spawnPos
-		ARG 2 spawnAngle
 	METHOD setSectionDirtyWithNeighbors (III)V
 		ARG 1 sectionX
 		ARG 2 sectionY
@@ -235,6 +247,3 @@ CLASS net/minecraft/client/multiplayer/ClientLevel
 		METHOD setRaining (Z)V
 			COMMENT Sets whether it is raining or not.
 			ARG 1 isRaining
-		METHOD setSpawn (Lnet/minecraft/core/BlockPos;F)V
-			ARG 1 spawnPoint
-			ARG 2 angle

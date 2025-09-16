@@ -197,6 +197,8 @@ CLASS net/minecraft/world/level/Level
 		ARG 1 partialTick
 	METHOD getThunderLevel (F)F
 		ARG 1 partialTick
+	METHOD getWorldBorderAdjustedRespawnData (Lnet/minecraft/world/level/storage/LevelData$RespawnData;)Lnet/minecraft/world/level/storage/LevelData$RespawnData;
+		ARG 1 respawnData
 	METHOD globalLevelEvent (ILnet/minecraft/core/BlockPos;I)V
 		ARG 1 id
 		ARG 2 pos
@@ -400,6 +402,8 @@ CLASS net/minecraft/world/level/Level
 	METHOD setRainLevel (F)V
 		COMMENT Sets the level of the rain.
 		ARG 1 level
+	METHOD setRespawnData (Lnet/minecraft/world/level/storage/LevelData$RespawnData;)V
+		ARG 1 respawnData
 	METHOD setSkyFlashTime (I)V
 		ARG 1 timeFlash
 	METHOD setSpawnSettings (Z)V

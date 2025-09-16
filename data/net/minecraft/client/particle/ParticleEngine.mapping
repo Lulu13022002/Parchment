@@ -21,7 +21,7 @@ CLASS net/minecraft/client/particle/ParticleEngine
 		ARG 1 entity
 		ARG 2 options
 		ARG 3 lifetime
-	METHOD extract (Lnet/minecraft/client/renderer/ParticlesRenderState;Lnet/minecraft/client/renderer/culling/Frustum;Lnet/minecraft/client/Camera;F)V
+	METHOD extract (Lnet/minecraft/client/renderer/state/ParticlesRenderState;Lnet/minecraft/client/renderer/culling/Frustum;Lnet/minecraft/client/Camera;F)V
 		ARG 1 renderState
 		ARG 2 frustum
 		ARG 3 camera
