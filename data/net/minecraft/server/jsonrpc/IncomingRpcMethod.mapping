@@ -5,10 +5,13 @@ CLASS net/minecraft/server/jsonrpc/IncomingRpcMethod
 		ARG 3 client
 	METHOD lambda$method$0 (Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$ParameterlessRpcMethodFunction;Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$ParameterlessMethod;
 		ARG 2 info
+		ARG 3 attributes
 	METHOD lambda$method$1 (Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$RpcMethodFunction;Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$Method;
 		ARG 3 info
+		ARG 4 attributes
 	METHOD lambda$method$3 (Lcom/mojang/serialization/Codec;Ljava/util/function/Function;Lnet/minecraft/server/jsonrpc/api/MethodInfo;Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$Attributes;)Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$ParameterlessMethod;
 		ARG 2 info
+		ARG 3 attributes
 	METHOD method (Ljava/util/function/Function;Lcom/mojang/serialization/Codec;)Lnet/minecraft/server/jsonrpc/IncomingRpcMethod$IncomingRpcMethodBuilder;
 		ARG 0 callback
 		ARG 1 resultCodec
