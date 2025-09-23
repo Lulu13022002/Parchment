@@ -3,7 +3,7 @@ CLASS net/minecraft/client/renderer/special/SpecialModelRenderer
 		ARG 1 stack
 	METHOD getExtents (Ljava/util/Set;)V
 		ARG 1 output
-	METHOD submit (Ljava/lang/Object;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIZ)V
+	METHOD submit (Ljava/lang/Object;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIZI)V
 		ARG 1 object
 		ARG 2 displayContext
 		ARG 3 poseStack
@@ -11,6 +11,7 @@ CLASS net/minecraft/client/renderer/special/SpecialModelRenderer
 		ARG 5 packedLight
 		ARG 6 packedOverlay
 		ARG 7 hasFoilType
+		ARG 8 outlineColor
 	CLASS Unbaked
 		METHOD bake (Lnet/minecraft/client/renderer/special/SpecialModelRenderer$BakingContext;)Lnet/minecraft/client/renderer/special/SpecialModelRenderer;
 			ARG 1 context

@@ -22,7 +22,7 @@ CLASS net/minecraft/world/entity/projectile/Projectile
 		ARG 1 hitResult
 	METHOD lambda$applyOnProjectileSpawned$5 (Lnet/minecraft/world/item/Item;)V
 		ARG 0 item
-	METHOD lambda$checkLeftOwner$0 (Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/entity/Entity;)Z
+	METHOD lambda$isOutsideOwnerCollisionRange$0 (Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/entity/Entity;)Z
 		ARG 1 entity
 	METHOD lambda$spawnProjectileFromRotation$1 (Lnet/minecraft/world/entity/LivingEntity;FFFLnet/minecraft/world/entity/projectile/Projectile;)V
 		ARG 4 projectile

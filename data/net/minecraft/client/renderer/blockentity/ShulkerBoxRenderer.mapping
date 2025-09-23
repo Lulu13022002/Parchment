@@ -14,7 +14,7 @@ CLASS net/minecraft/client/renderer/blockentity/ShulkerBoxRenderer
 		ARG 1 poseStack
 		ARG 2 direction
 		ARG 3 progress
-	METHOD submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/core/Direction;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/resources/model/Material;)V
+	METHOD submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/core/Direction;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/resources/model/Material;I)V
 		ARG 1 poseStack
 		ARG 2 nodeCollector
 		ARG 3 packedLight
@@ -23,6 +23,7 @@ CLASS net/minecraft/client/renderer/blockentity/ShulkerBoxRenderer
 		ARG 6 progress
 		ARG 7 crumblingOverlay
 		ARG 8 material
+		ARG 9 outlineColor
 	CLASS ShulkerBoxModel
 		METHOD <init> (Lnet/minecraft/client/model/geom/ModelPart;)V
 			ARG 1 root
