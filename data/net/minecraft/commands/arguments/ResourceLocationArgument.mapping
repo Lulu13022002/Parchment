@@ -1,6 +1,0 @@
-CLASS net/minecraft/commands/arguments/ResourceLocationArgument
-	METHOD getId (Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
-		ARG 0 context
-		ARG 1 name
-	METHOD parse (Lcom/mojang/brigadier/StringReader;)Lnet/minecraft/resources/ResourceLocation;
-		ARG 1 reader

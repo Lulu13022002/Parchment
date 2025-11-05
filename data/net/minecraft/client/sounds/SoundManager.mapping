@@ -1,9 +1,8 @@
 CLASS net/minecraft/client/sounds/SoundManager
 	COMMENT The SoundManager class is responsible for managing sound events and playing sounds.
 	COMMENT It handles sound event registrations, caching of sound resources, and sound playback.
-	METHOD <init> (Lnet/minecraft/client/Options;Lnet/minecraft/client/sounds/MusicManager;)V
+	METHOD <init> (Lnet/minecraft/client/Options;)V
 		ARG 1 options
-		ARG 2 musicManager
 	METHOD addListener (Lnet/minecraft/client/sounds/SoundEventListener;)V
 		ARG 1 listener
 	METHOD apply (Lnet/minecraft/client/sounds/SoundManager$Preparations;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V
@@ -17,18 +16,18 @@ CLASS net/minecraft/client/sounds/SoundManager
 	METHOD getAvailableSoundDevices ()Ljava/util/List;
 		COMMENT Retrieves a list of available sound devices.
 	METHOD getAvailableSounds ()Ljava/util/Collection;
-		COMMENT {@return the collection of available sound event locations}
-	METHOD getSoundEvent (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/sounds/WeighedSoundEvents;
-		COMMENT @return the sound event associated with the specific {@link ResourceLocation}, or {@code null} if not found
+		COMMENT {@return the collection of available sound event identifiers}
+	METHOD getSoundEvent (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/sounds/WeighedSoundEvents;
+		COMMENT @return the sound event associated with the specific {@link Identifier}, or {@code null} if not found
 		ARG 1 location
-			COMMENT the location of the sound event
+			COMMENT the identifier of the sound event
 	METHOD isActive (Lnet/minecraft/client/resources/sounds/SoundInstance;)Z
 		COMMENT Checks if the specified sound is active (playing or scheduled to be played).
 		COMMENT @return {@code true} if the sound is active, {@code false} otherwise
 		ARG 1 sound
 			COMMENT the sound instance to check
 	METHOD pauseAllExcept ([Lnet/minecraft/sounds/SoundSource;)V
-		ARG 1 sources
+		ARG 1 ignoredSources
 	METHOD play (Lnet/minecraft/client/resources/sounds/SoundInstance;)Lnet/minecraft/client/sounds/SoundEngine$PlayResult;
 		ARG 1 sound
 	METHOD playDelayed (Lnet/minecraft/client/resources/sounds/SoundInstance;I)V
@@ -47,16 +46,15 @@ CLASS net/minecraft/client/sounds/SoundManager
 		COMMENT Queues a ticking sound to be played.
 		ARG 1 tickableSound
 			COMMENT the ticking sound instance
+	METHOD refreshCategoryVolume (Lnet/minecraft/sounds/SoundSource;)V
+		ARG 1 category
 	METHOD removeListener (Lnet/minecraft/client/sounds/SoundEventListener;)V
 		ARG 1 listener
-	METHOD setVolume (Lnet/minecraft/client/resources/sounds/SoundInstance;F)V
-		ARG 1 sound
-		ARG 2 volume
 	METHOD stop (Lnet/minecraft/client/resources/sounds/SoundInstance;)V
 		ARG 1 sound
-	METHOD stop (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/sounds/SoundSource;)V
+	METHOD stop (Lnet/minecraft/resources/Identifier;Lnet/minecraft/sounds/SoundSource;)V
 		COMMENT Stops all sounds associated with the specified ID and category.
-		ARG 1 id
+		ARG 1 sound
 			COMMENT the ID of the sounds to stop, or {@code null} to stop all sounds
 		ARG 2 source
 			COMMENT the source of the sounds to stop, or {@code null} to stop sounds from all sources
@@ -64,20 +62,19 @@ CLASS net/minecraft/client/sounds/SoundManager
 		COMMENT Updates the sound manager's tick state.
 		ARG 1 isGamePaused
 			COMMENT {@code true} if the game is paused, {@code false} otherwise
+	METHOD updateCategoryVolume (Lnet/minecraft/sounds/SoundSource;F)V
+		ARG 1 category
+		ARG 2 gain
 	METHOD updateSource (Lnet/minecraft/client/Camera;)V
 		COMMENT Updates the sound source position based on the active camera.
 		ARG 1 camera
 			COMMENT the active camera
-	METHOD updateSourceVolume (Lnet/minecraft/sounds/SoundSource;)V
-		COMMENT Updates the volume of the specified sound source category.
-		ARG 1 source
-			COMMENT the sound source
-	METHOD validateSoundResource (Lnet/minecraft/client/resources/sounds/Sound;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/server/packs/resources/ResourceProvider;)Z
+	METHOD validateSoundResource (Lnet/minecraft/client/resources/sounds/Sound;Lnet/minecraft/resources/Identifier;Lnet/minecraft/server/packs/resources/ResourceProvider;)Z
 		COMMENT Validates a sound resource
 		COMMENT @return {@code true} if the sound resource is valid, {@code false} otherwise
 		ARG 0 sound
 			COMMENT the sound to validate
-		ARG 1 location
+		ARG 1 eventLocation
 			COMMENT the location of the sound event
 		ARG 2 resourceProvider
 			COMMENT the resource provider
@@ -85,14 +82,14 @@ CLASS net/minecraft/client/sounds/SoundManager
 		COMMENT The Preparations class represents the prepared sound event registrations and caches for applying to the sound manager.
 		METHOD apply (Ljava/util/Map;Ljava/util/Map;Lnet/minecraft/client/sounds/SoundEngine;)V
 			COMMENT Applies the prepared sound event registrations and caches to the sound manager.
-			ARG 1 soundRegistry
+			ARG 1 registry
 				COMMENT the sound registry to apply to
-			ARG 2 cache
+			ARG 2 soundCache
 				COMMENT the sound cache to apply to
-			ARG 3 soundEngine
+			ARG 3 engine
 				COMMENT the sound engine to apply to
-		METHOD handleRegistration (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/resources/sounds/SoundEventRegistration;)V
-			ARG 1 location
+		METHOD handleRegistration (Lnet/minecraft/resources/Identifier;Lnet/minecraft/client/resources/sounds/SoundEventRegistration;)V
+			ARG 1 eventLocation
 			ARG 2 registration
 		METHOD listResources (Lnet/minecraft/server/packs/resources/ResourceManager;)V
 			ARG 1 resourceManager

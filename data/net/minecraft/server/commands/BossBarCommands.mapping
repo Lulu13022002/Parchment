@@ -1,5 +1,5 @@
 CLASS net/minecraft/server/commands/BossBarCommands
-	METHOD createBar (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/network/chat/Component;)I
+	METHOD createBar (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;Lnet/minecraft/network/chat/Component;)I
 		ARG 0 source
 		ARG 1 id
 		ARG 2 displayName
@@ -52,6 +52,8 @@ CLASS net/minecraft/server/commands/BossBarCommands
 	METHOD lambda$register$26 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
 	METHOD lambda$register$27 (Lcom/mojang/brigadier/context/CommandContext;)I
+		ARG 0 context
+	METHOD lambda$register$3 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
 	METHOD lambda$register$4 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context

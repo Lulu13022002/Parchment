@@ -81,20 +81,20 @@ CLASS net/minecraft/util/Mth
 		ARG 4 max
 	METHOD clampedLerp (DDD)D
 		COMMENT Method for linear interpolation of doubles.
-		ARG 0 start
+		ARG 0 delta
+			COMMENT a value between 0 and 1 that indicates the percentage of the interpolation (0 will give the start value and 1 will give the end value). If the value is not between 0 and 1, it is clamped.
+		ARG 2 start
+			COMMENT start value for the interpolation
+		ARG 4 end
+			COMMENT end value for the interpolation
+	METHOD clampedLerp (FFF)F
+		COMMENT Method for linear interpolation of floats.
+		ARG 0 delta
+			COMMENT a value between 0 and 1 that indicates the percentage of the interpolation (0 will give the start value and 1 will give the end value). If the value is not between 0 and 1, it is clamped.
+		ARG 1 start
 			COMMENT start value for the interpolation
 		ARG 2 end
 			COMMENT end value for the interpolation
-		ARG 4 delta
-			COMMENT a value between 0 and 1 that indicates the percentage of the interpolation (0 will give the start value and 1 will give the end value). If the value is not between 0 and 1, it is clamped.
-	METHOD clampedLerp (FFF)F
-		COMMENT Method for linear interpolation of floats.
-		ARG 0 start
-			COMMENT start value for the interpolation
-		ARG 1 end
-			COMMENT end value for the interpolation
-		ARG 2 delta
-			COMMENT a value between 0 and 1 that indicates the percentage of the interpolation (0 will give the start value and 1 will give the end value). If the value is not between 0 and 1, it is clamped.
 	METHOD clampedMap (DDDDD)D
 		ARG 0 input
 		ARG 2 inputMin
@@ -107,7 +107,7 @@ CLASS net/minecraft/util/Mth
 		ARG 2 inputMax
 		ARG 3 outputMin
 		ARG 4 outputMax
-	METHOD cos (F)F
+	METHOD cos (D)F
 		COMMENT cos looked up in the sin table with the appropriate offset
 		ARG 0 value
 	METHOD createInsecureUUID ()Ljava/util/UUID;
@@ -368,7 +368,7 @@ CLASS net/minecraft/util/Mth
 		ARG 1 factor
 	METHOD sign (D)I
 		ARG 0 x
-	METHOD sin (F)F
+	METHOD sin (D)F
 		COMMENT sin looked up in a table
 		ARG 0 value
 	METHOD smallestEncompassingPowerOfTwo (I)I

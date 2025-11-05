@@ -1,5 +1,5 @@
 CLASS net/minecraft/commands/arguments/selector/EntitySelector
-	METHOD <init> (IZZLjava/util/List;Lnet/minecraft/advancements/critereon/MinMaxBounds$Doubles;Ljava/util/function/Function;Lnet/minecraft/world/phys/AABB;Ljava/util/function/BiConsumer;ZLjava/lang/String;Ljava/util/UUID;Lnet/minecraft/world/entity/EntityType;Z)V
+	METHOD <init> (IZZLjava/util/List;Lnet/minecraft/advancements/criterion/MinMaxBounds$Doubles;Ljava/util/function/Function;Lnet/minecraft/world/phys/AABB;Ljava/util/function/BiConsumer;ZLjava/lang/String;Ljava/util/UUID;Lnet/minecraft/world/entity/EntityType;Z)V
 		ARG 1 maxResults
 		ARG 2 includesEntities
 		ARG 3 worldLimited

@@ -5,7 +5,7 @@ CLASS net/minecraft/client/sounds/SoundEngine
 	FIELD MARKER Lorg/slf4j/Marker;
 		COMMENT The marker used for logging
 	FIELD ONLY_WARN_ONCE Ljava/util/Set;
-		COMMENT A set of resource locations for which a missing sound warning has been issued
+		COMMENT A set of identifiers for which a missing sound warning has been issued
 	FIELD devicePoolState Ljava/util/concurrent/atomic/AtomicReference;
 		COMMENT The current state of the audio device check
 	FIELD listener Lcom/mojang/blaze3d/audio/Listener;
@@ -24,11 +24,10 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		COMMENT A counter for how long the sound manager has been running
 	FIELD tickingSounds Ljava/util/List;
 		COMMENT A subset of {@link #queuedSounds}, this contains only {@linkplain TickableSoundInstance}
-	METHOD <init> (Lnet/minecraft/client/sounds/MusicManager;Lnet/minecraft/client/sounds/SoundManager;Lnet/minecraft/client/Options;Lnet/minecraft/server/packs/resources/ResourceProvider;)V
-		ARG 1 musicManager
-		ARG 2 soundManager
-		ARG 3 options
-		ARG 4 resourceManager
+	METHOD <init> (Lnet/minecraft/client/sounds/SoundManager;Lnet/minecraft/client/Options;Lnet/minecraft/server/packs/resources/ResourceProvider;)V
+		ARG 1 soundManager
+		ARG 2 options
+		ARG 3 resourceManager
 	METHOD addEventListener (Lnet/minecraft/client/sounds/SoundEventListener;)V
 		ARG 1 listener
 	METHOD calculatePitch (Lnet/minecraft/client/resources/sounds/SoundInstance;)F
@@ -41,7 +40,7 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		COMMENT Calculates the volume of the sound being played.
 		COMMENT <p>
 		COMMENT Clamps the sound between 0.0f and 1.0f.
-		ARG 1 volumeMultiplier
+		ARG 1 volume
 		ARG 2 source
 	METHOD calculateVolume (Lnet/minecraft/client/resources/sounds/SoundInstance;)F
 		COMMENT Calculates the volume for the sound being played.
@@ -62,18 +61,13 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		ARG 1 buffer
 	METHOD lambda$play$8 (Lnet/minecraft/client/sounds/AudioStream;Lcom/mojang/blaze3d/audio/Channel;)V
 		ARG 1 channel
-	METHOD lambda$setVolume$2 (FLnet/minecraft/client/resources/sounds/SoundInstance;Lcom/mojang/blaze3d/audio/Channel;)V
-		ARG 3 channel
-	METHOD lambda$updateCategoryVolume$0 (FLcom/mojang/blaze3d/audio/Channel;)V
+	METHOD lambda$refreshCategoryVolume$1 (FLcom/mojang/blaze3d/audio/Channel;)V
 		ARG 1 channel
-	METHOD lambda$updateCategoryVolume$1 (Lnet/minecraft/client/resources/sounds/SoundInstance;Lnet/minecraft/client/sounds/ChannelAccess$ChannelHandle;)V
-		ARG 1 instance
-		ARG 2 source
 	METHOD loadLibrary ()V
 		COMMENT Loads the sound library if it has not been loaded already.
 		COMMENT If loading is successful, the library is initialized, and the sound engine is started, otherwise, an error message is logged, and sounds and music are turned off.
 	METHOD pauseAllExcept ([Lnet/minecraft/sounds/SoundSource;)V
-		ARG 1 sources
+		ARG 1 ignoredSources
 	METHOD play (Lnet/minecraft/client/resources/sounds/SoundInstance;)Lnet/minecraft/client/sounds/SoundEngine$PlayResult;
 		ARG 1 sound
 	METHOD playDelayed (Lnet/minecraft/client/resources/sounds/SoundInstance;I)V
@@ -86,6 +80,8 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		COMMENT Queues a new {@linkplain TickableSoundInstance}
 		ARG 1 tickableSound
 			COMMENT the {@linkplain TickableSoundInstance} to queue
+	METHOD refreshCategoryVolume (Lnet/minecraft/sounds/SoundSource;)V
+		ARG 1 source
 	METHOD reload ()V
 		COMMENT Reloads the sound engine.
 		COMMENT <p>
@@ -101,9 +97,6 @@ CLASS net/minecraft/client/sounds/SoundEngine
 			COMMENT the SoundInstance to check
 	METHOD resume ()V
 		COMMENT Resumes playing all currently playing sounds (after pauseAllExcept)
-	METHOD setVolume (Lnet/minecraft/client/resources/sounds/SoundInstance;F)V
-		ARG 1 soundInstance
-		ARG 2 volume
 	METHOD shouldChangeDevice ()Z
 		COMMENT The audio device change is checked by this method.
 		COMMENT <p>
@@ -132,15 +125,14 @@ CLASS net/minecraft/client/sounds/SoundEngine
 	METHOD stop (Lnet/minecraft/client/resources/sounds/SoundInstance;)V
 		COMMENT Stops the provided {@linkplain SoundInstance} from continuing to play.
 		ARG 1 sound
-	METHOD stop (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/sounds/SoundSource;)V
-		ARG 1 soundName
+	METHOD stop (Lnet/minecraft/resources/Identifier;Lnet/minecraft/sounds/SoundSource;)V
 		ARG 2 source
 	METHOD stopAll ()V
 		COMMENT Stops all currently playing sounds
 	METHOD tick (Z)V
 		COMMENT Ticks all active instances of {@code TickableSoundInstance}
-		ARG 1 isGamePaused
-	METHOD updateCategoryVolume (Lnet/minecraft/sounds/SoundSource;)V
+		ARG 1 paused
+	METHOD updateCategoryVolume (Lnet/minecraft/sounds/SoundSource;F)V
 		COMMENT Updates the volume for a specific sound category.
 		COMMENT <p>
 		COMMENT If the sound engine has not been loaded, the method returns without performing any action.
@@ -152,5 +144,6 @@ CLASS net/minecraft/client/sounds/SoundEngine
 		COMMENT If the calculated volume for an instance is less than or equal to 0.0, the instance is stopped.
 		COMMENT Otherwise, the volume of the instance is set to the calculated value.
 		ARG 1 category
+		ARG 2 gain
 	METHOD updateSource (Lnet/minecraft/client/Camera;)V
 		ARG 1 camera

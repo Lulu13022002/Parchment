@@ -5,7 +5,7 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 0 pos
 		ARG 1 source
 		ARG 2 retryOptions
-	METHOD createNewStructure (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/ResourceLocation;III)I
+	METHOD createNewStructure (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;III)I
 		ARG 0 source
 		ARG 1 id
 		ARG 2 width
@@ -68,6 +68,8 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 0 context
 	METHOD lambda$register$42 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
+	METHOD lambda$runWithRetryOptions$13 (Lnet/minecraft/server/commands/InCommandFunction;Lcom/mojang/brigadier/context/CommandContext;)I
+		ARG 1 context
 	METHOD lambda$runWithRetryOptions$14 (Lnet/minecraft/server/commands/InCommandFunction;Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 1 context
 	METHOD lambda$runWithRetryOptions$15 (Lnet/minecraft/server/commands/InCommandFunction;Lcom/mojang/brigadier/context/CommandContext;)I
@@ -131,6 +133,6 @@ CLASS net/minecraft/gametest/framework/TestCommand
 		ARG 1 testRunner
 	METHOD verify (Lnet/minecraft/gametest/framework/TestFinder;)I
 		ARG 0 testFinder
-	METHOD verifyStructureExists (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/ResourceLocation;)Z
+	METHOD verifyStructureExists (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/resources/Identifier;)Z
 		ARG 0 source
 		ARG 1 structure

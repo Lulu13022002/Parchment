@@ -1,5 +1,5 @@
 CLASS net/minecraft/client/renderer/texture/TextureAtlasSprite
-	METHOD <init> (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/renderer/texture/SpriteContents;IIIII)V
+	METHOD <init> (Lnet/minecraft/resources/Identifier;Lnet/minecraft/client/renderer/texture/SpriteContents;IIIII)V
 		ARG 1 atlasLocation
 		ARG 2 contents
 		ARG 3 atlasWidth
@@ -23,14 +23,14 @@ CLASS net/minecraft/client/renderer/texture/TextureAtlasSprite
 	METHOD getV1 ()F
 		COMMENT @return the maximum V coordinate to use when rendering this sprite
 	METHOD uploadFirstFrame (Lcom/mojang/blaze3d/textures/GpuTexture;I)V
-		ARG 1 texture
+		ARG 1 destination
 		ARG 2 mipLevel
 	METHOD uploadSpriteUbo (Ljava/nio/ByteBuffer;IIIII)V
 		ARG 1 buffer
-		ARG 2 offset
+		ARG 2 startOffset
 		ARG 3 maxMipLevel
-		ARG 4 width
-		ARG 5 height
+		ARG 4 atlasWidth
+		ARG 5 atlasHeight
 		ARG 6 size
 	METHOD wrap (Lcom/mojang/blaze3d/vertex/VertexConsumer;)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 		ARG 1 consumer
