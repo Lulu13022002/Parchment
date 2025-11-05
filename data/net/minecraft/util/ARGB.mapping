@@ -4,6 +4,14 @@ CLASS net/minecraft/util/ARGB
 		ARG 1 color2
 	METHOD alpha (I)I
 		ARG 0 color
+	METHOD alphaBlend (II)I
+		ARG 0 destination
+		ARG 1 source
+	METHOD alphaBlendChannel (IIII)I
+		ARG 0 resultAlpha
+		ARG 1 sourceAlpha
+		ARG 2 destination
+		ARG 3 source
 	METHOD alphaFloat (I)F
 		ARG 0 color
 	METHOD as8BitChannel (F)I
