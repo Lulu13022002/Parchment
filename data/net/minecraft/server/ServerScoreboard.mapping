@@ -1,10 +1,6 @@
 CLASS net/minecraft/server/ServerScoreboard
 	METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
 		ARG 1 server
-	METHOD addDirtyListener (Ljava/lang/Runnable;)V
-		ARG 1 runnable
-	METHOD createData (Lnet/minecraft/world/scores/ScoreboardSaveData$Packed;)Lnet/minecraft/world/scores/ScoreboardSaveData;
-		ARG 1 data
 	METHOD getObjectiveDisplaySlotCount (Lnet/minecraft/world/scores/Objective;)I
 		ARG 1 objective
 	METHOD getStartTrackingPackets (Lnet/minecraft/world/scores/Objective;)Ljava/util/List;
@@ -17,10 +13,6 @@ CLASS net/minecraft/server/ServerScoreboard
 		ARG 1 score
 	METHOD lambda$load$3 (Lnet/minecraft/server/ServerScoreboard;Lnet/minecraft/world/scores/PlayerTeam$Packed;)V
 		ARG 1 team
-	METHOD lambda$static$0 (Lnet/minecraft/world/level/saveddata/SavedData$Context;)Lnet/minecraft/world/scores/ScoreboardSaveData;
-		ARG 0 context
-	METHOD lambda$static$1 (Lnet/minecraft/world/level/saveddata/SavedData$Context;)Lcom/mojang/serialization/Codec;
-		ARG 0 context
 	METHOD load (Lnet/minecraft/world/scores/ScoreboardSaveData$Packed;)V
 		ARG 1 data
 	METHOD onObjectiveAdded (Lnet/minecraft/world/scores/Objective;)V

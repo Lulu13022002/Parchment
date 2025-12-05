@@ -131,8 +131,6 @@ CLASS net/minecraft/nbt/CompoundTag
 		ARG 3 accounter
 	METHOD remove (Ljava/lang/String;)Lnet/minecraft/nbt/Tag;
 		ARG 1 key
-	METHOD remove (Ljava/lang/String;)V
-		ARG 1 key
 	METHOD store (Lcom/mojang/serialization/MapCodec;Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)V
 		ARG 1 mapCodec
 		ARG 2 ops

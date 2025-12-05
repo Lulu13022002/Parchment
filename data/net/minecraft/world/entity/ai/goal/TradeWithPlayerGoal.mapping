@@ -1,6 +1,4 @@
 CLASS net/minecraft/world/entity/ai/goal/TradeWithPlayerGoal
-	METHOD <init> (Lnet/minecraft/world/entity/npc/AbstractVillager;)V
-		ARG 1 mob
 	METHOD <init> (Lnet/minecraft/world/entity/npc/villager/AbstractVillager;)V
 		ARG 1 mob
 	METHOD canUse ()Z

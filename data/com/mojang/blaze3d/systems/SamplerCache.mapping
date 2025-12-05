@@ -1,9 +1,4 @@
 CLASS com/mojang/blaze3d/systems/SamplerCache
-	METHOD encode (Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/FilterMode;Lcom/mojang/blaze3d/textures/FilterMode;)I
-		ARG 0 addressModeU
-		ARG 1 addressModeV
-		ARG 2 minFilter
-		ARG 3 magFilter
 	METHOD encode (Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/FilterMode;Lcom/mojang/blaze3d/textures/FilterMode;Z)I
 		ARG 0 addressModeU
 		ARG 1 addressModeV
@@ -20,11 +15,6 @@ CLASS com/mojang/blaze3d/systems/SamplerCache
 	METHOD getRepeat (Lcom/mojang/blaze3d/textures/FilterMode;Z)Lcom/mojang/blaze3d/textures/GpuSampler;
 		ARG 1 filter
 		ARG 2 useMipmaps
-	METHOD getSampler (Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/FilterMode;Lcom/mojang/blaze3d/textures/FilterMode;)Lcom/mojang/blaze3d/textures/GpuSampler;
-		ARG 1 addressModeU
-		ARG 2 addressModeV
-		ARG 3 minFilter
-		ARG 4 magFilter
 	METHOD getSampler (Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/AddressMode;Lcom/mojang/blaze3d/textures/FilterMode;Lcom/mojang/blaze3d/textures/FilterMode;Z)Lcom/mojang/blaze3d/textures/GpuSampler;
 		ARG 1 addressModeU
 		ARG 2 addressModeV

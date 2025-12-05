@@ -4,8 +4,6 @@ CLASS net/minecraft/world/level/storage/DerivedLevelData
 		ARG 2 wrapped
 	METHOD getDayTime ()J
 		COMMENT Get current world time
-	METHOD getGameRules ()Lnet/minecraft/world/level/GameRules;
-		COMMENT Gets the GameRules class Instance.
 	METHOD getGameType ()Lnet/minecraft/world/level/GameType;
 		COMMENT Gets the GameType.
 	METHOD getLevelName ()Ljava/lang/String;

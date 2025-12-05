@@ -14,8 +14,6 @@ CLASS net/minecraft/world/entity/animal/equine/Llama
 		COMMENT Dead and sleeping entities cannot move
 	METHOD joinCaravan (Lnet/minecraft/world/entity/animal/equine/Llama;)V
 		ARG 1 leader
-	METHOD joinCaravan (Lnet/minecraft/world/entity/animal/horse/Llama;)V
-		ARG 1 caravanHead
 	METHOD performRangedAttack (Lnet/minecraft/world/entity/LivingEntity;F)V
 		COMMENT Attack the specified entity using a ranged attack.
 		ARG 1 target
@@ -31,32 +29,22 @@ CLASS net/minecraft/world/entity/animal/equine/Llama
 		ARG 1 strength
 	METHOD setVariant (Lnet/minecraft/world/entity/animal/equine/Llama$Variant;)V
 		ARG 1 variant
-	METHOD setVariant (Lnet/minecraft/world/entity/animal/horse/Llama$Variant;)V
-		ARG 1 variant
 	METHOD spit (Lnet/minecraft/world/entity/LivingEntity;)V
 		ARG 1 target
-	CLASS LlamaAttackWolfGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/Llama;)V
-			ARG 1 llama
-		METHOD <init> (Lnet/minecraft/world/entity/animal/horse/Llama;)V
-			ARG 1 llama
-	CLASS LlamaGroupData
-		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/Llama$Variant;)V
-			ARG 1 variant
-		METHOD <init> (Lnet/minecraft/world/entity/animal/horse/Llama$Variant;)V
-			ARG 1 variant
-	CLASS LlamaHurtByTargetGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/Llama;)V
-			ARG 1 llama
-		METHOD <init> (Lnet/minecraft/world/entity/animal/horse/Llama;)V
-			ARG 1 llama
-		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress Goal should continue executing
 	CLASS Variant
 		METHOD <init> (Ljava/lang/String;IILjava/lang/String;)V
 			ARG 3 id
 			ARG 4 name
 		METHOD byId (I)Lnet/minecraft/world/entity/animal/equine/Llama$Variant;
 			ARG 0 id
-		METHOD byId (I)Lnet/minecraft/world/entity/animal/horse/Llama$Variant;
-			ARG 0 id
+	CLASS LlamaGroupData
+		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/Llama$Variant;)V
+			ARG 1 variant
+	CLASS LlamaAttackWolfGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/Llama;)V
+			ARG 1 llama
+	CLASS LlamaHurtByTargetGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/equine/Llama;)V
+			ARG 1 llama
+		METHOD canContinueToUse ()Z
+			COMMENT Returns whether an in-progress Goal should continue executing

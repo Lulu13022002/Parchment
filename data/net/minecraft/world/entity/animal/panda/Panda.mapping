@@ -31,18 +31,11 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 	METHOD setFlag (IZ)V
 		ARG 1 flagId
 		ARG 2 value
-	METHOD setGeneFromParents (Lnet/minecraft/world/entity/animal/Panda;Lnet/minecraft/world/entity/animal/Panda;)V
-		ARG 1 father
-		ARG 2 mother
 	METHOD setGeneFromParents (Lnet/minecraft/world/entity/animal/panda/Panda;Lnet/minecraft/world/entity/animal/panda/Panda;)V
 		ARG 1 panda
 		ARG 2 mate
-	METHOD setHiddenGene (Lnet/minecraft/world/entity/animal/Panda$Gene;)V
-		ARG 1 pandaType
 	METHOD setHiddenGene (Lnet/minecraft/world/entity/animal/panda/Panda$Gene;)V
 		ARG 1 hiddenGene
-	METHOD setMainGene (Lnet/minecraft/world/entity/animal/Panda$Gene;)V
-		ARG 1 pandaType
 	METHOD setMainGene (Lnet/minecraft/world/entity/animal/panda/Panda$Gene;)V
 		ARG 1 mainGene
 	METHOD setOnBack (Z)V
@@ -62,38 +55,34 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			ARG 3 id
 			ARG 4 name
 			ARG 5 isRecessive
-		METHOD byId (I)Lnet/minecraft/world/entity/animal/Panda$Gene;
-			ARG 0 id
 		METHOD byId (I)Lnet/minecraft/world/entity/animal/panda/Panda$Gene;
 			ARG 0 id
-		METHOD getRandom (Lnet/minecraft/util/RandomSource;)Lnet/minecraft/world/entity/animal/Panda$Gene;
-			ARG 0 random
 		METHOD getRandom (Lnet/minecraft/util/RandomSource;)Lnet/minecraft/world/entity/animal/panda/Panda$Gene;
 			ARG 0 random
-		METHOD getVariantFromGenes (Lnet/minecraft/world/entity/animal/Panda$Gene;Lnet/minecraft/world/entity/animal/Panda$Gene;)Lnet/minecraft/world/entity/animal/Panda$Gene;
-			ARG 0 mainGene
-			ARG 1 hiddenGene
 		METHOD getVariantFromGenes (Lnet/minecraft/world/entity/animal/panda/Panda$Gene;Lnet/minecraft/world/entity/animal/panda/Panda$Gene;)Lnet/minecraft/world/entity/animal/panda/Panda$Gene;
 			ARG 0 mainGene
 			ARG 1 hiddenGene
-	CLASS PandaAttackGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;DZ)V
-			ARG 1 panda
-			ARG 2 speedModifier
-			ARG 4 followingTargetEvenIfNotSeen
-		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;DZ)V
-			ARG 1 panda
-			ARG 2 speedModifier
-			ARG 4 followTargetEvenIfNotSeen
+	CLASS PandaSitGoal
+		METHOD canContinueToUse ()Z
+			COMMENT Returns whether an in-progress Goal should continue executing
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
-	CLASS PandaAvoidGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;Ljava/lang/Class;FDD)V
+		METHOD start ()V
+			COMMENT Execute a one shot task or start executing a continuous task
+		METHOD stop ()V
+			COMMENT Reset the task's internal state. Called when this task is interrupted by another one
+		METHOD tick ()V
+			COMMENT Keep ticking a continuous task that has already been started
+	CLASS PandaRollGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
 			ARG 1 panda
-			ARG 2 avoidClass
-			ARG 3 maxDist
-			ARG 4 walkSpeedModifier
-			ARG 6 sprintSpeedModifier
+		METHOD canContinueToUse ()Z
+			COMMENT Returns whether an in-progress Goal should continue executing
+		METHOD canUse ()Z
+			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
+		METHOD start ()V
+			COMMENT Execute a one shot task or start executing a continuous task
+	CLASS PandaAvoidGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;Ljava/lang/Class;FDD)V
 			ARG 1 panda
 			ARG 2 avoidClass
@@ -103,29 +92,37 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
 	CLASS PandaBreedGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;D)V
-			ARG 1 panda
-			ARG 2 speedModifier
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;D)V
 			ARG 1 panda
 			ARG 2 speedModifier
 		METHOD canUse ()Z
 			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
-	CLASS PandaHurtByTargetGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;[Ljava/lang/Class;)V
+	CLASS PandaPanicGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;D)V
 			ARG 1 panda
-			ARG 2 toIgnoreDamage
-		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;[Ljava/lang/Class;)V
-			ARG 1 panda
-			ARG 2 toIgnoreDamage
-		METHOD alertOther (Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/entity/LivingEntity;)V
-			ARG 1 mob
-			ARG 2 target
+			ARG 2 speedModifier
 		METHOD canContinueToUse ()Z
 			COMMENT Returns whether an in-progress Goal should continue executing
-	CLASS PandaLieOnBackGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;)V
+	CLASS PandaAttackGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;DZ)V
 			ARG 1 panda
+			ARG 2 speedModifier
+			ARG 4 followTargetEvenIfNotSeen
+		METHOD canUse ()Z
+			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
+	CLASS PandaSneezeGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
+			ARG 1 panda
+		METHOD canContinueToUse ()Z
+			COMMENT Returns whether an in-progress Goal should continue executing
+		METHOD canUse ()Z
+			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
+		METHOD start ()V
+			COMMENT Execute a one shot task or start executing a continuous task
+	CLASS PandaMoveControl
+		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
+			ARG 1 panda
+	CLASS PandaLieOnBackGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
 			ARG 1 panda
 		METHOD canContinueToUse ()Z
@@ -136,11 +133,16 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			COMMENT Execute a one shot task or start executing a continuous task
 		METHOD stop ()V
 			COMMENT Reset the task's internal state. Called when this task is interrupted by another one
-	CLASS PandaLookAtPlayerGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;Ljava/lang/Class;F)V
+	CLASS PandaHurtByTargetGoal
+		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;[Ljava/lang/Class;)V
 			ARG 1 panda
-			ARG 2 lookAtType
-			ARG 3 lookDistance
+			ARG 2 toIgnoreDamage
+		METHOD alertOther (Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/entity/LivingEntity;)V
+			ARG 1 mob
+			ARG 2 target
+		METHOD canContinueToUse ()Z
+			COMMENT Returns whether an in-progress Goal should continue executing
+	CLASS PandaLookAtPlayerGoal
 		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;Ljava/lang/Class;F)V
 			ARG 1 panda
 			ARG 2 lookAtType
@@ -155,50 +157,3 @@ CLASS net/minecraft/world/entity/animal/panda/Panda
 			ARG 1 lookAt
 		METHOD tick ()V
 			COMMENT Keep ticking a continuous task that has already been started
-	CLASS PandaMoveControl
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;)V
-			ARG 1 panda
-		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
-			ARG 1 panda
-	CLASS PandaPanicGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;D)V
-			ARG 1 panda
-			ARG 2 speedModifier
-		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;D)V
-			ARG 1 panda
-			ARG 2 speedModifier
-		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress Goal should continue executing
-	CLASS PandaRollGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;)V
-			ARG 1 panda
-		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
-			ARG 1 panda
-		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress Goal should continue executing
-		METHOD canUse ()Z
-			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
-		METHOD start ()V
-			COMMENT Execute a one shot task or start executing a continuous task
-	CLASS PandaSitGoal
-		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress Goal should continue executing
-		METHOD canUse ()Z
-			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
-		METHOD start ()V
-			COMMENT Execute a one shot task or start executing a continuous task
-		METHOD stop ()V
-			COMMENT Reset the task's internal state. Called when this task is interrupted by another one
-		METHOD tick ()V
-			COMMENT Keep ticking a continuous task that has already been started
-	CLASS PandaSneezeGoal
-		METHOD <init> (Lnet/minecraft/world/entity/animal/Panda;)V
-			ARG 1 panda
-		METHOD <init> (Lnet/minecraft/world/entity/animal/panda/Panda;)V
-			ARG 1 panda
-		METHOD canContinueToUse ()Z
-			COMMENT Returns whether an in-progress Goal should continue executing
-		METHOD canUse ()Z
-			COMMENT Returns whether execution should begin. You can also read and cache any state necessary for execution in this method as well.
-		METHOD start ()V
-			COMMENT Execute a one shot task or start executing a continuous task

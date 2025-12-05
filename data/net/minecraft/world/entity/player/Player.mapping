@@ -11,12 +11,6 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD attack (Lnet/minecraft/world/entity/Entity;)V
 		COMMENT Attacks for the player the targeted entity with the currently equipped item. The equipped item has hurtEnemy called on it.
 		ARG 1 target
-	METHOD attackVisualEffects (Lnet/minecraft/world/entity/Entity;ZZZF)V
-		ARG 1 entity
-		ARG 2 crit
-		ARG 3 sweepAttack
-		ARG 4 fullyCharged
-		ARG 5 enchantedDamage
 	METHOD attackVisualEffects (Lnet/minecraft/world/entity/Entity;ZZZZF)V
 		ARG 1 target
 		ARG 2 crit
@@ -54,15 +48,6 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 5 distance
 	METHOD canHarmPlayer (Lnet/minecraft/world/entity/player/Player;)Z
 		ARG 1 other
-	METHOD canInteractWithBlock (Lnet/minecraft/core/BlockPos;D)Z
-		ARG 1 pos
-		ARG 2 distance
-	METHOD canInteractWithEntity (Lnet/minecraft/world/entity/Entity;D)Z
-		ARG 1 entity
-		ARG 2 distance
-	METHOD canInteractWithEntity (Lnet/minecraft/world/phys/AABB;D)Z
-		ARG 1 boundingBox
-		ARG 2 distance
 	METHOD canPlayerFitWithinBlocksAndEntitiesWhen (Lnet/minecraft/world/entity/Pose;)Z
 		ARG 1 pose
 	METHOD cannotAttack (Lnet/minecraft/world/entity/Entity;)Z
@@ -154,8 +139,6 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 1 stack
 	METHOD hasCorrectToolForDrops (Lnet/minecraft/world/level/block/state/BlockState;)Z
 		ARG 1 state
-	METHOD hasPermissions (I)Z
-		ARG 1 permissionLevel
 	METHOD hurtArmor (Lnet/minecraft/world/damagesource/DamageSource;F)V
 		ARG 1 damageSource
 		ARG 2 damageAmount
@@ -199,10 +182,6 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD isWithinEntityInteractionRange (Lnet/minecraft/world/phys/AABB;D)Z
 		ARG 1 box
 		ARG 2 range
-	METHOD itemAttackInteraction (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/damagesource/DamageSource;)V
-		ARG 1 entity
-		ARG 2 stack
-		ARG 3 damageSource
 	METHOD itemAttackInteraction (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/damagesource/DamageSource;Z)V
 		ARG 1 target
 		ARG 2 stack
@@ -239,9 +218,6 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD openHorseInventory (Lnet/minecraft/world/entity/animal/equine/AbstractHorse;Lnet/minecraft/world/Container;)V
 		ARG 1 horse
 		ARG 2 inventory
-	METHOD openHorseInventory (Lnet/minecraft/world/entity/animal/horse/AbstractHorse;Lnet/minecraft/world/Container;)V
-		ARG 1 horse
-		ARG 2 inventory
 	METHOD openItemGui (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;)V
 		ARG 1 stack
 		ARG 2 hand
@@ -249,12 +225,8 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 1 jigsawBlockEntity
 	METHOD openMenu (Lnet/minecraft/world/MenuProvider;)Ljava/util/OptionalInt;
 		ARG 1 menu
-	METHOD openMinecartCommandBlock (Lnet/minecraft/world/entity/vehicle/MinecartCommandBlock;)V
-		ARG 1 minecartCommandBlock
 	METHOD openMinecartCommandBlock (Lnet/minecraft/world/entity/vehicle/minecart/MinecartCommandBlock;)V
 		ARG 1 commandBlock
-	METHOD openMinecartCommandBlock (Lnet/minecraft/world/level/BaseCommandBlock;)V
-		ARG 1 commandEntity
 	METHOD openNautilusInventory (Lnet/minecraft/world/entity/animal/nautilus/AbstractNautilus;Lnet/minecraft/world/Container;)V
 		ARG 1 nautilus
 		ARG 2 inventory
@@ -267,11 +239,6 @@ CLASS net/minecraft/world/entity/player/Player
 	METHOD openTextEdit (Lnet/minecraft/world/level/block/entity/SignBlockEntity;Z)V
 		ARG 1 signEntity
 		ARG 2 isFrontText
-	METHOD playNotifySound (Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
-		ARG 1 sound
-		ARG 2 source
-		ARG 3 volume
-		ARG 4 pitch
 	METHOD playServerSideSound (Lnet/minecraft/sounds/SoundEvent;)V
 		ARG 1 sound
 	METHOD playSound (Lnet/minecraft/sounds/SoundEvent;FF)V
@@ -291,8 +258,6 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 4 villagerXp
 		ARG 5 showProgress
 		ARG 6 canRestock
-	METHOD setClientLoaded (Z)V
-		ARG 1 clientLoaded
 	METHOD setIgnoreFallDamageFromCurrentImpulse (Z)V
 		ARG 1 ignoreFallDamageFromCurrentImpulse
 	METHOD setLastDeathLocation (Ljava/util/Optional;)V
@@ -330,6 +295,3 @@ CLASS net/minecraft/world/entity/player/Player
 		ARG 1 carried
 		ARG 2 clicked
 		ARG 3 action
-	CLASS BedSleepingProblem
-		METHOD <init> (Ljava/lang/String;ILnet/minecraft/network/chat/Component;)V
-			ARG 3 message

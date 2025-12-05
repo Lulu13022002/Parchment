@@ -68,8 +68,6 @@ CLASS net/minecraft/server/MinecraftServer
 		COMMENT Returns an array of the usernames of all the connected players.
 	METHOD getPort ()I
 		COMMENT Gets serverPort.
-	METHOD getProfilePermissions (Lnet/minecraft/server/players/NameAndId;)I
-		ARG 1 user
 	METHOD getProfilePermissions (Lnet/minecraft/server/players/NameAndId;)Lnet/minecraft/server/permissions/LevelBasedPermissionSet;
 		ARG 1 nameAndId
 	METHOD getScaledTrackingDistance (I)I
@@ -89,14 +87,8 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 2 payload
 	METHOD initServer ()Z
 		COMMENT Initialises the server and starts it.
-	METHOD isAllowedToEnterPortal (Lnet/minecraft/world/level/Level;)Z
-		ARG 1 level
-	METHOD isCommandBlockEnabled ()Z
-		COMMENT Return whether command blocks are enabled.
 	METHOD isDemo ()Z
 		COMMENT Gets whether this is a demo or not.
-	METHOD isEpollEnabled ()Z
-		COMMENT Get if native transport should be used. Native transport means linux server performance improvements and optimized packet sending/receiving on linux
 	METHOD isHardcore ()Z
 		COMMENT Defaults to {@code false}.
 	METHOD isPublished ()Z
@@ -132,9 +124,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 3 header
 	METHOD logTickMethodTime (J)V
 		ARG 1 startTime
-	METHOD onGameRuleChanged (Ljava/lang/String;Lnet/minecraft/world/level/GameRules$Value;)V
-		ARG 1 gameRule
-		ARG 2 value
 	METHOD onGameRuleChanged (Lnet/minecraft/world/level/gamerules/GameRule;Ljava/lang/Object;)V
 		ARG 1 gameRule
 		ARG 2 value
@@ -149,8 +138,6 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 1 gameMode
 		ARG 2 commands
 		ARG 3 port
-	METHOD readScoreboard (Lnet/minecraft/world/level/storage/DimensionDataStorage;)V
-		ARG 1 dataStorage
 	METHOD reloadResources (Ljava/util/Collection;)Ljava/util/concurrent/CompletableFuture;
 		COMMENT Replaces currently selected list of datapacks, reloads them, and sends new data to players.
 		ARG 1 selectedIds

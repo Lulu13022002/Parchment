@@ -84,8 +84,6 @@ CLASS net/minecraft/server/level/ServerLevel
 		COMMENT Gets an unmodifiable iterator of all loaded entities in the world.
 	METHOD getChunkSource ()Lnet/minecraft/server/level/ServerChunkCache;
 		COMMENT Gets the world's chunk provider
-	METHOD getDestroyType (Lnet/minecraft/world/level/GameRules$Key;)Lnet/minecraft/world/level/Explosion$BlockInteraction;
-		ARG 1 decayGameRule
 	METHOD getDestroyType (Lnet/minecraft/world/level/gamerules/GameRule;)Lnet/minecraft/world/level/Explosion$BlockInteraction;
 		ARG 1 gameRule
 	METHOD getEntities (Lnet/minecraft/world/level/entity/EntityTypeTest;Ljava/util/function/Predicate;)Ljava/util/List;

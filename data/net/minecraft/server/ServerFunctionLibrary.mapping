@@ -1,7 +1,4 @@
 CLASS net/minecraft/server/ServerFunctionLibrary
-	METHOD <init> (ILcom/mojang/brigadier/CommandDispatcher;)V
-		ARG 1 functionCompilationLevel
-		ARG 2 dispatcher
 	METHOD <init> (Lnet/minecraft/server/permissions/PermissionSet;Lcom/mojang/brigadier/CommandDispatcher;)V
 		ARG 1 functionCompilationPermissions
 		ARG 2 dispatcher

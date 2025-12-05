@@ -108,9 +108,6 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 	METHOD harness (Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/level/ItemLike;)V
 		ARG 1 harness
 		ARG 2 wool
-	METHOD has (Lnet/minecraft/advancements/critereon/MinMaxBounds$Ints;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/advancements/Criterion;
-		ARG 1 count
-		ARG 2 item
 	METHOD has (Lnet/minecraft/advancements/criterion/MinMaxBounds$Ints;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/advancements/Criterion;
 		ARG 1 count
 		ARG 2 item
@@ -120,10 +117,6 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 		ARG 1 item
 	METHOD insideOf (Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/advancements/Criterion;
 		ARG 0 block
-	METHOD inventoryTrigger ([Lnet/minecraft/advancements/critereon/ItemPredicate$Builder;)Lnet/minecraft/advancements/Criterion;
-		ARG 0 items
-	METHOD inventoryTrigger ([Lnet/minecraft/advancements/critereon/ItemPredicate;)Lnet/minecraft/advancements/Criterion;
-		ARG 0 predicates
 	METHOD inventoryTrigger ([Lnet/minecraft/advancements/criterion/ItemPredicate$Builder;)Lnet/minecraft/advancements/Criterion;
 		ARG 0 items
 	METHOD inventoryTrigger ([Lnet/minecraft/advancements/criterion/ItemPredicate;)Lnet/minecraft/advancements/Criterion;
@@ -331,11 +324,6 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 	METHOD woodenBoat (Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/level/ItemLike;)V
 		ARG 1 boat
 		ARG 2 material
-	CLASS FamilyRecipeProvider
-		METHOD create (Lnet/minecraft/data/recipes/RecipeProvider;Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/data/recipes/RecipeBuilder;
-			ARG 1 recipeProvider
-			ARG 2 ingredient
-			ARG 3 result
 	CLASS Runner
 		METHOD <init> (Lnet/minecraft/data/PackOutput;Ljava/util/concurrent/CompletableFuture;)V
 			ARG 1 packOutput
@@ -343,3 +331,8 @@ CLASS net/minecraft/data/recipes/RecipeProvider
 		METHOD createRecipeProvider (Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/data/recipes/RecipeOutput;)Lnet/minecraft/data/recipes/RecipeProvider;
 			ARG 1 registries
 			ARG 2 output
+	CLASS FamilyRecipeProvider
+		METHOD create (Lnet/minecraft/data/recipes/RecipeProvider;Lnet/minecraft/world/level/ItemLike;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/data/recipes/RecipeBuilder;
+			ARG 1 recipeProvider
+			ARG 2 ingredient
+			ARG 3 result

@@ -22,11 +22,6 @@ CLASS net/minecraft/server/commands/RandomCommand
 		ARG 0 context
 	METHOD lambda$register$7 (Lcom/mojang/brigadier/context/CommandContext;)I
 		ARG 0 context
-	METHOD randomSample (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/advancements/critereon/MinMaxBounds$Ints;Lnet/minecraft/resources/Identifier;Z)I
-		ARG 0 source
-		ARG 1 range
-		ARG 2 sequence
-		ARG 3 displayResult
 	METHOD randomSample (Lnet/minecraft/commands/CommandSourceStack;Lnet/minecraft/advancements/criterion/MinMaxBounds$Ints;Lnet/minecraft/resources/Identifier;Z)I
 		ARG 0 source
 		ARG 1 range

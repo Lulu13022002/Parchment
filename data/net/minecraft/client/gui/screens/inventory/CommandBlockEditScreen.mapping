@@ -3,7 +3,3 @@ CLASS net/minecraft/client/gui/screens/inventory/CommandBlockEditScreen
 		ARG 1 autoCommandBlock
 	METHOD enableControls (Z)V
 		ARG 1 active
-	METHOD resize (Lnet/minecraft/client/Minecraft;II)V
-		ARG 1 minecraft
-		ARG 2 width
-		ARG 3 height

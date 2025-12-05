@@ -1,11 +1,4 @@
 CLASS net/minecraft/world/entity/ai/behavior/ChargeAttack
-	METHOD <init> (ILnet/minecraft/world/entity/ai/targeting/TargetingConditions;FFDD)V
-		ARG 1 timeBetweenAttacks
-		ARG 2 chargeTargeting
-		ARG 3 speed
-		ARG 4 knockbackForce
-		ARG 5 maxChargeDistance
-		ARG 7 maxTargetDetectionDistance
 	METHOD <init> (ILnet/minecraft/world/entity/ai/targeting/TargetingConditions;FFDDLnet/minecraft/sounds/SoundEvent;)V
 		ARG 1 timeBetweenAttacks
 		ARG 2 chargeTargeting

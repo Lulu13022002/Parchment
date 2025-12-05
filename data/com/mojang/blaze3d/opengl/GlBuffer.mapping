@@ -1,11 +1,4 @@
 CLASS com/mojang/blaze3d/opengl/GlBuffer
-	METHOD <init> (Ljava/util/function/Supplier;Lcom/mojang/blaze3d/opengl/DirectStateAccess;IIILjava/nio/ByteBuffer;)V
-		ARG 1 label
-		ARG 2 dsa
-		ARG 3 usage
-		ARG 4 size
-		ARG 5 handle
-		ARG 6 persistentBuffer
 	METHOD <init> (Ljava/util/function/Supplier;Lcom/mojang/blaze3d/opengl/DirectStateAccess;IJILjava/nio/ByteBuffer;)V
 		ARG 1 label
 		ARG 2 dsa

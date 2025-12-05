@@ -1,6 +1,4 @@
 CLASS net/minecraft/server/jsonrpc/security/AuthenticationHandler
-	METHOD <init> (Lnet/minecraft/server/jsonrpc/security/SecurityConfig;)V
-		ARG 1 securityConfig
 	METHOD <init> (Lnet/minecraft/server/jsonrpc/security/SecurityConfig;Ljava/lang/String;)V
 		ARG 1 securityConfig
 		ARG 2 allowedOrigins
@@ -22,16 +20,11 @@ CLASS net/minecraft/server/jsonrpc/security/AuthenticationHandler
 	METHOD sendUnauthorizedResponse (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/String;)V
 		ARG 1 context
 		ARG 2 message
-	METHOD validateAuthentication (Lio/netty/handler/codec/http/HttpRequest;)Z
-		ARG 1 request
 	METHOD write (Lio/netty/channel/ChannelHandlerContext;Ljava/lang/Object;Lio/netty/channel/ChannelPromise;)V
 		ARG 1 context
 		ARG 2 message
 		ARG 3 promise
 	CLASS SecurityCheckResult
-		METHOD <init> (ZLjava/lang/String;)V
-			ARG 1 allowed
-			ARG 2 reason
 		METHOD <init> (ZLjava/lang/String;Z)V
 			ARG 1 allowed
 			ARG 2 reason

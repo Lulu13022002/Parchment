@@ -7,9 +7,6 @@ CLASS net/minecraft/client/gui/components/StringWidget
 	METHOD <init> (Lnet/minecraft/network/chat/Component;Lnet/minecraft/client/gui/Font;)V
 		ARG 1 message
 		ARG 2 font
-	METHOD clipText (Lnet/minecraft/network/chat/Component;I)Lnet/minecraft/util/FormattedCharSequence;
-		ARG 1 message
-		ARG 2 width
 	METHOD clipText (Lnet/minecraft/network/chat/Component;Lnet/minecraft/client/gui/Font;I)Lnet/minecraft/util/FormattedCharSequence;
 		ARG 0 text
 		ARG 1 font

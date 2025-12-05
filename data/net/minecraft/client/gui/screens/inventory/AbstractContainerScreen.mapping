@@ -83,9 +83,6 @@ CLASS net/minecraft/client/gui/screens/inventory/AbstractContainerScreen
 		ARG 1 guiGraphics
 		ARG 2 mouseX
 		ARG 3 mouseY
-	METHOD renderSlot (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/inventory/Slot;)V
-		ARG 1 guiGraphics
-		ARG 2 slot
 	METHOD renderSlot (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/inventory/Slot;II)V
 		ARG 1 guiGraphics
 		ARG 2 slot
@@ -94,8 +91,6 @@ CLASS net/minecraft/client/gui/screens/inventory/AbstractContainerScreen
 	METHOD renderSlotHighlightBack (Lnet/minecraft/client/gui/GuiGraphics;)V
 		ARG 1 guiGraphics
 	METHOD renderSlotHighlightFront (Lnet/minecraft/client/gui/GuiGraphics;)V
-		ARG 1 guiGraphics
-	METHOD renderSlots (Lnet/minecraft/client/gui/GuiGraphics;)V
 		ARG 1 guiGraphics
 	METHOD renderSlots (Lnet/minecraft/client/gui/GuiGraphics;II)V
 		ARG 1 guiGraphics

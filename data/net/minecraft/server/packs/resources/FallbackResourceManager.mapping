@@ -19,8 +19,6 @@ CLASS net/minecraft/server/packs/resources/FallbackResourceManager
 		ARG 0 location
 	METHOD getMetadataLocation (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/resources/Identifier;
 		ARG 0 location
-	METHOD getResourceLocationFromMetadata (Lnet/minecraft/resources/Identifier;)Lnet/minecraft/resources/Identifier;
-		ARG 0 metadataResourceLocation
 	METHOD isMetadata (Lnet/minecraft/resources/Identifier;)Z
 		ARG 0 location
 	METHOD lambda$listPackResources$6 (Ljava/util/function/Predicate;Ljava/util/Map;Lnet/minecraft/server/packs/PackResources;Lnet/minecraft/resources/Identifier;Lnet/minecraft/server/packs/resources/IoSupplier;)V
@@ -57,6 +55,11 @@ CLASS net/minecraft/server/packs/resources/FallbackResourceManager
 		ARG 0 location
 		ARG 1 packResources
 		ARG 2 stream
+	CLASS PackEntry
+		METHOD filterAll (Ljava/util/Collection;)V
+			ARG 1 locations
+		METHOD isFiltered (Lnet/minecraft/resources/Identifier;)Z
+			ARG 1 location
 	CLASS EntryStack
 		METHOD <init> (Lnet/minecraft/resources/Identifier;)V
 			ARG 1 fileLocation
@@ -65,8 +68,3 @@ CLASS net/minecraft/server/packs/resources/FallbackResourceManager
 			ARG 1 inputStream
 			ARG 2 resourceLocation
 			ARG 3 packName
-	CLASS PackEntry
-		METHOD filterAll (Ljava/util/Collection;)V
-			ARG 1 locations
-		METHOD isFiltered (Lnet/minecraft/resources/Identifier;)Z
-			ARG 1 location

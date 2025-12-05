@@ -5,5 +5,3 @@ CLASS net/minecraft/world/Stopwatch
 		ARG 1 currentTime
 	METHOD elapsedSeconds (J)D
 		ARG 1 currentTime
-	METHOD elapsedTime (J)J
-		ARG 1 currentTime

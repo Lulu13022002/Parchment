@@ -6,7 +6,5 @@ CLASS net/minecraft/world/entity/ai/behavior/MeleeAttack
 		ARG 1 attackCooldown
 	METHOD isHoldingUsableNonMeleeWeapon (Lnet/minecraft/world/entity/Mob;)Z
 		ARG 0 mob
-	METHOD isHoldingUsableProjectileWeapon (Lnet/minecraft/world/entity/Mob;)Z
-		ARG 0 mob
 	METHOD lambda$create$3 (Ljava/util/function/Predicate;ILnet/minecraft/world/entity/ai/behavior/declarative/BehaviorBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 		ARG 2 instance

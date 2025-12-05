@@ -43,8 +43,6 @@ CLASS net/minecraft/world/entity/projectile/arrow/AbstractArrow
 		COMMENT Whether the arrow has a stream of critical hit particles flying behind it.
 	METHOD isNoPhysics ()Z
 		COMMENT Whether the arrow can noPhysics
-	METHOD lambda$hitBlockEnchantmentEffects$0 (Lnet/minecraft/world/item/Item;)V
-		ARG 1 item
 	METHOD move (Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V
 		ARG 1 type
 		ARG 2 movement
@@ -94,7 +92,5 @@ CLASS net/minecraft/world/entity/projectile/arrow/AbstractArrow
 	METHOD tryPickup (Lnet/minecraft/world/entity/player/Player;)Z
 		ARG 1 player
 	CLASS Pickup
-		METHOD byOrdinal (I)Lnet/minecraft/world/entity/projectile/AbstractArrow$Pickup;
-			ARG 0 ordinal
 		METHOD byOrdinal (I)Lnet/minecraft/world/entity/projectile/arrow/AbstractArrow$Pickup;
 			ARG 0 ordinal

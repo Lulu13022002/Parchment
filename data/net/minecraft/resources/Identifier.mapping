@@ -31,8 +31,6 @@ CLASS net/minecraft/resources/Identifier
 		ARG 1 path
 	METHOD isAllowedInIdentifier (C)Z
 		ARG 0 c
-	METHOD isAllowedInResourceLocation (C)Z
-		ARG 0 character
 	METHOD isValidNamespace (Ljava/lang/String;)Z
 		COMMENT @return {@code true} if the specified {@code namespace} is valid: consists only of {@code [a-z0-9_.-]} characters
 		ARG 0 namespace

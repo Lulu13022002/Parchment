@@ -1,6 +1,4 @@
 CLASS net/minecraft/world/entity/ai/goal/LookAtTradingPlayerGoal
-	METHOD <init> (Lnet/minecraft/world/entity/npc/AbstractVillager;)V
-		ARG 1 villager
 	METHOD <init> (Lnet/minecraft/world/entity/npc/villager/AbstractVillager;)V
 		ARG 1 villager
 	METHOD canUse ()Z

@@ -28,10 +28,6 @@ CLASS net/minecraft/network/Connection
 		ARG 0 address
 		ARG 1 group
 		ARG 2 connection
-	METHOD connect (Ljava/net/InetSocketAddress;ZLnet/minecraft/network/Connection;)Lio/netty/channel/ChannelFuture;
-		ARG 0 address
-		ARG 1 useEpollIfAvailable
-		ARG 2 connection
 	METHOD connectToLocalServer (Ljava/net/SocketAddress;)Lnet/minecraft/network/Connection;
 		COMMENT Prepares a clientside Connection for a local in-memory connection ("single player").
 		COMMENT Establishes a connection to the socket supplied and configures the channel pipeline (only the packet handler is necessary,
@@ -41,10 +37,6 @@ CLASS net/minecraft/network/Connection
 		ARG 0 address
 		ARG 1 group
 		ARG 2 bandwidthLogger
-	METHOD connectToServer (Ljava/net/InetSocketAddress;ZLnet/minecraft/util/debugchart/LocalSampleLogger;)Lnet/minecraft/network/Connection;
-		ARG 0 address
-		ARG 1 useEpollIfAvailable
-		ARG 2 sampleLogger
 	METHOD createFrameDecoder (Lnet/minecraft/network/BandwidthDebugMonitor;Z)Lio/netty/channel/ChannelInboundHandler;
 		ARG 0 bandwidthDebugMonitor
 		ARG 1 memoryOnly

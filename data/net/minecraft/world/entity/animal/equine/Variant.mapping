@@ -4,5 +4,3 @@ CLASS net/minecraft/world/entity/animal/equine/Variant
 		ARG 4 name
 	METHOD byId (I)Lnet/minecraft/world/entity/animal/equine/Variant;
 		ARG 0 id
-	METHOD byId (I)Lnet/minecraft/world/entity/animal/horse/Variant;
-		ARG 0 id

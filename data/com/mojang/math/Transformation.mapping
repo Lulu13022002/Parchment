@@ -1,11 +1,6 @@
 CLASS com/mojang/math/Transformation
 	METHOD <init> (Lorg/joml/Matrix4fc;)V
 		ARG 1 matrix
-	METHOD <init> (Lorg/joml/Vector3f;Lorg/joml/Quaternionf;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;)V
-		ARG 1 translation
-		ARG 2 leftRotation
-		ARG 3 scale
-		ARG 4 rightRotation
 	METHOD <init> (Lorg/joml/Vector3fc;Lorg/joml/Quaternionfc;Lorg/joml/Vector3fc;Lorg/joml/Quaternionfc;)V
 		ARG 1 translation
 		ARG 2 leftRotation
@@ -13,11 +8,6 @@ CLASS com/mojang/math/Transformation
 		ARG 4 rightRotation
 	METHOD compose (Lcom/mojang/math/Transformation;)Lcom/mojang/math/Transformation;
 		ARG 1 other
-	METHOD compose (Lorg/joml/Vector3f;Lorg/joml/Quaternionf;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;)Lorg/joml/Matrix4f;
-		ARG 0 translation
-		ARG 1 leftRotation
-		ARG 2 scale
-		ARG 3 rightRotation
 	METHOD compose (Lorg/joml/Vector3fc;Lorg/joml/Quaternionfc;Lorg/joml/Vector3fc;Lorg/joml/Quaternionfc;)Lorg/joml/Matrix4f;
 		ARG 0 translation
 		ARG 1 leftRotation

@@ -33,7 +33,3 @@ CLASS net/minecraft/world/entity/ai/util/GoalUtils
 	METHOD mobRestricted (Lnet/minecraft/world/entity/PathfinderMob;D)Z
 		ARG 0 mob
 		ARG 1 radius
-	METHOD mobRestricted (Lnet/minecraft/world/entity/PathfinderMob;I)Z
-		COMMENT @return if a mob is stuck, within a certain radius beyond its restriction radius
-		ARG 0 mob
-		ARG 1 radius

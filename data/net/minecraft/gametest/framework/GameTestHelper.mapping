@@ -122,10 +122,6 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 2 x
 		ARG 4 y
 		ARG 6 z
-	METHOD assertEntityPosition (Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;Lnet/minecraft/network/chat/Component;)V
-		ARG 1 entity
-		ARG 2 boundingBox
-		ARG 3 message
 	METHOD assertEntityPresent (Lnet/minecraft/world/entity/EntityType;)V
 		ARG 1 type
 	METHOD assertEntityPresent (Lnet/minecraft/world/entity/EntityType;III)V
@@ -400,8 +396,6 @@ CLASS net/minecraft/gametest/framework/GameTestHelper
 		ARG 1 pos
 		ARG 2 state
 		ARG 3 facing
-	METHOD setDayTime (I)V
-		ARG 1 time
 	METHOD spawn (Lnet/minecraft/world/entity/EntityType;FFF)Lnet/minecraft/world/entity/Entity;
 		ARG 1 type
 		ARG 2 x

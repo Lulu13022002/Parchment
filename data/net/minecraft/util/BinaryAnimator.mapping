@@ -1,9 +1,6 @@
 CLASS net/minecraft/util/BinaryAnimator
 	METHOD <init> (I)V
 		ARG 1 animationLength
-	METHOD <init> (ILnet/minecraft/util/BinaryAnimator$EasingFunction;)V
-		ARG 1 animationLength
-		ARG 2 easingFunction
 	METHOD <init> (ILnet/minecraft/util/EasingType;)V
 		ARG 1 animationLength
 		ARG 2 easing
@@ -11,6 +8,3 @@ CLASS net/minecraft/util/BinaryAnimator
 		ARG 1 partialTick
 	METHOD tick (Z)V
 		ARG 1 condition
-	CLASS EasingFunction
-		METHOD apply (F)F
-			ARG 1 ticks

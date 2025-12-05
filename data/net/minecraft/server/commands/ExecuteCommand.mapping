@@ -32,18 +32,12 @@ CLASS net/minecraft/server/commands/ExecuteCommand
 		ARG 2 end
 		ARG 3 destination
 		ARG 4 isMasked
-	METHOD checkScore (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/advancements/critereon/MinMaxBounds$Ints;)Z
-		ARG 0 context
-		ARG 1 bounds
 	METHOD checkScore (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/advancements/criterion/MinMaxBounds$Ints;)Z
 		ARG 0 context
 		ARG 1 range
 	METHOD checkScore (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/server/commands/ExecuteCommand$IntBiPredicate;)Z
 		ARG 0 context
 		ARG 1 predicate
-	METHOD checkStopwatch (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/advancements/critereon/MinMaxBounds$Doubles;)Z
-		ARG 0 context
-		ARG 1 bounds
 	METHOD checkStopwatch (Lcom/mojang/brigadier/context/CommandContext;Lnet/minecraft/advancements/criterion/MinMaxBounds$Doubles;)Z
 		ARG 0 context
 		ARG 1 range
@@ -153,16 +147,16 @@ CLASS net/minecraft/server/commands/ExecuteCommand
 		ARG 0 parent
 		ARG 1 literal
 		ARG 2 storingResult
-	CLASS CommandNumericPredicate
-		METHOD test (Lcom/mojang/brigadier/context/CommandContext;)I
-			ARG 1 context
-	CLASS CommandPredicate
-		METHOD test (Lcom/mojang/brigadier/context/CommandContext;)Z
-			ARG 1 context
-	CLASS ExecuteIfFunctionCustomModifier
-		METHOD <init> (Z)V
-			ARG 1 invert
 	CLASS IntBiPredicate
 		METHOD test (II)Z
 			ARG 1 value1
 			ARG 2 value2
+	CLASS CommandPredicate
+		METHOD test (Lcom/mojang/brigadier/context/CommandContext;)Z
+			ARG 1 context
+	CLASS CommandNumericPredicate
+		METHOD test (Lcom/mojang/brigadier/context/CommandContext;)I
+			ARG 1 context
+	CLASS ExecuteIfFunctionCustomModifier
+		METHOD <init> (Z)V
+			ARG 1 invert

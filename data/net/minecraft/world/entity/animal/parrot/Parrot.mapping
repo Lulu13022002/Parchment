@@ -50,8 +50,6 @@ CLASS net/minecraft/world/entity/animal/parrot/Parrot
 		COMMENT Called when a record starts or stops playing. Used to make parrots start or stop partying.
 		ARG 1 pos
 		ARG 2 isPartying
-	METHOD setVariant (Lnet/minecraft/world/entity/animal/Parrot$Variant;)V
-		ARG 1 variant
 	METHOD setVariant (Lnet/minecraft/world/entity/animal/parrot/Parrot$Variant;)V
 		ARG 1 variant
 	CLASS 1
@@ -61,7 +59,5 @@ CLASS net/minecraft/world/entity/animal/parrot/Parrot
 		METHOD <init> (Ljava/lang/String;IILjava/lang/String;)V
 			ARG 3 id
 			ARG 4 name
-		METHOD byId (I)Lnet/minecraft/world/entity/animal/Parrot$Variant;
-			ARG 0 id
 		METHOD byId (I)Lnet/minecraft/world/entity/animal/parrot/Parrot$Variant;
 			ARG 0 id

@@ -6,13 +6,6 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 4 renderBuffers
 		ARG 5 levelRenderState
 		ARG 6 featureRenderDispatcher
-	METHOD addCloudsPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lnet/minecraft/client/CloudStatus;Lnet/minecraft/world/phys/Vec3;FIF)V
-		ARG 1 frameGraphBuilder
-		ARG 2 cloudStatus
-		ARG 3 cameraPosition
-		ARG 4 ticks
-		ARG 5 cloudColor
-		ARG 6 cloudHeight
 	METHOD addCloudsPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lnet/minecraft/client/CloudStatus;Lnet/minecraft/world/phys/Vec3;JFIF)V
 		ARG 1 frameGraphBuilder
 		ARG 2 cloudStatus
@@ -26,11 +19,6 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 2 cameraRenderState
 		ARG 3 shaderFog
 		ARG 4 frustumMatrix
-	METHOD addLateDebugPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lnet/minecraft/world/phys/Vec3;Lcom/mojang/blaze3d/buffers/GpuBufferSlice;Lnet/minecraft/client/renderer/culling/Frustum;)V
-		ARG 1 frameGraphBuilder
-		ARG 2 cameraPosition
-		ARG 3 shaderFog
-		ARG 4 frustum
 	METHOD addMainPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lnet/minecraft/client/renderer/culling/Frustum;Lorg/joml/Matrix4f;Lcom/mojang/blaze3d/buffers/GpuBufferSlice;ZLnet/minecraft/client/renderer/state/LevelRenderState;Lnet/minecraft/client/DeltaTracker;Lnet/minecraft/util/profiling/ProfilerFiller;)V
 		ARG 1 frameGraphBuilder
 		ARG 2 frustum
@@ -52,10 +40,6 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 	METHOD addWeatherPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lcom/mojang/blaze3d/buffers/GpuBufferSlice;)V
 		ARG 1 frameGraphBuilder
 		ARG 2 shaderFog
-	METHOD addWeatherPass (Lcom/mojang/blaze3d/framegraph/FrameGraphBuilder;Lnet/minecraft/world/phys/Vec3;Lcom/mojang/blaze3d/buffers/GpuBufferSlice;)V
-		ARG 1 frameGraphBuilder
-		ARG 2 cameraPosition
-		ARG 3 shaderFog
 	METHOD allChanged ()V
 		COMMENT Loads all renderers and sets up the basic options usage.
 	METHOD applyFrustum (Lnet/minecraft/client/renderer/culling/Frustum;)V
@@ -110,8 +94,6 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 	METHOD getLightColor (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
 		ARG 0 level
 		ARG 1 pos
-	METHOD isSectionCompiled (Lnet/minecraft/core/BlockPos;)Z
-		ARG 1 pos
 	METHOD isSectionCompiledAndVisible (Lnet/minecraft/core/BlockPos;)Z
 		ARG 1 pos
 	METHOD offsetFrustum (Lnet/minecraft/client/renderer/culling/Frustum;)Lnet/minecraft/client/renderer/culling/Frustum;
@@ -142,14 +124,6 @@ CLASS net/minecraft/client/renderer/LevelRenderer
 		ARG 2 poseStack
 		ARG 3 translucent
 		ARG 4 renderState
-	METHOD renderHitOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDLnet/minecraft/client/renderer/state/BlockOutlineRenderState;I)V
-		ARG 1 poseStack
-		ARG 2 consumer
-		ARG 3 camX
-		ARG 5 camY
-		ARG 7 camZ
-		ARG 9 outlineRenderState
-		ARG 10 color
 	METHOD renderHitOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDLnet/minecraft/client/renderer/state/BlockOutlineRenderState;IF)V
 		ARG 1 poseStack
 		ARG 2 consumer

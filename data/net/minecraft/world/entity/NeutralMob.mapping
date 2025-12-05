@@ -23,12 +23,8 @@ CLASS net/minecraft/world/entity/NeutralMob
 		ARG 1 livingEntity
 	METHOD setPersistentAngerEndTime (J)V
 		ARG 1 persistentAngerEndTime
-	METHOD setPersistentAngerTarget (Ljava/util/UUID;)V
-		ARG 1 persistentAngerTarget
 	METHOD setPersistentAngerTarget (Lnet/minecraft/world/entity/EntityReference;)V
 		ARG 1 persistentAngerTarget
-	METHOD setRemainingPersistentAngerTime (I)V
-		ARG 1 remainingPersistentAngerTime
 	METHOD setTarget (Lnet/minecraft/world/entity/LivingEntity;)V
 		COMMENT Sets the active target the Task system uses for tracking
 		ARG 1 target

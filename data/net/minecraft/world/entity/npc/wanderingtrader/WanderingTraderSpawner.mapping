@@ -10,10 +10,6 @@ CLASS net/minecraft/world/entity/npc/wanderingtrader/WanderingTraderSpawner
 		ARG 2 pos
 	METHOD spawn (Lnet/minecraft/server/level/ServerLevel;)Z
 		ARG 1 level
-	METHOD tryToSpawnLlamaFor (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/WanderingTrader;I)V
-		ARG 1 level
-		ARG 2 trader
-		ARG 3 maxDistance
 	METHOD tryToSpawnLlamaFor (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/wanderingtrader/WanderingTrader;I)V
 		ARG 1 level
 		ARG 2 trader

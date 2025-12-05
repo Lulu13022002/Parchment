@@ -1,9 +1,4 @@
 CLASS net/minecraft/client/renderer/ItemInHandRenderer
-	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;Lnet/minecraft/client/renderer/entity/ItemRenderer;Lnet/minecraft/client/renderer/item/ItemModelResolver;)V
-		ARG 1 minecraft
-		ARG 2 entityRenderDispatcher
-		ARG 3 itemRenderer
-		ARG 4 itemModelResolver
 	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;Lnet/minecraft/client/renderer/item/ItemModelResolver;)V
 		ARG 1 minecraft
 		ARG 2 entityRenderDispatcher
@@ -13,13 +8,6 @@ CLASS net/minecraft/client/renderer/ItemInHandRenderer
 		ARG 2 partialTick
 		ARG 3 arm
 		ARG 4 player
-	METHOD applyBrushTransform (Lcom/mojang/blaze3d/vertex/PoseStack;FLnet/minecraft/world/entity/HumanoidArm;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;F)V
-		ARG 1 poseStack
-		ARG 2 partialTick
-		ARG 3 arm
-		ARG 4 stack
-		ARG 5 player
-		ARG 6 equippedProgress
 	METHOD applyEatTransform (Lcom/mojang/blaze3d/vertex/PoseStack;FLnet/minecraft/world/entity/HumanoidArm;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V
 		ARG 1 poseStack
 		ARG 2 partialTick
@@ -104,12 +92,6 @@ CLASS net/minecraft/client/renderer/ItemInHandRenderer
 	METHOD shouldInstantlyReplaceVisibleItem (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z
 		ARG 1 oldItem
 		ARG 2 newItem
-	METHOD swingArm (FFLcom/mojang/blaze3d/vertex/PoseStack;ILnet/minecraft/world/entity/HumanoidArm;)V
-		ARG 1 swingProgress
-		ARG 2 equippedProgress
-		ARG 3 poseStack
-		ARG 4 direction
-		ARG 5 arm
 	METHOD swingArm (FLcom/mojang/blaze3d/vertex/PoseStack;ILnet/minecraft/world/entity/HumanoidArm;)V
 		ARG 1 swingProgress
 		ARG 2 poseStack

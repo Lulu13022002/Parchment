@@ -12,7 +12,5 @@ CLASS net/minecraft/server/jsonrpc/api/MethodInfo
 	METHOD toOptional (Ljava/util/List;)Ljava/util/Optional;
 		ARG 0 params
 	CLASS Named
-		METHOD lambda$static$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
-			ARG 0 instance
 		METHOD lambda$typedCodec$0 (Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;
 			ARG 0 instance

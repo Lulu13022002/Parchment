@@ -10,24 +10,6 @@ CLASS net/minecraft/client/renderer/debug/PathfindingRenderer
 		ARG 4 camZ
 		ARG 6 path
 		ARG 7 maxNodeDistance
-	METHOD renderPath (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;DDDLnet/minecraft/world/level/pathfinder/Path;F)V
-		ARG 0 poseStack
-		ARG 1 bufferSource
-		ARG 2 x
-		ARG 4 y
-		ARG 6 z
-		ARG 8 path
-		ARG 9 maxNodeDistance
-	METHOD renderPath (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/level/pathfinder/Path;FZZDDD)V
-		ARG 0 poseStack
-		ARG 1 bufferSource
-		ARG 2 path
-		ARG 3 maxNodeDistance
-		ARG 4 renderDebugNodes
-		ARG 5 renderDebugInfo
-		ARG 6 x
-		ARG 8 y
-		ARG 10 z
 	METHOD renderPath (Lnet/minecraft/world/level/pathfinder/Path;FZZDDD)V
 		ARG 0 path
 		ARG 1 maxNodeDistance
@@ -36,13 +18,6 @@ CLASS net/minecraft/client/renderer/debug/PathfindingRenderer
 		ARG 4 camX
 		ARG 6 camY
 		ARG 8 camZ
-	METHOD renderPathLine (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/level/pathfinder/Path;DDD)V
-		ARG 0 poseStack
-		ARG 1 consumer
-		ARG 2 path
-		ARG 3 x
-		ARG 5 y
-		ARG 7 z
 	METHOD renderPathLine (Lnet/minecraft/world/level/pathfinder/Path;DDD)V
 		ARG 0 path
 		ARG 1 camX

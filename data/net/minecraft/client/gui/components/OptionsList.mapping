@@ -26,9 +26,6 @@ CLASS net/minecraft/client/gui/components/OptionsList
 		METHOD <init> (Ljava/util/List;Lnet/minecraft/client/gui/screens/Screen;)V
 			ARG 1 children
 			ARG 2 screen
-		METHOD big (Ljava/util/List;Lnet/minecraft/client/gui/screens/Screen;)Lnet/minecraft/client/gui/components/OptionsList$Entry;
-			ARG 0 options
-			ARG 1 screen
 		METHOD big (Lnet/minecraft/client/Options;Lnet/minecraft/client/OptionInstance;Lnet/minecraft/client/gui/screens/Screen;)Lnet/minecraft/client/gui/components/OptionsList$Entry;
 			ARG 0 options
 			ARG 1 option
@@ -54,19 +51,6 @@ CLASS net/minecraft/client/gui/components/OptionsList
 			ARG 1 screen
 			ARG 2 text
 			ARG 3 paddingTop
-	CLASS OptionEntry
-		METHOD <init> (Ljava/util/Map;Lnet/minecraft/client/gui/screens/options/OptionsSubScreen;)V
-			ARG 1 options
-			ARG 2 screen
-		METHOD big (Lnet/minecraft/client/Options;Lnet/minecraft/client/OptionInstance;Lnet/minecraft/client/gui/screens/options/OptionsSubScreen;)Lnet/minecraft/client/gui/components/OptionsList$OptionEntry;
-			ARG 0 options
-			ARG 1 option
-			ARG 2 screen
-		METHOD small (Lnet/minecraft/client/Options;Lnet/minecraft/client/OptionInstance;Lnet/minecraft/client/OptionInstance;Lnet/minecraft/client/gui/screens/options/OptionsSubScreen;)Lnet/minecraft/client/gui/components/OptionsList$OptionEntry;
-			ARG 0 options
-			ARG 1 leftOption
-			ARG 2 rightOption
-			ARG 3 screen
 	CLASS OptionInstanceWidget
 		METHOD <init> (Lnet/minecraft/client/gui/components/AbstractWidget;)V
 			ARG 1 widget

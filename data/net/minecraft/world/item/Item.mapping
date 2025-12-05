@@ -30,8 +30,6 @@ CLASS net/minecraft/world/item/Item
 		ARG 1 stack
 	METHOD getBarWidth (Lnet/minecraft/world/item/ItemStack;)I
 		ARG 1 stack
-	METHOD getDamageSource (Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/damagesource/DamageSource;
-		ARG 1 entity
 	METHOD getDescriptionId ()Ljava/lang/String;
 		COMMENT Returns the unlocalized name of this item.
 	METHOD getDestroySpeed (Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;)F
