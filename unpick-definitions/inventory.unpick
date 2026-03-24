@@ -48,7 +48,6 @@ group String
 
 group int book_generation
 	net.minecraft.world.item.component.WrittenBookContent.MAX_GENERATION
-	net.minecraft.world.item.component.WrittenBookContent.MAX_CRAFTABLE_GENERATION
 
 group float disable_blocking_for_seconds
 	net.minecraft.world.item.component.Weapon.AXE_DISABLES_BLOCKING_FOR_SECONDS
