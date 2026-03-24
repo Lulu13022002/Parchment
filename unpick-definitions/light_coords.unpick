@@ -1,7 +1,6 @@
 unpick v4
 
 group int light_coords
-	@flags
 	net.minecraft.util.LightCoordsUtil.FULL_BRIGHT
 	net.minecraft.util.LightCoordsUtil.FULL_SKY
 

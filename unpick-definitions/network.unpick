@@ -104,6 +104,33 @@ group int boss_event_flags
 	net.minecraft.network.protocol.game.ClientboundBossEventPacket.FLAG_MUSIC
 	net.minecraft.network.protocol.game.ClientboundBossEventPacket.FLAG_FOG
 
+group int command_flags
+	@flags
+	@scope class net.minecraft.network.protocol.game.ClientboundCommandsPacket
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.TYPE_ROOT
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.TYPE_LITERAL
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.TYPE_ARGUMENT
+
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.FLAG_EXECUTABLE
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.FLAG_REDIRECT
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.FLAG_CUSTOM_SUGGESTIONS
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.FLAG_RESTRICTED
+
+	net.minecraft.network.protocol.game.ClientboundCommandsPacket.MASK_TYPE
+
+group int book_addition_flags
+	@flags
+	net.minecraft.network.protocol.game.ClientboundRecipeBookAddPacket$Entry.FLAG_NOTIFICATION
+	net.minecraft.network.protocol.game.ClientboundRecipeBookAddPacket$Entry.FLAG_HIGHLIGHT
+
+group int mob_effect_flags
+	@flags
+	@scope class net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket
+	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_AMBIENT
+	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_VISIBLE
+	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_SHOW_ICON
+	net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket.FLAG_BLEND
+
 group String handler_name
 	net.minecraft.network.HandlerNames.*
 
@@ -113,12 +140,12 @@ group int client_intent
 	net.minecraft.network.protocol.handshake.ClientIntent.LOGIN_ID
 	net.minecraft.network.protocol.handshake.ClientIntent.TRANSFER_ID
 
+target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket packFlags (ZZ)I
+	return move_player_flags
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackOnGround (I)Z
 	param 0 move_player_flags
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackHorizontalCollision (I)Z
 	param 0 move_player_flags
-target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket packFlags (ZZ)I
-	return move_player_flags
 
 target_method net.minecraft.network.protocol.game.ClientboundAnimatePacket <init> (Lnet/minecraft/world/entity/Entity;I)V
 	param 1 animation_action
@@ -149,6 +176,19 @@ target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket
 
 target_method net.minecraft.network.protocol.game.ClientboundBossEventPacket encodeProperties (ZZZ)I
 	return boss_event_flags
+
+target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket read (Lnet/minecraft/network/FriendlyByteBuf;B)Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;
+	param 1 command_flags
+target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry <init> (Lnet/minecraft/network/protocol/game/ClientboundCommandsPacket$NodeStub;II[I)V
+	param 1 command_flags
+target_method net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry flags ()I
+	return command_flags
+
+target_field net.minecraft.network.protocol.game.ClientboundRecipeBookAddPacket$Entry flags B book_addition_flags
+target_method net.minecraft.network.protocol.game.ClientboundRecipeBookAddPacket$Entry <init> (Lnet/minecraft/world/item/crafting/display/RecipeDisplayEntry;B)V
+	param 1 book_addition_flags
+
+target_field net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket flags B mob_effect_flags
 
 target_method net.minecraft.network.Connection outboundHandlerName (Z)Ljava/lang/String;
 	return handler_name

@@ -35,3 +35,24 @@ group int cursor3d_type
 
 target_method net.minecraft.core.Cursor3D getNextType ()I
 	return cursor3d_type
+
+group long light_engine_flags
+	@flags
+	@scope class net.minecraft.world.level.lighting.LightEngine$QueueEntry
+	net.minecraft.world.level.lighting.LightEngine$QueueEntry.LEVEL_MASK
+	net.minecraft.world.level.lighting.LightEngine$QueueEntry.DIRECTIONS_MASK
+	net.minecraft.world.level.lighting.LightEngine$QueueEntry.FLAG_FROM_EMPTY_SHAPE
+	net.minecraft.world.level.lighting.LightEngine$QueueEntry.FLAG_INCREASE_FROM_EMISSION
+
+target_method net.minecraft.world.level.lighting.LightEngine$QueueEntry getFromLevel (J)I
+	param 0 light_engine_flags
+target_method net.minecraft.world.level.lighting.LightEngine$QueueEntry isFromEmptyShape (J)Z
+	param 0 light_engine_flags
+target_method net.minecraft.world.level.lighting.LightEngine$QueueEntry isIncreaseFromEmission (J)Z
+	param 0 light_engine_flags
+target_method net.minecraft.world.level.lighting.LightEngine$QueueEntry withLevel (JI)J
+	param 0 light_engine_flags
+target_method net.minecraft.world.level.lighting.LightEngine$QueueEntry withDirection (JLnet/minecraft/core/Direction;)J
+	param 0 light_engine_flags
+target_method net.minecraft.world.level.lighting.LightEngine$QueueEntry withoutDirection (JLnet/minecraft/core/Direction;)J
+	param 0 light_engine_flags

@@ -6,6 +6,7 @@ group int input_mode
 	org.lwjgl.glfw.GLFW.GLFW_STICKY_MOUSE_BUTTONS
 	org.lwjgl.glfw.GLFW.GLFW_LOCK_KEY_MODS
 	org.lwjgl.glfw.GLFW.GLFW_RAW_MOUSE_MOTION
+	org.lwjgl.glfw.GLFW.GLFW_IME
 
 group int input_value
 	com.mojang.blaze3d.platform.InputConstants.CURSOR_NORMAL
@@ -18,6 +19,9 @@ group int input_value
 target_method org.lwjgl.glfw.GLFW glfwSetInputMode (JII)V
 	param 1 input_mode
 	param 2 input_value
+target_method org.lwjgl.glfw.GLFW glfwGetInputMode (JI)I
+	param 1 input_mode
+	return input_value
 
 target_method com.mojang.blaze3d.platform.InputConstants grabOrReleaseMouse (Lcom/mojang/blaze3d/platform/Window;IDD)V
 	param 1 input_value

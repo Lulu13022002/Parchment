@@ -1,9 +1,0 @@
-unpick v4
-
-group long narration_delay
-	net.minecraft.client.gui.screens.Screen.NARRATE_DELAY_MOUSE_MOVE
-	# net.minecraft.client.gui.screens.Screen.NARRATE_DELAY_MOUSE_ACTION
-	# net.minecraft.client.gui.screens.Screen.NARRATE_DELAY_KEYBOARD_ACTION
-
-target_method net.minecraft.client.gui.screens.Screen scheduleNarration (JZ)V
-	param 0 narration_delay

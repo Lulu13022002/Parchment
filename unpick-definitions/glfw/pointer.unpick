@@ -18,9 +18,12 @@ target_method org.lwjgl.glfw.GLFW glfwGetMonitorPhysicalSize (JLjava/nio/IntBuff
 	param 0 pointer
 target_method org.lwjgl.glfw.GLFW glfwGetCurrentContext ()J
 	return pointer
+target_method org.lwjgl.glfw.GLFW glfwGetWindowMonitor(J)J
+	return pointer
+target_method org.lwjgl.glfw.GLFW glfwSetWindowMonitor(JJIIIII)V
+	param 1 pointer
 target_method org.lwjgl.glfw.GLFW glfwCreateStandardCursor(I)J
 	return pointer
-
 target_method org.lwjgl.system.MemoryUtil memAddress (Ljava/nio/ByteBuffer;)J
 	return pointer
 

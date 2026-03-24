@@ -1,5 +1,15 @@
 unpick v4
 
+group int quick_crafting_type
+	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_TYPE_CHARITABLE
+	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_TYPE_GREEDY
+	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_TYPE_CLONE
+
+group int quick_crafting_header
+	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_HEADER_START
+	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_HEADER_CONTINUE
+	net.minecraft.world.inventory.AbstractContainerMenu.QUICKCRAFT_HEADER_END
+
 group int slot_index
 	net.minecraft.world.entity.player.Inventory.SLOT_OFFHAND
 	net.minecraft.world.entity.player.Inventory.SLOT_BODY_ARMOR
@@ -27,24 +37,11 @@ group int selected_item_index
 group int item_contents_slot
 	net.minecraft.world.item.component.ItemContainerContents.NO_SLOT
 
-group int
-	@scope method net.minecraft.world.item.component.Consumable shouldEmitParticlesAndSounds (I)Z
-	net.minecraft.world.item.component.Consumable.CONSUME_EFFECTS_INTERVAL
-
-group float
-	@scope method net.minecraft.world.item.component.Consumable shouldEmitParticlesAndSounds (I)Z
-	net.minecraft.world.item.component.Consumable.CONSUME_EFFECTS_START_FRACTION
-
 group float consume_seconds
 	net.minecraft.world.item.component.Consumable.DEFAULT_CONSUME_SECONDS
 
 group int effect_duration
 	net.minecraft.world.item.component.OminousBottleAmplifier.EFFECT_DURATION
-
-group String
-	@scope class net.minecraft.world.item.component.TypedEntityData
-	@scope class net.minecraft.world.item.component.TypedEntityData$1
-	net.minecraft.world.item.component.TypedEntityData.TYPE_TAG
 
 group int book_generation
 	net.minecraft.world.item.component.WrittenBookContent.MAX_GENERATION
@@ -58,6 +55,17 @@ group float teleport_effect_diameter
 group int horse_slot
 	net.minecraft.world.entity.animal.equine.AbstractHorse.CHEST_SLOT_OFFSET
 	net.minecraft.world.entity.animal.equine.AbstractHorse.INVENTORY_SLOT_OFFSET
+
+target_field net.minecraft.world.inventory.AbstractContainerMenu quickcraftType I quick_crafting_type
+target_field net.minecraft.world.inventory.AbstractContainerMenu quickcraftStatus I quick_crafting_header
+target_method net.minecraft.world.inventory.AbstractContainerMenu getQuickCraftPlaceCount (IILnet/minecraft/world/item/ItemStack;)I
+	param 1 quick_crafting_type
+target_method net.minecraft.world.inventory.AbstractContainerMenu getQuickcraftHeader (I)I
+	return quick_crafting_header
+target_method net.minecraft.world.inventory.AbstractContainerMenu isValidQuickcraftType (ILnet/minecraft/world/entity/player/Player;)Z
+	param 0 quick_crafting_type
+
+target_field net.minecraft.client.gui.screens.inventory.AbstractContainerScreen quickCraftingType I quick_crafting_type
 
 target_field net.minecraft.world.entity.player.Inventory selected I slot_index
 target_method net.minecraft.world.entity.player.Inventory getFreeSlot ()I
@@ -97,6 +105,7 @@ target_method net.minecraft.world.item.ItemStack setPopTime (I)V
 target_method net.minecraft.world.item.ItemStack getPopTime ()I
 	return pop_time
 
+#target_field net.minecraft.world.entity.EquipmentSlot countLimit I count_limit # see https://github.com/FabricMC/unpick/issues/7
 target_method net.minecraft.world.entity.EquipmentSlot <init> (Ljava/lang/String;ILnet/minecraft/world/entity/EquipmentSlot$Type;IIILjava/lang/String;)V
 	param 4 count_limit
 

@@ -1,5 +1,11 @@
 unpick v4
 
+group int glfw_hint
+	org.lwjgl.glfw.GLFW.GLFW_PLATFORM
+
+group int glfw_hint_value
+	org.lwjgl.glfw.GLFW.GLFW_PLATFORM_X11
+
 group int glfw_window_hint
 	org.lwjgl.glfw.GLFW.GLFW_CLIENT_API
 	org.lwjgl.glfw.GLFW.GLFW_CONTEXT_CREATION_API
@@ -7,12 +13,24 @@ group int glfw_window_hint
 	org.lwjgl.glfw.GLFW.GLFW_CONTEXT_VERSION_MINOR
 	org.lwjgl.glfw.GLFW.GLFW_OPENGL_FORWARD_COMPAT
 	org.lwjgl.glfw.GLFW.GLFW_OPENGL_PROFILE
+	org.lwjgl.glfw.GLFW.GLFW_SOFT_FULLSCREEN
+
+group int glfw_bool
+	org.lwjgl.glfw.GLFW.GLFW_TRUE
+	org.lwjgl.glfw.GLFW.GLFW_FALSE
 
 group int glfw_window_hint_value
 	org.lwjgl.glfw.GLFW.GLFW_OPENGL_API
 	org.lwjgl.glfw.GLFW.GLFW_NATIVE_CONTEXT_API
 	org.lwjgl.glfw.GLFW.GLFW_OPENGL_CORE_PROFILE
 
+target_method org.lwjgl.glfw.GLFW glfwInitHint (II)V
+	param 0 glfw_hint
+	param 1 glfw_hint_value
+
 target_method org.lwjgl.glfw.GLFW glfwWindowHint (II)V
 	param 0 glfw_window_hint
 	param 1 glfw_window_hint_value
+
+target_method com.mojang.blaze3d.platform.GLX glfwBool (Z)I
+	return glfw_bool

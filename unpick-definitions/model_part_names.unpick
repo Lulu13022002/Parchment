@@ -3,6 +3,240 @@ unpick v4
 group String model_part_names
 	net.minecraft.client.model.geom.PartNames.*
 
+group String model_part_names
+	@scope package net.minecraft.client.model.animal.rabbit
+	net.minecraft.client.model.animal.rabbit.RabbitModel.FRONT_LEGS
+	net.minecraft.client.model.animal.rabbit.RabbitModel.BACK_LEGS
+	net.minecraft.client.model.animal.rabbit.RabbitModel.LEFT_HAUNCH
+	net.minecraft.client.model.animal.rabbit.RabbitModel.RIGHT_HAUNCH
+
+group String model_part_names
+	@scope package net.minecraft.client.model.animal.equine
+	net.minecraft.client.model.animal.equine.AbstractEquineModel.HEAD_PARTS
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.equine.EquineSaddleModel
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.SADDLE
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.LEFT_SADDLE_MOUTH
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.LEFT_SADDLE_LINE
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.RIGHT_SADDLE_MOUTH
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.RIGHT_SADDLE_LINE
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.HEAD_SADDLE
+	net.minecraft.client.model.animal.equine.EquineSaddleModel.MOUTH_SADDLE_WRAP
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.chicken.AdultChickenModel
+	net.minecraft.client.model.animal.chicken.AdultChickenModel.RED_THING
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.camel.CamelSaddleModel
+	net.minecraft.client.model.animal.camel.CamelSaddleModel.SADDLE
+	net.minecraft.client.model.animal.camel.CamelSaddleModel.BRIDLE
+	net.minecraft.client.model.animal.camel.CamelSaddleModel.REINS
+
+group String model_part_names
+	@scope package net.minecraft.client.model.animal.bee
+	net.minecraft.client.model.animal.bee.BeeModel.BONE
+	net.minecraft.client.model.animal.bee.BeeModel.STINGER
+	net.minecraft.client.model.animal.bee.BeeModel.FRONT_LEGS
+	net.minecraft.client.model.animal.bee.BeeModel.MIDDLE_LEGS
+	net.minecraft.client.model.animal.bee.BeeModel.BACK_LEGS
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.bee.AdultBeeModel
+	net.minecraft.client.model.animal.bee.AdultBeeModel.LEFT_ANTENNA
+	net.minecraft.client.model.animal.bee.AdultBeeModel.RIGHT_ANTENNA
+
+group String model_part_names
+	@scope package net.minecraft.client.model.animal.armadillo
+	net.minecraft.client.model.animal.armadillo.ArmadilloModel.HEAD_CUBE
+	net.minecraft.client.model.animal.armadillo.ArmadilloModel.RIGHT_EAR_CUBE
+	net.minecraft.client.model.animal.armadillo.ArmadilloModel.LEFT_EAR_CUBE
+
+group String model_part_names
+	@scope package net.minecraft.client.model.animal.feline
+	net.minecraft.client.model.animal.feline.AbstractFelineModel.TAIL_1
+	net.minecraft.client.model.animal.feline.AbstractFelineModel.TAIL_2
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.fish.SalmonModel
+	net.minecraft.client.model.animal.fish.SalmonModel.BODY_FRONT
+	net.minecraft.client.model.animal.fish.SalmonModel.BODY_BACK
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.goat.BabyGoatModel
+	net.minecraft.client.model.animal.goat.BabyGoatModel.HEAD_MAIN
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.golem.SnowGolemModel
+	net.minecraft.client.model.animal.golem.SnowGolemModel.UPPER_BODY
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.llama.LlamaSpitModel
+	net.minecraft.client.model.animal.llama.LlamaSpitModel.MAIN
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.parrot.ParrotModel
+	net.minecraft.client.model.animal.parrot.ParrotModel.FEATHER
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.sniffer.SniffletModel
+	net.minecraft.client.model.animal.sniffer.SniffletModel.LOWER_BEAK
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.turtle.AdultTurtleModel
+	net.minecraft.client.model.animal.turtle.AdultTurtleModel.EGG_BELLY
+
+group String model_part_names
+	@scope class net.minecraft.client.model.animal.wolf.AdultWolfModel
+	net.minecraft.client.model.animal.wolf.AdultWolfModel.REAL_HEAD
+	net.minecraft.client.model.animal.wolf.AdultWolfModel.UPPER_BODY
+	net.minecraft.client.model.animal.wolf.AdultWolfModel.REAL_TAIL
+
+group String model_part_names
+	@scope class net.minecraft.client.model.effects.EvokerFangsModel
+	net.minecraft.client.model.effects.EvokerFangsModel.BASE
+	net.minecraft.client.model.effects.EvokerFangsModel.UPPER_JAW
+	net.minecraft.client.model.effects.EvokerFangsModel.LOWER_JAW
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.guardian.GuardianModel
+	net.minecraft.client.model.monster.guardian.GuardianModel.EYE
+	net.minecraft.client.model.monster.guardian.GuardianModel.TAIL_0
+	net.minecraft.client.model.monster.guardian.GuardianModel.TAIL_1
+	net.minecraft.client.model.monster.guardian.GuardianModel.TAIL_2
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.phantom.PhantomModel
+	net.minecraft.client.model.monster.phantom.PhantomModel.TAIL_BASE
+	net.minecraft.client.model.monster.phantom.PhantomModel.TAIL_TIP
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.shulker.ShulkerModel
+	net.minecraft.client.model.monster.shulker.ShulkerModel.LID
+	net.minecraft.client.model.monster.shulker.ShulkerModel.BASE
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.spider.SpiderModel
+	net.minecraft.client.model.monster.spider.SpiderModel.BODY_0
+	net.minecraft.client.model.monster.spider.SpiderModel.BODY_1
+	net.minecraft.client.model.monster.spider.SpiderModel.RIGHT_MIDDLE_FRONT_LEG
+	net.minecraft.client.model.monster.spider.SpiderModel.LEFT_MIDDLE_FRONT_LEG
+	net.minecraft.client.model.monster.spider.SpiderModel.RIGHT_MIDDLE_HIND_LEG
+	net.minecraft.client.model.monster.spider.SpiderModel.LEFT_MIDDLE_HIND_LEG
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.strider.AdultStriderModel
+	net.minecraft.client.model.monster.strider.AdultStriderModel.RIGHT_BOTTOM_BRISTLE
+	net.minecraft.client.model.monster.strider.AdultStriderModel.RIGHT_MIDDLE_BRISTLE
+	net.minecraft.client.model.monster.strider.AdultStriderModel.RIGHT_TOP_BRISTLE
+	net.minecraft.client.model.monster.strider.AdultStriderModel.LEFT_TOP_BRISTLE
+	net.minecraft.client.model.monster.strider.AdultStriderModel.LEFT_MIDDLE_BRISTLE
+	net.minecraft.client.model.monster.strider.AdultStriderModel.LEFT_BOTTOM_BRISTLE
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.strider.BabyStriderModel
+	net.minecraft.client.model.monster.strider.BabyStriderModel.FRONT_BRISTLE
+	net.minecraft.client.model.monster.strider.BabyStriderModel.MIDDLE_BRISTLE
+	net.minecraft.client.model.monster.strider.BabyStriderModel.BACK_BRISTLE
+
+group String model_part_names
+	@scope class net.minecraft.client.model.monster.wither.WitherBossModel
+	net.minecraft.client.model.monster.wither.WitherBossModel.RIBCAGE
+	net.minecraft.client.model.monster.wither.WitherBossModel.CENTER_HEAD
+	net.minecraft.client.model.monster.wither.WitherBossModel.RIGHT_HEAD
+	net.minecraft.client.model.monster.wither.WitherBossModel.LEFT_HEAD
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.armorstand.ArmorStandModel
+	net.minecraft.client.model.object.armorstand.ArmorStandModel.RIGHT_BODY_STICK
+	net.minecraft.client.model.object.armorstand.ArmorStandModel.LEFT_BODY_STICK
+	net.minecraft.client.model.object.armorstand.ArmorStandModel.SHOULDER_STICK
+	net.minecraft.client.model.object.armorstand.ArmorStandModel.BASE_PLATE
+
+group String model_part_names
+	net.minecraft.client.model.object.banner.BannerModel.FLAG
+group String model_part_names
+	@scope class net.minecraft.client.model.object.banner.BannerModel
+	net.minecraft.client.model.object.banner.BannerModel.POLE
+	net.minecraft.client.model.object.banner.BannerModel.BAR
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.bell.BellModel
+	net.minecraft.client.model.object.bell.BellModel.BELL_BODY
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.boat.BoatModel
+	net.minecraft.client.model.object.boat.BoatModel.WATER_PATCH
+	net.minecraft.client.model.object.boat.BoatModel.BACK
+	net.minecraft.client.model.object.boat.BoatModel.FRONT
+	net.minecraft.client.model.object.boat.BoatModel.RIGHT
+	net.minecraft.client.model.object.boat.BoatModel.LEFT
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.book.BookModel
+	net.minecraft.client.model.object.book.BookModel.LEFT_PAGES
+	net.minecraft.client.model.object.book.BookModel.RIGHT_PAGES
+	net.minecraft.client.model.object.book.BookModel.FLIP_PAGE_1
+	net.minecraft.client.model.object.book.BookModel.FLIP_PAGE_2
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.chest.ChestModel
+	net.minecraft.client.model.object.chest.ChestModel.BOTTOM
+	net.minecraft.client.model.object.chest.ChestModel.LID
+	net.minecraft.client.model.object.chest.ChestModel.LOCK
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.crystal.EndCrystalModel
+	net.minecraft.client.model.object.crystal.EndCrystalModel.OUTER_GLASS
+	net.minecraft.client.model.object.crystal.EndCrystalModel.INNER_GLASS
+	net.minecraft.client.model.object.crystal.EndCrystalModel.BASE
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.equipment.ShieldModel
+	net.minecraft.client.model.object.equipment.ShieldModel.PLATE
+	net.minecraft.client.model.object.equipment.ShieldModel.HANDLE
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.leash.LeashKnotModel
+	net.minecraft.client.model.object.leash.LeashKnotModel.KNOT
+
+group String model_part_names
+	@scope class net.minecraft.client.model.object.projectile.ShulkerBulletModel
+	net.minecraft.client.model.object.projectile.ShulkerBulletModel.MAIN
+
+group String model_part_names
+	@scope class net.minecraft.client.model.player.PlayerCapeModel
+	net.minecraft.client.model.player.PlayerCapeModel.CAPE
+
+group String model_part_names
+	@scope class net.minecraft.client.model.player.PlayerModel
+	net.minecraft.client.model.player.PlayerModel.LEFT_SLEEVE
+	net.minecraft.client.model.player.PlayerModel.RIGHT_SLEEVE
+	net.minecraft.client.model.player.PlayerModel.LEFT_PANTS
+	net.minecraft.client.model.player.PlayerModel.RIGHT_PANTS
+
+group String model_part_names
+	@scope class net.minecraft.client.renderer.blockentity.DecoratedPotRenderer
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.NECK
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.FRONT
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.BACK
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.LEFT
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.RIGHT
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.TOP
+	net.minecraft.client.renderer.blockentity.DecoratedPotRenderer.BOTTOM
+
+group String model_part_names
+	@scope class net.minecraft.client.renderer.blockentity.HangingSignRenderer
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.PLANK
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.V_CHAINS
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.NORMAL_CHAINS
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_L_1
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_L_2
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_R_1
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.CHAIN_R_2
+	net.minecraft.client.renderer.blockentity.HangingSignRenderer.BOARD
+
 target_method net.minecraft.client.model.geom.ModelPart hasChild (Ljava/lang/String;)Z
 	param 0 model_part_names
 target_method net.minecraft.client.model.geom.ModelPart getChild (Ljava/lang/String;)Lnet/minecraft/client/model/geom/ModelPart;

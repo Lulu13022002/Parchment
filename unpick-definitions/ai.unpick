@@ -9,12 +9,12 @@ group int poi_range
 	@scope class net.minecraft.world.entity.animal.bee.Bee$BeeLocateHiveGoal
 	net.minecraft.world.entity.animal.bee.Bee.HIVE_SEARCH_DISTANCE
 
-group int
-	@scope method net.minecraft.world.entity.ai.Brain updateActivityFromSchedule (Lnet/minecraft/world/attribute/EnvironmentAttributeSystem;JLnet/minecraft/world/phys/Vec3;)V
-	net.minecraft.world.entity.ai.Brain.SCHEDULE_UPDATE_DELAY
-
 group double pos_distance
 	net.minecraft.world.entity.ai.behavior.RingBell.RING_BELL_FROM_DISTANCE
+
+group double pos_distance
+	@scope class net.minecraft.world.entity.ai.behavior.AnimalMakeLove
+	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.BREED_RANGE
 
 group double pos_distance
 	@scope class net.minecraft.world.entity.ai.behavior.InteractWithDoor
@@ -111,14 +111,6 @@ group int
 	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MIN_DURATION
 	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MAX_DURATION - net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MIN_DURATION
 
-group int
-	 @scope method net.minecraft.world.entity.ai.behavior.WorkAtPoi checkExtraStartConditions (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/villager/Villager;)Z
-	 net.minecraft.world.entity.ai.behavior.WorkAtPoi.CHECK_COOLDOWN
-
-group int
-	 @scope method net.minecraft.world.entity.ai.behavior.SleepInBed checkExtraStartConditions (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;)Z
-	 net.minecraft.world.entity.ai.behavior.SleepInBed.COOLDOWN_AFTER_BEING_WOKEN
-
 group float speed_modifier
 	net.minecraft.world.entity.ai.behavior.VillagerGoalPackages.INTERACT_SPEED_MODIFIER
 group float speed_modifier
@@ -127,8 +119,12 @@ group float speed_modifier
 group float speed_modifier
 	@scope class net.minecraft.world.entity.ai.behavior.SocializeAtBell
 	net.minecraft.world.entity.ai.behavior.SocializeAtBell.SPEED_MODIFIER
+group float speed_modifier
+	@scope class net.minecraft.world.entity.ai.behavior.HarvestFarmland
+	net.minecraft.world.entity.ai.behavior.HarvestFarmland.SPEED_MODIFIER
 
 group int max_interact_dist
+	@scope class net.minecraft.world.entity.ai.behavior.VillagerGoalPackages
 	net.minecraft.world.entity.ai.behavior.VillagerGoalPackages.INTERACT_WALKUP_DIST
 
 group int bonemeal_use_duration
@@ -149,29 +145,11 @@ group long memoryTime
 	@scope class net.minecraft.world.entity.ai.behavior.warden.Roar
 	net.minecraft.world.entity.ai.behavior.warden.Roar.TICKS_BEFORE_PLAYING_ROAR_SOUND
 
-group int
-	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers pickupItemFromContainer (Lnet/minecraft/world/Container;)Lnet/minecraft/world/item/ItemStack;
-	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.TRANSPORTED_ITEM_MAX_STACK_SIZE
-
-group int
-	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers setVisitedBlockPos (Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
-	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers markVisitedBlockPosAsUnreachable (Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
-	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.MAX_VISITED_POSITIONS
-	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.MAX_UNREACHABLE_POSITIONS
-
-group int
-	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers enterCooldownAfterNoMatchingTargetFound (Lnet/minecraft/world/entity/PathfinderMob;)V
-	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.IDLE_COOLDOWN
-
 group double transport_distance
 	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_START_QUEUING_DISTANCE
 	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_START_INTERACTING_WITH_TARGET_DISTANCE
 	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_START_INTERACTING_WITH_TARGET_PATH_END_DISTANCE
 	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_CONTINUE_INTERACTING_WITH_TARGET
-
-group int
-	@scope method net.minecraft.world.entity.ai.behavior.StopAttackingIfTargetInvalid isTiredOfTryingToReachTarget (Lnet/minecraft/world/entity/LivingEntity;Ljava/util/Optional;)Z
-	net.minecraft.world.entity.ai.behavior.StopAttackingIfTargetInvalid.TIMEOUT_TO_GET_WITHIN_ATTACK_RANGE
 
 group int look_time
 	net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer.MAX_LOOK_TIME
@@ -197,10 +175,6 @@ group float chance_float
 
 group float speed_factor
 	net.minecraft.world.entity.ai.behavior.RamTarget.RAM_SPEED_FORCE_FACTOR
-
-group int
-	@scope method net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids lambda$findSomeoneBeingChased$0 (Ljava/util/Map$Entry;)Z
-	net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids.MAX_CHASERS_PER_TARGET
 
 group int
 	@scope class net.minecraft.world.entity.ai.behavior.MoveToTargetSink

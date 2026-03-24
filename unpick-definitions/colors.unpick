@@ -11,6 +11,8 @@ group int argb_color
 	net.minecraft.client.color.block.BlockColors.LILY_PAD_IN_WORLD
 	net.minecraft.client.color.block.BlockColors.LILY_PAD_DEFAULT
 
+	net.minecraft.client.gui.screens.ChatScreen.USAGE_BACKGROUND_COLOR
+
 group int argb_color
 	@scope package com.mojang.realmsclient.gui.screens
 	@scope package com.mojang.realmsclient.gui.screens.configuration
@@ -20,16 +22,87 @@ group int argb_color
 	net.minecraft.realms.RealmsScreen.COLOR_LINK_HOVER
 
 group int argb_color
+	@scope class net.minecraft.client.gui.components.EditBox # scope since it's already equals to CommonColors.TEXT_GRAY
+	net.minecraft.client.gui.components.EditBox.DEFAULT_TEXT_COLOR
+
+group int argb_color
+	@scope class net.minecraft.client.gui.components.MultiLineEditBox
+	@scope class net.minecraft.client.gui.components.MultiLineEditBox$Builder # could be propagated...
+	net.minecraft.client.gui.components.MultiLineEditBox.CURSOR_COLOR
+
+group int argb_color
+	@scope class net.minecraft.client.gui.components.debugchart.BandwidthDebugChart
+	net.minecraft.client.gui.components.debugchart.BandwidthDebugChart.MIN_COLOR
+	net.minecraft.client.gui.components.debugchart.BandwidthDebugChart.MID_COLOR
+	net.minecraft.client.gui.components.debugchart.BandwidthDebugChart.MAX_COLOR
+
+group int argb_color
+	@scope class net.minecraft.client.gui.components.debugchart.TpsDebugChart
+	net.minecraft.client.gui.components.debugchart.TpsDebugChart.TICK_METHOD_COLOR
+	net.minecraft.client.gui.components.debugchart.TpsDebugChart.TASK_COLOR
+	net.minecraft.client.gui.components.debugchart.TpsDebugChart.OTHER_COLOR
+
+group int argb_color
+	@scope class net.minecraft.client.gui.components.IMEPreeditOverlay
+	net.minecraft.client.gui.components.IMEPreeditOverlay.TEXT_COLOR
+
+group int argb_color
 	@scope class net.minecraft.client.renderer.fog.environment.LavaFogEnvironment
 	net.minecraft.client.renderer.fog.environment.LavaFogEnvironment.COLOR
 group int argb_color
 	@scope class net.minecraft.client.renderer.fog.environment.PowderedSnowFogEnvironment
 	net.minecraft.client.renderer.fog.environment.PowderedSnowFogEnvironment.COLOR
 
+group int argb_color
+	@scope class net.minecraft.client.renderer.debug.BeeDebugRenderer
+	net.minecraft.client.renderer.debug.BeeDebugRenderer.ORANGE
+	net.minecraft.client.renderer.debug.BeeDebugRenderer.GRAY
+	net.minecraft.client.renderer.debug.BeeDebugRenderer.PINK
+
+group int argb_color
+	@scope class net.minecraft.client.renderer.debug.BrainDebugRenderer
+	net.minecraft.client.renderer.debug.BrainDebugRenderer.CYAN
+	net.minecraft.client.renderer.debug.BrainDebugRenderer.GRAY
+	net.minecraft.client.renderer.debug.BrainDebugRenderer.PINK
+	net.minecraft.client.renderer.debug.BrainDebugRenderer.ORANGE
+
+group int argb_color
+	@scope class net.minecraft.client.renderer.debug.PoiDebugRenderer
+	net.minecraft.client.renderer.debug.PoiDebugRenderer.ORANGE
+
+group int argb_color
+	@scope class net.minecraft.client.renderer.blockentity.AbstractSignRenderer
+	net.minecraft.client.renderer.blockentity.AbstractSignRenderer.BLACK_TEXT_OUTLINE_COLOR
+
+# group int argb_color # see https://github.com/FabricMC/unpick/issues/7
+#	@scope class net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer
+#	net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer.NO_LAYER_COLOR
+
+group int argb_color
+	@scope class net.minecraft.client.renderer.state.gui.GuiRenderState
+	net.minecraft.client.renderer.state.gui.GuiRenderState.DEBUG_RECTANGLE_COLOR
+
+group int argb_color
+	@scope class net.minecraft.world.entity.projectile.arrow.Arrow
+	net.minecraft.world.entity.projectile.arrow.Arrow.NO_EFFECT_COLOR
+
+group int argb_color
+	@scope class net.minecraft.world.level.saveddata.maps.MapDecorationType
+	@scope class net.minecraft.world.level.saveddata.maps.MapDecorationTypes
+	net.minecraft.world.level.saveddata.maps.MapDecorationType.NO_MAP_COLOR
+
+group int argb_color
+	@scope class net.minecraft.world.level.saveddata.maps.MapDecorationTypes
+	net.minecraft.world.level.saveddata.maps.MapDecorationTypes.COPPER_COLOR
+
 group int rgb_color
 	@scope class net.minecraft.client.multiplayer.chat.GuiMessageTag
 	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_NOT_SECURE_INDICATOR_COLOR
 	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_MODIFIED_INDICATOR_COLOR
+
+group int rgb_color
+	net.minecraft.core.particles.DustColorTransitionOptions.SCULK_PARTICLE_COLOR
+	net.minecraft.core.particles.DustParticleOptions.REDSTONE_PARTICLE_COLOR
 
 group int rgb_color
 	@scope class net.minecraft.data.worldgen.biome.OverworldBiomes
@@ -58,7 +131,7 @@ target_method net.minecraft.client.gui.GuiGraphicsExtractor verticalLine (IIII)V
 target_method net.minecraft.client.gui.GuiGraphicsExtractor fill (IIIII)V
 	param 4 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor fill (Lcom/mojang/blaze3d/pipeline/RenderPipeline;IIIII)V
-	param 4 argb_color
+	param 5 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor text (Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V
 	param 4 argb_color
 target_method net.minecraft.client.gui.GuiGraphicsExtractor text (Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)V
@@ -82,19 +155,28 @@ target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Ln
 target_method net.minecraft.client.gui.GuiGraphicsExtractor textWithWordWrap (Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/FormattedText;IIIIZ)V
 	param 5 argb_color
 
+target_method net.minecraft.client.gui.components.CommandSuggestions <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/gui/components/EditBox;Lnet/minecraft/client/gui/Font;ZZIIZI)V
+	param 9 argb_color
+
 target_method net.minecraft.client.gui.components.AbstractSelectionList extractSelection (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/components/AbstractSelectionList$Entry;I)V
 	param 2 argb_color
 
+target_field net.minecraft.client.gui.components.EditBox textColor I argb_color
+target_method net.minecraft.client.gui.components.EditBox setTextColor (I)V
+	param 0 argb_color
+
+target_field net.minecraft.client.gui.components.MultiLineEditBox$Builder textColor I argb_color
+target_field net.minecraft.client.gui.components.MultiLineEditBox$Builder cursorColor I argb_color
 target_method net.minecraft.client.gui.components.MultiLineEditBox$Builder setTextColor (I)Lnet/minecraft/client/gui/components/MultiLineEditBox$Builder;
 	param 0 argb_color
 target_method net.minecraft.client.gui.components.MultiLineEditBox$Builder setCursorColor (I)Lnet/minecraft/client/gui/components/MultiLineEditBox$Builder;
 	param 0 argb_color
 
-target_method net.minecraft.client.gui.components.EditBox setTextColor (I)V
-	param 0 argb_color
-
 target_method net.minecraft.client.gui.components.TabButton extractFocusUnderline (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/gui/Font;I)V
 	param 2 argb_color
+
+target_method net.minecraft.client.gui.components.TextCursorUtils extractInsertCursor (Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIII)V
+	param 3 argb_color
 
 target_method net.minecraft.client.gui.components.debugchart.AbstractDebugChart getSampleColor (DDIDIDI)I
 	param 2 argb_color
@@ -131,6 +213,17 @@ target_method net.minecraft.client.renderer.debug.PoiDebugRenderer renderTextOve
 
 target_method net.minecraft.client.renderer.debug.SupportBlockRenderer drawHighlights (Lnet/minecraft/world/entity/Entity;Ljava/util/function/DoubleSupplier;I)V
 	param 2 argb_color
+
+target_method net.minecraft.client.renderer.blockentity.AbstractSignRenderer getDarkColor (Lnet/minecraft/world/level/block/entity/SignText;)I
+	return argb_color
+
+target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer getColorForLayer (Lnet/minecraft/client/resources/model/EquipmentClientInfo$Layer;I)I
+	return argb_color
+
+#target_field net.minecraft.client.renderer.state.gui.BlitRenderState color I argb_color
+target_method net.minecraft.client.renderer.state.gui.ColoredRectangleRenderState <init> (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/gui/render/TextureSetup;Lorg/joml/Matrix3x2fc;IIIIIILnet/minecraft/client/gui/navigation/ScreenRectangle;)V
+	param 7 argb_color
+	param 8 argb_color
 
 target_method net.minecraft.client.color.item.Dye <init> (I)V
 	param 0 argb_color
@@ -185,6 +278,17 @@ target_method net.minecraft.network.chat.Style withColor (I)Lnet/minecraft/netwo
 target_method net.minecraft.world.level.block.FallingBlock getDustColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)I
 	return argb_color
 
+target_method net.minecraft.world.entity.projectile.arrow.Arrow getColor ()I
+	return argb_color
+
+target_method net.minecraft.world.item.alchemy.PotionContents getColorOr (I)I
+	param 0 argb_color
+
+target_field net.minecraft.world.level.saveddata.maps.MapDecorationType mapColor I argb_color
+
+target_method net.minecraft.world.level.saveddata.maps.MapDecorationTypes register (Ljava/lang/String;Ljava/lang/String;ZIZZ)Lnet/minecraft/core/Holder;
+	param 3 argb_color
+
 target_method net.minecraft.world.level.ColorMapColorUtil get (DD[II)I
 	param 3 argb_color
 
@@ -202,6 +306,13 @@ target_method net.minecraft.util.ARGB color (II)I
 target_method net.minecraft.util.ARGB color (FI)I
 	param 1 argb_color
 	return argb_color
+
+target_method net.minecraft.core.particles.DustParticleOptions <init> (IF)V
+	param 0 rgb_color
+
+target_method net.minecraft.core.particles.DustColorTransitionOptions <init> (IIF)V
+	param 0 rgb_color
+	param 1 rgb_color
 
 target_method net.minecraft.client.multiplayer.chat.GuiMessageTag <init> (ILnet/minecraft/client/multiplayer/chat/GuiMessageTag$Icon;Lnet/minecraft/network/chat/Component;Ljava/lang/String;)V
 	param 0 rgb_color

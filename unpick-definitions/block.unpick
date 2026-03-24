@@ -51,3 +51,39 @@ target_method net.minecraft.world.level.redstone.NeighborUpdater executeShapeUpd
 
 target_method net.minecraft.world.level.redstone.CollectingNeighborUpdater$ShapeUpdate <init> (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;II)V
 	param 5 update_limit
+
+
+group int redstone_level
+	net.minecraft.world.level.redstone.Redstone.SIGNAL_MIN
+	net.minecraft.world.level.redstone.Redstone.SIGNAL_MAX
+
+#target_method net.minecraft.world.level.block.state.BlockBehaviour getAnalogOutputSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
+#	return redstone_level # shelf block got a wrong replacement
+target_method net.minecraft.world.level.block.state.BlockBehaviour getSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
+	return redstone_level
+target_method net.minecraft.world.level.block.state.BlockBehaviour getDirectSignal (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
+	return redstone_level
+target_method net.minecraft.world.level.block.DiodeBlock getOutputSignal (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)I
+	return redstone_level
+target_method net.minecraft.world.level.block.ComparatorBlock getInputSignal (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)I
+	return redstone_level
+target_method net.minecraft.world.level.block.ComparatorBlock calculateOutputSignal (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)I
+	return redstone_level
+target_method net.minecraft.world.level.block.entity.CreakingHeartBlockEntity computeAnalogOutputSignal ()I
+	return redstone_level
+target_method net.minecraft.world.level.redstone.RedstoneWireEvaluator getBlockSignal (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
+	return redstone_level
+target_method net.minecraft.world.level.SignalGetter getDirectSignal (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
+	return redstone_level
+target_method net.minecraft.world.level.SignalGetter getDirectSignalTo (Lnet/minecraft/core/BlockPos;)I
+	return redstone_level
+target_method net.minecraft.world.level.SignalGetter getControlInputSignal (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;Z)I
+	return redstone_level
+target_method net.minecraft.world.level.SignalGetter getSignal (Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)I
+	return redstone_level
+target_method net.minecraft.world.level.SignalGetter getBestNeighborSignal (Lnet/minecraft/core/BlockPos;)I
+	return redstone_level
+target_method net.minecraft.world.inventory.AbstractContainerMenu getRedstoneSignalFromBlockEntity (Lnet/minecraft/world/level/block/entity/BlockEntity;)I
+	return redstone_level
+target_method net.minecraft.world.inventory.AbstractContainerMenu getRedstoneSignalFromContainer (Lnet/minecraft/world/Container;)I
+	return redstone_level

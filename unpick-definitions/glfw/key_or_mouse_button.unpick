@@ -146,6 +146,8 @@ target_method net.minecraft.client.KeyMapping <init> (Ljava/lang/String;ILnet/mi
 	param 1 key_or_mouse_button
 target_method net.minecraft.client.KeyMapping <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;ILnet/minecraft/client/KeyMapping$Category;)V
 	param 2 key_or_mouse_button
+target_method net.minecraft.client.KeyMapping <init> (Ljava/lang/String;Lcom/mojang/blaze3d/platform/InputConstants$Type;ILnet/minecraft/client/KeyMapping$Category;I)V
+	param 2 key_or_mouse_button
 
 target_method net.minecraft.client.ToggleKeyMapping <init> (Ljava/lang/String;ILnet/minecraft/client/KeyMapping$Category;Ljava/util/function/BooleanSupplier;Z)V
 	param 1 key_or_mouse_button

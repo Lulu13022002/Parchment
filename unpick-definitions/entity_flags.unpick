@@ -130,6 +130,7 @@ target_method net.minecraft.world.entity.Display$TextDisplay$TextRenderState fla
 # mob, bat, snow golem, flags are directly on method bodies
 
 group int pufferfish_state
+	@scope method net.minecraft.world.entity.animal.fish.Pufferfish tick ()V # getter got replaced in touch/playerTouch...
 	net.minecraft.world.entity.animal.fish.Pufferfish.STATE_SMALL
 	net.minecraft.world.entity.animal.fish.Pufferfish.STATE_MID
 	net.minecraft.world.entity.animal.fish.Pufferfish.STATE_FULL
