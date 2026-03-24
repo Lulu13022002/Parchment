@@ -2,18 +2,41 @@ unpick v4
 
 group int packed_light
 	@flags
-	net.minecraft.client.renderer.LightTexture.FULL_BRIGHT
-	net.minecraft.client.renderer.LightTexture.FULL_SKY
-	net.minecraft.client.renderer.LightTexture.FULL_BLOCK
+	net.minecraft.util.LightCoordsUtil.FULL_BRIGHT
+	net.minecraft.util.LightCoordsUtil.FULL_SKY
 
-target_method net.minecraft.client.renderer.LightTexture pack (II)I
+target_method net.minecraft.util.LightCoordsUtil pack (II)I
 	return packed_light
-target_method net.minecraft.client.renderer.LightTexture sky (I)I
+target_method net.minecraft.util.LightCoordsUtil block (I)I
 	param 0 packed_light
-target_method net.minecraft.client.renderer.LightTexture block (I)I
+target_method net.minecraft.util.LightCoordsUtil sky (I)I
 	param 0 packed_light
-target_method net.minecraft.client.renderer.LightTexture lightCoordsWithEmission (II)I
+target_method net.minecraft.util.LightCoordsUtil withBlock (II)I
+	return packed_light
+target_method net.minecraft.util.LightCoordsUtil smoothPack (II)I
+	return packed_light
+target_method net.minecraft.util.LightCoordsUtil smoothBlock (I)I
 	param 0 packed_light
+target_method net.minecraft.util.LightCoordsUtil smoothSky (I)I
+	param 0 packed_light
+target_method net.minecraft.util.LightCoordsUtil addSmoothBlockEmission (IF)I
+	return packed_light
+target_method net.minecraft.util.LightCoordsUtil max (II)I
+	return packed_light
+target_method net.minecraft.util.LightCoordsUtil lightCoordsWithEmission (II)I
+	param 0 packed_light
+	return packed_light
+target_method net.minecraft.util.LightCoordsUtil smoothBlend (IIII)I
+	param 0 packed_light
+	param 1 packed_light
+	param 2 packed_light
+	param 3 packed_light
+	return packed_light
+target_method net.minecraft.util.LightCoordsUtil smoothWeightedBlend (IIIIFFFF)I
+	param 0 packed_light
+	param 1 packed_light
+	param 2 packed_light
+	param 3 packed_light
 	return packed_light
 
 target_method net.minecraft.client.gui.Font drawInBatch (Ljava/lang/String;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
@@ -36,7 +59,7 @@ target_method net.minecraft.client.model.geom.ModelPart compile (Lcom/mojang/bla
 target_method net.minecraft.client.model.geom.ModelPart$Cube compile (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
 	param 2 packed_light
 
-target_method net.minecraft.client.particle.Particle getLightColor (F)I
+target_method net.minecraft.client.particle.Particle getLightCoords (F)I
 	return packed_light
 
 target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
@@ -66,7 +89,7 @@ target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderModel
 	param 6 packed_light
 target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFLjava/util/List;II)V
 	param 6 packed_light
-target_method net.minecraft.client.renderer.block.ModelBlockRenderer$Cache getLightColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer$Cache getLightCoords (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
 	return packed_light
 
 target_method net.minecraft.client.renderer.block.BlockRenderDispatcher renderSingleBlock (Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V
@@ -103,9 +126,9 @@ target_method net.minecraft.client.renderer.WeatherEffectRenderer createRainColu
 target_method net.minecraft.client.renderer.WeatherEffectRenderer createSnowColumnInstance (Lnet/minecraft/util/RandomSource;IIIIIIF)Lnet/minecraft/client/renderer/WeatherEffectRenderer$ColumnInstance;
 	param 6 packed_light
 
-target_method net.minecraft.client.renderer.LevelRenderer getLightColor (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
+target_method net.minecraft.client.renderer.LevelRenderer getLightCoords (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
 	return packed_light
-target_method net.minecraft.client.renderer.LevelRenderer getLightColor (Lnet/minecraft/client/renderer/LevelRenderer$BrightnessGetter;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)I
+target_method net.minecraft.client.renderer.LevelRenderer getLightCoords (Lnet/minecraft/client/renderer/LevelRenderer$BrightnessGetter;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)I
 	return packed_light
 
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitNameTag (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;ILnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V

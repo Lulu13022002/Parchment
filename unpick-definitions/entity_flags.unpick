@@ -9,10 +9,7 @@ group int entity_flag_index
 	net.minecraft.world.entity.Entity.FLAG_GLOWING
 	net.minecraft.world.entity.Entity.FLAG_FALL_FLYING
 
-target_method net.minecraft.world.entity.Entity getSharedFlag (I)Z
-	param 0 entity_flag_index
-target_method net.minecraft.world.entity.Entity setSharedFlag (IZ)V
-	param 0 entity_flag_index
+target_annotation net.minecraft.world.entity.Entity$Flags entity_flag_index
 
 
 group int living_entity_flags

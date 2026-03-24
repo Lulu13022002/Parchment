@@ -199,7 +199,7 @@ group float speed_factor
 	net.minecraft.world.entity.ai.behavior.RamTarget.RAM_SPEED_FORCE_FACTOR
 
 group int
-	@scope method net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids lambda$findSomeoneBeingChased$5 (Ljava/util/Map$Entry;)Z
+	@scope method net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids lambda$findSomeoneBeingChased$0 (Ljava/util/Map$Entry;)Z
 	net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids.MAX_CHASERS_PER_TARGET
 
 group int

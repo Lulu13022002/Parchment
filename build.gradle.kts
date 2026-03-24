@@ -43,7 +43,6 @@ repositories {
 }
 
 val enigma by configurations.registering
-val remapper by configurations.registering
 val minecraft by configurations.registering {
     isTransitive = false
 }
@@ -63,9 +62,6 @@ dependencies {
     // MCPConfig for the SRG intermediate
     mcpconfig("de.oceanlabs.mcp:mcp_config:1.19.3-20221207.122022")
 
-    // ART for remapping the client JAR
-    remapper("net.neoforged:AutoRenamingTool:2.0.17")
-
     // Enigma, pretty interface for editing mappings
     enigma("cuchaz:enigma-swing:4.0.2")
     enigma("org.vineflower:vineflower:1.11.1") // sync with mache
@@ -74,7 +70,7 @@ dependencies {
     // ParchmentJAM, JAMMER integration for migrating mapping data
     jammer("org.parchmentmc.jam:jam-parchment:0.1.0")
 
-    // Minecraft classpath for inheritance check in ART and to prevent types coming from libraries to be printed as FQN in enigma
+    // Minecraft classpath to prevent types coming from libraries to be printed as FQN in enigma
     val manifest = project.plugins.getPlugin(CompassPlugin::class).manifestsDownloader.versionManifest
     for (library in manifest.get().libraries) {
         minecraft(library.name)
@@ -87,27 +83,12 @@ val downloadClientJar by tasks.registering(VersionDownload::class) {
     outputs.cacheIf { true }
 }
 
-val remapJar by tasks.registering(RemapJar::class) {
-    group = "parchment"
-    description = "Remaps the client JAR with the Mojang obfuscation mappings."
-
-    val obfDL = project.plugins.getPlugin(CompassPlugin::class).obfuscationMapsDownloader
-    inputJar = downloadClientJar.flatMap { it.outputFile }
-    mappings = obfDL.obfuscationMap.flatMap {  _ -> obfDL.clientDownloadOutput }
-
-    remapperClasspath.setFrom(remapper)
-    minecraftClasspath.setFrom(minecraft)
-
-    outputJar = project.layout.buildDirectory.dir("remapped")
-        .zip(mcVersion) { d, ver -> d.file("$ver-client.jar") }
-}
-
 // unpick
 tasks.register<CheckUnpickDefinitions>("checkUnpickDefinitions") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
     input = project.layout.projectDirectory.dir("unpick-definitions")
     classpath.setFrom(
-        remapJar.flatMap { it.outputJar },
+        downloadClientJar.flatMap { it.outputFile },
         minecraft
     )
 }
@@ -120,7 +101,7 @@ val generateUnpickData by tasks.registering(GenerateUnpickV3Data::class) {
 
 val unpickJar by tasks.registering(UnpickJar::class) {
     group = "parchment"
-    input = remapJar.flatMap { it.outputJar }
+    input = downloadClientJar.flatMap { it.outputFile }
     output = project.layout.buildDirectory.dir("remapped")
         .zip(mcVersion) { d, ver -> d.file("$ver-client-unpicked.jar") }
     definitions = generateUnpickData.flatMap { it.output }
@@ -129,14 +110,14 @@ val unpickJar by tasks.registering(UnpickJar::class) {
 
 tasks.register<ScanConstructorParameters>("scanInitParams") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
-    inputJar = remapJar.flatMap { it.outputJar }
+    inputJar = downloadClientJar.flatMap { it.outputFile }
     inputMapping = project.compass.productionData
 }
 
 tasks.register<ScanParameter>("scanParam") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
     inputMapping = project.compass.productionData
-    inputJar = remapJar.flatMap { it.outputJar }
+    inputJar = downloadClientJar.flatMap { it.outputFile }
 }
 
 tasks.register<JavadocLint>("scanJavadocs") {
@@ -152,24 +133,12 @@ tasks.register<EnigmaRunner>("enigma") {
     val selectedJar = if (project.findProperty("unpick") != null) {
         unpickJar.flatMap { it.output }
     } else {
-        remapJar.flatMap { it.outputJar }
+        downloadClientJar.flatMap { it.outputFile }
     }
     inputJar = selectedJar
     mappings = project.compass.productionData
     profile = project.layout.projectDirectory.file("enigma-plugin/profile.json")
     libraries.setFrom(minecraft)
-}
-
-val unobfuscatedClient = providers.gradleProperty("unobfuscatedClient")
-if (unobfuscatedClient.isPresent) {
-    val downloadUnobfuscated by tasks.registering(DownloadFile::class) {
-        url = unobfuscatedClient
-        output = project.layout.buildDirectory.file("$name/client.jar")
-    }
-    tasks.named<EnigmaRunner>("enigma").configure {
-        inputs.file(downloadUnobfuscated.flatMap { it.output })
-        systemProperty("minecraft.client.unobfuscatedJar", downloadUnobfuscated.flatMap { it.output }.get().asFile.absolutePath)
-    }
 }
 
 tasks.withType<ValidateData>().configureEach {
@@ -256,10 +225,6 @@ publishing {
 
     publications.register<MavenPublication>("versionedExport") {
         // for remote repository (like Paper)
-        artifact(officialExportZip)
-        artifact(officialSanitizedExportZip) {
-            classifier = "checked"
-        }
         artifact(generateUnpickData.flatMap { it.output }) {
             classifier = "unpick"
         }
@@ -271,10 +236,6 @@ publishing {
 
     publications.register<MavenPublication>("export") {
         // for mavenLocal
-        artifact(officialExportZip)
-        artifact(officialSanitizedExportZip) {
-            classifier = "checked"
-        }
         artifact(generateUnpickData.flatMap { it.output }) {
             classifier = "unpick"
         }
@@ -282,9 +243,5 @@ publishing {
             classifier = "unpick"
         }
         version = mcVersion.get()
-    }
-    publications.register<MavenPublication>("staging") {
-        artifact(officialStagingExportZip)
-        version = "staging-SNAPSHOT"
     }
 }

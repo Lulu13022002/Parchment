@@ -99,7 +99,7 @@ target_method net.minecraft.world.entity.EquipmentSlot <init> (Ljava/lang/String
 target_method net.minecraft.world.inventory.AbstractContainerMenu isValidSlotIndex (I)Z
 	param 0 slot_id
 
-target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ClickType;)V
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ContainerInput;)V
 	param 1 slot_id
 
 target_field net.minecraft.world.item.component.BundleContents selectedItem I selected_item_index
