@@ -1,0 +1,8 @@
+unpick v4
+
+group int glfw_monitor_event
+	org.lwjgl.glfw.GLFW.GLFW_CONNECTED
+	org.lwjgl.glfw.GLFW.GLFW_DISCONNECTED
+
+target_method com.mojang.blaze3d.platform.ScreenManager onMonitorChange (JI)V
+	param 1 glfw_monitor_event

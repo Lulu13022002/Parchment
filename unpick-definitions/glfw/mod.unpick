@@ -1,0 +1,12 @@
+unpick v4
+
+group int input_modifier
+	@flags
+	com.mojang.blaze3d.platform.InputConstants.MOD_SHIFT
+	com.mojang.blaze3d.platform.InputConstants.MOD_CONTROL
+	com.mojang.blaze3d.platform.InputConstants.MOD_ALT
+	com.mojang.blaze3d.platform.InputConstants.MOD_SUPER
+	com.mojang.blaze3d.platform.InputConstants.MOD_CAPS_LOCK
+	com.mojang.blaze3d.platform.InputConstants.MOD_NUM_LOCK
+
+target_annotation net.minecraft.client.input.InputWithModifiers$Modifiers input_modifier

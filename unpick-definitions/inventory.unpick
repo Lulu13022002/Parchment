@@ -1,0 +1,131 @@
+unpick v4
+
+group int slot_index
+	net.minecraft.world.entity.player.Inventory.SLOT_OFFHAND
+	net.minecraft.world.entity.player.Inventory.SLOT_BODY_ARMOR
+	net.minecraft.world.entity.player.Inventory.SLOT_SADDLE
+	net.minecraft.world.entity.player.Inventory.NOT_FOUND_INDEX
+
+group int base_index
+	net.minecraft.world.entity.player.Inventory.INVENTORY_SIZE
+
+group int pop_time
+	net.minecraft.world.entity.player.Inventory.POP_TIME_DURATION
+
+group int count_limit
+	net.minecraft.world.entity.EquipmentSlot.NO_COUNT_LIMIT
+
+group int slot_id
+	net.minecraft.world.inventory.AbstractContainerMenu.SLOT_CLICKED_OUTSIDE
+
+group int stack_index
+	net.minecraft.world.item.component.BundleContents.NO_STACK_INDEX
+
+group int selected_item_index
+	net.minecraft.world.item.component.BundleContents.NO_SELECTED_ITEM_INDEX
+
+group int item_contents_slot
+	net.minecraft.world.item.component.ItemContainerContents.NO_SLOT
+
+group int
+	@scope method net.minecraft.world.item.component.Consumable shouldEmitParticlesAndSounds (I)Z
+	net.minecraft.world.item.component.Consumable.CONSUME_EFFECTS_INTERVAL
+
+group float
+	@scope method net.minecraft.world.item.component.Consumable shouldEmitParticlesAndSounds (I)Z
+	net.minecraft.world.item.component.Consumable.CONSUME_EFFECTS_START_FRACTION
+
+group float consume_seconds
+	net.minecraft.world.item.component.Consumable.DEFAULT_CONSUME_SECONDS
+
+group int effect_duration
+	net.minecraft.world.item.component.OminousBottleAmplifier.EFFECT_DURATION
+
+group String
+	@scope class net.minecraft.world.item.component.TypedEntityData
+	@scope class net.minecraft.world.item.component.TypedEntityData$1
+	net.minecraft.world.item.component.TypedEntityData.TYPE_TAG
+
+group int book_generation
+	net.minecraft.world.item.component.WrittenBookContent.MAX_GENERATION
+	net.minecraft.world.item.component.WrittenBookContent.MAX_CRAFTABLE_GENERATION
+
+group float disable_blocking_for_seconds
+	net.minecraft.world.item.component.Weapon.AXE_DISABLES_BLOCKING_FOR_SECONDS
+
+group float teleport_effect_diameter
+	net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect.DEFAULT_DIAMETER
+
+target_field net.minecraft.world.entity.player.Inventory selected I slot_index
+target_method net.minecraft.world.entity.player.Inventory getFreeSlot ()I
+	return slot_index
+target_method net.minecraft.world.entity.player.Inventory pickSlot (I)V
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory findSlotMatchingItem (Lnet/minecraft/world/item/ItemStack;)I
+	return slot_index
+target_method net.minecraft.world.entity.player.Inventory findSlotMatchingCraftingIngredient (Lnet/minecraft/core/Holder;Lnet/minecraft/world/item/ItemStack;)I
+	return slot_index
+target_method net.minecraft.world.entity.player.Inventory addResource (ILnet/minecraft/world/item/ItemStack;)I
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory getSlotWithRemainingSpace (Lnet/minecraft/world/item/ItemStack;)I
+	return slot_index
+target_method net.minecraft.world.entity.player.Inventory add (ILnet/minecraft/world/item/ItemStack;)Z
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory createInventoryUpdatePacket (I)Lnet/minecraft/network/protocol/game/ClientboundSetPlayerInventoryPacket;
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory removeItem (II)Lnet/minecraft/world/item/ItemStack;
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory removeItemNoUpdate (I)Lnet/minecraft/world/item/ItemStack;
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory setItem (ILnet/minecraft/world/item/ItemStack;)V
+	param 0 slot_index
+target_method net.minecraft.world.entity.player.Inventory getItem (I)Lnet/minecraft/world/item/ItemStack;
+	param 0 slot_index
+target_method net.minecraft.network.protocol.game.ServerboundEditBookPacket <init> (ILjava/util/List;Ljava/util/Optional;)V
+	param 0 slot_index
+
+target_method net.minecraft.world.entity.EquipmentSlot getIndex (I)I
+	param 0 base_index
+	return slot_index
+
+target_method net.minecraft.world.item.ItemStack setPopTime (I)V
+	param 0 pop_time
+target_method net.minecraft.world.item.ItemStack getPopTime ()I
+	return pop_time
+
+target_method net.minecraft.world.entity.EquipmentSlot <init> (Ljava/lang/String;ILnet/minecraft/world/entity/EquipmentSlot$Type;IIILjava/lang/String;)V
+	param 4 count_limit
+
+target_method net.minecraft.world.inventory.AbstractContainerMenu isValidSlotIndex (I)Z
+	param 0 slot_id
+
+target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen slotClicked (Lnet/minecraft/world/inventory/Slot;IILnet/minecraft/world/inventory/ClickType;)V
+	param 1 slot_id
+
+target_field net.minecraft.world.item.component.BundleContents selectedItem I selected_item_index
+target_field net.minecraft.world.item.component.BundleContents$Mutable selectedItem I selected_item_index
+target_method net.minecraft.world.item.component.BundleContents <init> (Ljava/util/List;Lorg/apache/commons/lang3/math/Fraction;I)V
+	param 2 selected_item_index
+target_method net.minecraft.world.item.component.BundleContents$Mutable toggleSelectedItem (I)V
+	param 0 selected_item_index
+
+target_method net.minecraft.world.item.component.BundleContents$Mutable findStackIndex (Lnet/minecraft/world/item/ItemStack;)I
+	return stack_index
+
+target_field net.minecraft.world.item.component.Consumable$Builder consumeSeconds F consume_seconds
+target_method net.minecraft.world.item.component.Consumable$Builder consumeSeconds (F)Lnet/minecraft/world/item/component/Consumable$Builder;
+	param 0 consume_seconds
+
+target_method net.minecraft.world.item.component.ItemContainerContents findLastNonEmptySlot (Ljava/util/List;)I
+	return item_contents_slot
+
+target_method net.minecraft.world.effect.MobEffectInstance <init> (Lnet/minecraft/core/Holder;IIZZZ)V
+	param 1 effect_duration
+
+target_method net.minecraft.world.item.Item$Properties tool (Lnet/minecraft/world/item/ToolMaterial;Lnet/minecraft/tags/TagKey;FFF)Lnet/minecraft/world/item/Item$Properties;
+	param 4 disable_blocking_for_seconds
+
+target_field net.minecraft.world.item.component.WrittenBookContent generation I book_generation
+
+target_method net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect <init> (F)V
+	param 0 teleport_effect_diameter

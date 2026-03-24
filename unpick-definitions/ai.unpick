@@ -1,0 +1,377 @@
+unpick v4
+
+group int activity_duration
+	net.minecraft.world.entity.schedule.Schedule.WORK_START_TIME
+	net.minecraft.world.entity.schedule.Schedule.WORK_START_TIME + net.minecraft.world.entity.schedule.Schedule.TOTAL_WORK_TIME
+
+group int poi_range
+	net.minecraft.world.entity.ai.behavior.AcquirePoi.SCAN_RANGE
+group int poi_range
+	@scope class net.minecraft.server.commands.LocateCommand
+	net.minecraft.server.commands.LocateCommand.POI_SEARCH_RADIUS
+group int poi_range
+	@scope class net.minecraft.world.entity.animal.Bee$BeeLocateHiveGoal
+	net.minecraft.world.entity.animal.Bee.HIVE_SEARCH_DISTANCE
+
+group int
+	@scope method net.minecraft.world.entity.ai.Brain updateActivityFromSchedule (JJ)V
+	net.minecraft.world.entity.ai.Brain.SCHEDULE_UPDATE_DELAY
+
+group double pos_distance
+	net.minecraft.world.entity.ai.behavior.RingBell.RING_BELL_FROM_DISTANCE
+
+group double pos_distance
+	@scope class net.minecraft.world.entity.ai.behavior.InteractWithDoor
+	net.minecraft.world.entity.ai.behavior.InteractWithDoor.SKIP_CLOSING_DOOR_IF_FURTHER_AWAY_THAN
+	net.minecraft.world.entity.ai.behavior.InteractWithDoor.MAX_DISTANCE_TO_HOLD_DOOR_OPEN_FOR_OTHER_MOBS
+group double pos_distance
+	@scope class net.minecraft.world.entity.ai.behavior.WorkAtPoi
+	net.minecraft.world.entity.ai.behavior.WorkAtPoi.DISTANCE
+group double pos_distance
+	@scope class net.minecraft.world.entity.ai.behavior.ValidateNearbyPoi
+	net.minecraft.world.entity.ai.behavior.ValidateNearbyPoi.MAX_DISTANCE
+group double pos_distance
+	@scope class net.minecraft.world.entity.ai.behavior.Mount
+	net.minecraft.world.entity.ai.behavior.Mount.CLOSE_ENOUGH_TO_START_RIDING_DIST
+
+group double pos_distance_sqr
+	@scope class net.minecraft.world.entity.ai.behavior.VillagerCalmDown
+	net.minecraft.world.entity.ai.behavior.VillagerCalmDown.SAFE_DISTANCE_FROM_DANGER
+group double pos_distance_sqr
+	@scope class net.minecraft.world.entity.ai.behavior.SetClosestHomeAsWalkTarget
+	net.minecraft.world.entity.ai.behavior.SetClosestHomeAsWalkTarget.OK_DISTANCE_SQR
+
+group int horizontal_dist
+	@scope class net.minecraft.world.entity.ai.behavior.VillageBoundRandomStroll
+	net.minecraft.world.entity.ai.behavior.VillageBoundRandomStroll.MAX_XZ_DIST
+group int horizontal_dist
+	@scope class net.minecraft.world.entity.ai.behavior.StrollAroundPoi
+	net.minecraft.world.entity.ai.behavior.StrollAroundPoi.STROLL_MAX_XZ_DIST
+group int horizontal_dist
+	@scope class net.minecraft.world.entity.ai.behavior.RandomStroll
+	net.minecraft.world.entity.ai.behavior.RandomStroll.MAX_XZ_DIST
+group int horizontal_dist
+	@scope class net.minecraft.world.entity.ai.behavior.AnimalPanic
+	net.minecraft.world.entity.ai.behavior.AnimalPanic.PANIC_DISTANCE_HORIZONTAL
+group int horizontal_dist
+	@scope class net.minecraft.world.entity.ai.behavior.warden.SonicBoom
+	net.minecraft.world.entity.ai.behavior.warden.SonicBoom.DISTANCE_XZ
+group int horizontal_dist
+	@scope class net.minecraft.world.entity.ai.behavior.warden.Sniffing
+	net.minecraft.world.entity.ai.behavior.warden.Sniffing.ANGER_FROM_SNIFFING_MAX_DISTANCE_XZ
+
+group int vertical_dist
+	@scope class net.minecraft.world.entity.ai.behavior.VillageBoundRandomStroll
+	net.minecraft.world.entity.ai.behavior.VillageBoundRandomStroll.MAX_Y_DIST
+group int vertical_dist
+	@scope class net.minecraft.world.entity.ai.behavior.StrollAroundPoi
+	net.minecraft.world.entity.ai.behavior.StrollAroundPoi.STROLL_MAX_Y_DIST
+group int vertical_dist
+	@scope class net.minecraft.world.entity.ai.behavior.RandomStroll
+	net.minecraft.world.entity.ai.behavior.RandomStroll.MAX_Y_DIST
+group int vertical_dist
+	@scope class net.minecraft.world.entity.ai.behavior.AnimalPanic
+	net.minecraft.world.entity.ai.behavior.AnimalPanic.PANIC_DISTANCE_VERTICAL
+group int vertical_dist
+	@scope class net.minecraft.world.entity.ai.behavior.warden.SonicBoom
+	net.minecraft.world.entity.ai.behavior.warden.SonicBoom.DISTANCE_Y
+group int vertical_dist
+	@scope class net.minecraft.world.entity.ai.behavior.warden.Sniffing
+	net.minecraft.world.entity.ai.behavior.warden.Sniffing.ANGER_FROM_SNIFFING_MAX_DISTANCE_Y
+
+group int behavior_duration
+	net.minecraft.world.entity.ai.behavior.Behavior.DEFAULT_DURATION
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.RamTarget
+	net.minecraft.world.entity.ai.behavior.RamTarget.TIME_OUT_DURATION
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.PrepareRamNearestTarget
+	net.minecraft.world.entity.ai.behavior.PrepareRamNearestTarget.TIME_OUT_DURATION
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos
+	net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos.TIME_OUT_DURATION
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.LongJumpMidJump
+	net.minecraft.world.entity.ai.behavior.LongJumpMidJump.TIME_OUT_DURATION
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.GoToPotentialJobSite
+	net.minecraft.world.entity.ai.behavior.GoToPotentialJobSite.TICKS_UNTIL_TIMEOUT
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.CrossbowAttack
+	net.minecraft.world.entity.ai.behavior.CrossbowAttack.TIMEOUT
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.Croak
+	net.minecraft.world.entity.ai.behavior.Croak.TIME_OUT_DURATION
+group int behavior_duration
+	@scope class net.minecraft.world.entity.ai.behavior.AnimalMakeLove
+	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MAX_DURATION
+
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.AnimalPanic
+	net.minecraft.world.entity.ai.behavior.AnimalPanic.PANIC_MIN_DURATION
+	net.minecraft.world.entity.ai.behavior.AnimalPanic.PANIC_MAX_DURATION
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.AnimalMakeLove
+	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MIN_DURATION
+	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MAX_DURATION - net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MIN_DURATION
+
+group int
+	 @scope method net.minecraft.world.entity.ai.behavior.WorkAtPoi checkExtraStartConditions (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/Villager;)Z
+	 net.minecraft.world.entity.ai.behavior.WorkAtPoi.CHECK_COOLDOWN
+
+group int
+	 @scope method net.minecraft.world.entity.ai.behavior.SleepInBed checkExtraStartConditions (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;)Z
+	 net.minecraft.world.entity.ai.behavior.SleepInBed.COOLDOWN_AFTER_BEING_WOKEN
+
+group float speed_modifier
+	net.minecraft.world.entity.ai.behavior.VillagerGoalPackages.INTERACT_SPEED_MODIFIER
+group float speed_modifier
+	@scope class net.minecraft.world.entity.ai.behavior.VillagerGoalPackages
+	net.minecraft.world.entity.ai.behavior.VillagerGoalPackages.STROLL_SPEED_MODIFIER
+group float speed_modifier
+	@scope class net.minecraft.world.entity.ai.behavior.SocializeAtBell
+	net.minecraft.world.entity.ai.behavior.SocializeAtBell.SPEED_MODIFIER
+
+group int max_interact_dist
+	net.minecraft.world.entity.ai.behavior.VillagerGoalPackages.INTERACT_WALKUP_DIST
+
+group int bonemeal_use_duration
+	net.minecraft.world.entity.ai.behavior.UseBonemeal.BONEMEALING_DURATION
+	net.minecraft.world.entity.ai.behavior.UseBonemeal.BONEMEALING_DURATION * 2
+
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.TryFindLand # create (IF)Lnet/minecraft/world/entity/ai/behavior/BehaviorControl;
+	net.minecraft.world.entity.ai.behavior.TryFindLand.COOLDOWN_TICKS
+
+group int transport_target_interact_time
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.TARGET_INTERACTION_TIME
+
+group long memoryTime
+	@scope class net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.VISITED_POSITIONS_MEMORY_TIME
+group long memoryTime
+	@scope class net.minecraft.world.entity.ai.behavior.warden.Roar
+	net.minecraft.world.entity.ai.behavior.warden.Roar.TICKS_BEFORE_PLAYING_ROAR_SOUND
+
+group int
+	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers pickupItemFromContainer (Lnet/minecraft/world/Container;)Lnet/minecraft/world/item/ItemStack;
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.TRANSPORTED_ITEM_MAX_STACK_SIZE
+
+group int
+	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers setVisitedBlockPos (Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
+	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers markVisitedBlockPosAsUnreachable (Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)V
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.MAX_VISITED_POSITIONS
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.MAX_UNREACHABLE_POSITIONS
+
+group int
+	@scope method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers enterCooldownAfterNoMatchingTargetFound (Lnet/minecraft/world/entity/PathfinderMob;)V
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.IDLE_COOLDOWN
+
+group double transport_distance
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_START_QUEUING_DISTANCE
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_START_INTERACTING_WITH_TARGET_DISTANCE
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_START_INTERACTING_WITH_TARGET_PATH_END_DISTANCE
+	net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers.CLOSE_ENOUGH_TO_CONTINUE_INTERACTING_WITH_TARGET
+
+group int
+	@scope method net.minecraft.world.entity.ai.behavior.StopAttackingIfTargetInvalid isTiredOfTryingToReachTarget (Lnet/minecraft/world/entity/LivingEntity;Ljava/util/Optional;)Z
+	net.minecraft.world.entity.ai.behavior.StopAttackingIfTargetInvalid.TIMEOUT_TO_GET_WITHIN_ATTACK_RANGE
+
+group int look_time
+	net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer.MAX_LOOK_TIME
+	net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer.STARTING_LOOK_TIME
+
+group int projectile_cooldown
+	net.minecraft.world.entity.ai.behavior.SetWalkTargetFromAttackTargetIfTargetOutOfReach.PROJECTILE_ATTACK_RANGE_BUFFER
+
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.SetHiddenState
+	net.minecraft.world.entity.ai.behavior.SetHiddenState.HIDE_TIMEOUT
+
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.SetClosestHomeAsWalkTarget
+	net.minecraft.world.entity.ai.behavior.SetClosestHomeAsWalkTarget.CACHE_TIMEOUT
+	net.minecraft.world.entity.ai.behavior.SetClosestHomeAsWalkTarget.BATCH_SIZE
+	net.minecraft.world.entity.ai.behavior.SetClosestHomeAsWalkTarget.RATE
+
+group float chance_float
+	@strict
+	@scope class net.minecraft.world.entity.ai.behavior.RingBell
+	net.minecraft.world.entity.ai.behavior.RingBell.BELL_RING_CHANCE
+
+group float speed_factor
+	net.minecraft.world.entity.ai.behavior.RamTarget.RAM_SPEED_FORCE_FACTOR
+
+group int
+	@scope method net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids lambda$findSomeoneBeingChased$5 (Ljava/util/Map$Entry;)Z
+	net.minecraft.world.entity.ai.behavior.PlayTagWithOtherKids.MAX_CHASERS_PER_TARGET
+
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.MoveToTargetSink
+	net.minecraft.world.entity.ai.behavior.MoveToTargetSink.MAX_COOLDOWN_BEFORE_RETRYING
+
+group int jump_tries
+	net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos.FIND_JUMP_TRIES
+group int jump_duration
+	net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos.PREPARE_JUMP_DURATION
+group int
+	@scope class net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos
+	net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos.MIN_PATHFIND_DISTANCE_TO_VALID_JUMP
+
+group int bed_timeout
+	net.minecraft.world.entity.ai.behavior.JumpOnBed.MAX_TIME_TO_REACH_BED
+
+group int jumps
+	net.minecraft.world.entity.ai.behavior.JumpOnBed.MIN_JUMPS
+	net.minecraft.world.entity.ai.behavior.JumpOnBed.MAX_JUMPS
+#	net.minecraft.world.entity.ai.behavior.JumpOnBed.MAX_JUMPS - net.minecraft.world.entity.ai.behavior.JumpOnBed.MIN_JUMPS + 1
+
+group int jump_cooldown
+	net.minecraft.world.entity.ai.behavior.JumpOnBed.COOLDOWN_BETWEEN_JUMPS
+
+group int harvest_duration
+	net.minecraft.world.entity.ai.behavior.HarvestFarmland.HARVEST_DURATION
+
+group int max_time_to_gift
+	net.minecraft.world.entity.ai.behavior.GiveGiftToHero.MIN_TIME_BETWEEN_GIFTS
+	net.minecraft.world.entity.ai.behavior.GiveGiftToHero.MAX_TIME_BETWEEN_GIFTS
+#	net.minecraft.world.entity.ai.behavior.GiveGiftToHero.MAX_TIME_BETWEEN_GIFTS - net.minecraft.world.entity.ai.behavior.GiveGiftToHero.MIN_TIME_BETWEEN_GIFTS + 1
+
+group int turn_head_delay
+	net.minecraft.world.entity.ai.behavior.GiveGiftToHero.TIME_TO_DELAY_FOR_HEAD_TO_FINISH_TURNING
+
+group int croak_duration
+	net.minecraft.world.entity.ai.behavior.Croak.CROAK_TICKS
+
+group int sonic_cooldown
+	net.minecraft.world.entity.ai.behavior.warden.SonicBoom.COOLDOWN
+
+group int warden_anger_increase
+	@scope class net.minecraft.world.entity.ai.behavior.warden.Roar
+	net.minecraft.world.entity.ai.behavior.warden.Roar.ROAR_ANGER_INCREASE
+
+target_method net.minecraft.world.entity.schedule.ScheduleBuilder changeActivityAt (ILnet/minecraft/world/entity/schedule/Activity;)Lnet/minecraft/world/entity/schedule/ScheduleBuilder;
+	param 0 activity_duration
+
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager getInRange (Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/stream/Stream;
+	param 2 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager findAllWithType (Ljava/util/function/Predicate;Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/stream/Stream;
+	param 3 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager findAllClosestFirstWithType (Ljava/util/function/Predicate;Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/stream/Stream;
+	param 3 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager findClosest (Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/Optional;
+	param 2 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager findClosestWithType (Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/Optional;
+	param 2 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager findClosest (Ljava/util/function/Predicate;Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/Optional;
+	param 3 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager take (Ljava/util/function/Predicate;Ljava/util/function/BiPredicate;Lnet/minecraft/core/BlockPos;I)Ljava/util/Optional;
+	param 3 poi_range
+target_method net.minecraft.world.entity.ai.village.poi.PoiManager getRandom (Ljava/util/function/Predicate;Ljava/util/function/Predicate;Lnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;Lnet/minecraft/core/BlockPos;ILnet/minecraft/util/RandomSource;)Ljava/util/Optional;
+	param 4 poi_range
+
+target_method net.minecraft.core.Vec3i closerToCenterThan (Lnet/minecraft/core/Position;D)Z
+	param 1 pos_distance
+target_method net.minecraft.core.Vec3i closerThan (Lnet/minecraft/core/Vec3i;D)Z
+	param 1 pos_distance
+target_method net.minecraft.world.entity.Entity closerThan (Lnet/minecraft/world/entity/Entity;D)Z
+	param 1 pos_distance
+target_method net.minecraft.core.Vec3i distSqr (Lnet/minecraft/core/Vec3i;)D
+	return pos_distance_sqr
+target_method net.minecraft.world.entity.Entity distanceToSqr (Lnet/minecraft/world/entity/Entity;)D
+	return pos_distance_sqr
+
+target_method net.minecraft.world.entity.Entity closerThan (Lnet/minecraft/world/entity/Entity;DD)Z
+	param 1 horizontal_dist
+	param 2 vertical_dist
+target_method net.minecraft.world.entity.ai.behavior.VillageBoundRandomStroll create (FII)Lnet/minecraft/world/entity/ai/behavior/OneShot;
+	param 1 horizontal_dist
+	param 2 vertical_dist
+target_method net.minecraft.world.entity.ai.util.AirAndWaterRandomPos getPos (Lnet/minecraft/world/entity/PathfinderMob;IIIDDD)Lnet/minecraft/world/phys/Vec3;
+	param 1 horizontal_dist
+	param 2 vertical_dist
+target_method net.minecraft.world.entity.ai.util.LandRandomPos getPos (Lnet/minecraft/world/entity/PathfinderMob;II)Lnet/minecraft/world/phys/Vec3;
+	param 1 horizontal_dist
+	param 2 vertical_dist
+target_method net.minecraft.world.entity.ai.util.LandRandomPos getPos (Lnet/minecraft/world/entity/PathfinderMob;IILjava/util/function/ToDoubleFunction;)Lnet/minecraft/world/phys/Vec3;
+	param 1 horizontal_dist
+	param 2 vertical_dist
+target_method net.minecraft.world.entity.ai.behavior.RandomStroll getTargetFlyPos (Lnet/minecraft/world/entity/PathfinderMob;II)Lnet/minecraft/world/phys/Vec3;
+	param 1 horizontal_dist
+	param 2 vertical_dist
+
+target_method net.minecraft.world.entity.ai.behavior.StrollAroundPoi create (Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;FI)Lnet/minecraft/world/entity/ai/behavior/OneShot;
+	param 1 speed_modifier
+target_method net.minecraft.world.entity.ai.behavior.StrollToPoi create (Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;FII)Lnet/minecraft/world/entity/ai/behavior/BehaviorControl;
+	param 1 speed_modifier
+target_method net.minecraft.world.entity.ai.behavior.StrollToPoiList create (Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;FIILnet/minecraft/world/entity/ai/memory/MemoryModuleType;)Lnet/minecraft/world/entity/ai/behavior/BehaviorControl;
+	param 1 speed_modifier
+target_method net.minecraft.world.entity.ai.memory.WalkTarget <init> (Lnet/minecraft/world/entity/ai/behavior/PositionTracker;FI)V
+	param 1 speed_modifier
+	param 2 pos_distance
+target_method net.minecraft.world.entity.ai.memory.WalkTarget <init> (Lnet/minecraft/world/entity/Entity;FI)V
+	param 1 speed_modifier
+	param 2 pos_distance
+target_method net.minecraft.world.entity.ai.memory.WalkTarget <init> (Lnet/minecraft/world/phys/Vec3;FI)V
+	param 1 speed_modifier
+	param 2 pos_distance
+target_method net.minecraft.world.entity.ai.memory.WalkTarget <init> (Lnet/minecraft/core/BlockPos;FI)V
+	param 1 speed_modifier
+	param 2 pos_distance
+
+target_method net.minecraft.world.entity.ai.behavior.InteractWith of (Lnet/minecraft/world/entity/EntityType;ILnet/minecraft/world/entity/ai/memory/MemoryModuleType;FI)Lnet/minecraft/world/entity/ai/behavior/BehaviorControl;
+	param 4 max_interact_dist
+target_method net.minecraft.world.entity.ai.behavior.InteractWith of (Lnet/minecraft/world/entity/EntityType;ILjava/util/function/Predicate;Ljava/util/function/Predicate;Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;FI)Lnet/minecraft/world/entity/ai/behavior/BehaviorControl;
+	param 6 max_interact_dist
+
+target_field net.minecraft.world.entity.ai.behavior.UseBonemeal timeWorkedSoFar I bonemeal_use_duration
+target_field net.minecraft.world.entity.ai.behavior.UseBonemeal lastBonemealingSession J bonemeal_use_duration
+
+target_field net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers ticksSinceReachingTarget I transport_target_interact_time
+target_method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers isWithinTargetDistance (DLnet/minecraft/world/entity/ai/behavior/TransportItemsBetweenContainers$TransportItemTarget;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/PathfinderMob;Lnet/minecraft/world/phys/Vec3;)Z
+	param 0 transport_distance
+target_method net.minecraft.world.entity.ai.behavior.TransportItemsBetweenContainers getInteractionRange (Lnet/minecraft/world/entity/PathfinderMob;)D
+	return transport_distance
+
+target_method net.minecraft.world.entity.ai.Brain setMemoryWithExpiry (Lnet/minecraft/world/entity/ai/memory/MemoryModuleType;Ljava/lang/Object;J)V
+	param 2 memoryTime
+
+target_field net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer lookTime I look_time
+target_field net.minecraft.world.entity.ai.behavior.ShowTradesToPlayer cycleCounter I look_time
+
+target_method net.minecraft.world.entity.ai.behavior.BehaviorUtils isWithinAttackRange (Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/entity/LivingEntity;I)Z
+	param 2 projectile_cooldown
+
+target_method net.minecraft.util.RandomSource nextFloat ()F
+	return chance_float
+
+target_method net.minecraft.world.entity.ai.behavior.Behavior <init> (Ljava/util/Map;I)V
+	param 1 behavior_duration
+target_method net.minecraft.world.entity.ai.behavior.Behavior <init> (Ljava/util/Map;II)V
+	param 1 behavior_duration
+	param 2 behavior_duration
+
+target_method net.minecraft.world.entity.LivingEntity getSpeed ()F
+	return speed_factor
+
+target_field net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos findJumpTries I jump_tries
+target_field net.minecraft.world.entity.ai.behavior.LongJumpToRandomPos prepareJumpStart J jump_duration
+
+target_field net.minecraft.world.entity.ai.behavior.JumpOnBed remainingTimeToReachBed I bed_timeout
+target_field net.minecraft.world.entity.ai.behavior.JumpOnBed remainingJumps I jumps
+target_field net.minecraft.world.entity.ai.behavior.JumpOnBed remainingCooldownUntilNextJump I jump_cooldown
+
+target_field net.minecraft.world.entity.ai.behavior.HarvestFarmland timeWorkedSoFar I harvest_duration
+
+target_field net.minecraft.world.entity.ai.behavior.GiveGiftToHero timeSinceStart J turn_head_delay
+target_field net.minecraft.world.entity.ai.behavior.GiveGiftToHero timeUntilNextGift I max_time_to_gift
+target_method net.minecraft.world.entity.ai.behavior.GiveGiftToHero calculateTimeUntilNextGift (Lnet/minecraft/server/level/ServerLevel;)I
+	return max_time_to_gift
+
+target_field net.minecraft.world.entity.ai.behavior.Croak croakCounter I croak_duration
+
+target_method net.minecraft.world.entity.ai.behavior.warden.SonicBoom setCooldown (Lnet/minecraft/world/entity/LivingEntity;I)V
+	param 1 sonic_cooldown
+
+target_method net.minecraft.world.entity.monster.warden.Warden increaseAngerAt (Lnet/minecraft/world/entity/Entity;IZ)V
+	param 1 warden_anger_increase

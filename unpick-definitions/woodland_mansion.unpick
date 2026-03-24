@@ -1,0 +1,39 @@
+unpick v4
+
+group int mansion_size
+	net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.DEFAULT_SIZE
+
+group int mansion_grid_types
+	@flags
+	# those seems to be constant not flag but unpick doesn't support that yet
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.CLEAR
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.CORRIDOR
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.START_ROOM
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.TEST_ROOM
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.BLOCKED
+
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_1x1
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_1x2
+	# net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_2x2
+
+	net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_ORIGIN_FLAG
+	net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_DOOR_FLAG
+	net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_STAIRS_FLAG
+	net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$MansionGrid.ROOM_CORRIDOR_FLAG
+
+target_method net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$SimpleGrid <init> (III)V
+	param 0 mansion_size
+	param 1 mansion_size
+	param 2 mansion_grid_types
+target_method net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$SimpleGrid set (III)V
+	param 2 mansion_grid_types
+target_method net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$SimpleGrid set (IIIII)V
+	param 4 mansion_grid_types
+target_method net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$SimpleGrid get (II)I
+	return mansion_grid_types
+target_method net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$SimpleGrid setif (IIII)V
+	param 2 mansion_grid_types
+	param 3 mansion_grid_types
+target_method net.minecraft.world.level.levelgen.structure.structures.WoodlandMansionPieces$SimpleGrid edgesTo (III)Z
+	param 2 mansion_grid_types

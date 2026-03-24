@@ -1,0 +1,31 @@
+unpick v4
+
+group int entity_events
+	net.minecraft.world.entity.EntityEvent.*
+
+group int entity_events
+	@scope class net.minecraft.world.entity.projectile.arrow.Arrow
+	net.minecraft.world.entity.projectile.arrow.Arrow.EVENT_POTION_PUFF
+
+group int entity_events
+	@scope class net.minecraft.world.level.BaseSpawner
+	net.minecraft.world.level.BaseSpawner.EVENT_SPAWN
+
+target_method net.minecraft.world.entity.Entity handleEntityEvent (B)V # todo doesn't always work for some reason (LivingEntity/Entity)
+	param 0 entity_events
+target_method net.minecraft.world.entity.LivingEntity entityEventForEquipmentBreak (Lnet/minecraft/world/entity/EquipmentSlot;)B
+	return entity_events
+
+target_method net.minecraft.world.level.Level broadcastEntityEvent (Lnet/minecraft/world/entity/Entity;B)V
+	param 1 entity_events
+
+target_method net.minecraft.network.protocol.game.ClientboundEntityEventPacket <init> (Lnet/minecraft/world/entity/Entity;B)V
+	param 1 entity_events
+target_method net.minecraft.network.protocol.game.ClientboundEntityEventPacket getEventId ()B
+	return entity_events
+
+# technically both a block/entity event
+target_method net.minecraft.world.level.BaseSpawner broadcastEvent (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;I)V
+	param 2 entity_events
+target_method net.minecraft.world.level.BaseSpawner onEventTriggered (Lnet/minecraft/world/level/Level;I)Z
+	param 1 entity_events

@@ -1,0 +1,16 @@
+unpick v4
+
+group int cursor_shape
+	org.lwjgl.glfw.GLFW.GLFW_ARROW_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_IBEAM_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_CROSSHAIR_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_POINTING_HAND_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_RESIZE_EW_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_RESIZE_NS_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_RESIZE_NWSE_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_RESIZE_NESW_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_RESIZE_ALL_CURSOR
+	org.lwjgl.glfw.GLFW.GLFW_NOT_ALLOWED_CURSOR
+
+target_method com.mojang.blaze3d.platform.cursor.CursorType createStandardCursor (ILjava/lang/String;Lcom/mojang/blaze3d/platform/cursor/CursorType;)Lcom/mojang/blaze3d/platform/cursor/CursorType;
+	param 0 cursor_shape

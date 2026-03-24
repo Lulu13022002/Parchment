@@ -1,0 +1,32 @@
+unpick v4
+
+group float
+	@strict
+	net.minecraft.util.Mth.PI
+	net.minecraft.util.Mth.PI / 3
+	net.minecraft.util.Mth.HALF_PI
+	net.minecraft.util.Mth.TWO_PI
+	net.minecraft.util.Mth.DEG_TO_RAD
+	net.minecraft.util.Mth.RAD_TO_DEG
+	net.minecraft.util.Mth.EPSILON
+
+group int
+	@strict
+	@scope class net.minecraft.util.Mth
+#	net.minecraft.util.Mth.FRAC_EXP
+	net.minecraft.util.Mth.LUT_SIZE
+
+group long
+	@strict
+	@scope class net.minecraft.util.Mth
+	net.minecraft.util.Mth.UUID_VERSION_TYPE_4
+
+group double
+	@strict
+	@scope class net.minecraft.util.Mth
+	net.minecraft.util.Mth.ONE_SIXTH
+
+group float
+	@strict
+	@scope class net.minecraft.util.Mth
+	net.minecraft.util.Mth.SIN_SCALE

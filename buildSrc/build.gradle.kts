@@ -33,7 +33,10 @@ dependencies {
     implementation("org.ow2.asm:asm-tree:9.9")
 
     implementation("org.parchmentmc:lodestone:0.10.0")
-    implementation("org.parchmentmc:compass:0.10.0")
+    implementation("org.parchmentmc:compass:0.11.0")
     implementation("cuchaz:enigma:4.0.2")
     implementation("net.fabricmc:mapping-io:0.7.1")
+
+    implementation("net.fabricmc.unpick:unpick:3.0.0-beta.13")
+    implementation("net.fabricmc.unpick:unpick-format-utils:3.0.0-beta.13")
 }

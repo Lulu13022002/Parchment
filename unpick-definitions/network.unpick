@@ -1,0 +1,168 @@
+unpick v4
+
+group int max_string_length
+	net.minecraft.network.FriendlyByteBuf.MAX_STRING_LENGTH
+	net.minecraft.network.FriendlyByteBuf.MAX_COMPONENT_STRING_LENGTH
+
+group long max_nbt_size
+	net.minecraft.network.FriendlyByteBuf.DEFAULT_NBT_QUOTA
+
+group long max_nbt_size
+	@scope class net.minecraft.world.level.storage.LevelStorageSource
+	net.minecraft.world.level.storage.LevelStorageSource.UNCOMPRESSED_NBT_QUOTA
+
+group int
+	@scope class net.minecraft.network.VarInt
+	net.minecraft.network.VarInt.MAX_VARINT_SIZE
+	net.minecraft.network.VarInt.DATA_BITS_MASK
+	net.minecraft.network.VarInt.CONTINUATION_BIT_MASK
+	net.minecraft.network.VarInt.DATA_BITS_PER_BYTE
+
+group int
+	@scope class net.minecraft.network.VarLong
+	net.minecraft.network.VarLong.MAX_VARLONG_SIZE
+	net.minecraft.network.VarLong.DATA_BITS_MASK
+	net.minecraft.network.VarLong.CONTINUATION_BIT_MASK
+	net.minecraft.network.VarLong.DATA_BITS_PER_BYTE
+
+group int max_stack_depth
+	net.minecraft.nbt.NbtAccounter.MAX_STACK_DEPTH
+
+target_method net.minecraft.network.FriendlyByteBuf readUtf (I)Ljava/lang/String;
+	param 0 max_string_length
+target_method net.minecraft.network.FriendlyByteBuf writeUtf (Ljava/lang/String;I)Lnet/minecraft/network/FriendlyByteBuf;
+	param 1 max_string_length
+
+target_method net.minecraft.nbt.NbtAccounter <init> (JI)V
+	param 0 max_nbt_size
+	param 1 max_stack_depth
+target_method net.minecraft.nbt.NbtAccounter create (J)Lnet/minecraft/nbt/NbtAccounter;
+	param 0 max_nbt_size
+
+group int
+	@scope class net.minecraft.network.FriendlyByteBuf
+	net.minecraft.network.FriendlyByteBuf.MAX_PUBLIC_KEY_LENGTH
+
+group int
+	@scope class net.minecraft.world.entity.player.ProfilePublicKey$Data
+	net.minecraft.world.entity.player.ProfilePublicKey$Data.MAX_KEY_SIGNATURE_SIZE
+
+group int
+	@scope class net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket$ChunkBiomeData
+	net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket.TWO_MEGABYTES
+
+group int
+	@scope class net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData
+	net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData.TWO_MEGABYTES
+
+group int
+	@scope class com.mojang.blaze3d.vertex.ByteBufferBuilder
+	com.mojang.blaze3d.vertex.ByteBufferBuilder.MAX_GROWTH_SIZE
+	com.mojang.blaze3d.vertex.ByteBufferBuilder.BUFFER_FREED_GENERATION
+group long
+	@scope class com.mojang.blaze3d.vertex.ByteBufferBuilder
+	com.mojang.blaze3d.vertex.ByteBufferBuilder.DEFAULT_MAX_CAPACITY
+
+group int move_player_flags
+	@flags
+	net.minecraft.network.protocol.game.ServerboundMovePlayerPacket.FLAG_ON_GROUND
+	net.minecraft.network.protocol.game.ServerboundMovePlayerPacket.FLAG_HORIZONTAL_COLLISION
+
+group int animation_action
+	net.minecraft.network.protocol.game.ClientboundAnimatePacket.SWING_MAIN_HAND
+	net.minecraft.network.protocol.game.ClientboundAnimatePacket.WAKE_UP
+	net.minecraft.network.protocol.game.ClientboundAnimatePacket.SWING_OFF_HAND
+	net.minecraft.network.protocol.game.ClientboundAnimatePacket.CRITICAL_HIT
+	net.minecraft.network.protocol.game.ClientboundAnimatePacket.MAGIC_CRITICAL_HIT
+
+# ideally should also replace the constants in ClientPacketListener#handleGameEvent but no way currently
+group int game_event_demo_param
+	@scope class net.minecraft.server.level.DemoMode
+	net.minecraft.network.protocol.game.ClientboundGameEventPacket.DEMO_PARAM_INTRO
+	net.minecraft.network.protocol.game.ClientboundGameEventPacket.DEMO_PARAM_HINT_1
+	net.minecraft.network.protocol.game.ClientboundGameEventPacket.DEMO_PARAM_HINT_2
+	net.minecraft.network.protocol.game.ClientboundGameEventPacket.DEMO_PARAM_HINT_3
+	net.minecraft.network.protocol.game.ClientboundGameEventPacket.DEMO_PARAM_HINT_4
+
+group int data_to_keep
+	net.minecraft.network.protocol.game.ClientboundRespawnPacket.KEEP_ATTRIBUTE_MODIFIERS
+	net.minecraft.network.protocol.game.ClientboundRespawnPacket.KEEP_ENTITY_DATA
+	net.minecraft.network.protocol.game.ClientboundRespawnPacket.KEEP_ALL_DATA
+
+group int objective_method
+	net.minecraft.network.protocol.game.ClientboundSetObjectivePacket.METHOD_ADD
+	net.minecraft.network.protocol.game.ClientboundSetObjectivePacket.METHOD_REMOVE
+	net.minecraft.network.protocol.game.ClientboundSetObjectivePacket.METHOD_CHANGE
+
+group int team_method
+	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_ADD
+	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_REMOVE
+	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_CHANGE
+	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_JOIN
+	net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket.METHOD_LEAVE
+
+group int boss_event_flags
+	@flags
+	net.minecraft.network.protocol.game.ClientboundBossEventPacket.FLAG_DARKEN
+	net.minecraft.network.protocol.game.ClientboundBossEventPacket.FLAG_MUSIC
+	net.minecraft.network.protocol.game.ClientboundBossEventPacket.FLAG_FOG
+
+group String handler_name
+	net.minecraft.network.HandlerNames.*
+
+target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackOnGround (I)Z
+	param 0 move_player_flags
+target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackHorizontalCollision (I)Z
+	param 0 move_player_flags
+target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket packFlags (ZZ)I
+	return move_player_flags
+
+target_method net.minecraft.network.protocol.game.ClientboundAnimatePacket <init> (Lnet/minecraft/world/entity/Entity;I)V
+	param 1 animation_action
+target_method net.minecraft.network.protocol.game.ClientboundAnimatePacket getAction ()I
+	return animation_action
+
+target_method net.minecraft.network.protocol.game.ClientboundGameEventPacket <init> (Lnet/minecraft/network/protocol/game/ClientboundGameEventPacket$Type;F)V
+	param 1 game_event_demo_param
+
+target_method net.minecraft.network.protocol.game.ClientboundRespawnPacket <init> (Lnet/minecraft/network/protocol/game/CommonPlayerSpawnInfo;B)V
+	param 1 data_to_keep
+target_method net.minecraft.network.protocol.game.ClientboundRespawnPacket dataToKeep ()B
+	return data_to_keep
+target_method net.minecraft.network.protocol.game.ClientboundRespawnPacket shouldKeep (B)Z
+	param 0 data_to_keep
+
+target_method net.minecraft.network.protocol.game.ClientboundSetObjectivePacket <init> (Lnet/minecraft/world/scores/Objective;I)V
+	param 1 objective_method
+target_method net.minecraft.network.protocol.game.ClientboundSetObjectivePacket getMethod ()I
+	return objective_method
+
+target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket <init> (Ljava/lang/String;ILjava/util/Optional;Ljava/util/Collection;)V
+	param 1 team_method
+target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket shouldHavePlayerList (I)Z
+	param 0 team_method
+target_method net.minecraft.network.protocol.game.ClientboundSetPlayerTeamPacket shouldHaveParameters (I)Z
+	param 0 team_method
+
+target_method net.minecraft.network.protocol.game.ClientboundBossEventPacket encodeProperties (ZZZ)I
+	return boss_event_flags
+
+target_method net.minecraft.network.Connection outboundHandlerName (Z)Ljava/lang/String;
+	return handler_name
+target_method net.minecraft.network.Connection inboundHandlerName (Z)Ljava/lang/String;
+	return handler_name
+target_method io.netty.channel.ChannelPipeline addBefore (Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+	param 0 handler_name
+	param 1 handler_name
+target_method io.netty.channel.ChannelPipeline addAfter (Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+	param 0 handler_name
+	param 1 handler_name
+target_method io.netty.channel.ChannelPipeline addLast (Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+	param 0 handler_name
+target_method io.netty.channel.ChannelPipeline get (Ljava/lang/String;)Lio/netty/channel/ChannelHandler;
+	param 0 handler_name
+target_method io.netty.channel.ChannelPipeline remove (Ljava/lang/String;)Lio/netty/channel/ChannelHandler;
+	param 0 handler_name
+target_method io.netty.channel.ChannelPipeline replace (Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelHandler;
+	param 0 handler_name
+	param 1 handler_name

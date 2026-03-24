@@ -1,0 +1,46 @@
+unpick v4
+
+group int food_level
+	net.minecraft.world.food.FoodConstants.MAX_FOOD
+	net.minecraft.world.food.FoodConstants.HEAL_LEVEL
+	net.minecraft.world.food.FoodConstants.SPRINT_LEVEL
+	net.minecraft.world.food.FoodConstants.STARVE_LEVEL
+
+group int food_saturation
+	net.minecraft.world.food.FoodConstants.MAX_SATURATION
+	net.minecraft.world.food.FoodConstants.START_SATURATION
+
+group int food_exhaustion
+	net.minecraft.world.food.FoodConstants.EXHAUSTION_DROP
+
+group float food_saturation_modifier
+	net.minecraft.world.food.FoodConstants.FOOD_SATURATION_POOR
+	net.minecraft.world.food.FoodConstants.FOOD_SATURATION_LOW
+	net.minecraft.world.food.FoodConstants.FOOD_SATURATION_NORMAL
+	net.minecraft.world.food.FoodConstants.FOOD_SATURATION_GOOD
+	net.minecraft.world.food.FoodConstants.FOOD_SATURATION_MAX
+	net.minecraft.world.food.FoodConstants.FOOD_SATURATION_SUPERNATURAL
+
+group int food_tick_timer
+	net.minecraft.world.food.FoodConstants.HEALTH_TICK_COUNT
+	net.minecraft.world.food.FoodConstants.HEALTH_TICK_COUNT_SATURATED
+
+group int
+	@scope method net.minecraft.world.food.FoodData readAdditionalSaveData (Lnet/minecraft/world/level/storage/ValueInput;)V
+	net.minecraft.world.food.FoodData.DEFAULT_TICK_TIMER
+	net.minecraft.world.food.FoodConstants.MAX_FOOD
+
+group float
+	@scope method net.minecraft.world.food.FoodData readAdditionalSaveData (Lnet/minecraft/world/level/storage/ValueInput;)V
+	net.minecraft.world.food.FoodData.DEFAULT_EXHAUSTION_LEVEL
+	net.minecraft.world.food.FoodConstants.START_SATURATION
+
+target_field net.minecraft.world.food.FoodData foodLevel I food_level
+target_field net.minecraft.world.food.FoodData saturationLevel F food_saturation
+target_field net.minecraft.world.food.FoodData exhaustionLevel F food_exhaustion
+target_field net.minecraft.world.food.FoodData tickTimer I food_tick_timer
+
+target_method net.minecraft.world.food.FoodProperties$Builder saturationModifier (F)Lnet/minecraft/world/food/FoodProperties$Builder;
+	param 0 food_saturation_modifier
+target_method net.minecraft.world.food.FoodConstants saturationByModifier (IF)F
+	param 1 food_saturation_modifier

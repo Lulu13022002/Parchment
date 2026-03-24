@@ -1,0 +1,53 @@
+unpick v4
+
+group int update_flags
+	@flags
+	net.minecraft.world.level.block.Block.UPDATE_NEIGHBORS
+	net.minecraft.world.level.block.Block.UPDATE_CLIENTS
+	net.minecraft.world.level.block.Block.UPDATE_INVISIBLE
+	net.minecraft.world.level.block.Block.UPDATE_IMMEDIATE
+	net.minecraft.world.level.block.Block.UPDATE_KNOWN_SHAPE
+	net.minecraft.world.level.block.Block.UPDATE_SUPPRESS_DROPS
+	net.minecraft.world.level.block.Block.UPDATE_MOVE_BY_PISTON
+	net.minecraft.world.level.block.Block.UPDATE_SKIP_SHAPE_UPDATE_ON_WIRE
+	net.minecraft.world.level.block.Block.UPDATE_SKIP_BLOCK_ENTITY_SIDEEFFECTS
+	net.minecraft.world.level.block.Block.UPDATE_SKIP_ON_PLACE
+#	net.minecraft.world.level.block.Block.UPDATE_NONE
+#	net.minecraft.world.level.block.Block.UPDATE_ALL
+#	net.minecraft.world.level.block.Block.UPDATE_ALL_IMMEDIATE
+#	net.minecraft.world.level.block.Block.UPDATE_SKIP_ALL_SIDEEFFECTS
+
+group int update_limit
+	net.minecraft.world.level.block.Block.UPDATE_LIMIT
+
+target_annotation net.minecraft.world.level.block.Block$UpdateFlags update_flags
+
+target_method net.minecraft.world.level.Level sendBlockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
+	param 3 update_flags
+target_method net.minecraft.server.level.WorldGenRegion setBlock (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)Z
+	param 2 update_flags
+target_method net.minecraft.world.level.chunk.ChunkAccess setBlockState (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Lnet/minecraft/world/level/block/state/BlockState;
+	param 2 update_flags
+target_method net.minecraft.client.renderer.LevelRenderer blockChanged (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
+	param 4 update_flags
+target_method net.minecraft.world.level.LevelWriter setBlock (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)Z
+	param 3 update_limit
+target_method net.minecraft.world.level.LevelWriter destroyBlock (Lnet/minecraft/core/BlockPos;ZLnet/minecraft/world/entity/Entity;I)Z
+	param 3 update_limit
+target_method net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase updateNeighbourShapes (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
+	param 3 update_limit
+target_method net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase updateIndirectNeighbourShapes (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
+	param 3 update_limit
+target_method net.minecraft.world.level.block.Block updateOrDestroy (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
+	param 5 update_limit
+target_method net.minecraft.world.level.block.state.BlockBehaviour updateIndirectNeighbourShapes (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
+	param 4 update_limit
+target_method net.minecraft.world.level.redstone.NeighborUpdater shapeUpdate (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;II)V
+	param 4 update_flags
+	param 5 update_limit
+target_method net.minecraft.world.level.redstone.NeighborUpdater executeShapeUpdate (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)V
+	param 6 update_limit
+target_method net.minecraft.world.level.LevelAccessor neighborShapeChanged (Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)V
+	param 5 update_limit
+target_method net.minecraft.world.level.redstone.CollectingNeighborUpdater$ShapeUpdate <init> (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;II)V
+	param 5 update_limit

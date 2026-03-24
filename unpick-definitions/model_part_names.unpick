@@ -1,0 +1,21 @@
+unpick v4
+
+group String model_part_names
+	net.minecraft.client.model.geom.PartNames.*
+
+target_method net.minecraft.client.model.geom.ModelPart hasChild (Ljava/lang/String;)Z
+	param 0 model_part_names
+target_method net.minecraft.client.model.geom.ModelPart getChild (Ljava/lang/String;)Lnet/minecraft/client/model/geom/ModelPart;
+	param 0 model_part_names
+
+target_method net.minecraft.client.animation.AnimationDefinition$Builder addAnimation (Ljava/lang/String;Lnet/minecraft/client/animation/AnimationChannel;)Lnet/minecraft/client/animation/AnimationDefinition$Builder;
+	param 0 model_part_names
+
+target_method net.minecraft.client.model.geom.builders.PartDefinition addOrReplaceChild (Ljava/lang/String;Lnet/minecraft/client/model/geom/builders/CubeListBuilder;Lnet/minecraft/client/model/geom/PartPose;)Lnet/minecraft/client/model/geom/builders/PartDefinition;
+	param 0 model_part_names
+target_method net.minecraft.client.model.geom.builders.PartDefinition addOrReplaceChild (Ljava/lang/String;Lnet/minecraft/client/model/geom/builders/PartDefinition;)Lnet/minecraft/client/model/geom/builders/PartDefinition;
+	param 0 model_part_names
+target_method net.minecraft.client.model.geom.builders.PartDefinition clearChild (Ljava/lang/String;)Lnet/minecraft/client/model/geom/builders/PartDefinition;
+	param 0 model_part_names
+target_method net.minecraft.client.model.geom.builders.PartDefinition getChild (Ljava/lang/String;)Lnet/minecraft/client/model/geom/builders/PartDefinition;
+	param 0 model_part_names

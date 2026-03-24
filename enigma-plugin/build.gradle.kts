@@ -3,7 +3,7 @@ plugins {
 }
 
 repositories {
-    mavenCentral() // for Enigma's dependency flatlaf
+    mavenCentral()
     maven("https://maven.fabricmc.net/") {
         name = "FabricMC"
     }

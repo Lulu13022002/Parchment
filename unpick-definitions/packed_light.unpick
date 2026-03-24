@@ -1,0 +1,204 @@
+unpick v4
+
+group int packed_light
+	@flags
+	net.minecraft.client.renderer.LightTexture.FULL_BRIGHT
+	net.minecraft.client.renderer.LightTexture.FULL_SKY
+	net.minecraft.client.renderer.LightTexture.FULL_BLOCK
+
+target_method net.minecraft.client.renderer.LightTexture pack (II)I
+	return packed_light
+target_method net.minecraft.client.renderer.LightTexture sky (I)I
+	param 0 packed_light
+target_method net.minecraft.client.renderer.LightTexture block (I)I
+	param 0 packed_light
+target_method net.minecraft.client.renderer.LightTexture lightCoordsWithEmission (II)I
+	param 0 packed_light
+	return packed_light
+
+target_method net.minecraft.client.gui.Font drawInBatch (Ljava/lang/String;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
+	param 9 packed_light
+target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
+	param 9 packed_light
+target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
+	param 9 packed_light
+target_method net.minecraft.client.gui.Font drawInBatch8xOutline (Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V
+	param 7 packed_light
+target_method net.minecraft.client.gui.Font$GlyphVisitor forMultiBufferSource (Lnet/minecraft/client/renderer/MultiBufferSource;Lorg/joml/Matrix4f;Lnet/minecraft/client/gui/Font$DisplayMode;I)Lnet/minecraft/client/gui/Font$GlyphVisitor;
+	param 3 packed_light
+
+target_method net.minecraft.client.model.geom.ModelPart render (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;II)V
+	param 2 packed_light
+target_method net.minecraft.client.model.geom.ModelPart render (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
+	param 2 packed_light
+target_method net.minecraft.client.model.geom.ModelPart compile (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
+	param 2 packed_light
+target_method net.minecraft.client.model.geom.ModelPart$Cube compile (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
+	param 2 packed_light
+
+target_method net.minecraft.client.particle.Particle getLightColor (F)I
+	return packed_light
+
+target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
+	param 7 packed_light
+target_method com.mojang.blaze3d.vertex.VertexConsumer setLight (I)Lcom/mojang/blaze3d/vertex/VertexConsumer;
+	param 0 packed_light
+target_method com.mojang.blaze3d.vertex.VertexConsumer putBulkData (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/model/BakedQuad;FFFFII)V
+	param 6 packed_light
+
+target_method net.minecraft.client.renderer.state.QuadParticleRenderState add (Lnet/minecraft/client/particle/SingleQuadParticle$Layer;FFFFFFFFFFFFII)V
+	param 14 packed_light
+target_method net.minecraft.client.renderer.state.QuadParticleRenderState renderRotatedQuad (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFFFFFFFFII)V
+	param 14 packed_light
+target_method net.minecraft.client.renderer.state.QuadParticleRenderState renderVertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lorg/joml/Quaternionf;FFFFFFFFII)V
+	param 11 packed_light
+target_method net.minecraft.client.renderer.state.QuadParticleRenderState$ParticleConsumer consume (FFFFFFFFFFFFII)V
+	param 13 packed_light
+target_method net.minecraft.client.renderer.state.QuadParticleRenderState$Storage add (FFFFFFFFFFFFII)V
+	param 13 packed_light
+
+target_method net.minecraft.client.renderer.MapRenderer render (Lnet/minecraft/client/renderer/state/MapRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ZI)V
+	param 4 packed_light
+
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderModelFaceFlat (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;IIZLcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Ljava/util/List;Lnet/minecraft/client/renderer/block/ModelBlockRenderer$CommonRenderStorage;)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderModel (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/client/renderer/block/model/BlockStateModel;FFFII)V
+	param 6 packed_light
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFLjava/util/List;II)V
+	param 6 packed_light
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer$Cache getLightColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
+	return packed_light
+
+target_method net.minecraft.client.renderer.block.BlockRenderDispatcher renderSingleBlock (Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V
+	param 3 packed_light
+
+target_method net.minecraft.client.renderer.block.LiquidBlockRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFFFFI)V
+	param 9 packed_light
+
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;I)V
+	param 2 packed_light
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/BannerModel;Lnet/minecraft/client/model/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitPatterns (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/client/resources/model/Material;ZLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;ZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitPatternLayer (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/client/resources/model/Material;Lnet/minecraft/world/item/DyeColor;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 3 packed_light
+
+target_method net.minecraft.client.renderer.blockentity.BedRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/resources/model/Material;I)V
+	param 2 packed_light
+target_method net.minecraft.client.renderer.blockentity.BedRenderer submitPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/model/Model$Simple;Lnet/minecraft/core/Direction;Lnet/minecraft/client/resources/model/Material;IIZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+	param 6 packed_light
+
+target_method net.minecraft.client.renderer.blockentity.DecoratedPotRenderer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/level/block/entity/PotDecorations;I)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.blockentity.ShulkerBoxRenderer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/core/Direction;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/resources/model/Material;I)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.blockentity.AbstractSignRenderer submitSign (Lcom/mojang/blaze3d/vertex/PoseStack;ILnet/minecraft/world/level/block/state/properties/WoodType;Lnet/minecraft/client/model/Model$Simple;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/renderer/SubmitNodeCollector;)V
+	param 1 packed_light
+
+target_method net.minecraft.client.renderer.WeatherEffectRenderer createRainColumnInstance (Lnet/minecraft/util/RandomSource;IIIIIIF)Lnet/minecraft/client/renderer/WeatherEffectRenderer$ColumnInstance;
+	param 6 packed_light
+target_method net.minecraft.client.renderer.WeatherEffectRenderer createSnowColumnInstance (Lnet/minecraft/util/RandomSource;IIIIIIF)Lnet/minecraft/client/renderer/WeatherEffectRenderer$ColumnInstance;
+	param 6 packed_light
+
+target_method net.minecraft.client.renderer.LevelRenderer getLightColor (Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I
+	return packed_light
+target_method net.minecraft.client.renderer.LevelRenderer getLightColor (Lnet/minecraft/client/renderer/LevelRenderer$BrightnessGetter;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)I
+	return packed_light
+
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitNameTag (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;ILnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V
+	param 5 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitText (Lcom/mojang/blaze3d/vertex/PoseStack;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
+	param 6 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 4 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 4 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ZZ)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ZZILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlock (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/level/block/state/BlockState;III)V
+	param 2 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlockModel (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/block/model/BlockStateModel;FFFIII)V
+	param 6 packed_light
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitItem (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/item/ItemDisplayContext;III[ILjava/util/List;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.DragonFireballRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lcom/mojang/blaze3d/vertex/PoseStack$Pose;IFIII)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.EnderDragonRenderer submitCrystalBeams (FFFFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;I)V
+	param 6 packed_light
+
+target_method net.minecraft.client.renderer.entity.EntityRenderer getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
+	return packed_light
+
+target_method net.minecraft.client.renderer.entity.EntityRenderDispatcher getPackedLightCoords (Lnet/minecraft/world/entity/Entity;F)I
+	return packed_light
+
+target_method net.minecraft.client.renderer.entity.ExperienceOrbRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lcom/mojang/blaze3d/vertex/PoseStack$Pose;FFIIIFFI)V
+	param 9 packed_light
+
+target_method net.minecraft.client.renderer.entity.FishingHookRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lcom/mojang/blaze3d/vertex/PoseStack$Pose;IFIII)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.ItemFrameRenderer getLightCoords (ZII)I
+	param 1 packed_light
+	param 2 packed_light
+	return packed_light
+
+target_method net.minecraft.client.renderer.entity.AbstractMinecartRenderer submitMinecartContents (Lnet/minecraft/client/renderer/entity/state/MinecartRenderState;Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;I)V
+	param 4 packed_light
+
+target_method net.minecraft.client.renderer.entity.PaintingRenderer vertex (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFIIII)V
+	param 10 packed_light
+
+target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderRightHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;Z)V
+	param 2 packed_light
+target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderLeftHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;Z)V
+	param 2 packed_light
+target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/model/geom/ModelPart;Z)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer renderArmorPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/EquipmentSlot;ILnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V
+	param 4 packed_light
+
+target_method net.minecraft.client.renderer.entity.layers.RenderLayer coloredCutoutModelCopyLayerRender (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
+	param 4 packed_light
+target_method net.minecraft.client.renderer.entity.layers.RenderLayer renderColoredCutoutModel (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
+	param 4 packed_light
+target_method net.minecraft.client.renderer.entity.layers.RenderLayer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/EntityRenderState;FF)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.layers.ItemInHandLayer submitArmWithItem (Lnet/minecraft/client/renderer/entity/state/ArmedEntityRenderState;Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/HumanoidArm;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;I)V
+	param 6 packed_light
+
+target_method net.minecraft.client.renderer.entity.layers.ParrotOnShoulderLayer submitOnShoulder (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lnet/minecraft/world/entity/animal/Parrot$Variant;FFZ)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.layers.StuckInBodyLayer submitStuckItem (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IFFFI)V
+	param 2 packed_light
+
+target_method net.minecraft.client.renderer.entity.ItemRenderer renderItem (Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II[ILjava/util/List;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
+	param 3 packed_light
+target_method net.minecraft.client.renderer.entity.ItemRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Ljava/util/List;[III)V
+	param 4 packed_light
+
+target_method net.minecraft.client.renderer.SpecialBlockModelRenderer renderByBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;III)V
+	param 4 packed_light
+
+target_method net.minecraft.client.renderer.special.SpecialModelRenderer submit (Ljava/lang/Object;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIZI)V
+	param 4 packed_light
+
+target_method net.minecraft.client.renderer.special.NoDataSpecialModelRenderer submit (Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIZI)V
+	param 3 packed_light
+
+target_method net.minecraft.client.renderer.feature.NameTagFeatureRenderer$Storage add (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;ILnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V
+	param 5 packed_light

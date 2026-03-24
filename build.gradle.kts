@@ -1,3 +1,4 @@
+import generateUnpickData
 import org.parchmentmc.compass.CompassPlugin
 import org.parchmentmc.compass.data.validation.impl.MemberExistenceValidator
 import org.parchmentmc.compass.data.validation.impl.MethodStandardsValidator
@@ -7,6 +8,9 @@ import org.parchmentmc.compass.tasks.SanitizeData
 import org.parchmentmc.compass.tasks.ValidateData
 import org.parchmentmc.compass.tasks.VersionDownload
 import org.parchmentmc.tasks.*
+import org.parchmentmc.tasks.unpick.CheckUnpickDefinitions
+import org.parchmentmc.tasks.unpick.GenerateUnpickV3Data
+import org.parchmentmc.tasks.unpick.UnpickJar
 import org.parchmentmc.util.ArtifactVersionProvider
 import org.parchmentmc.util.replace
 import org.parchmentmc.validation.MemberExistenceValidatorV2
@@ -98,6 +102,31 @@ val remapJar by tasks.registering(RemapJar::class) {
         .zip(mcVersion) { d, ver -> d.file("$ver-client.jar") }
 }
 
+// unpick
+tasks.register<CheckUnpickDefinitions>("checkUnpickDefinitions") {
+    group = LifecycleBasePlugin.VERIFICATION_GROUP
+    input = project.layout.projectDirectory.dir("unpick-definitions")
+    classpath.setFrom(
+        remapJar.flatMap { it.outputJar },
+        minecraft
+    )
+}
+
+val generateUnpickData by tasks.registering(GenerateUnpickV3Data::class) {
+    group = CompassPlugin.COMPASS_GROUP
+    definitions = project.layout.projectDirectory.dir("unpick-definitions")
+    output = temporaryDir.resolve("unpick_combined.unpick")
+}
+
+val unpickJar by tasks.registering(UnpickJar::class) {
+    group = "parchment"
+    input = remapJar.flatMap { it.outputJar }
+    output = project.layout.buildDirectory.dir("remapped")
+        .zip(mcVersion) { d, ver -> d.file("$ver-client-unpicked.jar") }
+    definitions = generateUnpickData.flatMap { it.output }
+    classpath.setFrom(minecraft)
+}
+
 tasks.register<ScanConstructorParameters>("scanInitParams") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
     inputJar = remapJar.flatMap { it.outputJar }
@@ -120,7 +149,12 @@ tasks.register<EnigmaRunner>("enigma") {
     description = "Runs the Enigma mapping tool"
     classpath(enigma)
     mainClass = "cuchaz.enigma.gui.Main"
-    inputJar = remapJar.flatMap { it.outputJar }
+    val selectedJar = if (project.findProperty("unpick") != null) {
+        unpickJar.flatMap { it.output }
+    } else {
+        remapJar.flatMap { it.outputJar }
+    }
+    inputJar = selectedJar
     mappings = project.compass.productionData
     profile = project.layout.projectDirectory.file("enigma-plugin/profile.json")
     libraries.setFrom(minecraft)
@@ -190,6 +224,11 @@ val officialStagingExportZip by tasks.registering(Zip::class) {
     archiveBaseName = "officialStagingExport"
 }
 
+val unpickExportZip by tasks.registering(Zip::class) {
+    group = LifecycleBasePlugin.BUILD_GROUP
+    from(generateUnpickData.flatMap { it.output })
+}
+
 tasks.withType<Zip>().named { name -> name.startsWith("official") }.configureEach {
     rename { "parchment.json" }
     destinationDirectory = project.layout.buildDirectory.dir("exportZips")
@@ -221,6 +260,12 @@ publishing {
         artifact(officialSanitizedExportZip) {
             classifier = "checked"
         }
+        artifact(generateUnpickData.flatMap { it.output }) {
+            classifier = "unpick"
+        }
+        artifact(unpickExportZip) {
+            classifier = "unpick"
+        }
         version = artifactVersionProvider.get()
     }
 
@@ -229,6 +274,12 @@ publishing {
         artifact(officialExportZip)
         artifact(officialSanitizedExportZip) {
             classifier = "checked"
+        }
+        artifact(generateUnpickData.flatMap { it.output }) {
+            classifier = "unpick"
+        }
+        artifact(unpickExportZip) {
+            classifier = "unpick"
         }
         version = mcVersion.get()
     }
