@@ -77,7 +77,7 @@ target_method net.minecraft.client.renderer.block.LiquidBlockRenderer vertex (Lc
 
 target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;I)V
 	param 2 packed_light
-target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/BannerModel;Lnet/minecraft/client/model/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/object/banner/BannerModel;Lnet/minecraft/client/model/object/banner/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 3 packed_light
 target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitPatterns (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/client/resources/model/Material;ZLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;ZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 3 packed_light
@@ -180,7 +180,7 @@ target_method net.minecraft.client.renderer.entity.layers.RenderLayer submit (Lc
 target_method net.minecraft.client.renderer.entity.layers.ItemInHandLayer submitArmWithItem (Lnet/minecraft/client/renderer/entity/state/ArmedEntityRenderState;Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/HumanoidArm;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;I)V
 	param 6 packed_light
 
-target_method net.minecraft.client.renderer.entity.layers.ParrotOnShoulderLayer submitOnShoulder (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lnet/minecraft/world/entity/animal/Parrot$Variant;FFZ)V
+target_method net.minecraft.client.renderer.entity.layers.ParrotOnShoulderLayer submitOnShoulder (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lnet/minecraft/world/entity/animal/parrot/Parrot$Variant;FFZ)V
 	param 2 packed_light
 
 target_method net.minecraft.client.renderer.entity.layers.StuckInBodyLayer submitStuckItem (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IFFFI)V

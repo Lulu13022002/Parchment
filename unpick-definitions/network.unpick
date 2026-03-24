@@ -4,13 +4,6 @@ group int max_string_length
 	net.minecraft.network.FriendlyByteBuf.MAX_STRING_LENGTH
 	net.minecraft.network.FriendlyByteBuf.MAX_COMPONENT_STRING_LENGTH
 
-group long max_nbt_size
-	net.minecraft.network.FriendlyByteBuf.DEFAULT_NBT_QUOTA
-
-group long max_nbt_size
-	@scope class net.minecraft.world.level.storage.LevelStorageSource
-	net.minecraft.world.level.storage.LevelStorageSource.UNCOMPRESSED_NBT_QUOTA
-
 group int
 	@scope class net.minecraft.network.VarInt
 	net.minecraft.network.VarInt.MAX_VARINT_SIZE
@@ -24,6 +17,10 @@ group int
 	net.minecraft.network.VarLong.DATA_BITS_MASK
 	net.minecraft.network.VarLong.CONTINUATION_BIT_MASK
 	net.minecraft.network.VarLong.DATA_BITS_PER_BYTE
+
+group long max_nbt_size
+	net.minecraft.nbt.NbtAccounter.DEFAULT_NBT_QUOTA
+	net.minecraft.nbt.NbtAccounter.UNCOMPRESSED_NBT_QUOTA
 
 group int max_stack_depth
 	net.minecraft.nbt.NbtAccounter.MAX_STACK_DEPTH

@@ -27,65 +27,65 @@ target_method net.minecraft.world.entity.LivingEntity setLivingEntityFlag (IZ)V
 
 group int bee_flags
 	@flags
-	net.minecraft.world.entity.animal.Bee.FLAG_ROLL
-	net.minecraft.world.entity.animal.Bee.FLAG_HAS_STUNG
-	net.minecraft.world.entity.animal.Bee.FLAG_HAS_NECTAR
+	net.minecraft.world.entity.animal.bee.Bee.FLAG_ROLL
+	net.minecraft.world.entity.animal.bee.Bee.FLAG_HAS_STUNG
+	net.minecraft.world.entity.animal.bee.Bee.FLAG_HAS_NECTAR
 
-target_method net.minecraft.world.entity.animal.Bee getFlag (I)Z
+target_method net.minecraft.world.entity.animal.bee.Bee getFlag (I)Z
 	param 0 bee_flags
-target_method net.minecraft.world.entity.animal.Bee setFlag (IZ)V
+target_method net.minecraft.world.entity.animal.bee.Bee setFlag (IZ)V
 	param 0 bee_flags
 
 
 group int fox_flags
 	@flags
-	net.minecraft.world.entity.animal.Fox.FLAG_SITTING
-	net.minecraft.world.entity.animal.Fox.FLAG_CROUCHING
-	net.minecraft.world.entity.animal.Fox.FLAG_INTERESTED
-	net.minecraft.world.entity.animal.Fox.FLAG_POUNCING
-	net.minecraft.world.entity.animal.Fox.FLAG_SLEEPING
-	net.minecraft.world.entity.animal.Fox.FLAG_FACEPLANTED
-	net.minecraft.world.entity.animal.Fox.FLAG_DEFENDING
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_SITTING
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_CROUCHING
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_INTERESTED
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_POUNCING
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_SLEEPING
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_FACEPLANTED
+	net.minecraft.world.entity.animal.fox.Fox.FLAG_DEFENDING
 
-target_method net.minecraft.world.entity.animal.Fox getFlag (I)Z
+target_method net.minecraft.world.entity.animal.fox.Fox getFlag (I)Z
 	param 0 fox_flags
-target_method net.minecraft.world.entity.animal.Fox setFlag (IZ)V
+target_method net.minecraft.world.entity.animal.fox.Fox setFlag (IZ)V
 	param 0 fox_flags
 
 
 group int horse_flags
 	@flags
-	net.minecraft.world.entity.animal.horse.AbstractHorse.FLAG_TAME
-	net.minecraft.world.entity.animal.horse.AbstractHorse.FLAG_BRED
-	net.minecraft.world.entity.animal.horse.AbstractHorse.FLAG_EATING
-	net.minecraft.world.entity.animal.horse.AbstractHorse.FLAG_STANDING
-	net.minecraft.world.entity.animal.horse.AbstractHorse.FLAG_OPEN_MOUTH
+	net.minecraft.world.entity.animal.equine.AbstractHorse.FLAG_TAME
+	net.minecraft.world.entity.animal.equine.AbstractHorse.FLAG_BRED
+	net.minecraft.world.entity.animal.equine.AbstractHorse.FLAG_EATING
+	net.minecraft.world.entity.animal.equine.AbstractHorse.FLAG_STANDING
+	net.minecraft.world.entity.animal.equine.AbstractHorse.FLAG_OPEN_MOUTH
 
-target_method net.minecraft.world.entity.animal.horse.AbstractHorse getFlag (I)Z
+target_method net.minecraft.world.entity.animal.equine.AbstractHorse getFlag (I)Z
 	param 0 horse_flags
-target_method net.minecraft.world.entity.animal.horse.AbstractHorse setFlag (IZ)V
+target_method net.minecraft.world.entity.animal.equine.AbstractHorse setFlag (IZ)V
 	param 0 horse_flags
 
 
 group int panda_flags
 	@flags
-	net.minecraft.world.entity.animal.Panda.FLAG_SNEEZE
-	net.minecraft.world.entity.animal.Panda.FLAG_ROLL
-	net.minecraft.world.entity.animal.Panda.FLAG_SIT
-	net.minecraft.world.entity.animal.Panda.FLAG_ON_BACK
+	net.minecraft.world.entity.animal.panda.Panda.FLAG_SNEEZE
+	net.minecraft.world.entity.animal.panda.Panda.FLAG_ROLL
+	net.minecraft.world.entity.animal.panda.Panda.FLAG_SIT
+	net.minecraft.world.entity.animal.panda.Panda.FLAG_ON_BACK
 
-target_method net.minecraft.world.entity.animal.Panda getFlag (I)Z
+target_method net.minecraft.world.entity.animal.panda.Panda getFlag (I)Z
 	param 0 panda_flags
-target_method net.minecraft.world.entity.animal.Panda setFlag (IZ)V
+target_method net.minecraft.world.entity.animal.panda.Panda setFlag (IZ)V
 	param 0 panda_flags
 
 
 group int arrow_flags
 	@flags
-	net.minecraft.world.entity.projectile.AbstractArrow.FLAG_CRIT
-	net.minecraft.world.entity.projectile.AbstractArrow.FLAG_NOPHYSICS
+	net.minecraft.world.entity.projectile.arrow.AbstractArrow.FLAG_CRIT
+	net.minecraft.world.entity.projectile.arrow.AbstractArrow.FLAG_NOPHYSICS
 
-target_method net.minecraft.world.entity.projectile.AbstractArrow setFlag (IZ)V
+target_method net.minecraft.world.entity.projectile.arrow.AbstractArrow setFlag (IZ)V
 	param 0 arrow_flags
 
 
@@ -133,13 +133,13 @@ target_method net.minecraft.world.entity.Display$TextDisplay$TextRenderState fla
 # mob, bat, snow golem, flags are directly on method bodies
 
 group int pufferfish_state
-	net.minecraft.world.entity.animal.Pufferfish.STATE_SMALL
-	net.minecraft.world.entity.animal.Pufferfish.STATE_MID
-	net.minecraft.world.entity.animal.Pufferfish.STATE_FULL
+	net.minecraft.world.entity.animal.fish.Pufferfish.STATE_SMALL
+	net.minecraft.world.entity.animal.fish.Pufferfish.STATE_MID
+	net.minecraft.world.entity.animal.fish.Pufferfish.STATE_FULL
 
-target_method net.minecraft.world.entity.animal.Pufferfish setPuffState (I)V
+target_method net.minecraft.world.entity.animal.fish.Pufferfish setPuffState (I)V
 	param 0 pufferfish_state
-target_method net.minecraft.world.entity.animal.Pufferfish getPuffState ()I
+target_method net.minecraft.world.entity.animal.fish.Pufferfish getPuffState ()I
 	return pufferfish_state
-target_method net.minecraft.world.entity.animal.Pufferfish getScale (I)F
+target_method net.minecraft.world.entity.animal.fish.Pufferfish getScale (I)F
 	param 0 pufferfish_state

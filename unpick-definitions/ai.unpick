@@ -6,8 +6,8 @@ group int poi_range
 	@scope class net.minecraft.server.commands.LocateCommand
 	net.minecraft.server.commands.LocateCommand.POI_SEARCH_RADIUS
 group int poi_range
-	@scope class net.minecraft.world.entity.animal.Bee$BeeLocateHiveGoal
-	net.minecraft.world.entity.animal.Bee.HIVE_SEARCH_DISTANCE
+	@scope class net.minecraft.world.entity.animal.bee.Bee$BeeLocateHiveGoal
+	net.minecraft.world.entity.animal.bee.Bee.HIVE_SEARCH_DISTANCE
 
 group int
 	@scope method net.minecraft.world.entity.ai.Brain updateActivityFromSchedule (Lnet/minecraft/world/attribute/EnvironmentAttributeSystem;JLnet/minecraft/world/phys/Vec3;)V
@@ -112,7 +112,7 @@ group int
 	net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MAX_DURATION - net.minecraft.world.entity.ai.behavior.AnimalMakeLove.MIN_DURATION
 
 group int
-	 @scope method net.minecraft.world.entity.ai.behavior.WorkAtPoi checkExtraStartConditions (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/Villager;)Z
+	 @scope method net.minecraft.world.entity.ai.behavior.WorkAtPoi checkExtraStartConditions (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/villager/Villager;)Z
 	 net.minecraft.world.entity.ai.behavior.WorkAtPoi.CHECK_COOLDOWN
 
 group int

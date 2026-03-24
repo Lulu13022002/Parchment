@@ -377,7 +377,7 @@ target_method net.minecraft.client.renderer.special.NoDataSpecialModelRenderer s
 
 target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;I)V
 	param 6 argb_color
-target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/BannerModel;Lnet/minecraft/client/model/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/object/banner/BannerModel;Lnet/minecraft/client/model/object/banner/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 12 argb_color
 target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitPatterns (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/client/resources/model/Material;ZLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;ZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 13 argb_color
@@ -510,6 +510,8 @@ target_method net.minecraft.client.color.item.Dye <init> (I)V
 	param 0 argb_color
 
 target_method net.minecraft.client.data.models.ItemModelGenerators generateDyedItem (Lnet/minecraft/world/item/Item;I)V
+	param 1 argb_color
+target_method net.minecraft.client.data.models.ItemModelGenerators generateItemWithTintedBaseLayer (Lnet/minecraft/world/item/Item;I)V
 	param 1 argb_color
 
 target_method net.minecraft.client.data.models.model.ItemModelUtils constantTint (I)Lnet/minecraft/client/color/item/ItemTintSource;
