@@ -443,6 +443,9 @@ target_method net.minecraft.gizmos.GizmoPrimitives addTriangleFan ([Lnet/minecra
 target_method net.minecraft.gizmos.GizmoPrimitives addQuad (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;I)V
 	param 4 argb_color
 
+target_method net.minecraft.client.renderer.gizmos.DrawableGizmoPrimitives getGroup (I)Lnet/minecraft/client/renderer/gizmos/DrawableGizmoPrimitives$Group;
+	param 0 argb_color
+
 target_method net.minecraft.gizmos.Gizmos line (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;I)Lnet/minecraft/gizmos/GizmoProperties;
 	param 2 argb_color
 target_method net.minecraft.gizmos.Gizmos line (Lnet/minecraft/world/phys/Vec3;Lnet/minecraft/world/phys/Vec3;IF)Lnet/minecraft/gizmos/GizmoProperties;

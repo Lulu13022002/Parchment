@@ -22,14 +22,9 @@ group int update_limit
 
 target_annotation net.minecraft.world.level.block.Block$UpdateFlags update_flags
 
-target_method net.minecraft.world.level.Level sendBlockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
+target_method net.minecraft.server.level.ServerLevel sendBlockUpdated (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
 	param 3 update_flags
-target_method net.minecraft.server.level.WorldGenRegion setBlock (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)Z
-	param 2 update_flags
-target_method net.minecraft.world.level.chunk.ChunkAccess setBlockState (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Lnet/minecraft/world/level/block/state/BlockState;
-	param 2 update_flags
-target_method net.minecraft.client.renderer.LevelRenderer blockChanged (Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;I)V
-	param 4 update_flags
+
 target_method net.minecraft.world.level.LevelWriter setBlock (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)Z
 	param 3 update_limit
 target_method net.minecraft.world.level.LevelWriter destroyBlock (Lnet/minecraft/core/BlockPos;ZLnet/minecraft/world/entity/Entity;I)Z
@@ -43,7 +38,6 @@ target_method net.minecraft.world.level.block.Block updateOrDestroy (Lnet/minecr
 target_method net.minecraft.world.level.block.state.BlockBehaviour updateIndirectNeighbourShapes (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
 	param 4 update_limit
 target_method net.minecraft.world.level.redstone.NeighborUpdater shapeUpdate (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;II)V
-	param 4 update_flags
 	param 5 update_limit
 target_method net.minecraft.world.level.redstone.NeighborUpdater executeShapeUpdate (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)V
 	param 6 update_limit
