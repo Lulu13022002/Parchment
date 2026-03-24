@@ -10,3 +10,16 @@ target_method net.minecraft.client.renderer.CloudRenderer encodeFace (Ljava/nio/
 group int
 	@scope class net.minecraft.util.StringDecomposer
 	net.minecraft.util.StringDecomposer.REPLACEMENT_CHAR
+
+group int color_target_write_flags
+	@flags
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_RED
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_GREEN
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_BLUE
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALPHA
+
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_COLOR
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALL
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_NONE
+
+target_annotation com.mojang.blaze3d.pipeline.ColorTargetState$WriteMask color_target_write_flags

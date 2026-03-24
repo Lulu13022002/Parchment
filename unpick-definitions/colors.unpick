@@ -114,6 +114,8 @@ target_method net.minecraft.util.ARGB black (F)I
 target_method net.minecraft.util.ARGB black (I)I
 	param 0 argb_color
 	return argb_color
+target_method net.minecraft.util.ARGB gray (F)I
+	return argb_color
 target_method net.minecraft.util.ARGB colorFromFloat (FFFF)I
 	return argb_color
 target_method net.minecraft.util.ARGB vector3fFromRGB24 (I)Lorg/joml/Vector3f;
@@ -292,15 +294,18 @@ target_method net.minecraft.client.model.geom.ModelPart compile (Lcom/mojang/bla
 target_method net.minecraft.client.model.geom.ModelPart$Cube compile (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
 	param 4 argb_color
 
-target_method com.mojang.blaze3d.vertex.QuadBrightness scaleColor (II)I
-	param 1 argb_color
+target_method com.mojang.blaze3d.vertex.QuadInstance getColor (I)I
 	return argb_color
+target_method com.mojang.blaze3d.vertex.QuadInstance setColor (II)V
+	param 1 argb_color
+target_method com.mojang.blaze3d.vertex.QuadInstance setColor (I)V
+	param 0 argb_color
+target_method com.mojang.blaze3d.vertex.QuadInstance multiplyColor (I)V
+	param 0 argb_color
 
 target_method com.mojang.blaze3d.vertex.VertexConsumer setColor (I)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 	param 0 argb_color
 target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
-	param 3 argb_color
-target_method com.mojang.blaze3d.vertex.VertexConsumer putBulkData (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/model/BakedQuad;Lcom/mojang/blaze3d/vertex/QuadBrightness;ILcom/mojang/blaze3d/vertex/QuadLightmapCoords;I)V
 	param 3 argb_color
 
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitText (Lcom/mojang/blaze3d/vertex/PoseStack;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
@@ -317,10 +322,7 @@ target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitMod
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModelPart (Lnet/minecraft/client/model/geom/ModelPart;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ZZILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 8 argb_color
 	param 10 argb_color
-target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlock (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/level/block/state/BlockState;III)V
-	param 4 argb_color
-target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlockModel (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/block/model/BlockStateModel;IIII)V
-	param 3 argb_color
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlockModel (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/block/model/BlockStateModel;[IIII)V
 	param 6 argb_color
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitItem (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/item/ItemDisplayContext;III[ILjava/util/List;Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
 	param 4 argb_color
@@ -354,9 +356,6 @@ target_method net.minecraft.client.renderer.SkyRenderer renderSunriseAndSunset (
 	param 2 argb_color
 target_method net.minecraft.client.renderer.SkyRenderer renderSkyDisc (I)V
 	param 0 argb_color
-
-target_method net.minecraft.client.renderer.SpecialBlockModelRenderer renderByBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;III)V
-	param 6 argb_color
 
 target_method net.minecraft.client.renderer.special.SpecialModelRenderer submit (Ljava/lang/Object;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIZI)V
 	param 7 argb_color
@@ -394,16 +393,11 @@ target_method net.minecraft.client.renderer.blockentity.ShulkerBoxRenderer submi
 target_method net.minecraft.client.renderer.blockentity.state.BeaconRenderState$Section <init> (II)V
 	param 0 argb_color
 
-target_method net.minecraft.client.renderer.block.BakedQuadOutput put (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/model/BakedQuad;Lcom/mojang/blaze3d/vertex/QuadBrightness;ILcom/mojang/blaze3d/vertex/QuadLightmapCoords;I)V
-	param 3 argb_color
-
 target_method net.minecraft.client.renderer.block.LiquidBlockRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFIFFI)V
 	param 4 argb_color
 
-target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderModel (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/BakedQuadOutput;Lnet/minecraft/client/renderer/block/model/BlockStateModel;III)V
-	param 3 argb_color
-target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/BakedQuadOutput;ILjava/util/List;Lcom/mojang/blaze3d/vertex/QuadLightmapCoords;I)V
-	param 2 argb_color
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer getTintColor (Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;I)I
+	return argb_color
 
 target_method net.minecraft.client.renderer.debug.BeeDebugRenderer renderTextOverHive (Ljava/lang/String;Lnet/minecraft/core/BlockPos;II)V
 	param 3 argb_color
@@ -534,10 +528,10 @@ target_method net.minecraft.client.color.item.ItemTintSource calculate (Lnet/min
 
 target_method net.minecraft.client.color.block.BlockColors getColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I
 	return argb_color
-target_method net.minecraft.client.color.block.BlockColors getColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;I)I
+target_method net.minecraft.client.color.block.BlockColors getColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;I)I
 	return argb_color
 
-target_method net.minecraft.client.color.block.BlockColor getColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;I)I
+target_method net.minecraft.client.color.block.BlockColor getColor (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;I)I
 	return argb_color
 
 target_method net.minecraft.network.chat.TextColor fromRgb (I)Lnet/minecraft/network/chat/TextColor;

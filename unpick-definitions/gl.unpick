@@ -17,7 +17,7 @@ unpick v4
 # Only constants that need unpicking in vanilla are listed.
 
 # GlConst
-group int gl_depth_test_function
+group int gl_compare_op
 	com.mojang.blaze3d.opengl.GlConst.GL_EQUAL
 	com.mojang.blaze3d.opengl.GlConst.GL_LEQUAL
 	com.mojang.blaze3d.opengl.GlConst.GL_LESS
@@ -351,8 +351,8 @@ group int gl_buffer_mask
 
 # Target definition
 
-target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/DepthTestFunction;)I
-	return gl_depth_test_function
+target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/CompareOp;)I
+	return gl_compare_op
 
 target_method com.mojang.blaze3d.opengl.GlConst toGl (Lcom/mojang/blaze3d/platform/PolygonMode;)I
 	return gl_polygon_mode
