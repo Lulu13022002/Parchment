@@ -10,3 +10,5 @@ group int glfw_platform_value
 
 target_method org.lwjgl.glfw.GLFW glfwGetPlatform ()I
 	return glfw_platform_value
+target_method org.lwjgl.glfw.GLFW glfwPlatformSupported (I)Z
+	param 0 glfw_platform_value

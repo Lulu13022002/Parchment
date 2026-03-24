@@ -3,3 +3,35 @@ unpick v4
 group int
 	@scope class net.minecraft.util.StringDecomposer
 	net.minecraft.util.StringDecomposer.REPLACEMENT_CHAR
+
+group int chain_modifier_flags
+	@flags
+	@scope class net.minecraft.commands.execution.ChainModifiers
+	net.minecraft.commands.execution.ChainModifiers.FLAG_FORKED
+	net.minecraft.commands.execution.ChainModifiers.FLAG_IS_RETURN
+
+target_field net.minecraft.commands.execution.ChainModifiers flags B chain_modifier_flags
+target_method net.minecraft.commands.execution.ChainModifiers setFlag (B)Lnet/minecraft/commands/execution/ChainModifiers;
+	param 0 chain_modifier_flags
+
+group int number_flags
+	@flags
+	@scope class net.minecraft.commands.synchronization.ArgumentUtils
+	net.minecraft.commands.synchronization.ArgumentUtils.NUMBER_FLAG_MIN
+	net.minecraft.commands.synchronization.ArgumentUtils.NUMBER_FLAG_MAX
+
+target_method net.minecraft.commands.synchronization.ArgumentUtils createNumberFlags (ZZ)I
+	return number_flags
+target_method net.minecraft.commands.synchronization.ArgumentUtils numberHasMin (B)Z
+	param 0 number_flags
+target_method net.minecraft.commands.synchronization.ArgumentUtils numberHasMax (B)Z
+	param 0 number_flags
+
+group int cursor3d_type
+	net.minecraft.core.Cursor3D.TYPE_INSIDE
+	net.minecraft.core.Cursor3D.TYPE_FACE
+	net.minecraft.core.Cursor3D.TYPE_EDGE
+	net.minecraft.core.Cursor3D.TYPE_CORNER
+
+target_method net.minecraft.core.Cursor3D getNextType ()I
+	return cursor3d_type

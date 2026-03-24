@@ -107,6 +107,12 @@ group int boss_event_flags
 group String handler_name
 	net.minecraft.network.HandlerNames.*
 
+group int client_intent
+	@scope class net.minecraft.network.protocol.handshake.ClientIntent
+	net.minecraft.network.protocol.handshake.ClientIntent.STATUS_ID
+	net.minecraft.network.protocol.handshake.ClientIntent.LOGIN_ID
+	net.minecraft.network.protocol.handshake.ClientIntent.TRANSFER_ID
+
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackOnGround (I)Z
 	param 0 move_player_flags
 target_method net.minecraft.network.protocol.game.ServerboundMovePlayerPacket unpackHorizontalCollision (I)Z
@@ -164,3 +170,8 @@ target_method io.netty.channel.ChannelPipeline remove (Ljava/lang/String;)Lio/ne
 target_method io.netty.channel.ChannelPipeline replace (Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelHandler;
 	param 0 handler_name
 	param 1 handler_name
+
+target_method net.minecraft.network.protocol.handshake.ClientIntent byId (I)Lnet/minecraft/network/protocol/handshake/ClientIntent;
+	param 0 client_intent
+target_method net.minecraft.network.protocol.handshake.ClientIntent id ()I
+	return client_intent

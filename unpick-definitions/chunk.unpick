@@ -1,0 +1,41 @@
+unpick v4
+
+group long ticket_type_expiration
+	net.minecraft.server.level.TicketType.NO_TIMEOUT
+
+group int ticket_type_flags
+	@flags
+	net.minecraft.server.level.TicketType.FLAG_PERSIST
+	net.minecraft.server.level.TicketType.FLAG_LOADING
+	net.minecraft.server.level.TicketType.FLAG_SIMULATION
+	net.minecraft.server.level.TicketType.FLAG_KEEP_DIMENSION_ACTIVE
+	net.minecraft.server.level.TicketType.FLAG_CAN_EXPIRE_IF_UNLOADED
+
+target_field net.minecraft.server.level.TicketType timeout J ticket_type_expiration
+target_method net.minecraft.server.level.TicketType register (Ljava/lang/String;JI)Lnet/minecraft/server/level/TicketType;
+	param 1 ticket_type_expiration
+target_method net.minecraft.server.level.TicketType <init> (JI)V
+	param 0 ticket_type_expiration
+
+target_annotation net.minecraft.server.level.TicketType$Flags ticket_type_flags
+
+group int chunk_level
+	@scope class net.minecraft.server.level.ChunkLevel
+	net.minecraft.server.level.ChunkLevel.FULL_CHUNK_LEVEL
+	net.minecraft.server.level.ChunkLevel.BLOCK_TICKING_LEVEL
+	net.minecraft.server.level.ChunkLevel.ENTITY_TICKING_LEVEL
+
+target_method net.minecraft.server.level.ChunkLevel generationStatus (I)Lnet/minecraft/world/level/chunk/status/ChunkStatus;
+    param 0 chunk_level
+target_method net.minecraft.server.level.ChunkLevel byStatus (Lnet/minecraft/world/level/chunk/status/ChunkStatus;)I
+    return chunk_level
+target_method net.minecraft.server.level.ChunkLevel fullStatus (I)Lnet/minecraft/server/level/FullChunkStatus;
+    param 0 chunk_level
+target_method net.minecraft.server.level.ChunkLevel byStatus (Lnet/minecraft/server/level/FullChunkStatus;)I
+    return chunk_level
+target_method net.minecraft.server.level.ChunkLevel isEntityTicking (I)Z
+    param 0 chunk_level
+target_method net.minecraft.server.level.ChunkLevel isBlockTicking (I)Z
+    param 0 chunk_level
+target_method net.minecraft.server.level.ChunkLevel isLoaded (I)Z
+    param 0 chunk_level

@@ -55,6 +55,10 @@ group float disable_blocking_for_seconds
 group float teleport_effect_diameter
 	net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect.DEFAULT_DIAMETER
 
+group int horse_slot
+	net.minecraft.world.entity.animal.equine.AbstractHorse.CHEST_SLOT_OFFSET
+	net.minecraft.world.entity.animal.equine.AbstractHorse.INVENTORY_SLOT_OFFSET
+
 target_field net.minecraft.world.entity.player.Inventory selected I slot_index
 target_method net.minecraft.world.entity.player.Inventory getFreeSlot ()I
 	return slot_index
@@ -134,3 +138,6 @@ target_field net.minecraft.world.item.component.WrittenBookContent generation I 
 
 target_method net.minecraft.world.item.consume_effects.TeleportRandomlyConsumeEffect <init> (F)V
 	param 0 teleport_effect_diameter
+
+target_method net.minecraft.world.entity.animal.equine.AbstractHorse getSlot (I)Lnet/minecraft/world/entity/SlotAccess;
+	param 0 horse_slot

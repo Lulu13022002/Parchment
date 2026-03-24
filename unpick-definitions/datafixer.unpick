@@ -1,0 +1,29 @@
+unpick v4
+
+group int chunk_palette_side_mask
+	@scope class net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.NORTH_WEST_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.WEST_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.SOUTH_WEST_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.SOUTH_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.SOUTH_EAST_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.EAST_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.NORTH_EAST_MASK
+	net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix.NORTH_MASK
+
+target_method net.minecraft.util.datafix.fixes.ChunkPalettedStorageFix getSideMask (ZZZZ)I
+	return chunk_palette_side_mask
+
+group int leaves_side_mask
+	@scope class net.minecraft.util.datafix.fixes.LeavesFix
+	net.minecraft.util.datafix.fixes.LeavesFix.NORTH_WEST_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.WEST_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.SOUTH_WEST_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.SOUTH_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.SOUTH_EAST_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.EAST_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.NORTH_EAST_MASK
+	net.minecraft.util.datafix.fixes.LeavesFix.NORTH_MASK
+
+target_method net.minecraft.util.datafix.fixes.LeavesFix getSideMask (ZZZZ)I
+	return leaves_side_mask

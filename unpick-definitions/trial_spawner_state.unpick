@@ -1,17 +1,17 @@
 unpick v4
 
-group double rotation_speed
+group double trial_spawner_rotation_speed
 	net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState$SpinningMob.NONE
 	net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState$SpinningMob.SLOW
 	net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState$SpinningMob.FAST
 
-group float cooldown
+group float trial_spawner_delay
 	net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState.DELAY_BEFORE_EJECT_AFTER_KILLING_LAST_MOB
 
 target_method net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState <init> (Ljava/lang/String;ILjava/lang/String;ILnet/minecraft/world/level/block/entity/trialspawner/TrialSpawnerState$ParticleEmission;DZ)V
-	param 3 rotation_speed
+	param 3 trial_spawner_rotation_speed
 target_method net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState spinningMobSpeed ()D
-	return rotation_speed
+	return trial_spawner_rotation_speed
 
 target_method net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerStateData isReadyToOpenShutter (Lnet/minecraft/server/level/ServerLevel;FI)Z
-	param 1 cooldown
+	param 1 trial_spawner_delay

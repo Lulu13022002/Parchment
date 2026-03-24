@@ -31,6 +31,11 @@ group int rgb_color
 	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_NOT_SECURE_INDICATOR_COLOR
 	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_MODIFIED_INDICATOR_COLOR
 
+group int rgb_color
+	@scope class net.minecraft.data.worldgen.biome.OverworldBiomes
+	net.minecraft.data.worldgen.biome.OverworldBiomes.NORMAL_WATER_COLOR
+	net.minecraft.data.worldgen.biome.OverworldBiomes.DARK_DRY_FOLIAGE_COLOR
+
 target_method com.mojang.blaze3d.vertex.VertexConsumer setColor (I)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 	param 0 argb_color
 
@@ -199,4 +204,9 @@ target_method net.minecraft.util.ARGB color (FI)I
 	return argb_color
 
 target_method net.minecraft.client.multiplayer.chat.GuiMessageTag <init> (ILnet/minecraft/client/multiplayer/chat/GuiMessageTag$Icon;Lnet/minecraft/network/chat/Component;Ljava/lang/String;)V
+	param 0 rgb_color
+
+target_method net.minecraft.world.level.biome.BiomeSpecialEffects$Builder waterColor (I)Lnet/minecraft/world/level/biome/BiomeSpecialEffects$Builder;
+	param 0 rgb_color
+target_method net.minecraft.world.level.biome.BiomeSpecialEffects$Builder dryFoliageColorOverride (I)Lnet/minecraft/world/level/biome/BiomeSpecialEffects$Builder;
 	param 0 rgb_color
