@@ -29,19 +29,25 @@ target_method net.minecraft.world.level.LevelWriter setBlock (Lnet/minecraft/cor
 	param 3 update_limit
 target_method net.minecraft.world.level.LevelWriter destroyBlock (Lnet/minecraft/core/BlockPos;ZLnet/minecraft/world/entity/Entity;I)Z
 	param 3 update_limit
+
+target_method net.minecraft.world.level.LevelAccessor neighborShapeChanged (Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)V
+	param 5 update_limit
+
 target_method net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase updateNeighbourShapes (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
 	param 3 update_limit
 target_method net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase updateIndirectNeighbourShapes (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
 	param 3 update_limit
+
 target_method net.minecraft.world.level.block.Block updateOrDestroy (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
 	param 5 update_limit
+
 target_method net.minecraft.world.level.block.state.BlockBehaviour updateIndirectNeighbourShapes (Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;II)V
 	param 4 update_limit
+
 target_method net.minecraft.world.level.redstone.NeighborUpdater shapeUpdate (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;II)V
 	param 5 update_limit
 target_method net.minecraft.world.level.redstone.NeighborUpdater executeShapeUpdate (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)V
 	param 6 update_limit
-target_method net.minecraft.world.level.LevelAccessor neighborShapeChanged (Lnet/minecraft/core/Direction;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;II)V
-	param 5 update_limit
+
 target_method net.minecraft.world.level.redstone.CollectingNeighborUpdater$ShapeUpdate <init> (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;II)V
 	param 5 update_limit

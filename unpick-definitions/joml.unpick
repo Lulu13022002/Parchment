@@ -10,6 +10,7 @@ group int matrix4f_properties
 
 target_method org.joml.Matrix4fc properties ()I
 	return matrix4f_properties
+
 target_method com.mojang.math.MatrixUtil checkPropertyRaw (Lorg/joml/Matrix4fc;I)Z
 	param 1 matrix4f_properties
 target_method com.mojang.math.MatrixUtil checkProperty (Lorg/joml/Matrix4fc;I)Z

@@ -148,6 +148,7 @@ target_method net.minecraft.network.Connection outboundHandlerName (Z)Ljava/lang
 	return handler_name
 target_method net.minecraft.network.Connection inboundHandlerName (Z)Ljava/lang/String;
 	return handler_name
+
 target_method io.netty.channel.ChannelPipeline addBefore (Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
 	param 0 handler_name
 	param 1 handler_name

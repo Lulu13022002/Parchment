@@ -1,0 +1,28 @@
+unpick v4
+
+group int color_target_write_flags
+	@flags
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_RED
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_GREEN
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_BLUE
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALPHA
+
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_COLOR
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALL
+	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_NONE
+
+group int material_flags
+	@flags
+	net.minecraft.client.resources.model.geometry.BakedQuad.FLAG_TRANSLUCENT
+	net.minecraft.client.resources.model.geometry.BakedQuad.FLAG_ANIMATED
+
+group int face_flags
+	net.minecraft.client.renderer.CloudRenderer.FLAG_INSIDE_FACE
+	net.minecraft.client.renderer.CloudRenderer.FLAG_USE_TOP_COLOR
+
+target_annotation com.mojang.blaze3d.pipeline.ColorTargetState$WriteMask color_target_write_flags
+
+target_annotation net.minecraft.client.resources.model.geometry.BakedQuad$MaterialFlags material_flags
+
+target_method net.minecraft.client.renderer.CloudRenderer encodeFace (Ljava/nio/ByteBuffer;IILnet/minecraft/core/Direction;I)V
+	param 4 face_flags

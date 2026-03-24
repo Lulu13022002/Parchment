@@ -80,6 +80,7 @@ target_method net.minecraft.world.entity.player.Inventory setItem (ILnet/minecra
 	param 0 slot_index
 target_method net.minecraft.world.entity.player.Inventory getItem (I)Lnet/minecraft/world/item/ItemStack;
 	param 0 slot_index
+
 target_method net.minecraft.network.protocol.game.ServerboundEditBookPacket <init> (ILjava/util/List;Ljava/util/Optional;)V
 	param 0 slot_index
 

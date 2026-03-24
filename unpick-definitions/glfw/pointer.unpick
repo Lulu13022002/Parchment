@@ -1,0 +1,28 @@
+unpick v4
+
+group long pointer
+	org.lwjgl.system.MemoryUtil.NULL
+
+target_field com.mojang.blaze3d.opengl.GlFence handle J pointer
+target_field com.mojang.blaze3d.platform.NativeImage pixels J pointer
+target_field com.mojang.blaze3d.vertex.ByteBufferBuilder pointer J pointer
+target_field net.minecraft.client.gui.font.providers.FreeTypeUtil library J pointer
+
+target_method org.lwjgl.glfw.GLFW glfwGetPrimaryMonitor ()J
+	return pointer
+target_method org.lwjgl.glfw.GLFW glfwGetMonitorPos (JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V
+	param 0 pointer
+target_method org.lwjgl.glfw.GLFW glfwGetMonitorWorkarea (JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)V
+	param 0 pointer
+target_method org.lwjgl.glfw.GLFW glfwGetMonitorPhysicalSize (JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V
+	param 0 pointer
+target_method org.lwjgl.glfw.GLFW glfwGetCurrentContext ()J
+	return pointer
+target_method org.lwjgl.glfw.GLFW glfwCreateStandardCursor(I)J
+	return pointer
+
+target_method org.lwjgl.system.MemoryUtil memAddress (Ljava/nio/ByteBuffer;)J
+	return pointer
+
+target_method org.lwjgl.PointerBuffer get ()J
+	return pointer

@@ -10,6 +10,9 @@ target_field com.mojang.blaze3d.vertex.QuadInstance lightCoords1 I light_coords
 target_field com.mojang.blaze3d.vertex.QuadInstance lightCoords2 I light_coords
 target_field com.mojang.blaze3d.vertex.QuadInstance lightCoords3 I light_coords
 
+target_method com.mojang.blaze3d.vertex.QuadInstance setLightCoords (I)V
+	param 0 light_coords
+
 target_method com.mojang.blaze3d.vertex.VertexConsumer setLight (I)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 	param 0 light_coords
 target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
@@ -27,6 +30,10 @@ target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitMod
 	param 4 light_coords
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
 	param 4 light_coords
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/resources/Identifier;IIILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 4 light_coords
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitModel (Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;IIILnet/minecraft/client/resources/model/sprite/SpriteId;Lnet/minecraft/client/resources/model/sprite/SpriteGetter;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+	param 3 light_coords
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitText (Lcom/mojang/blaze3d/vertex/PoseStack;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
 	param 6 light_coords
 
@@ -54,12 +61,12 @@ target_method net.minecraft.client.renderer.entity.ItemEntityRenderer submitMult
 target_method net.minecraft.client.renderer.entity.ItemEntityRenderer submitMultipleFromCount (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/ItemClusterRenderState;Lnet/minecraft/util/RandomSource;)V
 	param 2 light_coords
 
-target_method net.minecraft.client.gui.Font drawInBatch (Ljava/lang/String;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
+target_method net.minecraft.client.gui.Font drawInBatch (Ljava/lang/String;FFIZLorg/joml/Matrix4fc;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
 	param 9 light_coords
-target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
+target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/network/chat/Component;FFIZLorg/joml/Matrix4fc;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
 	param 9 light_coords
-target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
+target_method net.minecraft.client.gui.Font drawInBatch (Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4fc;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)V
 	param 9 light_coords
 
-target_method net.minecraft.client.gui.font.TextRenderable render (Lorg/joml/Matrix4f;Lcom/mojang/blaze3d/vertex/VertexConsumer;IZ)V
+target_method net.minecraft.client.gui.font.TextRenderable render (Lorg/joml/Matrix4fc;Lcom/mojang/blaze3d/vertex/VertexConsumer;IZ)V
 	param 2 light_coords

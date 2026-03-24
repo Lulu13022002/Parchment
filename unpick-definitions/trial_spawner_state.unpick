@@ -10,7 +10,6 @@ group float cooldown
 
 target_method net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState <init> (Ljava/lang/String;ILjava/lang/String;ILnet/minecraft/world/level/block/entity/trialspawner/TrialSpawnerState$ParticleEmission;DZ)V
 	param 3 rotation_speed
-
 target_method net.minecraft.world.level.block.entity.trialspawner.TrialSpawnerState spinningMobSpeed ()D
 	return rotation_speed
 
