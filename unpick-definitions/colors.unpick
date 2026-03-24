@@ -53,6 +53,10 @@ target_method net.minecraft.util.ARGB scaleRGB (II)I
 target_method net.minecraft.util.ARGB greyscale (I)I
 	param 0 argb_color
 	return argb_color
+target_method net.minecraft.util.ARGB alphaBlend (II)I
+	param 0 argb_color
+	param 1 argb_color
+	return argb_color
 target_method net.minecraft.util.ARGB srgbLerp (FII)I
 	param 1 argb_color
 	param 2 argb_color
