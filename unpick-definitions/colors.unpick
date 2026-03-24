@@ -118,6 +118,8 @@ target_method net.minecraft.util.ARGB colorFromFloat (FFFF)I
 	return argb_color
 target_method net.minecraft.util.ARGB vector3fFromRGB24 (I)Lorg/joml/Vector3f;
 	param 0 argb_color
+target_method net.minecraft.util.ARGB vector4fFromARGB32 (I)Lorg/joml/Vector4f;
+	param 0 argb_color
 target_method net.minecraft.util.ARGB average (II)I
 	param 0 argb_color
 	param 1 argb_color
@@ -219,9 +221,9 @@ target_method net.minecraft.client.gui.GuiGraphics drawStringWithBackdrop (Lnet/
 	param 5 argb_color
 target_method net.minecraft.client.gui.GuiGraphics renderOutline (IIIII)V
 	param 4 argb_color
-target_method net.minecraft.client.gui.GuiGraphics blitSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIIII)V
+target_method net.minecraft.client.gui.GuiGraphics blitSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIII)V
 	param 6 argb_color
-target_method net.minecraft.client.gui.GuiGraphics blitSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIIIIIIII)V
+target_method net.minecraft.client.gui.GuiGraphics blitSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIIII)V
 	param 10 argb_color
 target_method net.minecraft.client.gui.GuiGraphics blitSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;IIIII)V
 	param 6 argb_color
@@ -233,11 +235,11 @@ target_method net.minecraft.client.gui.GuiGraphics blitNineSliceInnerSegment (Lc
 	param 13 argb_color
 target_method net.minecraft.client.gui.GuiGraphics blitTiledSprite (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;IIIIIIIIIII)V
 	param 12 argb_color
-target_method net.minecraft.client.gui.GuiGraphics blit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIFFIIIII)V
+target_method net.minecraft.client.gui.GuiGraphics blit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIFFIIIII)V
 	param 10 argb_color
-target_method net.minecraft.client.gui.GuiGraphics blit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIFFIIIIIII)V
+target_method net.minecraft.client.gui.GuiGraphics blit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIFFIIIIIII)V
 	param 12 argb_color
-target_method net.minecraft.client.gui.GuiGraphics innerBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIIIFFFFI)V
+target_method net.minecraft.client.gui.GuiGraphics innerBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIFFFFI)V
 	param 10 argb_color
 target_method net.minecraft.client.gui.GuiGraphics submitBlit (Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lcom/mojang/blaze3d/textures/GpuTextureView;Lcom/mojang/blaze3d/textures/GpuSampler;IIIIFFFFI)V
 	param 11 argb_color
@@ -264,9 +266,9 @@ target_method net.minecraft.client.gui.components.EditBox setTextColorUneditable
 
 target_method net.minecraft.client.gui.components.PlayerFaceRenderer draw (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/entity/player/PlayerSkin;IIII)V
 	param 5 argb_color
-target_method net.minecraft.client.gui.components.PlayerFaceRenderer draw (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/resources/ResourceLocation;IIIZZI)V
+target_method net.minecraft.client.gui.components.PlayerFaceRenderer draw (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/resources/Identifier;IIIZZI)V
 	param 7 argb_color
-target_method net.minecraft.client.gui.components.PlayerFaceRenderer drawHat (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/resources/ResourceLocation;IIIZI)V
+target_method net.minecraft.client.gui.components.PlayerFaceRenderer drawHat (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/resources/Identifier;IIIZI)V
 	param 6 argb_color
 
 target_method net.minecraft.client.gui.components.TabButton renderFocusUnderline (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/client/gui/Font;I)V
@@ -361,6 +363,8 @@ target_method net.minecraft.client.renderer.ShapeRenderer renderShape (Lcom/moja
 
 target_method net.minecraft.client.renderer.SkyRenderer renderSunriseAndSunset (Lcom/mojang/blaze3d/vertex/PoseStack;FI)V
 	param 2 argb_color
+target_method net.minecraft.client.renderer.SkyRenderer renderSkyDisc (I)V
+	param 0 argb_color
 
 target_method net.minecraft.client.renderer.SpecialBlockModelRenderer renderByBlock (Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;III)V
 	param 6 argb_color
@@ -380,7 +384,7 @@ target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitPat
 
 target_method net.minecraft.client.renderer.blockentity.BeaconRenderer submitBeaconBeam (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;FFIII)V
 	param 6 argb_color
-target_method net.minecraft.client.renderer.blockentity.BeaconRenderer submitBeaconBeam (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/resources/ResourceLocation;FFIIIFF)V
+target_method net.minecraft.client.renderer.blockentity.BeaconRenderer submitBeaconBeam (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/resources/Identifier;FFIIIFF)V
 	param 7 argb_color
 target_method net.minecraft.client.renderer.blockentity.BeaconRenderer renderPart (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIIFFFFFFFFFFFF)V
 	param 2 argb_color
@@ -469,7 +473,7 @@ target_method net.minecraft.gizmos.GizmoStyle strokeAndFill (IFI)Lnet/minecraft/
 
 target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer renderLayers (Lnet/minecraft/client/resources/model/EquipmentClientInfo$LayerType;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/world/item/ItemStack;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;II)V
 	param 8 argb_color
-target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer renderLayers (Lnet/minecraft/client/resources/model/EquipmentClientInfo$LayerType;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/world/item/ItemStack;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;II)V
+target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer renderLayers (Lnet/minecraft/client/resources/model/EquipmentClientInfo$LayerType;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/world/item/ItemStack;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/Identifier;II)V
 	param 9 argb_color
 target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer getColorForLayer (Lnet/minecraft/client/resources/model/EquipmentClientInfo$Layer;I)I
 	param 1 argb_color

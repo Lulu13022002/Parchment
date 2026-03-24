@@ -1,9 +1,5 @@
 unpick v4
 
-group int activity_duration
-	net.minecraft.world.entity.schedule.Schedule.WORK_START_TIME
-	net.minecraft.world.entity.schedule.Schedule.WORK_START_TIME + net.minecraft.world.entity.schedule.Schedule.TOTAL_WORK_TIME
-
 group int poi_range
 	net.minecraft.world.entity.ai.behavior.AcquirePoi.SCAN_RANGE
 group int poi_range
@@ -14,7 +10,7 @@ group int poi_range
 	net.minecraft.world.entity.animal.Bee.HIVE_SEARCH_DISTANCE
 
 group int
-	@scope method net.minecraft.world.entity.ai.Brain updateActivityFromSchedule (JJ)V
+	@scope method net.minecraft.world.entity.ai.Brain updateActivityFromSchedule (Lnet/minecraft/world/attribute/EnvironmentAttributeSystem;JLnet/minecraft/world/phys/Vec3;)V
 	net.minecraft.world.entity.ai.Brain.SCHEDULE_UPDATE_DELAY
 
 group double pos_distance
@@ -249,9 +245,6 @@ group int sonic_cooldown
 group int warden_anger_increase
 	@scope class net.minecraft.world.entity.ai.behavior.warden.Roar
 	net.minecraft.world.entity.ai.behavior.warden.Roar.ROAR_ANGER_INCREASE
-
-target_method net.minecraft.world.entity.schedule.ScheduleBuilder changeActivityAt (ILnet/minecraft/world/entity/schedule/Activity;)Lnet/minecraft/world/entity/schedule/ScheduleBuilder;
-	param 0 activity_duration
 
 target_method net.minecraft.world.entity.ai.village.poi.PoiManager getInRange (Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/stream/Stream;
 	param 2 poi_range

@@ -1,0 +1,12 @@
+unpick v4
+
+group int face_flags
+	net.minecraft.client.renderer.CloudRenderer.FLAG_INSIDE_FACE
+	net.minecraft.client.renderer.CloudRenderer.FLAG_USE_TOP_COLOR
+
+target_method net.minecraft.client.renderer.CloudRenderer encodeFace (Ljava/nio/ByteBuffer;IILnet/minecraft/core/Direction;I)V
+	param 4 face_flags
+
+group int
+	@scope class net.minecraft.util.StringDecomposer
+	net.minecraft.util.StringDecomposer.REPLACEMENT_CHAR

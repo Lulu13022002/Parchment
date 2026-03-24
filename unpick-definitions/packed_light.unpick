@@ -160,19 +160,19 @@ target_method net.minecraft.client.renderer.entity.AbstractMinecartRenderer subm
 target_method net.minecraft.client.renderer.entity.PaintingRenderer vertex (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFFFIIII)V
 	param 10 packed_light
 
-target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderRightHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;Z)V
+target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderRightHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/Identifier;Z)V
 	param 2 packed_light
-target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderLeftHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;Z)V
+target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderLeftHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/Identifier;Z)V
 	param 2 packed_light
-target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/model/geom/ModelPart;Z)V
+target_method net.minecraft.client.renderer.entity.player.AvatarRenderer renderHand (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/resources/Identifier;Lnet/minecraft/client/model/geom/ModelPart;Z)V
 	param 2 packed_light
 
 target_method net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer renderArmorPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/EquipmentSlot;ILnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V
 	param 4 packed_light
 
-target_method net.minecraft.client.renderer.entity.layers.RenderLayer coloredCutoutModelCopyLayerRender (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
+target_method net.minecraft.client.renderer.entity.layers.RenderLayer coloredCutoutModelCopyLayerRender (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/Identifier;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
 	param 4 packed_light
-target_method net.minecraft.client.renderer.entity.layers.RenderLayer renderColoredCutoutModel (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
+target_method net.minecraft.client.renderer.entity.layers.RenderLayer renderColoredCutoutModel (Lnet/minecraft/client/model/Model;Lnet/minecraft/resources/Identifier;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;II)V
 	param 4 packed_light
 target_method net.minecraft.client.renderer.entity.layers.RenderLayer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/EntityRenderState;FF)V
 	param 2 packed_light
