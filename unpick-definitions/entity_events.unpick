@@ -8,12 +8,12 @@ group int entity_events
 	net.minecraft.world.entity.projectile.arrow.Arrow.EVENT_POTION_PUFF
 
 group int entity_events
-	@scope class net.minecraft.world.level.BaseSpawner
-	net.minecraft.world.level.BaseSpawner.EVENT_SPAWN
-
-group int entity_events
 	@scope class net.minecraft.world.entity.vehicle.minecart.MinecartTNT
 	net.minecraft.world.entity.vehicle.minecart.MinecartTNT.EVENT_PRIME
+
+group int entity_events
+	@scope class net.minecraft.world.level.BaseSpawner
+	net.minecraft.world.level.BaseSpawner.EVENT_SPAWN
 
 target_method net.minecraft.world.entity.Entity handleEntityEvent (B)V
 	param 0 entity_events

@@ -1,0 +1,29 @@
+unpick v4
+
+group int free_type_load_flags
+	@flags
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_DEFAULT
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_NO_SCALE
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_NO_HINTING
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_RENDER
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_NO_BITMAP
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_VERTICAL_LAYOUT
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_FORCE_AUTOHINT
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_CROP_BITMAP
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_PEDANTIC
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_IGNORE_GLOBAL_ADVANCE_WIDTH
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_NO_RECURSE
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_IGNORE_TRANSFORM
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_MONOCHROME
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_LINEAR_DESIGN
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_SBITS_ONLY
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_NO_AUTOHINT
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_COLOR
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_COMPUTE_METRICS
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_BITMAP_METRICS_ONLY
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_NO_SVG
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_ADVANCE_ONLY
+	org.lwjgl.util.freetype.FreeType.FT_LOAD_SVG_ONLY
+
+target_method org.lwjgl.util.freetype.FreeType FT_Load_Glyph (Lorg/lwjgl/util/freetype/FT_Face;II)I
+	param 2 free_type_load_flags

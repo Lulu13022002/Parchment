@@ -1,0 +1,145 @@
+unpick v4
+
+group int audio_event_type
+	org.lwjgl.openal.SOFTSystemEvents.ALC_EVENT_TYPE_DEFAULT_DEVICE_CHANGED_SOFT
+	org.lwjgl.openal.SOFTSystemEvents.ALC_EVENT_TYPE_DEVICE_ADDED_SOFT
+	org.lwjgl.openal.SOFTSystemEvents.ALC_EVENT_TYPE_DEVICE_REMOVED_SOFT
+
+group int audio_device_type
+	org.lwjgl.openal.SOFTSystemEvents.ALC_PLAYBACK_DEVICE_SOFT
+	org.lwjgl.openal.SOFTSystemEvents.ALC_CAPTURE_DEVICE_SOFT
+
+group int audio_event_result
+	org.lwjgl.openal.SOFTSystemEvents.ALC_EVENT_SUPPORTED_SOFT
+	org.lwjgl.openal.SOFTSystemEvents.ALC_EVENT_NOT_SUPPORTED_SOFT
+
+target_method org.lwjgl.openal.SOFTSystemEvents alcEventIsSupportedSOFT (II)I
+	param 0 audio_event_type
+	param 1 audio_device_type
+	return audio_event_result
+
+target_method org.lwjgl.openal.SOFTSystemEventProcI invoke (IIJIJJ)V
+	param 0 audio_event_type
+	param 1 audio_device_type
+
+target_method com.mojang.blaze3d.audio.CallbackDeviceTracker deviceTypeToString (I)Ljava/lang/String;
+	param 0 audio_device_type
+
+
+group int audio_source_param
+	org.lwjgl.openal.AL10.AL_DOPPLER_FACTOR
+	org.lwjgl.openal.AL10.AL_DISTANCE_MODEL
+
+	org.lwjgl.openal.AL10.AL_SOURCE_ABSOLUTE
+	org.lwjgl.openal.AL10.AL_SOURCE_RELATIVE
+
+	org.lwjgl.openal.AL10.AL_POSITION
+	org.lwjgl.openal.AL10.AL_VELOCITY
+	org.lwjgl.openal.AL10.AL_GAIN
+
+	org.lwjgl.openal.AL10.AL_PITCH
+	org.lwjgl.openal.AL10.AL_DIRECTION
+	org.lwjgl.openal.AL10.AL_LOOPING
+	org.lwjgl.openal.AL10.AL_BUFFER
+	org.lwjgl.openal.AL10.AL_SOURCE_STATE
+
+	org.lwjgl.openal.AL10.AL_REFERENCE_DISTANCE
+	org.lwjgl.openal.AL10.AL_ROLLOFF_FACTOR
+	org.lwjgl.openal.AL10.AL_MAX_DISTANCE
+
+	org.lwjgl.openal.AL10.AL_BUFFERS_QUEUED
+	org.lwjgl.openal.AL10.AL_BUFFERS_PROCESSED
+
+group int audio_state
+	org.lwjgl.openal.AL10.AL_INITIAL
+	org.lwjgl.openal.AL10.AL_PLAYING
+	org.lwjgl.openal.AL10.AL_PAUSED
+	org.lwjgl.openal.AL10.AL_STOPPED
+
+target_method org.lwjgl.openal.AL10 alGetSourcei (II)I
+	param 1 audio_source_param
+target_method org.lwjgl.openal.AL10 alSourcei (III)V
+	param 1 audio_source_param
+target_method org.lwjgl.openal.AL10 alSourcef (IIF)V
+	param 1 audio_source_param
+target_method org.lwjgl.openal.AL10 alSourcefv (II[F)V
+	param 1 audio_source_param
+
+target_method com.mojang.blaze3d.audio.Channel getState ()I
+	return audio_state
+
+
+group int audio_string_attribute
+	org.lwjgl.openal.ALC10.ALC_DEVICE_SPECIFIER
+
+	org.lwjgl.openal.ALC11.ALC_DEFAULT_ALL_DEVICES_SPECIFIER
+	org.lwjgl.openal.ALC11.ALC_ALL_DEVICES_SPECIFIER
+
+group int audio_int_attribute
+	org.lwjgl.openal.SOFTHRTF.ALC_HRTF_STATUS_SOFT
+	org.lwjgl.openal.SOFTHRTF.ALC_NUM_HRTF_SPECIFIERS_SOFT
+
+	org.lwjgl.openal.EXTDisconnect.ALC_CONNECTED
+
+	org.lwjgl.openal.ALC10.ALC_ATTRIBUTES_SIZE
+	org.lwjgl.openal.ALC10.ALC_ALL_ATTRIBUTES
+
+target_method org.lwjgl.openal.ALC10 alcGetString (JI)Ljava/lang/String;
+	param 1 audio_string_attribute
+target_method org.lwjgl.openal.ALUtil getStringList (JI)Ljava/util/List;
+	param 1 audio_string_attribute
+
+target_method org.lwjgl.openal.ALC10 alcGetInteger (JI)I
+	param 1 audio_int_attribute
+target_method org.lwjgl.openal.ALC10 alcGetIntegerv (JILjava/nio/IntBuffer;)V
+	param 1 audio_int_attribute
+
+
+group int audio_listener_param
+	org.lwjgl.openal.AL10.AL_POSITION
+	org.lwjgl.openal.AL10.AL_VELOCITY
+	org.lwjgl.openal.AL10.AL_ORIENTATION
+
+target_method org.lwjgl.openal.AL10 alListener3f (IFFF)V
+	param 0 audio_listener_param
+
+target_method org.lwjgl.openal.AL10 alListenerfv (I[F)V
+	param 0 audio_listener_param
+
+
+group int audio_al_error_code
+	org.lwjgl.openal.AL10.AL_NO_ERROR
+	org.lwjgl.openal.AL10.AL_INVALID_NAME
+	org.lwjgl.openal.AL10.AL_INVALID_ENUM
+	org.lwjgl.openal.AL10.AL_INVALID_VALUE
+	org.lwjgl.openal.AL10.AL_INVALID_OPERATION
+	org.lwjgl.openal.AL10.AL_OUT_OF_MEMORY
+
+group int audio_alc_error_code
+	org.lwjgl.openal.ALC10.ALC_NO_ERROR
+	org.lwjgl.openal.ALC10.ALC_INVALID_DEVICE
+	org.lwjgl.openal.ALC10.ALC_INVALID_CONTEXT
+	org.lwjgl.openal.ALC10.ALC_INVALID_ENUM
+	org.lwjgl.openal.ALC10.ALC_INVALID_VALUE
+	org.lwjgl.openal.ALC10.ALC_OUT_OF_MEMORY
+
+target_method com.mojang.blaze3d.audio.OpenAlUtil alErrorToString (I)Ljava/lang/String;
+	param 0 audio_al_error_code
+target_method com.mojang.blaze3d.audio.OpenAlUtil alcErrorToString (I)Ljava/lang/String;
+	param 0 audio_alc_error_code
+
+target_method org.lwjgl.openal.AL10 alGetError ()I
+	return audio_al_error_code
+
+target_method org.lwjgl.openal.ALC10 alcGetError (J)I
+	return audio_alc_error_code
+
+
+group int audio_format
+	org.lwjgl.openal.AL10.AL_FORMAT_MONO8
+	org.lwjgl.openal.AL10.AL_FORMAT_MONO16
+	org.lwjgl.openal.AL10.AL_FORMAT_STEREO8
+	org.lwjgl.openal.AL10.AL_FORMAT_STEREO16
+
+target_method com.mojang.blaze3d.audio.OpenAlUtil audioFormatToOpenAl (Ljavax/sound/sampled/AudioFormat;)I
+	return audio_format

@@ -1,6 +1,6 @@
 unpick v4
 
-group int error_code
+group int glfw_error_code
 	org.lwjgl.glfw.GLFW.GLFW_NO_ERROR
 	org.lwjgl.glfw.GLFW.GLFW_NOT_INITIALIZED
 	org.lwjgl.glfw.GLFW.GLFW_NO_CURRENT_CONTEXT
@@ -18,4 +18,6 @@ group int error_code
 	org.lwjgl.glfw.GLFW.GLFW_PLATFORM_UNAVAILABLE
 
 target_method org.lwjgl.glfw.GLFWErrorCallbackI invoke (IJ)V
-	param 0 error_code
+	param 0 glfw_error_code
+target_method com.mojang.blaze3d.GLFWErrorCapture$Error error ()I
+	return glfw_error_code

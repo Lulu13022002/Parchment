@@ -346,8 +346,11 @@ group int gl_pixel_store_pname
 	com.mojang.blaze3d.opengl.GlConst.GL_PACK_ROW_LENGTH
 
 group int gl_map_buffer_access
+	@flags
 	com.mojang.blaze3d.opengl.GlConst.GL_MAP_READ_BIT
 	com.mojang.blaze3d.opengl.GlConst.GL_MAP_WRITE_BIT
+	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_PERSISTENT_BIT
+	org.lwjgl.opengl.ARBBufferStorage.GL_MAP_COHERENT_BIT
 	org.lwjgl.opengl.GL30.GL_MAP_INVALIDATE_RANGE_BIT
 	org.lwjgl.opengl.GL30.GL_MAP_INVALIDATE_BUFFER_BIT
 	org.lwjgl.opengl.GL30.GL_MAP_FLUSH_EXPLICIT_BIT
@@ -413,6 +416,8 @@ target_method org.lwjgl.opengl.ARBDirectStateAccess glNamedBufferStorage (ILjava
 
 target_method com.mojang.blaze3d.opengl.DirectStateAccess mapBufferRange (IJJII)Ljava/nio/ByteBuffer;
 	param 3 gl_map_buffer_access
+target_method com.mojang.blaze3d.opengl.BufferStorage mapBuffer (Lcom/mojang/blaze3d/opengl/DirectStateAccess;Lcom/mojang/blaze3d/opengl/GlBuffer;JJI)Lcom/mojang/blaze3d/opengl/GlBuffer$GlMappedView;
+	param 4 gl_map_buffer_access
 target_method com.mojang.blaze3d.opengl.DirectStateAccess unmapBuffer (II)V
 	param 1 gpu_buffer_usage
 
@@ -578,6 +583,9 @@ target_method org.lwjgl.opengl.GL30 glBindBufferRange (IIIJJ)V
 	param 0 gl_buffer_target
 target_method org.lwjgl.opengl.GL30 glFlushMappedBufferRange (IJJ)V
 	param 0 gl_buffer_target
+target_method org.lwjgl.opengl.GL31 glCopyBufferSubData (IIJJJ)V
+	param 0 gl_buffer_target
+	param 1 gl_buffer_target
 
 target_method org.lwjgl.opengl.ARBBufferStorage glBufferStorage (IJI)V
 	param 0 gl_buffer_target

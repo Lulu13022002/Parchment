@@ -11,6 +11,11 @@ group int color_target_write_flags
 	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_ALL
 	com.mojang.blaze3d.pipeline.ColorTargetState.WRITE_NONE
 
+group int tlsf_block_flags
+	@flags
+	@scope class com.mojang.blaze3d.vertex.TlsfAllocator$Block
+	com.mojang.blaze3d.vertex.TlsfAllocator$Block.BLOCK_HEADER_FREE_BIT
+
 group int material_flags
 	@flags
 	net.minecraft.client.resources.model.geometry.BakedQuad.FLAG_TRANSLUCENT
@@ -21,6 +26,8 @@ group int face_flags
 	net.minecraft.client.renderer.CloudRenderer.FLAG_USE_TOP_COLOR
 
 target_annotation com.mojang.blaze3d.pipeline.ColorTargetState$WriteMask color_target_write_flags
+
+target_field com.mojang.blaze3d.vertex.TlsfAllocator$Block size J tlsf_block_flags
 
 target_annotation net.minecraft.client.resources.model.geometry.BakedQuad$MaterialFlags material_flags
 

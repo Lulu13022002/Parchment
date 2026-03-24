@@ -24,8 +24,13 @@ target_method org.lwjgl.glfw.GLFW glfwSetWindowMonitor(JJIIIII)V
 	param 1 pointer
 target_method org.lwjgl.glfw.GLFW glfwCreateStandardCursor(I)J
 	return pointer
+
 target_method org.lwjgl.system.MemoryUtil memAddress (Ljava/nio/ByteBuffer;)J
 	return pointer
 
 target_method org.lwjgl.PointerBuffer get ()J
+	return pointer
+
+target_field com.mojang.blaze3d.audio.Library currentDevice J pointer
+target_method org.lwjgl.openal.ALC10 alcOpenDevice (Ljava/lang/CharSequence;)J
 	return pointer

@@ -12,3 +12,12 @@ target_method org.lwjgl.glfw.GLFW glfwGetPlatform ()I
 	return glfw_platform_value
 target_method org.lwjgl.glfw.GLFW glfwPlatformSupported (I)Z
 	param 0 glfw_platform_value
+
+group int macos_style_mask
+	@flags
+	@scope class com.mojang.blaze3d.platform.MacosUtil
+	com.mojang.blaze3d.platform.MacosUtil.NS_RESIZABLE_WINDOW_MASK
+	com.mojang.blaze3d.platform.MacosUtil.NS_FULL_SCREEN_WINDOW_MASK
+
+target_method com.mojang.blaze3d.platform.MacosUtil getStyleMask (Lca/weblite/objc/NSObject;)J
+	return macos_style_mask
