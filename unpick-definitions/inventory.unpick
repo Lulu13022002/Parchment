@@ -104,10 +104,15 @@ target_method net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 
 target_field net.minecraft.world.item.component.BundleContents selectedItem I selected_item_index
 target_field net.minecraft.world.item.component.BundleContents$Mutable selectedItem I selected_item_index
-target_method net.minecraft.world.item.component.BundleContents <init> (Ljava/util/List;Lorg/apache/commons/lang3/math/Fraction;I)V
-	param 2 selected_item_index
+target_method net.minecraft.world.item.component.BundleContents <init> (Ljava/util/List;I)V
+	param 1 selected_item_index
 target_method net.minecraft.world.item.component.BundleContents$Mutable toggleSelectedItem (I)V
 	param 0 selected_item_index
+
+target_method net.minecraft.world.item.BundleItem toggleSelectedItem (Lnet/minecraft/world/item/ItemStack;I)V
+	param 1 selected_item_index
+target_method net.minecraft.world.item.BundleItem getSelectedItemIndex (Lnet/minecraft/world/item/ItemStack;)I
+	return selected_item_index
 
 target_method net.minecraft.world.item.component.BundleContents$Mutable findStackIndex (Lnet/minecraft/world/item/ItemStack;)I
 	return stack_index
