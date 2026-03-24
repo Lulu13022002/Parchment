@@ -20,8 +20,8 @@ group int argb_color
 	net.minecraft.client.color.block.BlockColors.LILY_PAD_IN_WORLD
 	net.minecraft.client.color.block.BlockColors.LILY_PAD_DEFAULT
 
-	net.minecraft.client.GuiMessageTag.CHAT_NOT_SECURE_INDICATOR_COLOR
-	net.minecraft.client.GuiMessageTag.CHAT_MODIFIED_INDICATOR_COLOR
+	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_NOT_SECURE_INDICATOR_COLOR
+	net.minecraft.client.multiplayer.chat.GuiMessageTag.CHAT_MODIFIED_INDICATOR_COLOR
 
 target_method net.minecraft.util.ARGB alpha (I)I
 	param 0 argb_color
@@ -277,9 +277,9 @@ target_method net.minecraft.client.gui.components.TabButton renderFocusUnderline
 target_method net.minecraft.client.gui.components.ChatComponent$ChatGraphicsAccess fill (IIIII)V
 	param 4 argb_color
 
-target_method net.minecraft.client.GuiMessageTag <init> (ILnet/minecraft/client/GuiMessageTag$Icon;Lnet/minecraft/network/chat/Component;Ljava/lang/String;)V
+target_method net.minecraft.client.multiplayer.chat.GuiMessageTag <init> (ILnet/minecraft/client/multiplayer/chat/GuiMessageTag$Icon;Lnet/minecraft/network/chat/Component;Ljava/lang/String;)V
 	param 0 argb_color
-target_method net.minecraft.client.GuiMessageTag indicatorColor ()I
+target_method net.minecraft.client.multiplayer.chat.GuiMessageTag indicatorColor ()I
 	return argb_color
 
 target_method net.minecraft.client.model.Model renderToBuffer (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
@@ -292,9 +292,15 @@ target_method net.minecraft.client.model.geom.ModelPart compile (Lcom/mojang/bla
 target_method net.minecraft.client.model.geom.ModelPart$Cube compile (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V
 	param 4 argb_color
 
+target_method com.mojang.blaze3d.vertex.QuadBrightness scaleColor (II)I
+	param 1 argb_color
+	return argb_color
+
 target_method com.mojang.blaze3d.vertex.VertexConsumer setColor (I)Lcom/mojang/blaze3d/vertex/VertexConsumer;
 	param 0 argb_color
 target_method com.mojang.blaze3d.vertex.VertexConsumer addVertex (FFFIFFIIFFF)V
+	param 3 argb_color
+target_method com.mojang.blaze3d.vertex.VertexConsumer putBulkData (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/model/BakedQuad;Lcom/mojang/blaze3d/vertex/QuadBrightness;ILcom/mojang/blaze3d/vertex/QuadLightmapCoords;I)V
 	param 3 argb_color
 
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitText (Lcom/mojang/blaze3d/vertex/PoseStack;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
@@ -313,28 +319,11 @@ target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitMod
 	param 10 argb_color
 target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlock (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/level/block/state/BlockState;III)V
 	param 4 argb_color
-target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlockModel (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/block/model/BlockStateModel;FFFIII)V
-	param 8 argb_color
-target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitItem (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/item/ItemDisplayContext;III[ILjava/util/List;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
-	param 4 argb_color
-
-target_method net.minecraft.client.renderer.SubmitNodeStorage$BlockSubmit <init> (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/world/level/block/state/BlockState;III)V
-	param 4 argb_color
-target_method net.minecraft.client.renderer.SubmitNodeStorage$ItemSubmit <init> (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/world/item/ItemDisplayContext;III[ILjava/util/List;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
-	param 4 argb_color
-target_method net.minecraft.client.renderer.SubmitNodeStorage$ModelPartSubmit <init> (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/model/geom/ModelPart;IILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ZZILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
-	param 7 argb_color
-	param 9 argb_color
-target_method net.minecraft.client.renderer.SubmitNodeStorage$ModelSubmit <init> (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/model/Model;Ljava/lang/Object;IIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
-	param 5 argb_color
-	param 7 argb_color
-target_method net.minecraft.client.renderer.SubmitNodeStorage$NameTagSubmit <init> (Lorg/joml/Matrix4f;FFLnet/minecraft/network/chat/Component;IIID)V
-	param 5 argb_color
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitBlockModel (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;Lnet/minecraft/client/renderer/block/model/BlockStateModel;IIII)V
+	param 3 argb_color
 	param 6 argb_color
-target_method net.minecraft.client.renderer.SubmitNodeStorage$TextSubmit <init> (Lorg/joml/Matrix4f;FFLnet/minecraft/util/FormattedCharSequence;ZLnet/minecraft/client/gui/Font$DisplayMode;IIII)V
-	param 7 argb_color
-	param 8 argb_color
-	param 9 argb_color
+target_method net.minecraft.client.renderer.OrderedSubmitNodeCollector submitItem (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/item/ItemDisplayContext;III[ILjava/util/List;Lnet/minecraft/client/renderer/item/ItemStackRenderState$FoilType;)V
+	param 4 argb_color
 
 target_method net.minecraft.client.renderer.OutlineBufferSource setColor (I)V
 	param 0 argb_color
@@ -377,10 +366,8 @@ target_method net.minecraft.client.renderer.special.NoDataSpecialModelRenderer s
 
 target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;I)V
 	param 6 argb_color
-target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/object/banner/BannerModel;Lnet/minecraft/client/model/object/banner/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitBanner (Lnet/minecraft/client/resources/model/SpriteGetter;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IIFLnet/minecraft/client/model/object/banner/BannerModel;Lnet/minecraft/client/model/object/banner/BannerFlagModel;FLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 12 argb_color
-target_method net.minecraft.client.renderer.blockentity.BannerRenderer submitPatterns (Lnet/minecraft/client/resources/model/MaterialSet;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/client/resources/model/Material;ZLnet/minecraft/world/item/DyeColor;Lnet/minecraft/world/level/block/entity/BannerPatternLayers;ZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
-	param 13 argb_color
 
 target_method net.minecraft.client.renderer.blockentity.BeaconRenderer submitBeaconBeam (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;FFIII)V
 	param 6 argb_color
@@ -393,19 +380,30 @@ target_method net.minecraft.client.renderer.blockentity.BeaconRenderer renderQua
 target_method net.minecraft.client.renderer.blockentity.BeaconRenderer addVertex (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V
 	param 2 argb_color
 
-target_method net.minecraft.client.renderer.blockentity.BedRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/resources/model/Material;I)V
+target_method net.minecraft.client.renderer.blockentity.BedRenderer submitSpecial (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/client/resources/model/SpriteId;I)V
 	param 5 argb_color
-target_method net.minecraft.client.renderer.blockentity.BedRenderer submitPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/model/Model$Simple;Lnet/minecraft/core/Direction;Lnet/minecraft/client/resources/model/Material;IIZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
+target_method net.minecraft.client.renderer.blockentity.BedRenderer submitPiece (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/model/Model$Simple;Lnet/minecraft/core/Direction;Lnet/minecraft/client/resources/model/SpriteId;IIZLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;I)V
 	param 9 argb_color
 
 target_method net.minecraft.client.renderer.blockentity.DecoratedPotRenderer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/world/level/block/entity/PotDecorations;I)V
 	param 5 argb_color
 
-target_method net.minecraft.client.renderer.blockentity.ShulkerBoxRenderer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/core/Direction;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/resources/model/Material;I)V
+target_method net.minecraft.client.renderer.blockentity.ShulkerBoxRenderer submit (Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;IILnet/minecraft/core/Direction;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/resources/model/SpriteId;I)V
 	param 8 argb_color
 
 target_method net.minecraft.client.renderer.blockentity.state.BeaconRenderState$Section <init> (II)V
 	param 0 argb_color
+
+target_method net.minecraft.client.renderer.block.BakedQuadOutput put (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/model/BakedQuad;Lcom/mojang/blaze3d/vertex/QuadBrightness;ILcom/mojang/blaze3d/vertex/QuadLightmapCoords;I)V
+	param 3 argb_color
+
+target_method net.minecraft.client.renderer.block.LiquidBlockRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;FFFIFFI)V
+	param 4 argb_color
+
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderModel (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/BakedQuadOutput;Lnet/minecraft/client/renderer/block/model/BlockStateModel;III)V
+	param 3 argb_color
+target_method net.minecraft.client.renderer.block.ModelBlockRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack$Pose;Lnet/minecraft/client/renderer/block/BakedQuadOutput;ILjava/util/List;Lcom/mojang/blaze3d/vertex/QuadLightmapCoords;I)V
+	param 2 argb_color
 
 target_method net.minecraft.client.renderer.debug.BeeDebugRenderer renderTextOverHive (Ljava/lang/String;Lnet/minecraft/core/BlockPos;II)V
 	param 3 argb_color
@@ -480,6 +478,11 @@ target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer
 	param 9 argb_color
 target_method net.minecraft.client.renderer.entity.layers.EquipmentLayerRenderer getColorForLayer (Lnet/minecraft/client/resources/model/EquipmentClientInfo$Layer;I)I
 	param 1 argb_color
+	return argb_color
+
+target_method net.minecraft.client.renderer.entity.ItemRenderer getLayerColorSafe ([II)I
+	return argb_color
+target_method net.minecraft.client.renderer.entity.ItemRenderer getLayerColorSafe ([ILnet/minecraft/client/renderer/block/model/BakedQuad;)I
 	return argb_color
 
 target_method net.minecraft.core.particles.ColorParticleOption <init> (Lnet/minecraft/core/particles/ParticleType;I)V
